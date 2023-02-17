@@ -2,6 +2,7 @@
 
 namespace UFEDLib
 {
+    [Serializable]
     public class Chat
     {
         public String Id { get; set; }

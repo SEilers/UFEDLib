@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace UFEDLib
 {
+    [Serializable]
     public class Party
     {
         public string Name { get; set; }
@@ -23,3 +24,4 @@ namespace UFEDLib
 
     }
 }
+
