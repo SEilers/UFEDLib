@@ -23,8 +23,7 @@ namespace UFEDLib
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
 
             List<Chat> chats = new List<Chat>();
-            int last_percent = 0;
-
+        
             while (reader.Read())
             {
                 try

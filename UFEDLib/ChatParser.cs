@@ -1,22 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
+﻿using System.Xml.Linq;
 using System.Xml;
-using System.Xml;
-using System.Xml.Linq;
 using System.Xml.XPath;
 
 namespace UFEDLib
 {
     public class ChatParser
     {
-        public static void Parse(object reader_object)
+        public static List<Chat> Parse(object reader_object)
         {
             var nsmgr = new XmlNamespaceManager(new NameTable());
             nsmgr.AddNamespace("a", "http://pa.cellebrite.com/report/2.0");
+
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
 
             List<Chat> chats = new List<Chat>();
@@ -239,7 +233,11 @@ namespace UFEDLib
                 }
             }
 
+            
+            
             reader.Close();
+
+            return chats;
 
         }
     }
