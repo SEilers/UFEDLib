@@ -1,21 +1,21 @@
 ﻿using System.IO;
 
-namespace UFEDLib
+namespace UFEDLib.Models
 {
     [Serializable]
     public class Chat
     {
-        public String Id { get; set; }
-
-        public String Source { get; set; }
+        public List<InstantMessage> Messages { get; set; } = new List<InstantMessage>();
+        public string Id { get; set; }
 
         public DateTime StartTime { get; set; }
 
         public DateTime LastActivity { get; set; }
+
         public List<Party> Participants { get; set; } = new List<Party>();
 
-        public List<InstantMessage> InstantMessages { get; set; } = new List<InstantMessage>();
+        public string Source { get; set; }
 
-        public String Account { get; set; }
+        public string Account { get; set; }
     }
 }

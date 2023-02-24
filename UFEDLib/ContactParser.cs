@@ -7,6 +7,7 @@ using System.Xml.Linq;
 using System.Xml;
 using System.Diagnostics.Contracts;
 using System.Xml.XPath;
+using UFEDLib.Models;
 
 namespace UFEDLib
 {

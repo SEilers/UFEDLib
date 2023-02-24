@@ -1,6 +1,7 @@
 ﻿using System.Xml.Linq;
 using System.Xml;
 using System.Xml.XPath;
+using UFEDLib.Models;
 
 namespace UFEDLib
 {
@@ -219,7 +220,7 @@ namespace UFEDLib
                                 msg.JumpTargetId = (String)targetid.Value.Trim();
                             }
 
-                            chat.InstantMessages.Add(msg);
+                            chat.Messages.Add(msg);
 
                         }
 

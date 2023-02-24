@@ -9,11 +9,20 @@ namespace UFEDLib
     [Serializable]
     public class Party
     {
-        public string Name { get; set; }
+        public String Role { get; set; }
 
         public String Identifier { get; set; }
+        public string Name { get; set; }
 
-        public String Role { get; set; }
+        // public PartyStatus Status {get; set; }
+
+        public DateTime DateDellivered { get; set; }
+
+        public DateTime DateRead { get; set; }
+
+        public DateTime DatePlayed { get; set; }
+
+        public string IPAddress { get; set; }
 
         public bool IsPhoneOwner { get; set; }
 
