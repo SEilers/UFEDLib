@@ -8,5 +8,19 @@ namespace UFEDLib.Models
 {
     internal class Password
     {
+        public String AccessGroup { get; set; }
+
+        public String Account { get; set; } 
+
+        public String Data { get; set; }
+
+        public String GenericAttribute { get; set; }
+
+        public String Label { get; set; }
+
+        public String Server {  get; set; }
+
+        public String Service { get; set; }
+
     }
 }

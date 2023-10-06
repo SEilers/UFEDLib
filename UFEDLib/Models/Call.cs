@@ -17,7 +17,7 @@ namespace UFEDLib.Models
 
         public TimeSpan Duration { get; set; }
 
-        public string? Source { get; set; }
+        public String? Source { get; set; }
 
         public String NetworkName { get; set; }
 

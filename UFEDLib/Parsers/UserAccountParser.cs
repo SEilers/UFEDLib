@@ -2,7 +2,7 @@
 using System.Xml.XPath;
 using System.Xml;
 
-namespace UFEDLib
+namespace UFEDLib.Parsers
 {
     public class UserAccountParser
     {
@@ -22,7 +22,7 @@ namespace UFEDLib
                 {
                     if (reader.Depth == 3 && reader.Name == "model" && reader.GetAttribute("type") == "UserAccount" && reader.IsStartElement())
                     {
-                        String? userAccountId = reader.GetAttribute("id");
+                        string? userAccountId = reader.GetAttribute("id");
 
                         XmlReader contactReader = reader.ReadSubtree();
 
@@ -37,11 +37,11 @@ namespace UFEDLib
 
                         var contact_source = contactNode.XPathSelectElement("a:field[@name=\"Source\"]", nsmgr);
                         if (contact_source != null)
-                            userAccount.Source = (String)contact_source.Value.Trim();
+                            userAccount.Source = contact_source.Value.Trim();
 
                         var contact_name = contactNode.XPathSelectElement("a:field[@name=\"Name\"]", nsmgr);
                         if (contact_name != null)
-                            userAccount.Name = (String)contact_name.Value.Trim();
+                            userAccount.Name = contact_name.Value.Trim();
 
                         //var contact_group = contactNode.XPathSelectElement("a:field[@name=\"Username\"]", nsmgr);
                         //if (contact_group != null)

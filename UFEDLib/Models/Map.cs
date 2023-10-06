@@ -8,5 +8,12 @@ namespace UFEDLib.Models
 {
     internal class Map
     {
+        public String Source { get; set; }  
+
+        public int ZoomLevel { get; set; }
+
+        public List<String> Tiles { get; set; } 
+
+
     }
 }

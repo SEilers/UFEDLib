@@ -8,11 +8,11 @@ using System.Xml;
 using System.Xml.XPath;
 using UFEDLib.Models;
 
-namespace UFEDLib
+namespace UFEDLib.Parsers
 {
     public class CallParser
     {
-        public static List<Call> Parse(String path)
+        public static List<Call> Parse(string path)
         {
             try
             {
@@ -32,18 +32,18 @@ namespace UFEDLib
 
                     var source = node.XPathSelectElement("a:field[@name=\"Source\"]", nsmgr);
                     if (source != null)
-                        call.Source = (String)source.Value;
+                        call.Source = source.Value;
 
                     var direction = node.XPathSelectElement("a:field[@name=\"Direction\"]", nsmgr);
                     if (direction != null)
-                        call.Direction = (String)direction.Value;
+                        call.Direction = direction.Value;
 
                     var videoCall = node.XPathSelectElement("a:field[@name=\"VideoCall\"]", nsmgr);
                     if (videoCall != null)
                     {
                         bool vCall = false;
 
-                        bool vCallSuccess = bool.TryParse((String)videoCall, out vCall);
+                        bool vCallSuccess = bool.TryParse((string)videoCall, out vCall);
                         call.VideoCall = vCall;
                     }
 
@@ -74,20 +74,20 @@ namespace UFEDLib
                             var identifier = partyNode.XPathSelectElement("a:field[@name=\"Identifier\"]", nsmgr);
                             if (identifier != null)
                             {
-                                party.Identifier = (String)identifier.Value;
+                                party.Identifier = identifier.Value;
                             }
 
                             var role = partyNode.XPathSelectElement("a:field[@name=\"Role\"]", nsmgr);
                             if (role != null)
                             {
-                                party.Role = (String)role.Value;
+                                party.Role = role.Value;
                             }
 
 
                             var name = partyNode.XPathSelectElement("a:field[@name=\"Name\"]", nsmgr);
                             if (name != null)
                             {
-                                party.Name = (String)name.Value;
+                                party.Name = name.Value;
                             }
 
 
@@ -95,7 +95,7 @@ namespace UFEDLib
                             if (isPhoneOwner != null)
                             {
                                 bool b_isPhoneOwner = false;
-                                bool isPhoneOwnerSuccess = bool.TryParse((String)isPhoneOwner, out b_isPhoneOwner);
+                                bool isPhoneOwnerSuccess = bool.TryParse((string)isPhoneOwner, out b_isPhoneOwner);
                                 party.IsPhoneOwner = b_isPhoneOwner;
                             }
 
@@ -111,7 +111,7 @@ namespace UFEDLib
                     calls.Add(call);
                 }
 
-                String csvText = "Source; Direction; VideoCall; Duration; TimeStamp; #Parties\n";
+                string csvText = "Source; Direction; VideoCall; Duration; TimeStamp; #Parties\n";
                 foreach (var call in calls)
                 {
                     csvText += call.Source + ";" + call.Direction + ";" + call.VideoCall.ToString() + ";" + call.Duration + ";" + call.TimeStamp + ";" + call.Parties.Count.ToString() + "\n";

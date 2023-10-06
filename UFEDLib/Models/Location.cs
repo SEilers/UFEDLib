@@ -8,5 +8,31 @@ namespace UFEDLib.Models
 {
     internal class Location
     {
+        public Coordinate Position { get; set; }
+
+        public StreetAddress Address { get; set; }
+
+        public DateTime TimeStamp { get; set; } 
+
+        public String Name { get; set; }    
+
+        public String Description { get; set; } 
+
+        public String Type { get; set; }    
+
+        public String Precision { get; set; }
+
+        public String Map { get; set; }
+
+        public String Category { get; set; }    
+
+        public String Confidence { get; set; }
+
+        public LocationOrigin Origin { get; set; }
+
+        public enum LocationOrigin { Unknown, Device, External}
+
+        public String PositionAddress { get; set; } 
+
     }
 }

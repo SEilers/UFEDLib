@@ -8,5 +8,12 @@ namespace UFEDLib.Models
 {
     internal class VoiceMail
     {
+        public Party From { get; set; }
+
+        public String Name { get; set; }
+
+        public DateTime TimeStamp { get; set; }
+
+        public TimeSpan Duration { get; set; }
     }
 }

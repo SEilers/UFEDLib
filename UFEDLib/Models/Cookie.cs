@@ -8,5 +8,18 @@ namespace UFEDLib.Models
 {
     internal class Cookie
     {
+        public String Name { get; set; }
+
+        public String Value { get; set; }
+
+        public String Domain { get; set; }
+
+        public String Path { get; set; }
+
+        public DateTime Expiry { get; set; }
+
+        public DateTime CreationTime { get; set; }  
+
+        public DateTime LastAccessTime { get; set; }   
     }
 }

@@ -32,7 +32,7 @@ namespace UFEDLib.Models
 
         //public MessageStatus Status {get;set;}
 
-        public List<Contact> ShardedContacts { get; set; }
+        public List<Contact> SharedContacts { get; set; }
 
         public String Label { get; set; }
 

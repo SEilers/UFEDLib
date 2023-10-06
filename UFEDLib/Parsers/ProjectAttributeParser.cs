@@ -7,7 +7,7 @@ using System.Xml.Linq;
 using System.Xml;
 using UFEDLib.Models;
 
-namespace UFEDLib
+namespace UFEDLib.Parsers
 {
     public class ProjectAttributeParser
     {
@@ -24,7 +24,7 @@ namespace UFEDLib
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
 
             List<Chat> chats = new List<Chat>();
-        
+
             while (reader.Read())
             {
                 try
@@ -48,8 +48,8 @@ namespace UFEDLib
 
                         foreach (XElement att in atributes)
                         {
-                            String name = (string)att.Attribute("name");
-                            String value = att.Value;
+                            string name = (string)att.Attribute("name");
+                            string value = att.Value;
 
                             ufedProjectAttributes.AdditionalFields.Add(Tuple.Create(name, value));
                         }
@@ -63,8 +63,8 @@ namespace UFEDLib
 
                         foreach (XElement att in atributes)
                         {
-                            String name = (string)att.Attribute("name");
-                            String value = att.Value;
+                            string name = (string)att.Attribute("name");
+                            string value = att.Value;
 
                             ufedProjectAttributes.ExtractionData.Add(Tuple.Create(name, value));
                         }
@@ -78,8 +78,8 @@ namespace UFEDLib
 
                         foreach (XElement att in atributes)
                         {
-                            String name = (string)att.Attribute("name");
-                            String value = att.Value;
+                            string name = (string)att.Attribute("name");
+                            string value = att.Value;
 
                             ufedProjectAttributes.DeviceInfo.Add(Tuple.Create(name, value));
                         }
@@ -93,8 +93,8 @@ namespace UFEDLib
 
                         foreach (XElement att in atributes)
                         {
-                            String name = (string)att.Attribute("name");
-                            String value = att.Value;
+                            string name = (string)att.Attribute("name");
+                            string value = att.Value;
 
                             ufedProjectAttributes.CaseInformation.Add(Tuple.Create(name, value));
                         }
