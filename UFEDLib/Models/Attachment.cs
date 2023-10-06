@@ -9,9 +9,9 @@ namespace UFEDLib.Models
     [Serializable]
     public class Attachment
     {
-        public string Fileame { get; set; }
+        public String Filename { get; set; }
 
-        public String ContentTyper { get; set; }
+        public String ContentType { get; set; }
 
         public String Charset { get; set; }
 

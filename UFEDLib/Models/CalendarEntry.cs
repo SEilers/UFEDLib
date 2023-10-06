@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace UFEDLib.Models
 {
-    internal class CalendarEntry
+    [Serializable]
+    public class CalendarEntry
     {
+
     }
 }

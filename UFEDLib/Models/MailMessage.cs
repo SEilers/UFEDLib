@@ -31,6 +31,4 @@ namespace UFEDLib.Models
 
         public String Source { get; set; }
     }
-
-    }
 }
