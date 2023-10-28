@@ -9,6 +9,7 @@ namespace UFEDLib
     [Serializable]
     public class Party
     {
+        public string Id { get; set; }
         public String Role { get; set; }
 
         public String Identifier { get; set; }

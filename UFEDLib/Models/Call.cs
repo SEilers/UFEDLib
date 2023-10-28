@@ -10,6 +10,7 @@ namespace UFEDLib.Models
     [Serializable]
     public class Call
     {
+        public string Id { get; set; }
         //public CallType CallType { get; set; }
         public List<Party> Parties { get; set; } = new List<Party>();
 
@@ -23,7 +24,7 @@ namespace UFEDLib.Models
 
         public String NetworkCode { get; set; }
 
-        public string? Direction { get; set; } // Outgoing
+        public string? Direction { get; set; }
 
         public bool VideoCall { get; set; }
 

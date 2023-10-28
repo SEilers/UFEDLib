@@ -111,13 +111,13 @@ namespace UFEDLib.Parsers
                     calls.Add(call);
                 }
 
-                string csvText = "Source; Direction; VideoCall; Duration; TimeStamp; #Parties\n";
-                foreach (var call in calls)
-                {
-                    csvText += call.Source + ";" + call.Direction + ";" + call.VideoCall.ToString() + ";" + call.Duration + ";" + call.TimeStamp + ";" + call.Parties.Count.ToString() + "\n";
-                }
+                //string csvText = "Source; Direction; VideoCall; Duration; TimeStamp; #Parties\n";
+                //foreach (var call in calls)
+                //{
+                //    csvText += call.Source + ";" + call.Direction + ";" + call.VideoCall.ToString() + ";" + call.Duration + ";" + call.TimeStamp + ";" + call.Parties.Count.ToString() + "\n";
+                //}
 
-                File.WriteAllText("call.csv", csvText);
+                //File.WriteAllText("call.csv", csvText);
 
                 return calls;
             }
