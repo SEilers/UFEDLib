@@ -6,6 +6,7 @@ Using XMLReader for performance and XElement at the lower level.
 This is assuming you already have unzipped the "report.xml" file from the ufdr image.
 Then you can parse the chats of the report in your application like follows:
 
+```
 public List<Chat> ParseChats(string xmlFileName)
 {
     List<Chat> result = new List<Chat>();
@@ -32,6 +33,7 @@ public List<Chat> ParseChats(string xmlFileName)
      }
     return result;
 }
+```
 
 
 
