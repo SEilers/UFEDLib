@@ -99,10 +99,6 @@ namespace UFEDLib.Parsers
                             ufedProjectAttributes.CaseInformation.Add(Tuple.Create(name, value));
                         }
                     }
-                    //else if ( reader.Depth == 1)
-                    //{
-                    //    reader.Skip();
-                    //}
                 }
                 catch (Exception ex)
                 {

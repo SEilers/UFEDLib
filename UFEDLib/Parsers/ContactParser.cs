@@ -13,64 +13,54 @@ namespace UFEDLib
 {
     public class ContactParser
     {
-        public static List<Contact> Parse(object reader_object)
+        public static Contact Parse(XElement contactNode)
         {
-            var nsmgr = new XmlNamespaceManager(new NameTable());
-            nsmgr.AddNamespace("a", "http://pa.cellebrite.com/report/2.0");
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
 
-            List<Contact> contacts = new List<Contact>();
-      
-            XmlReader reader = (XmlReader)reader_object;
+            Contact result = new Contact();
 
-            while (reader.Read())
+            var fieldElements = contactNode.Elements(xNamespace + "field");
+            var multiModelFieldElements = contactNode.Elements(xNamespace + "multiModelField");
+
+            foreach (var field in fieldElements)
             {
-                try
+                switch (field.Attribute("name").Value)
                 {
-                    if (reader.Depth == 3 && reader.Name == "model" && reader.GetAttribute("type") == "Contact" && reader.IsStartElement())
-                    {
-                        String? contactid = reader.GetAttribute("id");
+                    case "Id":
+                        result.Id = field.Value.Trim();
+                        break;
 
-                        XmlReader contactReader = reader.ReadSubtree();
+                    case "Name":
+                        result.Name = field.Value.Trim();
+                        break;
 
-                        Contact contact = new Contact();
+                    case "Source":
+                        result.Source = field.Value.Trim();
+                        break;
 
-                        if (contactid != null)
-                        {
-                            contact.Id = contactid;
-                        }
+                    case "Group":
+                        result.Group = field.Value.Trim();
+                        break;
 
-                        XElement contactNode = XElement.Load(contactReader);
+                    case "Account":
+                        result.Account = field.Value.Trim();
+                        break;
 
-                        var contact_source = contactNode.XPathSelectElement("a:field[@name=\"Source\"]", nsmgr);
-                        if (contact_source != null)
-                            contact.Source = (String)contact_source.Value.Trim();
+                    case "TimeContacted":
+                        result.TimeContacted = DateTime.Parse(field.Value.Trim());
+                        break;
 
-                        var contact_name = contactNode.XPathSelectElement("a:field[@name=\"Name\"]", nsmgr);
-                        if (contact_name != null)
-                            contact.Name = (String)contact_name.Value.Trim();
+                    case "TimeCreated":
+                        result.TimeCreated = DateTime.Parse(field.Value.Trim());
+                        break;
 
-                        var contact_group = contactNode.XPathSelectElement("a:field[@name=\"Group\"]", nsmgr);
-                        if (contact_group != null)
-                            contact.Group = (String)contact_group.Value.Trim();
-
-                        var account = contactNode.XPathSelectElement("a:field[@name=\"Account\"]", nsmgr);
-                        if (account != null)
-                            contact.Account = (String)account.Value.Trim();
-
-                        contacts.Add(contact);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
+                    case "TimeModified":
+                        result.TimeModified = DateTime.Parse(field.Value.Trim());
+                        break;
                 }
             }
 
-            reader.Close();
-
-            return contacts;
-
+            return result;
         }
     }
 }
