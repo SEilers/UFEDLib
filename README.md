@@ -10,6 +10,11 @@ This library is in pre-release status. Meaning it is under heavy development.
 I am opening this repostitory at this early stage to give the forensic community a chance to comment.
 If you would like to participate in the development feel free to contact me.
 
+First release will be when following items (modelTypes) are feature complete:
+- Call
+- Chat
+- Contact
+
 ## Usage
 This is assuming you already have unzipped the "report.xml" file from the ufdr image.
 Then you can parse the chats of the report in your application like follows:
