@@ -1,6 +1,9 @@
 # UFEDLib
-A C# library for parsing UFED XML reports and working with its data. 
+A C# library for mapping and parsing the ufed data model. 
+
 Using XMLReader for performance and XElement at the lower level.
+
+Exporting to other formats (Databases, Excel, CSV, JSON...) is not a part of this library. 
 
 ## Pre-Release Status(!)
 This library is in pre-release status. Meaning it is under heavy development. 
