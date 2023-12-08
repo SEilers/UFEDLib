@@ -1,3 +1,3 @@
 # UFEDLib
-A library for parsing Cellebrite UFED XML reports and working with its data.
+A library for parsing UFED XML reports and working with its data.
 
