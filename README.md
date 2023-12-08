@@ -3,7 +3,7 @@ A C# library for parsing UFED XML reports and working with its data.
 Using XMLReader for performance and XElement at the lower level.
 
 ## Pre-Release Status(!)
-This library is in pre-release status. Meaning you it is under heavy development. 
+This library is in pre-release status. Meaning it is under heavy development. 
 I am opening this repostitory at this early stage to give the forensic community a chance to comment.
 If you would like to participate in the development feel free to contact me.
 
