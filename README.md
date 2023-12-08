@@ -20,7 +20,6 @@ public List<Chat> ParseChats(string xmlFileName)
         {
             if (reader.NodeType == XmlNodeType.Element && reader.Name == "model" && reader.GetAttribute("type") == "Chat")
             {
-                String? chatid = reader.GetAttribute("id");
                 XElement chatNode = XElement.Load(reader.ReadSubtree());    
                 Chat chat = ChatParser.Parse(chatNode);
                 result.Add(chat);
