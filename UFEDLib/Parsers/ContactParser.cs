@@ -8,6 +8,7 @@ using System.Xml;
 using System.Diagnostics.Contracts;
 using System.Xml.XPath;
 using UFEDLib.Models;
+using UFEDLib.Parsers;
 
 namespace UFEDLib
 {
@@ -57,6 +58,29 @@ namespace UFEDLib
                     case "TimeModified":
                         result.TimeModified = DateTime.Parse(field.Value.Trim());
                         break;
+                }
+            }
+
+            foreach( var multiField in multiModelFieldElements)
+            {
+                switch (multiField.Attribute("name").Value)
+                {
+                    case "Photos":
+                        result.Photos =  ContactPhotoParser.ParseContactPhotos(multiField);
+                        break;
+
+                    case "Entries":
+                        result.Entries =  ContactEntryParser.ParseContactEntries(multiField);
+                        break;
+
+                    case "Addresses":
+                        result.Addresses = StreetAddressParser.ParseStreetAddresses(multiField);
+                        break;
+
+                    case "Organizations":
+                        result.Organizations = OrganizationsParser.ParseOrganizations(multiField);
+                        break;
+
                 }
             }
 
