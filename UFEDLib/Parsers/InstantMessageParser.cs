@@ -10,6 +10,21 @@ namespace UFEDLib.Parsers
 {
     internal class InstantMessageParser
     {
+        public static List<InstantMessage> ParseMessages(XElement messagesElement)
+        {
+            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
+            List<InstantMessage> result = new List<InstantMessage>();
+
+            IEnumerable<XElement> instantMessages = messagesElement.Descendants(xNamespace + "model").Where(x => x.Attribute("type").Value == "InstantMessage");
+
+            foreach (XElement message in instantMessages)
+            {
+                InstantMessage im = InstantMessageParser.Parse(message);
+                result.Add(im);
+            }
+
+            return result;
+        }
 
         public static InstantMessage Parse(XElement xElement)
         {

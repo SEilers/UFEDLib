@@ -35,11 +35,11 @@ namespace UFEDLib.Parsers
                 switch (multiField.Attribute("name").Value)
                 {
                     case "Messages":
-                        result.Messages = ParseMessages(multiField);
+                        result.Messages = InstantMessageParser.ParseMessages(multiField);
                         break;
 
                     case "Participants":
-                        result.Participants = ParseParticipants(multiField);
+                        result.Participants = PartyParser.ParseParties(multiField);
                         break;
 
                     default:
@@ -50,36 +50,5 @@ namespace UFEDLib.Parsers
             return result;
         }
 
-        static List<Party> ParseParticipants(XElement participantsElement)
-        {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            List<Party> result = new List<Party>();
-
-            IEnumerable<XElement> parties = participantsElement.Descendants(xNamespace + "model").Where(x => x.Attribute("type").Value == "Party");
-
-            foreach (XElement party in parties)
-            {
-                Party p = PartyParser.Parse(party);
-                result.Add(p);
-            }
-
-            return result;
-        }
-
-        static List<InstantMessage> ParseMessages(XElement messagesElement)
-        {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            List<InstantMessage> result = new List<InstantMessage>();
-
-            IEnumerable<XElement> instantMessages = messagesElement.Descendants(xNamespace + "model").Where(x => x.Attribute("type").Value == "InstantMessage");
-
-            foreach (XElement message in instantMessages)
-            {
-                InstantMessage im = InstantMessageParser.Parse(message);
-                result.Add(im);
-            }
-
-            return result;
-        }
     }
 }

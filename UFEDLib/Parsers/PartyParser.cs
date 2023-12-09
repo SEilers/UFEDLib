@@ -9,6 +9,22 @@ namespace UFEDLib.Parsers
 {
     internal class PartyParser
     {
+        public static List<Party> ParseParties(XElement participantsElement)
+        {
+            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
+            List<Party> result = new List<Party>();
+
+            IEnumerable<XElement> parties = participantsElement.Descendants(xNamespace + "model").Where(x => x.Attribute("type").Value == "Party");
+
+            foreach (XElement party in parties)
+            {
+                Party p = PartyParser.Parse(party);
+                result.Add(p);
+            }
+
+            return result;
+        }
+
         public static Party Parse(XElement xElement)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";

@@ -11,7 +11,11 @@ namespace UFEDLib.Models
     public class Call
     {
         public string Id { get; set; }
-        //public CallType CallType { get; set; }
+
+        //public CallType Type { get; set; }
+
+        public String Type { get; set; }
+
         public List<Party> Parties { get; set; } = new List<Party>();
 
         public DateTime TimeStamp { get; set; }
