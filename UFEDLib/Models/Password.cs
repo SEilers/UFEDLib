@@ -12,6 +12,7 @@ namespace UFEDLib.Models
 
         public String Account { get; set; } 
 
+        // The password itself
         public String Data { get; set; }
 
         public String GenericAttribute { get; set; }
@@ -21,6 +22,9 @@ namespace UFEDLib.Models
         public String Server {  get; set; }
 
         public String Service { get; set; }
+
+        // enum with the following values: "Default", "Key", "Secret", "Token"
+        public String Type { get; set; }
 
     }
 }

@@ -16,7 +16,7 @@ namespace UFEDLib.Models
 
         public String SearchResults { get; set; }   
 
-        public Coordinate Posítion { get; set; }
+        public Coordinate Position { get; set; }
 
         public String PositionAddress { get; set; } 
     }

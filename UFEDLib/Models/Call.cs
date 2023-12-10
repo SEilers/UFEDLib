@@ -30,6 +30,8 @@ namespace UFEDLib.Models
 
         public string? Direction { get; set; }
 
+        public string? Status { get; set; }
+
         public bool VideoCall { get; set; }
 
         public String CountryCode { get; set; }

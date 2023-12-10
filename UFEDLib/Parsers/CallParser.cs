@@ -37,6 +37,12 @@ namespace UFEDLib.Parsers
                         case "Source":
                             result.Source = fieldElement.Value.Trim();
                             break;
+                        case "Direction":
+                            result.Direction = fieldElement.Value.Trim();
+                            break;
+                        case "Status":
+                            result.Status = fieldElement.Value.Trim();
+                            break;
                         case "NetworkName":
                             result.NetworkName = fieldElement.Value.Trim();
                             break;

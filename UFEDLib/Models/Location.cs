@@ -28,9 +28,9 @@ namespace UFEDLib.Models
 
         public String Confidence { get; set; }
 
-        public LocationOrigin Origin { get; set; }
+        public String Origin { get; set; }
 
-        public enum LocationOrigin { Unknown, Device, External}
+        //public enum LocationOrigin { Unknown, Device, External}
 
         public String PositionAddress { get; set; } 
 
