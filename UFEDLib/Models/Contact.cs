@@ -54,6 +54,6 @@ namespace UFEDLib.Models
 
         public DateTime TimeModified { get; set; }
 
-        public DateTime TimesContacted { get; set; }
+        public int TimesContacted { get; set; }
     }
 }

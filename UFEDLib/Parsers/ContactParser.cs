@@ -58,6 +58,10 @@ namespace UFEDLib
                     case "TimeModified":
                         result.TimeModified = DateTime.Parse(field.Value.Trim());
                         break;
+
+                    case "TimesContacted":
+                        result.TimesContacted = int.Parse(field.Value.Trim());
+                        break;
                 }
             }
 

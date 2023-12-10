@@ -10,7 +10,7 @@ namespace UFEDLib.Models
     {
         public String BSSId { get; set; }
 
-        public String SSID { get; set; }
+        public String SSId { get; set; }
 
         public String SecurityMode { get; set; }
 

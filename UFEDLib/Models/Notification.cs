@@ -32,7 +32,7 @@ namespace UFEDLib.Models
 
         public String PositionAddress { get; set; }
 
-        public List<WebAddress> Urls { get; set; } = new List<WebAddress>();
+        //public List<WebAddress> Urls { get; set; } = new List<WebAddress>();
 
         //public NotificationType Type {get;set}
 

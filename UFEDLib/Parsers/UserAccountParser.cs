@@ -6,63 +6,77 @@ namespace UFEDLib.Parsers
 {
     public class UserAccountParser
     {
-        public static List<UserAccount> Parse(object reader_object)
+        public static UserAccount Parse(XElement userAccountNode)
         {
-            var nsmgr = new XmlNamespaceManager(new NameTable());
-            nsmgr.AddNamespace("a", "http://pa.cellebrite.com/report/2.0");
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
+            UserAccount result = new UserAccount();
 
-            List<UserAccount> userAccounts = new List<UserAccount>();
+            var fieldElements = userAccountNode.Elements(xNamespace + "field");
+            var multiModelFieldElements = userAccountNode.Elements(xNamespace + "multiModelField");
 
-            XmlReader reader = (XmlReader)reader_object;
 
-            while (reader.Read())
+            foreach (var field in fieldElements)
             {
-                try
+                switch (field.Attribute("name").Value)
                 {
-                    if (reader.Depth == 3 && reader.Name == "model" && reader.GetAttribute("type") == "UserAccount" && reader.IsStartElement())
-                    {
-                        string? userAccountId = reader.GetAttribute("id");
+                    case "Id":
+                        result.Id = field.Value.Trim();
+                        break;
 
-                        XmlReader contactReader = reader.ReadSubtree();
+                    case "Name":
+                        result.Name = field.Value.Trim();
+                        break;
 
-                        UserAccount userAccount = new UserAccount();
+                    case "Username":
+                        result.Username = field.Value.Trim();
+                        break;
 
-                        if (userAccountId != null)
-                        {
-                            userAccount.Id = userAccountId;
-                        }
+                    case "Password":
+                        result.Password = field.Value.Trim();
+                        break;
 
-                        XElement contactNode = XElement.Load(contactReader);
+                    case "ServiceType":
+                        result.ServiceType = field.Value.Trim();
+                        break;
 
-                        var contact_source = contactNode.XPathSelectElement("a:field[@name=\"Source\"]", nsmgr);
-                        if (contact_source != null)
-                            userAccount.Source = contact_source.Value.Trim();
+                    case "ServerAddress":
+                        result.ServerAddress = field.Value.Trim();
+                        break;
 
-                        var contact_name = contactNode.XPathSelectElement("a:field[@name=\"Name\"]", nsmgr);
-                        if (contact_name != null)
-                            userAccount.Name = contact_name.Value.Trim();
+                    case "TimeCreated":
+                        result.TimeCreated = DateTime.Parse(field.Value.Trim());
+                        break;
 
-                        //var contact_group = contactNode.XPathSelectElement("a:field[@name=\"Username\"]", nsmgr);
-                        //if (contact_group != null)
-                        //    userAccount.Group = (String)contact_group.Value.Trim();
-
-                        //var account = contactNode.XPathSelectElement("a:field[@name=\"Account\"]", nsmgr);
-                        //if (account != null)
-                        //    userAccount.Account = (String)account.Value.Trim();
-
-                        userAccounts.Add(userAccount);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
+                    case "Source":
+                        result.Source = field.Value.Trim();
+                        break;
                 }
             }
 
-            reader.Close();
+            foreach (var multiField in multiModelFieldElements)
+            {
+                switch (multiField.Attribute("name").Value)
+                {
+                    case "Photos":
+                        result.Photos = ContactPhotoParser.ParseContactPhotos(multiField);
+                        break;
 
-            return userAccounts;
+                    case "Entries":
+                        result.Entries = ContactEntryParser.ParseContactEntries(multiField);
+                        break;
+
+                    case "Addresses":
+                        result.Addresses = StreetAddressParser.ParseStreetAddresses(multiField);
+                        break;
+
+                    case "Organizations":
+                        result.Organizations = OrganizationsParser.ParseOrganizations(multiField);
+                        break;
+                }
+            }
+
+
+            return result;
 
         }
     }
