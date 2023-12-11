@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -48,16 +49,19 @@ namespace UFEDLib.Parsers
                         result.SourceApplication = field.Value.Trim();
                         break;
                     case "TimeStamp":
-                        result.TimeStamp = DateTime.Parse(field.Value.Trim());
+                        if( field.Value.Trim() != "")
+                            result.TimeStamp = DateTime.Parse(field.Value.Trim());
                         break;
                     case "Subject":
                         result.Subject = field.Value.Trim();
                         break;
                     case "DateRead":
-                        result.DateRead = DateTime.Parse(field.Value.Trim());
+                        if (field.Value.Trim() != "")
+                            result.DateRead = DateTime.Parse(field.Value.Trim());
                         break;
                     case "DateDelivered":
-                        result.DateDelivered = DateTime.Parse(field.Value.Trim());
+                        if (field.Value.Trim() != "")
+                            result.DateDelivered = DateTime.Parse(field.Value.Trim());
                         break;
                     case "Label":
                         result.Label = field.Value.Trim();
@@ -86,17 +90,55 @@ namespace UFEDLib.Parsers
                     case "Type":
                         result.Type = field.Value.Trim();
                         break;
-                    case "AttachmentFileName":
-                        result.AttachentFileName = field.Value.Trim();
+                    default:
+                        Trace.WriteLine("Unknown field: " + field.Attribute("name").Value);
                         break;
-                    case "AttachmentType":
-                        result.AttachmentType = field.Value.Trim();
-                        break;
+                }
+            }
 
+            var modelFieldElements = xElement.Elements(xNamespace + "modelField");
+
+            foreach (var modelField in modelFieldElements)
+            {
+                switch (modelField.Attribute("name").Value)
+                {
+                    case "Attachment":
+                        result.Attachment = AttachmentParser.Parse(modelField);
+                        break;
+                    case "From":
+                        result.From = PartyParser.Parse(modelField);
+                        break;
+                    case "Position":
+                        result.Position = CoordinateParser.Parse(modelField);
+                        break;
+                    case "JumpTargetId":
+                        result.JumpTargetId = modelField.Value.Trim();
+                        break;
                     default:
                         break;
                 }
             }
+
+            var multiModelFieldElements = xElement.Elements(xNamespace + "multiModelField");
+
+            foreach (var multiField in multiModelFieldElements)
+            {
+                switch (multiField.Attribute("name").Value)
+                {
+                    case "To":
+                        result.To = PartyParser.ParseParties(multiField);
+                        break;
+                    case "Attachments":
+                        result.Attachments = AttachmentParser.ParseAttachments(multiField);
+                        break;
+                    case "SharedContacts":
+                        result.SharedContacts = ContactParser.ParseContacts(multiField);
+                        break;
+                    default:
+                        break;
+                }
+            }
+
 
             return result;
         }

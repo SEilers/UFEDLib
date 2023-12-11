@@ -23,6 +23,24 @@ namespace UFEDLib.Parsers
                         result.Source = field.Value.Trim();
                         break;
 
+                    case "Account":
+                        result.Account = field.Value.Trim();
+                        break;
+
+                    case "Id":
+                        result.Id = field.Value.Trim();
+                        break;
+
+                    case "StartTime":
+                        if (field.Value.Trim() != "")
+                            result.StartTime = DateTime.Parse(field.Value.Trim());
+                        break;
+
+                    case "LastActivity":
+                        if (field.Value.Trim() != "")
+                            result.LastActivity = DateTime.Parse(field.Value.Trim());
+                        break;
+
                     default:
                         break;
                 }

@@ -70,7 +70,12 @@ namespace UFEDLib.Parsers
                         break;
 
                     case "IsPhoneOwner":
-                        result.IsPhoneOwner = bool.Parse(field.Value.Trim());
+                        if (!string.IsNullOrEmpty(field.Value.Trim()))
+                        {
+                            result.IsPhoneOwner = bool.Parse(field.Value.Trim());
+                        }
+
+                        
                         break;
 
                     default:

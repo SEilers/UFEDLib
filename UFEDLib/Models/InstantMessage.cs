@@ -52,17 +52,11 @@ namespace UFEDLib.Models
 
         public String Type { get; set; }
 
-        
-        public String AttachentFileName { get; set; }
-
-        public String AttachmentType { get; set; }
-
+        public Attachment Attachment { get; set; }
         public override string ToString()
         {
             return SourceApplication;
         }
-        public String Transcripion { get; set; }
-
         public String JumpTargetId { get; set; }
     }
 }

@@ -14,6 +14,23 @@ namespace UFEDLib
 {
     public class ContactParser
     {
+        public static List<Contact> ParseContacts(XElement contactsElement)
+        {
+            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
+            List<Contact> result = new List<Contact>();
+
+            IEnumerable<XElement> contacts = contactsElement.Descendants(xNamespace + "model").Where(x => x.Attribute("type").Value == "Contact");
+
+            foreach (XElement contact in contacts)
+            {
+                Contact c = ContactParser.Parse(contact);
+                result.Add(c);
+            }
+
+            return result;
+        }
+
+
         public static Contact Parse(XElement contactNode)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
