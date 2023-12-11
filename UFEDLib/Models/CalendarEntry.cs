@@ -9,13 +9,13 @@ namespace UFEDLib.Models
     [Serializable]
     public class CalendarEntry
     {
-        public String Category { get; set; }
+        public string Category { get; set; }
 
-        public String Subject { get; set; }
+        public string Subject { get; set; }
 
-        public String Location { get; set; }
+        public string Location { get; set; }
 
-        public String Details { get; set; }
+        public string Details { get; set; }
 
         public List<Party> Attendees { get; set; }
 
@@ -50,7 +50,7 @@ namespace UFEDLib.Models
 
         public int RepeatInterval { get; set; }
 
-        public String Source { get; set; }
+        public string Source { get; set; }
 
     }
 }

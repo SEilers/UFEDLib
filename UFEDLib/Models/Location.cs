@@ -14,25 +14,25 @@ namespace UFEDLib.Models
 
         public DateTime TimeStamp { get; set; } 
 
-        public String Name { get; set; }    
+        public string Name { get; set; }    
 
-        public String Description { get; set; } 
+        public string Description { get; set; } 
 
-        public String Type { get; set; }    
+        public string Type { get; set; }    
 
-        public String Precision { get; set; }
+        public string Precision { get; set; }
 
-        public String Map { get; set; }
+        public string Map { get; set; }
 
-        public String Category { get; set; }    
+        public string Category { get; set; }    
 
-        public String Confidence { get; set; }
+        public string Confidence { get; set; }
 
-        public String Origin { get; set; }
+        public string Origin { get; set; }
 
         //public enum LocationOrigin { Unknown, Device, External}
 
-        public String PositionAddress { get; set; } 
+        public string PositionAddress { get; set; } 
 
     }
 }

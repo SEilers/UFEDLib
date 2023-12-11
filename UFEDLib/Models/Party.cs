@@ -10,9 +10,9 @@ namespace UFEDLib
     public class Party
     {
         public string Id { get; set; }
-        public String Role { get; set; }
+        public string Role { get; set; }
 
-        public String Identifier { get; set; }
+        public string Identifier { get; set; }
         public string Name { get; set; }
 
         // public PartyStatus Status {get; set; }

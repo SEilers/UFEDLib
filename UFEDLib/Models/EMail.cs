@@ -8,9 +8,9 @@ namespace UFEDLib.Models
 {
     internal class EMail
     {
-        public String Folder { get; set; }
+        public string Folder { get; set; }
 
-        public String Status { get; set; }
+        public string Status { get; set; }
 
         public Party From { get; set; }
 
@@ -20,16 +20,16 @@ namespace UFEDLib.Models
 
         public List<Party> Bcc { get; set; }
 
-        public String Subject { get; set; }
+        public string Subject { get; set; }
 
-        public String Body { get; set; }
+        public string Body { get; set; }
 
         public DateTime TimeStamp { get; set; }
 
-        public String Priority { get; set; }    
+        public string Priority { get; set; }    
 
         public List<Attachment> Attachments { get; set; }
 
-        public String Source { get; set; }  
+        public string Source { get; set; }  
     }
 }

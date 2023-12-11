@@ -14,7 +14,7 @@ namespace UFEDLib.Models
 
         //public CallType Type { get; set; }
 
-        public String Type { get; set; }
+        public string Type { get; set; }
 
         public List<Party> Parties { get; set; } = new List<Party>();
 
@@ -22,19 +22,19 @@ namespace UFEDLib.Models
 
         public TimeSpan Duration { get; set; }
 
-        public String? Source { get; set; }
+        public string Source { get; set; }
 
-        public String NetworkName { get; set; }
+        public string NetworkName { get; set; }
 
-        public String NetworkCode { get; set; }
+        public string NetworkCode { get; set; }
 
-        public string? Direction { get; set; }
+        public string Direction { get; set; }
 
-        public string? Status { get; set; }
+        public string Status { get; set; }
 
         public bool VideoCall { get; set; }
 
-        public String CountryCode { get; set; }
+        public string CountryCode { get; set; }
 
         public override string ToString()
         {

@@ -13,16 +13,16 @@ namespace UFEDLib.Models
         /// <summary>
         /// Entry value (phone number or email string).
         /// </summary>
-        public String Value { get; set; }
+        public string Value { get; set; }
 
         /// <summary>
         /// Entry category (work, home etc).
         /// </summary>
-        public String Category { get; set; }
+        public string Category { get; set; }
 
         /// <summary>
         /// Entry domain (phone number, email, web address etc)
         /// </summary>
-        public String Domain { get; set; }
+        public string Domain { get; set; }
     }
 }

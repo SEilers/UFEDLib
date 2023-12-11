@@ -12,6 +12,6 @@ namespace UFEDLib.Models
         /// <summary>
         /// Filename (if exists).
         /// </summary>
-        public String Name { get; set; }
+        public string Name { get; set; }
     }
 }

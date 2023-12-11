@@ -11,34 +11,34 @@ namespace UFEDLib.Models
         /// <summary>
         /// Street information.
         /// </summary>
-        public String Street1 { get; set; }
+        public string Street1 { get; set; }
 
         /// <summary>
         /// Additional street information
         /// </summary>
-        public String Street2 { get; set; }
+        public string Street2 { get; set; }
 
-        public String HouseNumber { get; set;}
+        public string HouseNumber { get; set;}
 
-        public String City { get; set;}
+        public string City { get; set;}
 
-        public String State { get; set;}
+        public string State { get; set;}
 
-        public String Country { get; set;}
+        public string Country { get; set;}
 
         /// <summary>
         /// Address Postal Code or ZIP.
         /// </summary>
-        public String PostalCode { get; set;}
+        public string PostalCode { get; set;}
 
-        public String POBox { get; set;}
+        public string POBox { get; set;}
 
         public string Neighborhood { get; set;}
 
         /// <summary>
         /// Same values as ContactEntry categories
         /// </summary>
-        public String Category { get; set;}
+        public string Category { get; set;}
 
     }
 }

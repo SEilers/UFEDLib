@@ -14,11 +14,11 @@ namespace UFEDLib.Models
 
         public Party To { get; set; }
 
-        public String Subject { get; set; }
+        public string Subject { get; set; }
 
-        public String Body { get; set; }    
+        public string Body { get; set; }    
 
-        public String Source { get; set; }
+        public string Source { get; set; }
 
         public DateTime TimeStamp { get; set; }
 
@@ -30,12 +30,12 @@ namespace UFEDLib.Models
 
         // public MessageStatus Status {get;set}
 
-        public String PositionAddress { get; set; }
+        public string PositionAddress { get; set; }
 
         //public List<WebAddress> Urls { get; set; } = new List<WebAddress>();
 
         //public NotificationType Type {get;set}
 
-        public String NotificationId { get; set; }
+        public string NotificationId { get; set; }
     }
 }

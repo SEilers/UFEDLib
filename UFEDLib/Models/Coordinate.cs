@@ -18,11 +18,11 @@ namespace UFEDLib.Models
         /// <summary>
         /// Free text map to which the coordinate relates.
         /// </summary>
-        public String Map { get; set; }
+        public string Map { get; set; }
 
-        public String Comment { get; set; }
+        public string Comment { get; set; }
 
-        public String PositionAddress { get; set; }
+        public string PositionAddress { get; set; }
 
 
     }

@@ -10,7 +10,7 @@ namespace UFEDLib.Models
     {
         public Party From { get; set; }
 
-        public String Name { get; set; }
+        public string Name { get; set; }
 
         public DateTime TimeStamp { get; set; }
 

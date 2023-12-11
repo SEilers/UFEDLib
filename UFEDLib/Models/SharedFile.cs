@@ -8,9 +8,9 @@ namespace UFEDLib.Models
 {
     internal class SharedFile
     {
-        public String Caption { get; set; } 
+        public string Caption { get; set; } 
 
-        public String Source { get; set; }  
+        public string Source { get; set; }  
 
         //public FileType Type { get; set; }  
 

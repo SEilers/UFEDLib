@@ -8,7 +8,7 @@ namespace UFEDLib.Models
 {
     public class MailMessage
     {
-        public String Folder { get; set; }
+        public string Folder { get; set; }
 
         // public MessageStatus 
 
@@ -20,8 +20,8 @@ namespace UFEDLib.Models
 
         public List<Party> BCC { get; set;}
 
-        public String Subject { get; set; }
-        public String Body { get; set; }
+        public string Subject { get; set; }
+        public string Body { get; set; }
 
         public DateTime TimeStamp { get; set; }
 
@@ -29,6 +29,6 @@ namespace UFEDLib.Models
 
         public List<Attachment> Attachments { get; set; }
 
-        public String Source { get; set; }
+        public string Source { get; set; }
     }
 }

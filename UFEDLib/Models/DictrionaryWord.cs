@@ -8,12 +8,12 @@ namespace UFEDLib.Models
 {
     internal class DictrionaryWord
     {
-        public String Word {  get; set; }
+        public string Word {  get; set; }
 
-        public String Locale { get; set; }
+        public string Locale { get; set; }
 
-        public String Frequency { get; set; }
+        public string Frequency { get; set; }
 
-        public String Source { get; set; }  
+        public string Source { get; set; }  
     }
 }

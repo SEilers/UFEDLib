@@ -8,7 +8,7 @@ namespace UFEDLib.Models
 {
     internal class Journey
     {
-        public String Name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Journey locations
@@ -16,7 +16,7 @@ namespace UFEDLib.Models
 
         public List<Location> WayPoints { get; set; }
 
-        public String Source { get; set; }  
+        public string Source { get; set; }  
 
         public DateTime StartTime { get; set; }
 

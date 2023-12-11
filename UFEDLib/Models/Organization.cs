@@ -12,11 +12,11 @@ namespace UFEDLib.Models
         /// <summary>
         /// Oragnization name.
         /// </summary>
-        public String Name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Contact’s position in the organization
         /// </summary>
-        public String Position { get; set; }
+        public string Position { get; set; }
     }
 }

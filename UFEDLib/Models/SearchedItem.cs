@@ -10,14 +10,14 @@ namespace UFEDLib.Models
     {
         public DateTime TimeStamp { get; set; }
 
-        public String Value { get; set; }   
+        public string Value { get; set; }   
 
-        public String Source { get; set; }  
+        public string Source { get; set; }  
 
-        public String SearchResults { get; set; }   
+        public string SearchResults { get; set; }   
 
         public Coordinate Position { get; set; }
 
-        public String PositionAddress { get; set; } 
+        public string PositionAddress { get; set; } 
     }
 }

@@ -22,19 +22,19 @@ namespace UFEDLib.Models
         /// <summary>
         /// SMS Folder (e.g. Inbox, Draft, Sent).
         /// </summary>
-        public String Folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// SMSC Number.
         /// </summary>
-        public String SMSC { get; set; }
+        public string SMSC { get; set; }
 
-        public String Body { get; set; }
+        public string Body { get; set; }
 
         /// <summary>
         /// SMS Source (default SMS option in the phone is left here empty).
         /// </summary>
-        public String Source { get; set; }
+        public string Source { get; set; }
 
         // public List<TimeStampEntry> AllTimeStamps { get; set; }
     }

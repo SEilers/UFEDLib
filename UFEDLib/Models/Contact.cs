@@ -39,7 +39,7 @@ namespace UFEDLib.Models
         /// <summary>
         /// Contact Notes.
         /// </summary>
-        public List<String> Notes { get; set; } = new List<String>();
+        public List<string> Notes { get; set; } = new List<string>();
 
         /// <summary>
         /// Contact Source.

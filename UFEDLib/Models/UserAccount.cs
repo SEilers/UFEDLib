@@ -11,19 +11,19 @@ namespace UFEDLib
     [Serializable]
     public class UserAccount
     {
-        public String? Id { get; set; }
-        public String? Name { get; set; }
+        public string Id { get; set; }
+        public string Name { get; set; }
 
-        public String? Username { get; set; }
+        public string Username { get; set; }
 
-        public String? Password { get; set; }
+        public string Password { get; set; }
 
         /// <summary>
         /// The app or service from which the account was extracted.
         /// </summary>
-        public String? ServiceType { get; set; }
+        public string ServiceType { get; set; }
 
-        public String? ServerAddress { get; set; }
+        public string ServerAddress { get; set; }
 
         /// <summary>
         /// UserAccount Photos
@@ -49,6 +49,6 @@ namespace UFEDLib
 
         public DateTime TimeCreated { get; set; }
 
-        public String? Source { get; set; }
+        public string Source { get; set; }
     }
 }
