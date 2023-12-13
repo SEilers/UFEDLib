@@ -9,21 +9,36 @@ namespace UFEDLib.Models
     [Serializable]
     public class CalendarEntry
     {
+        #region fields
         public string Category { get; set; }
-
-        public string Subject { get; set; }
-
-        public string Location { get; set; }
 
         public string Details { get; set; }
 
-        public List<Party> Attendees { get; set; }
+        public DateTime EndDate { get; set; }
+
+        public string Location { get; set; }
+
+        public DateTime Reminder { get; set; }
+
+        public int RepeatInterval { get; set; }
+        public DateTime RepeatUntil { get; set; }
+        public string Source { get; set; }
 
         public DateTime StartDate { get; set; }
 
-        public DateTime EndDate { get; set; }
+        public string Subject { get; set; }
+        #endregion
 
-        public DateTime Reminder { get; set; }
+        #region models
+        #endregion
+
+        #region multiModels
+        public List<Party> Attendees { get; set; }
+        #endregion
+
+
+
+        //todo: convert enums to strings
 
         public EventPriority Priority { get; set; }
 
@@ -42,15 +57,15 @@ namespace UFEDLib.Models
 
         public enum RepeatRuleEnum { None, Daily, Weekly, Monthly, Yearly }
 
-        public DateTime RepeatUntil { get; set; }
+        
 
         public RepeatDayEnum RepeatDay { get; set; }
 
         public enum RepeatDayEnum { None, Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, First, Second, Third, Fourth, Last }
 
-        public int RepeatInterval { get; set; }
+        
 
-        public string Source { get; set; }
+        
 
     }
 }

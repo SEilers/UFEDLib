@@ -8,28 +8,25 @@ namespace UFEDLib.Models
 {
     internal class EMail
     {
-        public string Folder { get; set; }
-
-        public string Status { get; set; }
-
-        public Party From { get; set; }
-
-        public List<Party> To { get; set; }
-
-        public List<Party> Cc { get; set; }
-
-        public List<Party> Bcc { get; set; }
-
-        public string Subject { get; set; }
-
+        #region fields
         public string Body { get; set; }
-
+        public string Folder { get; set; }
+        public string Priority { get; set; }
+        public string Source { get; set; }
+        public string Status { get; set; }
+        public string Subject { get; set; }
         public DateTime TimeStamp { get; set; }
+        #endregion
 
-        public string Priority { get; set; }    
+        #region models
+        public Party From { get; set; }
+        #endregion
 
+        #region multiModels
         public List<Attachment> Attachments { get; set; }
-
-        public string Source { get; set; }  
+        public List<Party> Bcc { get; set; }
+        public List<Party> Cc { get; set; }
+        public List<Party> To { get; set; }
+        #endregion
     }
 }

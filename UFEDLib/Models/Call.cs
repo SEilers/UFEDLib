@@ -10,36 +10,38 @@ namespace UFEDLib.Models
     [Serializable]
     public class Call
     {
-        public string Id { get; set; }
+        #region fields
 
-        //public CallType Type { get; set; }
-
-        public string Type { get; set; }
-
-        public List<Party> Parties { get; set; } = new List<Party>();
-
-        public DateTime TimeStamp { get; set; }
+        public string CountryCode { get; set; }
+        public string Direction { get; set; }
 
         public TimeSpan Duration { get; set; }
 
-        public string Source { get; set; }
-
-        public string NetworkName { get; set; }
+        public string Id { get; set; }
 
         public string NetworkCode { get; set; }
 
-        public string Direction { get; set; }
+        public string NetworkName { get; set; }
+
+        public string Source { get; set; }
 
         public string Status { get; set; }
 
+        public DateTime TimeStamp { get; set; }
+
+        public string Type { get; set; }
+
         public bool VideoCall { get; set; }
+        #endregion
 
-        public string CountryCode { get; set; }
+        #region multiModels
+        public List<Party> Parties { get; set; } = new List<Party>();
 
+        #endregion
+       
         public override string ToString()
         {
             return Source + " " + Duration + " " + Parties.Count.ToString();
         }
-
     }
 }

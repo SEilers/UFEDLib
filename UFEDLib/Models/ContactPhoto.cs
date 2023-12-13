@@ -9,9 +9,12 @@ namespace UFEDLib.Models
     [Serializable]
     public class ContactPhoto
     {
+        #region fields
         /// <summary>
         /// Filename (if exists).
         /// </summary>
         public string Name { get; set; }
+        #endregion
+
     }
 }

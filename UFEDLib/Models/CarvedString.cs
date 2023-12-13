@@ -8,10 +8,10 @@ namespace UFEDLib.Models
 {
     internal class CarvedString
     {
-        public string Value { get; set; }   
-
-        public string Source { get; set; }  
-
-        public string MetaData { get; set; }    
+        #region fields
+        public string MetaData { get; set; }
+        public string Source { get; set; }
+        public string Value { get; set; }
+        #endregion
     }
 }

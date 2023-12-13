@@ -9,17 +9,24 @@ namespace UFEDLib.Models
     [Serializable]
     public class Attachment
     {
-        public string Filename { get; set; }
+        #region fields
+        public string Charset { get; set; }
 
         public string ContentType { get; set; }
 
-        public string Charset { get; set; }
-
         //public DataField Data { get; set;}
+
+        public string Filename { get; set; }
 
         /// <summary>
         /// A URL string associated with the attachment.
         /// </summary>
         public string URL { get; set; }
+        #endregion
+
+
+
+
+
     }
 }

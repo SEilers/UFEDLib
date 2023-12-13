@@ -8,9 +8,7 @@ namespace UFEDLib.Models
 {
     internal class ApplicationUsage
     {
-        public String Name { get; set; }
-
-        public int LaunchCount { get; set; }
+        #region fields
 
         public int ActivationCount { get; set; }
 
@@ -20,8 +18,17 @@ namespace UFEDLib.Models
 
         public DateTime Date { get; set; }
 
-        public DateTime LastLaunch {  get; set; }
+        public DateTime LastLaunch { get; set; }
 
         public TimeSpan LastUsageDuration { get; set; }
+
+        public int LaunchCount { get; set; }
+
+        public String Name { get; set; }
+
+        #endregion
+
+
+
     }
 }

@@ -8,12 +8,14 @@ namespace UFEDLib.Models
 {
     internal class BluetoothDevice
     {
-        public string Name { get; set; }
-
-        public string MACAddress { get; set; }
-
+        #region fields
         public string Info { get; set; }
 
         public DateTime LastConnected { get; set; }
+
+        public string MACAddress { get; set; }
+
+        public string Name { get; set; }
+        #endregion
     }
 }
