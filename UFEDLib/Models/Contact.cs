@@ -9,6 +9,11 @@ namespace UFEDLib.Models
     [Serializable]
     public class Contact
     {
+        #region fields
+        public string Account { get; set; }
+
+        public string Group { get; set; }
+
         public string Id { get; set; }
 
         /// <summary>
@@ -17,9 +22,27 @@ namespace UFEDLib.Models
         public string Name { get; set; }
 
         /// <summary>
-        /// Contact Photos.
+        /// Contact Source.
         /// </summary>
-        public List<ContactPhoto> Photos { get; set; } = new List<ContactPhoto>();
+        public string Source { get; set; }
+
+        public DateTime TimeContacted { get; set; }
+
+        public int TimesContacted { get; set; }
+
+        public DateTime TimeCreated { get; set; }
+
+        public DateTime TimeModified { get; set; }
+        #endregion
+
+        #region models
+        #endregion
+
+        #region multiModels
+        /// <summary>
+        /// Addresses collection.
+        /// </summary>
+        public List<StreetAddress> Addresses { get; set; } = new List<StreetAddress>();
 
         /// <summary>
         /// Contact entries collection.
@@ -27,33 +50,20 @@ namespace UFEDLib.Models
         public List<ContactEntry> Entries { get; set; } = new List<ContactEntry>();
 
         /// <summary>
-        /// Addresses collection.
+        /// Contact Notes.
         /// </summary>
-        public List<StreetAddress> Addresses { get; set; } = new List<StreetAddress>();
+        public List<string> Notes { get; set; } = new List<string>();
 
         /// <summary>
         /// Organizations collection.
         /// </summary>
         public List<Organization> Organizations { get; set; } = new List<Organization>();
 
-        /// <summary>
-        /// Contact Notes.
-        /// </summary>
-        public List<string> Notes { get; set; } = new List<string>();
 
         /// <summary>
-        /// Contact Source.
+        /// Contact Photos.
         /// </summary>
-        public string Source { get; set; }
-        public string Group { get; set; }
-        public string Account { get; set; }
-
-        public DateTime TimeContacted { get; set; }
-
-        public DateTime TimeCreated { get; set; }
-
-        public DateTime TimeModified { get; set; }
-
-        public int TimesContacted { get; set; }
+        public List<ContactPhoto> Photos { get; set; } = new List<ContactPhoto>();
+        #endregion
     }
 }

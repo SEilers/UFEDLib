@@ -5,17 +5,20 @@ namespace UFEDLib.Models
     [Serializable]
     public class Chat
     {
-        public List<InstantMessage> Messages { get; set; } = new List<InstantMessage>();
-        public string Id { get; set; }
-
-        public DateTime StartTime { get; set; }
-
-        public DateTime LastActivity { get; set; }
-
-        public List<Party> Participants { get; set; } = new List<Party>();
-
-        public string Source { get; set; }
-
+        #region fields
         public string Account { get; set; }
+        public string Id { get; set; }
+        public DateTime LastActivity { get; set; }
+        public string Source { get; set; }
+        public DateTime StartTime { get; set; }
+        #endregion
+
+        #region models
+        #endregion
+
+        #region multiModels
+        public List<InstantMessage> Messages { get; set; } = new List<InstantMessage>();
+        public List<Party> Participants { get; set; } = new List<Party>();
+        #endregion
     }
 }

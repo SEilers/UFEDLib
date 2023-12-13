@@ -9,54 +9,62 @@ namespace UFEDLib.Models
     [Serializable]
     public class InstantMessage
     {
-        public String Id { get; set; }
+        #region fields
+        public string Body { get; set; }
 
-        public Party From { get; set; }
-
-        public List<Party> To { get; set; } = new List<Party>();
-
-        public String Subject { get; set; }
-
-        public String Body { get; set; }
-        public String SourceApplication { get; set; }
-
-        public DateTime TimeStamp { get; set; }
-
-        public DateTime DateRead { get; set; }
+        public string ChatId { get; set; }
 
         public DateTime DateDelivered { get; set; }
 
-        public List<Attachment> Attachments { get; set; }
+        public DateTime DateRead { get; set; }
 
+        public string Erased { get; set; }
+
+        public string FromIsOwner { get; set; }
+
+        public string Id { get; set; }
+
+        public string Identifier { get; set; }
+
+        public string JumpTargetId { get; set; }
+
+        public string Label { get; set; }
+
+        public string PositionAddress { get; set; }
+
+        public string Source { get; set; }
+
+        public string SourceApplication { get; set; }
+
+        public string Status { get; set; }
+
+        public string Subject { get; set; }
+
+        public DateTime TimeStamp { get; set; }
+
+        public string Type { get; set; }
+
+        #endregion
+
+        #region models
+        public Attachment Attachment { get; set; }
+        public Party From { get; set; }
         public Coordinate Position { get; set; }
 
-        //public MessageStatus Status {get;set;}
+        #endregion
 
+        #region multiModels
+        public List<Attachment> Attachments { get; set; }
         public List<Contact> SharedContacts { get; set; }
+        public List<Party> To { get; set; } = new List<Party>();
+        #endregion
 
-        public String Label { get; set; }
-
-        public String PositionAddress { get; set; }
-
-        public String ChatId { get; set; }
-
-        public String Erased { get; set; }
-
-        public String Source { get; set; }
-       
-        public String FromIsOwner { get; set; }
-
-        public String Identifier { get; set; }
-
-        public String Status { get; set; }
-
-        public String Type { get; set; }
-
-        public Attachment Attachment { get; set; }
+        //public MessageStatus Status {get;set;}
+        
         public override string ToString()
         {
             return SourceApplication;
         }
-        public String JumpTargetId { get; set; }
+        
     }
 }
