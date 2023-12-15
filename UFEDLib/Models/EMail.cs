@@ -23,10 +23,10 @@ namespace UFEDLib.Models
         #endregion
 
         #region multiModels
-        public List<Attachment> Attachments { get; set; }
-        public List<Party> Bcc { get; set; }
-        public List<Party> Cc { get; set; }
-        public List<Party> To { get; set; }
+        public List<Attachment> Attachments { get; set; } = new List<Attachment>();
+        public List<Party> Bcc { get; set; } = new List<Party>();
+        public List<Party> Cc { get; set; } = new List<Party>();
+        public List<Party> To { get; set; } = new List<Party>();
         #endregion
     }
 }

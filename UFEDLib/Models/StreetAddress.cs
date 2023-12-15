@@ -8,6 +8,27 @@ namespace UFEDLib.Models
 {
     public class StreetAddress
     {
+        #region fields
+        /// <summary>
+        /// Same values as ContactEntry categories
+        /// </summary>
+        public string Category { get; set; }
+        public string City { get; set; }
+        public string Country { get; set; }
+
+        public string HouseNumber { get; set; }
+
+        public string Neighborhood { get; set; }
+
+        public string POBox { get; set; }
+
+        /// <summary>
+        /// Address Postal Code or ZIP.
+        /// </summary>
+        public string PostalCode { get; set; }
+
+        public string State { get; set; }
+
         /// <summary>
         /// Street information.
         /// </summary>
@@ -18,27 +39,12 @@ namespace UFEDLib.Models
         /// </summary>
         public string Street2 { get; set; }
 
-        public string HouseNumber { get; set;}
+        #endregion
 
-        public string City { get; set;}
+        #region models
+        #endregion
 
-        public string State { get; set;}
-
-        public string Country { get; set;}
-
-        /// <summary>
-        /// Address Postal Code or ZIP.
-        /// </summary>
-        public string PostalCode { get; set;}
-
-        public string POBox { get; set;}
-
-        public string Neighborhood { get; set;}
-
-        /// <summary>
-        /// Same values as ContactEntry categories
-        /// </summary>
-        public string Category { get; set;}
-
+        #region multiModels
+        #endregion
     }
 }

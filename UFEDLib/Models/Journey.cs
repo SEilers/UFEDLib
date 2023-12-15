@@ -8,22 +8,41 @@ namespace UFEDLib.Models
 {
     internal class Journey
     {
+
+        #region fields
+        public DateTime EndTime { get; set; }
+
         public string Name { get; set; }
 
+        public string Source { get; set; }
+
+        public DateTime StartTime { get; set; }
+        #endregion
+
+        #region models
+        public Location FromPoint { get; set; }
+
+        public Location ToPoint { get; set; }
+        #endregion
+
+        #region multiModels
         /// <summary>
         /// Journey locations
         /// </summary>
+        public List<Location> WayPoints { get; set; } = new List<Location>();
+        #endregion
+        
 
-        public List<Location> WayPoints { get; set; }
+        
 
-        public string Source { get; set; }  
+        
 
-        public DateTime StartTime { get; set; }
+        
 
-        public DateTime EndTime { get; set; }   
+        
 
-        public Location FromPoint { get; set; }
+        
 
-        public Location ToPoint { get; set; }   
+           
     }
 }

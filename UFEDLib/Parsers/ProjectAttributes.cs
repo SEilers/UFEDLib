@@ -18,6 +18,8 @@ namespace UFEDLib
 
         public String ProjectName { get; set; }
 
+        public string ProjectId { get; set; }
+
         public String ReportVersion { get; set; }
 
         public int NodeCount { get; set; }

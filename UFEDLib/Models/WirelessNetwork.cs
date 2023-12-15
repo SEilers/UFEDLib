@@ -8,14 +8,12 @@ namespace UFEDLib.Models
 {
     internal class WirelessNetwork
     {
+        #region fields
         public string BSSId { get; set; }
-
-        public string SSId { get; set; }
-
-        public string SecurityMode { get; set; }
-
-        public DateTime LastConnection {  get; set; }
-
         public DateTime LastAutoConnection { get; set; }
+        public DateTime LastConnection { get; set; }
+        public string SecurityMode { get; set; }
+        public string SSId { get; set; }
+        #endregion
     }
 }

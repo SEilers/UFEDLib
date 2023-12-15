@@ -8,31 +8,52 @@ namespace UFEDLib.Models
 {
     internal class Location
     {
-        public Coordinate Position { get; set; }
-
-        public StreetAddress Address { get; set; }
-
-        public DateTime TimeStamp { get; set; } 
-
-        public string Name { get; set; }    
-
-        public string Description { get; set; } 
-
-        public string Type { get; set; }    
-
-        public string Precision { get; set; }
-
-        public string Map { get; set; }
-
-        public string Category { get; set; }    
+        #region fields
+        public string Category { get; set; }
 
         public string Confidence { get; set; }
 
+        public string Description { get; set; }
+
+        public string Map { get; set; }
+
+        public string Name { get; set; }
+        public string LocationOrigin { get; set; }
         public string Origin { get; set; }
+        public string PositionAddress { get; set; }
+        public string Precision { get; set; }
+        public DateTime TimeStamp { get; set; }
+        public string Type { get; set; }
+        #endregion
 
-        //public enum LocationOrigin { Unknown, Device, External}
+        #region models
+        public StreetAddress Address { get; set; }
+        public Coordinate Position { get; set; }
+        #endregion
 
-        public string PositionAddress { get; set; } 
+        #region multiModels
+        #endregion
+
+
+        
+
+        
+
+        
+
+        
+
+       
+
+        
+
+        
+
+       
+
+        
+
+        
 
     }
 }

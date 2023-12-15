@@ -9,6 +9,7 @@ namespace UFEDLib.Models
     [Serializable]
     public class Organization
     {
+        #region fields
         /// <summary>
         /// Oragnization name.
         /// </summary>
@@ -18,5 +19,13 @@ namespace UFEDLib.Models
         /// Contact’s position in the organization
         /// </summary>
         public string Position { get; set; }
+        #endregion
+
+        #region models
+        #endregion
+
+        #region multiModels
+        #endregion
+
     }
 }

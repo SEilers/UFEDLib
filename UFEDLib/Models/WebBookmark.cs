@@ -8,22 +8,19 @@ namespace UFEDLib.Models
 {
     internal class WebBookmark
     {
-        public string Title { get; set; }
-
-        public string Url { get; set; }
-
+        #region fields
         public DateTime LastVisted { get; set; }
-
-        public string Source { get; set; }
-
-        public int VisitCount { get; set; }
-
-        public DateTime TimeStamp { get; set; }
-
         public string Path { get; set; }
-
-        public Coordinate Position { get; set; }
-
         public string PositionAddress { get; set; }
+        public string Source { get; set; }
+        public DateTime TimeStamp { get; set; }
+        public string Title { get; set; }
+        public string Url { get; set; }
+        public int VisitCount { get; set; }
+        #endregion
+
+        #region models
+        public Coordinate Position { get; set; }
+        #endregion
     }
 }

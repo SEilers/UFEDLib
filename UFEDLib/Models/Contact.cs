@@ -35,6 +35,14 @@ namespace UFEDLib.Models
         public DateTime TimeModified { get; set; }
         #endregion
 
+        #region multiFields
+        /// <summary>
+        /// Contact Notes.
+        /// </summary>
+        public List<string> Notes { get; set; } = new List<string>();
+        #endregion
+
+
         #region models
         #endregion
 
@@ -48,11 +56,6 @@ namespace UFEDLib.Models
         /// Contact entries collection.
         /// </summary>
         public List<ContactEntry> Entries { get; set; } = new List<ContactEntry>();
-
-        /// <summary>
-        /// Contact Notes.
-        /// </summary>
-        public List<string> Notes { get; set; } = new List<string>();
 
         /// <summary>
         /// Organizations collection.

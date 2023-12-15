@@ -31,6 +31,7 @@ namespace UFEDLib.Parsers
                 {
                     if (reader.Name == "project" && reader.NodeType != XmlNodeType.EndElement)
                     {
+                        ufedProjectAttributes.ProjectId = reader.GetAttribute("id");
                         ufedProjectAttributes.ProjectName = reader.GetAttribute("name");
                         ufedProjectAttributes.NodeCount = int.Parse(reader.GetAttribute("NodeCount"));
                         ufedProjectAttributes.ModelCount = int.Parse(reader.GetAttribute("ModelCount"));

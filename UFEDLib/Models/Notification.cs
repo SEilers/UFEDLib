@@ -10,32 +10,35 @@ namespace UFEDLib.Models
     [Serializable]
     public class Notification
     {
-        public List<Party> Participants { get; set; }
-
-        public Party To { get; set; }
-
-        public string Subject { get; set; }
-
-        public string Body { get; set; }    
-
-        public string Source { get; set; }
-
-        public DateTime TimeStamp { get; set; }
-
+        #region fields
+        public string Body { get; set; }
         public DateTime DateRead { get; set; }
-
-        public List<Attachment> Attachments { get; set; }
-
-        public Coordinate Position { get; set; }
-
-        // public MessageStatus Status {get;set}
-
-        public string PositionAddress { get; set; }
-
-        //public List<WebAddress> Urls { get; set; } = new List<WebAddress>();
-
-        //public NotificationType Type {get;set}
-
         public string NotificationId { get; set; }
+        //public NotificationType Type {get;set}
+        public string PositionAddress { get; set; }
+        public string Source { get; set; }
+        // public MessageStatus Status {get;set}
+        public string Subject { get; set; }
+        public DateTime TimeStamp { get; set; }
+        #endregion
+
+        #region models
+        public Coordinate Position { get; set; }
+        public Party To { get; set; }
+        #endregion
+
+        #region multiModels
+        public List<Attachment> Attachments { get; set; }
+        public List<Party> Participants { get; set; }
+        //public List<WebAddress> Urls { get; set; } = new List<WebAddress>();
+        #endregion
+
+        
+
+
+
+        
+
+
     }
 }

@@ -8,18 +8,20 @@ namespace UFEDLib.Models
 {
     internal class SharedFile
     {
-        public string Caption { get; set; } 
-
-        public string Source { get; set; }  
-
-        //public FileType Type { get; set; }  
-
+        #region fields
+        public string Caption { get; set; }
+        public Party Owner { get; set; }
+        public string Source { get; set; }
         public DateTime TimeStamp { get; set; }
+        public String Type { get; set; }  
+        #endregion
 
-        public Party Owner { get; set; }    
+        #region models
+        #endregion
 
+        #region multiModels
+        public List<InstantMessage> Comments { get; set; }  = new List<InstantMessage>();
         public List<Party> Responders { get; set; }
-
-        public List<InstantMessage> Comments { get; set; }
+        #endregion
     }
 }

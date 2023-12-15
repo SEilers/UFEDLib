@@ -27,8 +27,5 @@ namespace UFEDLib.Models
         public String Name { get; set; }
 
         #endregion
-
-
-
     }
 }

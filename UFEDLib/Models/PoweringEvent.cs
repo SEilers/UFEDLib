@@ -8,14 +8,16 @@ namespace UFEDLib.Models
 {
     internal class PoweringEvent
     {
-        public PowerElementType Element { get; set; }
-
-        public enum PowerElementType { Device }
-
+        #region fields
+        public String Element { get; set; }
+        public String Event { get; set; }
         public DateTime TimeStamp { get; set; }
+        #endregion
 
-        public EventEnum Event { get; set; }
+        #region models
+        #endregion
 
-        public enum EventEnum  { On, Off, Reset }
+        #region multiModels
+        #endregion
     }
 }

@@ -8,14 +8,27 @@ namespace UFEDLib.Models
 {
     internal class VisitedPage
     {
-        public string Title { get; set; }   
+        #region fields
+        public string LastVisited { get; set; }
+
+        public string Source { get; set; }
+
+        public string Title { get; set; }
 
         public string Url { get; set; }
 
-        public string LastVisited {  get; set; }
-
         public int VisitCount { get; set; }
+        #endregion
 
-        public string Source { get; set; }
+
+
+
+        
+
+        
+
+        
+
+        
     }
 }

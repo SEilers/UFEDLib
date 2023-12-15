@@ -8,16 +8,19 @@ namespace UFEDLib.Models
 {
     internal class SearchedItem
     {
+        #region fields
+        public string PositionAddress { get; set; }
+        public string SearchResults { get; set; }
+        public string Source { get; set; }
         public DateTime TimeStamp { get; set; }
+        public string Value { get; set; }
+        #endregion
 
-        public string Value { get; set; }   
-
-        public string Source { get; set; }  
-
-        public string SearchResults { get; set; }   
-
+        #region models
         public Coordinate Position { get; set; }
+        #endregion
 
-        public string PositionAddress { get; set; } 
+        #region multiModels
+        #endregion
     }
 }

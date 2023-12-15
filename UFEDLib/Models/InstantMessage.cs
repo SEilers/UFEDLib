@@ -54,8 +54,8 @@ namespace UFEDLib.Models
         #endregion
 
         #region multiModels
-        public List<Attachment> Attachments { get; set; }
-        public List<Contact> SharedContacts { get; set; }
+        public List<Attachment> Attachments { get; set; } = new List<Attachment>();
+        public List<Contact> SharedContacts { get; set; } = new List<Contact>();
         public List<Party> To { get; set; } = new List<Party>();
         #endregion
 

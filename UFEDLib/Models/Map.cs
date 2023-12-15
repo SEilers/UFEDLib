@@ -8,12 +8,13 @@ namespace UFEDLib.Models
 {
     internal class Map
     {
-        public string Source { get; set; }  
-
+        #region fields
+        public string Source { get; set; }
         public int ZoomLevel { get; set; }
+        #endregion
 
-        public List<string> Tiles { get; set; } 
-
-
+        #region multiFields
+        public List<string> Tiles { get; set; } = new List<string>();
+        #endregion
     }
 }

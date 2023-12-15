@@ -9,23 +9,25 @@ namespace UFEDLib
     [Serializable]
     public class Party
     {
-        public string Id { get; set; }
-        public string Role { get; set; }
-
-        public string Identifier { get; set; }
-        public string Name { get; set; }
-
-        // public PartyStatus Status {get; set; }
-
+        #region fields
+    
         public DateTime DateDellivered { get; set; }
-
-        public DateTime DateRead { get; set; }
-
         public DateTime DatePlayed { get; set; }
-
+        public DateTime DateRead { get; set; }
+        public string Id { get; set; }
+        public string Identifier { get; set; }
         public string IPAddress { get; set; }
-
         public bool IsPhoneOwner { get; set; }
+        public string Name { get; set; }
+        public string Role { get; set; }
+        // public PartyStatus Status {get; set; }
+        #endregion
+
+        #region models
+        #endregion
+
+        #region multiModels
+        #endregion
 
         public override string ToString()
         {
