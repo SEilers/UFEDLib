@@ -17,32 +17,33 @@ namespace UFEDLib.Parsers
 
             var fieldElements = searchedItemElement.Elements(xNamespace + "field");
 
-            foreach (var fieldElement in fieldElements)
+            foreach (var field in fieldElements)
             {
-                switch (fieldElement.Attribute("name").Value)
+                switch (field.Attribute("name").Value)
                 {
                     case "TimeStamp":
-                        result.TimeStamp = DateTime.Parse(fieldElement.Value.Trim());
+                        if (field.Value.Trim() != "")
+                            result.TimeStamp = DateTime.Parse(field.Value.Trim());
                         break;
 
                     case "Value":
-                        result.Value = fieldElement.Value.Trim();
+                        result.Value = field.Value.Trim();
                         break;
 
                     case "Source":
-                        result.Source = fieldElement.Value.Trim();
+                        result.Source = field.Value.Trim();
                         break;
 
                     case "SearchResult":
-                        result.SearchResults = fieldElement.Value.Trim();
+                        result.SearchResults = field.Value.Trim();
                         break;
 
                     case "Position":
-                        result.Position = CoordinateParser.Parse(fieldElement);
+                        result.Position = CoordinateParser.Parse(field);
                         break;
 
                     case "PositionAddress":
-                        result.PositionAddress = fieldElement.Value.Trim();
+                        result.PositionAddress = field.Value.Trim();
                         break;
                 }
             }

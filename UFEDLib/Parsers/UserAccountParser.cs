@@ -47,7 +47,8 @@ namespace UFEDLib.Parsers
                         break;
 
                     case "TimeCreated":
-                        result.TimeCreated = DateTime.Parse(field.Value.Trim());
+                        if (field.Value.Trim() != "")
+                            result.TimeCreated = DateTime.Parse(field.Value.Trim());
                         break;
 
                     case "Source":

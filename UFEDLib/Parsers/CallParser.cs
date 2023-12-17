@@ -21,39 +21,41 @@ namespace UFEDLib.Parsers
             {
                 var fieldElements = callNode.Elements(xNamespace + "field");
 
-                foreach ( var fieldElement in fieldElements) 
+                foreach ( var field in fieldElements) 
                 {
-                    switch(fieldElement.Attribute("name").Value)
+                    switch(field.Attribute("name").Value)
                     {
                         case "Type":
-                            result.Type = fieldElement.Value.Trim();
+                            result.Type = field.Value.Trim();
                             break;
                         case "TimeStamp":
-                            result.TimeStamp = DateTime.Parse(fieldElement.Value.Trim());
+                            if (field.Value.Trim() != "")
+                                result.TimeStamp = DateTime.Parse(field.Value.Trim());
                             break;
                         case "Duration":
-                            result.Duration = TimeSpan.Parse(fieldElement.Value.Trim());
+                            if (field.Value.Trim() != "")
+                                result.Duration = TimeSpan.Parse(field.Value.Trim());
                             break;
                         case "Source":
-                            result.Source = fieldElement.Value.Trim();
+                            result.Source = field.Value.Trim();
                             break;
                         case "Direction":
-                            result.Direction = fieldElement.Value.Trim();
+                            result.Direction = field.Value.Trim();
                             break;
                         case "Status":
-                            result.Status = fieldElement.Value.Trim();
+                            result.Status = field.Value.Trim();
                             break;
                         case "NetworkName":
-                            result.NetworkName = fieldElement.Value.Trim();
+                            result.NetworkName = field.Value.Trim();
                             break;
                         case "NetworkCode":
-                            result.NetworkCode = fieldElement.Value.Trim();
+                            result.NetworkCode = field.Value.Trim();
                             break;
                         case "VideoCall":
-                            result.VideoCall = bool.Parse(fieldElement.Value.Trim());
+                            result.VideoCall = bool.Parse(field.Value.Trim());
                             break;
                         case "CountryCode":
-                            result.CountryCode = fieldElement.Value.Trim();
+                            result.CountryCode = field.Value.Trim();
                             break;
                         default:
                             break;

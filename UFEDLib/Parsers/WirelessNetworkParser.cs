@@ -35,11 +35,13 @@ namespace UFEDLib.Parsers
                         break;
 
                     case "LastConnection":
-                        result.LastConnection = DateTime.Parse(field.Value.Trim());
+                        if (field.Value.Trim() != "")
+                            result.LastConnection = DateTime.Parse(field.Value.Trim());
                         break;
 
                     case "LastAutoConnection":
-                        result.LastAutoConnection = DateTime.Parse(field.Value.Trim());
+                        if (field.Value.Trim() != "")
+                            result.LastAutoConnection = DateTime.Parse(field.Value.Trim());
                         break;
                 }
             }

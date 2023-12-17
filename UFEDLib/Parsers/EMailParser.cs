@@ -44,7 +44,8 @@ namespace UFEDLib.Parsers
                         break;
 
                     case "TimeStamp":
-                        result.TimeStamp = DateTime.Parse(field.Value.Trim());
+                        if (field.Value.Trim() != "")
+                            result.TimeStamp = DateTime.Parse(field.Value.Trim());
                         break;
 
                     case "Priority":

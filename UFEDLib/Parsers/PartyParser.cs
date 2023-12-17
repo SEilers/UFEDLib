@@ -55,15 +55,18 @@ namespace UFEDLib.Parsers
                         break;
 
                     case "DateDellivered":
-                        result.DateDellivered = DateTime.Parse(field.Value.Trim());
+                        if (field.Value.Trim() != "")
+                            result.DateDellivered = DateTime.Parse(field.Value.Trim());
                         break;
 
                     case "DateRead":
-                        result.DateRead = DateTime.Parse(field.Value.Trim());
+                        if (field.Value.Trim() != "")
+                            result.DateRead = DateTime.Parse(field.Value.Trim());
                         break;
 
                     case "DatePlayed":
-                        result.DatePlayed = DateTime.Parse(field.Value.Trim());
+                        if (field.Value.Trim() != "")
+                            result.DatePlayed = DateTime.Parse(field.Value.Trim());
                         break;
 
                     case "IPAddress":

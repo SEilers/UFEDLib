@@ -65,15 +65,18 @@ namespace UFEDLib.Parsers
                         break;
 
                     case "TimeContacted":
-                        result.TimeContacted = DateTime.Parse(field.Value.Trim());
+                        if (field.Value.Trim() != "")
+                            result.TimeContacted = DateTime.Parse(field.Value.Trim());
                         break;
 
                     case "TimeCreated":
-                        result.TimeCreated = DateTime.Parse(field.Value.Trim());
+                        if (field.Value.Trim() != "")
+                            result.TimeCreated = DateTime.Parse(field.Value.Trim());
                         break;
 
                     case "TimeModified":
-                        result.TimeModified = DateTime.Parse(field.Value.Trim());
+                        if (field.Value.Trim() != "")
+                            result.TimeModified = DateTime.Parse(field.Value.Trim());
                         break;
 
                     case "TimesContacted":

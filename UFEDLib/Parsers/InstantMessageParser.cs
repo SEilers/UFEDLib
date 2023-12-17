@@ -16,7 +16,8 @@ namespace UFEDLib.Parsers
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
             List<InstantMessage> result = new List<InstantMessage>();
 
-            IEnumerable<XElement> instantMessages = messagesElement.Descendants(xNamespace + "model").Where(x => x.Attribute("type").Value == "InstantMessage");
+            //IEnumerable<XElement> instantMessages = messagesElement.Descendants(xNamespace + "model").Where(x => x.Attribute("type").Value == "InstantMessage");
+            IEnumerable<XElement> instantMessages = messagesElement.Elements(xNamespace + "model").Where(element => element.Attribute("type").Value == "InstantMessage");
 
             foreach (XElement message in instantMessages)
             {

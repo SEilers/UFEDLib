@@ -17,24 +17,26 @@ namespace UFEDLib.Parsers
 
             var fieldElements = journeyElement.Elements(xNamespace + "field");
 
-            foreach (var fieldElement in fieldElements)
+            foreach (var field in fieldElements)
             {
-                switch (fieldElement.Attribute("name").Value)
+                switch (field.Attribute("name").Value)
                 {
                     case "Name":
-                        result.Name = fieldElement.Value.Trim();
+                        result.Name = field.Value.Trim();
                         break;
 
                     case "Source":
-                        result.Source = fieldElement.Value.Trim();
+                        result.Source = field.Value.Trim();
                         break;
 
                     case "StartTime":
-                        result.StartTime = DateTime.Parse(fieldElement.Value.Trim());
+                        if (field.Value.Trim() != "")
+                            result.StartTime = DateTime.Parse(field.Value.Trim());
                         break;
 
                     case "EndTime":
-                        result.EndTime = DateTime.Parse(fieldElement.Value.Trim());
+                        if (field.Value.Trim() != "")
+                            result.EndTime = DateTime.Parse(field.Value.Trim());
                         break;
 
 
