@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UFEDLib
+namespace UFEDLib.Models
 {
     [Serializable]
     public class Party

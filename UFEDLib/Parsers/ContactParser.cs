@@ -10,7 +10,7 @@ using System.Xml.XPath;
 using UFEDLib.Models;
 using UFEDLib.Parsers;
 
-namespace UFEDLib
+namespace UFEDLib.Parsers
 {
     public class ContactParser
     {
