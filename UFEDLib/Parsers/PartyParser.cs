@@ -15,7 +15,7 @@ namespace UFEDLib.Parsers
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
             List<Party> result = new List<Party>();
 
-            IEnumerable<XElement> parties = partiesElement.Descendants(xNamespace + "model").Where(x => x.Attribute("type").Value == "Party");
+            IEnumerable<XElement> parties = partiesElement.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "Party");
 
             foreach (XElement party in parties)
             {

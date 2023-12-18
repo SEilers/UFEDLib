@@ -16,7 +16,7 @@ namespace UFEDLib.Parsers
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
             List<Organization> result = new List<Organization>();
 
-            IEnumerable<XElement> organizations = oraganizationElement.Descendants(xNamespace + "model").Where(x => x.Attribute("type").Value == "Organization");
+            IEnumerable<XElement> organizations = oraganizationElement.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "Organization");
 
             foreach (XElement organization in organizations)
             {

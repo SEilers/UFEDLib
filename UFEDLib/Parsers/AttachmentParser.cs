@@ -16,7 +16,7 @@ namespace UFEDLib.Parsers
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
             List<Attachment> result = new List<Attachment>();
 
-            IEnumerable<XElement> attachments = attachmentElement.Descendants(xNamespace + "model").Where(x => x.Attribute("type").Value == "Attachment");
+            IEnumerable<XElement> attachments = attachmentElement.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "Attachment");
 
             foreach (XElement attachment in attachments)
             {

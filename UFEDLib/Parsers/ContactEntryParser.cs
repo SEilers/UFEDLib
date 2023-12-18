@@ -19,7 +19,7 @@ namespace UFEDLib.Parsers
             // ContactEntry is UserID, PhoneNumber, EMailAddress, WebAddress
             //IEnumerable<XElement> contactEntries = ContactEntriesElement.Descendants(xNamespace + "model").Where(x => x.Attribute("type").Value == "ContactEntry");
 
-            IEnumerable<XElement> contactEntries = ContactEntriesElement.Descendants(xNamespace + "model")
+            IEnumerable<XElement> contactEntries = ContactEntriesElement.Elements(xNamespace + "model")
                 .Where(x => x.Attribute("type").Value == "UserID" || 
                     x.Attribute("type").Value == "PhoneNumber" || 
                     x.Attribute("type").Value == "EMailAddress" || 

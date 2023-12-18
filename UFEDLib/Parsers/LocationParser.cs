@@ -15,7 +15,7 @@ namespace UFEDLib.Parsers
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
             List<Location> result = new List<Location>();
 
-            IEnumerable<XElement> locationElements = locationsElement.Descendants(xNamespace + "model").Where(x => x.Attribute("type").Value == "Location");
+            IEnumerable<XElement> locationElements = locationsElement.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "Location");
 
             foreach (var locationElement in locationElements)
             {

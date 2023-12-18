@@ -15,7 +15,7 @@ namespace UFEDLib.Parsers
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
             List<ContactPhoto> result = new List<ContactPhoto>();
 
-            IEnumerable<XElement> contactPhotos = contactPhotosElement.Descendants(xNamespace + "model").Where(x => x.Attribute("type").Value == "ContactPhoto");
+            IEnumerable<XElement> contactPhotos = contactPhotosElement.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "ContactPhoto");
 
             foreach (XElement contactPhoto in contactPhotos)
             {
