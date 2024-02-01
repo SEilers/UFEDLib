@@ -11,7 +11,7 @@ namespace UFEDLib.Parsers
 {
     internal class AttachmentParser
     {
-        public static List<Attachment> ParseAttachments(XElement attachmentElement)
+        public static List<Attachment> ParseAttachments(XElement attachmentElement, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
             List<Attachment> result = new List<Attachment>();
@@ -20,21 +20,23 @@ namespace UFEDLib.Parsers
 
             foreach (XElement attachment in attachments)
             {
-                Attachment a = Parse(attachment);
+                Attachment a = Parse(attachment, debugAttributes);
                 result.Add(a);
             }
 
             return result;
         }
 
-        public static Attachment Parse(XElement attachmentNode)
+        public static Attachment Parse(XElement attachmentNode, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
 
             Attachment result = new Attachment();
 
             var fieldElements = attachmentNode.Elements(xNamespace + "field");
- 
+            var multiFieldElements = attachmentNode.Elements(xNamespace + "multiField");
+            var multiModelFieldElements = attachmentNode.Elements(xNamespace + "multiModelField");
+
             foreach (var field in fieldElements)
             {
                 switch (field.Attribute("name").Value)
@@ -53,6 +55,39 @@ namespace UFEDLib.Parsers
 
                     case "URL":
                         result.URL = field.Value.Trim();
+                        break;
+
+                    default:
+                        if (debugAttributes)
+                        {
+                            Console.WriteLine("AttachmentParser: Unknown attribute: " + field.Attribute("name").Value);
+                        }
+                        break;
+                }
+            }
+
+            foreach (var multiField in multiFieldElements)
+            {
+                switch (multiField.Attribute("name").Value)
+                {
+                    default:
+                        if (debugAttributes)
+                        {
+                            Console.WriteLine("AttachmentParser:Unknown multiAttribute: " + multiField.Attribute("name").Value);
+                        }
+                        break;
+                }
+            }
+
+            foreach (var multiModelField in multiModelFieldElements)
+            {
+                switch (multiModelField.Attribute("name").Value)
+                {
+                    default:
+                        if (debugAttributes)
+                        {
+                            Console.WriteLine("AttachmentParser: Unknown multiModelAttribute: " + multiModelField.Attribute("name").Value);
+                        }
                         break;
                 }
             }

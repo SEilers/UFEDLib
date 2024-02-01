@@ -9,8 +9,11 @@ namespace UFEDLib.Models
     [Serializable]
     public class Contact
     {
+        
         #region fields
         public string Account { get; set; }
+
+        public string AdditionalInfo { get; set; }
 
         public string Group { get; set; }
 
@@ -20,6 +23,8 @@ namespace UFEDLib.Models
         /// Contact Name.
         /// </summary>
         public string Name { get; set; }
+        
+        public string ServiceIdentifier { get; set; }
 
         /// <summary>
         /// Contact Source.
@@ -33,6 +38,9 @@ namespace UFEDLib.Models
         public DateTime TimeCreated { get; set; }
 
         public DateTime TimeModified { get; set; }
+        public string UserMapping { get; set; }
+
+        public string Type { get; set; }
         #endregion
 
         #region multiFields
@@ -40,6 +48,8 @@ namespace UFEDLib.Models
         /// Contact Notes.
         /// </summary>
         public List<string> Notes { get; set; } = new List<string>();
+        public List<string> InteractionStatuses { get; set; } = new List<string>();
+        public List<string> UserTags { get; set; } = new List<string>();
         #endregion
 
 
@@ -47,6 +57,9 @@ namespace UFEDLib.Models
         #endregion
 
         #region multiModels
+
+        public Dictionary<string, string> AdditionalInfos { get; set; } = new Dictionary<string, string>();
+
         /// <summary>
         /// Addresses collection.
         /// </summary>
@@ -67,6 +80,7 @@ namespace UFEDLib.Models
         /// Contact Photos.
         /// </summary>
         public List<ContactPhoto> Photos { get; set; } = new List<ContactPhoto>();
+      
         #endregion
     }
 }

@@ -10,7 +10,7 @@ namespace UFEDLib.Parsers
 {
     internal class StreetAddressParser
     {
-        public static List<StreetAddress> ParseStreetAddresses(XElement streetAddresssElement)
+        public static List<StreetAddress> ParseStreetAddresses(XElement streetAddresssElement, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
             List<StreetAddress> result = new List<StreetAddress>();
@@ -19,20 +19,23 @@ namespace UFEDLib.Parsers
 
             foreach (XElement streetAddress in streetAddresses)
             {
-                StreetAddress s = Parse(streetAddress);
+                StreetAddress s = Parse(streetAddress, debugAttributes);
                 result.Add(s);
             }
 
             return result;
         }
 
-        public static StreetAddress Parse(XElement streetAddressNode)
+        public static StreetAddress Parse(XElement streetAddressNode, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
 
             StreetAddress result = new StreetAddress();
 
             var fieldElements = streetAddressNode.Elements(xNamespace + "field");
+            var multiFieldElements = streetAddressNode.Elements(xNamespace + "multiField");
+            var multiModelFieldElements = streetAddressNode.Elements(xNamespace + "multiModelField");
+
 
             foreach (var field in fieldElements)
             {
@@ -77,6 +80,36 @@ namespace UFEDLib.Parsers
                         break;
 
                     default:
+                        if (debugAttributes)
+                        {
+                            Console.WriteLine("StreetAddressParser.Parse: Unhandled field: " + field.Attribute("name").Value);
+                        }
+                        break;
+                }
+            }
+
+            foreach (var multiField in multiFieldElements)
+            {
+                switch (multiField.Attribute("name").Value)
+                {
+                    default:
+                        if (debugAttributes)
+                        {
+                            Console.WriteLine("StreetAddressParser.Parse: Unhandled multiField: " + multiField.Attribute("name").Value);
+                        }
+                        break;
+                }
+            }
+
+            foreach (var multiModelField in multiModelFieldElements)
+            {
+                switch (multiModelField.Attribute("name").Value)
+                {
+                    default:
+                        if (debugAttributes)
+                        {
+                            Console.WriteLine("StreetAddressParser.Parse: Unhandled multiModelField: " + multiModelField.Attribute("name").Value);
+                        }
                         break;
                 }
             }

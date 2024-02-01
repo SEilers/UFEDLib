@@ -12,7 +12,7 @@ namespace UFEDLib.Parsers
 {
     public class CallParser
     {
-        public static Call Parse(XElement callNode)
+        public static Call Parse(XElement callNode, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
             Call result = new Call();
@@ -20,6 +20,8 @@ namespace UFEDLib.Parsers
             try
             {
                 var fieldElements = callNode.Elements(xNamespace + "field");
+                var multiFieldElements = callNode.Elements(xNamespace + "multiField");
+                var multiModelFieldElements = callNode.Elements(xNamespace + "multiModelField");
 
                 foreach ( var field in fieldElements) 
                 {
@@ -58,28 +60,44 @@ namespace UFEDLib.Parsers
                             result.CountryCode = field.Value.Trim();
                             break;
                         default:
+                            if( debugAttributes)
+                            {
+                                Console.WriteLine("CallParse: Unknown field: " + field.Attribute("name").Value);
+                            }
                             break;
 
                     }
                 }
 
-                var multiModelFieldElements = callNode.Elements(xNamespace + "multiModelField");
-
-                foreach (var multiField in multiModelFieldElements)
+                foreach (var multiField in multiFieldElements)
                 {
                     switch (multiField.Attribute("name").Value)
                     {
-                        case "Parties":
-                            result.Parties = PartyParser.ParseParties(multiField);
-                            break;
-
                         default:
+                            if (debugAttributes)
+                            {
+                                Console.WriteLine("CallParser: Unknown multiAttribute: " + multiField.Attribute("name").Value);
+                            }
                             break;
                     }
                 }
 
+                foreach (var multiModelField in multiModelFieldElements)
+                {
+                    switch (multiModelField.Attribute("name").Value)
+                    {
+                        case "Parties":
+                            result.Parties = PartyParser.ParseParties(multiModelField, debugAttributes);
+                            break;
 
-
+                        default:
+                            if (debugAttributes)
+                            {
+                                Console.WriteLine("CallParser: Unknown multiModelAttribute: " + multiModelField.Attribute("name").Value);
+                            }
+                            break;
+                    }
+                }
             }
             catch (Exception e)
             {

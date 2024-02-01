@@ -10,13 +10,14 @@ namespace UFEDLib.Parsers
 {
     internal class EMailParser
     {
-        public static EMail Parse(XElement emailNode)
+        public static EMail Parse(XElement emailNode, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
 
             EMail result = new EMail();
 
             var fieldElements = emailNode.Elements(xNamespace + "field");
+            var multiFieldElements = emailNode.Elements(xNamespace + "multiField");
             var multiModelFieldElements = emailNode.Elements(xNamespace + "multiModelField");
 
             foreach (var field in fieldElements)
@@ -55,30 +56,61 @@ namespace UFEDLib.Parsers
                     case "Source":
                         result.Source = field.Value.Trim();
                         break;
+
+                    default:
+                        if (debugAttributes)
+                        {
+                            Console.WriteLine("EMailParser: Unknown attribute: " + field.Attribute("name").Value);
+                        }
+                        break;
                 }
             }
 
-            foreach (var multiField in multiModelFieldElements)
+            foreach (var multiField in multiFieldElements)
             {
                 switch (multiField.Attribute("name").Value)
                 {
-                    case "To":
-                        result.To = PartyParser.ParseParties(multiField);
-                        break;
-
-                    case "Cc":
-                        result.Cc = PartyParser.ParseParties(multiField);
-                        break;
-
-                    case "Bcc":
-                        result.Bcc = PartyParser.ParseParties(multiField);
-                        break;
-
-                    case "Attachments":
-                        result.Attachments = AttachmentParser.ParseAttachments(multiField);
+                    default:
+                        if (debugAttributes)
+                        {
+                            Console.WriteLine("EMailParser: Unknown multiField: " + multiField.Attribute("name").Value);
+                        }
                         break;
                 }
             }
+
+            
+
+            foreach (var multiModelField in multiModelFieldElements)
+            {
+                switch (multiModelField.Attribute("name").Value)
+                {
+                    case "To":
+                        result.To = PartyParser.ParseParties(multiModelField, debugAttributes);
+                        break;
+
+                    case "Cc":
+                        result.Cc = PartyParser.ParseParties(multiModelField, debugAttributes);
+                        break;
+
+                    case "Bcc":
+                        result.Bcc = PartyParser.ParseParties(multiModelField, debugAttributes);
+                        break;
+
+                    case "Attachments":
+                        result.Attachments = AttachmentParser.ParseAttachments(multiModelField, debugAttributes);
+                        break;
+
+                    default:
+                        if (debugAttributes)
+                        {
+                            Console.WriteLine("EMailParser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
+                        }
+                        break;
+                }
+            }
+
+
 
 
             return result;

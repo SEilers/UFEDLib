@@ -12,7 +12,7 @@ namespace UFEDLib.Parsers
 {
     internal class CoordinateParser
     {
-        public static Coordinate Parse(XElement corrdinateElement)
+        public static Coordinate Parse(XElement corrdinateElement, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
             Coordinate result = new Coordinate();
@@ -45,6 +45,39 @@ namespace UFEDLib.Parsers
 
                     case "PositionAddress":
                         result.PositionAddress = fieldElement.Value.Trim();
+                        break;
+
+                    default:
+                        if (debugAttributes)
+                        {
+                            Console.WriteLine("CoordinateParser: Unhandled field: " + fieldElement.Attribute("name").Value);
+                        }
+                        break;
+                }
+            }
+
+            foreach (var multiField in corrdinateElement.Elements(xNamespace + "multiField"))
+            {
+                switch (multiField.Attribute("name").Value)
+                {
+                    default:
+                        if (debugAttributes)
+                        {
+                            Console.WriteLine("CoordinateParser: Unhandled multiField: " + multiField.Attribute("name").Value);
+                        }
+                        break;
+                }
+            }
+
+            foreach (var multiModelField in corrdinateElement.Elements(xNamespace + "multiModelField"))
+            {
+                switch (multiModelField.Attribute("name").Value)
+                {
+                    default:
+                        if (debugAttributes)
+                        {
+                            Console.WriteLine("CoordinateParser: Unhandled multiModelField: " + multiModelField.Attribute("name").Value);
+                        }
                         break;
                 }
             }

@@ -10,13 +10,15 @@ namespace UFEDLib.Parsers
 {
     internal class WirelessNetworkParser
     {
-        public static WirelessNetwork Parse(XElement wirelessNetworkNode)
+        public static WirelessNetwork Parse(XElement wirelessNetworkNode, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
 
             WirelessNetwork result = new WirelessNetwork();
 
             var fieldElements = wirelessNetworkNode.Elements(xNamespace + "field");
+            var multiFieldElements = wirelessNetworkNode.Elements(xNamespace + "multiField");
+            var multiModelFieldElements = wirelessNetworkNode.Elements(xNamespace + "multiModelField");
 
             foreach (var field in fieldElements)
             {
@@ -42,6 +44,39 @@ namespace UFEDLib.Parsers
                     case "LastAutoConnection":
                         if (field.Value.Trim() != "")
                             result.LastAutoConnection = DateTime.Parse(field.Value.Trim());
+                        break;
+
+                    default:
+                        if (debugAttributes)
+                        {
+                            Console.WriteLine("WirelessNetworkParser: Unhandled field: " + field.Attribute("name").Value);
+                        }
+                        break;
+                }
+            }
+
+            foreach (var multiField in multiFieldElements)
+            {
+                switch (multiField.Attribute("name").Value)
+                {
+                    default:
+                        if (debugAttributes)
+                        {
+                            Console.WriteLine("WirelessNetworkParser: Unhandled multiField: " + multiField.Attribute("name").Value);
+                        }
+                        break;
+                }
+            }
+
+            foreach (var multiModelField in multiModelFieldElements)
+            {
+                switch (multiModelField.Attribute("name").Value)
+                {
+                    default:
+                        if (debugAttributes)
+                        {
+                            Console.WriteLine("WirelessNetworkParser: Unhandled multiModelField: " + multiModelField.Attribute("name").Value);
+                        }
                         break;
                 }
             }

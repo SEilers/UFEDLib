@@ -10,7 +10,7 @@ namespace UFEDLib.Parsers
 {
     internal class PartyParser
     {
-        public static List<Party> ParseParties(XElement partiesElement)
+        public static List<Party> ParseParties(XElement partiesElement, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
             List<Party> result = new List<Party>();
@@ -19,21 +19,23 @@ namespace UFEDLib.Parsers
 
             foreach (XElement party in parties)
             {
-                Party p = PartyParser.Parse(party);
+                Party p = PartyParser.Parse(party, debugAttributes);
                 result.Add(p);
             }
 
             return result;
         }
 
-        public static Party Parse(XElement xElement)
+        public static Party Parse(XElement xElement, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
 
             Party result = new Party();
 
             var fieldElements = xElement.Elements(xNamespace + "field");
-
+            var multiFieldElements = xElement.Elements(xNamespace + "multiField");
+            var multiModelFieldElements = xElement.Elements(xNamespace + "multiModelField");
+            
             foreach (var field in fieldElements)
             {
                 switch (field.Attribute("name").Value)
@@ -78,14 +80,43 @@ namespace UFEDLib.Parsers
                         {
                             result.IsPhoneOwner = bool.Parse(field.Value.Trim());
                         }
-
-                        
                         break;
 
                     default:
+                        if (debugAttributes)
+                        {
+                            Console.WriteLine("PartyParser: Unknown attribute: " + field.Attribute("name").Value);
+                        }
                         break;
                 }
             }
+
+            foreach (var multiField in multiFieldElements)
+            {
+                switch (multiField.Attribute("name").Value)
+                {
+                    default:
+                        if (debugAttributes)
+                        {
+                            Console.WriteLine("PartyParser: Unknown multiAttribute: " + multiField.Attribute("name").Value);
+                        }
+                        break;
+                }
+            }
+
+            foreach (var multiModelField in multiModelFieldElements)
+            {
+                switch (multiModelField.Attribute("name").Value)
+                {
+                    default:
+                        if (debugAttributes)
+                        {
+                            Console.WriteLine("PartyParser: Unknown multiModelAttribute: " + multiModelField.Attribute("name").Value);
+                        }
+                        break;
+                }
+            }
+
 
             return result;
         }

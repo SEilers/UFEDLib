@@ -10,7 +10,7 @@ namespace UFEDLib.Parsers
 {
     internal class ContactPhotoParser
     {
-        public static List<ContactPhoto> ParseContactPhotos(XElement contactPhotosElement)
+        public static List<ContactPhoto> ParseContactPhotos(XElement contactPhotosElement, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
             List<ContactPhoto> result = new List<ContactPhoto>();
@@ -19,14 +19,14 @@ namespace UFEDLib.Parsers
 
             foreach (XElement contactPhoto in contactPhotos)
             {
-                ContactPhoto c = ContactPhotoParser.Parse(contactPhoto);
+                ContactPhoto c = ContactPhotoParser.Parse(contactPhoto, debugAttributes);
                 result.Add(c);
             }
 
             return result;
         }
 
-        public static ContactPhoto Parse(XElement contactNode)
+        public static ContactPhoto Parse(XElement contactNode, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
 
@@ -42,6 +42,38 @@ namespace UFEDLib.Parsers
                         result.Name = field.Value.Trim();
                         break;
                     default:
+                        if (debugAttributes)
+                        {
+                            Console.WriteLine("ContactPhotoParser: Unhandled field: " + field.Attribute("name").Value);
+                        }
+                        break;
+                }
+            }
+
+            foreach (var multiField in contactNode.Elements(xNamespace + "multiField"))
+            {
+                switch (multiField.Attribute("name").Value)
+                {
+                    case "Data":
+                        break;
+                    default:
+                        if (debugAttributes)
+                        {
+                            Console.WriteLine("ContactPhotoParser: Unhandled multiField: " + multiField.Attribute("name").Value);
+                        }
+                        break;
+                }
+            }
+
+            foreach (var multiModelField in contactNode.Elements(xNamespace + "multiModelField"))
+            {
+                switch (multiModelField.Attribute("name").Value)
+                {
+                    default:
+                        if (debugAttributes)
+                        {
+                            Console.WriteLine("ContactPhotoParser: Unhandled multiModelField: " + multiModelField.Attribute("name").Value);
+                        }
                         break;
                 }
             }

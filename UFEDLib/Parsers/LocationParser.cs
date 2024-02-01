@@ -10,7 +10,7 @@ namespace UFEDLib.Parsers
 {
     internal class LocationParser
     {
-        public static List<Location> ParseLocations(XElement locationsElement)
+        public static List<Location> ParseLocations(XElement locationsElement, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
             List<Location> result = new List<Location>();
@@ -19,13 +19,13 @@ namespace UFEDLib.Parsers
 
             foreach (var locationElement in locationElements)
             {
-                result.Add(Parse(locationElement));
+                result.Add(Parse(locationElement, debugAttributes));
             }
 
             return result;
         }
 
-        public static Location Parse(XElement locationElelment)
+        public static Location Parse(XElement locationElelment, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
             Location result = new Location();
@@ -78,6 +78,13 @@ namespace UFEDLib.Parsers
                     case "PositionAddress":
                         result.PositionAddress = field.Value.Trim();
                         break;
+
+                    default:
+                        if (debugAttributes)
+                        {
+                            Console.WriteLine("LocationParser.Parse: Unhandled field: " + field.Attribute("name").Value);
+                        }
+                        break;
                 }
             }
 
@@ -91,6 +98,26 @@ namespace UFEDLib.Parsers
 
                     case "Address":
                         result.Address = StreetAddressParser.Parse(modelField);
+                        break;
+
+                    default:
+                        if (debugAttributes)
+                        {
+                            Console.WriteLine("LocationParser.Parse: Unhandled modelField: " + modelField.Attribute("name").Value);
+                        }
+                        break;
+                }
+            }
+
+            foreach (var multiModelField in locationElelment.Elements(xNamespace + "multiModelField"))
+            {
+                switch (multiModelField.Attribute("name").Value)
+                {
+                    default:
+                        if (debugAttributes)
+                        {
+                            Console.WriteLine("LocationParser.Parse: Unhandled multiModelField: " + multiModelField.Attribute("name").Value);
+                        }
                         break;
                 }
             }

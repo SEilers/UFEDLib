@@ -10,12 +10,14 @@ namespace UFEDLib.Parsers
 {
     internal class JourneyParser
     {
-        public static Journey Parse(XElement journeyElement)
+        public static Journey Parse(XElement journeyElement, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
             Journey result = new Journey();
 
             var fieldElements = journeyElement.Elements(xNamespace + "field");
+            var modelFieldElements = journeyElement.Elements(xNamespace + "modelField");
+            var multiModelFieldElements = journeyElement.Elements(xNamespace + "multiModelField");
 
             foreach (var field in fieldElements)
             {
@@ -39,34 +41,52 @@ namespace UFEDLib.Parsers
                             result.EndTime = DateTime.Parse(field.Value.Trim());
                         break;
 
-
+                    default:
+                        if (debugAttributes)
+                        {
+                            Console.WriteLine("JourneyParser.Parse: Unhandled field: " + field.Attribute("name").Value);
+                        }
+                        break;
                 }
             }
 
-            var modelFieldElements = journeyElement.Elements(xNamespace + "modelField");
+            
 
             foreach (var modelFieldElement in modelFieldElements)
             {
                 switch (modelFieldElement.Attribute("name").Value)
                 {
                     case "FromPoint":
-                        result.FromPoint = LocationParser.Parse(modelFieldElement);
+                        result.FromPoint = LocationParser.Parse(modelFieldElement, debugAttributes);
                         break;
 
                     case "ToPoint":
-                        result.ToPoint = LocationParser.Parse(modelFieldElement);
+                        result.ToPoint = LocationParser.Parse(modelFieldElement, debugAttributes);
+                        break;
+
+                    default:
+                        if (debugAttributes)
+                        {
+                            Console.WriteLine("JourneyParser.Parse: Unhandled modelField: " + modelFieldElement.Attribute("name").Value);
+                        }
                         break;
                 }
             }
 
-            var multiModelFieldElements = journeyElement.Elements(xNamespace + "multiModelField");
-
+            
             foreach (var multiModelFieldElement in multiModelFieldElements)
             {
                 switch (multiModelFieldElement.Attribute("name").Value)
                 {
                     case "WayPoints":
-                        result.WayPoints = LocationParser.ParseLocations(multiModelFieldElement);
+                        result.WayPoints = LocationParser.ParseLocations(multiModelFieldElement, debugAttributes);
+                        break;
+
+                    default:
+                        if (debugAttributes)
+                        {
+                            Console.WriteLine("JourneyParser.Parse: Unhandled multiModelField: " + multiModelFieldElement.Attribute("name").Value);
+                        }
                         break;
                 }
             }

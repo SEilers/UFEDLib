@@ -11,30 +11,31 @@ namespace UFEDLib.Parsers
 {
     internal class InstantMessageParser
     {
-        public static List<InstantMessage> ParseMessages(XElement messagesElement)
+        public static List<InstantMessage> ParseMessages(XElement messagesElement, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
             List<InstantMessage> result = new List<InstantMessage>();
 
-            //IEnumerable<XElement> instantMessages = messagesElement.Descendants(xNamespace + "model").Where(x => x.Attribute("type").Value == "InstantMessage");
             IEnumerable<XElement> instantMessages = messagesElement.Elements(xNamespace + "model").Where(element => element.Attribute("type").Value == "InstantMessage");
 
             foreach (XElement message in instantMessages)
             {
-                InstantMessage im = InstantMessageParser.Parse(message);
+                InstantMessage im = InstantMessageParser.Parse(message, debugAttributes);
                 result.Add(im);
             }
 
             return result;
         }
 
-        public static InstantMessage Parse(XElement xElement)
+        public static InstantMessage Parse(XElement xElement, bool debugAttributes = false)
         {
 
             InstantMessage result = new InstantMessage();
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
 
             var fieldElements = xElement.Elements(xNamespace + "field");
+            var multiFieldElements = xElement.Elements(xNamespace + "multiField");
+            var multiModelFieldElements = xElement.Elements(xNamespace + "multiModelField");
 
             try
             {
@@ -94,50 +95,57 @@ namespace UFEDLib.Parsers
                             result.Type = field.Value.Trim();
                             break;
                         default:
-                            //Trace.WriteLine("Unknown field: " + field.Attribute("name").Value);
+                            if (debugAttributes)
+                            {
+                                Console.WriteLine("InstantMessageParser: Unknown attribute: " + field.Attribute("name").Value);
+                            }
                             break;
                     }
                 }
-
-                var modelFieldElements = xElement.Elements(xNamespace + "modelField");
-
-                foreach (var modelField in modelFieldElements)
-                {
-                    switch (modelField.Attribute("name").Value)
-                    {
-                        case "Attachment":
-                            result.Attachment = AttachmentParser.Parse(modelField);
-                            break;
-                        case "From":
-                            result.From = PartyParser.Parse(modelField);
-                            break;
-                        case "Position":
-                            result.Position = CoordinateParser.Parse(modelField);
-                            break;
-                        case "JumpTargetId":
-                            result.JumpTargetId = modelField.Value.Trim();
-                            break;
-                        default:
-                            break;
-                    }
-                }
-
-                var multiModelFieldElements = xElement.Elements(xNamespace + "multiModelField");
-
-                foreach (var multiField in multiModelFieldElements)
+                
+                foreach (var multiField in multiFieldElements)
                 {
                     switch (multiField.Attribute("name").Value)
                     {
-                        case "To":
-                            result.To = PartyParser.ParseParties(multiField);
+                        case "Attachment":
+                            result.Attachment = AttachmentParser.Parse(multiField, debugAttributes);
                             break;
-                        case "Attachments":
-                            result.Attachments = AttachmentParser.ParseAttachments(multiField);
+                        case "From":
+                            result.From = PartyParser.Parse(multiField, debugAttributes);
                             break;
-                        case "SharedContacts":
-                            result.SharedContacts = ContactParser.ParseContacts(multiField);
+                        case "Position":
+                            result.Position = CoordinateParser.Parse(multiField, debugAttributes);
+                            break;
+                        case "JumpTargetId":
+                            result.JumpTargetId = multiField.Value.Trim();
                             break;
                         default:
+                            if (debugAttributes)
+                            {
+                                Console.WriteLine("InstantMessageParser: Unknown multiField: " + multiField.Attribute("name").Value);
+                            }
+                            break;
+                    }
+                }
+               
+                foreach (var multiModelField in multiModelFieldElements)
+                {
+                    switch (multiModelField.Attribute("name").Value)
+                    {
+                        case "To":
+                            result.To = PartyParser.ParseParties(multiModelField);
+                            break;
+                        case "Attachments":
+                            result.Attachments = AttachmentParser.ParseAttachments(multiModelField, debugAttributes);
+                            break;
+                        case "SharedContacts":
+                            result.SharedContacts = ContactParser.ParseContacts(multiModelField, debugAttributes);
+                            break;
+                        default:
+                            if (debugAttributes)
+                            {
+                                Console.WriteLine("InstantMessageParser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
+                            }
                             break;
                     }
                 }
