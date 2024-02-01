@@ -41,16 +41,24 @@ namespace UFEDLib.Parsers
             {
                 switch (field.Attribute("name").Value)
                 {
-                    case "Filenmae":
-                        result.Filename = field.Value.Trim();
+                    case "attachment_extracted_path":
+                        result.AttachmentExtractedPath = field.Value.Trim();
+                        break;
+
+                    case "Charset":
+                        result.Charset = field.Value.Trim();
                         break;
 
                     case "ContentType":
                         result.ContentType = field.Value.Trim();
                         break;
 
-                    case "Charset":
-                        result.Charset = field.Value.Trim();
+                    case "Filename":
+                        result.Filename = field.Value.Trim();
+                        break;
+
+                    case "Title":
+                        result.Title = field.Value.Trim();
                         break;
 
                     case "URL":
@@ -60,7 +68,7 @@ namespace UFEDLib.Parsers
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("AttachmentParser: Unknown attribute: " + field.Attribute("name").Value);
+                            Console.WriteLine("AttachmentParser: Unknown field: " + field.Attribute("name").Value);
                         }
                         break;
                 }
@@ -73,7 +81,7 @@ namespace UFEDLib.Parsers
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("AttachmentParser:Unknown multiAttribute: " + multiField.Attribute("name").Value);
+                            Console.WriteLine("AttachmentParser:Unknown multiField: " + multiField.Attribute("name").Value);
                         }
                         break;
                 }
@@ -86,7 +94,7 @@ namespace UFEDLib.Parsers
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("AttachmentParser: Unknown multiModelAttribute: " + multiModelField.Attribute("name").Value);
+                            Console.WriteLine("AttachmentParser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
                         }
                         break;
                 }

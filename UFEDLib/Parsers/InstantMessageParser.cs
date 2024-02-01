@@ -49,6 +49,9 @@ namespace UFEDLib.Parsers
                         case "Id":
                             result.Id = field.Value.Trim();
                             break;
+                        case "Folder":
+                            result.Folder = field.Value.Trim();
+                            break;
                         case "SourceApplication":
                             result.SourceApplication = field.Value.Trim();
                             break;
@@ -58,6 +61,13 @@ namespace UFEDLib.Parsers
                             break;
                         case "Subject":
                             result.Subject = field.Value.Trim();
+                            break;
+                        case "DeletionReason":
+                            result.DeletionReason = field.Value.Trim();
+                            break;
+                        case "DateDeleted":
+                            if (field.Value.Trim() != "")
+                                result.DateDeleted = DateTime.Parse(field.Value.Trim());
                             break;
                         case "DateRead":
                             if (field.Value.Trim() != "")
@@ -70,11 +80,17 @@ namespace UFEDLib.Parsers
                         case "Label":
                             result.Label = field.Value.Trim();
                             break;
+                        case "Platform":
+                            result.Platform = field.Value.Trim();
+                            break;
                         case "PositionAddress":
                             result.PositionAddress = field.Value.Trim();
                             break;
                         case "ChatId":
                             result.ChatId = field.Value.Trim();
+                            break;
+                        case "IsLocationSharing":
+                            result.IsLocationSharing = field.Value.Trim();
                             break;
                         case "Erased":
                             result.Erased = field.Value.Trim();
@@ -88,16 +104,22 @@ namespace UFEDLib.Parsers
                         case "Identifier":
                             result.Identifier = field.Value.Trim();
                             break;
+                        case "ServiceIdentifier":
+                            result.ServiceIdentifier = field.Value.Trim();
+                            break;
                         case "Status":
                             result.Status = field.Value.Trim();
                             break;
                         case "Type":
                             result.Type = field.Value.Trim();
                             break;
+                        case "UserMapping":
+                            result.UserMapping = field.Value.Trim();
+                            break;
                         default:
                             if (debugAttributes)
                             {
-                                Console.WriteLine("InstantMessageParser: Unknown attribute: " + field.Attribute("name").Value);
+                                Console.WriteLine("InstantMessageParser: Unknown field: " + field.Attribute("name").Value);
                             }
                             break;
                     }
@@ -141,6 +163,11 @@ namespace UFEDLib.Parsers
                         case "SharedContacts":
                             result.SharedContacts = ContactParser.ParseContacts(multiModelField, debugAttributes);
                             break;
+                        case "MessageExtraData":
+                            // TODO: Implement MessageExtraDataParser
+                            //result.MessageExtraData = MessageExtraDataParser.Parse(multiModelField, debugAttributes);
+                            break;
+
                         default:
                             if (debugAttributes)
                             {

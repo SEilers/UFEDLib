@@ -10,6 +10,8 @@ namespace UFEDLib.Models
     public class Attachment
     {
         #region fields
+
+        public string AttachmentExtractedPath { get; set; }
         public string Charset { get; set; }
 
         public string ContentType { get; set; }
@@ -17,6 +19,8 @@ namespace UFEDLib.Models
         //public DataField Data { get; set;}
 
         public string Filename { get; set; }
+
+        public string Title { get; set; }
 
         /// <summary>
         /// A URL string associated with the attachment.

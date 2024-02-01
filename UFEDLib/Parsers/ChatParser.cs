@@ -22,21 +22,16 @@ namespace UFEDLib.Parsers
             {
                 switch (field.Attribute("name").Value)
                 {
-                    case "Source":
-                        result.Source = field.Value.Trim();
-                        break;
-
                     case "Account":
                         result.Account = field.Value.Trim();
                         break;
 
-                    case "Id":
-                        result.Id = field.Value.Trim();
+                    case "Description":
+                        result.Description = field.Value.Trim();
                         break;
 
-                    case "StartTime":
-                        if (field.Value.Trim() != "")
-                            result.StartTime = DateTime.Parse(field.Value.Trim());
+                    case "Id":
+                        result.Id = field.Value.Trim();
                         break;
 
                     case "LastActivity":
@@ -44,10 +39,31 @@ namespace UFEDLib.Parsers
                             result.LastActivity = DateTime.Parse(field.Value.Trim());
                         break;
 
+                    case "Name":
+                        result.Name = field.Value.Trim();
+                        break;
+
+                    case "ServiceIdentifier":
+                        result.ServiceIdentifier = field.Value.Trim();
+                        break;
+
+                    case "Source":
+                        result.Source = field.Value.Trim();
+                        break;
+
+                    case "StartTime":
+                        if (field.Value.Trim() != "")
+                            result.StartTime = DateTime.Parse(field.Value.Trim());
+                        break;
+
+                    case "UserMapping":
+                        result.UserMapping = field.Value.Trim();
+                        break;
+
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("ChatParser: Unknown attribute: " + field.Attribute("name").Value);
+                            Console.WriteLine("ChatParser: Unknown field: " + field.Attribute("name").Value);
                         }
                         break;
                 }
@@ -71,12 +87,21 @@ namespace UFEDLib.Parsers
             {
                 switch (multiModelField.Attribute("name").Value)
                 {
+                    case "ActivityLog":
+                        //TODO: Parse ActivityLog
+                        //result.ActivityLog = ActivityLogParser.ParseActivityLogs(multiModelField, debugAttributes);
+                        break;
+
                     case "Messages":
                         result.Messages = InstantMessageParser.ParseMessages(multiModelField, debugAttributes);
                         break;
 
                     case "Participants":
                         result.Participants = PartyParser.ParseParties(multiModelField, debugAttributes);
+                        break;
+
+                    case "Photos":
+                        result.Photos = ContactPhotoParser.ParseContactPhotos(multiModelField, debugAttributes);
                         break;
 
                     default:

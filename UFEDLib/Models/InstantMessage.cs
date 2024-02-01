@@ -14,11 +14,16 @@ namespace UFEDLib.Models
 
         public string ChatId { get; set; }
 
+        public DateTime DateDeleted { get; set; }
         public DateTime DateDelivered { get; set; }
 
         public DateTime DateRead { get; set; }
 
+        public string DeletionReason { get; set; }
+
         public string Erased { get; set; }
+
+        public string Folder { get; set; }
 
         public string FromIsOwner { get; set; }
 
@@ -26,11 +31,17 @@ namespace UFEDLib.Models
 
         public string Identifier { get; set; }
 
+        public string IsLocationSharing { get; set; }
+
         public string JumpTargetId { get; set; }
 
         public string Label { get; set; }
 
+        public string Platform { get; set; }
+
         public string PositionAddress { get; set; }
+
+        public string ServiceIdentifier { get; set; }
 
         public string Source { get; set; }
 
@@ -43,6 +54,8 @@ namespace UFEDLib.Models
         public DateTime TimeStamp { get; set; }
 
         public string Type { get; set; }
+
+        public string UserMapping { get; set; }
 
         #endregion
 

@@ -54,6 +54,10 @@ namespace UFEDLib.Parsers
             {
                 switch (multiField.Attribute("name").Value)
                 {
+                    case "Url":
+                        // TODO: Check for an example
+                        result.Url = multiField.Value.Trim();
+                        break;
                     case "Data":
                         break;
                     default:

@@ -17,6 +17,7 @@ namespace UFEDLib.Models
         public string Id { get; set; }
         public string Identifier { get; set; }
         public string IPAddress { get; set; }
+        public string IsGroupAdmin { get; set; }
         public bool IsPhoneOwner { get; set; }
         public string Name { get; set; }
         public string Role { get; set; }

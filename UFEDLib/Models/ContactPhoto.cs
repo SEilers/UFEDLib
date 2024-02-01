@@ -14,6 +14,8 @@ namespace UFEDLib.Models
         /// Filename (if exists).
         /// </summary>
         public string Name { get; set; }
+
+        public string Url { get; set; }
         #endregion
 
     }

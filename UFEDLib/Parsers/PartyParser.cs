@@ -66,6 +66,10 @@ namespace UFEDLib.Parsers
                             result.DateRead = DateTime.Parse(field.Value.Trim());
                         break;
 
+                    case "IsGroupAdmin":
+                        result.IsGroupAdmin = field.Value.Trim();
+                        break;
+
                     case "DatePlayed":
                         if (field.Value.Trim() != "")
                             result.DatePlayed = DateTime.Parse(field.Value.Trim());
@@ -85,7 +89,7 @@ namespace UFEDLib.Parsers
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("PartyParser: Unknown attribute: " + field.Attribute("name").Value);
+                            Console.WriteLine("PartyParser: Unknown field: " + field.Attribute("name").Value);
                         }
                         break;
                 }
@@ -98,7 +102,7 @@ namespace UFEDLib.Parsers
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("PartyParser: Unknown multiAttribute: " + multiField.Attribute("name").Value);
+                            Console.WriteLine("PartyParser: Unknown multiField: " + multiField.Attribute("name").Value);
                         }
                         break;
                 }
@@ -111,7 +115,7 @@ namespace UFEDLib.Parsers
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("PartyParser: Unknown multiModelAttribute: " + multiModelField.Attribute("name").Value);
+                            Console.WriteLine("PartyParser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
                         }
                         break;
                 }
