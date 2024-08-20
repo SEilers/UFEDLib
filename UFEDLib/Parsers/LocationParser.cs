@@ -8,7 +8,7 @@ using UFEDLib.Models;
 
 namespace UFEDLib.Parsers
 {
-    internal class LocationParser
+    public class LocationParser
     {
         public static List<Location> ParseLocations(XElement locationsElement, bool debugAttributes = false)
         {

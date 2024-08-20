@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace UFEDLib.Models
 {
-    internal class ApplicationUsage
+    [Serializable]
+    public class ApplicationUsage
     {
         #region fields
 

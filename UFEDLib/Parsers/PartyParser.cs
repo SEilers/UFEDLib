@@ -8,7 +8,7 @@ using UFEDLib.Models;
 
 namespace UFEDLib.Parsers
 {
-    internal class PartyParser
+    public class PartyParser
     {
         public static List<Party> ParseParties(XElement partiesElement, bool debugAttributes = false)
         {

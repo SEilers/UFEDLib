@@ -8,7 +8,7 @@ using UFEDLib.Models;
 
 namespace UFEDLib.Parsers
 {
-    internal class StreetAddressParser
+    public class StreetAddressParser
     {
         public static List<StreetAddress> ParseStreetAddresses(XElement streetAddresssElement, bool debugAttributes = false)
         {

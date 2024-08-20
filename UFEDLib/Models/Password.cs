@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace UFEDLib.Models
 {
-    internal class Password
+    [Serializable]
+    public class Password
     {
         #region fields
         public string AccessGroup { get; set; }

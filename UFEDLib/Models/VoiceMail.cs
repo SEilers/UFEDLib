@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace UFEDLib.Models
 {
-    internal class VoiceMail
+    [Serializable]
+    public class VoiceMail
     {
         #region fields
         public TimeSpan Duration { get; set; }

@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace UFEDLib.Models
 {
-    internal class EMail
+    [Serializable]
+    public class EMail
     {
         #region fields
         public string Body { get; set; }

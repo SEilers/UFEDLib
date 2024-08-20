@@ -8,7 +8,7 @@ using UFEDLib.Models;
 
 namespace UFEDLib.Parsers
 {
-    internal class JourneyParser
+    public class JourneyParser
     {
         public static Journey Parse(XElement journeyElement, bool debugAttributes = false)
         {

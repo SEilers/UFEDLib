@@ -8,7 +8,7 @@ using UFEDLib.Models;
 
 namespace UFEDLib.Parsers
 {
-    internal class SearchedItemParser
+    public class SearchedItemParser
     {
         public static SearchedItem Parse(XElement searchedItemElement, bool debugAttributes = false)
         {

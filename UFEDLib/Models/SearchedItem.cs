@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace UFEDLib.Models
 {
-    internal class SearchedItem
+    [Serializable]
+    public class SearchedItem
     {
         #region fields
         public string PositionAddress { get; set; }

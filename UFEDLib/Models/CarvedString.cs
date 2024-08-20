@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace UFEDLib.Models
 {
-    internal class CarvedString
+    [Serializable]
+    public class CarvedString
     {
         #region fields
         public string MetaData { get; set; }

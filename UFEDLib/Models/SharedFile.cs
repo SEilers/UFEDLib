@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace UFEDLib.Models
 {
-    internal class SharedFile
+    [Serializable]
+    public class SharedFile
     {
         #region fields
         public string Caption { get; set; }

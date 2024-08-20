@@ -8,7 +8,7 @@ using UFEDLib.Models;
 
 namespace UFEDLib.Parsers
 {
-    internal class EMailParser
+    public class EMailParser
     {
         public static EMail Parse(XElement emailNode, bool debugAttributes = false)
         {

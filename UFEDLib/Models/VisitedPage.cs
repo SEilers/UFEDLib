@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace UFEDLib.Models
 {
-    internal class VisitedPage
+    [Serializable]
+    public class VisitedPage
     {
         #region fields
         public string LastVisited { get; set; }

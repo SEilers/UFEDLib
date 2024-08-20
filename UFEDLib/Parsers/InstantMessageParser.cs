@@ -9,7 +9,7 @@ using UFEDLib.Models;
 
 namespace UFEDLib.Parsers
 {
-    internal class InstantMessageParser
+    public class InstantMessageParser
     {
         public static List<InstantMessage> ParseMessages(XElement messagesElement, bool debugAttributes = false)
         {

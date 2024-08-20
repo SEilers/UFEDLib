@@ -10,7 +10,7 @@ using UFEDLib.Models;
 
 namespace UFEDLib.Parsers
 {
-    internal class CoordinateParser
+    public class CoordinateParser
     {
         public static Coordinate Parse(XElement corrdinateElement, bool debugAttributes = false)
         {

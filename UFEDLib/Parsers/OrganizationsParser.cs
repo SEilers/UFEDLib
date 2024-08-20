@@ -9,7 +9,7 @@ using UFEDLib.Models;
 
 namespace UFEDLib.Parsers
 {
-    internal class OrganizationsParser
+    public class OrganizationsParser
     {
         public static List<Organization> ParseOrganizations(XElement oraganizationElement, bool debugAttributes = false)
         {

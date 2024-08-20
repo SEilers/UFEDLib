@@ -8,7 +8,7 @@ using UFEDLib.Models;
 
 namespace UFEDLib.Parsers
 {
-    internal class PasswordParser
+    public class PasswordParser
     {
         public static Password Parse(XElement passwordElement, bool debugAttributes = false)
         {

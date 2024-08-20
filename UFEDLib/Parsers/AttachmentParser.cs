@@ -9,7 +9,7 @@ using UFEDLib.Models;
 
 namespace UFEDLib.Parsers
 {
-    internal class AttachmentParser
+    public class AttachmentParser
     {
         public static List<Attachment> ParseAttachments(XElement attachmentElement, bool debugAttributes = false)
         {

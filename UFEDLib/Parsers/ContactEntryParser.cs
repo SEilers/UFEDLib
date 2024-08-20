@@ -8,7 +8,7 @@ using UFEDLib.Models;
 
 namespace UFEDLib.Parsers
 {
-    internal class ContactEntryParser
+    public class ContactEntryParser
     {
         public static List<ContactEntry> ParseContactEntries(XElement ContactEntriesElement, bool debugAttributes = false)
         {

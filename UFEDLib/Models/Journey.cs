@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace UFEDLib.Models
 {
-    internal class Journey
+    [Serializable]
+    public class Journey
     {
 
         #region fields

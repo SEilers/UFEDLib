@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace UFEDLib.Models
 {
-    internal class InstalledApplication
+    [Serializable]
+    public class InstalledApplication
     {
         #region fields
         public string AppGUID { get; set; }

@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace UFEDLib.Models
 {
-    internal class Map
+    [Serializable]
+    public class Map
     {
         #region fields
         public string Source { get; set; }

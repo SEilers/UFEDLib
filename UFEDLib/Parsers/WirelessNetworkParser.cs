@@ -8,7 +8,7 @@ using UFEDLib.Models;
 
 namespace UFEDLib.Parsers
 {
-    internal class WirelessNetworkParser
+    public class WirelessNetworkParser
     {
         public static WirelessNetwork Parse(XElement wirelessNetworkNode, bool debugAttributes = false)
         {
