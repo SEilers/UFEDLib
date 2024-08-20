@@ -7,6 +7,7 @@ using System.Xml.Linq;
 using System.Xml.XPath;
 using System.Xml;
 using UFEDLib.Models;
+using System.Globalization;
 
 namespace UFEDLib.Parsers
 {
@@ -24,15 +25,15 @@ namespace UFEDLib.Parsers
                 switch (fieldElement.Attribute("name").Value)
                 {
                     case "Longitude":
-                        result.Longitude = double.Parse(fieldElement.Value.Trim());
+                        result.Longitude = double.Parse(fieldElement.Value.Trim(), CultureInfo.InvariantCulture);
                         break;
 
                     case "Latitude":
-                        result.Latitude = double.Parse(fieldElement.Value.Trim());
+                        result.Latitude = double.Parse(fieldElement.Value.Trim(), CultureInfo.InvariantCulture);
                         break;
 
                     case "Elevation":
-                        result.Elevation = double.Parse(fieldElement.Value.Trim());
+                        result.Elevation = double.Parse(fieldElement.Value.Trim(), CultureInfo.InvariantCulture);
                         break;
 
                     case "Map":
