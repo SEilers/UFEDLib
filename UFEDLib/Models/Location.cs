@@ -22,8 +22,12 @@ namespace UFEDLib.Models
         public string Origin { get; set; }
         public string PositionAddress { get; set; }
         public string Precision { get; set; }
+
+        public string Source { get; set; }
         public DateTime TimeStamp { get; set; }
         public string Type { get; set; }
+
+        public string UserMapping { get; set; }
         #endregion
 
         #region models

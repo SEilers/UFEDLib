@@ -38,6 +38,14 @@ namespace UFEDLib.Parsers
             {
                 switch (field.Attribute("name").Value)
                 {
+                    case "Source":
+                        result.Source = field.Value.Trim();
+                        break;
+
+                    case "UserMapping":
+                        result.UserMapping = field.Value.Trim();
+                        break;
+
                     case "TimeStamp":
                         if (field.Value.Trim() != "")
                             result.TimeStamp = DateTime.Parse(field.Value.Trim());
@@ -93,11 +101,13 @@ namespace UFEDLib.Parsers
                 switch (modelField.Attribute("name").Value)
                 {
                     case "Position":
-                        result.Position = CoordinateParser.Parse(modelField);
+                        var coordinateModel = modelField.Element(xNamespace + "model");
+                        result.Position = CoordinateParser.Parse(coordinateModel);
                         break;
 
                     case "Address":
-                        result.Address = StreetAddressParser.Parse(modelField);
+                        var addressModel = modelField.Element(xNamespace + "model");
+                        result.Address = StreetAddressParser.Parse(addressModel);
                         break;
 
                     default:
