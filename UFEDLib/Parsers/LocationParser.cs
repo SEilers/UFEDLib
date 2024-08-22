@@ -38,6 +38,8 @@ namespace UFEDLib.Parsers
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
             Location result = new Location();
 
+            result.ParseAttributes(locationElelment);
+
             var fieldElements = locationElelment.Elements(xNamespace + "field");
             var modelFieldElements = locationElelment.Elements(xNamespace + "modelField");
 
@@ -124,10 +126,10 @@ namespace UFEDLib.Parsers
                         case "Position":
                             var coordinateModel = modelField.Element(xNamespace + "model");
 
-                            //if(coordinateModel == null)
-                            //{
-                            //    break;
-                            //}
+                            if (coordinateModel == null)
+                            {
+                                break;
+                            }
 
                             result.Position = CoordinateParser.Parse(coordinateModel);
                             break;
