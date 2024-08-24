@@ -12,10 +12,33 @@ namespace UFEDLib.Parsers
 {
     public class CallParser
     {
+        public static List<Call> ParseCalls(XElement callsElement, bool debugAttributes = false)
+        {
+            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
+            List<Call> result = new List<Call>();
+
+            IEnumerable<XElement> callElements = callsElement.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "Call");
+
+            foreach (var callElement in callElements)
+            {
+                try
+                {
+                    result.Add(Parse(callElement, debugAttributes));
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error parsing call: " + ex.Message);
+                }
+            }
+
+            return result;
+        }
         public static Call Parse(XElement callNode, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
             Call result = new Call();
+
+            result.ParseAttributes(callNode);
 
             try
             {
