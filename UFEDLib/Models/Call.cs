@@ -11,13 +11,13 @@ namespace UFEDLib.Models
     public class Call : ModelBase
     {
         #region fields
+        public string Account { get; set; }
 
         public string CountryCode { get; set; }
+
         public string Direction { get; set; }
 
         public TimeSpan Duration { get; set; }
-
-        public string Id { get; set; }
 
         public string NetworkCode { get; set; }
 
@@ -30,6 +30,8 @@ namespace UFEDLib.Models
         public DateTime TimeStamp { get; set; }
 
         public string Type { get; set; }
+
+        public string UserMapping { get; set; }
 
         public bool VideoCall { get; set; }
         #endregion

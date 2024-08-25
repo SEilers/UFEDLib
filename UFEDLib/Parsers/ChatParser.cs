@@ -3,16 +3,41 @@ using System.Xml;
 using System.Xml.XPath;
 using UFEDLib.Models;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace UFEDLib.Parsers
 {
     public class ChatParser
     {
+        public static List<Chat> ParseChats(XElement chatsElement, bool debugAttributes = false)
+        {
+            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
+            List<Chat> result = new List<Chat>();
+
+            IEnumerable<XElement> chatElements = chatsElement.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "Chat");
+
+            foreach (var chatElement in chatElements)
+            {
+                try
+                {
+                    result.Add(Parse(chatElement, debugAttributes));
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error parsing chat: " + ex.Message);
+                }
+            }
+
+            return result;
+        }
         public static Chat Parse(XElement chatNode, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
 
             Chat result = new Chat();
+
+            result.ParseAttributes(chatNode);
 
             var fieldElements = chatNode.Elements(xNamespace + "field");
             var multiFieldElements = chatNode.Elements(xNamespace + "multiField");

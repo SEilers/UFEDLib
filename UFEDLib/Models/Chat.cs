@@ -5,7 +5,7 @@ using System.IO;
 namespace UFEDLib.Models
 {
     [Serializable]
-    public class Chat
+    public class Chat : ModelBase
     {
         #region fields
         public string Account { get; set; }
