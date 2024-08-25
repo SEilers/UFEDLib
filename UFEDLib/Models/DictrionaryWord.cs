@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace UFEDLib.Models
 {
     [Serializable]
-    public class DictrionaryWord
+    public class DictrionaryWord : ModelBase
     {
         #region fields
         public string Frequency { get; set; }

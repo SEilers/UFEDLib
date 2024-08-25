@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace UFEDLib.Models
 {
     [Serializable]
-    public class MailMessage
+    public class MailMessage : ModelBase
     {
 
         #region fields

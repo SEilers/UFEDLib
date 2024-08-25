@@ -8,7 +8,7 @@ using System.Threading.Tasks.Dataflow;
 namespace UFEDLib.Models
 {
     [Serializable]
-    public class SMS
+    public class SMS : ModelBase
     {
         #region fields
         public string Body { get; set; }

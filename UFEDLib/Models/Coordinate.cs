@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace UFEDLib.Models
 {
     [Serializable]
-    public class Coordinate
+    public class Coordinate : ModelBase
     {
         #region fields
         public string Comment { get; set; }

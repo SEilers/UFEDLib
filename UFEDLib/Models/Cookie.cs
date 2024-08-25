@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace UFEDLib.Models
 {
     [Serializable]
-    public class Cookie
+    public class Cookie : ModelBase
     {
         #region fields
         public DateTime CreationTime { get; set; }

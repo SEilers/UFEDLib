@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace UFEDLib.Models
 {
     [Serializable]
-    public class WirelessNetwork
+    public class WirelessNetwork : ModelBase
     {
         #region fields
         public string BSSId { get; set; }

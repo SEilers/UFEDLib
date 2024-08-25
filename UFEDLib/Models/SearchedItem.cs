@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace UFEDLib.Models
 {
     [Serializable]
-    public class SearchedItem
+    public class SearchedItem : ModelBase
     {
         #region fields
         public string PositionAddress { get; set; }

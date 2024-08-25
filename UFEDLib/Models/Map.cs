@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace UFEDLib.Models
 {
     [Serializable]
-    public class Map
+    public class Map : ModelBase
     {
         #region fields
         public string Source { get; set; }

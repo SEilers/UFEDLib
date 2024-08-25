@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace UFEDLib.Models
 {
     [Serializable]
-    public class InstalledApplication
+    public class InstalledApplication : ModelBase
     {
         #region fields
         public string AppGUID { get; set; }

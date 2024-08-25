@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace UFEDLib.Models
 {
     [Serializable]
-    public class Party
+    public class Party : ModelBase
     {
         #region fields
     

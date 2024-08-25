@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace UFEDLib.Models
 {
     [Serializable]
-    public class InstantMessage
+    public class InstantMessage : ModelBase
     {
         #region fields
         public string Body { get; set; }

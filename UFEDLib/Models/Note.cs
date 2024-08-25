@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace UFEDLib.Models
 {
     [Serializable]
-    public class Note
+    public class Note : ModelBase
     {
         #region fields
         public string Body { get; set; }

@@ -8,7 +8,7 @@ namespace UFEDLib.Models
 {
 
     [Serializable]
-    public class UserAccount
+    public class UserAccount : ModelBase
     {
         #region fields
         public string Id { get; set; }

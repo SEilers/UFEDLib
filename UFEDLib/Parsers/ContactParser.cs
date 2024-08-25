@@ -36,6 +36,7 @@ namespace UFEDLib.Parsers
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
 
             Contact result = new Contact();
+            result.ParseAttributes(contactNode);
 
             var fieldElements       = contactNode.Elements(xNamespace + "field");
             var multiFieldElements  = contactNode.Elements(xNamespace + "multiField");

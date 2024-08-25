@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace UFEDLib.Models
 {
     [Serializable]
-    public class CalendarEntry
+    public class CalendarEntry : ModelBase
     {
         #region fields
         public string Category { get; set; }

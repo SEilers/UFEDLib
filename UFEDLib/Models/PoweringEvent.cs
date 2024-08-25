@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace UFEDLib.Models
 {
     [Serializable]
-    public class PoweringEvent
+    public class PoweringEvent : ModelBase
     {
         #region fields
         public String Element { get; set; }

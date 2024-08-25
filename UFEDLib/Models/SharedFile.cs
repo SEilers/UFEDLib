@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace UFEDLib.Models
 {
     [Serializable]
-    public class SharedFile
+    public class SharedFile : ModelBase
     {
         #region fields
         public string Caption { get; set; }

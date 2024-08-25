@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace UFEDLib.Models
 {
     [Serializable]
-    public class Attachment
+    public class Attachment : ModelBase
     {
         #region fields
 

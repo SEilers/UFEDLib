@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace UFEDLib.Models
 {
     [Serializable]
-    public class BluetoothDevice
+    public class BluetoothDevice : ModelBase
     {
         #region fields
         public string Info { get; set; }

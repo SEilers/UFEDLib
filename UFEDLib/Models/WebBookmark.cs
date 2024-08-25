@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace UFEDLib.Models
 {
     [Serializable]
-    public class WebBookmark
+    public class WebBookmark : ModelBase
     {
         #region fields
         public DateTime LastVisted { get; set; }
