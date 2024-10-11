@@ -33,6 +33,8 @@ namespace UFEDLib.Parsers
             InstantMessage result = new InstantMessage();
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
 
+            result.ParseAttributes(xElement);
+
             var fieldElements = xElement.Elements(xNamespace + "field");
             var multiFieldElements = xElement.Elements(xNamespace + "multiField");
             var multiModelFieldElements = xElement.Elements(xNamespace + "multiModelField");
