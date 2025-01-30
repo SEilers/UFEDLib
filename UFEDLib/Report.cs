@@ -24,7 +24,7 @@ namespace UFEDLib
                     if (reader.NodeType == XmlNodeType.Element && reader.Name == "model" && reader.GetAttribute("type") == "Call")
                     {
                         XElement callNode = XElement.Load(reader.ReadSubtree());
-                        Call call = CallParser.Parse(callNode);
+                        Call call = Call.ParseModel(callNode);
                         result.Add(call);
                     }
                 }
@@ -53,7 +53,7 @@ namespace UFEDLib
                     if (reader.NodeType == XmlNodeType.Element && reader.Name == "model" && reader.GetAttribute("type") == "Chat")
                     {
                         XElement chatNode = XElement.Load(reader.ReadSubtree());
-                        Chat chat = ChatParser.Parse(chatNode);
+                        Chat chat = Chat.ParseModel(chatNode);
                         result.Add(chat);
                     }
                 }
@@ -82,7 +82,7 @@ namespace UFEDLib
                     if (reader.NodeType == XmlNodeType.Element && reader.Name == "model" && reader.GetAttribute("type") == "Contact")
                     {
                         XElement contactNode = XElement.Load(reader.ReadSubtree());
-                        Contact contact = ContactParser.Parse(contactNode);
+                        Contact contact = Contact.ParseModel(contactNode);
                         result.Add(contact);
                     }
                 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UFEDLib.Models
+namespace UFEDLib
 {
     [Serializable]
     public class VisitedPage : ModelBase
@@ -20,16 +20,5 @@ namespace UFEDLib.Models
 
         public int VisitCount { get; set; }
         #endregion
-
-
-
-
-        
-
-        
-
-        
-
-        
     }
 }

@@ -3,13 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UFEDLib.Models;
+using System.Xml.Linq;
 
 namespace UFEDLib
 {
     [Serializable]
-    public class SearchedItem : ModelBase
+    public class SearchedItem : ModelBase, IUfedModelParser<SearchedItem>
     {
+        public static string GetXmlModelType()
+        {
+            return "SearchedItem";
+        }
+
         #region fields
         public string PositionAddress { get; set; }
         public string SearchResults { get; set; }
@@ -23,6 +28,105 @@ namespace UFEDLib
         #endregion
 
         #region multiModels
+        #endregion
+
+        #region Parsers
+        public static List<SearchedItem> ParseMultiModel(XElement searchedItemsElement, bool debugAttributes = false)
+        {
+            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
+            List<SearchedItem> result = new List<SearchedItem>();
+
+            IEnumerable<XElement> searchedItemElements = searchedItemsElement.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "SearchedItem");
+
+            foreach (var searchedItemElement in searchedItemElements)
+            {
+                try
+                {
+                    result.Add(ParseModel(searchedItemElement, debugAttributes));
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error parsing searched item: " + ex.Message);
+                }
+            }
+
+            return result;
+        }
+        public static SearchedItem ParseModel(XElement searchedItemElement, bool debugAttributes = false)
+        {
+            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
+            SearchedItem result = new SearchedItem();
+
+            var fieldElements = searchedItemElement.Elements(xNamespace + "field");
+            var multiFieldElements = searchedItemElement.Elements(xNamespace + "multiField");
+            var multiModelFieldElements = searchedItemElement.Elements(xNamespace + "multiModelField");
+
+            foreach (var field in fieldElements)
+            {
+                switch (field.Attribute("name").Value)
+                {
+                    case "TimeStamp":
+                        if (field.Value.Trim() != "")
+                            result.TimeStamp = DateTime.Parse(field.Value.Trim());
+                        break;
+
+                    case "Value":
+                        result.Value = field.Value.Trim();
+                        break;
+
+                    case "Source":
+                        result.Source = field.Value.Trim();
+                        break;
+
+                    case "SearchResult":
+                        result.SearchResults = field.Value.Trim();
+                        break;
+
+                    case "Position":
+                        result.Position = Coordinate.ParseModel(field);
+                        break;
+
+                    case "PositionAddress":
+                        result.PositionAddress = field.Value.Trim();
+                        break;
+
+                    default:
+                        if (debugAttributes)
+                        {
+                            Console.WriteLine("SearchedItemParser.Parse: Unhandled field: " + field.Attribute("name").Value);
+                        }
+                        break;
+                }
+            }
+
+            foreach (var multiField in multiFieldElements)
+            {
+                switch (multiField.Attribute("name").Value)
+                {
+                    default:
+                        if (debugAttributes)
+                        {
+                            Console.WriteLine("SearchedItemParser.Parse: Unhandled multiField: " + multiField.Attribute("name").Value);
+                        }
+                        break;
+                }
+            }
+
+            foreach (var multiModelField in multiModelFieldElements)
+            {
+                switch (multiModelField.Attribute("name").Value)
+                {
+                    default:
+                        if (debugAttributes)
+                        {
+                            Console.WriteLine("SearchedItemParser.Parse: Unhandled multiModelField: " + multiModelField.Attribute("name").Value);
+                        }
+                        break;
+                }
+            }
+
+            return result;
+        }
         #endregion
     }
 }

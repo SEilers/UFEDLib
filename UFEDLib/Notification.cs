@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UFEDLib.Models
+namespace UFEDLib
 {
     [Serializable]
     public class Notification : ModelBase
@@ -32,13 +32,6 @@ namespace UFEDLib.Models
         public List<Party> Participants { get; set; }
         //public List<WebAddress> Urls { get; set; } = new List<WebAddress>();
         #endregion
-
-        
-
-
-
-        
-
 
     }
 }

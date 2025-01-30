@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UFEDLib.Models;
 
 namespace UFEDLib
 {
@@ -31,24 +30,7 @@ namespace UFEDLib
         public List<Party> To { get; set; } = new List<Party>();
         #endregion
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         // public MailPriority Priority
-
-
-
 
     }
 }

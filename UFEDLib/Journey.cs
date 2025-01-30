@@ -3,13 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UFEDLib.Models;
+using System.Xml.Linq;
 
 namespace UFEDLib
 {
     [Serializable]
-    public class Journey : ModelBase
+    public class Journey : ModelBase, IUfedModelParser<Journey>
     {
+        public static string GetXmlModelType()
+        {
+            return "Journey";
+        }
+
 
         #region fields
         public DateTime EndTime { get; set; }
@@ -34,17 +39,113 @@ namespace UFEDLib
         public List<Location> WayPoints { get; set; } = new List<Location>();
         #endregion
 
+        #region Parsers
+        public static List<Journey> ParseMultiModel(XElement journeysElement, bool debugAttributes = false)
+        {
+            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
+            List<Journey> result = new List<Journey>();
+
+            IEnumerable<XElement> journeyElements = journeysElement.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "Journey");
+
+            foreach (var journeyElement in journeyElements)
+            {
+                try
+                {
+                    result.Add(ParseModel(journeyElement, debugAttributes));
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error parsing chat: " + ex.Message);
+                }
+            }
+
+            return result;
+        }
+
+
+        public static Journey ParseModel(XElement journeyElement, bool debugAttributes = false)
+        {
+            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
+            Journey result = new Journey();
+
+            var fieldElements = journeyElement.Elements(xNamespace + "field");
+            var modelFieldElements = journeyElement.Elements(xNamespace + "modelField");
+            var multiModelFieldElements = journeyElement.Elements(xNamespace + "multiModelField");
+
+            foreach (var field in fieldElements)
+            {
+                switch (field.Attribute("name").Value)
+                {
+                    case "Name":
+                        result.Name = field.Value.Trim();
+                        break;
+
+                    case "Source":
+                        result.Source = field.Value.Trim();
+                        break;
+
+                    case "StartTime":
+                        if (field.Value.Trim() != "")
+                            result.StartTime = DateTime.Parse(field.Value.Trim());
+                        break;
+
+                    case "EndTime":
+                        if (field.Value.Trim() != "")
+                            result.EndTime = DateTime.Parse(field.Value.Trim());
+                        break;
+
+                    default:
+                        if (debugAttributes)
+                        {
+                            Console.WriteLine("JourneyParser.Parse: Unhandled field: " + field.Attribute("name").Value);
+                        }
+                        break;
+                }
+            }
 
 
 
+            foreach (var modelFieldElement in modelFieldElements)
+            {
+                switch (modelFieldElement.Attribute("name").Value)
+                {
+                    case "FromPoint":
+                        result.FromPoint = Location.ParseModel(modelFieldElement, debugAttributes);
+                        break;
+
+                    case "ToPoint":
+                        result.ToPoint = Location.ParseModel(modelFieldElement, debugAttributes);
+                        break;
+
+                    default:
+                        if (debugAttributes)
+                        {
+                            Console.WriteLine("JourneyParser.Parse: Unhandled modelField: " + modelFieldElement.Attribute("name").Value);
+                        }
+                        break;
+                }
+            }
 
 
+            foreach (var multiModelFieldElement in multiModelFieldElements)
+            {
+                switch (multiModelFieldElement.Attribute("name").Value)
+                {
+                    case "WayPoints":
+                        result.WayPoints = Location.ParseMultiModel(multiModelFieldElement, debugAttributes);
+                        break;
 
+                    default:
+                        if (debugAttributes)
+                        {
+                            Console.WriteLine("JourneyParser.Parse: Unhandled multiModelField: " + multiModelFieldElement.Attribute("name").Value);
+                        }
+                        break;
+                }
+            }
 
-
-
-
-
-
+            return result;
+        }
+        #endregion
     }
 }
