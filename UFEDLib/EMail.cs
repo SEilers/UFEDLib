@@ -52,7 +52,7 @@ namespace UFEDLib
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Error parsing chat: " + ex.Message);
+                    Console.WriteLine("Error parsing EMail: " + ex.Message);
                 }
             }
 

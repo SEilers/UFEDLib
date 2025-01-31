@@ -105,7 +105,6 @@ namespace UFEDLib
 
         public static InstantMessage ParseModel(XElement xElement, bool debugAttributes = false)
         {
-
             InstantMessage result = new InstantMessage();
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
 

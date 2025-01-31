@@ -29,6 +29,11 @@ namespace UFEDLib
             return ModelParser.ParseUfdr<Contact>(ufdrFile);
         }
 
+        public static List<Cookie> GetCookies(string ufdrFile)
+        {
+            return ModelParser.ParseUfdr<Cookie>(ufdrFile);
+        }
+
         public static List<DictionaryWord> GetDictionaryWords(string ufdrFile)
         {
             return ModelParser.ParseUfdr<DictionaryWord>(ufdrFile);
