@@ -10,6 +10,10 @@ namespace UFEDLib
 {
     public class Report
     {
+        public static List<Autofill> GetAutofills(string ufdrFile)
+        {
+            return ModelParser.ParseUfdr<Autofill>(ufdrFile);
+        }
         public static List<Call> GetCalls(string ufdrFile)
         {
             return ModelParser.ParseUfdr<Call>(ufdrFile);
@@ -23,6 +27,11 @@ namespace UFEDLib
         public static List<Contact> GetContacts(string ufdrFile)
         {
             return ModelParser.ParseUfdr<Contact>(ufdrFile);
+        }
+
+        public static List<DictionaryWord> GetDictionaryWords(string ufdrFile)
+        {
+            return ModelParser.ParseUfdr<DictionaryWord>(ufdrFile);
         }
 
         public static List<EMail> GetEMails(string ufdrFile)
@@ -53,6 +62,11 @@ namespace UFEDLib
         public static List<UserAccount> GetUserAccounts(string ufdrFile)
         {
             return ModelParser.ParseUfdr<UserAccount>(ufdrFile);
+        }
+
+        public static List<WebBookmark> GetWebBookmarks(string ufdrFile)
+        {
+            return ModelParser.ParseUfdr<WebBookmark>(ufdrFile);
         }
 
         public static List<WirelessNetwork> GetWirelessNetworks(string ufdrFile)

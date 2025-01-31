@@ -7,37 +7,33 @@ using System.Xml.Linq;
 
 namespace UFEDLib
 {
-    [Serializable]
-    public class WebBookmark : ModelBase, IUfedModelParser<WebBookmark>
+    public class Autofill : ModelBase, IUfedModelParser<Autofill>
     {
         public static string GetXmlModelType()
         {
-            return "WebBookmark";
+            return "Autofill";
         }
 
         #region fields
-        public DateTime LastVisted { get; set; }
-        public string Path { get; set; }
-        public string PositionAddress { get; set; }
+        public string Key { get; set; }
+
+        public DateTime LastUsedDate { get; set; }
         public string Source { get; set; }
-        public DateTime TimeStamp { get; set; }
-        public string Title { get; set; }
-        public string Url { get; set; }
         public string UserMapping { get; set; }
-        public int VisitCount { get; set; }
-        #endregion
 
-        #region models
-        public Coordinate Position { get; set; }
+        public DateTime TimeStamp { get; set; }
 
+
+
+        public string Value { get; set; }
         #endregion
 
         #region Parsers
-        public static WebBookmark ParseModel(XElement element, bool debugAttributes = false)
+        public static Autofill ParseModel(XElement element, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
 
-            WebBookmark result = new WebBookmark();
+            Autofill result = new Autofill();
 
             var fieldElements = element.Elements(xNamespace + "field");
             var multiFieldElements = element.Elements(xNamespace + "multiField");
@@ -55,27 +51,12 @@ namespace UFEDLib
                         result.Source = field.Value.Trim();
                         break;
 
-                    case "Path":
-                        result.Path = field.Value.Trim();
+                    case "Key":
+                        result.Key = field.Value.Trim();
                         break;
 
-                    case "PositionAddress":
-                        result.PositionAddress = field.Value.Trim();
-                        break;
-
-                    case "Title":
-                        result.Title = field.Value.Trim();
-                        break;
-
-                    case "Url":
-                        result.Url = field.Value.Trim();
-                        break;
-
-                    case "VisitCount":
-                        if (field.Value.Trim() != "")
-                        {
-                            result.VisitCount = int.Parse(field.Value.Trim());
-                        }
+                    case "Value":
+                        result.Value = field.Value.Trim();
                         break;
 
                     case "TimeStamp":
@@ -83,9 +64,9 @@ namespace UFEDLib
                             result.TimeStamp = DateTime.Parse(field.Value.Trim());
                         break;
 
-                    case "LastVisted":
+                    case "LastUsedDate":
                         if (field.Value.Trim() != "")
-                            result.LastVisted = DateTime.Parse(field.Value.Trim());
+                            result.LastUsedDate = DateTime.Parse(field.Value.Trim());
                         break;
 
                     default:
@@ -126,17 +107,17 @@ namespace UFEDLib
             return result;
         }
 
-        public static List<WebBookmark> ParseMultiModel(XElement element, bool debugAttributes = false)
+        public static List<Autofill> ParseMultiModel(XElement element, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            List<WebBookmark> result = new List<WebBookmark>();
+            List<Autofill> result = new List<Autofill>();
 
-            IEnumerable<XElement> webBookmarks = element.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "WebBookmark");
+            IEnumerable<XElement> autofills = element.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "Autofill");
 
-            foreach (XElement webBookmark in webBookmarks)
+            foreach (XElement autofill in autofills)
             {
-                WebBookmark wb = ParseModel(webBookmark, debugAttributes);
-                result.Add(wb);
+                Autofill a = ParseModel(autofill, debugAttributes);
+                result.Add(a);
             }
 
             return result;
