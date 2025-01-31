@@ -10,91 +10,54 @@ namespace UFEDLib
 {
     public class Report
     {
-        public static List<Call> GetCalls(string path)
+        public static List<Call> GetCalls(string ufdrFile)
         {
-            List<Call> result = new List<Call>();
-
-            XmlReaderSettings settings = new XmlReaderSettings();
-            XmlReader reader = XmlReader.Create(path, settings);
-
-            while (reader.Read())
-            {
-                try
-                {
-                    if (reader.NodeType == XmlNodeType.Element && reader.Name == "model" && reader.GetAttribute("type") == "Call")
-                    {
-                        XElement callNode = XElement.Load(reader.ReadSubtree());
-                        Call call = Call.ParseModel(callNode);
-                        result.Add(call);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
-            }
-
-            reader.Close();
-
-            return result;
+            return ModelParser.ParseUfdr<Call>(ufdrFile);
         }
 
-        public static List<Chat> GetChats(string path)
+        public static List<Chat> GetChats(string ufdrFile)
         {
-            List<Chat> result = new List<Chat>();
-
-            XmlReaderSettings settings = new XmlReaderSettings();
-            XmlReader reader = XmlReader.Create(path, settings);
-
-            while (reader.Read())
-            {
-                try
-                {
-                    if (reader.NodeType == XmlNodeType.Element && reader.Name == "model" && reader.GetAttribute("type") == "Chat")
-                    {
-                        XElement chatNode = XElement.Load(reader.ReadSubtree());
-                        Chat chat = Chat.ParseModel(chatNode);
-                        result.Add(chat);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
-            }
-
-            reader.Close();
-
-            return result;
+            return ModelParser.ParseUfdr<Chat>(ufdrFile);
         }
 
-        public static List<Contact> GetContacts(string path)
+        public static List<Contact> GetContacts(string ufdrFile)
         {
-            List<Contact> result = new List<Contact>();
+            return ModelParser.ParseUfdr<Contact>(ufdrFile);
+        }
 
-            XmlReaderSettings settings = new XmlReaderSettings();
-            XmlReader reader = XmlReader.Create(path, settings);
+        public static List<EMail> GetEMails(string ufdrFile)
+        {
+            return ModelParser.ParseUfdr<EMail>(ufdrFile);
+        }
 
-            while (reader.Read())
-            {
-                try
-                {
-                    if (reader.NodeType == XmlNodeType.Element && reader.Name == "model" && reader.GetAttribute("type") == "Contact")
-                    {
-                        XElement contactNode = XElement.Load(reader.ReadSubtree());
-                        Contact contact = Contact.ParseModel(contactNode);
-                        result.Add(contact);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
-            }
+        public static List<Journey> GetJourneys(string ufdrFile)
+        {
+            return ModelParser.ParseUfdr<Journey>(ufdrFile);
+        }
 
-            reader.Close();
+        public static List<Location> GetLocations(string ufdrFile)
+        {
+            return ModelParser.ParseUfdr<Location>(ufdrFile);
+        }
 
-            return result;
+        public static List<Password> GetPasswords(string ufdrFile)
+        {
+            return ModelParser.ParseUfdr<Password>(ufdrFile);
+        }
+
+        public static List<SearchedItem> GetSearchedItems(string ufdrFile)
+        {
+            return ModelParser.ParseUfdr<SearchedItem>(ufdrFile);
+        }
+
+        public static List<UserAccount> GetUserAccounts(string ufdrFile)
+        {
+            return ModelParser.ParseUfdr<UserAccount>(ufdrFile);
+        }
+
+        public static List<WirelessNetwork> GetWirelessNetworks(string ufdrFile)
+        {
+            return ModelParser.ParseUfdr<WirelessNetwork>(ufdrFile);
         }
     }
 }

@@ -7,7 +7,7 @@ using System.Xml.Linq;
 
 namespace UFEDLib
 {
-    internal interface IUfedModelParser<T>
+    public interface IUfedModelParser<T>
     {
         public abstract static T ParseModel(XElement element, bool debugAttributes = false);
 
