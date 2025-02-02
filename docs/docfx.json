@@ -40,7 +40,7 @@
       "_appName": "UFEDLib",
       "_appTitle": "UFEDLib",
       "_enableSearch": true,
-      "pdf": true
+      "pdf": false
     }
   }
 }
