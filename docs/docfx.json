@@ -4,7 +4,7 @@
     {
       "src": [
         {
-          "src": "../../UFEDLib",
+          "src": "../UfedLib",
           "files": [
             "**/*.csproj"
           ]
@@ -39,8 +39,8 @@
     "globalMetadata": {
       "_appName": "UFEDLib",
       "_appTitle": "UFEDLib",
-      "_enableSearch": true,
-      "pdf": true
+      "_enableSearch": false,
+      "pdf": false
     }
   }
 }
