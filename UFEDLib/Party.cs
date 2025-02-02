@@ -121,7 +121,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("PartyParser: Unknown field: " + field.Attribute("name").Value);
+                            Console.WriteLine("Party Parser: Unknown field: " + field.Attribute("name").Value);
                         }
                         break;
                 }
@@ -134,7 +134,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("PartyParser: Unknown multiField: " + multiField.Attribute("name").Value);
+                            Console.WriteLine("Party Parser: Unknown multiField: " + multiField.Attribute("name").Value);
                         }
                         break;
                 }
@@ -147,7 +147,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("PartyParser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
+                            Console.WriteLine("Party Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
                         }
                         break;
                 }

@@ -126,7 +126,7 @@ namespace UFEDLib
                         default:
                             if (debugAttributes)
                             {
-                                Console.WriteLine("CallParse: Unknown field: " + field.Attribute("name").Value);
+                                Console.WriteLine("Call Parser: Unknown field: " + field.Attribute("name").Value);
                             }
                             break;
 
@@ -140,7 +140,7 @@ namespace UFEDLib
                         default:
                             if (debugAttributes)
                             {
-                                Console.WriteLine("CallParser: Unknown multiAttribute: " + multiField.Attribute("name").Value);
+                                Console.WriteLine("Call Parser: Unknown multiAttribute: " + multiField.Attribute("name").Value);
                             }
                             break;
                     }
@@ -157,7 +157,7 @@ namespace UFEDLib
                         default:
                             if (debugAttributes)
                             {
-                                Console.WriteLine("CallParser: Unknown multiModelAttribute: " + multiModelField.Attribute("name").Value);
+                                Console.WriteLine("Call Parser: Unknown multiModelAttribute: " + multiModelField.Attribute("name").Value);
                             }
                             break;
                     }

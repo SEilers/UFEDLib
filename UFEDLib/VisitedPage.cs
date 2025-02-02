@@ -76,7 +76,7 @@ namespace UFEDLib
                         default:
                             if (debugAttributes)
                             {
-                                Console.WriteLine("PoweringEvent Parser: Unknown field: " + field.Attribute("name").Value);
+                                Console.WriteLine("VisitedPage Parser: Unknown field: " + field.Attribute("name").Value);
                             }
                             break;
                     }
@@ -89,7 +89,7 @@ namespace UFEDLib
                         default:
                             if (debugAttributes)
                             {
-                                Console.WriteLine("PoweringEvent Parser: Unknown multiField: " + multiField.Attribute("name").Value);
+                                Console.WriteLine("VisitedPage Parser: Unknown multiField: " + multiField.Attribute("name").Value);
                             }
                             break;
                     }
@@ -102,7 +102,7 @@ namespace UFEDLib
                         default:
                             if (debugAttributes)
                             {
-                                Console.WriteLine("PoweringEvent Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
+                                Console.WriteLine("VisitedPage Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
                             }
                             break;
                     }

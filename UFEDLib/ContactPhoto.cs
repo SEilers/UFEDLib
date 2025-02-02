@@ -60,7 +60,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("ContactPhotoParser: Unhandled field: " + field.Attribute("name").Value);
+                            Console.WriteLine("ContactPhoto Parser: Unhandled field: " + field.Attribute("name").Value);
                         }
                         break;
                 }
@@ -79,7 +79,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("ContactPhotoParser: Unhandled multiField: " + multiField.Attribute("name").Value);
+                            Console.WriteLine("Contact PhotoParser: Unhandled multiField: " + multiField.Attribute("name").Value);
                         }
                         break;
                 }
@@ -92,7 +92,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("ContactPhotoParser: Unhandled multiModelField: " + multiModelField.Attribute("name").Value);
+                            Console.WriteLine("Contact PhotoParser: Unhandled multiModelField: " + multiModelField.Attribute("name").Value);
                         }
                         break;
                 }

@@ -75,7 +75,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("OrganizationsParser.Parse: Unhandled field: " + field.Attribute("name").Value);
+                            Console.WriteLine("Organizations Parser: Unhandled field: " + field.Attribute("name").Value);
                         }
                         break;
                 }
@@ -89,7 +89,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("OrganizationsParser.Parse: Unhandled field: " + multiField.Attribute("name").Value);
+                            Console.WriteLine("Organizations Parser: Unhandled field: " + multiField.Attribute("name").Value);
                         }
                         break;
                 }
@@ -102,7 +102,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("OrganizationsParser.Parse: Unhandled field: " + multiModelField.Attribute("name").Value);
+                            Console.WriteLine("Organizations Parser: Unhandled field: " + multiModelField.Attribute("name").Value);
                         }
                         break;
                 }

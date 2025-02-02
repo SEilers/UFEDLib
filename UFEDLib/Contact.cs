@@ -183,7 +183,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            string debugAttrubuteText = "ContactParser: Unknown field: " + field.Attribute("name").Value;
+                            string debugAttrubuteText = "Contact Parser: Unknown field: " + field.Attribute("name").Value;
                             if (!debugAttributesList.Contains(debugAttrubuteText))
                             {
                                 debugAttributesList.Add(debugAttrubuteText);
@@ -212,7 +212,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            string debugAttrubuteText = "ContactParser: Unknown multiField: " + multiField.Attribute("name").Value;
+                            string debugAttrubuteText = "Contact Parser: Unknown multiField: " + multiField.Attribute("name").Value;
                             if (!debugAttributesList.Contains(debugAttrubuteText))
                             {
                                 debugAttributesList.Add(debugAttrubuteText);
@@ -248,7 +248,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            string debugAttrubuteText = "ContactParser: Unknown multiModelField: " + multiModelField.Attribute("name").Value;
+                            string debugAttrubuteText = "Contact Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value;
                             if (!debugAttributesList.Contains(debugAttrubuteText))
                             {
                                 debugAttributesList.Add(debugAttrubuteText);

@@ -91,7 +91,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("Autofill Parser: Unknown field: " + field.Attribute("name").Value);
+                            Console.WriteLine("WebBookmark Parser: Unknown field: " + field.Attribute("name").Value);
                         }
                         break;
                 }
@@ -104,7 +104,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("Autofill Parser:Unknown multiField: " + multiField.Attribute("name").Value);
+                            Console.WriteLine("WebBookmark Parser: Unknown multiField: " + multiField.Attribute("name").Value);
                         }
                         break;
                 }
@@ -117,7 +117,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("Autofill Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
+                            Console.WriteLine("WebBookmark Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
                         }
                         break;
                 }

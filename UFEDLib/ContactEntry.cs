@@ -83,7 +83,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("ContactEntryParser: Unknown attribute: " + field.Attribute("name").Value);
+                            Console.WriteLine("ContactEntry Parser: Unknown attribute: " + field.Attribute("name").Value);
                         }
                         break;
                 }
@@ -96,7 +96,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("ContactEntryParser: Unknown multiField: " + multiField.Attribute("name").Value);
+                            Console.WriteLine("Contact EntryParser: Unknown multiField: " + multiField.Attribute("name").Value);
                         }
                         break;
                 }
@@ -109,7 +109,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("ContactEntryParser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
+                            Console.WriteLine("Contact EntryParser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
                         }
                         break;
                 }

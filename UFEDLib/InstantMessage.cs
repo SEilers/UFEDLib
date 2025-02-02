@@ -196,7 +196,7 @@ namespace UFEDLib
                         default:
                             if (debugAttributes)
                             {
-                                Console.WriteLine("InstantMessageParser: Unknown field: " + field.Attribute("name").Value);
+                                Console.WriteLine("InstantMessage Parser: Unknown field: " + field.Attribute("name").Value);
                             }
                             break;
                     }
@@ -221,7 +221,7 @@ namespace UFEDLib
                         default:
                             if (debugAttributes)
                             {
-                                Console.WriteLine("InstantMessageParser: Unknown multiField: " + multiField.Attribute("name").Value);
+                                Console.WriteLine("InstantMessage Parser: Unknown multiField: " + multiField.Attribute("name").Value);
                             }
                             break;
                     }
@@ -248,7 +248,7 @@ namespace UFEDLib
                         default:
                             if (debugAttributes)
                             {
-                                Console.WriteLine("InstantMessageParser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
+                                Console.WriteLine("InstantMessage Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
                             }
                             break;
                     }

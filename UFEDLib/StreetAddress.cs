@@ -137,14 +137,14 @@ namespace UFEDLib
                         default:
                             if (debugAttributes)
                             {
-                                Console.WriteLine("StreetAddressParser.Parse: Unhandled field: " + field.Attribute("name").Value);
+                                Console.WriteLine("StreetAddress Parser: Unhandled field: " + field.Attribute("name").Value);
                             }
                             break;
                     }
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Error parsing field elements in StreetAddressParser" + ex.ToString());
+                    Console.WriteLine("Error parsing field elements in StreetAddress Parser" + ex.ToString());
                 }
 
             }
@@ -156,7 +156,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("StreetAddressParser.Parse: Unhandled multiField: " + multiField.Attribute("name").Value);
+                            Console.WriteLine("StreetAddress Parser: Unhandled multiField: " + multiField.Attribute("name").Value);
                         }
                         break;
                 }
@@ -169,7 +169,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("StreetAddressParser.Parse: Unhandled multiModelField: " + multiModelField.Attribute("name").Value);
+                            Console.WriteLine("StreetAddress Parser: Unhandled multiModelField: " + multiModelField.Attribute("name").Value);
                         }
                         break;
                 }

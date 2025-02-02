@@ -116,7 +116,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("ChatParser: Unknown field: " + field.Attribute("name").Value);
+                            Console.WriteLine("Chat Parser: Unknown field: " + field.Attribute("name").Value);
                         }
                         break;
                 }
@@ -129,7 +129,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("ChatParser: Unknown multiField: " + multiField.Attribute("name").Value);
+                            Console.WriteLine("Chat Parser: Unknown multiField: " + multiField.Attribute("name").Value);
                         }
                         break;
                 }
@@ -160,7 +160,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("ChatParser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
+                            Console.WriteLine("Chat Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
                         }
                         break;
                 }

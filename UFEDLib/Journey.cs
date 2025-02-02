@@ -97,7 +97,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("JourneyParser.Parse: Unhandled field: " + field.Attribute("name").Value);
+                            Console.WriteLine("Journey Parser: Unhandled field: " + field.Attribute("name").Value);
                         }
                         break;
                 }
@@ -120,7 +120,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("JourneyParser.Parse: Unhandled modelField: " + modelFieldElement.Attribute("name").Value);
+                            Console.WriteLine("Journey Parser: Unhandled modelField: " + modelFieldElement.Attribute("name").Value);
                         }
                         break;
                 }
@@ -138,7 +138,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("JourneyParser.Parse: Unhandled multiModelField: " + multiModelFieldElement.Attribute("name").Value);
+                            Console.WriteLine("Journey Parser: Unhandled multiModelField: " + multiModelFieldElement.Attribute("name").Value);
                         }
                         break;
                 }

@@ -95,14 +95,14 @@ namespace UFEDLib
                         default:
                             if (debugAttributes)
                             {
-                                Console.WriteLine("CoordinateParser: Unhandled field: " + fieldElement.Attribute("name").Value);
+                                Console.WriteLine("Coordinate Parser: Unhandled field: " + fieldElement.Attribute("name").Value);
                             }
                             break;
                     }
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Error parsing field elements in CoordinateParser" + ex.ToString());
+                    Console.WriteLine("Error parsing field elements in Coordinate Parser" + ex.ToString());
                 }
 
             }
@@ -117,14 +117,14 @@ namespace UFEDLib
                         default:
                             if (debugAttributes)
                             {
-                                Console.WriteLine("CoordinateParser: Unhandled multiField: " + multiField.Attribute("name").Value);
+                                Console.WriteLine("Coordinate Parser: Unhandled multiField: " + multiField.Attribute("name").Value);
                             }
                             break;
                     }
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Error parsing multiField elements in CoordinateParser" + ex.ToString());
+                    Console.WriteLine("Error parsing multiField elements in Coordinate Parser" + ex.ToString());
                 }
             }
 
@@ -137,14 +137,14 @@ namespace UFEDLib
                         default:
                             if (debugAttributes)
                             {
-                                Console.WriteLine("CoordinateParser: Unhandled multiModelField: " + multiModelField.Attribute("name").Value);
+                                Console.WriteLine("Coordinate Parser: Unhandled multiModelField: " + multiModelField.Attribute("name").Value);
                             }
                             break;
                     }
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Error parsing multiModelField elements in CoordinateParser" + ex.ToString());
+                    Console.WriteLine("Error parsing multiModelField elements in Coordinate Parser" + ex.ToString());
                 }
             }
 

@@ -137,7 +137,7 @@ namespace UFEDLib
                         default:
                             if (debugAttributes)
                             {
-                                Console.WriteLine("LocationParser.Parse: Unhandled field: " + field.Attribute("name").Value);
+                                Console.WriteLine("Location Parser: Unhandled field: " + field.Attribute("name").Value);
                             }
                             break;
                     }
@@ -183,7 +183,7 @@ namespace UFEDLib
                         default:
                             if (debugAttributes)
                             {
-                                Console.WriteLine("LocationParser.Parse: Unhandled modelField: " + modelField.Attribute("name").Value);
+                                Console.WriteLine("Location Parser: Unhandled modelField: " + modelField.Attribute("name").Value);
                             }
                             break;
                     }
@@ -202,7 +202,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("LocationParser.Parse: Unhandled multiModelField: " + multiModelField.Attribute("name").Value);
+                            Console.WriteLine("Location Parser: Unhandled multiModelField: " + multiModelField.Attribute("name").Value);
                         }
                         break;
                 }

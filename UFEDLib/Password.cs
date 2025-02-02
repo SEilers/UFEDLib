@@ -107,7 +107,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("PasswordParser.Parse: Unhandled field: " + field.Attribute("name").Value);
+                            Console.WriteLine("Password Parser: Unhandled field: " + field.Attribute("name").Value);
                         }
                         break;
                 }
@@ -120,7 +120,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("PasswordParser.Parse: Unhandled multiField: " + multiField.Attribute("name").Value);
+                            Console.WriteLine("Password Parser: Unhandled multiField: " + multiField.Attribute("name").Value);
                         }
                         break;
                 }
@@ -133,7 +133,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("PasswordParser.Parse: Unhandled multiModelField: " + multiModelField.Attribute("name").Value);
+                            Console.WriteLine("Password Parser: Unhandled multiModelField: " + multiModelField.Attribute("name").Value);
                         }
                         break;
                 }

@@ -85,7 +85,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("WirelessNetworkParser: Unhandled field: " + field.Attribute("name").Value);
+                            Console.WriteLine("WirelessNetwork Parser: Unhandled field: " + field.Attribute("name").Value);
                         }
                         break;
                 }
@@ -98,7 +98,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("WirelessNetworkParser: Unhandled multiField: " + multiField.Attribute("name").Value);
+                            Console.WriteLine("WirelessNetwork Parser: Unhandled multiField: " + multiField.Attribute("name").Value);
                         }
                         break;
                 }
@@ -111,7 +111,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("WirelessNetworkParser: Unhandled multiModelField: " + multiModelField.Attribute("name").Value);
+                            Console.WriteLine("WirelessNetwork Parser: Unhandled multiModelField: " + multiModelField.Attribute("name").Value);
                         }
                         break;
                 }

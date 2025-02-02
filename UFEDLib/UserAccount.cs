@@ -137,7 +137,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("UserAccountParser.Parse: Unhandled field: " + field.Attribute("name").Value);
+                            Console.WriteLine("UserAccount Parser: Unhandled field: " + field.Attribute("name").Value);
                         }
                         break;
                 }
@@ -150,7 +150,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("UserAccountParser.Parse: Unhandled multiField: " + multiField.Attribute("name").Value);
+                            Console.WriteLine("UserAccount Parser: Unhandled multiField: " + multiField.Attribute("name").Value);
                         }
                         break;
                 }
@@ -179,7 +179,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("UserAccountParser.Parse: Unhandled multiModelField: " + multiModelField.Attribute("name").Value);
+                            Console.WriteLine("UserAccount Parser: Unhandled multiModelField: " + multiModelField.Attribute("name").Value);
                         }
                         break;
                 }

@@ -111,7 +111,7 @@ namespace UFEDLib
 
                         if (debugAttributes)
                         {
-                            Console.WriteLine("Note Parser:Unknown multiField: " + multiField.Attribute("name").Value);
+                            Console.WriteLine("Note Parser: Unknown multiField: " + multiField.Attribute("name").Value);
                         }
                         break;
                 }

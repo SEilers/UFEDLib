@@ -105,7 +105,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("AttachmentParser:Unknown multiField: " + multiField.Attribute("name").Value);
+                            Console.WriteLine("AttachmentParser: Unknown multiField: " + multiField.Attribute("name").Value);
                         }
                         break;
                 }

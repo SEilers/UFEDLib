@@ -108,7 +108,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("EMailParser: Unknown attribute: " + field.Attribute("name").Value);
+                            Console.WriteLine("EMail Parser: Unknown attribute: " + field.Attribute("name").Value);
                         }
                         break;
                 }
@@ -121,7 +121,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("EMailParser: Unknown multiField: " + multiField.Attribute("name").Value);
+                            Console.WriteLine("EMail Parser: Unknown multiField: " + multiField.Attribute("name").Value);
                         }
                         break;
                 }
@@ -150,7 +150,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("EMailParser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
+                            Console.WriteLine("EMail Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
                         }
                         break;
                 }
