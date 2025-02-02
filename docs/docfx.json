@@ -10,7 +10,7 @@
           ]
         }
       ],
-      "dest": "reference"
+      "dest": "api"
     }
   ],
   "build": {
@@ -39,7 +39,7 @@
     "globalMetadata": {
       "_appName": "UFEDLib",
       "_appTitle": "UFEDLib",
-      "_enableSearch": true,
+      "_enableSearch": false,
       "pdf": false
     }
   }
