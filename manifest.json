@@ -3,6 +3,499 @@
   "xrefmap": "xrefmap.yml",
   "files": [
     {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.ApplicationUsage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.ApplicationUsage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.Attachment.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.Attachment.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.Autofill.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.Autofill.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.BluetoothDevice.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.BluetoothDevice.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.CalendarEntry.EventClass.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.CalendarEntry.EventClass.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.CalendarEntry.EventPriority.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.CalendarEntry.EventPriority.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.CalendarEntry.EventStatus.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.CalendarEntry.EventStatus.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.CalendarEntry.RepeatDayEnum.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.CalendarEntry.RepeatDayEnum.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.CalendarEntry.RepeatRuleEnum.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.CalendarEntry.RepeatRuleEnum.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.CalendarEntry.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.CalendarEntry.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.Call.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.Call.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.CarvedString.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.CarvedString.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.Chat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.Chat.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.Contact.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.Contact.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.ContactEntry.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.ContactEntry.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.ContactPhoto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.ContactPhoto.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.Cookie.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.Cookie.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.Coordinate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.Coordinate.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.DictionaryWord.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.DictionaryWord.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.EMail.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.EMail.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.IUfedModelParser-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.IUfedModelParser-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.InstalledApplication.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.InstalledApplication.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.InstantMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.InstantMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.Journey.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.Journey.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.Location.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.Location.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.MMS.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.MMS.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.MailMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.MailMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.Map.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.Map.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.ModelBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.ModelBase.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.ModelParser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.ModelParser.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.Note.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.Note.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.Notification.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.Notification.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.Organization.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.Organization.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.Party.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.Party.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.Password.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.Password.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.PoweringEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.PoweringEvent.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.ProjectAttributes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.ProjectAttributes.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.Report.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.Report.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.SMS.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.SMS.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.SearchedItem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.SearchedItem.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.SharedFile.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.SharedFile.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.StreetAddress.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.StreetAddress.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.UserAccount.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.UserAccount.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.VisitedPage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.VisitedPage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.VoiceMail.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.VoiceMail.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.WebBookmark.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.WebBookmark.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.WirelessNetwork.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.WirelessNetwork.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
       "type": "Conceptual",
       "source_relative_path": "getting-started.md",
       "output": {
