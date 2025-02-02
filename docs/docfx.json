@@ -10,7 +10,7 @@
           ]
         }
       ],
-      "dest": "api"
+      "dest": "reference"
     }
   ],
   "build": {
