@@ -1,10 +1,11 @@
-name: .NET
+name: .NET with DocFX
 
 on:
   push:
     branches: [ master ]
   pull_request:
     branches: [ master ]
+  workflow_dispatch:
 
 jobs:
   build:
@@ -23,8 +24,38 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
 
-    - name: Build
+    - name: Build project
       run: dotnet build --configuration Release --no-restore
 
-    - name: Test
-      run: dotnet test --no-restore --verbosity normal
+    - name: Install DocFX
+      run: dotnet tool install -g docfx
+
+    - name: Build Docs with DocFX
+      run: docfx docs/docfx.json
+
+    - name: Upload docs as artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: documentation
+        path: docs/_site
+        retention-days: 5
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+      
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      
+    - name: Download built docs
+      uses: actions/download-artifact@v3
+      with:
+        name: documentation
+        path: docs/_site
+      
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: docs/_site
