@@ -31,13 +31,13 @@ jobs:
       run: dotnet tool install -g docfx
 
     - name: Build Docs with DocFX
-      run: docfx docs/docfx.json -o docs/public  # Ensure output is public
+      run: docfx docs/docfx.json
 
     - name: Upload docs as artifact
       uses: actions/upload-artifact@v4
       with:
         name: documentation
-        path: docs/public
+        path: docs/_site
         retention-days: 5
 
   deploy:
@@ -54,7 +54,7 @@ jobs:
       uses: actions/download-artifact@v4
       with:
         name: documentation
-        path: docs/public
+        path: docs/_site
       
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
