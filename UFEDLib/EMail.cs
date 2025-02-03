@@ -12,7 +12,7 @@ namespace UFEDLib
     {
         public static string GetXmlModelType()
         {
-            return "EMail";
+            return "Email";
         }
 
         #region fields
@@ -42,7 +42,7 @@ namespace UFEDLib
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
             List<EMail> result = new List<EMail>();
 
-            IEnumerable<XElement> emailElements = emailsElement.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "EMail");
+            IEnumerable<XElement> emailElements = emailsElement.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "Email");
 
             foreach (var emailElement in emailElements)
             {
