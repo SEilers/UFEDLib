@@ -768,6 +768,32 @@ references:
   commentId: T:UFEDLib.CalendarEntry
   fullName: UFEDLib.CalendarEntry
   nameWithType: CalendarEntry
+- uid: UFEDLib.CalendarEntry.Account
+  name: Account
+  href: api/UFEDLib.CalendarEntry.html#UFEDLib_CalendarEntry_Account
+  commentId: P:UFEDLib.CalendarEntry.Account
+  fullName: UFEDLib.CalendarEntry.Account
+  nameWithType: CalendarEntry.Account
+- uid: UFEDLib.CalendarEntry.Account*
+  name: Account
+  href: api/UFEDLib.CalendarEntry.html#UFEDLib_CalendarEntry_Account_
+  commentId: Overload:UFEDLib.CalendarEntry.Account
+  isSpec: "True"
+  fullName: UFEDLib.CalendarEntry.Account
+  nameWithType: CalendarEntry.Account
+- uid: UFEDLib.CalendarEntry.Attachments
+  name: Attachments
+  href: api/UFEDLib.CalendarEntry.html#UFEDLib_CalendarEntry_Attachments
+  commentId: P:UFEDLib.CalendarEntry.Attachments
+  fullName: UFEDLib.CalendarEntry.Attachments
+  nameWithType: CalendarEntry.Attachments
+- uid: UFEDLib.CalendarEntry.Attachments*
+  name: Attachments
+  href: api/UFEDLib.CalendarEntry.html#UFEDLib_CalendarEntry_Attachments_
+  commentId: Overload:UFEDLib.CalendarEntry.Attachments
+  isSpec: "True"
+  fullName: UFEDLib.CalendarEntry.Attachments
+  nameWithType: CalendarEntry.Attachments
 - uid: UFEDLib.CalendarEntry.Attendees
   name: Attendees
   href: api/UFEDLib.CalendarEntry.html#UFEDLib_CalendarEntry_Attendees
@@ -781,6 +807,19 @@ references:
   isSpec: "True"
   fullName: UFEDLib.CalendarEntry.Attendees
   nameWithType: CalendarEntry.Attendees
+- uid: UFEDLib.CalendarEntry.Availability
+  name: Availability
+  href: api/UFEDLib.CalendarEntry.html#UFEDLib_CalendarEntry_Availability
+  commentId: P:UFEDLib.CalendarEntry.Availability
+  fullName: UFEDLib.CalendarEntry.Availability
+  nameWithType: CalendarEntry.Availability
+- uid: UFEDLib.CalendarEntry.Availability*
+  name: Availability
+  href: api/UFEDLib.CalendarEntry.html#UFEDLib_CalendarEntry_Availability_
+  commentId: Overload:UFEDLib.CalendarEntry.Availability
+  isSpec: "True"
+  fullName: UFEDLib.CalendarEntry.Availability
+  nameWithType: CalendarEntry.Availability
 - uid: UFEDLib.CalendarEntry.Category
   name: Category
   href: api/UFEDLib.CalendarEntry.html#UFEDLib_CalendarEntry_Category
@@ -833,138 +872,19 @@ references:
   isSpec: "True"
   fullName: UFEDLib.CalendarEntry.EndDate
   nameWithType: CalendarEntry.EndDate
-- uid: UFEDLib.CalendarEntry.EventClass
-  name: CalendarEntry.EventClass
-  href: api/UFEDLib.CalendarEntry.EventClass.html
-  commentId: T:UFEDLib.CalendarEntry.EventClass
-  fullName: UFEDLib.CalendarEntry.EventClass
-  nameWithType: CalendarEntry.EventClass
-- uid: UFEDLib.CalendarEntry.EventClass.Confidential
-  name: Confidential
-  href: api/UFEDLib.CalendarEntry.EventClass.html#UFEDLib_CalendarEntry_EventClass_Confidential
-  commentId: F:UFEDLib.CalendarEntry.EventClass.Confidential
-  fullName: UFEDLib.CalendarEntry.EventClass.Confidential
-  nameWithType: CalendarEntry.EventClass.Confidential
-- uid: UFEDLib.CalendarEntry.EventClass.Normal
-  name: Normal
-  href: api/UFEDLib.CalendarEntry.EventClass.html#UFEDLib_CalendarEntry_EventClass_Normal
-  commentId: F:UFEDLib.CalendarEntry.EventClass.Normal
-  fullName: UFEDLib.CalendarEntry.EventClass.Normal
-  nameWithType: CalendarEntry.EventClass.Normal
-- uid: UFEDLib.CalendarEntry.EventClass.Personal
-  name: Personal
-  href: api/UFEDLib.CalendarEntry.EventClass.html#UFEDLib_CalendarEntry_EventClass_Personal
-  commentId: F:UFEDLib.CalendarEntry.EventClass.Personal
-  fullName: UFEDLib.CalendarEntry.EventClass.Personal
-  nameWithType: CalendarEntry.EventClass.Personal
-- uid: UFEDLib.CalendarEntry.EventClass.Private
-  name: Private
-  href: api/UFEDLib.CalendarEntry.EventClass.html#UFEDLib_CalendarEntry_EventClass_Private
-  commentId: F:UFEDLib.CalendarEntry.EventClass.Private
-  fullName: UFEDLib.CalendarEntry.EventClass.Private
-  nameWithType: CalendarEntry.EventClass.Private
-- uid: UFEDLib.CalendarEntry.EventPriority
-  name: CalendarEntry.EventPriority
-  href: api/UFEDLib.CalendarEntry.EventPriority.html
-  commentId: T:UFEDLib.CalendarEntry.EventPriority
-  fullName: UFEDLib.CalendarEntry.EventPriority
-  nameWithType: CalendarEntry.EventPriority
-- uid: UFEDLib.CalendarEntry.EventPriority.High
-  name: High
-  href: api/UFEDLib.CalendarEntry.EventPriority.html#UFEDLib_CalendarEntry_EventPriority_High
-  commentId: F:UFEDLib.CalendarEntry.EventPriority.High
-  fullName: UFEDLib.CalendarEntry.EventPriority.High
-  nameWithType: CalendarEntry.EventPriority.High
-- uid: UFEDLib.CalendarEntry.EventPriority.Low
-  name: Low
-  href: api/UFEDLib.CalendarEntry.EventPriority.html#UFEDLib_CalendarEntry_EventPriority_Low
-  commentId: F:UFEDLib.CalendarEntry.EventPriority.Low
-  fullName: UFEDLib.CalendarEntry.EventPriority.Low
-  nameWithType: CalendarEntry.EventPriority.Low
-- uid: UFEDLib.CalendarEntry.EventPriority.Normal
-  name: Normal
-  href: api/UFEDLib.CalendarEntry.EventPriority.html#UFEDLib_CalendarEntry_EventPriority_Normal
-  commentId: F:UFEDLib.CalendarEntry.EventPriority.Normal
-  fullName: UFEDLib.CalendarEntry.EventPriority.Normal
-  nameWithType: CalendarEntry.EventPriority.Normal
-- uid: UFEDLib.CalendarEntry.EventPriority.Unknown
-  name: Unknown
-  href: api/UFEDLib.CalendarEntry.EventPriority.html#UFEDLib_CalendarEntry_EventPriority_Unknown
-  commentId: F:UFEDLib.CalendarEntry.EventPriority.Unknown
-  fullName: UFEDLib.CalendarEntry.EventPriority.Unknown
-  nameWithType: CalendarEntry.EventPriority.Unknown
-- uid: UFEDLib.CalendarEntry.EventStatus
-  name: CalendarEntry.EventStatus
-  href: api/UFEDLib.CalendarEntry.EventStatus.html
-  commentId: T:UFEDLib.CalendarEntry.EventStatus
-  fullName: UFEDLib.CalendarEntry.EventStatus
-  nameWithType: CalendarEntry.EventStatus
-- uid: UFEDLib.CalendarEntry.EventStatus.Accepted
-  name: Accepted
-  href: api/UFEDLib.CalendarEntry.EventStatus.html#UFEDLib_CalendarEntry_EventStatus_Accepted
-  commentId: F:UFEDLib.CalendarEntry.EventStatus.Accepted
-  fullName: UFEDLib.CalendarEntry.EventStatus.Accepted
-  nameWithType: CalendarEntry.EventStatus.Accepted
-- uid: UFEDLib.CalendarEntry.EventStatus.Completed
-  name: Completed
-  href: api/UFEDLib.CalendarEntry.EventStatus.html#UFEDLib_CalendarEntry_EventStatus_Completed
-  commentId: F:UFEDLib.CalendarEntry.EventStatus.Completed
-  fullName: UFEDLib.CalendarEntry.EventStatus.Completed
-  nameWithType: CalendarEntry.EventStatus.Completed
-- uid: UFEDLib.CalendarEntry.EventStatus.Confirmed
-  name: Confirmed
-  href: api/UFEDLib.CalendarEntry.EventStatus.html#UFEDLib_CalendarEntry_EventStatus_Confirmed
-  commentId: F:UFEDLib.CalendarEntry.EventStatus.Confirmed
-  fullName: UFEDLib.CalendarEntry.EventStatus.Confirmed
-  nameWithType: CalendarEntry.EventStatus.Confirmed
-- uid: UFEDLib.CalendarEntry.EventStatus.Declined
-  name: Declined
-  href: api/UFEDLib.CalendarEntry.EventStatus.html#UFEDLib_CalendarEntry_EventStatus_Declined
-  commentId: F:UFEDLib.CalendarEntry.EventStatus.Declined
-  fullName: UFEDLib.CalendarEntry.EventStatus.Declined
-  nameWithType: CalendarEntry.EventStatus.Declined
-- uid: UFEDLib.CalendarEntry.EventStatus.Delegated
-  name: Delegated
-  href: api/UFEDLib.CalendarEntry.EventStatus.html#UFEDLib_CalendarEntry_EventStatus_Delegated
-  commentId: F:UFEDLib.CalendarEntry.EventStatus.Delegated
-  fullName: UFEDLib.CalendarEntry.EventStatus.Delegated
-  nameWithType: CalendarEntry.EventStatus.Delegated
-- uid: UFEDLib.CalendarEntry.EventStatus.InProgress
-  name: InProgress
-  href: api/UFEDLib.CalendarEntry.EventStatus.html#UFEDLib_CalendarEntry_EventStatus_InProgress
-  commentId: F:UFEDLib.CalendarEntry.EventStatus.InProgress
-  fullName: UFEDLib.CalendarEntry.EventStatus.InProgress
-  nameWithType: CalendarEntry.EventStatus.InProgress
-- uid: UFEDLib.CalendarEntry.EventStatus.NeedsAction
-  name: NeedsAction
-  href: api/UFEDLib.CalendarEntry.EventStatus.html#UFEDLib_CalendarEntry_EventStatus_NeedsAction
-  commentId: F:UFEDLib.CalendarEntry.EventStatus.NeedsAction
-  fullName: UFEDLib.CalendarEntry.EventStatus.NeedsAction
-  nameWithType: CalendarEntry.EventStatus.NeedsAction
-- uid: UFEDLib.CalendarEntry.EventStatus.Sent
-  name: Sent
-  href: api/UFEDLib.CalendarEntry.EventStatus.html#UFEDLib_CalendarEntry_EventStatus_Sent
-  commentId: F:UFEDLib.CalendarEntry.EventStatus.Sent
-  fullName: UFEDLib.CalendarEntry.EventStatus.Sent
-  nameWithType: CalendarEntry.EventStatus.Sent
-- uid: UFEDLib.CalendarEntry.EventStatus.Tentative
-  name: Tentative
-  href: api/UFEDLib.CalendarEntry.EventStatus.html#UFEDLib_CalendarEntry_EventStatus_Tentative
-  commentId: F:UFEDLib.CalendarEntry.EventStatus.Tentative
-  fullName: UFEDLib.CalendarEntry.EventStatus.Tentative
-  nameWithType: CalendarEntry.EventStatus.Tentative
-- uid: UFEDLib.CalendarEntry.EventStatus.Unknown
-  name: Unknown
-  href: api/UFEDLib.CalendarEntry.EventStatus.html#UFEDLib_CalendarEntry_EventStatus_Unknown
-  commentId: F:UFEDLib.CalendarEntry.EventStatus.Unknown
-  fullName: UFEDLib.CalendarEntry.EventStatus.Unknown
-  nameWithType: CalendarEntry.EventStatus.Unknown
-- uid: UFEDLib.CalendarEntry.EventStatus.WaitingOnInfo
-  name: WaitingOnInfo
-  href: api/UFEDLib.CalendarEntry.EventStatus.html#UFEDLib_CalendarEntry_EventStatus_WaitingOnInfo
-  commentId: F:UFEDLib.CalendarEntry.EventStatus.WaitingOnInfo
-  fullName: UFEDLib.CalendarEntry.EventStatus.WaitingOnInfo
-  nameWithType: CalendarEntry.EventStatus.WaitingOnInfo
+- uid: UFEDLib.CalendarEntry.GetXmlModelType
+  name: GetXmlModelType()
+  href: api/UFEDLib.CalendarEntry.html#UFEDLib_CalendarEntry_GetXmlModelType
+  commentId: M:UFEDLib.CalendarEntry.GetXmlModelType
+  fullName: UFEDLib.CalendarEntry.GetXmlModelType()
+  nameWithType: CalendarEntry.GetXmlModelType()
+- uid: UFEDLib.CalendarEntry.GetXmlModelType*
+  name: GetXmlModelType
+  href: api/UFEDLib.CalendarEntry.html#UFEDLib_CalendarEntry_GetXmlModelType_
+  commentId: Overload:UFEDLib.CalendarEntry.GetXmlModelType
+  isSpec: "True"
+  fullName: UFEDLib.CalendarEntry.GetXmlModelType
+  nameWithType: CalendarEntry.GetXmlModelType
 - uid: UFEDLib.CalendarEntry.Location
   name: Location
   href: api/UFEDLib.CalendarEntry.html#UFEDLib_CalendarEntry_Location
@@ -978,6 +898,38 @@ references:
   isSpec: "True"
   fullName: UFEDLib.CalendarEntry.Location
   nameWithType: CalendarEntry.Location
+- uid: UFEDLib.CalendarEntry.ParseModel(System.Xml.Linq.XElement,System.Boolean)
+  name: ParseModel(XElement, bool)
+  href: api/UFEDLib.CalendarEntry.html#UFEDLib_CalendarEntry_ParseModel_System_Xml_Linq_XElement_System_Boolean_
+  commentId: M:UFEDLib.CalendarEntry.ParseModel(System.Xml.Linq.XElement,System.Boolean)
+  name.vb: ParseModel(XElement, Boolean)
+  fullName: UFEDLib.CalendarEntry.ParseModel(System.Xml.Linq.XElement, bool)
+  fullName.vb: UFEDLib.CalendarEntry.ParseModel(System.Xml.Linq.XElement, Boolean)
+  nameWithType: CalendarEntry.ParseModel(XElement, bool)
+  nameWithType.vb: CalendarEntry.ParseModel(XElement, Boolean)
+- uid: UFEDLib.CalendarEntry.ParseModel*
+  name: ParseModel
+  href: api/UFEDLib.CalendarEntry.html#UFEDLib_CalendarEntry_ParseModel_
+  commentId: Overload:UFEDLib.CalendarEntry.ParseModel
+  isSpec: "True"
+  fullName: UFEDLib.CalendarEntry.ParseModel
+  nameWithType: CalendarEntry.ParseModel
+- uid: UFEDLib.CalendarEntry.ParseMultiModel(System.Xml.Linq.XElement,System.Boolean)
+  name: ParseMultiModel(XElement, bool)
+  href: api/UFEDLib.CalendarEntry.html#UFEDLib_CalendarEntry_ParseMultiModel_System_Xml_Linq_XElement_System_Boolean_
+  commentId: M:UFEDLib.CalendarEntry.ParseMultiModel(System.Xml.Linq.XElement,System.Boolean)
+  name.vb: ParseMultiModel(XElement, Boolean)
+  fullName: UFEDLib.CalendarEntry.ParseMultiModel(System.Xml.Linq.XElement, bool)
+  fullName.vb: UFEDLib.CalendarEntry.ParseMultiModel(System.Xml.Linq.XElement, Boolean)
+  nameWithType: CalendarEntry.ParseMultiModel(XElement, bool)
+  nameWithType.vb: CalendarEntry.ParseMultiModel(XElement, Boolean)
+- uid: UFEDLib.CalendarEntry.ParseMultiModel*
+  name: ParseMultiModel
+  href: api/UFEDLib.CalendarEntry.html#UFEDLib_CalendarEntry_ParseMultiModel_
+  commentId: Overload:UFEDLib.CalendarEntry.ParseMultiModel
+  isSpec: "True"
+  fullName: UFEDLib.CalendarEntry.ParseMultiModel
+  nameWithType: CalendarEntry.ParseMultiModel
 - uid: UFEDLib.CalendarEntry.Priority
   name: Priority
   href: api/UFEDLib.CalendarEntry.html#UFEDLib_CalendarEntry_Priority
@@ -1017,90 +969,6 @@ references:
   isSpec: "True"
   fullName: UFEDLib.CalendarEntry.RepeatDay
   nameWithType: CalendarEntry.RepeatDay
-- uid: UFEDLib.CalendarEntry.RepeatDayEnum
-  name: CalendarEntry.RepeatDayEnum
-  href: api/UFEDLib.CalendarEntry.RepeatDayEnum.html
-  commentId: T:UFEDLib.CalendarEntry.RepeatDayEnum
-  fullName: UFEDLib.CalendarEntry.RepeatDayEnum
-  nameWithType: CalendarEntry.RepeatDayEnum
-- uid: UFEDLib.CalendarEntry.RepeatDayEnum.First
-  name: First
-  href: api/UFEDLib.CalendarEntry.RepeatDayEnum.html#UFEDLib_CalendarEntry_RepeatDayEnum_First
-  commentId: F:UFEDLib.CalendarEntry.RepeatDayEnum.First
-  fullName: UFEDLib.CalendarEntry.RepeatDayEnum.First
-  nameWithType: CalendarEntry.RepeatDayEnum.First
-- uid: UFEDLib.CalendarEntry.RepeatDayEnum.Fourth
-  name: Fourth
-  href: api/UFEDLib.CalendarEntry.RepeatDayEnum.html#UFEDLib_CalendarEntry_RepeatDayEnum_Fourth
-  commentId: F:UFEDLib.CalendarEntry.RepeatDayEnum.Fourth
-  fullName: UFEDLib.CalendarEntry.RepeatDayEnum.Fourth
-  nameWithType: CalendarEntry.RepeatDayEnum.Fourth
-- uid: UFEDLib.CalendarEntry.RepeatDayEnum.Friday
-  name: Friday
-  href: api/UFEDLib.CalendarEntry.RepeatDayEnum.html#UFEDLib_CalendarEntry_RepeatDayEnum_Friday
-  commentId: F:UFEDLib.CalendarEntry.RepeatDayEnum.Friday
-  fullName: UFEDLib.CalendarEntry.RepeatDayEnum.Friday
-  nameWithType: CalendarEntry.RepeatDayEnum.Friday
-- uid: UFEDLib.CalendarEntry.RepeatDayEnum.Last
-  name: Last
-  href: api/UFEDLib.CalendarEntry.RepeatDayEnum.html#UFEDLib_CalendarEntry_RepeatDayEnum_Last
-  commentId: F:UFEDLib.CalendarEntry.RepeatDayEnum.Last
-  fullName: UFEDLib.CalendarEntry.RepeatDayEnum.Last
-  nameWithType: CalendarEntry.RepeatDayEnum.Last
-- uid: UFEDLib.CalendarEntry.RepeatDayEnum.Monday
-  name: Monday
-  href: api/UFEDLib.CalendarEntry.RepeatDayEnum.html#UFEDLib_CalendarEntry_RepeatDayEnum_Monday
-  commentId: F:UFEDLib.CalendarEntry.RepeatDayEnum.Monday
-  fullName: UFEDLib.CalendarEntry.RepeatDayEnum.Monday
-  nameWithType: CalendarEntry.RepeatDayEnum.Monday
-- uid: UFEDLib.CalendarEntry.RepeatDayEnum.None
-  name: None
-  href: api/UFEDLib.CalendarEntry.RepeatDayEnum.html#UFEDLib_CalendarEntry_RepeatDayEnum_None
-  commentId: F:UFEDLib.CalendarEntry.RepeatDayEnum.None
-  fullName: UFEDLib.CalendarEntry.RepeatDayEnum.None
-  nameWithType: CalendarEntry.RepeatDayEnum.None
-- uid: UFEDLib.CalendarEntry.RepeatDayEnum.Saturday
-  name: Saturday
-  href: api/UFEDLib.CalendarEntry.RepeatDayEnum.html#UFEDLib_CalendarEntry_RepeatDayEnum_Saturday
-  commentId: F:UFEDLib.CalendarEntry.RepeatDayEnum.Saturday
-  fullName: UFEDLib.CalendarEntry.RepeatDayEnum.Saturday
-  nameWithType: CalendarEntry.RepeatDayEnum.Saturday
-- uid: UFEDLib.CalendarEntry.RepeatDayEnum.Second
-  name: Second
-  href: api/UFEDLib.CalendarEntry.RepeatDayEnum.html#UFEDLib_CalendarEntry_RepeatDayEnum_Second
-  commentId: F:UFEDLib.CalendarEntry.RepeatDayEnum.Second
-  fullName: UFEDLib.CalendarEntry.RepeatDayEnum.Second
-  nameWithType: CalendarEntry.RepeatDayEnum.Second
-- uid: UFEDLib.CalendarEntry.RepeatDayEnum.Sunday
-  name: Sunday
-  href: api/UFEDLib.CalendarEntry.RepeatDayEnum.html#UFEDLib_CalendarEntry_RepeatDayEnum_Sunday
-  commentId: F:UFEDLib.CalendarEntry.RepeatDayEnum.Sunday
-  fullName: UFEDLib.CalendarEntry.RepeatDayEnum.Sunday
-  nameWithType: CalendarEntry.RepeatDayEnum.Sunday
-- uid: UFEDLib.CalendarEntry.RepeatDayEnum.Third
-  name: Third
-  href: api/UFEDLib.CalendarEntry.RepeatDayEnum.html#UFEDLib_CalendarEntry_RepeatDayEnum_Third
-  commentId: F:UFEDLib.CalendarEntry.RepeatDayEnum.Third
-  fullName: UFEDLib.CalendarEntry.RepeatDayEnum.Third
-  nameWithType: CalendarEntry.RepeatDayEnum.Third
-- uid: UFEDLib.CalendarEntry.RepeatDayEnum.Thursday
-  name: Thursday
-  href: api/UFEDLib.CalendarEntry.RepeatDayEnum.html#UFEDLib_CalendarEntry_RepeatDayEnum_Thursday
-  commentId: F:UFEDLib.CalendarEntry.RepeatDayEnum.Thursday
-  fullName: UFEDLib.CalendarEntry.RepeatDayEnum.Thursday
-  nameWithType: CalendarEntry.RepeatDayEnum.Thursday
-- uid: UFEDLib.CalendarEntry.RepeatDayEnum.Tuesday
-  name: Tuesday
-  href: api/UFEDLib.CalendarEntry.RepeatDayEnum.html#UFEDLib_CalendarEntry_RepeatDayEnum_Tuesday
-  commentId: F:UFEDLib.CalendarEntry.RepeatDayEnum.Tuesday
-  fullName: UFEDLib.CalendarEntry.RepeatDayEnum.Tuesday
-  nameWithType: CalendarEntry.RepeatDayEnum.Tuesday
-- uid: UFEDLib.CalendarEntry.RepeatDayEnum.Wednesday
-  name: Wednesday
-  href: api/UFEDLib.CalendarEntry.RepeatDayEnum.html#UFEDLib_CalendarEntry_RepeatDayEnum_Wednesday
-  commentId: F:UFEDLib.CalendarEntry.RepeatDayEnum.Wednesday
-  fullName: UFEDLib.CalendarEntry.RepeatDayEnum.Wednesday
-  nameWithType: CalendarEntry.RepeatDayEnum.Wednesday
 - uid: UFEDLib.CalendarEntry.RepeatInterval
   name: RepeatInterval
   href: api/UFEDLib.CalendarEntry.html#UFEDLib_CalendarEntry_RepeatInterval
@@ -1127,42 +995,6 @@ references:
   isSpec: "True"
   fullName: UFEDLib.CalendarEntry.RepeatRule
   nameWithType: CalendarEntry.RepeatRule
-- uid: UFEDLib.CalendarEntry.RepeatRuleEnum
-  name: CalendarEntry.RepeatRuleEnum
-  href: api/UFEDLib.CalendarEntry.RepeatRuleEnum.html
-  commentId: T:UFEDLib.CalendarEntry.RepeatRuleEnum
-  fullName: UFEDLib.CalendarEntry.RepeatRuleEnum
-  nameWithType: CalendarEntry.RepeatRuleEnum
-- uid: UFEDLib.CalendarEntry.RepeatRuleEnum.Daily
-  name: Daily
-  href: api/UFEDLib.CalendarEntry.RepeatRuleEnum.html#UFEDLib_CalendarEntry_RepeatRuleEnum_Daily
-  commentId: F:UFEDLib.CalendarEntry.RepeatRuleEnum.Daily
-  fullName: UFEDLib.CalendarEntry.RepeatRuleEnum.Daily
-  nameWithType: CalendarEntry.RepeatRuleEnum.Daily
-- uid: UFEDLib.CalendarEntry.RepeatRuleEnum.Monthly
-  name: Monthly
-  href: api/UFEDLib.CalendarEntry.RepeatRuleEnum.html#UFEDLib_CalendarEntry_RepeatRuleEnum_Monthly
-  commentId: F:UFEDLib.CalendarEntry.RepeatRuleEnum.Monthly
-  fullName: UFEDLib.CalendarEntry.RepeatRuleEnum.Monthly
-  nameWithType: CalendarEntry.RepeatRuleEnum.Monthly
-- uid: UFEDLib.CalendarEntry.RepeatRuleEnum.None
-  name: None
-  href: api/UFEDLib.CalendarEntry.RepeatRuleEnum.html#UFEDLib_CalendarEntry_RepeatRuleEnum_None
-  commentId: F:UFEDLib.CalendarEntry.RepeatRuleEnum.None
-  fullName: UFEDLib.CalendarEntry.RepeatRuleEnum.None
-  nameWithType: CalendarEntry.RepeatRuleEnum.None
-- uid: UFEDLib.CalendarEntry.RepeatRuleEnum.Weekly
-  name: Weekly
-  href: api/UFEDLib.CalendarEntry.RepeatRuleEnum.html#UFEDLib_CalendarEntry_RepeatRuleEnum_Weekly
-  commentId: F:UFEDLib.CalendarEntry.RepeatRuleEnum.Weekly
-  fullName: UFEDLib.CalendarEntry.RepeatRuleEnum.Weekly
-  nameWithType: CalendarEntry.RepeatRuleEnum.Weekly
-- uid: UFEDLib.CalendarEntry.RepeatRuleEnum.Yearly
-  name: Yearly
-  href: api/UFEDLib.CalendarEntry.RepeatRuleEnum.html#UFEDLib_CalendarEntry_RepeatRuleEnum_Yearly
-  commentId: F:UFEDLib.CalendarEntry.RepeatRuleEnum.Yearly
-  fullName: UFEDLib.CalendarEntry.RepeatRuleEnum.Yearly
-  nameWithType: CalendarEntry.RepeatRuleEnum.Yearly
 - uid: UFEDLib.CalendarEntry.RepeatUntil
   name: RepeatUntil
   href: api/UFEDLib.CalendarEntry.html#UFEDLib_CalendarEntry_RepeatUntil
@@ -1228,6 +1060,19 @@ references:
   isSpec: "True"
   fullName: UFEDLib.CalendarEntry.Subject
   nameWithType: CalendarEntry.Subject
+- uid: UFEDLib.CalendarEntry.UserMapping
+  name: UserMapping
+  href: api/UFEDLib.CalendarEntry.html#UFEDLib_CalendarEntry_UserMapping
+  commentId: P:UFEDLib.CalendarEntry.UserMapping
+  fullName: UFEDLib.CalendarEntry.UserMapping
+  nameWithType: CalendarEntry.UserMapping
+- uid: UFEDLib.CalendarEntry.UserMapping*
+  name: UserMapping
+  href: api/UFEDLib.CalendarEntry.html#UFEDLib_CalendarEntry_UserMapping_
+  commentId: Overload:UFEDLib.CalendarEntry.UserMapping
+  isSpec: "True"
+  fullName: UFEDLib.CalendarEntry.UserMapping
+  nameWithType: CalendarEntry.UserMapping
 - uid: UFEDLib.Call
   name: Call
   href: api/UFEDLib.Call.html
@@ -2695,6 +2540,161 @@ references:
   isSpec: "True"
   fullName: UFEDLib.Coordinate.PositionAddress
   nameWithType: Coordinate.PositionAddress
+- uid: UFEDLib.DeviceConnectivity
+  name: DeviceConnectivity
+  href: api/UFEDLib.DeviceConnectivity.html
+  commentId: T:UFEDLib.DeviceConnectivity
+  fullName: UFEDLib.DeviceConnectivity
+  nameWithType: DeviceConnectivity
+- uid: UFEDLib.DeviceConnectivity.ConnectivityMethod
+  name: ConnectivityMethod
+  href: api/UFEDLib.DeviceConnectivity.html#UFEDLib_DeviceConnectivity_ConnectivityMethod
+  commentId: P:UFEDLib.DeviceConnectivity.ConnectivityMethod
+  fullName: UFEDLib.DeviceConnectivity.ConnectivityMethod
+  nameWithType: DeviceConnectivity.ConnectivityMethod
+- uid: UFEDLib.DeviceConnectivity.ConnectivityMethod*
+  name: ConnectivityMethod
+  href: api/UFEDLib.DeviceConnectivity.html#UFEDLib_DeviceConnectivity_ConnectivityMethod_
+  commentId: Overload:UFEDLib.DeviceConnectivity.ConnectivityMethod
+  isSpec: "True"
+  fullName: UFEDLib.DeviceConnectivity.ConnectivityMethod
+  nameWithType: DeviceConnectivity.ConnectivityMethod
+- uid: UFEDLib.DeviceConnectivity.ConnectivityNature
+  name: ConnectivityNature
+  href: api/UFEDLib.DeviceConnectivity.html#UFEDLib_DeviceConnectivity_ConnectivityNature
+  commentId: P:UFEDLib.DeviceConnectivity.ConnectivityNature
+  fullName: UFEDLib.DeviceConnectivity.ConnectivityNature
+  nameWithType: DeviceConnectivity.ConnectivityNature
+- uid: UFEDLib.DeviceConnectivity.ConnectivityNature*
+  name: ConnectivityNature
+  href: api/UFEDLib.DeviceConnectivity.html#UFEDLib_DeviceConnectivity_ConnectivityNature_
+  commentId: Overload:UFEDLib.DeviceConnectivity.ConnectivityNature
+  isSpec: "True"
+  fullName: UFEDLib.DeviceConnectivity.ConnectivityNature
+  nameWithType: DeviceConnectivity.ConnectivityNature
+- uid: UFEDLib.DeviceConnectivity.DeviceName
+  name: DeviceName
+  href: api/UFEDLib.DeviceConnectivity.html#UFEDLib_DeviceConnectivity_DeviceName
+  commentId: P:UFEDLib.DeviceConnectivity.DeviceName
+  fullName: UFEDLib.DeviceConnectivity.DeviceName
+  nameWithType: DeviceConnectivity.DeviceName
+- uid: UFEDLib.DeviceConnectivity.DeviceName*
+  name: DeviceName
+  href: api/UFEDLib.DeviceConnectivity.html#UFEDLib_DeviceConnectivity_DeviceName_
+  commentId: Overload:UFEDLib.DeviceConnectivity.DeviceName
+  isSpec: "True"
+  fullName: UFEDLib.DeviceConnectivity.DeviceName
+  nameWithType: DeviceConnectivity.DeviceName
+- uid: UFEDLib.DeviceConnectivity.DeviceType
+  name: DeviceType
+  href: api/UFEDLib.DeviceConnectivity.html#UFEDLib_DeviceConnectivity_DeviceType
+  commentId: P:UFEDLib.DeviceConnectivity.DeviceType
+  fullName: UFEDLib.DeviceConnectivity.DeviceType
+  nameWithType: DeviceConnectivity.DeviceType
+- uid: UFEDLib.DeviceConnectivity.DeviceType*
+  name: DeviceType
+  href: api/UFEDLib.DeviceConnectivity.html#UFEDLib_DeviceConnectivity_DeviceType_
+  commentId: Overload:UFEDLib.DeviceConnectivity.DeviceType
+  isSpec: "True"
+  fullName: UFEDLib.DeviceConnectivity.DeviceType
+  nameWithType: DeviceConnectivity.DeviceType
+- uid: UFEDLib.DeviceConnectivity.GetXmlModelType
+  name: GetXmlModelType()
+  href: api/UFEDLib.DeviceConnectivity.html#UFEDLib_DeviceConnectivity_GetXmlModelType
+  commentId: M:UFEDLib.DeviceConnectivity.GetXmlModelType
+  fullName: UFEDLib.DeviceConnectivity.GetXmlModelType()
+  nameWithType: DeviceConnectivity.GetXmlModelType()
+- uid: UFEDLib.DeviceConnectivity.GetXmlModelType*
+  name: GetXmlModelType
+  href: api/UFEDLib.DeviceConnectivity.html#UFEDLib_DeviceConnectivity_GetXmlModelType_
+  commentId: Overload:UFEDLib.DeviceConnectivity.GetXmlModelType
+  isSpec: "True"
+  fullName: UFEDLib.DeviceConnectivity.GetXmlModelType
+  nameWithType: DeviceConnectivity.GetXmlModelType
+- uid: UFEDLib.DeviceConnectivity.ParseModel(System.Xml.Linq.XElement,System.Boolean)
+  name: ParseModel(XElement, bool)
+  href: api/UFEDLib.DeviceConnectivity.html#UFEDLib_DeviceConnectivity_ParseModel_System_Xml_Linq_XElement_System_Boolean_
+  commentId: M:UFEDLib.DeviceConnectivity.ParseModel(System.Xml.Linq.XElement,System.Boolean)
+  name.vb: ParseModel(XElement, Boolean)
+  fullName: UFEDLib.DeviceConnectivity.ParseModel(System.Xml.Linq.XElement, bool)
+  fullName.vb: UFEDLib.DeviceConnectivity.ParseModel(System.Xml.Linq.XElement, Boolean)
+  nameWithType: DeviceConnectivity.ParseModel(XElement, bool)
+  nameWithType.vb: DeviceConnectivity.ParseModel(XElement, Boolean)
+- uid: UFEDLib.DeviceConnectivity.ParseModel*
+  name: ParseModel
+  href: api/UFEDLib.DeviceConnectivity.html#UFEDLib_DeviceConnectivity_ParseModel_
+  commentId: Overload:UFEDLib.DeviceConnectivity.ParseModel
+  isSpec: "True"
+  fullName: UFEDLib.DeviceConnectivity.ParseModel
+  nameWithType: DeviceConnectivity.ParseModel
+- uid: UFEDLib.DeviceConnectivity.ParseMultiModel(System.Xml.Linq.XElement,System.Boolean)
+  name: ParseMultiModel(XElement, bool)
+  href: api/UFEDLib.DeviceConnectivity.html#UFEDLib_DeviceConnectivity_ParseMultiModel_System_Xml_Linq_XElement_System_Boolean_
+  commentId: M:UFEDLib.DeviceConnectivity.ParseMultiModel(System.Xml.Linq.XElement,System.Boolean)
+  name.vb: ParseMultiModel(XElement, Boolean)
+  fullName: UFEDLib.DeviceConnectivity.ParseMultiModel(System.Xml.Linq.XElement, bool)
+  fullName.vb: UFEDLib.DeviceConnectivity.ParseMultiModel(System.Xml.Linq.XElement, Boolean)
+  nameWithType: DeviceConnectivity.ParseMultiModel(XElement, bool)
+  nameWithType.vb: DeviceConnectivity.ParseMultiModel(XElement, Boolean)
+- uid: UFEDLib.DeviceConnectivity.ParseMultiModel*
+  name: ParseMultiModel
+  href: api/UFEDLib.DeviceConnectivity.html#UFEDLib_DeviceConnectivity_ParseMultiModel_
+  commentId: Overload:UFEDLib.DeviceConnectivity.ParseMultiModel
+  isSpec: "True"
+  fullName: UFEDLib.DeviceConnectivity.ParseMultiModel
+  nameWithType: DeviceConnectivity.ParseMultiModel
+- uid: UFEDLib.DeviceConnectivity.ServiceIdentifier
+  name: ServiceIdentifier
+  href: api/UFEDLib.DeviceConnectivity.html#UFEDLib_DeviceConnectivity_ServiceIdentifier
+  commentId: P:UFEDLib.DeviceConnectivity.ServiceIdentifier
+  fullName: UFEDLib.DeviceConnectivity.ServiceIdentifier
+  nameWithType: DeviceConnectivity.ServiceIdentifier
+- uid: UFEDLib.DeviceConnectivity.ServiceIdentifier*
+  name: ServiceIdentifier
+  href: api/UFEDLib.DeviceConnectivity.html#UFEDLib_DeviceConnectivity_ServiceIdentifier_
+  commentId: Overload:UFEDLib.DeviceConnectivity.ServiceIdentifier
+  isSpec: "True"
+  fullName: UFEDLib.DeviceConnectivity.ServiceIdentifier
+  nameWithType: DeviceConnectivity.ServiceIdentifier
+- uid: UFEDLib.DeviceConnectivity.Source
+  name: Source
+  href: api/UFEDLib.DeviceConnectivity.html#UFEDLib_DeviceConnectivity_Source
+  commentId: P:UFEDLib.DeviceConnectivity.Source
+  fullName: UFEDLib.DeviceConnectivity.Source
+  nameWithType: DeviceConnectivity.Source
+- uid: UFEDLib.DeviceConnectivity.Source*
+  name: Source
+  href: api/UFEDLib.DeviceConnectivity.html#UFEDLib_DeviceConnectivity_Source_
+  commentId: Overload:UFEDLib.DeviceConnectivity.Source
+  isSpec: "True"
+  fullName: UFEDLib.DeviceConnectivity.Source
+  nameWithType: DeviceConnectivity.Source
+- uid: UFEDLib.DeviceConnectivity.StartTime
+  name: StartTime
+  href: api/UFEDLib.DeviceConnectivity.html#UFEDLib_DeviceConnectivity_StartTime
+  commentId: P:UFEDLib.DeviceConnectivity.StartTime
+  fullName: UFEDLib.DeviceConnectivity.StartTime
+  nameWithType: DeviceConnectivity.StartTime
+- uid: UFEDLib.DeviceConnectivity.StartTime*
+  name: StartTime
+  href: api/UFEDLib.DeviceConnectivity.html#UFEDLib_DeviceConnectivity_StartTime_
+  commentId: Overload:UFEDLib.DeviceConnectivity.StartTime
+  isSpec: "True"
+  fullName: UFEDLib.DeviceConnectivity.StartTime
+  nameWithType: DeviceConnectivity.StartTime
+- uid: UFEDLib.DeviceConnectivity.UserMapping
+  name: UserMapping
+  href: api/UFEDLib.DeviceConnectivity.html#UFEDLib_DeviceConnectivity_UserMapping
+  commentId: P:UFEDLib.DeviceConnectivity.UserMapping
+  fullName: UFEDLib.DeviceConnectivity.UserMapping
+  nameWithType: DeviceConnectivity.UserMapping
+- uid: UFEDLib.DeviceConnectivity.UserMapping*
+  name: UserMapping
+  href: api/UFEDLib.DeviceConnectivity.html#UFEDLib_DeviceConnectivity_UserMapping_
+  commentId: Overload:UFEDLib.DeviceConnectivity.UserMapping
+  isSpec: "True"
+  fullName: UFEDLib.DeviceConnectivity.UserMapping
+  nameWithType: DeviceConnectivity.UserMapping
 - uid: UFEDLib.DeviceEvent
   name: DeviceEvent
   href: api/UFEDLib.DeviceEvent.html
@@ -4232,6 +4232,135 @@ references:
   isSpec: "True"
   fullName: UFEDLib.Location.UserMapping
   nameWithType: Location.UserMapping
+- uid: UFEDLib.LogEntry
+  name: LogEntry
+  href: api/UFEDLib.LogEntry.html
+  commentId: T:UFEDLib.LogEntry
+  fullName: UFEDLib.LogEntry
+  nameWithType: LogEntry
+- uid: UFEDLib.LogEntry.Application
+  name: Application
+  href: api/UFEDLib.LogEntry.html#UFEDLib_LogEntry_Application
+  commentId: P:UFEDLib.LogEntry.Application
+  fullName: UFEDLib.LogEntry.Application
+  nameWithType: LogEntry.Application
+- uid: UFEDLib.LogEntry.Application*
+  name: Application
+  href: api/UFEDLib.LogEntry.html#UFEDLib_LogEntry_Application_
+  commentId: Overload:UFEDLib.LogEntry.Application
+  isSpec: "True"
+  fullName: UFEDLib.LogEntry.Application
+  nameWithType: LogEntry.Application
+- uid: UFEDLib.LogEntry.Body
+  name: Body
+  href: api/UFEDLib.LogEntry.html#UFEDLib_LogEntry_Body
+  commentId: P:UFEDLib.LogEntry.Body
+  fullName: UFEDLib.LogEntry.Body
+  nameWithType: LogEntry.Body
+- uid: UFEDLib.LogEntry.Body*
+  name: Body
+  href: api/UFEDLib.LogEntry.html#UFEDLib_LogEntry_Body_
+  commentId: Overload:UFEDLib.LogEntry.Body
+  isSpec: "True"
+  fullName: UFEDLib.LogEntry.Body
+  nameWithType: LogEntry.Body
+- uid: UFEDLib.LogEntry.GetXmlModelType
+  name: GetXmlModelType()
+  href: api/UFEDLib.LogEntry.html#UFEDLib_LogEntry_GetXmlModelType
+  commentId: M:UFEDLib.LogEntry.GetXmlModelType
+  fullName: UFEDLib.LogEntry.GetXmlModelType()
+  nameWithType: LogEntry.GetXmlModelType()
+- uid: UFEDLib.LogEntry.GetXmlModelType*
+  name: GetXmlModelType
+  href: api/UFEDLib.LogEntry.html#UFEDLib_LogEntry_GetXmlModelType_
+  commentId: Overload:UFEDLib.LogEntry.GetXmlModelType
+  isSpec: "True"
+  fullName: UFEDLib.LogEntry.GetXmlModelType
+  nameWithType: LogEntry.GetXmlModelType
+- uid: UFEDLib.LogEntry.Identifier
+  name: Identifier
+  href: api/UFEDLib.LogEntry.html#UFEDLib_LogEntry_Identifier
+  commentId: P:UFEDLib.LogEntry.Identifier
+  fullName: UFEDLib.LogEntry.Identifier
+  nameWithType: LogEntry.Identifier
+- uid: UFEDLib.LogEntry.Identifier*
+  name: Identifier
+  href: api/UFEDLib.LogEntry.html#UFEDLib_LogEntry_Identifier_
+  commentId: Overload:UFEDLib.LogEntry.Identifier
+  isSpec: "True"
+  fullName: UFEDLib.LogEntry.Identifier
+  nameWithType: LogEntry.Identifier
+- uid: UFEDLib.LogEntry.ParseModel(System.Xml.Linq.XElement,System.Boolean)
+  name: ParseModel(XElement, bool)
+  href: api/UFEDLib.LogEntry.html#UFEDLib_LogEntry_ParseModel_System_Xml_Linq_XElement_System_Boolean_
+  commentId: M:UFEDLib.LogEntry.ParseModel(System.Xml.Linq.XElement,System.Boolean)
+  name.vb: ParseModel(XElement, Boolean)
+  fullName: UFEDLib.LogEntry.ParseModel(System.Xml.Linq.XElement, bool)
+  fullName.vb: UFEDLib.LogEntry.ParseModel(System.Xml.Linq.XElement, Boolean)
+  nameWithType: LogEntry.ParseModel(XElement, bool)
+  nameWithType.vb: LogEntry.ParseModel(XElement, Boolean)
+- uid: UFEDLib.LogEntry.ParseModel*
+  name: ParseModel
+  href: api/UFEDLib.LogEntry.html#UFEDLib_LogEntry_ParseModel_
+  commentId: Overload:UFEDLib.LogEntry.ParseModel
+  isSpec: "True"
+  fullName: UFEDLib.LogEntry.ParseModel
+  nameWithType: LogEntry.ParseModel
+- uid: UFEDLib.LogEntry.ParseMultiModel(System.Xml.Linq.XElement,System.Boolean)
+  name: ParseMultiModel(XElement, bool)
+  href: api/UFEDLib.LogEntry.html#UFEDLib_LogEntry_ParseMultiModel_System_Xml_Linq_XElement_System_Boolean_
+  commentId: M:UFEDLib.LogEntry.ParseMultiModel(System.Xml.Linq.XElement,System.Boolean)
+  name.vb: ParseMultiModel(XElement, Boolean)
+  fullName: UFEDLib.LogEntry.ParseMultiModel(System.Xml.Linq.XElement, bool)
+  fullName.vb: UFEDLib.LogEntry.ParseMultiModel(System.Xml.Linq.XElement, Boolean)
+  nameWithType: LogEntry.ParseMultiModel(XElement, bool)
+  nameWithType.vb: LogEntry.ParseMultiModel(XElement, Boolean)
+- uid: UFEDLib.LogEntry.ParseMultiModel*
+  name: ParseMultiModel
+  href: api/UFEDLib.LogEntry.html#UFEDLib_LogEntry_ParseMultiModel_
+  commentId: Overload:UFEDLib.LogEntry.ParseMultiModel
+  isSpec: "True"
+  fullName: UFEDLib.LogEntry.ParseMultiModel
+  nameWithType: LogEntry.ParseMultiModel
+- uid: UFEDLib.LogEntry.Source
+  name: Source
+  href: api/UFEDLib.LogEntry.html#UFEDLib_LogEntry_Source
+  commentId: P:UFEDLib.LogEntry.Source
+  fullName: UFEDLib.LogEntry.Source
+  nameWithType: LogEntry.Source
+- uid: UFEDLib.LogEntry.Source*
+  name: Source
+  href: api/UFEDLib.LogEntry.html#UFEDLib_LogEntry_Source_
+  commentId: Overload:UFEDLib.LogEntry.Source
+  isSpec: "True"
+  fullName: UFEDLib.LogEntry.Source
+  nameWithType: LogEntry.Source
+- uid: UFEDLib.LogEntry.TimeStamp
+  name: TimeStamp
+  href: api/UFEDLib.LogEntry.html#UFEDLib_LogEntry_TimeStamp
+  commentId: P:UFEDLib.LogEntry.TimeStamp
+  fullName: UFEDLib.LogEntry.TimeStamp
+  nameWithType: LogEntry.TimeStamp
+- uid: UFEDLib.LogEntry.TimeStamp*
+  name: TimeStamp
+  href: api/UFEDLib.LogEntry.html#UFEDLib_LogEntry_TimeStamp_
+  commentId: Overload:UFEDLib.LogEntry.TimeStamp
+  isSpec: "True"
+  fullName: UFEDLib.LogEntry.TimeStamp
+  nameWithType: LogEntry.TimeStamp
+- uid: UFEDLib.LogEntry.UserMapping
+  name: UserMapping
+  href: api/UFEDLib.LogEntry.html#UFEDLib_LogEntry_UserMapping
+  commentId: P:UFEDLib.LogEntry.UserMapping
+  fullName: UFEDLib.LogEntry.UserMapping
+  nameWithType: LogEntry.UserMapping
+- uid: UFEDLib.LogEntry.UserMapping*
+  name: UserMapping
+  href: api/UFEDLib.LogEntry.html#UFEDLib_LogEntry_UserMapping_
+  commentId: Overload:UFEDLib.LogEntry.UserMapping
+  isSpec: "True"
+  fullName: UFEDLib.LogEntry.UserMapping
+  nameWithType: LogEntry.UserMapping
 - uid: UFEDLib.MMS
   name: MMS
   href: api/UFEDLib.MMS.html
@@ -6965,6 +7094,19 @@ references:
   isSpec: "True"
   fullName: UFEDLib.VoiceMail.From
   nameWithType: VoiceMail.From
+- uid: UFEDLib.VoiceMail.GetXmlModelType
+  name: GetXmlModelType()
+  href: api/UFEDLib.VoiceMail.html#UFEDLib_VoiceMail_GetXmlModelType
+  commentId: M:UFEDLib.VoiceMail.GetXmlModelType
+  fullName: UFEDLib.VoiceMail.GetXmlModelType()
+  nameWithType: VoiceMail.GetXmlModelType()
+- uid: UFEDLib.VoiceMail.GetXmlModelType*
+  name: GetXmlModelType
+  href: api/UFEDLib.VoiceMail.html#UFEDLib_VoiceMail_GetXmlModelType_
+  commentId: Overload:UFEDLib.VoiceMail.GetXmlModelType
+  isSpec: "True"
+  fullName: UFEDLib.VoiceMail.GetXmlModelType
+  nameWithType: VoiceMail.GetXmlModelType
 - uid: UFEDLib.VoiceMail.Name
   name: Name
   href: api/UFEDLib.VoiceMail.html#UFEDLib_VoiceMail_Name
@@ -6978,6 +7120,38 @@ references:
   isSpec: "True"
   fullName: UFEDLib.VoiceMail.Name
   nameWithType: VoiceMail.Name
+- uid: UFEDLib.VoiceMail.ParseModel(System.Xml.Linq.XElement,System.Boolean)
+  name: ParseModel(XElement, bool)
+  href: api/UFEDLib.VoiceMail.html#UFEDLib_VoiceMail_ParseModel_System_Xml_Linq_XElement_System_Boolean_
+  commentId: M:UFEDLib.VoiceMail.ParseModel(System.Xml.Linq.XElement,System.Boolean)
+  name.vb: ParseModel(XElement, Boolean)
+  fullName: UFEDLib.VoiceMail.ParseModel(System.Xml.Linq.XElement, bool)
+  fullName.vb: UFEDLib.VoiceMail.ParseModel(System.Xml.Linq.XElement, Boolean)
+  nameWithType: VoiceMail.ParseModel(XElement, bool)
+  nameWithType.vb: VoiceMail.ParseModel(XElement, Boolean)
+- uid: UFEDLib.VoiceMail.ParseModel*
+  name: ParseModel
+  href: api/UFEDLib.VoiceMail.html#UFEDLib_VoiceMail_ParseModel_
+  commentId: Overload:UFEDLib.VoiceMail.ParseModel
+  isSpec: "True"
+  fullName: UFEDLib.VoiceMail.ParseModel
+  nameWithType: VoiceMail.ParseModel
+- uid: UFEDLib.VoiceMail.ParseMultiModel(System.Xml.Linq.XElement,System.Boolean)
+  name: ParseMultiModel(XElement, bool)
+  href: api/UFEDLib.VoiceMail.html#UFEDLib_VoiceMail_ParseMultiModel_System_Xml_Linq_XElement_System_Boolean_
+  commentId: M:UFEDLib.VoiceMail.ParseMultiModel(System.Xml.Linq.XElement,System.Boolean)
+  name.vb: ParseMultiModel(XElement, Boolean)
+  fullName: UFEDLib.VoiceMail.ParseMultiModel(System.Xml.Linq.XElement, bool)
+  fullName.vb: UFEDLib.VoiceMail.ParseMultiModel(System.Xml.Linq.XElement, Boolean)
+  nameWithType: VoiceMail.ParseMultiModel(XElement, bool)
+  nameWithType.vb: VoiceMail.ParseMultiModel(XElement, Boolean)
+- uid: UFEDLib.VoiceMail.ParseMultiModel*
+  name: ParseMultiModel
+  href: api/UFEDLib.VoiceMail.html#UFEDLib_VoiceMail_ParseMultiModel_
+  commentId: Overload:UFEDLib.VoiceMail.ParseMultiModel
+  isSpec: "True"
+  fullName: UFEDLib.VoiceMail.ParseMultiModel
+  nameWithType: VoiceMail.ParseMultiModel
 - uid: UFEDLib.VoiceMail.TimeStamp
   name: TimeStamp
   href: api/UFEDLib.VoiceMail.html#UFEDLib_VoiceMail_TimeStamp

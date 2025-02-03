@@ -64,56 +64,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/UFEDLib.CalendarEntry.EventClass.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/UFEDLib.CalendarEntry.EventClass.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/UFEDLib.CalendarEntry.EventPriority.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/UFEDLib.CalendarEntry.EventPriority.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/UFEDLib.CalendarEntry.EventStatus.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/UFEDLib.CalendarEntry.EventStatus.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/UFEDLib.CalendarEntry.RepeatDayEnum.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/UFEDLib.CalendarEntry.RepeatDayEnum.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/UFEDLib.CalendarEntry.RepeatRuleEnum.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/UFEDLib.CalendarEntry.RepeatRuleEnum.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/UFEDLib.CalendarEntry.yml",
       "output": {
         ".html": {
@@ -214,6 +164,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.DeviceConnectivity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.DeviceConnectivity.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/UFEDLib.DeviceEvent.yml",
       "output": {
         ".html": {
@@ -288,6 +248,16 @@
       "output": {
         ".html": {
           "relative_path": "api/UFEDLib.Location.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.LogEntry.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.LogEntry.html"
         }
       },
       "version": ""

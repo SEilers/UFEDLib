@@ -85,7 +85,7 @@
 
 
   <h1 id="UFEDLib_CalendarEntry" data-uid="UFEDLib.CalendarEntry" class="text-break">
-Class CalendarEntry  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CalendarEntry.cs/#L9"><i class="bi bi-code-slash"></i></a>
+Class CalendarEntry  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CalendarEntry.cs/#L10"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -98,7 +98,7 @@ Class CalendarEntry  <a class="header-action link-secondary" title="View source"
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Serializable]
-public class CalendarEntry : ModelBase</code></pre>
+public class CalendarEntry : ModelBase, IUfedModelParser&lt;CalendarEntry&gt;</code></pre>
   </div>
 
 
@@ -113,6 +113,12 @@ public class CalendarEntry : ModelBase</code></pre>
     </dd>
   </dl>
 
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="UFEDLib.IUfedModelParser-1.html">IUfedModelParser</a>&lt;<a class="xref" href="UFEDLib.CalendarEntry.html">CalendarEntry</a>&gt;</div>
+    </dd>
+  </dl>
 
 
   <dl class="typelist inheritedMembers">
@@ -174,11 +180,73 @@ public class CalendarEntry : ModelBase</code></pre>
 </h2>
 
 
+  <a id="UFEDLib_CalendarEntry_Account_" data-uid="UFEDLib.CalendarEntry.Account*"></a>
+
+  <h3 id="UFEDLib_CalendarEntry_Account" data-uid="UFEDLib.CalendarEntry.Account">
+  Account
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CalendarEntry.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Account { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UFEDLib_CalendarEntry_Attachments_" data-uid="UFEDLib.CalendarEntry.Attachments*"></a>
+
+  <h3 id="UFEDLib_CalendarEntry_Attachments" data-uid="UFEDLib.CalendarEntry.Attachments">
+  Attachments
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CalendarEntry.cs/#L44"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;Attachment&gt; Attachments { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="UFEDLib.Attachment.html">Attachment</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="UFEDLib_CalendarEntry_Attendees_" data-uid="UFEDLib.CalendarEntry.Attendees*"></a>
 
   <h3 id="UFEDLib_CalendarEntry_Attendees" data-uid="UFEDLib.CalendarEntry.Attendees">
   Attendees
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CalendarEntry.cs/#L36"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CalendarEntry.cs/#L45"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -205,11 +273,42 @@ public class CalendarEntry : ModelBase</code></pre>
 
 
 
+  <a id="UFEDLib_CalendarEntry_Availability_" data-uid="UFEDLib.CalendarEntry.Availability*"></a>
+
+  <h3 id="UFEDLib_CalendarEntry_Availability" data-uid="UFEDLib.CalendarEntry.Availability">
+  Availability
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CalendarEntry.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Availability { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="UFEDLib_CalendarEntry_Category_" data-uid="UFEDLib.CalendarEntry.Category*"></a>
 
   <h3 id="UFEDLib_CalendarEntry_Category" data-uid="UFEDLib.CalendarEntry.Category">
   Category
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CalendarEntry.cs/#L13"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CalendarEntry.cs/#L23"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -240,14 +339,14 @@ public class CalendarEntry : ModelBase</code></pre>
 
   <h3 id="UFEDLib_CalendarEntry_Class" data-uid="UFEDLib.CalendarEntry.Class">
   Class
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CalendarEntry.cs/#L55"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CalendarEntry.cs/#L29"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public CalendarEntry.EventClass Class { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string Class { get; set; }</code></pre>
   </div>
 
 
@@ -256,7 +355,7 @@ public class CalendarEntry : ModelBase</code></pre>
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="UFEDLib.CalendarEntry.html">CalendarEntry</a>.<a class="xref" href="UFEDLib.CalendarEntry.EventClass.html">EventClass</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
   </dl>
 
@@ -271,7 +370,7 @@ public class CalendarEntry : ModelBase</code></pre>
 
   <h3 id="UFEDLib_CalendarEntry_Details" data-uid="UFEDLib.CalendarEntry.Details">
   Details
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CalendarEntry.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CalendarEntry.cs/#L24"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -302,7 +401,7 @@ public class CalendarEntry : ModelBase</code></pre>
 
   <h3 id="UFEDLib_CalendarEntry_EndDate" data-uid="UFEDLib.CalendarEntry.EndDate">
   EndDate
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CalendarEntry.cs/#L17"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CalendarEntry.cs/#L25"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -333,7 +432,7 @@ public class CalendarEntry : ModelBase</code></pre>
 
   <h3 id="UFEDLib_CalendarEntry_Location" data-uid="UFEDLib.CalendarEntry.Location">
   Location
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CalendarEntry.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CalendarEntry.cs/#L26"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -364,14 +463,14 @@ public class CalendarEntry : ModelBase</code></pre>
 
   <h3 id="UFEDLib_CalendarEntry_Priority" data-uid="UFEDLib.CalendarEntry.Priority">
   Priority
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CalendarEntry.cs/#L43"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CalendarEntry.cs/#L27"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public CalendarEntry.EventPriority Priority { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string Priority { get; set; }</code></pre>
   </div>
 
 
@@ -380,7 +479,7 @@ public class CalendarEntry : ModelBase</code></pre>
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="UFEDLib.CalendarEntry.html">CalendarEntry</a>.<a class="xref" href="UFEDLib.CalendarEntry.EventPriority.html">EventPriority</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
   </dl>
 
@@ -395,7 +494,7 @@ public class CalendarEntry : ModelBase</code></pre>
 
   <h3 id="UFEDLib_CalendarEntry_Reminder" data-uid="UFEDLib.CalendarEntry.Reminder">
   Reminder
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CalendarEntry.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CalendarEntry.cs/#L32"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -426,14 +525,14 @@ public class CalendarEntry : ModelBase</code></pre>
 
   <h3 id="UFEDLib_CalendarEntry_RepeatDay" data-uid="UFEDLib.CalendarEntry.RepeatDay">
   RepeatDay
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CalendarEntry.cs/#L65"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CalendarEntry.cs/#L31"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public CalendarEntry.RepeatDayEnum RepeatDay { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string RepeatDay { get; set; }</code></pre>
   </div>
 
 
@@ -442,7 +541,7 @@ public class CalendarEntry : ModelBase</code></pre>
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="UFEDLib.CalendarEntry.html">CalendarEntry</a>.<a class="xref" href="UFEDLib.CalendarEntry.RepeatDayEnum.html">RepeatDayEnum</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
   </dl>
 
@@ -457,7 +556,7 @@ public class CalendarEntry : ModelBase</code></pre>
 
   <h3 id="UFEDLib_CalendarEntry_RepeatInterval" data-uid="UFEDLib.CalendarEntry.RepeatInterval">
   RepeatInterval
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CalendarEntry.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CalendarEntry.cs/#L33"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -488,14 +587,14 @@ public class CalendarEntry : ModelBase</code></pre>
 
   <h3 id="UFEDLib_CalendarEntry_RepeatRule" data-uid="UFEDLib.CalendarEntry.RepeatRule">
   RepeatRule
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CalendarEntry.cs/#L59"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CalendarEntry.cs/#L30"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public CalendarEntry.RepeatRuleEnum RepeatRule { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string RepeatRule { get; set; }</code></pre>
   </div>
 
 
@@ -504,7 +603,7 @@ public class CalendarEntry : ModelBase</code></pre>
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="UFEDLib.CalendarEntry.html">CalendarEntry</a>.<a class="xref" href="UFEDLib.CalendarEntry.RepeatRuleEnum.html">RepeatRuleEnum</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
   </dl>
 
@@ -519,7 +618,7 @@ public class CalendarEntry : ModelBase</code></pre>
 
   <h3 id="UFEDLib_CalendarEntry_RepeatUntil" data-uid="UFEDLib.CalendarEntry.RepeatUntil">
   RepeatUntil
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CalendarEntry.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CalendarEntry.cs/#L34"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -550,7 +649,7 @@ public class CalendarEntry : ModelBase</code></pre>
 
   <h3 id="UFEDLib_CalendarEntry_Source" data-uid="UFEDLib.CalendarEntry.Source">
   Source
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CalendarEntry.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CalendarEntry.cs/#L20"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -581,7 +680,7 @@ public class CalendarEntry : ModelBase</code></pre>
 
   <h3 id="UFEDLib_CalendarEntry_StartDate" data-uid="UFEDLib.CalendarEntry.StartDate">
   StartDate
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CalendarEntry.cs/#L27"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CalendarEntry.cs/#L35"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -612,14 +711,14 @@ public class CalendarEntry : ModelBase</code></pre>
 
   <h3 id="UFEDLib_CalendarEntry_Status" data-uid="UFEDLib.CalendarEntry.Status">
   Status
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CalendarEntry.cs/#L47"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CalendarEntry.cs/#L28"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public CalendarEntry.EventStatus Status { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string Status { get; set; }</code></pre>
   </div>
 
 
@@ -628,7 +727,7 @@ public class CalendarEntry : ModelBase</code></pre>
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="UFEDLib.CalendarEntry.html">CalendarEntry</a>.<a class="xref" href="UFEDLib.CalendarEntry.EventStatus.html">EventStatus</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
   </dl>
 
@@ -643,7 +742,7 @@ public class CalendarEntry : ModelBase</code></pre>
 
   <h3 id="UFEDLib_CalendarEntry_Subject" data-uid="UFEDLib.CalendarEntry.Subject">
   Subject
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CalendarEntry.cs/#L29"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CalendarEntry.cs/#L36"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -670,11 +769,153 @@ public class CalendarEntry : ModelBase</code></pre>
 
 
 
+  <a id="UFEDLib_CalendarEntry_UserMapping_" data-uid="UFEDLib.CalendarEntry.UserMapping*"></a>
+
+  <h3 id="UFEDLib_CalendarEntry_UserMapping" data-uid="UFEDLib.CalendarEntry.UserMapping">
+  UserMapping
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CalendarEntry.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string UserMapping { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="UFEDLib_CalendarEntry_GetXmlModelType_" data-uid="UFEDLib.CalendarEntry.GetXmlModelType*"></a>
+
+  <h3 id="UFEDLib_CalendarEntry_GetXmlModelType" data-uid="UFEDLib.CalendarEntry.GetXmlModelType">
+  GetXmlModelType()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CalendarEntry.cs/#L13"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string GetXmlModelType()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UFEDLib_CalendarEntry_ParseModel_" data-uid="UFEDLib.CalendarEntry.ParseModel*"></a>
+
+  <h3 id="UFEDLib_CalendarEntry_ParseModel_System_Xml_Linq_XElement_System_Boolean_" data-uid="UFEDLib.CalendarEntry.ParseModel(System.Xml.Linq.XElement,System.Boolean)">
+  ParseModel(XElement, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CalendarEntry.cs/#L53"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static CalendarEntry ParseModel(XElement element, bool debugAttributes = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>element</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a></dt>
+    <dd></dd>
+    <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UFEDLib.CalendarEntry.html">CalendarEntry</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UFEDLib_CalendarEntry_ParseMultiModel_" data-uid="UFEDLib.CalendarEntry.ParseMultiModel*"></a>
+
+  <h3 id="UFEDLib_CalendarEntry_ParseMultiModel_System_Xml_Linq_XElement_System_Boolean_" data-uid="UFEDLib.CalendarEntry.ParseMultiModel(System.Xml.Linq.XElement,System.Boolean)">
+  ParseMultiModel(XElement, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CalendarEntry.cs/#L190"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static List&lt;CalendarEntry&gt; ParseMultiModel(XElement element, bool debugAttributes = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>element</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a></dt>
+    <dd></dd>
+    <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="UFEDLib.CalendarEntry.html">CalendarEntry</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CalendarEntry.cs/#L9" class="edit-link">Edit this page</a>
+          <a href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CalendarEntry.cs/#L10" class="edit-link">Edit this page</a>
         </div>
 
 
