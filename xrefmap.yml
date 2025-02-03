@@ -7,6 +7,174 @@ references:
   commentId: N:UFEDLib
   fullName: UFEDLib
   nameWithType: UFEDLib
+- uid: UFEDLib.ActivitySensorData
+  name: ActivitySensorData
+  href: api/UFEDLib.ActivitySensorData.html
+  commentId: T:UFEDLib.ActivitySensorData
+  fullName: UFEDLib.ActivitySensorData
+  nameWithType: ActivitySensorData
+- uid: UFEDLib.ActivitySensorData.CreationTime
+  name: CreationTime
+  href: api/UFEDLib.ActivitySensorData.html#UFEDLib_ActivitySensorData_CreationTime
+  commentId: P:UFEDLib.ActivitySensorData.CreationTime
+  fullName: UFEDLib.ActivitySensorData.CreationTime
+  nameWithType: ActivitySensorData.CreationTime
+- uid: UFEDLib.ActivitySensorData.CreationTime*
+  name: CreationTime
+  href: api/UFEDLib.ActivitySensorData.html#UFEDLib_ActivitySensorData_CreationTime_
+  commentId: Overload:UFEDLib.ActivitySensorData.CreationTime
+  isSpec: "True"
+  fullName: UFEDLib.ActivitySensorData.CreationTime
+  nameWithType: ActivitySensorData.CreationTime
+- uid: UFEDLib.ActivitySensorData.DistanceTraveled
+  name: DistanceTraveled
+  href: api/UFEDLib.ActivitySensorData.html#UFEDLib_ActivitySensorData_DistanceTraveled
+  commentId: P:UFEDLib.ActivitySensorData.DistanceTraveled
+  fullName: UFEDLib.ActivitySensorData.DistanceTraveled
+  nameWithType: ActivitySensorData.DistanceTraveled
+- uid: UFEDLib.ActivitySensorData.DistanceTraveled*
+  name: DistanceTraveled
+  href: api/UFEDLib.ActivitySensorData.html#UFEDLib_ActivitySensorData_DistanceTraveled_
+  commentId: Overload:UFEDLib.ActivitySensorData.DistanceTraveled
+  isSpec: "True"
+  fullName: UFEDLib.ActivitySensorData.DistanceTraveled
+  nameWithType: ActivitySensorData.DistanceTraveled
+- uid: UFEDLib.ActivitySensorData.FlightsClimbed
+  name: FlightsClimbed
+  href: api/UFEDLib.ActivitySensorData.html#UFEDLib_ActivitySensorData_FlightsClimbed
+  commentId: P:UFEDLib.ActivitySensorData.FlightsClimbed
+  fullName: UFEDLib.ActivitySensorData.FlightsClimbed
+  nameWithType: ActivitySensorData.FlightsClimbed
+- uid: UFEDLib.ActivitySensorData.FlightsClimbed*
+  name: FlightsClimbed
+  href: api/UFEDLib.ActivitySensorData.html#UFEDLib_ActivitySensorData_FlightsClimbed_
+  commentId: Overload:UFEDLib.ActivitySensorData.FlightsClimbed
+  isSpec: "True"
+  fullName: UFEDLib.ActivitySensorData.FlightsClimbed
+  nameWithType: ActivitySensorData.FlightsClimbed
+- uid: UFEDLib.ActivitySensorData.From
+  name: From
+  href: api/UFEDLib.ActivitySensorData.html#UFEDLib_ActivitySensorData_From
+  commentId: P:UFEDLib.ActivitySensorData.From
+  fullName: UFEDLib.ActivitySensorData.From
+  nameWithType: ActivitySensorData.From
+- uid: UFEDLib.ActivitySensorData.From*
+  name: From
+  href: api/UFEDLib.ActivitySensorData.html#UFEDLib_ActivitySensorData_From_
+  commentId: Overload:UFEDLib.ActivitySensorData.From
+  isSpec: "True"
+  fullName: UFEDLib.ActivitySensorData.From
+  nameWithType: ActivitySensorData.From
+- uid: UFEDLib.ActivitySensorData.GetXmlModelType
+  name: GetXmlModelType()
+  href: api/UFEDLib.ActivitySensorData.html#UFEDLib_ActivitySensorData_GetXmlModelType
+  commentId: M:UFEDLib.ActivitySensorData.GetXmlModelType
+  fullName: UFEDLib.ActivitySensorData.GetXmlModelType()
+  nameWithType: ActivitySensorData.GetXmlModelType()
+- uid: UFEDLib.ActivitySensorData.GetXmlModelType*
+  name: GetXmlModelType
+  href: api/UFEDLib.ActivitySensorData.html#UFEDLib_ActivitySensorData_GetXmlModelType_
+  commentId: Overload:UFEDLib.ActivitySensorData.GetXmlModelType
+  isSpec: "True"
+  fullName: UFEDLib.ActivitySensorData.GetXmlModelType
+  nameWithType: ActivitySensorData.GetXmlModelType
+- uid: UFEDLib.ActivitySensorData.ParseModel(System.Xml.Linq.XElement,System.Boolean)
+  name: ParseModel(XElement, bool)
+  href: api/UFEDLib.ActivitySensorData.html#UFEDLib_ActivitySensorData_ParseModel_System_Xml_Linq_XElement_System_Boolean_
+  commentId: M:UFEDLib.ActivitySensorData.ParseModel(System.Xml.Linq.XElement,System.Boolean)
+  name.vb: ParseModel(XElement, Boolean)
+  fullName: UFEDLib.ActivitySensorData.ParseModel(System.Xml.Linq.XElement, bool)
+  fullName.vb: UFEDLib.ActivitySensorData.ParseModel(System.Xml.Linq.XElement, Boolean)
+  nameWithType: ActivitySensorData.ParseModel(XElement, bool)
+  nameWithType.vb: ActivitySensorData.ParseModel(XElement, Boolean)
+- uid: UFEDLib.ActivitySensorData.ParseModel*
+  name: ParseModel
+  href: api/UFEDLib.ActivitySensorData.html#UFEDLib_ActivitySensorData_ParseModel_
+  commentId: Overload:UFEDLib.ActivitySensorData.ParseModel
+  isSpec: "True"
+  fullName: UFEDLib.ActivitySensorData.ParseModel
+  nameWithType: ActivitySensorData.ParseModel
+- uid: UFEDLib.ActivitySensorData.ParseMultiModel(System.Xml.Linq.XElement,System.Boolean)
+  name: ParseMultiModel(XElement, bool)
+  href: api/UFEDLib.ActivitySensorData.html#UFEDLib_ActivitySensorData_ParseMultiModel_System_Xml_Linq_XElement_System_Boolean_
+  commentId: M:UFEDLib.ActivitySensorData.ParseMultiModel(System.Xml.Linq.XElement,System.Boolean)
+  name.vb: ParseMultiModel(XElement, Boolean)
+  fullName: UFEDLib.ActivitySensorData.ParseMultiModel(System.Xml.Linq.XElement, bool)
+  fullName.vb: UFEDLib.ActivitySensorData.ParseMultiModel(System.Xml.Linq.XElement, Boolean)
+  nameWithType: ActivitySensorData.ParseMultiModel(XElement, bool)
+  nameWithType.vb: ActivitySensorData.ParseMultiModel(XElement, Boolean)
+- uid: UFEDLib.ActivitySensorData.ParseMultiModel*
+  name: ParseMultiModel
+  href: api/UFEDLib.ActivitySensorData.html#UFEDLib_ActivitySensorData_ParseMultiModel_
+  commentId: Overload:UFEDLib.ActivitySensorData.ParseMultiModel
+  isSpec: "True"
+  fullName: UFEDLib.ActivitySensorData.ParseMultiModel
+  nameWithType: ActivitySensorData.ParseMultiModel
+- uid: UFEDLib.ActivitySensorData.Source
+  name: Source
+  href: api/UFEDLib.ActivitySensorData.html#UFEDLib_ActivitySensorData_Source
+  commentId: P:UFEDLib.ActivitySensorData.Source
+  fullName: UFEDLib.ActivitySensorData.Source
+  nameWithType: ActivitySensorData.Source
+- uid: UFEDLib.ActivitySensorData.Source*
+  name: Source
+  href: api/UFEDLib.ActivitySensorData.html#UFEDLib_ActivitySensorData_Source_
+  commentId: Overload:UFEDLib.ActivitySensorData.Source
+  isSpec: "True"
+  fullName: UFEDLib.ActivitySensorData.Source
+  nameWithType: ActivitySensorData.Source
+- uid: UFEDLib.ActivitySensorData.SourceDeviceType
+  name: SourceDeviceType
+  href: api/UFEDLib.ActivitySensorData.html#UFEDLib_ActivitySensorData_SourceDeviceType
+  commentId: P:UFEDLib.ActivitySensorData.SourceDeviceType
+  fullName: UFEDLib.ActivitySensorData.SourceDeviceType
+  nameWithType: ActivitySensorData.SourceDeviceType
+- uid: UFEDLib.ActivitySensorData.SourceDeviceType*
+  name: SourceDeviceType
+  href: api/UFEDLib.ActivitySensorData.html#UFEDLib_ActivitySensorData_SourceDeviceType_
+  commentId: Overload:UFEDLib.ActivitySensorData.SourceDeviceType
+  isSpec: "True"
+  fullName: UFEDLib.ActivitySensorData.SourceDeviceType
+  nameWithType: ActivitySensorData.SourceDeviceType
+- uid: UFEDLib.ActivitySensorData.To
+  name: To
+  href: api/UFEDLib.ActivitySensorData.html#UFEDLib_ActivitySensorData_To
+  commentId: P:UFEDLib.ActivitySensorData.To
+  fullName: UFEDLib.ActivitySensorData.To
+  nameWithType: ActivitySensorData.To
+- uid: UFEDLib.ActivitySensorData.To*
+  name: To
+  href: api/UFEDLib.ActivitySensorData.html#UFEDLib_ActivitySensorData_To_
+  commentId: Overload:UFEDLib.ActivitySensorData.To
+  isSpec: "True"
+  fullName: UFEDLib.ActivitySensorData.To
+  nameWithType: ActivitySensorData.To
+- uid: UFEDLib.ActivitySensorData.TotalSampleCount
+  name: TotalSampleCount
+  href: api/UFEDLib.ActivitySensorData.html#UFEDLib_ActivitySensorData_TotalSampleCount
+  commentId: P:UFEDLib.ActivitySensorData.TotalSampleCount
+  fullName: UFEDLib.ActivitySensorData.TotalSampleCount
+  nameWithType: ActivitySensorData.TotalSampleCount
+- uid: UFEDLib.ActivitySensorData.TotalSampleCount*
+  name: TotalSampleCount
+  href: api/UFEDLib.ActivitySensorData.html#UFEDLib_ActivitySensorData_TotalSampleCount_
+  commentId: Overload:UFEDLib.ActivitySensorData.TotalSampleCount
+  isSpec: "True"
+  fullName: UFEDLib.ActivitySensorData.TotalSampleCount
+  nameWithType: ActivitySensorData.TotalSampleCount
+- uid: UFEDLib.ActivitySensorData.UserMapping
+  name: UserMapping
+  href: api/UFEDLib.ActivitySensorData.html#UFEDLib_ActivitySensorData_UserMapping
+  commentId: P:UFEDLib.ActivitySensorData.UserMapping
+  fullName: UFEDLib.ActivitySensorData.UserMapping
+  nameWithType: ActivitySensorData.UserMapping
+- uid: UFEDLib.ActivitySensorData.UserMapping*
+  name: UserMapping
+  href: api/UFEDLib.ActivitySensorData.html#UFEDLib_ActivitySensorData_UserMapping_
+  commentId: Overload:UFEDLib.ActivitySensorData.UserMapping
+  isSpec: "True"
+  fullName: UFEDLib.ActivitySensorData.UserMapping
+  nameWithType: ActivitySensorData.UserMapping
 - uid: UFEDLib.ApplicationUsage
   name: ApplicationUsage
   href: api/UFEDLib.ApplicationUsage.html
@@ -162,6 +330,122 @@ references:
   isSpec: "True"
   fullName: UFEDLib.ApplicationUsage.ParseMultiModel
   nameWithType: ApplicationUsage.ParseMultiModel
+- uid: UFEDLib.AppsUsageLog
+  name: AppsUsageLog
+  href: api/UFEDLib.AppsUsageLog.html
+  commentId: T:UFEDLib.AppsUsageLog
+  fullName: UFEDLib.AppsUsageLog
+  nameWithType: AppsUsageLog
+- uid: UFEDLib.AppsUsageLog.EndTime
+  name: EndTime
+  href: api/UFEDLib.AppsUsageLog.html#UFEDLib_AppsUsageLog_EndTime
+  commentId: P:UFEDLib.AppsUsageLog.EndTime
+  fullName: UFEDLib.AppsUsageLog.EndTime
+  nameWithType: AppsUsageLog.EndTime
+- uid: UFEDLib.AppsUsageLog.EndTime*
+  name: EndTime
+  href: api/UFEDLib.AppsUsageLog.html#UFEDLib_AppsUsageLog_EndTime_
+  commentId: Overload:UFEDLib.AppsUsageLog.EndTime
+  isSpec: "True"
+  fullName: UFEDLib.AppsUsageLog.EndTime
+  nameWithType: AppsUsageLog.EndTime
+- uid: UFEDLib.AppsUsageLog.GetXmlModelType
+  name: GetXmlModelType()
+  href: api/UFEDLib.AppsUsageLog.html#UFEDLib_AppsUsageLog_GetXmlModelType
+  commentId: M:UFEDLib.AppsUsageLog.GetXmlModelType
+  fullName: UFEDLib.AppsUsageLog.GetXmlModelType()
+  nameWithType: AppsUsageLog.GetXmlModelType()
+- uid: UFEDLib.AppsUsageLog.GetXmlModelType*
+  name: GetXmlModelType
+  href: api/UFEDLib.AppsUsageLog.html#UFEDLib_AppsUsageLog_GetXmlModelType_
+  commentId: Overload:UFEDLib.AppsUsageLog.GetXmlModelType
+  isSpec: "True"
+  fullName: UFEDLib.AppsUsageLog.GetXmlModelType
+  nameWithType: AppsUsageLog.GetXmlModelType
+- uid: UFEDLib.AppsUsageLog.Identifier
+  name: Identifier
+  href: api/UFEDLib.AppsUsageLog.html#UFEDLib_AppsUsageLog_Identifier
+  commentId: P:UFEDLib.AppsUsageLog.Identifier
+  fullName: UFEDLib.AppsUsageLog.Identifier
+  nameWithType: AppsUsageLog.Identifier
+- uid: UFEDLib.AppsUsageLog.Identifier*
+  name: Identifier
+  href: api/UFEDLib.AppsUsageLog.html#UFEDLib_AppsUsageLog_Identifier_
+  commentId: Overload:UFEDLib.AppsUsageLog.Identifier
+  isSpec: "True"
+  fullName: UFEDLib.AppsUsageLog.Identifier
+  nameWithType: AppsUsageLog.Identifier
+- uid: UFEDLib.AppsUsageLog.ParseModel(System.Xml.Linq.XElement,System.Boolean)
+  name: ParseModel(XElement, bool)
+  href: api/UFEDLib.AppsUsageLog.html#UFEDLib_AppsUsageLog_ParseModel_System_Xml_Linq_XElement_System_Boolean_
+  commentId: M:UFEDLib.AppsUsageLog.ParseModel(System.Xml.Linq.XElement,System.Boolean)
+  name.vb: ParseModel(XElement, Boolean)
+  fullName: UFEDLib.AppsUsageLog.ParseModel(System.Xml.Linq.XElement, bool)
+  fullName.vb: UFEDLib.AppsUsageLog.ParseModel(System.Xml.Linq.XElement, Boolean)
+  nameWithType: AppsUsageLog.ParseModel(XElement, bool)
+  nameWithType.vb: AppsUsageLog.ParseModel(XElement, Boolean)
+- uid: UFEDLib.AppsUsageLog.ParseModel*
+  name: ParseModel
+  href: api/UFEDLib.AppsUsageLog.html#UFEDLib_AppsUsageLog_ParseModel_
+  commentId: Overload:UFEDLib.AppsUsageLog.ParseModel
+  isSpec: "True"
+  fullName: UFEDLib.AppsUsageLog.ParseModel
+  nameWithType: AppsUsageLog.ParseModel
+- uid: UFEDLib.AppsUsageLog.ParseMultiModel(System.Xml.Linq.XElement,System.Boolean)
+  name: ParseMultiModel(XElement, bool)
+  href: api/UFEDLib.AppsUsageLog.html#UFEDLib_AppsUsageLog_ParseMultiModel_System_Xml_Linq_XElement_System_Boolean_
+  commentId: M:UFEDLib.AppsUsageLog.ParseMultiModel(System.Xml.Linq.XElement,System.Boolean)
+  name.vb: ParseMultiModel(XElement, Boolean)
+  fullName: UFEDLib.AppsUsageLog.ParseMultiModel(System.Xml.Linq.XElement, bool)
+  fullName.vb: UFEDLib.AppsUsageLog.ParseMultiModel(System.Xml.Linq.XElement, Boolean)
+  nameWithType: AppsUsageLog.ParseMultiModel(XElement, bool)
+  nameWithType.vb: AppsUsageLog.ParseMultiModel(XElement, Boolean)
+- uid: UFEDLib.AppsUsageLog.ParseMultiModel*
+  name: ParseMultiModel
+  href: api/UFEDLib.AppsUsageLog.html#UFEDLib_AppsUsageLog_ParseMultiModel_
+  commentId: Overload:UFEDLib.AppsUsageLog.ParseMultiModel
+  isSpec: "True"
+  fullName: UFEDLib.AppsUsageLog.ParseMultiModel
+  nameWithType: AppsUsageLog.ParseMultiModel
+- uid: UFEDLib.AppsUsageLog.Source
+  name: Source
+  href: api/UFEDLib.AppsUsageLog.html#UFEDLib_AppsUsageLog_Source
+  commentId: P:UFEDLib.AppsUsageLog.Source
+  fullName: UFEDLib.AppsUsageLog.Source
+  nameWithType: AppsUsageLog.Source
+- uid: UFEDLib.AppsUsageLog.Source*
+  name: Source
+  href: api/UFEDLib.AppsUsageLog.html#UFEDLib_AppsUsageLog_Source_
+  commentId: Overload:UFEDLib.AppsUsageLog.Source
+  isSpec: "True"
+  fullName: UFEDLib.AppsUsageLog.Source
+  nameWithType: AppsUsageLog.Source
+- uid: UFEDLib.AppsUsageLog.StartTime
+  name: StartTime
+  href: api/UFEDLib.AppsUsageLog.html#UFEDLib_AppsUsageLog_StartTime
+  commentId: P:UFEDLib.AppsUsageLog.StartTime
+  fullName: UFEDLib.AppsUsageLog.StartTime
+  nameWithType: AppsUsageLog.StartTime
+- uid: UFEDLib.AppsUsageLog.StartTime*
+  name: StartTime
+  href: api/UFEDLib.AppsUsageLog.html#UFEDLib_AppsUsageLog_StartTime_
+  commentId: Overload:UFEDLib.AppsUsageLog.StartTime
+  isSpec: "True"
+  fullName: UFEDLib.AppsUsageLog.StartTime
+  nameWithType: AppsUsageLog.StartTime
+- uid: UFEDLib.AppsUsageLog.UserMapping
+  name: UserMapping
+  href: api/UFEDLib.AppsUsageLog.html#UFEDLib_AppsUsageLog_UserMapping
+  commentId: P:UFEDLib.AppsUsageLog.UserMapping
+  fullName: UFEDLib.AppsUsageLog.UserMapping
+  nameWithType: AppsUsageLog.UserMapping
+- uid: UFEDLib.AppsUsageLog.UserMapping*
+  name: UserMapping
+  href: api/UFEDLib.AppsUsageLog.html#UFEDLib_AppsUsageLog_UserMapping_
+  commentId: Overload:UFEDLib.AppsUsageLog.UserMapping
+  isSpec: "True"
+  fullName: UFEDLib.AppsUsageLog.UserMapping
+  nameWithType: AppsUsageLog.UserMapping
 - uid: UFEDLib.Attachment
   name: Attachment
   href: api/UFEDLib.Attachment.html
@@ -1222,6 +1506,187 @@ references:
   isSpec: "True"
   fullName: UFEDLib.CarvedString.Value
   nameWithType: CarvedString.Value
+- uid: UFEDLib.CellTower
+  name: CellTower
+  href: api/UFEDLib.CellTower.html
+  commentId: T:UFEDLib.CellTower
+  fullName: UFEDLib.CellTower
+  nameWithType: CellTower
+- uid: UFEDLib.CellTower.BID
+  name: BID
+  href: api/UFEDLib.CellTower.html#UFEDLib_CellTower_BID
+  commentId: P:UFEDLib.CellTower.BID
+  fullName: UFEDLib.CellTower.BID
+  nameWithType: CellTower.BID
+- uid: UFEDLib.CellTower.BID*
+  name: BID
+  href: api/UFEDLib.CellTower.html#UFEDLib_CellTower_BID_
+  commentId: Overload:UFEDLib.CellTower.BID
+  isSpec: "True"
+  fullName: UFEDLib.CellTower.BID
+  nameWithType: CellTower.BID
+- uid: UFEDLib.CellTower.CID
+  name: CID
+  href: api/UFEDLib.CellTower.html#UFEDLib_CellTower_CID
+  commentId: P:UFEDLib.CellTower.CID
+  fullName: UFEDLib.CellTower.CID
+  nameWithType: CellTower.CID
+- uid: UFEDLib.CellTower.CID*
+  name: CID
+  href: api/UFEDLib.CellTower.html#UFEDLib_CellTower_CID_
+  commentId: Overload:UFEDLib.CellTower.CID
+  isSpec: "True"
+  fullName: UFEDLib.CellTower.CID
+  nameWithType: CellTower.CID
+- uid: UFEDLib.CellTower.GetXmlModelType
+  name: GetXmlModelType()
+  href: api/UFEDLib.CellTower.html#UFEDLib_CellTower_GetXmlModelType
+  commentId: M:UFEDLib.CellTower.GetXmlModelType
+  fullName: UFEDLib.CellTower.GetXmlModelType()
+  nameWithType: CellTower.GetXmlModelType()
+- uid: UFEDLib.CellTower.GetXmlModelType*
+  name: GetXmlModelType
+  href: api/UFEDLib.CellTower.html#UFEDLib_CellTower_GetXmlModelType_
+  commentId: Overload:UFEDLib.CellTower.GetXmlModelType
+  isSpec: "True"
+  fullName: UFEDLib.CellTower.GetXmlModelType
+  nameWithType: CellTower.GetXmlModelType
+- uid: UFEDLib.CellTower.LAC
+  name: LAC
+  href: api/UFEDLib.CellTower.html#UFEDLib_CellTower_LAC
+  commentId: P:UFEDLib.CellTower.LAC
+  fullName: UFEDLib.CellTower.LAC
+  nameWithType: CellTower.LAC
+- uid: UFEDLib.CellTower.LAC*
+  name: LAC
+  href: api/UFEDLib.CellTower.html#UFEDLib_CellTower_LAC_
+  commentId: Overload:UFEDLib.CellTower.LAC
+  isSpec: "True"
+  fullName: UFEDLib.CellTower.LAC
+  nameWithType: CellTower.LAC
+- uid: UFEDLib.CellTower.MCC
+  name: MCC
+  href: api/UFEDLib.CellTower.html#UFEDLib_CellTower_MCC
+  commentId: P:UFEDLib.CellTower.MCC
+  fullName: UFEDLib.CellTower.MCC
+  nameWithType: CellTower.MCC
+- uid: UFEDLib.CellTower.MCC*
+  name: MCC
+  href: api/UFEDLib.CellTower.html#UFEDLib_CellTower_MCC_
+  commentId: Overload:UFEDLib.CellTower.MCC
+  isSpec: "True"
+  fullName: UFEDLib.CellTower.MCC
+  nameWithType: CellTower.MCC
+- uid: UFEDLib.CellTower.MNC
+  name: MNC
+  href: api/UFEDLib.CellTower.html#UFEDLib_CellTower_MNC
+  commentId: P:UFEDLib.CellTower.MNC
+  fullName: UFEDLib.CellTower.MNC
+  nameWithType: CellTower.MNC
+- uid: UFEDLib.CellTower.MNC*
+  name: MNC
+  href: api/UFEDLib.CellTower.html#UFEDLib_CellTower_MNC_
+  commentId: Overload:UFEDLib.CellTower.MNC
+  isSpec: "True"
+  fullName: UFEDLib.CellTower.MNC
+  nameWithType: CellTower.MNC
+- uid: UFEDLib.CellTower.NID
+  name: NID
+  href: api/UFEDLib.CellTower.html#UFEDLib_CellTower_NID
+  commentId: P:UFEDLib.CellTower.NID
+  fullName: UFEDLib.CellTower.NID
+  nameWithType: CellTower.NID
+- uid: UFEDLib.CellTower.NID*
+  name: NID
+  href: api/UFEDLib.CellTower.html#UFEDLib_CellTower_NID_
+  commentId: Overload:UFEDLib.CellTower.NID
+  isSpec: "True"
+  fullName: UFEDLib.CellTower.NID
+  nameWithType: CellTower.NID
+- uid: UFEDLib.CellTower.ParseModel(System.Xml.Linq.XElement,System.Boolean)
+  name: ParseModel(XElement, bool)
+  href: api/UFEDLib.CellTower.html#UFEDLib_CellTower_ParseModel_System_Xml_Linq_XElement_System_Boolean_
+  commentId: M:UFEDLib.CellTower.ParseModel(System.Xml.Linq.XElement,System.Boolean)
+  name.vb: ParseModel(XElement, Boolean)
+  fullName: UFEDLib.CellTower.ParseModel(System.Xml.Linq.XElement, bool)
+  fullName.vb: UFEDLib.CellTower.ParseModel(System.Xml.Linq.XElement, Boolean)
+  nameWithType: CellTower.ParseModel(XElement, bool)
+  nameWithType.vb: CellTower.ParseModel(XElement, Boolean)
+- uid: UFEDLib.CellTower.ParseModel*
+  name: ParseModel
+  href: api/UFEDLib.CellTower.html#UFEDLib_CellTower_ParseModel_
+  commentId: Overload:UFEDLib.CellTower.ParseModel
+  isSpec: "True"
+  fullName: UFEDLib.CellTower.ParseModel
+  nameWithType: CellTower.ParseModel
+- uid: UFEDLib.CellTower.ParseMultiModel(System.Xml.Linq.XElement,System.Boolean)
+  name: ParseMultiModel(XElement, bool)
+  href: api/UFEDLib.CellTower.html#UFEDLib_CellTower_ParseMultiModel_System_Xml_Linq_XElement_System_Boolean_
+  commentId: M:UFEDLib.CellTower.ParseMultiModel(System.Xml.Linq.XElement,System.Boolean)
+  name.vb: ParseMultiModel(XElement, Boolean)
+  fullName: UFEDLib.CellTower.ParseMultiModel(System.Xml.Linq.XElement, bool)
+  fullName.vb: UFEDLib.CellTower.ParseMultiModel(System.Xml.Linq.XElement, Boolean)
+  nameWithType: CellTower.ParseMultiModel(XElement, bool)
+  nameWithType.vb: CellTower.ParseMultiModel(XElement, Boolean)
+- uid: UFEDLib.CellTower.ParseMultiModel*
+  name: ParseMultiModel
+  href: api/UFEDLib.CellTower.html#UFEDLib_CellTower_ParseMultiModel_
+  commentId: Overload:UFEDLib.CellTower.ParseMultiModel
+  isSpec: "True"
+  fullName: UFEDLib.CellTower.ParseMultiModel
+  nameWithType: CellTower.ParseMultiModel
+- uid: UFEDLib.CellTower.SID
+  name: SID
+  href: api/UFEDLib.CellTower.html#UFEDLib_CellTower_SID
+  commentId: P:UFEDLib.CellTower.SID
+  fullName: UFEDLib.CellTower.SID
+  nameWithType: CellTower.SID
+- uid: UFEDLib.CellTower.SID*
+  name: SID
+  href: api/UFEDLib.CellTower.html#UFEDLib_CellTower_SID_
+  commentId: Overload:UFEDLib.CellTower.SID
+  isSpec: "True"
+  fullName: UFEDLib.CellTower.SID
+  nameWithType: CellTower.SID
+- uid: UFEDLib.CellTower.TimeStamp
+  name: TimeStamp
+  href: api/UFEDLib.CellTower.html#UFEDLib_CellTower_TimeStamp
+  commentId: P:UFEDLib.CellTower.TimeStamp
+  fullName: UFEDLib.CellTower.TimeStamp
+  nameWithType: CellTower.TimeStamp
+- uid: UFEDLib.CellTower.TimeStamp*
+  name: TimeStamp
+  href: api/UFEDLib.CellTower.html#UFEDLib_CellTower_TimeStamp_
+  commentId: Overload:UFEDLib.CellTower.TimeStamp
+  isSpec: "True"
+  fullName: UFEDLib.CellTower.TimeStamp
+  nameWithType: CellTower.TimeStamp
+- uid: UFEDLib.CellTower.Type
+  name: Type
+  href: api/UFEDLib.CellTower.html#UFEDLib_CellTower_Type
+  commentId: P:UFEDLib.CellTower.Type
+  fullName: UFEDLib.CellTower.Type
+  nameWithType: CellTower.Type
+- uid: UFEDLib.CellTower.Type*
+  name: Type
+  href: api/UFEDLib.CellTower.html#UFEDLib_CellTower_Type_
+  commentId: Overload:UFEDLib.CellTower.Type
+  isSpec: "True"
+  fullName: UFEDLib.CellTower.Type
+  nameWithType: CellTower.Type
+- uid: UFEDLib.CellTower.UserMapping
+  name: UserMapping
+  href: api/UFEDLib.CellTower.html#UFEDLib_CellTower_UserMapping
+  commentId: P:UFEDLib.CellTower.UserMapping
+  fullName: UFEDLib.CellTower.UserMapping
+  nameWithType: CellTower.UserMapping
+- uid: UFEDLib.CellTower.UserMapping*
+  name: UserMapping
+  href: api/UFEDLib.CellTower.html#UFEDLib_CellTower_UserMapping_
+  commentId: Overload:UFEDLib.CellTower.UserMapping
+  isSpec: "True"
+  fullName: UFEDLib.CellTower.UserMapping
+  nameWithType: CellTower.UserMapping
 - uid: UFEDLib.Chat
   name: Chat
   href: api/UFEDLib.Chat.html
@@ -2230,6 +2695,135 @@ references:
   isSpec: "True"
   fullName: UFEDLib.Coordinate.PositionAddress
   nameWithType: Coordinate.PositionAddress
+- uid: UFEDLib.DeviceEvent
+  name: DeviceEvent
+  href: api/UFEDLib.DeviceEvent.html
+  commentId: T:UFEDLib.DeviceEvent
+  fullName: UFEDLib.DeviceEvent
+  nameWithType: DeviceEvent
+- uid: UFEDLib.DeviceEvent.EndTime
+  name: EndTime
+  href: api/UFEDLib.DeviceEvent.html#UFEDLib_DeviceEvent_EndTime
+  commentId: P:UFEDLib.DeviceEvent.EndTime
+  fullName: UFEDLib.DeviceEvent.EndTime
+  nameWithType: DeviceEvent.EndTime
+- uid: UFEDLib.DeviceEvent.EndTime*
+  name: EndTime
+  href: api/UFEDLib.DeviceEvent.html#UFEDLib_DeviceEvent_EndTime_
+  commentId: Overload:UFEDLib.DeviceEvent.EndTime
+  isSpec: "True"
+  fullName: UFEDLib.DeviceEvent.EndTime
+  nameWithType: DeviceEvent.EndTime
+- uid: UFEDLib.DeviceEvent.EventType
+  name: EventType
+  href: api/UFEDLib.DeviceEvent.html#UFEDLib_DeviceEvent_EventType
+  commentId: P:UFEDLib.DeviceEvent.EventType
+  fullName: UFEDLib.DeviceEvent.EventType
+  nameWithType: DeviceEvent.EventType
+- uid: UFEDLib.DeviceEvent.EventType*
+  name: EventType
+  href: api/UFEDLib.DeviceEvent.html#UFEDLib_DeviceEvent_EventType_
+  commentId: Overload:UFEDLib.DeviceEvent.EventType
+  isSpec: "True"
+  fullName: UFEDLib.DeviceEvent.EventType
+  nameWithType: DeviceEvent.EventType
+- uid: UFEDLib.DeviceEvent.GetXmlModelType
+  name: GetXmlModelType()
+  href: api/UFEDLib.DeviceEvent.html#UFEDLib_DeviceEvent_GetXmlModelType
+  commentId: M:UFEDLib.DeviceEvent.GetXmlModelType
+  fullName: UFEDLib.DeviceEvent.GetXmlModelType()
+  nameWithType: DeviceEvent.GetXmlModelType()
+- uid: UFEDLib.DeviceEvent.GetXmlModelType*
+  name: GetXmlModelType
+  href: api/UFEDLib.DeviceEvent.html#UFEDLib_DeviceEvent_GetXmlModelType_
+  commentId: Overload:UFEDLib.DeviceEvent.GetXmlModelType
+  isSpec: "True"
+  fullName: UFEDLib.DeviceEvent.GetXmlModelType
+  nameWithType: DeviceEvent.GetXmlModelType
+- uid: UFEDLib.DeviceEvent.ParseModel(System.Xml.Linq.XElement,System.Boolean)
+  name: ParseModel(XElement, bool)
+  href: api/UFEDLib.DeviceEvent.html#UFEDLib_DeviceEvent_ParseModel_System_Xml_Linq_XElement_System_Boolean_
+  commentId: M:UFEDLib.DeviceEvent.ParseModel(System.Xml.Linq.XElement,System.Boolean)
+  name.vb: ParseModel(XElement, Boolean)
+  fullName: UFEDLib.DeviceEvent.ParseModel(System.Xml.Linq.XElement, bool)
+  fullName.vb: UFEDLib.DeviceEvent.ParseModel(System.Xml.Linq.XElement, Boolean)
+  nameWithType: DeviceEvent.ParseModel(XElement, bool)
+  nameWithType.vb: DeviceEvent.ParseModel(XElement, Boolean)
+- uid: UFEDLib.DeviceEvent.ParseModel*
+  name: ParseModel
+  href: api/UFEDLib.DeviceEvent.html#UFEDLib_DeviceEvent_ParseModel_
+  commentId: Overload:UFEDLib.DeviceEvent.ParseModel
+  isSpec: "True"
+  fullName: UFEDLib.DeviceEvent.ParseModel
+  nameWithType: DeviceEvent.ParseModel
+- uid: UFEDLib.DeviceEvent.ParseMultiModel(System.Xml.Linq.XElement,System.Boolean)
+  name: ParseMultiModel(XElement, bool)
+  href: api/UFEDLib.DeviceEvent.html#UFEDLib_DeviceEvent_ParseMultiModel_System_Xml_Linq_XElement_System_Boolean_
+  commentId: M:UFEDLib.DeviceEvent.ParseMultiModel(System.Xml.Linq.XElement,System.Boolean)
+  name.vb: ParseMultiModel(XElement, Boolean)
+  fullName: UFEDLib.DeviceEvent.ParseMultiModel(System.Xml.Linq.XElement, bool)
+  fullName.vb: UFEDLib.DeviceEvent.ParseMultiModel(System.Xml.Linq.XElement, Boolean)
+  nameWithType: DeviceEvent.ParseMultiModel(XElement, bool)
+  nameWithType.vb: DeviceEvent.ParseMultiModel(XElement, Boolean)
+- uid: UFEDLib.DeviceEvent.ParseMultiModel*
+  name: ParseMultiModel
+  href: api/UFEDLib.DeviceEvent.html#UFEDLib_DeviceEvent_ParseMultiModel_
+  commentId: Overload:UFEDLib.DeviceEvent.ParseMultiModel
+  isSpec: "True"
+  fullName: UFEDLib.DeviceEvent.ParseMultiModel
+  nameWithType: DeviceEvent.ParseMultiModel
+- uid: UFEDLib.DeviceEvent.Source
+  name: Source
+  href: api/UFEDLib.DeviceEvent.html#UFEDLib_DeviceEvent_Source
+  commentId: P:UFEDLib.DeviceEvent.Source
+  fullName: UFEDLib.DeviceEvent.Source
+  nameWithType: DeviceEvent.Source
+- uid: UFEDLib.DeviceEvent.Source*
+  name: Source
+  href: api/UFEDLib.DeviceEvent.html#UFEDLib_DeviceEvent_Source_
+  commentId: Overload:UFEDLib.DeviceEvent.Source
+  isSpec: "True"
+  fullName: UFEDLib.DeviceEvent.Source
+  nameWithType: DeviceEvent.Source
+- uid: UFEDLib.DeviceEvent.StartTime
+  name: StartTime
+  href: api/UFEDLib.DeviceEvent.html#UFEDLib_DeviceEvent_StartTime
+  commentId: P:UFEDLib.DeviceEvent.StartTime
+  fullName: UFEDLib.DeviceEvent.StartTime
+  nameWithType: DeviceEvent.StartTime
+- uid: UFEDLib.DeviceEvent.StartTime*
+  name: StartTime
+  href: api/UFEDLib.DeviceEvent.html#UFEDLib_DeviceEvent_StartTime_
+  commentId: Overload:UFEDLib.DeviceEvent.StartTime
+  isSpec: "True"
+  fullName: UFEDLib.DeviceEvent.StartTime
+  nameWithType: DeviceEvent.StartTime
+- uid: UFEDLib.DeviceEvent.UserMapping
+  name: UserMapping
+  href: api/UFEDLib.DeviceEvent.html#UFEDLib_DeviceEvent_UserMapping
+  commentId: P:UFEDLib.DeviceEvent.UserMapping
+  fullName: UFEDLib.DeviceEvent.UserMapping
+  nameWithType: DeviceEvent.UserMapping
+- uid: UFEDLib.DeviceEvent.UserMapping*
+  name: UserMapping
+  href: api/UFEDLib.DeviceEvent.html#UFEDLib_DeviceEvent_UserMapping_
+  commentId: Overload:UFEDLib.DeviceEvent.UserMapping
+  isSpec: "True"
+  fullName: UFEDLib.DeviceEvent.UserMapping
+  nameWithType: DeviceEvent.UserMapping
+- uid: UFEDLib.DeviceEvent.Value
+  name: Value
+  href: api/UFEDLib.DeviceEvent.html#UFEDLib_DeviceEvent_Value
+  commentId: P:UFEDLib.DeviceEvent.Value
+  fullName: UFEDLib.DeviceEvent.Value
+  nameWithType: DeviceEvent.Value
+- uid: UFEDLib.DeviceEvent.Value*
+  name: Value
+  href: api/UFEDLib.DeviceEvent.html#UFEDLib_DeviceEvent_Value_
+  commentId: Overload:UFEDLib.DeviceEvent.Value
+  isSpec: "True"
+  fullName: UFEDLib.DeviceEvent.Value
+  nameWithType: DeviceEvent.Value
 - uid: UFEDLib.DictionaryWord
   name: DictionaryWord
   href: api/UFEDLib.DictionaryWord.html
@@ -5127,6 +5721,135 @@ references:
   isSpec: "True"
   fullName: UFEDLib.ProjectAttributes.SourceExtractionsFullName
   nameWithType: ProjectAttributes.SourceExtractionsFullName
+- uid: UFEDLib.Recording
+  name: Recording
+  href: api/UFEDLib.Recording.html
+  commentId: T:UFEDLib.Recording
+  fullName: UFEDLib.Recording
+  nameWithType: Recording
+- uid: UFEDLib.Recording.Duration
+  name: Duration
+  href: api/UFEDLib.Recording.html#UFEDLib_Recording_Duration
+  commentId: P:UFEDLib.Recording.Duration
+  fullName: UFEDLib.Recording.Duration
+  nameWithType: Recording.Duration
+- uid: UFEDLib.Recording.Duration*
+  name: Duration
+  href: api/UFEDLib.Recording.html#UFEDLib_Recording_Duration_
+  commentId: Overload:UFEDLib.Recording.Duration
+  isSpec: "True"
+  fullName: UFEDLib.Recording.Duration
+  nameWithType: Recording.Duration
+- uid: UFEDLib.Recording.GetXmlModelType
+  name: GetXmlModelType()
+  href: api/UFEDLib.Recording.html#UFEDLib_Recording_GetXmlModelType
+  commentId: M:UFEDLib.Recording.GetXmlModelType
+  fullName: UFEDLib.Recording.GetXmlModelType()
+  nameWithType: Recording.GetXmlModelType()
+- uid: UFEDLib.Recording.GetXmlModelType*
+  name: GetXmlModelType
+  href: api/UFEDLib.Recording.html#UFEDLib_Recording_GetXmlModelType_
+  commentId: Overload:UFEDLib.Recording.GetXmlModelType
+  isSpec: "True"
+  fullName: UFEDLib.Recording.GetXmlModelType
+  nameWithType: Recording.GetXmlModelType
+- uid: UFEDLib.Recording.ParseModel(System.Xml.Linq.XElement,System.Boolean)
+  name: ParseModel(XElement, bool)
+  href: api/UFEDLib.Recording.html#UFEDLib_Recording_ParseModel_System_Xml_Linq_XElement_System_Boolean_
+  commentId: M:UFEDLib.Recording.ParseModel(System.Xml.Linq.XElement,System.Boolean)
+  name.vb: ParseModel(XElement, Boolean)
+  fullName: UFEDLib.Recording.ParseModel(System.Xml.Linq.XElement, bool)
+  fullName.vb: UFEDLib.Recording.ParseModel(System.Xml.Linq.XElement, Boolean)
+  nameWithType: Recording.ParseModel(XElement, bool)
+  nameWithType.vb: Recording.ParseModel(XElement, Boolean)
+- uid: UFEDLib.Recording.ParseModel*
+  name: ParseModel
+  href: api/UFEDLib.Recording.html#UFEDLib_Recording_ParseModel_
+  commentId: Overload:UFEDLib.Recording.ParseModel
+  isSpec: "True"
+  fullName: UFEDLib.Recording.ParseModel
+  nameWithType: Recording.ParseModel
+- uid: UFEDLib.Recording.ParseMultiModel(System.Xml.Linq.XElement,System.Boolean)
+  name: ParseMultiModel(XElement, bool)
+  href: api/UFEDLib.Recording.html#UFEDLib_Recording_ParseMultiModel_System_Xml_Linq_XElement_System_Boolean_
+  commentId: M:UFEDLib.Recording.ParseMultiModel(System.Xml.Linq.XElement,System.Boolean)
+  name.vb: ParseMultiModel(XElement, Boolean)
+  fullName: UFEDLib.Recording.ParseMultiModel(System.Xml.Linq.XElement, bool)
+  fullName.vb: UFEDLib.Recording.ParseMultiModel(System.Xml.Linq.XElement, Boolean)
+  nameWithType: Recording.ParseMultiModel(XElement, bool)
+  nameWithType.vb: Recording.ParseMultiModel(XElement, Boolean)
+- uid: UFEDLib.Recording.ParseMultiModel*
+  name: ParseMultiModel
+  href: api/UFEDLib.Recording.html#UFEDLib_Recording_ParseMultiModel_
+  commentId: Overload:UFEDLib.Recording.ParseMultiModel
+  isSpec: "True"
+  fullName: UFEDLib.Recording.ParseMultiModel
+  nameWithType: Recording.ParseMultiModel
+- uid: UFEDLib.Recording.Source
+  name: Source
+  href: api/UFEDLib.Recording.html#UFEDLib_Recording_Source
+  commentId: P:UFEDLib.Recording.Source
+  fullName: UFEDLib.Recording.Source
+  nameWithType: Recording.Source
+- uid: UFEDLib.Recording.Source*
+  name: Source
+  href: api/UFEDLib.Recording.html#UFEDLib_Recording_Source_
+  commentId: Overload:UFEDLib.Recording.Source
+  isSpec: "True"
+  fullName: UFEDLib.Recording.Source
+  nameWithType: Recording.Source
+- uid: UFEDLib.Recording.TimeStamp
+  name: TimeStamp
+  href: api/UFEDLib.Recording.html#UFEDLib_Recording_TimeStamp
+  commentId: P:UFEDLib.Recording.TimeStamp
+  fullName: UFEDLib.Recording.TimeStamp
+  nameWithType: Recording.TimeStamp
+- uid: UFEDLib.Recording.TimeStamp*
+  name: TimeStamp
+  href: api/UFEDLib.Recording.html#UFEDLib_Recording_TimeStamp_
+  commentId: Overload:UFEDLib.Recording.TimeStamp
+  isSpec: "True"
+  fullName: UFEDLib.Recording.TimeStamp
+  nameWithType: Recording.TimeStamp
+- uid: UFEDLib.Recording.Title
+  name: Title
+  href: api/UFEDLib.Recording.html#UFEDLib_Recording_Title
+  commentId: P:UFEDLib.Recording.Title
+  fullName: UFEDLib.Recording.Title
+  nameWithType: Recording.Title
+- uid: UFEDLib.Recording.Title*
+  name: Title
+  href: api/UFEDLib.Recording.html#UFEDLib_Recording_Title_
+  commentId: Overload:UFEDLib.Recording.Title
+  isSpec: "True"
+  fullName: UFEDLib.Recording.Title
+  nameWithType: Recording.Title
+- uid: UFEDLib.Recording.Type
+  name: Type
+  href: api/UFEDLib.Recording.html#UFEDLib_Recording_Type
+  commentId: P:UFEDLib.Recording.Type
+  fullName: UFEDLib.Recording.Type
+  nameWithType: Recording.Type
+- uid: UFEDLib.Recording.Type*
+  name: Type
+  href: api/UFEDLib.Recording.html#UFEDLib_Recording_Type_
+  commentId: Overload:UFEDLib.Recording.Type
+  isSpec: "True"
+  fullName: UFEDLib.Recording.Type
+  nameWithType: Recording.Type
+- uid: UFEDLib.Recording.UserMapping
+  name: UserMapping
+  href: api/UFEDLib.Recording.html#UFEDLib_Recording_UserMapping
+  commentId: P:UFEDLib.Recording.UserMapping
+  fullName: UFEDLib.Recording.UserMapping
+  nameWithType: Recording.UserMapping
+- uid: UFEDLib.Recording.UserMapping*
+  name: UserMapping
+  href: api/UFEDLib.Recording.html#UFEDLib_Recording_UserMapping_
+  commentId: Overload:UFEDLib.Recording.UserMapping
+  isSpec: "True"
+  fullName: UFEDLib.Recording.UserMapping
+  nameWithType: Recording.UserMapping
 - uid: UFEDLib.Report
   name: Report
   href: api/UFEDLib.Report.html

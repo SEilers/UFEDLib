@@ -4,10 +4,30 @@
   "files": [
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.ActivitySensorData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.ActivitySensorData.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/UFEDLib.ApplicationUsage.yml",
       "output": {
         ".html": {
           "relative_path": "api/UFEDLib.ApplicationUsage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.AppsUsageLog.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.AppsUsageLog.html"
         }
       },
       "version": ""
@@ -124,6 +144,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.CellTower.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.CellTower.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/UFEDLib.Chat.yml",
       "output": {
         ".html": {
@@ -178,6 +208,16 @@
       "output": {
         ".html": {
           "relative_path": "api/UFEDLib.Coordinate.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.DeviceEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.DeviceEvent.html"
         }
       },
       "version": ""
@@ -368,6 +408,16 @@
       "output": {
         ".html": {
           "relative_path": "api/UFEDLib.ProjectAttributes.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.Recording.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.Recording.html"
         }
       },
       "version": ""
