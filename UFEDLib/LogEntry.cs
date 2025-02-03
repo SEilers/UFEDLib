@@ -7,31 +7,29 @@ using System.Xml.Linq;
 
 namespace UFEDLib
 {
-    [Serializable]
-    public class VoiceMail : ModelBase, IUfedModelParser<VoiceMail>
+    public class LogEntry : ModelBase, IUfedModelParser<LogEntry>
     {
         public static string GetXmlModelType()
         {
-            return "VoiceMail";
+            return "LogEntry";
         }
 
         #region fields
-        public TimeSpan Duration { get; set; }
-        public string Name { get; set; }
+        public string UserMapping { get; set; }
+        public string Source { get; set; }
+        public string Identifier { get; set; }
         public DateTime TimeStamp { get; set; }
-        #endregion
-
-        #region models
-        public Party From { get; set; }
+        public string Application { get; set; }
+        public string Body { get; set; }
         #endregion
 
 
         #region Parsers
-        public static VoiceMail ParseModel(XElement element, bool debugAttributes = false)
+        public static LogEntry ParseModel(XElement element, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
 
-            VoiceMail result = new VoiceMail();
+            LogEntry result = new LogEntry();
 
             var fieldElements = element.Elements(xNamespace + "field");
             var multiFieldElements = element.Elements(xNamespace + "multiField");
@@ -41,8 +39,24 @@ namespace UFEDLib
             {
                 switch (field.Attribute("name").Value)
                 {
-                    case "Name":
-                        result.Name = field.Value.Trim();
+                    case "UserMapping":
+                        result.UserMapping = field.Value.Trim();
+                        break;
+
+                    case "Source":
+                        result.Source = field.Value.Trim();
+                        break;
+
+                    case "Identifier":
+                        result.Identifier = field.Value.Trim();
+                        break;
+
+                    case "Application":
+                        result.Application = field.Value.Trim();
+                        break;
+
+                    case "Body":
+                        result.Body = field.Value.Trim();
                         break;
 
                     case "TimeStamp":
@@ -50,15 +64,10 @@ namespace UFEDLib
                             result.TimeStamp = DateTime.Parse(field.Value.Trim());
                         break;
 
-                    case "Duration":
-                        if (field.Value.Trim() != "")
-                            result.Duration = TimeSpan.Parse(field.Value.Trim());
-                        break;
-
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("VoiceMail Parser: Unknown field: " + field.Attribute("name").Value);
+                            Console.WriteLine("LogEntry Parser: Unknown field: " + field.Attribute("name").Value);
                         }
                         break;
                 }
@@ -68,14 +77,10 @@ namespace UFEDLib
             {
                 switch (multiField.Attribute("name").Value)
                 {
-                    case "From":
-                        result.From = Party.ParseModel(multiField, debugAttributes);
-                        break;
-
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("VoiceMail Parser: Unknown multiField: " + multiField.Attribute("name").Value);
+                            Console.WriteLine("LogEntry Parser: Unknown multiField: " + multiField.Attribute("name").Value);
                         }
                         break;
                 }
@@ -88,7 +93,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("VoiceMail Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
+                            Console.WriteLine("LogEntry Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
                         }
                         break;
                 }
@@ -97,21 +102,22 @@ namespace UFEDLib
             return result;
         }
 
-        public static List<VoiceMail> ParseMultiModel(XElement element, bool debugAttributes = false)
+        public static List<LogEntry> ParseMultiModel(XElement element, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            List<VoiceMail> result = new List<VoiceMail>();
+            List<LogEntry> result = new List<LogEntry>();
 
-            IEnumerable<XElement> vmElements = element.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "VoiceMail");
+            IEnumerable<XElement> leElements = element.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "LogEntry");
 
-            foreach (XElement vmElement in vmElements)
+            foreach (XElement leElement in leElements)
             {
-                VoiceMail vm = ParseModel(vmElement, debugAttributes);
-                result.Add(vm);
+                LogEntry dc = ParseModel(leElement, debugAttributes);
+                result.Add(dc);
             }
 
             return result;
         }
+
         #endregion
     }
 }
