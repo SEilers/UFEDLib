@@ -184,6 +184,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.DeviceInfoEntry.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.DeviceInfoEntry.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/UFEDLib.DictionaryWord.yml",
       "output": {
         ".html": {
@@ -438,6 +448,16 @@
       "output": {
         ".html": {
           "relative_path": "api/UFEDLib.StreetAddress.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.User.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.User.html"
         }
       },
       "version": ""
