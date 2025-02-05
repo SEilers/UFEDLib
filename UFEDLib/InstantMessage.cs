@@ -105,10 +105,11 @@ namespace UFEDLib
 
         public static InstantMessage ParseModel(XElement xElement, bool debugAttributes = false)
         {
-            InstantMessage result = new InstantMessage();
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
 
+            InstantMessage result = new InstantMessage();
             result.ParseAttributes(xElement);
+
 
             var fieldElements = xElement.Elements(xNamespace + "field");
             var multiFieldElements = xElement.Elements(xNamespace + "multiField");
@@ -196,7 +197,7 @@ namespace UFEDLib
                         default:
                             if (debugAttributes)
                             {
-                                Console.WriteLine("InstantMessage Parser: Unknown field: " + field.Attribute("name").Value);
+                                Logger.LogAttribute("InstantMessage Parser: Unknown field: " + field.Attribute("name").Value);
                             }
                             break;
                     }
@@ -221,7 +222,7 @@ namespace UFEDLib
                         default:
                             if (debugAttributes)
                             {
-                                Console.WriteLine("InstantMessage Parser: Unknown multiField: " + multiField.Attribute("name").Value);
+                                Logger.LogAttribute("InstantMessage Parser: Unknown multiField: " + multiField.Attribute("name").Value);
                             }
                             break;
                     }
@@ -248,7 +249,7 @@ namespace UFEDLib
                         default:
                             if (debugAttributes)
                             {
-                                Console.WriteLine("InstantMessage Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
+                                Logger.LogAttribute("InstantMessage Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
                             }
                             break;
                     }

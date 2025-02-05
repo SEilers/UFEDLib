@@ -33,8 +33,9 @@ namespace UFEDLib
         #region Parsers
         public static VisitedPage ParseModel(XElement element, bool debugAttributes = false)
         {
-            VisitedPage result = new VisitedPage();
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
+
+            VisitedPage result = new VisitedPage();
             result.ParseAttributes(element);
 
             var fieldElements = element.Elements(xNamespace + "field");
@@ -76,7 +77,7 @@ namespace UFEDLib
                         default:
                             if (debugAttributes)
                             {
-                                Console.WriteLine("VisitedPage Parser: Unknown field: " + field.Attribute("name").Value);
+                                Logger.LogAttribute("VisitedPage Parser: Unknown field: " + field.Attribute("name").Value);
                             }
                             break;
                     }
@@ -89,7 +90,7 @@ namespace UFEDLib
                         default:
                             if (debugAttributes)
                             {
-                                Console.WriteLine("VisitedPage Parser: Unknown multiField: " + multiField.Attribute("name").Value);
+                                Logger.LogAttribute("VisitedPage Parser: Unknown multiField: " + multiField.Attribute("name").Value);
                             }
                             break;
                     }
@@ -102,7 +103,7 @@ namespace UFEDLib
                         default:
                             if (debugAttributes)
                             {
-                                Console.WriteLine("VisitedPage Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
+                                Logger.LogAttribute("VisitedPage Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
                             }
                             break;
                     }

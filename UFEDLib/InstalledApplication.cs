@@ -27,12 +27,16 @@ namespace UFEDLib
         public string Name { get; set; }
         public DateTime PurchaseDate { get; set; }
         public string Version { get; set; }
+        #endregion
+
+        #region Parsers
 
         public static InstalledApplication ParseModel(XElement element, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
 
             InstalledApplication result = new InstalledApplication();
+            result.ParseAttributes(element);
 
             var fieldElements = element.Elements(xNamespace + "field");
             var multiFieldElements = element.Elements(xNamespace + "multiField");
@@ -87,7 +91,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("InstalledApplication Parser: Unknown field: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("InstalledApplication Parser: Unknown field: " + field.Attribute("name").Value);
                         }
                         break;
                 }
@@ -100,7 +104,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("InstalledApplication Parser:Unknown multiField: " + multiField.Attribute("name").Value);
+                            Logger.LogAttribute("InstalledApplication Parser:Unknown multiField: " + multiField.Attribute("name").Value);
                         }
                         break;
                 }
@@ -113,7 +117,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("InstalledApplication Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
+                            Logger.LogAttribute("InstalledApplication Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
                         }
                         break;
                 }

@@ -62,6 +62,7 @@ namespace UFEDLib
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
 
             ContactEntry result = new ContactEntry();
+            result.ParseAttributes(contactNode);    
 
             var fieldElements = contactNode.Elements(xNamespace + "field");
 
@@ -83,7 +84,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("ContactEntry Parser: Unknown attribute: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("ContactEntry Parser: Unknown attribute: " + field.Attribute("name").Value);
                         }
                         break;
                 }
@@ -96,7 +97,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("Contact EntryParser: Unknown multiField: " + multiField.Attribute("name").Value);
+                            Logger.LogAttribute("Contact EntryParser: Unknown multiField: " + multiField.Attribute("name").Value);
                         }
                         break;
                 }
@@ -109,7 +110,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("Contact EntryParser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
+                            Logger.LogAttribute("Contact EntryParser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
                         }
                         break;
                 }

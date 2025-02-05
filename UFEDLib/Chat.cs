@@ -64,7 +64,6 @@ namespace UFEDLib
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
 
             Chat result = new Chat();
-
             result.ParseAttributes(element);
 
             var fieldElements = element.Elements(xNamespace + "field");
@@ -116,7 +115,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("Chat Parser: Unknown field: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("Chat Parser: Unknown field: " + field.Attribute("name").Value);
                         }
                         break;
                 }
@@ -129,7 +128,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("Chat Parser: Unknown multiField: " + multiField.Attribute("name").Value);
+                            Logger.LogAttribute("Chat Parser: Unknown multiField: " + multiField.Attribute("name").Value);
                         }
                         break;
                 }
@@ -160,7 +159,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("Chat Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
+                            Logger.LogAttribute("Chat Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
                         }
                         break;
                 }

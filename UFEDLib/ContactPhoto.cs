@@ -47,6 +47,7 @@ namespace UFEDLib
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
 
             ContactPhoto result = new ContactPhoto();
+            result.ParseAttributes(contactNode);
 
             var fieldElements = contactNode.Elements(xNamespace + "field");
 
@@ -60,7 +61,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("ContactPhoto Parser: Unhandled field: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("ContactPhoto Parser: Unhandled field: " + field.Attribute("name").Value);
                         }
                         break;
                 }
@@ -79,7 +80,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("Contact PhotoParser: Unhandled multiField: " + multiField.Attribute("name").Value);
+                            Logger.LogAttribute("Contact PhotoParser: Unhandled multiField: " + multiField.Attribute("name").Value);
                         }
                         break;
                 }
@@ -92,7 +93,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("Contact PhotoParser: Unhandled multiModelField: " + multiModelField.Attribute("name").Value);
+                            Logger.LogAttribute("Contact PhotoParser: Unhandled multiModelField: " + multiModelField.Attribute("name").Value);
                         }
                         break;
                 }

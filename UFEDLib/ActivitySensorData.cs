@@ -29,6 +29,7 @@ namespace UFEDLib
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
 
             ActivitySensorData result = new ActivitySensorData();
+            result.ParseAttributes(element);
 
             var fieldElements = element.Elements(xNamespace + "field");
             var multiFieldElements = element.Elements(xNamespace + "multiField");
@@ -84,7 +85,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("ActivitySensorData Parser: Unknown field: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("ActivitySensorData Parser: Unknown field: " + field.Attribute("name").Value);
                         }
                         break;
                 }
@@ -97,7 +98,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("ActivitySensorData Parser: Unknown multiField: " + multiField.Attribute("name").Value);
+                            Logger.LogAttribute("ActivitySensorData Parser: Unknown multiField: " + multiField.Attribute("name").Value);
                         }
                         break;
                 }
@@ -110,7 +111,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("ActivitySensorData Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
+                            Logger.LogAttribute("ActivitySensorData Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
                         }
                         break;
                 }

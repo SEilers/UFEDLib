@@ -34,6 +34,7 @@ namespace UFEDLib
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
 
             Autofill result = new Autofill();
+            result.ParseAttributes(element);
 
             var fieldElements = element.Elements(xNamespace + "field");
             var multiFieldElements = element.Elements(xNamespace + "multiField");
@@ -72,7 +73,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("Autofill Parser: Unknown field: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("Autofill Parser: Unknown field: " + field.Attribute("name").Value);
                         }
                         break;
                 }
@@ -85,7 +86,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("Autofill Parser: Unknown multiField: " + multiField.Attribute("name").Value);
+                            Logger.LogAttribute("Autofill Parser: Unknown multiField: " + multiField.Attribute("name").Value);
                         }
                         break;
                 }
@@ -98,7 +99,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("Autofill Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
+                            Logger.LogAttribute("Autofill Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
                         }
                         break;
                 }

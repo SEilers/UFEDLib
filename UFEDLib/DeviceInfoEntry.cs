@@ -32,6 +32,7 @@ namespace UFEDLib
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
 
             DeviceInfoEntry result = new DeviceInfoEntry();
+            result.ParseAttributes(element);
 
             var fieldElements = element.Elements(xNamespace + "field");
             var multiFieldElements = element.Elements(xNamespace + "multiField");
@@ -64,7 +65,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("DeviceInfoEntry Parser: Unknown field: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("DeviceInfoEntry Parser: Unknown field: " + field.Attribute("name").Value);
                         }
                         break;
                 }
@@ -77,7 +78,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("DeviceInfoEntry Parser: Unknown multiField: " + multiField.Attribute("name").Value);
+                            Logger.LogAttribute("DeviceInfoEntry Parser: Unknown multiField: " + multiField.Attribute("name").Value);
                         }
                         break;
                 }
@@ -90,7 +91,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("DeviceInfoEntry Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
+                            Logger.LogAttribute("DeviceInfoEntry Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
                         }
                         break;
                 }

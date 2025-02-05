@@ -33,8 +33,9 @@ namespace UFEDLib
         #region Parsers
         public static PoweringEvent ParseModel(XElement element, bool debugAttributes = false)
         {
-            PoweringEvent result = new PoweringEvent();
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
+
+            PoweringEvent result = new PoweringEvent();
             result.ParseAttributes(element);
 
             var fieldElements = element.Elements(xNamespace + "field");
@@ -71,7 +72,7 @@ namespace UFEDLib
                         default:
                             if (debugAttributes)
                             {
-                                Console.WriteLine("PoweringEvent Parser: Unknown field: " + field.Attribute("name").Value);
+                                Logger.LogAttribute("PoweringEvent Parser: Unknown field: " + field.Attribute("name").Value);
                             }
                             break;
                     }
@@ -84,7 +85,7 @@ namespace UFEDLib
                         default:
                             if (debugAttributes)
                             {
-                                Console.WriteLine("PoweringEvent Parser: Unknown multiField: " + multiField.Attribute("name").Value);
+                                Logger.LogAttribute("PoweringEvent Parser: Unknown multiField: " + multiField.Attribute("name").Value);
                             }
                             break;
                     }
@@ -97,7 +98,7 @@ namespace UFEDLib
                         default:
                             if (debugAttributes)
                             {
-                                Console.WriteLine("PoweringEvent Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
+                                Logger.LogAttribute("PoweringEvent Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
                             }
                             break;
                     }

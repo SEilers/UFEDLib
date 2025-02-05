@@ -51,6 +51,7 @@ namespace UFEDLib
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
 
             WirelessNetwork result = new WirelessNetwork();
+            result.ParseAttributes(wirelessNetworkNode);
 
             var fieldElements = wirelessNetworkNode.Elements(xNamespace + "field");
             var multiFieldElements = wirelessNetworkNode.Elements(xNamespace + "multiField");
@@ -85,7 +86,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("WirelessNetwork Parser: Unhandled field: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("WirelessNetwork Parser: Unhandled field: " + field.Attribute("name").Value);
                         }
                         break;
                 }
@@ -98,7 +99,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("WirelessNetwork Parser: Unhandled multiField: " + multiField.Attribute("name").Value);
+                            Logger.LogAttribute("WirelessNetwork Parser: Unhandled multiField: " + multiField.Attribute("name").Value);
                         }
                         break;
                 }
@@ -111,7 +112,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("WirelessNetwork Parser: Unhandled multiModelField: " + multiModelField.Attribute("name").Value);
+                            Logger.LogAttribute("WirelessNetwork Parser: Unhandled multiModelField: " + multiModelField.Attribute("name").Value);
                         }
                         break;
                 }

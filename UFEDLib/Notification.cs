@@ -46,8 +46,9 @@ namespace UFEDLib
         #region Parsers
         public static Notification ParseModel(XElement element, bool debugAttributes = false)
         {
-            Notification result = new Notification();
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
+
+            Notification result = new Notification();
             result.ParseAttributes(element);
 
             var fieldElements = element.Elements(xNamespace + "field");
@@ -105,7 +106,7 @@ namespace UFEDLib
                         default:
                             if (debugAttributes)
                             {
-                                Console.WriteLine("Notification Parser: Unknown field: " + field.Attribute("name").Value);
+                                Logger.LogAttribute("Notification Parser: Unknown field: " + field.Attribute("name").Value);
                             }
                             break;
                     }
@@ -125,7 +126,7 @@ namespace UFEDLib
                         default:
                             if (debugAttributes)
                             {
-                                Console.WriteLine("Notification Parser: Unknown multiField: " + multiField.Attribute("name").Value);
+                                Logger.LogAttribute("Notification Parser: Unknown multiField: " + multiField.Attribute("name").Value);
                             }
                             break;
                     }
@@ -145,7 +146,7 @@ namespace UFEDLib
                         default:
                             if (debugAttributes)
                             {
-                                Console.WriteLine("Notification Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
+                                Logger.LogAttribute("Notification Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
                             }
                             break;
                     }

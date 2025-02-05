@@ -63,6 +63,7 @@ namespace UFEDLib
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
 
             EMail result = new EMail();
+            result.ParseAttributes(emailNode);
 
             var fieldElements = emailNode.Elements(xNamespace + "field");
             var multiFieldElements = emailNode.Elements(xNamespace + "multiField");
@@ -108,7 +109,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("EMail Parser: Unknown attribute: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("EMail Parser: Unknown attribute: " + field.Attribute("name").Value);
                         }
                         break;
                 }
@@ -121,7 +122,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("EMail Parser: Unknown multiField: " + multiField.Attribute("name").Value);
+                            Logger.LogAttribute("EMail Parser: Unknown multiField: " + multiField.Attribute("name").Value);
                         }
                         break;
                 }
@@ -150,7 +151,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("EMail Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
+                            Logger.LogAttribute("EMail Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
                         }
                         break;
                 }

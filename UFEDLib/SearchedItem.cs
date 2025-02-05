@@ -34,8 +34,9 @@ namespace UFEDLib
         public static List<SearchedItem> ParseMultiModel(XElement searchedItemsElement, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            List<SearchedItem> result = new List<SearchedItem>();
 
+            List<SearchedItem> result = new List<SearchedItem>();
+           
             IEnumerable<XElement> searchedItemElements = searchedItemsElement.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "SearchedItem");
 
             foreach (var searchedItemElement in searchedItemElements)
@@ -55,7 +56,9 @@ namespace UFEDLib
         public static SearchedItem ParseModel(XElement searchedItemElement, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
+
             SearchedItem result = new SearchedItem();
+            result.ParseAttributes(searchedItemElement);
 
             var fieldElements = searchedItemElement.Elements(xNamespace + "field");
             var multiFieldElements = searchedItemElement.Elements(xNamespace + "multiField");
@@ -93,7 +96,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("SearchedItem Parser: Unhandled field: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("SearchedItem Parser: Unhandled field: " + field.Attribute("name").Value);
                         }
                         break;
                 }
@@ -106,7 +109,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("SearchedItem Parser: Unhandled multiField: " + multiField.Attribute("name").Value);
+                            Logger.LogAttribute("SearchedItem Parser: Unhandled multiField: " + multiField.Attribute("name").Value);
                         }
                         break;
                 }
@@ -119,7 +122,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("SearchedItem Parser: Unhandled multiModelField: " + multiModelField.Attribute("name").Value);
+                            Logger.LogAttribute("SearchedItem Parser: Unhandled multiModelField: " + multiModelField.Attribute("name").Value);
                         }
                         break;
                 }

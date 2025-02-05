@@ -120,8 +120,6 @@ namespace UFEDLib
             var multiFieldElements = contactNode.Elements(xNamespace + "multiField");
             var multiModelFieldElements = contactNode.Elements(xNamespace + "multiModelField");
 
-            List<string> debugAttributesList = new List<string>();
-
             foreach (var field in fieldElements)
             {
                 switch (field.Attribute("name").Value)
@@ -185,10 +183,7 @@ namespace UFEDLib
                         if (debugAttributes)
                         {
                             string debugAttrubuteText = "Contact Parser: Unknown field: " + field.Attribute("name").Value;
-                            if (!debugAttributesList.Contains(debugAttrubuteText))
-                            {
-                                debugAttributesList.Add(debugAttrubuteText);
-                            }
+                            Logger.LogAttribute(debugAttrubuteText);
                         }
                         break;
                 }
@@ -214,10 +209,7 @@ namespace UFEDLib
                         if (debugAttributes)
                         {
                             string debugAttrubuteText = "Contact Parser: Unknown multiField: " + multiField.Attribute("name").Value;
-                            if (!debugAttributesList.Contains(debugAttrubuteText))
-                            {
-                                debugAttributesList.Add(debugAttrubuteText);
-                            }
+                            Logger.LogAttribute(debugAttrubuteText);
                         }
                         break;
                 }
@@ -250,23 +242,12 @@ namespace UFEDLib
                         if (debugAttributes)
                         {
                             string debugAttrubuteText = "Contact Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value;
-                            if (!debugAttributesList.Contains(debugAttrubuteText))
-                            {
-                                debugAttributesList.Add(debugAttrubuteText);
-                            }
+                            Logger.LogAttribute(debugAttrubuteText);
                         }
                         break;
                 }
             }
-
-            if (debugAttributes)
-            {
-                foreach (string debugAttributeText in debugAttributesList)
-                {
-                    Console.WriteLine(debugAttributeText);
-                }
-            }
-
+    
             return result;
         }
         #endregion

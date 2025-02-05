@@ -45,12 +45,13 @@ namespace UFEDLib
             return result;
         }
 
-        public static Coordinate ParseModel(XElement corrdinateElement, bool debugAttributes = false)
+        public static Coordinate ParseModel(XElement coordinateElement, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
             Coordinate result = new Coordinate();
+            result.ParseAttributes(coordinateElement);
 
-            var fieldElements = corrdinateElement.Elements(xNamespace + "field");
+            var fieldElements = coordinateElement.Elements(xNamespace + "field");
 
             foreach (var fieldElement in fieldElements)
             {
@@ -95,7 +96,7 @@ namespace UFEDLib
                         default:
                             if (debugAttributes)
                             {
-                                Console.WriteLine("Coordinate Parser: Unhandled field: " + fieldElement.Attribute("name").Value);
+                                Logger.LogAttribute("Coordinate Parser: Unhandled field: " + fieldElement.Attribute("name").Value);
                             }
                             break;
                     }
@@ -108,7 +109,7 @@ namespace UFEDLib
             }
 
 
-            foreach (var multiField in corrdinateElement.Elements(xNamespace + "multiField"))
+            foreach (var multiField in coordinateElement.Elements(xNamespace + "multiField"))
             {
                 try
                 {
@@ -117,7 +118,7 @@ namespace UFEDLib
                         default:
                             if (debugAttributes)
                             {
-                                Console.WriteLine("Coordinate Parser: Unhandled multiField: " + multiField.Attribute("name").Value);
+                                Logger.LogAttribute("Coordinate Parser: Unhandled multiField: " + multiField.Attribute("name").Value);
                             }
                             break;
                     }
@@ -128,7 +129,7 @@ namespace UFEDLib
                 }
             }
 
-            foreach (var multiModelField in corrdinateElement.Elements(xNamespace + "multiModelField"))
+            foreach (var multiModelField in coordinateElement.Elements(xNamespace + "multiModelField"))
             {
                 try
                 {
@@ -137,7 +138,7 @@ namespace UFEDLib
                         default:
                             if (debugAttributes)
                             {
-                                Console.WriteLine("Coordinate Parser: Unhandled multiModelField: " + multiModelField.Attribute("name").Value);
+                                Logger.LogAttribute("Coordinate Parser: Unhandled multiModelField: " + multiModelField.Attribute("name").Value);
                             }
                             break;
                     }

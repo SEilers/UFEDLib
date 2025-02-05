@@ -32,6 +32,7 @@ namespace UFEDLib
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
 
             VoiceMail result = new VoiceMail();
+            result.ParseAttributes(element);
 
             var fieldElements = element.Elements(xNamespace + "field");
             var multiFieldElements = element.Elements(xNamespace + "multiField");
@@ -58,7 +59,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("VoiceMail Parser: Unknown field: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("VoiceMail Parser: Unknown field: " + field.Attribute("name").Value);
                         }
                         break;
                 }
@@ -75,7 +76,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("VoiceMail Parser: Unknown multiField: " + multiField.Attribute("name").Value);
+                            Logger.LogAttribute("VoiceMail Parser: Unknown multiField: " + multiField.Attribute("name").Value);
                         }
                         break;
                 }
@@ -88,7 +89,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("VoiceMail Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
+                            Logger.LogAttribute("VoiceMail Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
                         }
                         break;
                 }

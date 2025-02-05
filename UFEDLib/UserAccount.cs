@@ -69,6 +69,7 @@ namespace UFEDLib
         public static List<UserAccount> ParseMultiModel(XElement userAccountsElement, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
+
             List<UserAccount> result = new List<UserAccount>();
 
             IEnumerable<XElement> userAccountElements = userAccountsElement.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "UserAccount");
@@ -90,7 +91,9 @@ namespace UFEDLib
         public static UserAccount ParseModel(XElement userAccountNode, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
+
             UserAccount result = new UserAccount();
+            result.ParseAttributes(userAccountNode);
 
             var fieldElements = userAccountNode.Elements(xNamespace + "field");
             var multiFieldElements = userAccountNode.Elements(xNamespace + "multiField");
@@ -137,7 +140,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("UserAccount Parser: Unhandled field: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("UserAccount Parser: Unhandled field: " + field.Attribute("name").Value);
                         }
                         break;
                 }
@@ -150,7 +153,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("UserAccount Parser: Unhandled multiField: " + multiField.Attribute("name").Value);
+                            Logger.LogAttribute("UserAccount Parser: Unhandled multiField: " + multiField.Attribute("name").Value);
                         }
                         break;
                 }
@@ -179,7 +182,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("UserAccount Parser: Unhandled multiModelField: " + multiModelField.Attribute("name").Value);
+                            Logger.LogAttribute("UserAccount Parser: Unhandled multiModelField: " + multiModelField.Attribute("name").Value);
                         }
                         break;
                 }

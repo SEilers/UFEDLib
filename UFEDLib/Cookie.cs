@@ -36,6 +36,7 @@ namespace UFEDLib
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
 
             Cookie result = new Cookie();
+            result.ParseAttributes(element);
 
             var fieldElements = element.Elements(xNamespace + "field");
             var multiFieldElements = element.Elements(xNamespace + "multiField");
@@ -91,7 +92,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("Cookie Parser: Unknown field: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("Cookie Parser: Unknown field: " + field.Attribute("name").Value);
                         }
                         break;
                 }
@@ -104,7 +105,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("Cookie Parser:Unknown multiField: " + multiField.Attribute("name").Value);
+                            Logger.LogAttribute("Cookie Parser:Unknown multiField: " + multiField.Attribute("name").Value);
                         }
                         break;
                 }
@@ -117,7 +118,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("Cookie Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
+                            Logger.LogAttribute("Cookie Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
                         }
                         break;
                 }

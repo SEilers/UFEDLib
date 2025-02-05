@@ -10,73 +10,297 @@ namespace UFEDLib
 {
     public class Report
     {
-        public static List<Autofill> GetAutofills(string ufdrFile)
+        public static List<Autofill> ParseAutofills(string filename, IProgress<int> progress = null, bool debugAttributes = false)
         {
-            return ModelParser.ParseUfdr<Autofill>(ufdrFile);
+            if(filename == null)
+            {
+                throw new ArgumentNullException("filename");
+            }
+
+            if ( filename.EndsWith("ufdr", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return ModelParser.ParseUfdr<Autofill>(filename, progress, debugAttributes);
+            }
+            else if (filename.EndsWith("xml", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return ModelParser.ParseXMLReport<Autofill>(filename, progress, debugAttributes);
+            }
+            else
+            {
+                throw new ArgumentException("Unsupported file format: " + filename);
+            }
         }
-        public static List<Call> GetCalls(string ufdrFile)
+        public static List<Call> ParseCalls(string filename, IProgress<int> progress = null, bool debugAttributes = false)
         {
-            return ModelParser.ParseUfdr<Call>(ufdrFile);
+            if (filename == null)
+            {
+                throw new ArgumentNullException("filename");
+            }
+
+            if (filename.EndsWith("ufdr", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return ModelParser.ParseUfdr<Call>(filename, progress, debugAttributes);
+            }
+            else if (filename.EndsWith("xml", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return ModelParser.ParseXMLReport<Call>(filename, progress, debugAttributes);
+            }
+            else
+            {
+                throw new ArgumentException("Unsupported file format: " + filename);
+            }
         }
 
-        public static List<Chat> GetChats(string ufdrFile)
+        public static List<Chat> ParseChats(string filename, IProgress<int> progress = null, bool debugAttributes = false)
         {
-            return ModelParser.ParseUfdr<Chat>(ufdrFile);
+            if (filename == null)
+            {
+                throw new ArgumentNullException("filename");
+            }
+
+            if (filename.EndsWith("ufdr", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return ModelParser.ParseUfdr<Chat>(filename, progress, debugAttributes);
+            }
+            else if (filename.EndsWith("xml", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return ModelParser.ParseXMLReport<Chat>(filename, progress, debugAttributes);
+            }
+            else
+            {
+                throw new ArgumentException("Unsupported file format: " + filename);
+            }
         }
 
-        public static List<Contact> GetContacts(string ufdrFile)
+        public static List<Contact> ParseContacts(string filename, IProgress<int> progress = null, bool debugAttributes = false)
         {
-            return ModelParser.ParseUfdr<Contact>(ufdrFile);
+            if (filename == null)
+            {
+                throw new ArgumentNullException("filename");
+            }
+
+            if (filename.EndsWith("ufdr", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return ModelParser.ParseUfdr<Contact>(filename, progress, debugAttributes);
+            }
+            else if (filename.EndsWith("xml", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return ModelParser.ParseXMLReport<Contact>(filename, progress, debugAttributes);
+            }
+            else
+            {
+                throw new ArgumentException("Unsupported file format: " + filename);
+            }
         }
 
-        public static List<Cookie> GetCookies(string ufdrFile)
+        public static List<Cookie> ParseCookies(string filename, IProgress<int> progress = null, bool debugAttributes = false)
         {
-            return ModelParser.ParseUfdr<Cookie>(ufdrFile);
+            if (filename == null)
+            {
+                throw new ArgumentNullException("filename");
+            }
+
+            if (filename.EndsWith("ufdr", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return ModelParser.ParseUfdr<Cookie>(filename, progress, debugAttributes);
+            }
+            else if (filename.EndsWith("xml", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return ModelParser.ParseXMLReport<Cookie>(filename, progress, debugAttributes);
+            }
+            else
+            {
+                throw new ArgumentException("Unsupported file format: " + filename);
+            }
         }
 
-        public static List<DictionaryWord> GetDictionaryWords(string ufdrFile)
+        public static List<DictionaryWord> ParseDictionaryWords(string filename, IProgress<int> progress = null, bool debugAttributes = false)
         {
-            return ModelParser.ParseUfdr<DictionaryWord>(ufdrFile);
+            if (filename == null)
+            {
+                throw new ArgumentNullException("filename");
+            }
+
+            if (filename.EndsWith("ufdr", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return ModelParser.ParseUfdr<DictionaryWord>(filename, progress, debugAttributes);
+            }
+            else if (filename.EndsWith("xml", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return ModelParser.ParseXMLReport<DictionaryWord>(filename, progress, debugAttributes);
+            }
+            else
+            {
+                throw new ArgumentException("Unsupported file format: " + filename);
+            }
         }
 
-        public static List<EMail> GetEMails(string ufdrFile)
+        public static List<EMail> ParseEMails(string filename, IProgress<int> progress = null, bool debugAttributes = false)
         {
-            return ModelParser.ParseUfdr<EMail>(ufdrFile);
+            if (filename == null)
+            {
+                throw new ArgumentNullException("filename");
+            }
+
+            if (filename.EndsWith("ufdr", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return ModelParser.ParseUfdr<EMail>(filename, progress, debugAttributes);
+            }
+            else if (filename.EndsWith("xml", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return ModelParser.ParseXMLReport<EMail>(filename, progress, debugAttributes);
+            }
+            else
+            {
+                throw new ArgumentException("Unsupported file format: " + filename);
+            }
         }
 
-        public static List<Journey> GetJourneys(string ufdrFile)
+        public static List<Journey> ParseJourneys(string filename, IProgress<int> progress = null, bool debugAttributes = false)
         {
-            return ModelParser.ParseUfdr<Journey>(ufdrFile);
+            if (filename == null)
+            {
+                throw new ArgumentNullException("filename");
+            }
+
+            if (filename.EndsWith("ufdr", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return ModelParser.ParseUfdr<Journey>(filename, progress, debugAttributes);
+            }
+            else if (filename.EndsWith("xml", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return ModelParser.ParseXMLReport<Journey>(filename, progress, debugAttributes);
+            }
+            else
+            {
+                throw new ArgumentException("Unsupported file format: " + filename);
+            }
         }
 
-        public static List<Location> GetLocations(string ufdrFile)
+        public static List<Location> ParseLocations(string filename, IProgress<int> progress = null, bool debugAttributes = false)
         {
-            return ModelParser.ParseUfdr<Location>(ufdrFile);
+            if (filename == null)
+            {
+                throw new ArgumentNullException("filename");
+            }
+
+            if (filename.EndsWith("ufdr", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return ModelParser.ParseUfdr<Location>(filename, progress, debugAttributes);
+            }
+            else if (filename.EndsWith("xml", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return ModelParser.ParseXMLReport<Location>(filename, progress, debugAttributes);
+            }
+            else
+            {
+                throw new ArgumentException("Unsupported file format: " + filename);
+            }
         }
 
-        public static List<Password> GetPasswords(string ufdrFile)
+        public static List<Password> ParsePasswords(string filename, IProgress<int> progress = null, bool debugAttributes = false)
         {
-            return ModelParser.ParseUfdr<Password>(ufdrFile);
+            if (filename == null)
+            {
+                throw new ArgumentNullException("filename");
+            }
+
+            if (filename.EndsWith("ufdr", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return ModelParser.ParseUfdr<Password>(filename, progress, debugAttributes);
+            }
+            else if (filename.EndsWith("xml", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return ModelParser.ParseXMLReport<Password>(filename, progress, debugAttributes);
+            }
+            else
+            {
+                throw new ArgumentException("Unsupported file format: " + filename);
+            }
         }
 
-        public static List<SearchedItem> GetSearchedItems(string ufdrFile)
+        public static List<SearchedItem> ParseSearchedItems(string filename, IProgress<int> progress = null, bool debugAttributes = false)
         {
-            return ModelParser.ParseUfdr<SearchedItem>(ufdrFile);
+            if (filename == null)
+            {
+                throw new ArgumentNullException("filename");
+            }
+
+            if (filename.EndsWith("ufdr", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return ModelParser.ParseUfdr<SearchedItem>(filename, progress, debugAttributes);
+            }
+            else if (filename.EndsWith("xml", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return ModelParser.ParseXMLReport<SearchedItem>(filename, progress, debugAttributes);
+            }
+            else
+            {
+                throw new ArgumentException("Unsupported file format: " + filename);
+            }
         }
 
-        public static List<UserAccount> GetUserAccounts(string ufdrFile)
+        public static List<UserAccount> ParseUserAccounts(string filename, IProgress<int> progress = null, bool debugAttributes = false)
         {
-            return ModelParser.ParseUfdr<UserAccount>(ufdrFile);
+            if (filename == null)
+            {
+                throw new ArgumentNullException("filename");
+            }
+
+            if (filename.EndsWith("ufdr", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return ModelParser.ParseUfdr<UserAccount>(filename, progress, debugAttributes);
+            }
+            else if (filename.EndsWith("xml", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return ModelParser.ParseXMLReport<UserAccount>(filename, progress, debugAttributes);
+            }
+            else
+            {
+                throw new ArgumentException("Unsupported file format: " + filename);
+            }
         }
 
-        public static List<WebBookmark> GetWebBookmarks(string ufdrFile)
+        public static List<WebBookmark> ParseWebBookmarks(string filename, IProgress<int> progress = null, bool debugAttributes = false)
         {
-            return ModelParser.ParseUfdr<WebBookmark>(ufdrFile);
+            if (filename == null)
+            {
+                throw new ArgumentNullException("filename");
+            }
+
+            if (filename.EndsWith("ufdr", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return ModelParser.ParseUfdr<WebBookmark>(filename, progress, debugAttributes);
+            }
+            else if (filename.EndsWith("xml", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return ModelParser.ParseXMLReport<WebBookmark>(filename, progress, debugAttributes);
+            }
+            else
+            {
+                throw new ArgumentException("Unsupported file format: " + filename);
+            }
         }
 
-        public static List<WirelessNetwork> GetWirelessNetworks(string ufdrFile)
+        public static List<WirelessNetwork> ParseWirelessNetworks(string filename, IProgress<int> progress = null, bool debugAttributes = false)
         {
-            return ModelParser.ParseUfdr<WirelessNetwork>(ufdrFile);
+            if (filename == null)
+            {
+                throw new ArgumentNullException("filename");
+            }
+
+            if (filename.EndsWith("ufdr", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return ModelParser.ParseUfdr<WirelessNetwork>(filename, progress, debugAttributes);
+            }
+            else if (filename.EndsWith("xml", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return ModelParser.ParseXMLReport<WirelessNetwork>(filename, progress, debugAttributes);
+            }
+            else
+            {
+                throw new ArgumentException("Unsupported file format: " + filename);
+            }
         }
     }
 }

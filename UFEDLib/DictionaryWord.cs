@@ -11,23 +11,26 @@ namespace UFEDLib
     [Serializable]
     public class DictionaryWord : ModelBase, IUfedModelParser<DictionaryWord>
     {
+        public static string GetXmlModelType()
+        {
+            return "DictionaryWord";
+        }
+
         #region fields
         public int Frequency { get; set; }
         public string Locale { get; set; }
         public string Source { get; set; }
         public string UserMapping { get; set; }
         public string Word { get; set; }
+        #endregion
 
-        public static string GetXmlModelType()
-        {
-            return "DictionaryWord";
-        }
-
+        #region Parsers
         public static DictionaryWord ParseModel(XElement element, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
 
             DictionaryWord result = new DictionaryWord();
+            result.ParseAttributes(element);
 
             var fieldElements = element.Elements(xNamespace + "field");
             var multiFieldElements = element.Elements(xNamespace + "multiField");
@@ -55,7 +58,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("DictionaryWord Parser: Unknown field: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("DictionaryWord Parser: Unknown field: " + field.Attribute("name").Value);
                         }
                         break;
                 }
@@ -68,7 +71,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("DictionaryWord Parser:Unknown multiField: " + multiField.Attribute("name").Value);
+                            Logger.LogAttribute("DictionaryWord Parser:Unknown multiField: " + multiField.Attribute("name").Value);
                         }
                         break;
                 }
@@ -81,7 +84,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("DictionaryWord Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
+                            Logger.LogAttribute("DictionaryWord Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
                         }
                         break;
                 }

@@ -72,8 +72,8 @@ namespace UFEDLib
         public static Location ParseModel(XElement locationElelment, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
+            
             Location result = new Location();
-
             result.ParseAttributes(locationElelment);
 
             var fieldElements = locationElelment.Elements(xNamespace + "field");
@@ -137,7 +137,7 @@ namespace UFEDLib
                         default:
                             if (debugAttributes)
                             {
-                                Console.WriteLine("Location Parser: Unhandled field: " + field.Attribute("name").Value);
+                                Logger.LogAttribute("Location Parser: Unhandled field: " + field.Attribute("name").Value);
                             }
                             break;
                     }
@@ -183,7 +183,7 @@ namespace UFEDLib
                         default:
                             if (debugAttributes)
                             {
-                                Console.WriteLine("Location Parser: Unhandled modelField: " + modelField.Attribute("name").Value);
+                                Logger.LogAttribute("Location Parser: Unhandled modelField: " + modelField.Attribute("name").Value);
                             }
                             break;
                     }
@@ -202,7 +202,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("Location Parser: Unhandled multiModelField: " + multiModelField.Attribute("name").Value);
+                            Logger.LogAttribute("Location Parser: Unhandled multiModelField: " + multiModelField.Attribute("name").Value);
                         }
                         break;
                 }

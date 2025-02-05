@@ -12,9 +12,100 @@ namespace UFEDLib
 {
     public class ModelParser
     {
-        public static List<T> ParseUfdr<T>(string ufdrFileName, IProgress<int> progress = null) where T : ModelBase, IUfedModelParser<T>, new()
+        public static List<T> ParseXMLReport<T>(string xmlReportFile, IProgress<int> progress = null, bool debugAttributes = false) where T : ModelBase, IUfedModelParser<T>, new()
+        {
+            if(!File.Exists(xmlReportFile))
+            {
+                Console.WriteLine("File not found: " + xmlReportFile);
+                return new List<T>();
+            }
+
+            // get file size
+            long reportSize = new FileInfo(xmlReportFile).Length;
+
+            var results = new List<T>();
+
+
+            try
+            {
+                using (StreamReader sr = new StreamReader(xmlReportFile))
+                {
+                    XmlReaderSettings xmlReaderSettings = new XmlReaderSettings
+                    {
+                        CheckCharacters = false
+                    };
+
+                    long currentPosition = 0;
+                    int lastPercent = 0;
+                    bool modelFound = false;
+
+                    using (XmlReader reader = XmlReader.Create(sr, xmlReaderSettings))
+                    {
+                        while (reader.Read())
+                        {
+                            try
+                            {
+                                if (reader.Depth == 3 && reader.Name == "model" && reader.IsStartElement())
+                                {
+                                    String modelType = reader.GetAttribute("type");
+                                    if (modelType == T.GetXmlModelType())
+                                    {
+                                        XElement element = XElement.Load(reader.ReadSubtree());
+                                        results.Add(T.ParseModel(element, debugAttributes));
+                                        modelFound = true;
+                                    }
+                                }
+
+                                if (progress != null)
+                                {
+                                    if (reportSize > 0)
+                                    {
+                                        currentPosition = sr.BaseStream.Position;
+                                        int percent = (int)((double)currentPosition / reportSize * 100);
+                                        if (percent > lastPercent)
+                                        {
+                                            lastPercent = percent;
+                                            progress.Report(percent);
+                                        }
+                                    }
+
+                                    if (modelFound && reader.Depth == 2)
+                                    {
+                                        progress.Report(100);
+                                        return results;
+                                    }
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine("Error parsing report.xml: " + ex.Message);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                if (progress != null)
+                    progress.Report(100);
+            }
+
+            return results;
+        }
+
+        public static List<T> ParseUfdr<T>(string ufdrFileName, IProgress<int> progress = null, bool debugAttributes = false) where T : ModelBase, IUfedModelParser<T>, new()
         {
             var results = new List<T>();
+
+            if(!File.Exists(ufdrFileName))
+            {
+                Console.WriteLine("File not found: " + ufdrFileName);
+                return results;
+            }
 
             try
             {
@@ -58,7 +149,7 @@ namespace UFEDLib
                                             if (modelType == T.GetXmlModelType())
                                             {
                                                 XElement element = XElement.Load(reader.ReadSubtree());
-                                                results.Add(T.ParseModel(element));
+                                                results.Add(T.ParseModel(element, debugAttributes));
                                                 modelFound = true;
                                             }
                                         }
@@ -95,7 +186,12 @@ namespace UFEDLib
             }
             catch (Exception ex)
             {
-                return results;
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                if (progress != null)
+                    progress.Report(100);
             }
 
             return results;

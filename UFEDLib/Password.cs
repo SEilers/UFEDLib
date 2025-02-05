@@ -39,8 +39,9 @@ namespace UFEDLib
         public static List<Password> ParseMultiModel(XElement passwordsElement, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            List<Password> result = new List<Password>();
 
+            List<Password> result = new List<Password>();
+          
             IEnumerable<XElement> passwordElements = passwordsElement.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "Password");
 
             foreach (var passwordElement in passwordElements)
@@ -63,6 +64,7 @@ namespace UFEDLib
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
 
             Password result = new Password();
+            result.ParseAttributes(passwordElement);
 
             var fieldElements = passwordElement.Elements(xNamespace + "field");
             var multiFieldElements = passwordElement.Elements(xNamespace + "multiField");
@@ -107,7 +109,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("Password Parser: Unhandled field: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("Password Parser: Unhandled field: " + field.Attribute("name").Value);
                         }
                         break;
                 }
@@ -120,7 +122,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("Password Parser: Unhandled multiField: " + multiField.Attribute("name").Value);
+                            Logger.LogAttribute("Password Parser: Unhandled multiField: " + multiField.Attribute("name").Value);
                         }
                         break;
                 }
@@ -133,7 +135,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("Password Parser: Unhandled multiModelField: " + multiModelField.Attribute("name").Value);
+                            Logger.LogAttribute("Password Parser: Unhandled multiModelField: " + multiModelField.Attribute("name").Value);
                         }
                         break;
                 }

@@ -77,8 +77,8 @@ namespace UFEDLib
         public static Call ParseModel(XElement callNode, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            Call result = new Call();
 
+            Call result = new Call();
             result.ParseAttributes(callNode);
 
             try
@@ -126,7 +126,7 @@ namespace UFEDLib
                         default:
                             if (debugAttributes)
                             {
-                                Console.WriteLine("Call Parser: Unknown field: " + field.Attribute("name").Value);
+                                Logger.LogAttribute("Call Parser: Unknown field: " + field.Attribute("name").Value);
                             }
                             break;
 
@@ -140,7 +140,7 @@ namespace UFEDLib
                         default:
                             if (debugAttributes)
                             {
-                                Console.WriteLine("Call Parser: Unknown multiAttribute: " + multiField.Attribute("name").Value);
+                                Logger.LogAttribute("Call Parser: Unknown multiAttribute: " + multiField.Attribute("name").Value);
                             }
                             break;
                     }
@@ -157,7 +157,7 @@ namespace UFEDLib
                         default:
                             if (debugAttributes)
                             {
-                                Console.WriteLine("Call Parser: Unknown multiModelAttribute: " + multiModelField.Attribute("name").Value);
+                                Logger.LogAttribute("Call Parser: Unknown multiModelAttribute: " + multiModelField.Attribute("name").Value);
                             }
                             break;
                     }

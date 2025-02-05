@@ -55,6 +55,7 @@ namespace UFEDLib
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
 
             Organization result = new Organization();
+            result.ParseAttributes(organizationNode);
 
             var fieldElements = organizationNode.Elements(xNamespace + "field");
             var multiFieldElements = organizationNode.Elements(xNamespace + "multiField");
@@ -75,7 +76,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("Organizations Parser: Unhandled field: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("Organizations Parser: Unhandled field: " + field.Attribute("name").Value);
                         }
                         break;
                 }
@@ -89,7 +90,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("Organizations Parser: Unhandled field: " + multiField.Attribute("name").Value);
+                            Logger.LogAttribute("Organizations Parser: Unhandled field: " + multiField.Attribute("name").Value);
                         }
                         break;
                 }
@@ -102,7 +103,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("Organizations Parser: Unhandled field: " + multiModelField.Attribute("name").Value);
+                            Logger.LogAttribute("Organizations Parser: Unhandled field: " + multiModelField.Attribute("name").Value);
                         }
                         break;
                 }

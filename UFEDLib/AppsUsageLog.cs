@@ -28,6 +28,7 @@ namespace UFEDLib
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
 
             AppsUsageLog result = new AppsUsageLog();
+            result.ParseAttributes(element);
 
             var fieldElements = element.Elements(xNamespace + "field");
             var multiFieldElements = element.Elements(xNamespace + "multiField");
@@ -62,7 +63,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("AppsUsageLog Parser: Unknown field: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("AppsUsageLog Parser: Unknown field: " + field.Attribute("name").Value);
                         }
                         break;
                 }
@@ -75,7 +76,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("AppsUsageLog Parser: Unknown multiField: " + multiField.Attribute("name").Value);
+                            Logger.LogAttribute("AppsUsageLog Parser: Unknown multiField: " + multiField.Attribute("name").Value);
                         }
                         break;
                 }
@@ -88,7 +89,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("AppsUsageLog Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
+                            Logger.LogAttribute("AppsUsageLog Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
                         }
                         break;
                 }

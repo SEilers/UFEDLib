@@ -83,6 +83,7 @@ namespace UFEDLib
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
 
             StreetAddress result = new StreetAddress();
+            result.ParseAttributes(streetAddressNode);
 
             var fieldElements = streetAddressNode.Elements(xNamespace + "field");
             var multiFieldElements = streetAddressNode.Elements(xNamespace + "multiField");
@@ -137,7 +138,7 @@ namespace UFEDLib
                         default:
                             if (debugAttributes)
                             {
-                                Console.WriteLine("StreetAddress Parser: Unhandled field: " + field.Attribute("name").Value);
+                                Logger.LogAttribute("StreetAddress Parser: Unhandled field: " + field.Attribute("name").Value);
                             }
                             break;
                     }
@@ -156,7 +157,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("StreetAddress Parser: Unhandled multiField: " + multiField.Attribute("name").Value);
+                            Logger.LogAttribute("StreetAddress Parser: Unhandled multiField: " + multiField.Attribute("name").Value);
                         }
                         break;
                 }
@@ -169,7 +170,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("StreetAddress Parser: Unhandled multiModelField: " + multiModelField.Attribute("name").Value);
+                            Logger.LogAttribute("StreetAddress Parser: Unhandled multiModelField: " + multiModelField.Attribute("name").Value);
                         }
                         break;
                 }

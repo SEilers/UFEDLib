@@ -38,6 +38,7 @@ namespace UFEDLib
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
 
             WebBookmark result = new WebBookmark();
+            result.ParseAttributes(element);
 
             var fieldElements = element.Elements(xNamespace + "field");
             var multiFieldElements = element.Elements(xNamespace + "multiField");
@@ -91,7 +92,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("WebBookmark Parser: Unknown field: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("WebBookmark Parser: Unknown field: " + field.Attribute("name").Value);
                         }
                         break;
                 }
@@ -104,7 +105,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("WebBookmark Parser: Unknown multiField: " + multiField.Attribute("name").Value);
+                            Logger.LogAttribute("WebBookmark Parser: Unknown multiField: " + multiField.Attribute("name").Value);
                         }
                         break;
                 }
@@ -117,7 +118,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("WebBookmark Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
+                            Logger.LogAttribute("WebBookmark Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
                         }
                         break;
                 }

@@ -66,7 +66,9 @@ namespace UFEDLib
         public static Journey ParseModel(XElement journeyElement, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
+
             Journey result = new Journey();
+            result.ParseAttributes(journeyElement);
 
             var fieldElements = journeyElement.Elements(xNamespace + "field");
             var modelFieldElements = journeyElement.Elements(xNamespace + "modelField");
@@ -97,7 +99,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("Journey Parser: Unhandled field: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("Journey Parser: Unhandled field: " + field.Attribute("name").Value);
                         }
                         break;
                 }
@@ -120,7 +122,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("Journey Parser: Unhandled modelField: " + modelFieldElement.Attribute("name").Value);
+                            Logger.LogAttribute("Journey Parser: Unhandled modelField: " + modelFieldElement.Attribute("name").Value);
                         }
                         break;
                 }
@@ -138,7 +140,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Console.WriteLine("Journey Parser: Unhandled multiModelField: " + multiModelFieldElement.Attribute("name").Value);
+                            Logger.LogAttribute("Journey Parser: Unhandled multiModelField: " + multiModelFieldElement.Attribute("name").Value);
                         }
                         break;
                 }
