@@ -4477,6 +4477,95 @@ references:
   isSpec: "True"
   fullName: UFEDLib.LogEntry.UserMapping
   nameWithType: LogEntry.UserMapping
+- uid: UFEDLib.Logger
+  name: Logger
+  href: api/UFEDLib.Logger.html
+  commentId: T:UFEDLib.Logger
+  fullName: UFEDLib.Logger
+  nameWithType: Logger
+- uid: UFEDLib.Logger.GetLogs
+  name: GetLogs()
+  href: api/UFEDLib.Logger.html#UFEDLib_Logger_GetLogs
+  commentId: M:UFEDLib.Logger.GetLogs
+  fullName: UFEDLib.Logger.GetLogs()
+  nameWithType: Logger.GetLogs()
+- uid: UFEDLib.Logger.GetLogs*
+  name: GetLogs
+  href: api/UFEDLib.Logger.html#UFEDLib_Logger_GetLogs_
+  commentId: Overload:UFEDLib.Logger.GetLogs
+  isSpec: "True"
+  fullName: UFEDLib.Logger.GetLogs
+  nameWithType: Logger.GetLogs
+- uid: UFEDLib.Logger.LogAttribute(System.String)
+  name: LogAttribute(string)
+  href: api/UFEDLib.Logger.html#UFEDLib_Logger_LogAttribute_System_String_
+  commentId: M:UFEDLib.Logger.LogAttribute(System.String)
+  name.vb: LogAttribute(String)
+  fullName: UFEDLib.Logger.LogAttribute(string)
+  fullName.vb: UFEDLib.Logger.LogAttribute(String)
+  nameWithType: Logger.LogAttribute(string)
+  nameWithType.vb: Logger.LogAttribute(String)
+- uid: UFEDLib.Logger.LogAttribute*
+  name: LogAttribute
+  href: api/UFEDLib.Logger.html#UFEDLib_Logger_LogAttribute_
+  commentId: Overload:UFEDLib.Logger.LogAttribute
+  isSpec: "True"
+  fullName: UFEDLib.Logger.LogAttribute
+  nameWithType: Logger.LogAttribute
+- uid: UFEDLib.Logger.LogError(System.String)
+  name: LogError(string)
+  href: api/UFEDLib.Logger.html#UFEDLib_Logger_LogError_System_String_
+  commentId: M:UFEDLib.Logger.LogError(System.String)
+  name.vb: LogError(String)
+  fullName: UFEDLib.Logger.LogError(string)
+  fullName.vb: UFEDLib.Logger.LogError(String)
+  nameWithType: Logger.LogError(string)
+  nameWithType.vb: Logger.LogError(String)
+- uid: UFEDLib.Logger.LogError*
+  name: LogError
+  href: api/UFEDLib.Logger.html#UFEDLib_Logger_LogError_
+  commentId: Overload:UFEDLib.Logger.LogError
+  isSpec: "True"
+  fullName: UFEDLib.Logger.LogError
+  nameWithType: Logger.LogError
+- uid: UFEDLib.Logger.LogInfo(System.String)
+  name: LogInfo(string)
+  href: api/UFEDLib.Logger.html#UFEDLib_Logger_LogInfo_System_String_
+  commentId: M:UFEDLib.Logger.LogInfo(System.String)
+  name.vb: LogInfo(String)
+  fullName: UFEDLib.Logger.LogInfo(string)
+  fullName.vb: UFEDLib.Logger.LogInfo(String)
+  nameWithType: Logger.LogInfo(string)
+  nameWithType.vb: Logger.LogInfo(String)
+- uid: UFEDLib.Logger.LogInfo*
+  name: LogInfo
+  href: api/UFEDLib.Logger.html#UFEDLib_Logger_LogInfo_
+  commentId: Overload:UFEDLib.Logger.LogInfo
+  isSpec: "True"
+  fullName: UFEDLib.Logger.LogInfo
+  nameWithType: Logger.LogInfo
+- uid: UFEDLib.Logger.LogWarning(System.String)
+  name: LogWarning(string)
+  href: api/UFEDLib.Logger.html#UFEDLib_Logger_LogWarning_System_String_
+  commentId: M:UFEDLib.Logger.LogWarning(System.String)
+  name.vb: LogWarning(String)
+  fullName: UFEDLib.Logger.LogWarning(string)
+  fullName.vb: UFEDLib.Logger.LogWarning(String)
+  nameWithType: Logger.LogWarning(string)
+  nameWithType.vb: Logger.LogWarning(String)
+- uid: UFEDLib.Logger.LogWarning*
+  name: LogWarning
+  href: api/UFEDLib.Logger.html#UFEDLib_Logger_LogWarning_
+  commentId: Overload:UFEDLib.Logger.LogWarning
+  isSpec: "True"
+  fullName: UFEDLib.Logger.LogWarning
+  nameWithType: Logger.LogWarning
+- uid: UFEDLib.Logger.attributeSet
+  name: attributeSet
+  href: api/UFEDLib.Logger.html#UFEDLib_Logger_attributeSet
+  commentId: F:UFEDLib.Logger.attributeSet
+  fullName: UFEDLib.Logger.attributeSet
+  nameWithType: Logger.attributeSet
 - uid: UFEDLib.MMS
   name: MMS
   href: api/UFEDLib.MMS.html
@@ -4787,15 +4876,31 @@ references:
   isSpec: "True"
   fullName: UFEDLib.ModelParser.ParseUfdr
   nameWithType: ModelParser.ParseUfdr
-- uid: UFEDLib.ModelParser.ParseUfdr``1(System.String,System.IProgress{System.Int32})
-  name: ParseUfdr<T>(string, IProgress<int>)
-  href: api/UFEDLib.ModelParser.html#UFEDLib_ModelParser_ParseUfdr__1_System_String_System_IProgress_System_Int32__
-  commentId: M:UFEDLib.ModelParser.ParseUfdr``1(System.String,System.IProgress{System.Int32})
-  name.vb: ParseUfdr(Of T)(String, IProgress(Of Integer))
-  fullName: UFEDLib.ModelParser.ParseUfdr<T>(string, System.IProgress<int>)
-  fullName.vb: UFEDLib.ModelParser.ParseUfdr(Of T)(String, System.IProgress(Of Integer))
-  nameWithType: ModelParser.ParseUfdr<T>(string, IProgress<int>)
-  nameWithType.vb: ModelParser.ParseUfdr(Of T)(String, IProgress(Of Integer))
+- uid: UFEDLib.ModelParser.ParseUfdr``1(System.String,System.IProgress{System.Int32},System.Boolean)
+  name: ParseUfdr<T>(string, IProgress<int>, bool)
+  href: api/UFEDLib.ModelParser.html#UFEDLib_ModelParser_ParseUfdr__1_System_String_System_IProgress_System_Int32__System_Boolean_
+  commentId: M:UFEDLib.ModelParser.ParseUfdr``1(System.String,System.IProgress{System.Int32},System.Boolean)
+  name.vb: ParseUfdr(Of T)(String, IProgress(Of Integer), Boolean)
+  fullName: UFEDLib.ModelParser.ParseUfdr<T>(string, System.IProgress<int>, bool)
+  fullName.vb: UFEDLib.ModelParser.ParseUfdr(Of T)(String, System.IProgress(Of Integer), Boolean)
+  nameWithType: ModelParser.ParseUfdr<T>(string, IProgress<int>, bool)
+  nameWithType.vb: ModelParser.ParseUfdr(Of T)(String, IProgress(Of Integer), Boolean)
+- uid: UFEDLib.ModelParser.ParseXMLReport*
+  name: ParseXMLReport
+  href: api/UFEDLib.ModelParser.html#UFEDLib_ModelParser_ParseXMLReport_
+  commentId: Overload:UFEDLib.ModelParser.ParseXMLReport
+  isSpec: "True"
+  fullName: UFEDLib.ModelParser.ParseXMLReport
+  nameWithType: ModelParser.ParseXMLReport
+- uid: UFEDLib.ModelParser.ParseXMLReport``1(System.String,System.IProgress{System.Int32},System.Boolean)
+  name: ParseXMLReport<T>(string, IProgress<int>, bool)
+  href: api/UFEDLib.ModelParser.html#UFEDLib_ModelParser_ParseXMLReport__1_System_String_System_IProgress_System_Int32__System_Boolean_
+  commentId: M:UFEDLib.ModelParser.ParseXMLReport``1(System.String,System.IProgress{System.Int32},System.Boolean)
+  name.vb: ParseXMLReport(Of T)(String, IProgress(Of Integer), Boolean)
+  fullName: UFEDLib.ModelParser.ParseXMLReport<T>(string, System.IProgress<int>, bool)
+  fullName.vb: UFEDLib.ModelParser.ParseXMLReport(Of T)(String, System.IProgress(Of Integer), Boolean)
+  nameWithType: ModelParser.ParseXMLReport<T>(string, IProgress<int>, bool)
+  nameWithType.vb: ModelParser.ParseXMLReport(Of T)(String, IProgress(Of Integer), Boolean)
 - uid: UFEDLib.Note
   name: Note
   href: api/UFEDLib.Note.html
@@ -6101,230 +6206,230 @@ references:
   commentId: T:UFEDLib.Report
   fullName: UFEDLib.Report
   nameWithType: Report
-- uid: UFEDLib.Report.GetAutofills(System.String)
-  name: GetAutofills(string)
-  href: api/UFEDLib.Report.html#UFEDLib_Report_GetAutofills_System_String_
-  commentId: M:UFEDLib.Report.GetAutofills(System.String)
-  name.vb: GetAutofills(String)
-  fullName: UFEDLib.Report.GetAutofills(string)
-  fullName.vb: UFEDLib.Report.GetAutofills(String)
-  nameWithType: Report.GetAutofills(string)
-  nameWithType.vb: Report.GetAutofills(String)
-- uid: UFEDLib.Report.GetAutofills*
-  name: GetAutofills
-  href: api/UFEDLib.Report.html#UFEDLib_Report_GetAutofills_
-  commentId: Overload:UFEDLib.Report.GetAutofills
+- uid: UFEDLib.Report.ParseAutofills(System.String,System.IProgress{System.Int32},System.Boolean)
+  name: ParseAutofills(string, IProgress<int>, bool)
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseAutofills_System_String_System_IProgress_System_Int32__System_Boolean_
+  commentId: M:UFEDLib.Report.ParseAutofills(System.String,System.IProgress{System.Int32},System.Boolean)
+  name.vb: ParseAutofills(String, IProgress(Of Integer), Boolean)
+  fullName: UFEDLib.Report.ParseAutofills(string, System.IProgress<int>, bool)
+  fullName.vb: UFEDLib.Report.ParseAutofills(String, System.IProgress(Of Integer), Boolean)
+  nameWithType: Report.ParseAutofills(string, IProgress<int>, bool)
+  nameWithType.vb: Report.ParseAutofills(String, IProgress(Of Integer), Boolean)
+- uid: UFEDLib.Report.ParseAutofills*
+  name: ParseAutofills
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseAutofills_
+  commentId: Overload:UFEDLib.Report.ParseAutofills
   isSpec: "True"
-  fullName: UFEDLib.Report.GetAutofills
-  nameWithType: Report.GetAutofills
-- uid: UFEDLib.Report.GetCalls(System.String)
-  name: GetCalls(string)
-  href: api/UFEDLib.Report.html#UFEDLib_Report_GetCalls_System_String_
-  commentId: M:UFEDLib.Report.GetCalls(System.String)
-  name.vb: GetCalls(String)
-  fullName: UFEDLib.Report.GetCalls(string)
-  fullName.vb: UFEDLib.Report.GetCalls(String)
-  nameWithType: Report.GetCalls(string)
-  nameWithType.vb: Report.GetCalls(String)
-- uid: UFEDLib.Report.GetCalls*
-  name: GetCalls
-  href: api/UFEDLib.Report.html#UFEDLib_Report_GetCalls_
-  commentId: Overload:UFEDLib.Report.GetCalls
+  fullName: UFEDLib.Report.ParseAutofills
+  nameWithType: Report.ParseAutofills
+- uid: UFEDLib.Report.ParseCalls(System.String,System.IProgress{System.Int32},System.Boolean)
+  name: ParseCalls(string, IProgress<int>, bool)
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseCalls_System_String_System_IProgress_System_Int32__System_Boolean_
+  commentId: M:UFEDLib.Report.ParseCalls(System.String,System.IProgress{System.Int32},System.Boolean)
+  name.vb: ParseCalls(String, IProgress(Of Integer), Boolean)
+  fullName: UFEDLib.Report.ParseCalls(string, System.IProgress<int>, bool)
+  fullName.vb: UFEDLib.Report.ParseCalls(String, System.IProgress(Of Integer), Boolean)
+  nameWithType: Report.ParseCalls(string, IProgress<int>, bool)
+  nameWithType.vb: Report.ParseCalls(String, IProgress(Of Integer), Boolean)
+- uid: UFEDLib.Report.ParseCalls*
+  name: ParseCalls
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseCalls_
+  commentId: Overload:UFEDLib.Report.ParseCalls
   isSpec: "True"
-  fullName: UFEDLib.Report.GetCalls
-  nameWithType: Report.GetCalls
-- uid: UFEDLib.Report.GetChats(System.String)
-  name: GetChats(string)
-  href: api/UFEDLib.Report.html#UFEDLib_Report_GetChats_System_String_
-  commentId: M:UFEDLib.Report.GetChats(System.String)
-  name.vb: GetChats(String)
-  fullName: UFEDLib.Report.GetChats(string)
-  fullName.vb: UFEDLib.Report.GetChats(String)
-  nameWithType: Report.GetChats(string)
-  nameWithType.vb: Report.GetChats(String)
-- uid: UFEDLib.Report.GetChats*
-  name: GetChats
-  href: api/UFEDLib.Report.html#UFEDLib_Report_GetChats_
-  commentId: Overload:UFEDLib.Report.GetChats
+  fullName: UFEDLib.Report.ParseCalls
+  nameWithType: Report.ParseCalls
+- uid: UFEDLib.Report.ParseChats(System.String,System.IProgress{System.Int32},System.Boolean)
+  name: ParseChats(string, IProgress<int>, bool)
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseChats_System_String_System_IProgress_System_Int32__System_Boolean_
+  commentId: M:UFEDLib.Report.ParseChats(System.String,System.IProgress{System.Int32},System.Boolean)
+  name.vb: ParseChats(String, IProgress(Of Integer), Boolean)
+  fullName: UFEDLib.Report.ParseChats(string, System.IProgress<int>, bool)
+  fullName.vb: UFEDLib.Report.ParseChats(String, System.IProgress(Of Integer), Boolean)
+  nameWithType: Report.ParseChats(string, IProgress<int>, bool)
+  nameWithType.vb: Report.ParseChats(String, IProgress(Of Integer), Boolean)
+- uid: UFEDLib.Report.ParseChats*
+  name: ParseChats
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseChats_
+  commentId: Overload:UFEDLib.Report.ParseChats
   isSpec: "True"
-  fullName: UFEDLib.Report.GetChats
-  nameWithType: Report.GetChats
-- uid: UFEDLib.Report.GetContacts(System.String)
-  name: GetContacts(string)
-  href: api/UFEDLib.Report.html#UFEDLib_Report_GetContacts_System_String_
-  commentId: M:UFEDLib.Report.GetContacts(System.String)
-  name.vb: GetContacts(String)
-  fullName: UFEDLib.Report.GetContacts(string)
-  fullName.vb: UFEDLib.Report.GetContacts(String)
-  nameWithType: Report.GetContacts(string)
-  nameWithType.vb: Report.GetContacts(String)
-- uid: UFEDLib.Report.GetContacts*
-  name: GetContacts
-  href: api/UFEDLib.Report.html#UFEDLib_Report_GetContacts_
-  commentId: Overload:UFEDLib.Report.GetContacts
+  fullName: UFEDLib.Report.ParseChats
+  nameWithType: Report.ParseChats
+- uid: UFEDLib.Report.ParseContacts(System.String,System.IProgress{System.Int32},System.Boolean)
+  name: ParseContacts(string, IProgress<int>, bool)
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseContacts_System_String_System_IProgress_System_Int32__System_Boolean_
+  commentId: M:UFEDLib.Report.ParseContacts(System.String,System.IProgress{System.Int32},System.Boolean)
+  name.vb: ParseContacts(String, IProgress(Of Integer), Boolean)
+  fullName: UFEDLib.Report.ParseContacts(string, System.IProgress<int>, bool)
+  fullName.vb: UFEDLib.Report.ParseContacts(String, System.IProgress(Of Integer), Boolean)
+  nameWithType: Report.ParseContacts(string, IProgress<int>, bool)
+  nameWithType.vb: Report.ParseContacts(String, IProgress(Of Integer), Boolean)
+- uid: UFEDLib.Report.ParseContacts*
+  name: ParseContacts
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseContacts_
+  commentId: Overload:UFEDLib.Report.ParseContacts
   isSpec: "True"
-  fullName: UFEDLib.Report.GetContacts
-  nameWithType: Report.GetContacts
-- uid: UFEDLib.Report.GetCookies(System.String)
-  name: GetCookies(string)
-  href: api/UFEDLib.Report.html#UFEDLib_Report_GetCookies_System_String_
-  commentId: M:UFEDLib.Report.GetCookies(System.String)
-  name.vb: GetCookies(String)
-  fullName: UFEDLib.Report.GetCookies(string)
-  fullName.vb: UFEDLib.Report.GetCookies(String)
-  nameWithType: Report.GetCookies(string)
-  nameWithType.vb: Report.GetCookies(String)
-- uid: UFEDLib.Report.GetCookies*
-  name: GetCookies
-  href: api/UFEDLib.Report.html#UFEDLib_Report_GetCookies_
-  commentId: Overload:UFEDLib.Report.GetCookies
+  fullName: UFEDLib.Report.ParseContacts
+  nameWithType: Report.ParseContacts
+- uid: UFEDLib.Report.ParseCookies(System.String,System.IProgress{System.Int32},System.Boolean)
+  name: ParseCookies(string, IProgress<int>, bool)
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseCookies_System_String_System_IProgress_System_Int32__System_Boolean_
+  commentId: M:UFEDLib.Report.ParseCookies(System.String,System.IProgress{System.Int32},System.Boolean)
+  name.vb: ParseCookies(String, IProgress(Of Integer), Boolean)
+  fullName: UFEDLib.Report.ParseCookies(string, System.IProgress<int>, bool)
+  fullName.vb: UFEDLib.Report.ParseCookies(String, System.IProgress(Of Integer), Boolean)
+  nameWithType: Report.ParseCookies(string, IProgress<int>, bool)
+  nameWithType.vb: Report.ParseCookies(String, IProgress(Of Integer), Boolean)
+- uid: UFEDLib.Report.ParseCookies*
+  name: ParseCookies
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseCookies_
+  commentId: Overload:UFEDLib.Report.ParseCookies
   isSpec: "True"
-  fullName: UFEDLib.Report.GetCookies
-  nameWithType: Report.GetCookies
-- uid: UFEDLib.Report.GetDictionaryWords(System.String)
-  name: GetDictionaryWords(string)
-  href: api/UFEDLib.Report.html#UFEDLib_Report_GetDictionaryWords_System_String_
-  commentId: M:UFEDLib.Report.GetDictionaryWords(System.String)
-  name.vb: GetDictionaryWords(String)
-  fullName: UFEDLib.Report.GetDictionaryWords(string)
-  fullName.vb: UFEDLib.Report.GetDictionaryWords(String)
-  nameWithType: Report.GetDictionaryWords(string)
-  nameWithType.vb: Report.GetDictionaryWords(String)
-- uid: UFEDLib.Report.GetDictionaryWords*
-  name: GetDictionaryWords
-  href: api/UFEDLib.Report.html#UFEDLib_Report_GetDictionaryWords_
-  commentId: Overload:UFEDLib.Report.GetDictionaryWords
+  fullName: UFEDLib.Report.ParseCookies
+  nameWithType: Report.ParseCookies
+- uid: UFEDLib.Report.ParseDictionaryWords(System.String,System.IProgress{System.Int32},System.Boolean)
+  name: ParseDictionaryWords(string, IProgress<int>, bool)
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseDictionaryWords_System_String_System_IProgress_System_Int32__System_Boolean_
+  commentId: M:UFEDLib.Report.ParseDictionaryWords(System.String,System.IProgress{System.Int32},System.Boolean)
+  name.vb: ParseDictionaryWords(String, IProgress(Of Integer), Boolean)
+  fullName: UFEDLib.Report.ParseDictionaryWords(string, System.IProgress<int>, bool)
+  fullName.vb: UFEDLib.Report.ParseDictionaryWords(String, System.IProgress(Of Integer), Boolean)
+  nameWithType: Report.ParseDictionaryWords(string, IProgress<int>, bool)
+  nameWithType.vb: Report.ParseDictionaryWords(String, IProgress(Of Integer), Boolean)
+- uid: UFEDLib.Report.ParseDictionaryWords*
+  name: ParseDictionaryWords
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseDictionaryWords_
+  commentId: Overload:UFEDLib.Report.ParseDictionaryWords
   isSpec: "True"
-  fullName: UFEDLib.Report.GetDictionaryWords
-  nameWithType: Report.GetDictionaryWords
-- uid: UFEDLib.Report.GetEMails(System.String)
-  name: GetEMails(string)
-  href: api/UFEDLib.Report.html#UFEDLib_Report_GetEMails_System_String_
-  commentId: M:UFEDLib.Report.GetEMails(System.String)
-  name.vb: GetEMails(String)
-  fullName: UFEDLib.Report.GetEMails(string)
-  fullName.vb: UFEDLib.Report.GetEMails(String)
-  nameWithType: Report.GetEMails(string)
-  nameWithType.vb: Report.GetEMails(String)
-- uid: UFEDLib.Report.GetEMails*
-  name: GetEMails
-  href: api/UFEDLib.Report.html#UFEDLib_Report_GetEMails_
-  commentId: Overload:UFEDLib.Report.GetEMails
+  fullName: UFEDLib.Report.ParseDictionaryWords
+  nameWithType: Report.ParseDictionaryWords
+- uid: UFEDLib.Report.ParseEMails(System.String,System.IProgress{System.Int32},System.Boolean)
+  name: ParseEMails(string, IProgress<int>, bool)
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseEMails_System_String_System_IProgress_System_Int32__System_Boolean_
+  commentId: M:UFEDLib.Report.ParseEMails(System.String,System.IProgress{System.Int32},System.Boolean)
+  name.vb: ParseEMails(String, IProgress(Of Integer), Boolean)
+  fullName: UFEDLib.Report.ParseEMails(string, System.IProgress<int>, bool)
+  fullName.vb: UFEDLib.Report.ParseEMails(String, System.IProgress(Of Integer), Boolean)
+  nameWithType: Report.ParseEMails(string, IProgress<int>, bool)
+  nameWithType.vb: Report.ParseEMails(String, IProgress(Of Integer), Boolean)
+- uid: UFEDLib.Report.ParseEMails*
+  name: ParseEMails
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseEMails_
+  commentId: Overload:UFEDLib.Report.ParseEMails
   isSpec: "True"
-  fullName: UFEDLib.Report.GetEMails
-  nameWithType: Report.GetEMails
-- uid: UFEDLib.Report.GetJourneys(System.String)
-  name: GetJourneys(string)
-  href: api/UFEDLib.Report.html#UFEDLib_Report_GetJourneys_System_String_
-  commentId: M:UFEDLib.Report.GetJourneys(System.String)
-  name.vb: GetJourneys(String)
-  fullName: UFEDLib.Report.GetJourneys(string)
-  fullName.vb: UFEDLib.Report.GetJourneys(String)
-  nameWithType: Report.GetJourneys(string)
-  nameWithType.vb: Report.GetJourneys(String)
-- uid: UFEDLib.Report.GetJourneys*
-  name: GetJourneys
-  href: api/UFEDLib.Report.html#UFEDLib_Report_GetJourneys_
-  commentId: Overload:UFEDLib.Report.GetJourneys
+  fullName: UFEDLib.Report.ParseEMails
+  nameWithType: Report.ParseEMails
+- uid: UFEDLib.Report.ParseJourneys(System.String,System.IProgress{System.Int32},System.Boolean)
+  name: ParseJourneys(string, IProgress<int>, bool)
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseJourneys_System_String_System_IProgress_System_Int32__System_Boolean_
+  commentId: M:UFEDLib.Report.ParseJourneys(System.String,System.IProgress{System.Int32},System.Boolean)
+  name.vb: ParseJourneys(String, IProgress(Of Integer), Boolean)
+  fullName: UFEDLib.Report.ParseJourneys(string, System.IProgress<int>, bool)
+  fullName.vb: UFEDLib.Report.ParseJourneys(String, System.IProgress(Of Integer), Boolean)
+  nameWithType: Report.ParseJourneys(string, IProgress<int>, bool)
+  nameWithType.vb: Report.ParseJourneys(String, IProgress(Of Integer), Boolean)
+- uid: UFEDLib.Report.ParseJourneys*
+  name: ParseJourneys
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseJourneys_
+  commentId: Overload:UFEDLib.Report.ParseJourneys
   isSpec: "True"
-  fullName: UFEDLib.Report.GetJourneys
-  nameWithType: Report.GetJourneys
-- uid: UFEDLib.Report.GetLocations(System.String)
-  name: GetLocations(string)
-  href: api/UFEDLib.Report.html#UFEDLib_Report_GetLocations_System_String_
-  commentId: M:UFEDLib.Report.GetLocations(System.String)
-  name.vb: GetLocations(String)
-  fullName: UFEDLib.Report.GetLocations(string)
-  fullName.vb: UFEDLib.Report.GetLocations(String)
-  nameWithType: Report.GetLocations(string)
-  nameWithType.vb: Report.GetLocations(String)
-- uid: UFEDLib.Report.GetLocations*
-  name: GetLocations
-  href: api/UFEDLib.Report.html#UFEDLib_Report_GetLocations_
-  commentId: Overload:UFEDLib.Report.GetLocations
+  fullName: UFEDLib.Report.ParseJourneys
+  nameWithType: Report.ParseJourneys
+- uid: UFEDLib.Report.ParseLocations(System.String,System.IProgress{System.Int32},System.Boolean)
+  name: ParseLocations(string, IProgress<int>, bool)
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseLocations_System_String_System_IProgress_System_Int32__System_Boolean_
+  commentId: M:UFEDLib.Report.ParseLocations(System.String,System.IProgress{System.Int32},System.Boolean)
+  name.vb: ParseLocations(String, IProgress(Of Integer), Boolean)
+  fullName: UFEDLib.Report.ParseLocations(string, System.IProgress<int>, bool)
+  fullName.vb: UFEDLib.Report.ParseLocations(String, System.IProgress(Of Integer), Boolean)
+  nameWithType: Report.ParseLocations(string, IProgress<int>, bool)
+  nameWithType.vb: Report.ParseLocations(String, IProgress(Of Integer), Boolean)
+- uid: UFEDLib.Report.ParseLocations*
+  name: ParseLocations
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseLocations_
+  commentId: Overload:UFEDLib.Report.ParseLocations
   isSpec: "True"
-  fullName: UFEDLib.Report.GetLocations
-  nameWithType: Report.GetLocations
-- uid: UFEDLib.Report.GetPasswords(System.String)
-  name: GetPasswords(string)
-  href: api/UFEDLib.Report.html#UFEDLib_Report_GetPasswords_System_String_
-  commentId: M:UFEDLib.Report.GetPasswords(System.String)
-  name.vb: GetPasswords(String)
-  fullName: UFEDLib.Report.GetPasswords(string)
-  fullName.vb: UFEDLib.Report.GetPasswords(String)
-  nameWithType: Report.GetPasswords(string)
-  nameWithType.vb: Report.GetPasswords(String)
-- uid: UFEDLib.Report.GetPasswords*
-  name: GetPasswords
-  href: api/UFEDLib.Report.html#UFEDLib_Report_GetPasswords_
-  commentId: Overload:UFEDLib.Report.GetPasswords
+  fullName: UFEDLib.Report.ParseLocations
+  nameWithType: Report.ParseLocations
+- uid: UFEDLib.Report.ParsePasswords(System.String,System.IProgress{System.Int32},System.Boolean)
+  name: ParsePasswords(string, IProgress<int>, bool)
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParsePasswords_System_String_System_IProgress_System_Int32__System_Boolean_
+  commentId: M:UFEDLib.Report.ParsePasswords(System.String,System.IProgress{System.Int32},System.Boolean)
+  name.vb: ParsePasswords(String, IProgress(Of Integer), Boolean)
+  fullName: UFEDLib.Report.ParsePasswords(string, System.IProgress<int>, bool)
+  fullName.vb: UFEDLib.Report.ParsePasswords(String, System.IProgress(Of Integer), Boolean)
+  nameWithType: Report.ParsePasswords(string, IProgress<int>, bool)
+  nameWithType.vb: Report.ParsePasswords(String, IProgress(Of Integer), Boolean)
+- uid: UFEDLib.Report.ParsePasswords*
+  name: ParsePasswords
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParsePasswords_
+  commentId: Overload:UFEDLib.Report.ParsePasswords
   isSpec: "True"
-  fullName: UFEDLib.Report.GetPasswords
-  nameWithType: Report.GetPasswords
-- uid: UFEDLib.Report.GetSearchedItems(System.String)
-  name: GetSearchedItems(string)
-  href: api/UFEDLib.Report.html#UFEDLib_Report_GetSearchedItems_System_String_
-  commentId: M:UFEDLib.Report.GetSearchedItems(System.String)
-  name.vb: GetSearchedItems(String)
-  fullName: UFEDLib.Report.GetSearchedItems(string)
-  fullName.vb: UFEDLib.Report.GetSearchedItems(String)
-  nameWithType: Report.GetSearchedItems(string)
-  nameWithType.vb: Report.GetSearchedItems(String)
-- uid: UFEDLib.Report.GetSearchedItems*
-  name: GetSearchedItems
-  href: api/UFEDLib.Report.html#UFEDLib_Report_GetSearchedItems_
-  commentId: Overload:UFEDLib.Report.GetSearchedItems
+  fullName: UFEDLib.Report.ParsePasswords
+  nameWithType: Report.ParsePasswords
+- uid: UFEDLib.Report.ParseSearchedItems(System.String,System.IProgress{System.Int32},System.Boolean)
+  name: ParseSearchedItems(string, IProgress<int>, bool)
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseSearchedItems_System_String_System_IProgress_System_Int32__System_Boolean_
+  commentId: M:UFEDLib.Report.ParseSearchedItems(System.String,System.IProgress{System.Int32},System.Boolean)
+  name.vb: ParseSearchedItems(String, IProgress(Of Integer), Boolean)
+  fullName: UFEDLib.Report.ParseSearchedItems(string, System.IProgress<int>, bool)
+  fullName.vb: UFEDLib.Report.ParseSearchedItems(String, System.IProgress(Of Integer), Boolean)
+  nameWithType: Report.ParseSearchedItems(string, IProgress<int>, bool)
+  nameWithType.vb: Report.ParseSearchedItems(String, IProgress(Of Integer), Boolean)
+- uid: UFEDLib.Report.ParseSearchedItems*
+  name: ParseSearchedItems
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseSearchedItems_
+  commentId: Overload:UFEDLib.Report.ParseSearchedItems
   isSpec: "True"
-  fullName: UFEDLib.Report.GetSearchedItems
-  nameWithType: Report.GetSearchedItems
-- uid: UFEDLib.Report.GetUserAccounts(System.String)
-  name: GetUserAccounts(string)
-  href: api/UFEDLib.Report.html#UFEDLib_Report_GetUserAccounts_System_String_
-  commentId: M:UFEDLib.Report.GetUserAccounts(System.String)
-  name.vb: GetUserAccounts(String)
-  fullName: UFEDLib.Report.GetUserAccounts(string)
-  fullName.vb: UFEDLib.Report.GetUserAccounts(String)
-  nameWithType: Report.GetUserAccounts(string)
-  nameWithType.vb: Report.GetUserAccounts(String)
-- uid: UFEDLib.Report.GetUserAccounts*
-  name: GetUserAccounts
-  href: api/UFEDLib.Report.html#UFEDLib_Report_GetUserAccounts_
-  commentId: Overload:UFEDLib.Report.GetUserAccounts
+  fullName: UFEDLib.Report.ParseSearchedItems
+  nameWithType: Report.ParseSearchedItems
+- uid: UFEDLib.Report.ParseUserAccounts(System.String,System.IProgress{System.Int32},System.Boolean)
+  name: ParseUserAccounts(string, IProgress<int>, bool)
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseUserAccounts_System_String_System_IProgress_System_Int32__System_Boolean_
+  commentId: M:UFEDLib.Report.ParseUserAccounts(System.String,System.IProgress{System.Int32},System.Boolean)
+  name.vb: ParseUserAccounts(String, IProgress(Of Integer), Boolean)
+  fullName: UFEDLib.Report.ParseUserAccounts(string, System.IProgress<int>, bool)
+  fullName.vb: UFEDLib.Report.ParseUserAccounts(String, System.IProgress(Of Integer), Boolean)
+  nameWithType: Report.ParseUserAccounts(string, IProgress<int>, bool)
+  nameWithType.vb: Report.ParseUserAccounts(String, IProgress(Of Integer), Boolean)
+- uid: UFEDLib.Report.ParseUserAccounts*
+  name: ParseUserAccounts
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseUserAccounts_
+  commentId: Overload:UFEDLib.Report.ParseUserAccounts
   isSpec: "True"
-  fullName: UFEDLib.Report.GetUserAccounts
-  nameWithType: Report.GetUserAccounts
-- uid: UFEDLib.Report.GetWebBookmarks(System.String)
-  name: GetWebBookmarks(string)
-  href: api/UFEDLib.Report.html#UFEDLib_Report_GetWebBookmarks_System_String_
-  commentId: M:UFEDLib.Report.GetWebBookmarks(System.String)
-  name.vb: GetWebBookmarks(String)
-  fullName: UFEDLib.Report.GetWebBookmarks(string)
-  fullName.vb: UFEDLib.Report.GetWebBookmarks(String)
-  nameWithType: Report.GetWebBookmarks(string)
-  nameWithType.vb: Report.GetWebBookmarks(String)
-- uid: UFEDLib.Report.GetWebBookmarks*
-  name: GetWebBookmarks
-  href: api/UFEDLib.Report.html#UFEDLib_Report_GetWebBookmarks_
-  commentId: Overload:UFEDLib.Report.GetWebBookmarks
+  fullName: UFEDLib.Report.ParseUserAccounts
+  nameWithType: Report.ParseUserAccounts
+- uid: UFEDLib.Report.ParseWebBookmarks(System.String,System.IProgress{System.Int32},System.Boolean)
+  name: ParseWebBookmarks(string, IProgress<int>, bool)
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseWebBookmarks_System_String_System_IProgress_System_Int32__System_Boolean_
+  commentId: M:UFEDLib.Report.ParseWebBookmarks(System.String,System.IProgress{System.Int32},System.Boolean)
+  name.vb: ParseWebBookmarks(String, IProgress(Of Integer), Boolean)
+  fullName: UFEDLib.Report.ParseWebBookmarks(string, System.IProgress<int>, bool)
+  fullName.vb: UFEDLib.Report.ParseWebBookmarks(String, System.IProgress(Of Integer), Boolean)
+  nameWithType: Report.ParseWebBookmarks(string, IProgress<int>, bool)
+  nameWithType.vb: Report.ParseWebBookmarks(String, IProgress(Of Integer), Boolean)
+- uid: UFEDLib.Report.ParseWebBookmarks*
+  name: ParseWebBookmarks
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseWebBookmarks_
+  commentId: Overload:UFEDLib.Report.ParseWebBookmarks
   isSpec: "True"
-  fullName: UFEDLib.Report.GetWebBookmarks
-  nameWithType: Report.GetWebBookmarks
-- uid: UFEDLib.Report.GetWirelessNetworks(System.String)
-  name: GetWirelessNetworks(string)
-  href: api/UFEDLib.Report.html#UFEDLib_Report_GetWirelessNetworks_System_String_
-  commentId: M:UFEDLib.Report.GetWirelessNetworks(System.String)
-  name.vb: GetWirelessNetworks(String)
-  fullName: UFEDLib.Report.GetWirelessNetworks(string)
-  fullName.vb: UFEDLib.Report.GetWirelessNetworks(String)
-  nameWithType: Report.GetWirelessNetworks(string)
-  nameWithType.vb: Report.GetWirelessNetworks(String)
-- uid: UFEDLib.Report.GetWirelessNetworks*
-  name: GetWirelessNetworks
-  href: api/UFEDLib.Report.html#UFEDLib_Report_GetWirelessNetworks_
-  commentId: Overload:UFEDLib.Report.GetWirelessNetworks
+  fullName: UFEDLib.Report.ParseWebBookmarks
+  nameWithType: Report.ParseWebBookmarks
+- uid: UFEDLib.Report.ParseWirelessNetworks(System.String,System.IProgress{System.Int32},System.Boolean)
+  name: ParseWirelessNetworks(string, IProgress<int>, bool)
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseWirelessNetworks_System_String_System_IProgress_System_Int32__System_Boolean_
+  commentId: M:UFEDLib.Report.ParseWirelessNetworks(System.String,System.IProgress{System.Int32},System.Boolean)
+  name.vb: ParseWirelessNetworks(String, IProgress(Of Integer), Boolean)
+  fullName: UFEDLib.Report.ParseWirelessNetworks(string, System.IProgress<int>, bool)
+  fullName.vb: UFEDLib.Report.ParseWirelessNetworks(String, System.IProgress(Of Integer), Boolean)
+  nameWithType: Report.ParseWirelessNetworks(string, IProgress<int>, bool)
+  nameWithType.vb: Report.ParseWirelessNetworks(String, IProgress(Of Integer), Boolean)
+- uid: UFEDLib.Report.ParseWirelessNetworks*
+  name: ParseWirelessNetworks
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseWirelessNetworks_
+  commentId: Overload:UFEDLib.Report.ParseWirelessNetworks
   isSpec: "True"
-  fullName: UFEDLib.Report.GetWirelessNetworks
-  nameWithType: Report.GetWirelessNetworks
+  fullName: UFEDLib.Report.ParseWirelessNetworks
+  nameWithType: Report.ParseWirelessNetworks
 - uid: UFEDLib.SMS
   name: SMS
   href: api/UFEDLib.SMS.html

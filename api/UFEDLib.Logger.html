@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class ModelParser | UFEDLib </title>
+      <title>Class Logger | UFEDLib </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class ModelParser | UFEDLib ">
+      <meta name="title" content="Class Logger | UFEDLib ">
       
       
       <link rel="icon" href="../favicon.ico">
@@ -16,7 +16,7 @@
       
       
       
-      <meta name="docfx:docurl" content="https://github.com/SEilers/UFEDLib/new/master/apiSpec/new?filename=UFEDLib_ModelParser.md&amp;value=---%0Auid%3A%20UFEDLib.ModelParser%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/SEilers/UFEDLib/new/master/apiSpec/new?filename=UFEDLib_Logger.md&amp;value=---%0Auid%3A%20UFEDLib.Logger%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -80,12 +80,12 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="UFEDLib.ModelParser">
+        <article data-uid="UFEDLib.Logger">
 
 
 
-  <h1 id="UFEDLib_ModelParser" data-uid="UFEDLib.ModelParser" class="text-break">
-Class ModelParser  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/ModelParser.cs/#L13"><i class="bi bi-code-slash"></i></a>
+  <h1 id="UFEDLib_Logger" data-uid="UFEDLib.Logger" class="text-break">
+Class Logger  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Logger.cs/#L9"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,7 @@ Class ModelParser  <a class="header-action link-secondary" title="View source" h
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class ModelParser</code></pre>
+    <pre><code class="lang-csharp hljs">public static class Logger</code></pre>
   </div>
 
 
@@ -107,7 +107,7 @@ Class ModelParser  <a class="header-action link-secondary" title="View source" h
     <dt>Inheritance</dt>
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-      <div><span class="xref">ModelParser</span></div>
+      <div><span class="xref">Logger</span></div>
     </dd>
   </dl>
 
@@ -144,43 +144,62 @@ Class ModelParser  <a class="header-action link-secondary" title="View source" h
 
 
 
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="UFEDLib_Logger_attributeSet" data-uid="UFEDLib.Logger.attributeSet">
+  attributeSet
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Logger.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static HashSet&lt;string&gt; attributeSet</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1">HashSet</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
   <h2 class="section" id="methods">Methods
 </h2>
 
 
-  <a id="UFEDLib_ModelParser_ParseUfdr_" data-uid="UFEDLib.ModelParser.ParseUfdr*"></a>
+  <a id="UFEDLib_Logger_GetLogs_" data-uid="UFEDLib.Logger.GetLogs*"></a>
 
-  <h3 id="UFEDLib_ModelParser_ParseUfdr__1_System_String_System_IProgress_System_Int32__System_Boolean_" data-uid="UFEDLib.ModelParser.ParseUfdr``1(System.String,System.IProgress{System.Int32},System.Boolean)">
-  ParseUfdr&lt;T&gt;(string, IProgress&lt;int&gt;, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/ModelParser.cs/#L100"><i class="bi bi-code-slash"></i></a>
+  <h3 id="UFEDLib_Logger_GetLogs" data-uid="UFEDLib.Logger.GetLogs">
+  GetLogs()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Logger.cs/#L42"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static List&lt;T&gt; ParseUfdr&lt;T&gt;(string ufdrFileName, IProgress&lt;int&gt; progress = null, bool debugAttributes = false) where T : ModelBase, IUfedModelParser&lt;T&gt;, new()</code></pre>
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;string&gt; GetLogs()</code></pre>
   </div>
 
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>ufdrFileName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
-    <dt><code>progress</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iprogress-1">IProgress</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</dt>
-    <dd></dd>
-    <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
-  </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;T&gt;</dt>
-    <dd></dd>
-  </dl>
-
-  <h4 class="section">Type Parameters</h4>
-  <dl class="parameters">
-    <dt><code>T</code></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -193,41 +212,121 @@ Class ModelParser  <a class="header-action link-secondary" title="View source" h
 
 
 
-  <a id="UFEDLib_ModelParser_ParseXMLReport_" data-uid="UFEDLib.ModelParser.ParseXMLReport*"></a>
 
-  <h3 id="UFEDLib_ModelParser_ParseXMLReport__1_System_String_System_IProgress_System_Int32__System_Boolean_" data-uid="UFEDLib.ModelParser.ParseXMLReport``1(System.String,System.IProgress{System.Int32},System.Boolean)">
-  ParseXMLReport&lt;T&gt;(string, IProgress&lt;int&gt;, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/ModelParser.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  <a id="UFEDLib_Logger_LogAttribute_" data-uid="UFEDLib.Logger.LogAttribute*"></a>
+
+  <h3 id="UFEDLib_Logger_LogAttribute_System_String_" data-uid="UFEDLib.Logger.LogAttribute(System.String)">
+  LogAttribute(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Logger.cs/#L16"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static List&lt;T&gt; ParseXMLReport&lt;T&gt;(string xmlReportFile, IProgress&lt;int&gt; progress = null, bool debugAttributes = false) where T : ModelBase, IUfedModelParser&lt;T&gt;, new()</code></pre>
+    <pre><code class="lang-csharp hljs">public static void LogAttribute(string message)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>xmlReportFile</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
-    <dt><code>progress</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iprogress-1">IProgress</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</dt>
-    <dd></dd>
-    <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dt><code>message</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
   </dl>
 
-  <h4 class="section">Returns</h4>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UFEDLib_Logger_LogError_" data-uid="UFEDLib.Logger.LogError*"></a>
+
+  <h3 id="UFEDLib_Logger_LogError_System_String_" data-uid="UFEDLib.Logger.LogError(System.String)">
+  LogError(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Logger.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void LogError(string message)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;T&gt;</dt>
+    <dt><code>message</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
   </dl>
 
-  <h4 class="section">Type Parameters</h4>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UFEDLib_Logger_LogInfo_" data-uid="UFEDLib.Logger.LogInfo*"></a>
+
+  <h3 id="UFEDLib_Logger_LogInfo_System_String_" data-uid="UFEDLib.Logger.LogInfo(System.String)">
+  LogInfo(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Logger.cs/#L13"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void LogInfo(string message)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>T</code></dt>
+    <dt><code>message</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
   </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UFEDLib_Logger_LogWarning_" data-uid="UFEDLib.Logger.LogWarning*"></a>
+
+  <h3 id="UFEDLib_Logger_LogWarning_System_String_" data-uid="UFEDLib.Logger.LogWarning(System.String)">
+  LogWarning(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Logger.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void LogWarning(string message)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>message</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
 
 
 
@@ -242,7 +341,7 @@ Class ModelParser  <a class="header-action link-secondary" title="View source" h
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/ModelParser.cs/#L13" class="edit-link">Edit this page</a>
+          <a href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Logger.cs/#L9" class="edit-link">Edit this page</a>
         </div>
 
 

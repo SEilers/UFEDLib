@@ -148,10 +148,10 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 </h2>
 
 
-  <a id="UFEDLib_Report_GetAutofills_" data-uid="UFEDLib.Report.GetAutofills*"></a>
+  <a id="UFEDLib_Report_ParseAutofills_" data-uid="UFEDLib.Report.ParseAutofills*"></a>
 
-  <h3 id="UFEDLib_Report_GetAutofills_System_String_" data-uid="UFEDLib.Report.GetAutofills(System.String)">
-  GetAutofills(string)
+  <h3 id="UFEDLib_Report_ParseAutofills_System_String_System_IProgress_System_Int32__System_Boolean_" data-uid="UFEDLib.Report.ParseAutofills(System.String,System.IProgress{System.Int32},System.Boolean)">
+  ParseAutofills(string, IProgress&lt;int&gt;, bool)
   <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L13"><i class="bi bi-code-slash"></i></a>
   </h3>
 
@@ -159,12 +159,16 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static List&lt;Autofill&gt; GetAutofills(string ufdrFile)</code></pre>
+    <pre><code class="lang-csharp hljs">public static List&lt;Autofill&gt; ParseAutofills(string filename, IProgress&lt;int&gt; progress = null, bool debugAttributes = false)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>ufdrFile</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><code>filename</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>progress</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iprogress-1">IProgress</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
   </dl>
 
@@ -184,23 +188,27 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
 
 
-  <a id="UFEDLib_Report_GetCalls_" data-uid="UFEDLib.Report.GetCalls*"></a>
+  <a id="UFEDLib_Report_ParseCalls_" data-uid="UFEDLib.Report.ParseCalls*"></a>
 
-  <h3 id="UFEDLib_Report_GetCalls_System_String_" data-uid="UFEDLib.Report.GetCalls(System.String)">
-  GetCalls(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L17"><i class="bi bi-code-slash"></i></a>
+  <h3 id="UFEDLib_Report_ParseCalls_System_String_System_IProgress_System_Int32__System_Boolean_" data-uid="UFEDLib.Report.ParseCalls(System.String,System.IProgress{System.Int32},System.Boolean)">
+  ParseCalls(string, IProgress&lt;int&gt;, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L33"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static List&lt;Call&gt; GetCalls(string ufdrFile)</code></pre>
+    <pre><code class="lang-csharp hljs">public static List&lt;Call&gt; ParseCalls(string filename, IProgress&lt;int&gt; progress = null, bool debugAttributes = false)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>ufdrFile</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><code>filename</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>progress</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iprogress-1">IProgress</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
   </dl>
 
@@ -220,23 +228,27 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
 
 
-  <a id="UFEDLib_Report_GetChats_" data-uid="UFEDLib.Report.GetChats*"></a>
+  <a id="UFEDLib_Report_ParseChats_" data-uid="UFEDLib.Report.ParseChats*"></a>
 
-  <h3 id="UFEDLib_Report_GetChats_System_String_" data-uid="UFEDLib.Report.GetChats(System.String)">
-  GetChats(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  <h3 id="UFEDLib_Report_ParseChats_System_String_System_IProgress_System_Int32__System_Boolean_" data-uid="UFEDLib.Report.ParseChats(System.String,System.IProgress{System.Int32},System.Boolean)">
+  ParseChats(string, IProgress&lt;int&gt;, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L54"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static List&lt;Chat&gt; GetChats(string ufdrFile)</code></pre>
+    <pre><code class="lang-csharp hljs">public static List&lt;Chat&gt; ParseChats(string filename, IProgress&lt;int&gt; progress = null, bool debugAttributes = false)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>ufdrFile</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><code>filename</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>progress</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iprogress-1">IProgress</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
   </dl>
 
@@ -256,23 +268,27 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
 
 
-  <a id="UFEDLib_Report_GetContacts_" data-uid="UFEDLib.Report.GetContacts*"></a>
+  <a id="UFEDLib_Report_ParseContacts_" data-uid="UFEDLib.Report.ParseContacts*"></a>
 
-  <h3 id="UFEDLib_Report_GetContacts_System_String_" data-uid="UFEDLib.Report.GetContacts(System.String)">
-  GetContacts(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L27"><i class="bi bi-code-slash"></i></a>
+  <h3 id="UFEDLib_Report_ParseContacts_System_String_System_IProgress_System_Int32__System_Boolean_" data-uid="UFEDLib.Report.ParseContacts(System.String,System.IProgress{System.Int32},System.Boolean)">
+  ParseContacts(string, IProgress&lt;int&gt;, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L75"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static List&lt;Contact&gt; GetContacts(string ufdrFile)</code></pre>
+    <pre><code class="lang-csharp hljs">public static List&lt;Contact&gt; ParseContacts(string filename, IProgress&lt;int&gt; progress = null, bool debugAttributes = false)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>ufdrFile</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><code>filename</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>progress</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iprogress-1">IProgress</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
   </dl>
 
@@ -292,23 +308,27 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
 
 
-  <a id="UFEDLib_Report_GetCookies_" data-uid="UFEDLib.Report.GetCookies*"></a>
+  <a id="UFEDLib_Report_ParseCookies_" data-uid="UFEDLib.Report.ParseCookies*"></a>
 
-  <h3 id="UFEDLib_Report_GetCookies_System_String_" data-uid="UFEDLib.Report.GetCookies(System.String)">
-  GetCookies(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L32"><i class="bi bi-code-slash"></i></a>
+  <h3 id="UFEDLib_Report_ParseCookies_System_String_System_IProgress_System_Int32__System_Boolean_" data-uid="UFEDLib.Report.ParseCookies(System.String,System.IProgress{System.Int32},System.Boolean)">
+  ParseCookies(string, IProgress&lt;int&gt;, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L96"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static List&lt;Cookie&gt; GetCookies(string ufdrFile)</code></pre>
+    <pre><code class="lang-csharp hljs">public static List&lt;Cookie&gt; ParseCookies(string filename, IProgress&lt;int&gt; progress = null, bool debugAttributes = false)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>ufdrFile</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><code>filename</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>progress</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iprogress-1">IProgress</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
   </dl>
 
@@ -328,23 +348,27 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
 
 
-  <a id="UFEDLib_Report_GetDictionaryWords_" data-uid="UFEDLib.Report.GetDictionaryWords*"></a>
+  <a id="UFEDLib_Report_ParseDictionaryWords_" data-uid="UFEDLib.Report.ParseDictionaryWords*"></a>
 
-  <h3 id="UFEDLib_Report_GetDictionaryWords_System_String_" data-uid="UFEDLib.Report.GetDictionaryWords(System.String)">
-  GetDictionaryWords(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L37"><i class="bi bi-code-slash"></i></a>
+  <h3 id="UFEDLib_Report_ParseDictionaryWords_System_String_System_IProgress_System_Int32__System_Boolean_" data-uid="UFEDLib.Report.ParseDictionaryWords(System.String,System.IProgress{System.Int32},System.Boolean)">
+  ParseDictionaryWords(string, IProgress&lt;int&gt;, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L117"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static List&lt;DictionaryWord&gt; GetDictionaryWords(string ufdrFile)</code></pre>
+    <pre><code class="lang-csharp hljs">public static List&lt;DictionaryWord&gt; ParseDictionaryWords(string filename, IProgress&lt;int&gt; progress = null, bool debugAttributes = false)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>ufdrFile</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><code>filename</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>progress</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iprogress-1">IProgress</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
   </dl>
 
@@ -364,23 +388,27 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
 
 
-  <a id="UFEDLib_Report_GetEMails_" data-uid="UFEDLib.Report.GetEMails*"></a>
+  <a id="UFEDLib_Report_ParseEMails_" data-uid="UFEDLib.Report.ParseEMails*"></a>
 
-  <h3 id="UFEDLib_Report_GetEMails_System_String_" data-uid="UFEDLib.Report.GetEMails(System.String)">
-  GetEMails(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L42"><i class="bi bi-code-slash"></i></a>
+  <h3 id="UFEDLib_Report_ParseEMails_System_String_System_IProgress_System_Int32__System_Boolean_" data-uid="UFEDLib.Report.ParseEMails(System.String,System.IProgress{System.Int32},System.Boolean)">
+  ParseEMails(string, IProgress&lt;int&gt;, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L138"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static List&lt;EMail&gt; GetEMails(string ufdrFile)</code></pre>
+    <pre><code class="lang-csharp hljs">public static List&lt;EMail&gt; ParseEMails(string filename, IProgress&lt;int&gt; progress = null, bool debugAttributes = false)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>ufdrFile</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><code>filename</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>progress</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iprogress-1">IProgress</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
   </dl>
 
@@ -400,23 +428,27 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
 
 
-  <a id="UFEDLib_Report_GetJourneys_" data-uid="UFEDLib.Report.GetJourneys*"></a>
+  <a id="UFEDLib_Report_ParseJourneys_" data-uid="UFEDLib.Report.ParseJourneys*"></a>
 
-  <h3 id="UFEDLib_Report_GetJourneys_System_String_" data-uid="UFEDLib.Report.GetJourneys(System.String)">
-  GetJourneys(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L47"><i class="bi bi-code-slash"></i></a>
+  <h3 id="UFEDLib_Report_ParseJourneys_System_String_System_IProgress_System_Int32__System_Boolean_" data-uid="UFEDLib.Report.ParseJourneys(System.String,System.IProgress{System.Int32},System.Boolean)">
+  ParseJourneys(string, IProgress&lt;int&gt;, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L159"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static List&lt;Journey&gt; GetJourneys(string ufdrFile)</code></pre>
+    <pre><code class="lang-csharp hljs">public static List&lt;Journey&gt; ParseJourneys(string filename, IProgress&lt;int&gt; progress = null, bool debugAttributes = false)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>ufdrFile</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><code>filename</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>progress</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iprogress-1">IProgress</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
   </dl>
 
@@ -436,23 +468,27 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
 
 
-  <a id="UFEDLib_Report_GetLocations_" data-uid="UFEDLib.Report.GetLocations*"></a>
+  <a id="UFEDLib_Report_ParseLocations_" data-uid="UFEDLib.Report.ParseLocations*"></a>
 
-  <h3 id="UFEDLib_Report_GetLocations_System_String_" data-uid="UFEDLib.Report.GetLocations(System.String)">
-  GetLocations(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L52"><i class="bi bi-code-slash"></i></a>
+  <h3 id="UFEDLib_Report_ParseLocations_System_String_System_IProgress_System_Int32__System_Boolean_" data-uid="UFEDLib.Report.ParseLocations(System.String,System.IProgress{System.Int32},System.Boolean)">
+  ParseLocations(string, IProgress&lt;int&gt;, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L180"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static List&lt;Location&gt; GetLocations(string ufdrFile)</code></pre>
+    <pre><code class="lang-csharp hljs">public static List&lt;Location&gt; ParseLocations(string filename, IProgress&lt;int&gt; progress = null, bool debugAttributes = false)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>ufdrFile</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><code>filename</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>progress</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iprogress-1">IProgress</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
   </dl>
 
@@ -472,23 +508,27 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
 
 
-  <a id="UFEDLib_Report_GetPasswords_" data-uid="UFEDLib.Report.GetPasswords*"></a>
+  <a id="UFEDLib_Report_ParsePasswords_" data-uid="UFEDLib.Report.ParsePasswords*"></a>
 
-  <h3 id="UFEDLib_Report_GetPasswords_System_String_" data-uid="UFEDLib.Report.GetPasswords(System.String)">
-  GetPasswords(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L57"><i class="bi bi-code-slash"></i></a>
+  <h3 id="UFEDLib_Report_ParsePasswords_System_String_System_IProgress_System_Int32__System_Boolean_" data-uid="UFEDLib.Report.ParsePasswords(System.String,System.IProgress{System.Int32},System.Boolean)">
+  ParsePasswords(string, IProgress&lt;int&gt;, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L201"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static List&lt;Password&gt; GetPasswords(string ufdrFile)</code></pre>
+    <pre><code class="lang-csharp hljs">public static List&lt;Password&gt; ParsePasswords(string filename, IProgress&lt;int&gt; progress = null, bool debugAttributes = false)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>ufdrFile</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><code>filename</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>progress</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iprogress-1">IProgress</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
   </dl>
 
@@ -508,23 +548,27 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
 
 
-  <a id="UFEDLib_Report_GetSearchedItems_" data-uid="UFEDLib.Report.GetSearchedItems*"></a>
+  <a id="UFEDLib_Report_ParseSearchedItems_" data-uid="UFEDLib.Report.ParseSearchedItems*"></a>
 
-  <h3 id="UFEDLib_Report_GetSearchedItems_System_String_" data-uid="UFEDLib.Report.GetSearchedItems(System.String)">
-  GetSearchedItems(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L62"><i class="bi bi-code-slash"></i></a>
+  <h3 id="UFEDLib_Report_ParseSearchedItems_System_String_System_IProgress_System_Int32__System_Boolean_" data-uid="UFEDLib.Report.ParseSearchedItems(System.String,System.IProgress{System.Int32},System.Boolean)">
+  ParseSearchedItems(string, IProgress&lt;int&gt;, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L222"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static List&lt;SearchedItem&gt; GetSearchedItems(string ufdrFile)</code></pre>
+    <pre><code class="lang-csharp hljs">public static List&lt;SearchedItem&gt; ParseSearchedItems(string filename, IProgress&lt;int&gt; progress = null, bool debugAttributes = false)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>ufdrFile</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><code>filename</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>progress</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iprogress-1">IProgress</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
   </dl>
 
@@ -544,23 +588,27 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
 
 
-  <a id="UFEDLib_Report_GetUserAccounts_" data-uid="UFEDLib.Report.GetUserAccounts*"></a>
+  <a id="UFEDLib_Report_ParseUserAccounts_" data-uid="UFEDLib.Report.ParseUserAccounts*"></a>
 
-  <h3 id="UFEDLib_Report_GetUserAccounts_System_String_" data-uid="UFEDLib.Report.GetUserAccounts(System.String)">
-  GetUserAccounts(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L67"><i class="bi bi-code-slash"></i></a>
+  <h3 id="UFEDLib_Report_ParseUserAccounts_System_String_System_IProgress_System_Int32__System_Boolean_" data-uid="UFEDLib.Report.ParseUserAccounts(System.String,System.IProgress{System.Int32},System.Boolean)">
+  ParseUserAccounts(string, IProgress&lt;int&gt;, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L243"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static List&lt;UserAccount&gt; GetUserAccounts(string ufdrFile)</code></pre>
+    <pre><code class="lang-csharp hljs">public static List&lt;UserAccount&gt; ParseUserAccounts(string filename, IProgress&lt;int&gt; progress = null, bool debugAttributes = false)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>ufdrFile</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><code>filename</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>progress</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iprogress-1">IProgress</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
   </dl>
 
@@ -580,23 +628,27 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
 
 
-  <a id="UFEDLib_Report_GetWebBookmarks_" data-uid="UFEDLib.Report.GetWebBookmarks*"></a>
+  <a id="UFEDLib_Report_ParseWebBookmarks_" data-uid="UFEDLib.Report.ParseWebBookmarks*"></a>
 
-  <h3 id="UFEDLib_Report_GetWebBookmarks_System_String_" data-uid="UFEDLib.Report.GetWebBookmarks(System.String)">
-  GetWebBookmarks(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L72"><i class="bi bi-code-slash"></i></a>
+  <h3 id="UFEDLib_Report_ParseWebBookmarks_System_String_System_IProgress_System_Int32__System_Boolean_" data-uid="UFEDLib.Report.ParseWebBookmarks(System.String,System.IProgress{System.Int32},System.Boolean)">
+  ParseWebBookmarks(string, IProgress&lt;int&gt;, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L264"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static List&lt;WebBookmark&gt; GetWebBookmarks(string ufdrFile)</code></pre>
+    <pre><code class="lang-csharp hljs">public static List&lt;WebBookmark&gt; ParseWebBookmarks(string filename, IProgress&lt;int&gt; progress = null, bool debugAttributes = false)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>ufdrFile</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><code>filename</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>progress</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iprogress-1">IProgress</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
   </dl>
 
@@ -616,23 +668,27 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
 
 
-  <a id="UFEDLib_Report_GetWirelessNetworks_" data-uid="UFEDLib.Report.GetWirelessNetworks*"></a>
+  <a id="UFEDLib_Report_ParseWirelessNetworks_" data-uid="UFEDLib.Report.ParseWirelessNetworks*"></a>
 
-  <h3 id="UFEDLib_Report_GetWirelessNetworks_System_String_" data-uid="UFEDLib.Report.GetWirelessNetworks(System.String)">
-  GetWirelessNetworks(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L77"><i class="bi bi-code-slash"></i></a>
+  <h3 id="UFEDLib_Report_ParseWirelessNetworks_System_String_System_IProgress_System_Int32__System_Boolean_" data-uid="UFEDLib.Report.ParseWirelessNetworks(System.String,System.IProgress{System.Int32},System.Boolean)">
+  ParseWirelessNetworks(string, IProgress&lt;int&gt;, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L285"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static List&lt;WirelessNetwork&gt; GetWirelessNetworks(string ufdrFile)</code></pre>
+    <pre><code class="lang-csharp hljs">public static List&lt;WirelessNetwork&gt; ParseWirelessNetworks(string filename, IProgress&lt;int&gt; progress = null, bool debugAttributes = false)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>ufdrFile</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><code>filename</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>progress</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iprogress-1">IProgress</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
   </dl>
 
