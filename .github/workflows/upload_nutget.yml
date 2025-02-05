@@ -17,15 +17,19 @@ jobs:
       with:
         dotnet-version: '8.0.x'
 
+    - name: Extract version from .csproj
+      run: echo "VERSION=$(grep -oP '(?<=<Version>).*?(?=</Version>)' YourProject.csproj)" >> $GITHUB_ENV
+
     - name: Restore dependencies
       run: dotnet restore
 
     - name: Build project
       run: dotnet build --configuration Release --no-restore
 
+
     - name: Pack the NuGet package
-      run: dotnet pack --configuration Release --no-build --output nupkgs
+      run: dotnet pack --configuration Release --no-build --output nupkgs --version $VERSION
 
     - name: Publish to NuGet
-      run: dotnet nuget push "nupkgs/*.nupkg" --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }} --skip-duplicate
+      run: dotnet nuget push "nupkgs/*.$VERSION.nupkg" --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }} --skip-duplicate
     
