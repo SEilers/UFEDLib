@@ -23,8 +23,8 @@ jobs:
         echo "VERSION=$VERSION" >> $GITHUB_ENV
         echo "Extracted version: $VERSION"
 
-    - name: Display version in logs
-      run: echo "Building NuGet package with version: $VERSION"
+    #- name: Display version in logs
+    #  run: echo "Building NuGet package with version: $VERSION"
 
     - name: Restore dependencies
       run: dotnet restore
@@ -34,7 +34,7 @@ jobs:
 
 
     - name: Pack the NuGet package
-      run: dotnet pack --configuration Release --no-build --output nupkgs --version $VERSION
+      run: dotnet pack --configuration Release --no-build --version $VERSION --output nupkgs 
 
     - name: Publish to NuGet
       run: dotnet nuget push "nupkgs/*.nupkg" --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }} --skip-duplicate
