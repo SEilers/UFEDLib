@@ -18,7 +18,7 @@ jobs:
         dotnet-version: '8.0.x'
 
     - name: Extract version from .csproj
-      run: echo "VERSION=$(grep -oP '(?<=<Version>).*?(?=</Version>)' UFEDLib.csproj)" >> $GITHUB_ENV
+      run: echo "VERSION=$(grep -oP '(?<=<Version>).*?(?=</Version>)' UFEDLib/UFEDLib.csproj)" >> $GITHUB_ENV
 
     - name: Restore dependencies
       run: dotnet restore
