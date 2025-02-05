@@ -19,8 +19,12 @@ jobs:
 
     - name: Extract version from .csproj
       run: |
-        echo "VERSION=$(grep -oP '(?<=<Version>).*?(?=</Version>)' UFEDLib/UFEDLib.csproj)" >> $GITHUB_ENV
+        VERSION=$(grep -oP '(?<=<Version>).*?(?=</Version>)' UFEDLib/UFEDLib.csproj)
+        echo "VERSION=$VERSION" >> $GITHUB_ENV
         echo "Extracted version: $VERSION"
+
+    - name: Display version in logs
+      run: echo "Building NuGet package with version: $VERSION"
 
     - name: Restore dependencies
       run: dotnet restore
