@@ -4901,6 +4901,22 @@ references:
   fullName.vb: UFEDLib.ModelParser.ParseXMLReport(Of T)(String, System.IProgress(Of Integer), Boolean)
   nameWithType: ModelParser.ParseXMLReport<T>(string, IProgress<int>, bool)
   nameWithType.vb: ModelParser.ParseXMLReport(Of T)(String, IProgress(Of Integer), Boolean)
+- uid: UFEDLib.ModelParser.ScanModels(System.String,System.IProgress{System.Int32})
+  name: ScanModels(string, IProgress<int>)
+  href: api/UFEDLib.ModelParser.html#UFEDLib_ModelParser_ScanModels_System_String_System_IProgress_System_Int32__
+  commentId: M:UFEDLib.ModelParser.ScanModels(System.String,System.IProgress{System.Int32})
+  name.vb: ScanModels(String, IProgress(Of Integer))
+  fullName: UFEDLib.ModelParser.ScanModels(string, System.IProgress<int>)
+  fullName.vb: UFEDLib.ModelParser.ScanModels(String, System.IProgress(Of Integer))
+  nameWithType: ModelParser.ScanModels(string, IProgress<int>)
+  nameWithType.vb: ModelParser.ScanModels(String, IProgress(Of Integer))
+- uid: UFEDLib.ModelParser.ScanModels*
+  name: ScanModels
+  href: api/UFEDLib.ModelParser.html#UFEDLib_ModelParser_ScanModels_
+  commentId: Overload:UFEDLib.ModelParser.ScanModels
+  isSpec: "True"
+  fullName: UFEDLib.ModelParser.ScanModels
+  nameWithType: ModelParser.ScanModels
 - uid: UFEDLib.Note
   name: Note
   href: api/UFEDLib.Note.html
@@ -6206,6 +6222,115 @@ references:
   commentId: T:UFEDLib.Report
   fullName: UFEDLib.Report
   nameWithType: Report
+- uid: UFEDLib.Report.GetModels(System.String)
+  name: GetModels(string)
+  href: api/UFEDLib.Report.html#UFEDLib_Report_GetModels_System_String_
+  commentId: M:UFEDLib.Report.GetModels(System.String)
+  name.vb: GetModels(String)
+  fullName: UFEDLib.Report.GetModels(string)
+  fullName.vb: UFEDLib.Report.GetModels(String)
+  nameWithType: Report.GetModels(string)
+  nameWithType.vb: Report.GetModels(String)
+- uid: UFEDLib.Report.GetModels*
+  name: GetModels
+  href: api/UFEDLib.Report.html#UFEDLib_Report_GetModels_
+  commentId: Overload:UFEDLib.Report.GetModels
+  isSpec: "True"
+  fullName: UFEDLib.Report.GetModels
+  nameWithType: Report.GetModels
+- uid: UFEDLib.Report.GetSupportedModels
+  name: GetSupportedModels()
+  href: api/UFEDLib.Report.html#UFEDLib_Report_GetSupportedModels
+  commentId: M:UFEDLib.Report.GetSupportedModels
+  fullName: UFEDLib.Report.GetSupportedModels()
+  nameWithType: Report.GetSupportedModels()
+- uid: UFEDLib.Report.GetSupportedModels*
+  name: GetSupportedModels
+  href: api/UFEDLib.Report.html#UFEDLib_Report_GetSupportedModels_
+  commentId: Overload:UFEDLib.Report.GetSupportedModels
+  isSpec: "True"
+  fullName: UFEDLib.Report.GetSupportedModels
+  nameWithType: Report.GetSupportedModels
+- uid: UFEDLib.Report.GetUnsupportedModels(System.String)
+  name: GetUnsupportedModels(string)
+  href: api/UFEDLib.Report.html#UFEDLib_Report_GetUnsupportedModels_System_String_
+  commentId: M:UFEDLib.Report.GetUnsupportedModels(System.String)
+  name.vb: GetUnsupportedModels(String)
+  fullName: UFEDLib.Report.GetUnsupportedModels(string)
+  fullName.vb: UFEDLib.Report.GetUnsupportedModels(String)
+  nameWithType: Report.GetUnsupportedModels(string)
+  nameWithType.vb: Report.GetUnsupportedModels(String)
+- uid: UFEDLib.Report.GetUnsupportedModels*
+  name: GetUnsupportedModels
+  href: api/UFEDLib.Report.html#UFEDLib_Report_GetUnsupportedModels_
+  commentId: Overload:UFEDLib.Report.GetUnsupportedModels
+  isSpec: "True"
+  fullName: UFEDLib.Report.GetUnsupportedModels
+  nameWithType: Report.GetUnsupportedModels
+- uid: UFEDLib.Report.ParsCellTowers(System.String,System.IProgress{System.Int32},System.Boolean)
+  name: ParsCellTowers(string, IProgress<int>, bool)
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParsCellTowers_System_String_System_IProgress_System_Int32__System_Boolean_
+  commentId: M:UFEDLib.Report.ParsCellTowers(System.String,System.IProgress{System.Int32},System.Boolean)
+  name.vb: ParsCellTowers(String, IProgress(Of Integer), Boolean)
+  fullName: UFEDLib.Report.ParsCellTowers(string, System.IProgress<int>, bool)
+  fullName.vb: UFEDLib.Report.ParsCellTowers(String, System.IProgress(Of Integer), Boolean)
+  nameWithType: Report.ParsCellTowers(string, IProgress<int>, bool)
+  nameWithType.vb: Report.ParsCellTowers(String, IProgress(Of Integer), Boolean)
+- uid: UFEDLib.Report.ParsCellTowers*
+  name: ParsCellTowers
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParsCellTowers_
+  commentId: Overload:UFEDLib.Report.ParsCellTowers
+  isSpec: "True"
+  fullName: UFEDLib.Report.ParsCellTowers
+  nameWithType: Report.ParsCellTowers
+- uid: UFEDLib.Report.ParseActivitySensorData(System.String,System.IProgress{System.Int32},System.Boolean)
+  name: ParseActivitySensorData(string, IProgress<int>, bool)
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseActivitySensorData_System_String_System_IProgress_System_Int32__System_Boolean_
+  commentId: M:UFEDLib.Report.ParseActivitySensorData(System.String,System.IProgress{System.Int32},System.Boolean)
+  name.vb: ParseActivitySensorData(String, IProgress(Of Integer), Boolean)
+  fullName: UFEDLib.Report.ParseActivitySensorData(string, System.IProgress<int>, bool)
+  fullName.vb: UFEDLib.Report.ParseActivitySensorData(String, System.IProgress(Of Integer), Boolean)
+  nameWithType: Report.ParseActivitySensorData(string, IProgress<int>, bool)
+  nameWithType.vb: Report.ParseActivitySensorData(String, IProgress(Of Integer), Boolean)
+- uid: UFEDLib.Report.ParseActivitySensorData*
+  name: ParseActivitySensorData
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseActivitySensorData_
+  commentId: Overload:UFEDLib.Report.ParseActivitySensorData
+  isSpec: "True"
+  fullName: UFEDLib.Report.ParseActivitySensorData
+  nameWithType: Report.ParseActivitySensorData
+- uid: UFEDLib.Report.ParseApplicationUsages(System.String,System.IProgress{System.Int32},System.Boolean)
+  name: ParseApplicationUsages(string, IProgress<int>, bool)
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseApplicationUsages_System_String_System_IProgress_System_Int32__System_Boolean_
+  commentId: M:UFEDLib.Report.ParseApplicationUsages(System.String,System.IProgress{System.Int32},System.Boolean)
+  name.vb: ParseApplicationUsages(String, IProgress(Of Integer), Boolean)
+  fullName: UFEDLib.Report.ParseApplicationUsages(string, System.IProgress<int>, bool)
+  fullName.vb: UFEDLib.Report.ParseApplicationUsages(String, System.IProgress(Of Integer), Boolean)
+  nameWithType: Report.ParseApplicationUsages(string, IProgress<int>, bool)
+  nameWithType.vb: Report.ParseApplicationUsages(String, IProgress(Of Integer), Boolean)
+- uid: UFEDLib.Report.ParseApplicationUsages*
+  name: ParseApplicationUsages
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseApplicationUsages_
+  commentId: Overload:UFEDLib.Report.ParseApplicationUsages
+  isSpec: "True"
+  fullName: UFEDLib.Report.ParseApplicationUsages
+  nameWithType: Report.ParseApplicationUsages
+- uid: UFEDLib.Report.ParseAppsUsageLogs(System.String,System.IProgress{System.Int32},System.Boolean)
+  name: ParseAppsUsageLogs(string, IProgress<int>, bool)
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseAppsUsageLogs_System_String_System_IProgress_System_Int32__System_Boolean_
+  commentId: M:UFEDLib.Report.ParseAppsUsageLogs(System.String,System.IProgress{System.Int32},System.Boolean)
+  name.vb: ParseAppsUsageLogs(String, IProgress(Of Integer), Boolean)
+  fullName: UFEDLib.Report.ParseAppsUsageLogs(string, System.IProgress<int>, bool)
+  fullName.vb: UFEDLib.Report.ParseAppsUsageLogs(String, System.IProgress(Of Integer), Boolean)
+  nameWithType: Report.ParseAppsUsageLogs(string, IProgress<int>, bool)
+  nameWithType.vb: Report.ParseAppsUsageLogs(String, IProgress(Of Integer), Boolean)
+- uid: UFEDLib.Report.ParseAppsUsageLogs*
+  name: ParseAppsUsageLogs
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseAppsUsageLogs_
+  commentId: Overload:UFEDLib.Report.ParseAppsUsageLogs
+  isSpec: "True"
+  fullName: UFEDLib.Report.ParseAppsUsageLogs
+  nameWithType: Report.ParseAppsUsageLogs
 - uid: UFEDLib.Report.ParseAutofills(System.String,System.IProgress{System.Int32},System.Boolean)
   name: ParseAutofills(string, IProgress<int>, bool)
   href: api/UFEDLib.Report.html#UFEDLib_Report_ParseAutofills_System_String_System_IProgress_System_Int32__System_Boolean_
@@ -6222,6 +6347,22 @@ references:
   isSpec: "True"
   fullName: UFEDLib.Report.ParseAutofills
   nameWithType: Report.ParseAutofills
+- uid: UFEDLib.Report.ParseCalendarEntry(System.String,System.IProgress{System.Int32},System.Boolean)
+  name: ParseCalendarEntry(string, IProgress<int>, bool)
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseCalendarEntry_System_String_System_IProgress_System_Int32__System_Boolean_
+  commentId: M:UFEDLib.Report.ParseCalendarEntry(System.String,System.IProgress{System.Int32},System.Boolean)
+  name.vb: ParseCalendarEntry(String, IProgress(Of Integer), Boolean)
+  fullName: UFEDLib.Report.ParseCalendarEntry(string, System.IProgress<int>, bool)
+  fullName.vb: UFEDLib.Report.ParseCalendarEntry(String, System.IProgress(Of Integer), Boolean)
+  nameWithType: Report.ParseCalendarEntry(string, IProgress<int>, bool)
+  nameWithType.vb: Report.ParseCalendarEntry(String, IProgress(Of Integer), Boolean)
+- uid: UFEDLib.Report.ParseCalendarEntry*
+  name: ParseCalendarEntry
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseCalendarEntry_
+  commentId: Overload:UFEDLib.Report.ParseCalendarEntry
+  isSpec: "True"
+  fullName: UFEDLib.Report.ParseCalendarEntry
+  nameWithType: Report.ParseCalendarEntry
 - uid: UFEDLib.Report.ParseCalls(System.String,System.IProgress{System.Int32},System.Boolean)
   name: ParseCalls(string, IProgress<int>, bool)
   href: api/UFEDLib.Report.html#UFEDLib_Report_ParseCalls_System_String_System_IProgress_System_Int32__System_Boolean_
@@ -6286,6 +6427,70 @@ references:
   isSpec: "True"
   fullName: UFEDLib.Report.ParseCookies
   nameWithType: Report.ParseCookies
+- uid: UFEDLib.Report.ParseData*
+  name: ParseData
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseData_
+  commentId: Overload:UFEDLib.Report.ParseData
+  isSpec: "True"
+  fullName: UFEDLib.Report.ParseData
+  nameWithType: Report.ParseData
+- uid: UFEDLib.Report.ParseData``1(System.String,System.IProgress{System.Int32},System.Boolean)
+  name: ParseData<T>(string, IProgress<int>, bool)
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseData__1_System_String_System_IProgress_System_Int32__System_Boolean_
+  commentId: M:UFEDLib.Report.ParseData``1(System.String,System.IProgress{System.Int32},System.Boolean)
+  name.vb: ParseData(Of T)(String, IProgress(Of Integer), Boolean)
+  fullName: UFEDLib.Report.ParseData<T>(string, System.IProgress<int>, bool)
+  fullName.vb: UFEDLib.Report.ParseData(Of T)(String, System.IProgress(Of Integer), Boolean)
+  nameWithType: Report.ParseData<T>(string, IProgress<int>, bool)
+  nameWithType.vb: Report.ParseData(Of T)(String, IProgress(Of Integer), Boolean)
+- uid: UFEDLib.Report.ParseDeviceConnectivity(System.String,System.IProgress{System.Int32},System.Boolean)
+  name: ParseDeviceConnectivity(string, IProgress<int>, bool)
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseDeviceConnectivity_System_String_System_IProgress_System_Int32__System_Boolean_
+  commentId: M:UFEDLib.Report.ParseDeviceConnectivity(System.String,System.IProgress{System.Int32},System.Boolean)
+  name.vb: ParseDeviceConnectivity(String, IProgress(Of Integer), Boolean)
+  fullName: UFEDLib.Report.ParseDeviceConnectivity(string, System.IProgress<int>, bool)
+  fullName.vb: UFEDLib.Report.ParseDeviceConnectivity(String, System.IProgress(Of Integer), Boolean)
+  nameWithType: Report.ParseDeviceConnectivity(string, IProgress<int>, bool)
+  nameWithType.vb: Report.ParseDeviceConnectivity(String, IProgress(Of Integer), Boolean)
+- uid: UFEDLib.Report.ParseDeviceConnectivity*
+  name: ParseDeviceConnectivity
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseDeviceConnectivity_
+  commentId: Overload:UFEDLib.Report.ParseDeviceConnectivity
+  isSpec: "True"
+  fullName: UFEDLib.Report.ParseDeviceConnectivity
+  nameWithType: Report.ParseDeviceConnectivity
+- uid: UFEDLib.Report.ParseDeviceDeviceEvent(System.String,System.IProgress{System.Int32},System.Boolean)
+  name: ParseDeviceDeviceEvent(string, IProgress<int>, bool)
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseDeviceDeviceEvent_System_String_System_IProgress_System_Int32__System_Boolean_
+  commentId: M:UFEDLib.Report.ParseDeviceDeviceEvent(System.String,System.IProgress{System.Int32},System.Boolean)
+  name.vb: ParseDeviceDeviceEvent(String, IProgress(Of Integer), Boolean)
+  fullName: UFEDLib.Report.ParseDeviceDeviceEvent(string, System.IProgress<int>, bool)
+  fullName.vb: UFEDLib.Report.ParseDeviceDeviceEvent(String, System.IProgress(Of Integer), Boolean)
+  nameWithType: Report.ParseDeviceDeviceEvent(string, IProgress<int>, bool)
+  nameWithType.vb: Report.ParseDeviceDeviceEvent(String, IProgress(Of Integer), Boolean)
+- uid: UFEDLib.Report.ParseDeviceDeviceEvent*
+  name: ParseDeviceDeviceEvent
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseDeviceDeviceEvent_
+  commentId: Overload:UFEDLib.Report.ParseDeviceDeviceEvent
+  isSpec: "True"
+  fullName: UFEDLib.Report.ParseDeviceDeviceEvent
+  nameWithType: Report.ParseDeviceDeviceEvent
+- uid: UFEDLib.Report.ParseDeviceDeviceInfoEntry(System.String,System.IProgress{System.Int32},System.Boolean)
+  name: ParseDeviceDeviceInfoEntry(string, IProgress<int>, bool)
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseDeviceDeviceInfoEntry_System_String_System_IProgress_System_Int32__System_Boolean_
+  commentId: M:UFEDLib.Report.ParseDeviceDeviceInfoEntry(System.String,System.IProgress{System.Int32},System.Boolean)
+  name.vb: ParseDeviceDeviceInfoEntry(String, IProgress(Of Integer), Boolean)
+  fullName: UFEDLib.Report.ParseDeviceDeviceInfoEntry(string, System.IProgress<int>, bool)
+  fullName.vb: UFEDLib.Report.ParseDeviceDeviceInfoEntry(String, System.IProgress(Of Integer), Boolean)
+  nameWithType: Report.ParseDeviceDeviceInfoEntry(string, IProgress<int>, bool)
+  nameWithType.vb: Report.ParseDeviceDeviceInfoEntry(String, IProgress(Of Integer), Boolean)
+- uid: UFEDLib.Report.ParseDeviceDeviceInfoEntry*
+  name: ParseDeviceDeviceInfoEntry
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseDeviceDeviceInfoEntry_
+  commentId: Overload:UFEDLib.Report.ParseDeviceDeviceInfoEntry
+  isSpec: "True"
+  fullName: UFEDLib.Report.ParseDeviceDeviceInfoEntry
+  nameWithType: Report.ParseDeviceDeviceInfoEntry
 - uid: UFEDLib.Report.ParseDictionaryWords(System.String,System.IProgress{System.Int32},System.Boolean)
   name: ParseDictionaryWords(string, IProgress<int>, bool)
   href: api/UFEDLib.Report.html#UFEDLib_Report_ParseDictionaryWords_System_String_System_IProgress_System_Int32__System_Boolean_
@@ -6318,6 +6523,38 @@ references:
   isSpec: "True"
   fullName: UFEDLib.Report.ParseEMails
   nameWithType: Report.ParseEMails
+- uid: UFEDLib.Report.ParseInstalledApplications(System.String,System.IProgress{System.Int32},System.Boolean)
+  name: ParseInstalledApplications(string, IProgress<int>, bool)
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseInstalledApplications_System_String_System_IProgress_System_Int32__System_Boolean_
+  commentId: M:UFEDLib.Report.ParseInstalledApplications(System.String,System.IProgress{System.Int32},System.Boolean)
+  name.vb: ParseInstalledApplications(String, IProgress(Of Integer), Boolean)
+  fullName: UFEDLib.Report.ParseInstalledApplications(string, System.IProgress<int>, bool)
+  fullName.vb: UFEDLib.Report.ParseInstalledApplications(String, System.IProgress(Of Integer), Boolean)
+  nameWithType: Report.ParseInstalledApplications(string, IProgress<int>, bool)
+  nameWithType.vb: Report.ParseInstalledApplications(String, IProgress(Of Integer), Boolean)
+- uid: UFEDLib.Report.ParseInstalledApplications*
+  name: ParseInstalledApplications
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseInstalledApplications_
+  commentId: Overload:UFEDLib.Report.ParseInstalledApplications
+  isSpec: "True"
+  fullName: UFEDLib.Report.ParseInstalledApplications
+  nameWithType: Report.ParseInstalledApplications
+- uid: UFEDLib.Report.ParseInstantMessages(System.String,System.IProgress{System.Int32},System.Boolean)
+  name: ParseInstantMessages(string, IProgress<int>, bool)
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseInstantMessages_System_String_System_IProgress_System_Int32__System_Boolean_
+  commentId: M:UFEDLib.Report.ParseInstantMessages(System.String,System.IProgress{System.Int32},System.Boolean)
+  name.vb: ParseInstantMessages(String, IProgress(Of Integer), Boolean)
+  fullName: UFEDLib.Report.ParseInstantMessages(string, System.IProgress<int>, bool)
+  fullName.vb: UFEDLib.Report.ParseInstantMessages(String, System.IProgress(Of Integer), Boolean)
+  nameWithType: Report.ParseInstantMessages(string, IProgress<int>, bool)
+  nameWithType.vb: Report.ParseInstantMessages(String, IProgress(Of Integer), Boolean)
+- uid: UFEDLib.Report.ParseInstantMessages*
+  name: ParseInstantMessages
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseInstantMessages_
+  commentId: Overload:UFEDLib.Report.ParseInstantMessages
+  isSpec: "True"
+  fullName: UFEDLib.Report.ParseInstantMessages
+  nameWithType: Report.ParseInstantMessages
 - uid: UFEDLib.Report.ParseJourneys(System.String,System.IProgress{System.Int32},System.Boolean)
   name: ParseJourneys(string, IProgress<int>, bool)
   href: api/UFEDLib.Report.html#UFEDLib_Report_ParseJourneys_System_String_System_IProgress_System_Int32__System_Boolean_
@@ -6350,6 +6587,54 @@ references:
   isSpec: "True"
   fullName: UFEDLib.Report.ParseLocations
   nameWithType: Report.ParseLocations
+- uid: UFEDLib.Report.ParseLogEntries(System.String,System.IProgress{System.Int32},System.Boolean)
+  name: ParseLogEntries(string, IProgress<int>, bool)
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseLogEntries_System_String_System_IProgress_System_Int32__System_Boolean_
+  commentId: M:UFEDLib.Report.ParseLogEntries(System.String,System.IProgress{System.Int32},System.Boolean)
+  name.vb: ParseLogEntries(String, IProgress(Of Integer), Boolean)
+  fullName: UFEDLib.Report.ParseLogEntries(string, System.IProgress<int>, bool)
+  fullName.vb: UFEDLib.Report.ParseLogEntries(String, System.IProgress(Of Integer), Boolean)
+  nameWithType: Report.ParseLogEntries(string, IProgress<int>, bool)
+  nameWithType.vb: Report.ParseLogEntries(String, IProgress(Of Integer), Boolean)
+- uid: UFEDLib.Report.ParseLogEntries*
+  name: ParseLogEntries
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseLogEntries_
+  commentId: Overload:UFEDLib.Report.ParseLogEntries
+  isSpec: "True"
+  fullName: UFEDLib.Report.ParseLogEntries
+  nameWithType: Report.ParseLogEntries
+- uid: UFEDLib.Report.ParseNotes(System.String,System.IProgress{System.Int32},System.Boolean)
+  name: ParseNotes(string, IProgress<int>, bool)
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseNotes_System_String_System_IProgress_System_Int32__System_Boolean_
+  commentId: M:UFEDLib.Report.ParseNotes(System.String,System.IProgress{System.Int32},System.Boolean)
+  name.vb: ParseNotes(String, IProgress(Of Integer), Boolean)
+  fullName: UFEDLib.Report.ParseNotes(string, System.IProgress<int>, bool)
+  fullName.vb: UFEDLib.Report.ParseNotes(String, System.IProgress(Of Integer), Boolean)
+  nameWithType: Report.ParseNotes(string, IProgress<int>, bool)
+  nameWithType.vb: Report.ParseNotes(String, IProgress(Of Integer), Boolean)
+- uid: UFEDLib.Report.ParseNotes*
+  name: ParseNotes
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseNotes_
+  commentId: Overload:UFEDLib.Report.ParseNotes
+  isSpec: "True"
+  fullName: UFEDLib.Report.ParseNotes
+  nameWithType: Report.ParseNotes
+- uid: UFEDLib.Report.ParseNotifications(System.String,System.IProgress{System.Int32},System.Boolean)
+  name: ParseNotifications(string, IProgress<int>, bool)
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseNotifications_System_String_System_IProgress_System_Int32__System_Boolean_
+  commentId: M:UFEDLib.Report.ParseNotifications(System.String,System.IProgress{System.Int32},System.Boolean)
+  name.vb: ParseNotifications(String, IProgress(Of Integer), Boolean)
+  fullName: UFEDLib.Report.ParseNotifications(string, System.IProgress<int>, bool)
+  fullName.vb: UFEDLib.Report.ParseNotifications(String, System.IProgress(Of Integer), Boolean)
+  nameWithType: Report.ParseNotifications(string, IProgress<int>, bool)
+  nameWithType.vb: Report.ParseNotifications(String, IProgress(Of Integer), Boolean)
+- uid: UFEDLib.Report.ParseNotifications*
+  name: ParseNotifications
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseNotifications_
+  commentId: Overload:UFEDLib.Report.ParseNotifications
+  isSpec: "True"
+  fullName: UFEDLib.Report.ParseNotifications
+  nameWithType: Report.ParseNotifications
 - uid: UFEDLib.Report.ParsePasswords(System.String,System.IProgress{System.Int32},System.Boolean)
   name: ParsePasswords(string, IProgress<int>, bool)
   href: api/UFEDLib.Report.html#UFEDLib_Report_ParsePasswords_System_String_System_IProgress_System_Int32__System_Boolean_
@@ -6398,6 +6683,22 @@ references:
   isSpec: "True"
   fullName: UFEDLib.Report.ParseUserAccounts
   nameWithType: Report.ParseUserAccounts
+- uid: UFEDLib.Report.ParseVoiceMails(System.String,System.IProgress{System.Int32},System.Boolean)
+  name: ParseVoiceMails(string, IProgress<int>, bool)
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseVoiceMails_System_String_System_IProgress_System_Int32__System_Boolean_
+  commentId: M:UFEDLib.Report.ParseVoiceMails(System.String,System.IProgress{System.Int32},System.Boolean)
+  name.vb: ParseVoiceMails(String, IProgress(Of Integer), Boolean)
+  fullName: UFEDLib.Report.ParseVoiceMails(string, System.IProgress<int>, bool)
+  fullName.vb: UFEDLib.Report.ParseVoiceMails(String, System.IProgress(Of Integer), Boolean)
+  nameWithType: Report.ParseVoiceMails(string, IProgress<int>, bool)
+  nameWithType.vb: Report.ParseVoiceMails(String, IProgress(Of Integer), Boolean)
+- uid: UFEDLib.Report.ParseVoiceMails*
+  name: ParseVoiceMails
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseVoiceMails_
+  commentId: Overload:UFEDLib.Report.ParseVoiceMails
+  isSpec: "True"
+  fullName: UFEDLib.Report.ParseVoiceMails
+  nameWithType: Report.ParseVoiceMails
 - uid: UFEDLib.Report.ParseWebBookmarks(System.String,System.IProgress{System.Int32},System.Boolean)
   name: ParseWebBookmarks(string, IProgress<int>, bool)
   href: api/UFEDLib.Report.html#UFEDLib_Report_ParseWebBookmarks_System_String_System_IProgress_System_Int32__System_Boolean_
