@@ -32,10 +32,18 @@ jobs:
     - name: Build project
       run: dotnet build --configuration Release --no-restore
 
+    - name: Create output directory
+      run: mkdir -p nupkgs
+
+    - name: Check current directory
+      run: pwd && ls -la
 
     - name: Pack the NuGet package
-      run: dotnet pack --configuration Release --no-build --version $VERSION --output nupkgs 
+      run: dotnet pack --configuration Release --output $GITHUB_WORKSPACE/nupkgs 
+
+    - name: List the contents of the output directory
+      run: ls -R $GITHUB_WORKSPACE/nupkgs
 
     - name: Publish to NuGet
-      run: dotnet nuget push "nupkgs/*.nupkg" --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }} --skip-duplicate
+      run: dotnet nuget push "$GITHUB_WORKSPACE/nupkgs/*.nupkg" --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }} --skip-duplicate
     
