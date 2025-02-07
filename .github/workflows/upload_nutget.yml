@@ -39,7 +39,7 @@ jobs:
       run: pwd && ls -la
 
     - name: Pack the NuGet package
-      run: dotnet pack --configuration Release --no-build --version $VERSION --output $GITHUB_WORKSPACE/nupkgs 
+      run: dotnet pack --configuration Release --version $VERSION --output $GITHUB_WORKSPACE/nupkgs 
 
     - name: List the contents of the output directory
       run: ls -R $GITHUB_WORKSPACE/nupkgs
