@@ -29,6 +29,7 @@ namespace UFEDLib
         public string Subject { get; set; }
         public DateTime TimeStamp { get; set; }
         public string UserMapping { get; set; }
+        public string ServiceIdentifier { get; set; }
         #endregion
 
         #region models
@@ -68,7 +69,11 @@ namespace UFEDLib
                         case "UserMapping":
                             result.UserMapping = field.Value.Trim();
                             break;
-                        
+
+                        case "ServiceIdentifier":
+                            result.ServiceIdentifier = field.Value.Trim();
+                            break;
+
                         case "Body":
                             result.Body = field.Value.Trim();
                             break;

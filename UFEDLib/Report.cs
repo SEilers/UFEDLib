@@ -146,12 +146,12 @@ namespace UFEDLib
             return ParseData<DeviceConnectivity>(filename, progress, debugAttributes);
         }
 
-        public static List<DeviceEvent> ParseDeviceDeviceEvent(string filename, IProgress<int> progress = null, bool debugAttributes = false)
+        public static List<DeviceEvent> ParseDeviceEvent(string filename, IProgress<int> progress = null, bool debugAttributes = false)
         {
             return ParseData<DeviceEvent>(filename, progress, debugAttributes);
         }
 
-        public static List<DeviceInfoEntry> ParseDeviceDeviceInfoEntry(string filename, IProgress<int> progress = null, bool debugAttributes = false)
+        public static List<DeviceInfoEntry> ParseDeviceInfoEntry(string filename, IProgress<int> progress = null, bool debugAttributes = false)
         {
             return ParseData<DeviceInfoEntry>(filename, progress, debugAttributes);
         }

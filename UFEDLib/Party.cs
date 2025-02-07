@@ -27,7 +27,8 @@ namespace UFEDLib
         public bool IsPhoneOwner { get; set; }
         public string Name { get; set; }
         public string Role { get; set; }
-        // public PartyStatus Status {get; set; }
+        public string Status { get; set; }
+        public string Distance { get; set; }
         #endregion
 
         #region models
@@ -110,6 +111,14 @@ namespace UFEDLib
 
                     case "IPAddress":
                         result.IPAddress = field.Value.Trim();
+                        break;
+
+                    case "Status":
+                        result.Status = field.Value.Trim();
+                        break;
+
+                    case "Distance":
+                        result.Distance = field.Value.Trim();
                         break;
 
                     case "IsPhoneOwner":

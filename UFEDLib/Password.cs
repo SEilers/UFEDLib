@@ -16,6 +16,10 @@ namespace UFEDLib
         }
 
         #region fields
+        public string Source { get; set; }
+        public string UserMapping { get; set; }
+
+        public string ServiceIdentifier { get; set; }
         public string AccessGroup { get; set; }
         public string Account { get; set; }
         // The password itself
@@ -27,6 +31,10 @@ namespace UFEDLib
 
         // enum with the following values: "Default", "Key", "Secret", "Token"
         public string Type { get; set; }
+
+        public DateTime DateCreated { get; set; }
+
+        public DateTime DateModified { get; set; }
         #endregion
 
         #region models
@@ -74,6 +82,18 @@ namespace UFEDLib
             {
                 switch (field.Attribute("name").Value)
                 {
+                    case "UserMapping":
+                        result.UserMapping = field.Value.Trim();
+                        break;
+
+                    case "Source":
+                        result.Source = field.Value.Trim();
+                        break;
+
+                    case "ServiceIdentifier":
+                        result.ServiceIdentifier = field.Value.Trim();
+                        break;
+
                     case "AccessGroup":
                         result.AccessGroup = field.Value.Trim();
                         break;
@@ -104,6 +124,16 @@ namespace UFEDLib
 
                     case "Type":
                         result.Type = field.Value.Trim();
+                        break;
+
+                    case "DateCreated":
+                        if (field.Value.Trim() != "")
+                            result.DateCreated = DateTime.Parse(field.Value.Trim());
+                        break;
+
+                    case "DateModified":
+                        if (field.Value.Trim() != "")
+                            result.DateModified = DateTime.Parse(field.Value.Trim());
                         break;
 
                     default:

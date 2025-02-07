@@ -18,11 +18,14 @@ namespace UFEDLib
         #region fields
         public string UserMapping { get; set; }
         public string Source { get; set; }
+
+        public string Account { get; set; }
         public string Body { get; set; }
         public DateTime Creation { get; set; }
         public string Folder { get; set; }
         public DateTime Modification { get; set; }
         public string PositionAddress { get; set; }
+        public string ServiceIdentifier { get; set; }
         public string Summary { get; set; }
         public string Title { get; set; }
         #endregion
@@ -65,6 +68,10 @@ namespace UFEDLib
                         result.Source = field.Value.Trim();
                         break;
 
+                    case "Account":
+                        result.Account = field.Value.Trim();
+                        break;
+
                     case "Body":
                         result.Body = field.Value.Trim();
                         break;
@@ -76,7 +83,11 @@ namespace UFEDLib
                     case "PositionAddress":
                         result.PositionAddress = field.Value.Trim();
                         break;
-      
+
+                    case "ServiceIdentifier":
+                        result.ServiceIdentifier = field.Value.Trim();
+                        break;
+
                     case "Summary":
                         result.Summary = field.Value.Trim();
                         break;

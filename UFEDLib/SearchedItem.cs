@@ -16,6 +16,10 @@ namespace UFEDLib
         }
 
         #region fields
+        public string UserMapping { get; set; }
+        public string ServiceIdentifier { get; set; }
+        public string Account { get; set; }
+        public string Origin { get; set; }
         public string PositionAddress { get; set; }
         public string SearchResults { get; set; }
         public string Source { get; set; }
@@ -68,6 +72,22 @@ namespace UFEDLib
             {
                 switch (field.Attribute("name").Value)
                 {
+                    case "UserMapping":
+                        result.UserMapping = field.Value.Trim();
+                        break;
+
+                    case "ServiceIdentifier":
+                        result.ServiceIdentifier = field.Value.Trim();
+                        break;
+
+                    case "Account":
+                        result.Account = field.Value.Trim();
+                        break;
+
+                    case "Origin":
+                        result.Origin = field.Value.Trim();
+                        break;
+
                     case "TimeStamp":
                         if (field.Value.Trim() != "")
                             result.TimeStamp = DateTime.Parse(field.Value.Trim());

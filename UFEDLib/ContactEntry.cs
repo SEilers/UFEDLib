@@ -26,6 +26,8 @@ namespace UFEDLib
         /// </summary>
         public string Domain { get; set; }
 
+        public string UserMapping { get; set; }
+
         /// <summary>
         /// Entry value (phone number or email string).
         /// </summary>
@@ -70,6 +72,10 @@ namespace UFEDLib
             {
                 switch (field.Attribute("name").Value)
                 {
+                    case "UserMapping":
+                        result.UserMapping = field.Value.Trim();
+                        break;
+
                     case "Value":
                         result.Value = field.Value.Trim();
                         break;

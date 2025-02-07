@@ -16,6 +16,9 @@ namespace UFEDLib
         }
 
         #region fields
+        public string Source { get; set; }
+        public string UserMapping { get; set; }
+        public DateTime TimeStamp { get; set; }
         public string BSSId { get; set; }
         public DateTime LastAutoConnection { get; set; }
         public DateTime LastConnection { get; set; }
@@ -61,6 +64,19 @@ namespace UFEDLib
             {
                 switch (field.Attribute("name").Value)
                 {
+                    case "UserMapping":
+                        result.UserMapping = field.Value.Trim();
+                        break;
+
+                    case "Source":
+                        result.Source = field.Value.Trim();
+                        break;
+
+                    case "TimeStamp":
+                        if (field.Value.Trim() != "")
+                            result.TimeStamp = DateTime.Parse(field.Value.Trim());
+                        break;
+
                     case "BSSId":
                         result.BSSId = field.Value.Trim();
                         break;

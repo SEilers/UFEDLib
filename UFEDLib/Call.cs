@@ -23,6 +23,8 @@ namespace UFEDLib
 
         public string Direction { get; set; }
 
+        public string DisconnectionCause { get; set; }
+
         public TimeSpan Duration { get; set; }
 
         public string NetworkCode { get; set; }
@@ -38,6 +40,8 @@ namespace UFEDLib
         public string Type { get; set; }
 
         public string UserMapping { get; set; }
+
+        public string ServiceIdentifier { get; set; }
 
         public bool VideoCall { get; set; }
         #endregion
@@ -94,35 +98,61 @@ namespace UFEDLib
                         case "Type":
                             result.Type = field.Value.Trim();
                             break;
+
+                        case "DisconnectionCause":
+                            result.DisconnectionCause = field.Value.Trim();
+                            break;
+
                         case "TimeStamp":
                             if (field.Value.Trim() != "")
                                 result.TimeStamp = DateTime.Parse(field.Value.Trim());
                             break;
+
                         case "Duration":
                             if (field.Value.Trim() != "")
                                 result.Duration = TimeSpan.Parse(field.Value.Trim());
                             break;
+
                         case "Source":
                             result.Source = field.Value.Trim();
                             break;
+
+                        case "UserMapping":
+                            result.UserMapping = field.Value.Trim();
+                            break;
+
                         case "Direction":
                             result.Direction = field.Value.Trim();
                             break;
+
                         case "Status":
                             result.Status = field.Value.Trim();
                             break;
+
                         case "NetworkName":
                             result.NetworkName = field.Value.Trim();
                             break;
+
                         case "NetworkCode":
                             result.NetworkCode = field.Value.Trim();
                             break;
+
                         case "VideoCall":
                             result.VideoCall = bool.Parse(field.Value.Trim());
                             break;
+
                         case "CountryCode":
                             result.CountryCode = field.Value.Trim();
                             break;
+
+                        case "Account":
+                            result.Account = field.Value.Trim();
+                            break;
+
+                        case "ServiceIdentifier":
+                            result.ServiceIdentifier = field.Value.Trim();
+                            break;
+
                         default:
                             if (debugAttributes)
                             {

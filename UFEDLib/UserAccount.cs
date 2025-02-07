@@ -18,6 +18,8 @@ namespace UFEDLib
 
 
         #region fields
+        public string UserMapping { get; set; }
+        public string ServiceIdentifier { get; set; }
         public string Id { get; set; }
         public string Name { get; set; }
         public string Password { get; set; }
@@ -104,6 +106,14 @@ namespace UFEDLib
             {
                 switch (field.Attribute("name").Value)
                 {
+                    case "UserMapping":
+                        result.UserMapping = field.Value.Trim();
+                        break;
+
+                    case "ServiceIdentifier":
+                        result.ServiceIdentifier = field.Value.Trim();
+                        break;
+
                     case "Id":
                         result.Id = field.Value.Trim();
                         break;

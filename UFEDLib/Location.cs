@@ -32,6 +32,13 @@ namespace UFEDLib
 
         public string Source { get; set; }
         public DateTime TimeStamp { get; set; }
+
+        public DateTime EndTime { get; set; }
+
+        public string Account { get; set; }
+
+        public string ServiceIdentifier { get; set; }
+
         public string Type { get; set; }
 
         public string UserMapping { get; set; }
@@ -96,6 +103,19 @@ namespace UFEDLib
                         case "TimeStamp":
                             if (field.Value.Trim() != "")
                                 result.TimeStamp = DateTime.Parse(field.Value.Trim());
+                            break;
+
+                        case "EndTime":
+                            if (field.Value.Trim() != "")
+                                result.EndTime = DateTime.Parse(field.Value.Trim());
+                            break;
+
+                        case "Account":
+                            result.Account = field.Value.Trim();
+                            break;
+
+                        case "ServiceIdentifier":
+                            result.ServiceIdentifier = field.Value.Trim();
                             break;
 
                         case "Name":

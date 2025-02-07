@@ -16,6 +16,7 @@ namespace UFEDLib
         }
 
         #region fields
+        public string Account { get; set; }
         public string Body { get; set; }
         public string Folder { get; set; }
         public string Priority { get; set; }
@@ -23,6 +24,7 @@ namespace UFEDLib
         public string Status { get; set; }
         public string Subject { get; set; }
         public DateTime TimeStamp { get; set; }
+        public string UserMapping { get; set; }
         #endregion
 
         #region models
@@ -104,6 +106,14 @@ namespace UFEDLib
 
                     case "Source":
                         result.Source = field.Value.Trim();
+                        break;
+
+                    case "UserMapping":
+                        result.UserMapping = field.Value.Trim();
+                        break;
+
+                    case "Account":
+                        result.Account = field.Value.Trim();
                         break;
 
                     default:

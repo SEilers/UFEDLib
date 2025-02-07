@@ -24,6 +24,8 @@ namespace UFEDLib
         public string Source { get; set; }
         public DateTime StartTime { get; set; }
         public string UserMapping { get; set; }
+
+        public string ChatType { get; set; }
         #endregion
 
         #region models
@@ -110,6 +112,10 @@ namespace UFEDLib
 
                     case "UserMapping":
                         result.UserMapping = field.Value.Trim();
+                        break;
+
+                    case "ChatType":
+                        result.ChatType = field.Value.Trim();
                         break;
 
                     default:

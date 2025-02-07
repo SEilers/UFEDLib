@@ -17,6 +17,7 @@ namespace UFEDLib
 
 
         #region fields
+        public string Account { get; set; }
         public DateTime EndTime { get; set; }
 
         public string Name { get; set; }
@@ -24,6 +25,8 @@ namespace UFEDLib
         public string Source { get; set; }
 
         public DateTime StartTime { get; set; }
+
+        public string UserMapping { get; set; }
         #endregion
 
         #region models
@@ -78,6 +81,14 @@ namespace UFEDLib
             {
                 switch (field.Attribute("name").Value)
                 {
+                    case "UserMapping":
+                        result.UserMapping = field.Value.Trim();
+                        break;
+
+                    case "Account":
+                        result.Account = field.Value.Trim();
+                        break;
+
                     case "Name":
                         result.Name = field.Value.Trim();
                         break;

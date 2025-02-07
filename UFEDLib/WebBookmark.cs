@@ -16,7 +16,8 @@ namespace UFEDLib
         }
 
         #region fields
-        public DateTime LastVisted { get; set; }
+        public string ServiceIdentifier { get; set; }
+        public DateTime LastVisited { get; set; }
         public string Path { get; set; }
         public string PositionAddress { get; set; }
         public string Source { get; set; }
@@ -56,6 +57,10 @@ namespace UFEDLib
                         result.Source = field.Value.Trim();
                         break;
 
+                    case "ServiceIdentifier":
+                        result.ServiceIdentifier = field.Value.Trim();
+                        break;
+
                     case "Path":
                         result.Path = field.Value.Trim();
                         break;
@@ -84,9 +89,9 @@ namespace UFEDLib
                             result.TimeStamp = DateTime.Parse(field.Value.Trim());
                         break;
 
-                    case "LastVisted":
+                    case "LastVisited":
                         if (field.Value.Trim() != "")
-                            result.LastVisted = DateTime.Parse(field.Value.Trim());
+                            result.LastVisited = DateTime.Parse(field.Value.Trim());
                         break;
 
                     default:

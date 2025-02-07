@@ -22,6 +22,8 @@ namespace UFEDLib
         public string Source { get; set; }
         public string UserMapping { get; set; }
         public string Word { get; set; }
+
+        public string UsagePattern { get; set; }
         #endregion
 
         #region Parsers
@@ -42,6 +44,18 @@ namespace UFEDLib
                 {
                     case "UserMapping":
                         result.UserMapping = field.Value.Trim();
+                        break;
+
+                    case "Source":
+                        result.Source = field.Value.Trim();
+                        break;
+
+                    case "Locale":
+                        result.Locale = field.Value.Trim();
+                        break;
+
+                    case "UsagePattern":
+                        result.UsagePattern = field.Value.Trim();
                         break;
 
                     case "Word":

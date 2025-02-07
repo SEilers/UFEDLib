@@ -17,6 +17,8 @@ namespace UFEDLib
 
         #region fields
 
+        public string Source { get; set; }
+
         public string AttachmentExtractedPath { get; set; }
         public string Charset { get; set; }
 
@@ -88,6 +90,10 @@ namespace UFEDLib
 
                     case "URL":
                         result.URL = field.Value.Trim();
+                        break;
+
+                    case "Source":
+                        result.Source = field.Value.Trim();
                         break;
 
                     default:

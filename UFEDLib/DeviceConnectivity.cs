@@ -78,6 +78,11 @@ namespace UFEDLib
                         result.ConnectivityNature = field.Value.Trim();
                         break;
 
+                    case "StartTime":
+                        if (field.Value.Trim() != "")
+                            result.StartTime = DateTime.Parse(field.Value.Trim());
+                        break;
+
                     default:
                         if (debugAttributes)
                         {

@@ -33,6 +33,10 @@ namespace UFEDLib
 
         public string Name { get; set; }
 
+        public string UserMapping { get; set; }
+
+        public string Identifier { get; set; }
+
         #endregion
 
         #region Parsers
@@ -56,6 +60,14 @@ namespace UFEDLib
                         {
                             result.ActivationCount = int.Parse(field.Value.Trim());
                         }
+                        break;
+
+                    case "UserMapping":
+                        result.UserMapping = field.Value.Trim();
+                        break;
+
+                    case "Identifier":
+                        result.Identifier = field.Value.Trim();
                         break;
 
                     case "Date":
