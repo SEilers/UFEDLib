@@ -35,8 +35,10 @@ namespace UFEDLib
             "Note",
             "Notification",
             "Password",
+            "PoweringEvent",
             "SearchedItem",
             "UserAccount",
+            "VisitedPage",
             "VoiceMail",
             "WebBookmark",
             "WirelessNetwork"

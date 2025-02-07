@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
@@ -25,13 +26,20 @@ namespace UFEDLib
         public string extractionId { get; set; }
         public void ParseAttributes(XElement element)
         {
-            this.id = element.Attribute("id").Value;
-            this.type = element.Attribute("type").Value;
-            this.deleted_state = element.Attribute("deleted_state").Value;
-            this.decoding_confidence = element.Attribute("decoding_confidence").Value;
-            this.isrelated = element.Attribute("isrelated").Value;
-            this.source_index = element.Attribute("source_index").Value;
-            this.extractionId = element.Attribute("extractionId").Value;
+            try
+            { 
+                this.id = element.Attribute("id").Value;
+                this.type = element.Attribute("type").Value;
+                this.deleted_state = element.Attribute("deleted_state").Value;
+                this.decoding_confidence = element.Attribute("decoding_confidence").Value;
+                this.isrelated = element.Attribute("isrelated").Value;
+                this.source_index = element.Attribute("source_index").Value;
+                this.extractionId = element.Attribute("extractionId").Value;
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError("ModelBase: Error parsing xml reader attributes " + ex.Message);
+            }
         }
     }
 }

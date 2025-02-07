@@ -18,18 +18,13 @@ namespace UFEDLib
         #region fields
 
         public string Source { get; set; }
-
+        public string UserMapping { get; set; }
         public string AttachmentExtractedPath { get; set; }
         public string Charset { get; set; }
-
         public string ContentType { get; set; }
-
         //public DataField Data { get; set;}
-
         public string Filename { get; set; }
-
         public string Title { get; set; }
-
         /// <summary>
         /// A URL string associated with the attachment.
         /// </summary>
@@ -94,6 +89,10 @@ namespace UFEDLib
 
                     case "Source":
                         result.Source = field.Value.Trim();
+                        break;
+
+                    case "UserMapping":
+                        result.UserMapping = field.Value.Trim();
                         break;
 
                     default:

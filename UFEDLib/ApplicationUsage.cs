@@ -27,6 +27,10 @@ namespace UFEDLib
 
         public DateTime LastLaunch { get; set; }
 
+        public DateTime StartTime { get; set; }
+
+        public DateTime EndTime { get; set; }
+
         public TimeSpan LastUsageDuration { get; set; }
 
         public int LaunchCount { get; set; }
@@ -34,6 +38,8 @@ namespace UFEDLib
         public string Name { get; set; }
 
         public string UserMapping { get; set; }
+
+        public string Source { get; set; }
 
         public string Identifier { get; set; }
 
@@ -66,6 +72,10 @@ namespace UFEDLib
                         result.UserMapping = field.Value.Trim();
                         break;
 
+                    case "Source":
+                        result.Source = field.Value.Trim();
+                        break;
+
                     case "Identifier":
                         result.Identifier = field.Value.Trim();
                         break;
@@ -73,6 +83,16 @@ namespace UFEDLib
                     case "Date":
                         if (field.Value.Trim() != "")
                             result.Date = DateTime.Parse(field.Value.Trim());
+                        break;
+
+                    case "StartTime":
+                        if (field.Value.Trim() != "")
+                            result.StartTime = DateTime.Parse(field.Value.Trim());
+                        break;
+
+                    case "EndTime":
+                        if (field.Value.Trim() != "")
+                            result.EndTime = DateTime.Parse(field.Value.Trim());
                         break;
 
                     case "LastLaunch":

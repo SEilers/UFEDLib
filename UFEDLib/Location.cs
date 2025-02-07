@@ -42,6 +42,12 @@ namespace UFEDLib
         public string Type { get; set; }
 
         public string UserMapping { get; set; }
+
+        public int AggregatedLocationsCount { get; set; }
+
+        public string AccountLocationAffiliation { get; set; }
+
+        public string DeviceLocationAffiliation { get; set; }
         #endregion
 
         #region models
@@ -154,6 +160,19 @@ namespace UFEDLib
                             result.PositionAddress = field.Value.Trim();
                             break;
 
+                        case "AggregatedLocationsCount":
+                            if(field.Value.Trim() != "")
+                                result.AggregatedLocationsCount = int.Parse( field.Value.Trim());
+                            break;
+
+                        case "AccountLocationAffiliation":
+                            result.AccountLocationAffiliation = field.Value.Trim();
+                            break;
+
+                        case "DeviceLocationAffiliation":
+                            result.DeviceLocationAffiliation = field.Value.Trim();
+                            break;
+
                         default:
                             if (debugAttributes)
                             {
@@ -162,10 +181,6 @@ namespace UFEDLib
                             break;
                     }
                 }
-
-
-
-
             }
             catch (Exception ex)
             {

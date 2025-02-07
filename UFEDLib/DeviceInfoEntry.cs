@@ -24,6 +24,8 @@ namespace UFEDLib
         public string EntryValue { get; set; }
 
         public string EntryCategory { get; set; }
+
+        public DateTime TimeStamp { get; set; }
         #endregion
 
         #region Parsers
@@ -60,6 +62,11 @@ namespace UFEDLib
 
                     case "EntryCategory":
                         result.EntryCategory = field.Value.Trim();
+                        break;
+
+                    case "TimeStamp":
+                        if (field.Value.Trim() != "")
+                            result.TimeStamp = DateTime.Parse(field.Value.Trim());
                         break;
 
                     default:

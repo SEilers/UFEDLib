@@ -18,12 +18,15 @@ namespace UFEDLib
         #region fields
         public string Source { get; set; }
         public string UserMapping { get; set; }
+        public string ServiceIdentifier { get; set; }
         public DateTime TimeStamp { get; set; }
+        public DateTime EndTime { get; set; }
         public string BSSId { get; set; }
         public DateTime LastAutoConnection { get; set; }
         public DateTime LastConnection { get; set; }
         public string SecurityMode { get; set; }
         public string SSId { get; set; }
+        public string NWConnectionType { get; set; }
         #endregion
 
         #region Parsers
@@ -72,9 +75,18 @@ namespace UFEDLib
                         result.Source = field.Value.Trim();
                         break;
 
+                    case "ServiceIdentifier":
+                        result.ServiceIdentifier = field.Value.Trim();
+                        break;
+
                     case "TimeStamp":
                         if (field.Value.Trim() != "")
                             result.TimeStamp = DateTime.Parse(field.Value.Trim());
+                        break;
+
+                    case "EndTime":
+                        if (field.Value.Trim() != "")
+                            result.EndTime = DateTime.Parse(field.Value.Trim());
                         break;
 
                     case "BSSId":
@@ -87,6 +99,10 @@ namespace UFEDLib
 
                     case "SecurityMode":
                         result.SecurityMode = field.Value.Trim();
+                        break;
+
+                    case "NWConnectionType":
+                        result.NWConnectionType = field.Value.Trim();
                         break;
 
                     case "LastConnection":

@@ -241,7 +241,7 @@ namespace UFEDLib
                                             if (!models.Contains(modelType))
                                             {
                                                 models.Add(modelType);
-                                                modelFound = true;
+                                                //modelFound = true;
                                             }
                                         }
 
@@ -258,7 +258,7 @@ namespace UFEDLib
                                                 }
                                             }
 
-                                            if (modelFound && reader.Depth == 2)
+                                            if (modelFound && reader.Depth == 2 && reader.IsStartElement())
                                             {
                                                 progress.Report(100);
                                                 models.Sort();
@@ -267,7 +267,7 @@ namespace UFEDLib
                                         }
                                         else
                                         {
-                                            if (modelFound && reader.Depth == 2)
+                                            if (modelFound && reader.Depth == 2 && reader.IsStartElement())
                                             {
                                                 models.Sort();
                                                 return models;
@@ -338,7 +338,7 @@ namespace UFEDLib
                                                     if (!models.Contains(modelType))
                                                     {
                                                         models.Add(modelType);
-                                                        modelFound = true;
+                                                        //modelFound = true;
                                                     }
                                                 }
 

@@ -16,8 +16,8 @@ namespace UFEDLib
         }
 
         #region fields
-
-        public DateTime DateDellivered { get; set; }
+        public string UserMapping { get; set; }
+        public DateTime DateDelivered { get; set; }
         public DateTime DatePlayed { get; set; }
         public DateTime DateRead { get; set; }
         public string Id { get; set; }
@@ -74,6 +74,10 @@ namespace UFEDLib
             {
                 switch (field.Attribute("name").Value)
                 {
+                    case "UserMapping":
+                        result.UserMapping = field.Value.Trim();
+                        break;
+
                     case "Id":
                         result.Id = field.Value.Trim();
                         break;
@@ -90,9 +94,9 @@ namespace UFEDLib
                         result.Role = field.Value.Trim();
                         break;
 
-                    case "DateDellivered":
+                    case "DateDelivered":
                         if (field.Value.Trim() != "")
-                            result.DateDellivered = DateTime.Parse(field.Value.Trim());
+                            result.DateDelivered = DateTime.Parse(field.Value.Trim());
                         break;
 
                     case "DateRead":

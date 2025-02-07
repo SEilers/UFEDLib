@@ -38,12 +38,11 @@ namespace UFEDLib
 
         #region multiModels
         public List<Attachment> Attachments { get; set; }
-
-
+        public List<Party> Participants { get; set; } = new List<Party>();
         #endregion
 
         #region Parsers
-        
+
 
         public static Note ParseModel(XElement element, bool debugAttributes = false)
         {
@@ -136,6 +135,10 @@ namespace UFEDLib
                     
                     case "Attachments":
                         result.Attachments = Attachment.ParseMultiModel(multiModelField, debugAttributes);
+                        break;
+
+                    case "Participants":
+                        result.Participants = Party.ParseMultiModel(multiModelField, debugAttributes);
                         break;
 
                     default:

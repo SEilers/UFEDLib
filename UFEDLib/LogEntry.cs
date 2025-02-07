@@ -19,8 +19,13 @@ namespace UFEDLib
         public string Source { get; set; }
         public string Identifier { get; set; }
         public DateTime TimeStamp { get; set; }
+        public DateTime EndTime { get; set; }
         public string Application { get; set; }
         public string Body { get; set; }
+        public string Severity { get; set; }
+        public int PID { get; set; }
+        public int TID { get; set; }
+        public int EffectiveUID { get; set; }
         #endregion
 
 
@@ -60,9 +65,33 @@ namespace UFEDLib
                         result.Body = field.Value.Trim();
                         break;
 
+                    case "Severity":
+                        result.Severity = field.Value.Trim();
+                        break;
+
+                    case "PID":
+                        if (field.Value.Trim() != "")
+                            result.PID = int.Parse(field.Value.Trim());
+                        break;
+
+                    case "TID":
+                        if (field.Value.Trim() != "")
+                            result.TID = int.Parse(field.Value.Trim());
+                        break;
+
+                    case "EffectiveUID":
+                        if (field.Value.Trim() != "")
+                            result.EffectiveUID = int.Parse(field.Value.Trim());
+                        break;
+
                     case "TimeStamp":
                         if (field.Value.Trim() != "")
                             result.TimeStamp = DateTime.Parse(field.Value.Trim());
+                        break;
+
+                    case "EndTime":
+                        if (field.Value.Trim() != "")
+                            result.EndTime = DateTime.Parse(field.Value.Trim());
                         break;
 
                     default:

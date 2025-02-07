@@ -16,11 +16,13 @@ namespace UFEDLib
         }
         public string UserMapping { get; set; }
         public string Source { get; set; }
+        public string Name { get; set; }
         public DateTime From { get; set; }
         public DateTime To { get; set; }
         public DateTime CreationTime { get; set; }
         public string SourceDeviceType { get; set; }
         public double DistanceTraveled { get; set; }
+        public double MaxSpeed { get; set; }
         public double FlightsClimbed { get; set; }
         public int TotalSampleCount { get; set; }
 
@@ -47,6 +49,10 @@ namespace UFEDLib
                         result.Source = field.Value.Trim();
                         break;
 
+                    case "Name":
+                        result.Name = field.Value.Trim();
+                        break;
+
                     case "SourceDeviceType":
                         result.SourceDeviceType = field.Value.Trim();
                         break;
@@ -69,6 +75,11 @@ namespace UFEDLib
                     case "DistanceTraveled":
                         if (field.Value.Trim() != "")
                             result.DistanceTraveled = double.Parse(field.Value.Trim());
+                        break;
+
+                    case "MaxSpeed":
+                        if (field.Value.Trim() != "")
+                            result.MaxSpeed = double.Parse(field.Value.Trim());
                         break;
 
                     case "FlightsClimbed":

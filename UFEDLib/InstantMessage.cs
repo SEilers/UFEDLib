@@ -18,50 +18,29 @@ namespace UFEDLib
 
         #region fields
         public string Body { get; set; }
-
         public string ChatId { get; set; }
-
         public DateTime DateDeleted { get; set; }
         public DateTime DateDelivered { get; set; }
-
         public DateTime DateRead { get; set; }
-
         public string DeletionReason { get; set; }
-
         public string Erased { get; set; }
-
         public string Folder { get; set; }
-
         public string FromIsOwner { get; set; }
-
         public string Id { get; set; }
-
         public string Identifier { get; set; }
-
         public string IsLocationSharing { get; set; }
-
         public string JumpTargetId { get; set; }
-
         public string Label { get; set; }
-
         public string Platform { get; set; }
-
         public string PositionAddress { get; set; }
-
         public string ServiceIdentifier { get; set; }
-
+        public string SMSC { get; set; }
         public string Source { get; set; }
-
         public string SourceApplication { get; set; }
-
         public string Status { get; set; }
-
         public string Subject { get; set; }
-
         public DateTime TimeStamp { get; set; }
-
         public string Type { get; set; }
-
         public string UserMapping { get; set; }
 
         #endregion
@@ -110,8 +89,8 @@ namespace UFEDLib
             InstantMessage result = new InstantMessage();
             result.ParseAttributes(xElement);
 
-
             var fieldElements = xElement.Elements(xNamespace + "field");
+            var modelFieldElements = xElement.Elements(xNamespace + "modelField");
             var multiFieldElements = xElement.Elements(xNamespace + "multiField");
             var multiModelFieldElements = xElement.Elements(xNamespace + "multiModelField");
 
@@ -124,73 +103,99 @@ namespace UFEDLib
                         case "Body":
                             result.Body = field.Value.Trim();
                             break;
+
                         case "Id":
                             result.Id = field.Value.Trim();
                             break;
+
                         case "Folder":
                             result.Folder = field.Value.Trim();
                             break;
+
                         case "SourceApplication":
                             result.SourceApplication = field.Value.Trim();
                             break;
+
                         case "TimeStamp":
                             if (field.Value.Trim() != "")
                                 result.TimeStamp = DateTime.Parse(field.Value.Trim());
                             break;
+
                         case "Subject":
                             result.Subject = field.Value.Trim();
                             break;
+
                         case "DeletionReason":
                             result.DeletionReason = field.Value.Trim();
                             break;
+
                         case "DateDeleted":
                             if (field.Value.Trim() != "")
                                 result.DateDeleted = DateTime.Parse(field.Value.Trim());
                             break;
+
                         case "DateRead":
                             if (field.Value.Trim() != "")
                                 result.DateRead = DateTime.Parse(field.Value.Trim());
                             break;
+
                         case "DateDelivered":
                             if (field.Value.Trim() != "")
                                 result.DateDelivered = DateTime.Parse(field.Value.Trim());
                             break;
+
                         case "Label":
                             result.Label = field.Value.Trim();
                             break;
+
                         case "Platform":
                             result.Platform = field.Value.Trim();
                             break;
+
                         case "PositionAddress":
                             result.PositionAddress = field.Value.Trim();
                             break;
+
                         case "ChatId":
                             result.ChatId = field.Value.Trim();
                             break;
+
                         case "IsLocationSharing":
                             result.IsLocationSharing = field.Value.Trim();
                             break;
+
                         case "Erased":
                             result.Erased = field.Value.Trim();
                             break;
+
                         case "Source":
                             result.Source = field.Value.Trim();
                             break;
+
                         case "FromIsOwner":
                             result.FromIsOwner = field.Value.Trim();
                             break;
+
                         case "Identifier":
                             result.Identifier = field.Value.Trim();
                             break;
+
                         case "ServiceIdentifier":
                             result.ServiceIdentifier = field.Value.Trim();
                             break;
+
+                        case "SMSC":
+                            result.SMSC = field.Value.Trim();
+                            break;
+
                         case "Status":
                             result.Status = field.Value.Trim();
                             break;
+
                         case "Type":
                             result.Type = field.Value.Trim();
                             break;
+
                         case "UserMapping":
                             result.UserMapping = field.Value.Trim();
                             break;
@@ -198,6 +203,19 @@ namespace UFEDLib
                             if (debugAttributes)
                             {
                                 Logger.LogAttribute("InstantMessage Parser: Unknown field: " + field.Attribute("name").Value);
+                            }
+                            break;
+                    }
+                }
+
+                foreach (var modelField in modelFieldElements)
+                {
+                    switch (modelField.Attribute("name").Value)
+                    {
+                        default:
+                            if (debugAttributes)
+                            {
+                                Logger.LogAttribute("InstantMessage Parser: Unknown modelField: " + modelField.Attribute("name").Value);
                             }
                             break;
                     }

@@ -15,14 +15,13 @@ namespace UFEDLib
             return "ContactPhoto";
         }
 
-
         #region fields
         /// <summary>
         /// Filename (if exists).
         /// </summary>
         public string Name { get; set; }
-
         public string Url { get; set; }
+        public string UserMapping { get; set; }
         #endregion
 
         #region Parsers
@@ -57,6 +56,9 @@ namespace UFEDLib
                 {
                     case "Name":
                         result.Name = field.Value.Trim();
+                        break;
+                    case "UserMapping":
+                        result.UserMapping = field.Value.Trim();
                         break;
                     default:
                         if (debugAttributes)

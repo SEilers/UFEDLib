@@ -21,6 +21,7 @@ namespace UFEDLib
         public string SubModule { get; set; }
         public string Action { get; set; }
         public string Identifier { get; set; }
+        public string ArtifactFamily { get; set; }
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
         #endregion
@@ -63,6 +64,10 @@ namespace UFEDLib
 
                     case "Identifier":
                         result.Identifier = field.Value.Trim();
+                        break;
+
+                    case "ArtifactFamily":
+                        result.ArtifactFamily = field.Value.Trim();
                         break;
 
                     case "StartTime":

@@ -18,6 +18,7 @@ namespace UFEDLib
         #region fields
         public string Account { get; set; }
         public string Body { get; set; }
+        public string EmailHeader { get; set; }
         public string Folder { get; set; }
         public string Priority { get; set; }
         public string Source { get; set; }
@@ -95,6 +96,10 @@ namespace UFEDLib
                         result.Body = field.Value.Trim();
                         break;
 
+                    case "EmailHeader":
+                        result.EmailHeader = field.Value.Trim();
+                        break;
+
                     case "TimeStamp":
                         if (field.Value.Trim() != "")
                             result.TimeStamp = DateTime.Parse(field.Value.Trim());
@@ -119,7 +124,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("EMail Parser: Unknown attribute: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("EMail Parser: Unknown field: " + field.Attribute("name").Value);
                         }
                         break;
                 }

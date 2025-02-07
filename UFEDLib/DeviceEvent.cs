@@ -17,6 +17,7 @@ namespace UFEDLib
         #region fields
         public string UserMapping { get; set; }
         public string Source { get; set; }
+        public string ServiceIdentifier { get; set; }
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
         public string Value { get; set; }
@@ -46,6 +47,10 @@ namespace UFEDLib
 
                     case "Source":
                         result.Source = field.Value.Trim();
+                        break;
+
+                    case "ServiceIdentifier":
+                        result.ServiceIdentifier = field.Value.Trim();
                         break;
 
                     case "Value":

@@ -15,16 +15,12 @@ namespace UFEDLib
         }
 
         #region fields
+        public string Account { get; set; }
         public string Key { get; set; }
-
         public DateTime LastUsedDate { get; set; }
         public string Source { get; set; }
         public string UserMapping { get; set; }
-
         public DateTime TimeStamp { get; set; }
-
-
-
         public string Value { get; set; }
         #endregion
 
@@ -50,6 +46,10 @@ namespace UFEDLib
 
                     case "Source":
                         result.Source = field.Value.Trim();
+                        break;
+
+                    case "Account":
+                        result.Account = field.Value.Trim();
                         break;
 
                     case "Key":

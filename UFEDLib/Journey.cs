@@ -19,14 +19,12 @@ namespace UFEDLib
         #region fields
         public string Account { get; set; }
         public DateTime EndTime { get; set; }
-
         public string Name { get; set; }
-
         public string Source { get; set; }
-
         public DateTime StartTime { get; set; }
-
         public string UserMapping { get; set; }
+
+        public string Type { get; set; }
         #endregion
 
         #region models
@@ -105,6 +103,10 @@ namespace UFEDLib
                     case "EndTime":
                         if (field.Value.Trim() != "")
                             result.EndTime = DateTime.Parse(field.Value.Trim());
+                        break;
+
+                    case "Type":
+                        result.Type = field.Value.Trim();
                         break;
 
                     default:
