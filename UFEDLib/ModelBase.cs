@@ -27,14 +27,14 @@ namespace UFEDLib
         public void ParseAttributes(XElement element)
         {
             try
-            { 
-                this.id = element.Attribute("id").Value;
-                this.type = element.Attribute("type").Value;
-                this.deleted_state = element.Attribute("deleted_state").Value;
-                this.decoding_confidence = element.Attribute("decoding_confidence").Value;
-                this.isrelated = element.Attribute("isrelated").Value;
-                this.source_index = element.Attribute("source_index").Value;
-                this.extractionId = element.Attribute("extractionId").Value;
+            {
+                this.id = element.Attribute("id")?.Value;
+                this.type = element.Attribute("type")?.Value;
+                this.deleted_state = element.Attribute("deleted_state")?.Value;
+                this.decoding_confidence = element.Attribute("decoding_confidence")?.Value;
+                this.isrelated = element.Attribute("isrelated")?.Value;
+                this.source_index = element.Attribute("source_index")?.Value;
+                this.extractionId = element.Attribute("extractionId")?.Value;
             }
             catch (Exception ex)
             {

@@ -50,16 +50,17 @@ namespace UFEDLib
             return result;
         }
 
-        public static Organization ParseModel(XElement organizationNode, bool debugAttributes = false)
+        public static Organization ParseModel(XElement element, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
 
             Organization result = new Organization();
-            result.ParseAttributes(organizationNode);
+            result.ParseAttributes(element);
 
-            var fieldElements = organizationNode.Elements(xNamespace + "field");
-            var multiFieldElements = organizationNode.Elements(xNamespace + "multiField");
-            var multiModelFieldElements = organizationNode.Elements(xNamespace + "multiModelField");
+            var fieldElements = element.Elements(xNamespace + "field");
+            var modelFieldElements = element.Elements(xNamespace + "modelField");
+            var multiFieldElements = element.Elements(xNamespace + "multiField");
+            var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
 
             foreach (var field in fieldElements)
             {
@@ -76,7 +77,20 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("Organizations Parser: Unhandled field: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("Organization Parser: Unhandled field: " + field.Attribute("name").Value);
+                        }
+                        break;
+                }
+            }
+
+            foreach (var modelField in modelFieldElements)
+            {
+                switch (modelField.Attribute("name").Value)
+                {
+                    default:
+                        if (debugAttributes)
+                        {
+                            Logger.LogAttribute("Organization Parser: Unknown modelField: " + modelField.Attribute("name").Value);
                         }
                         break;
                 }
@@ -90,7 +104,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("Organizations Parser: Unhandled field: " + multiField.Attribute("name").Value);
+                            Logger.LogAttribute("Organization Parser: Unhandled field: " + multiField.Attribute("name").Value);
                         }
                         break;
                 }
@@ -103,7 +117,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("Organizations Parser: Unhandled field: " + multiModelField.Attribute("name").Value);
+                            Logger.LogAttribute("Organization Parser: Unhandled field: " + multiModelField.Attribute("name").Value);
                         }
                         break;
                 }

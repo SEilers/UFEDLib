@@ -64,16 +64,17 @@ namespace UFEDLib
         }
 
 
-        public static Journey ParseModel(XElement journeyElement, bool debugAttributes = false)
+        public static Journey ParseModel(XElement element, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
 
             Journey result = new Journey();
-            result.ParseAttributes(journeyElement);
+            result.ParseAttributes(element);
 
-            var fieldElements = journeyElement.Elements(xNamespace + "field");
-            var modelFieldElements = journeyElement.Elements(xNamespace + "modelField");
-            var multiModelFieldElements = journeyElement.Elements(xNamespace + "multiModelField");
+            var fieldElements = element.Elements(xNamespace + "field");
+            var modelFieldElements = element.Elements(xNamespace + "modelField");
+            var multiFieldElements = element.Elements(xNamespace + "multiField");
+            var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
 
             foreach (var field in fieldElements)
             {
@@ -136,6 +137,19 @@ namespace UFEDLib
                         if (debugAttributes)
                         {
                             Logger.LogAttribute("Journey Parser: Unhandled modelField: " + modelFieldElement.Attribute("name").Value);
+                        }
+                        break;
+                }
+            }
+
+            foreach (var multiField in multiFieldElements)
+            {
+                switch (multiField.Attribute("name").Value)
+                {
+                    default:
+                        if (debugAttributes)
+                        {
+                            Logger.LogAttribute("Journey Parser: Unknown multiField: " + multiField.Attribute("name").Value);
                         }
                         break;
                 }

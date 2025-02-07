@@ -28,8 +28,10 @@ namespace UFEDLib
         public string RelatedApplication { get; set; }
         public string ServiceIdentifier { get; set; }
 
-        
+        #endregion
 
+
+        #region Parsers
         public static Cookie ParseModel(XElement element, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
@@ -38,6 +40,7 @@ namespace UFEDLib
             result.ParseAttributes(element);
 
             var fieldElements = element.Elements(xNamespace + "field");
+            var modelFieldElements = element.Elements(xNamespace + "modelField");
             var multiFieldElements = element.Elements(xNamespace + "multiField");
             var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
 
@@ -96,6 +99,19 @@ namespace UFEDLib
                         if (debugAttributes)
                         {
                             Logger.LogAttribute("Cookie Parser: Unknown field: " + field.Attribute("name").Value);
+                        }
+                        break;
+                }
+            }
+
+            foreach (var modelField in modelFieldElements)
+            {
+                switch (modelField.Attribute("name").Value)
+                {
+                    default:
+                        if (debugAttributes)
+                        {
+                            Logger.LogAttribute("Cookie Parser: Unknown modelField: " + modelField.Attribute("name").Value);
                         }
                         break;
                 }

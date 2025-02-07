@@ -212,6 +212,16 @@ namespace UFEDLib
                 {
                     switch (modelField.Attribute("name").Value)
                     {
+                        case "Attachment":
+                            result.Attachment = Attachment.ParseModel(modelField, debugAttributes);
+                            break;
+                        case "From":
+                            result.From = Party.ParseModel(modelField, debugAttributes);
+                            break;
+                        case "Position":
+                            result.Position = Coordinate.ParseModel(modelField, debugAttributes);
+                            break;
+
                         default:
                             if (debugAttributes)
                             {
@@ -225,15 +235,15 @@ namespace UFEDLib
                 {
                     switch (multiField.Attribute("name").Value)
                     {
-                        case "Attachment":
-                            result.Attachment = Attachment.ParseModel(multiField, debugAttributes);
-                            break;
-                        case "From":
-                            result.From = Party.ParseModel(multiField, debugAttributes);
-                            break;
-                        case "Position":
-                            result.Position = Coordinate.ParseModel(multiField, debugAttributes);
-                            break;
+                        //case "Attachment":
+                        //    result.Attachment = Attachment.ParseModel(multiField, debugAttributes);
+                        //    break;
+                        //case "From":
+                        //    result.From = Party.ParseModel(multiField, debugAttributes);
+                        //    break;
+                        //case "Position":
+                        //    result.Position = Coordinate.ParseModel(multiField, debugAttributes);
+                        //    break;
                         case "JumpTargetId":
                             result.JumpTargetId = multiField.Value.Trim();
                             break;

@@ -90,16 +90,17 @@ namespace UFEDLib
 
             return result;
         }
-        public static UserAccount ParseModel(XElement userAccountNode, bool debugAttributes = false)
+        public static UserAccount ParseModel(XElement element, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
 
             UserAccount result = new UserAccount();
-            result.ParseAttributes(userAccountNode);
+            result.ParseAttributes(element);
 
-            var fieldElements = userAccountNode.Elements(xNamespace + "field");
-            var multiFieldElements = userAccountNode.Elements(xNamespace + "multiField");
-            var multiModelFieldElements = userAccountNode.Elements(xNamespace + "multiModelField");
+            var fieldElements = element.Elements(xNamespace + "field");
+            var modelFieldElements = element.Elements(xNamespace + "modelField");
+            var multiFieldElements = element.Elements(xNamespace + "multiField");
+            var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
 
 
             foreach (var field in fieldElements)
@@ -151,6 +152,19 @@ namespace UFEDLib
                         if (debugAttributes)
                         {
                             Logger.LogAttribute("UserAccount Parser: Unhandled field: " + field.Attribute("name").Value);
+                        }
+                        break;
+                }
+            }
+
+            foreach (var modelField in modelFieldElements)
+            {
+                switch (modelField.Attribute("name").Value)
+                {
+                    default:
+                        if (debugAttributes)
+                        {
+                            Logger.LogAttribute("UserAccount Parser: Unknown modelField: " + modelField.Attribute("name").Value);
                         }
                         break;
                 }

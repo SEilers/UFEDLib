@@ -61,16 +61,17 @@ namespace UFEDLib
 
             return result;
         }
-        public static EMail ParseModel(XElement emailNode, bool debugAttributes = false)
+        public static EMail ParseModel(XElement element, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
 
             EMail result = new EMail();
-            result.ParseAttributes(emailNode);
+            result.ParseAttributes(element);
 
-            var fieldElements = emailNode.Elements(xNamespace + "field");
-            var multiFieldElements = emailNode.Elements(xNamespace + "multiField");
-            var multiModelFieldElements = emailNode.Elements(xNamespace + "multiModelField");
+            var fieldElements = element.Elements(xNamespace + "field");
+            var modelFieldElements = element.Elements(xNamespace + "modelField");
+            var multiFieldElements = element.Elements(xNamespace + "multiField");
+            var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
 
             foreach (var field in fieldElements)
             {
@@ -125,6 +126,23 @@ namespace UFEDLib
                         if (debugAttributes)
                         {
                             Logger.LogAttribute("EMail Parser: Unknown field: " + field.Attribute("name").Value);
+                        }
+                        break;
+                }
+            }
+
+            foreach (var modelField in modelFieldElements)
+            {
+                switch (modelField.Attribute("name").Value)
+                {
+                    case "From":
+                        result.From = Party.ParseModel(modelField);
+                        break;
+
+                    default:
+                        if (debugAttributes)
+                        {
+                            Logger.LogAttribute("EMail Parser: Unknown modelField: " + modelField.Attribute("name").Value);
                         }
                         break;
                 }

@@ -78,16 +78,17 @@ namespace UFEDLib
             return result;
         }
 
-        public static StreetAddress ParseModel(XElement streetAddressNode, bool debugAttributes = false)
+        public static StreetAddress ParseModel(XElement element, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
 
             StreetAddress result = new StreetAddress();
-            result.ParseAttributes(streetAddressNode);
+            result.ParseAttributes(element);
 
-            var fieldElements = streetAddressNode.Elements(xNamespace + "field");
-            var multiFieldElements = streetAddressNode.Elements(xNamespace + "multiField");
-            var multiModelFieldElements = streetAddressNode.Elements(xNamespace + "multiModelField");
+            var fieldElements = element.Elements(xNamespace + "field");
+            var modelFieldElements = element.Elements(xNamespace + "modelField");
+            var multiFieldElements = element.Elements(xNamespace + "multiField");
+            var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
 
 
             foreach (var field in fieldElements)
@@ -147,7 +148,19 @@ namespace UFEDLib
                 {
                     Console.WriteLine("Error parsing field elements in StreetAddress Parser" + ex.ToString());
                 }
+            }
 
+            foreach (var modelField in modelFieldElements)
+            {
+                switch (modelField.Attribute("name").Value)
+                {
+                    default:
+                        if (debugAttributes)
+                        {
+                            Logger.LogAttribute("StreetAddress Parser: Unknown modelField: " + modelField.Attribute("name").Value);
+                        }
+                        break;
+                }
             }
 
             foreach (var multiField in multiFieldElements)

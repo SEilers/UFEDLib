@@ -67,16 +67,17 @@ namespace UFEDLib
             return result;
         }
 
-        public static Password ParseModel(XElement passwordElement, bool debugAttributes = false)
+        public static Password ParseModel(XElement element, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
 
             Password result = new Password();
-            result.ParseAttributes(passwordElement);
+            result.ParseAttributes(element);
 
-            var fieldElements = passwordElement.Elements(xNamespace + "field");
-            var multiFieldElements = passwordElement.Elements(xNamespace + "multiField");
-            var multiModelFieldElements = passwordElement.Elements(xNamespace + "multiModelField");
+            var fieldElements = element.Elements(xNamespace + "field");
+            var modelFieldElements = element.Elements(xNamespace + "modelField");
+            var multiFieldElements = element.Elements(xNamespace + "multiField");
+            var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
 
             foreach (var field in fieldElements)
             {
@@ -140,6 +141,19 @@ namespace UFEDLib
                         if (debugAttributes)
                         {
                             Logger.LogAttribute("Password Parser: Unhandled field: " + field.Attribute("name").Value);
+                        }
+                        break;
+                }
+            }
+
+            foreach (var modelField in modelFieldElements)
+            {
+                switch (modelField.Attribute("name").Value)
+                {
+                    default:
+                        if (debugAttributes)
+                        {
+                            Logger.LogAttribute("Password Parser: Unknown modelField: " + modelField.Attribute("name").Value);
                         }
                         break;
                 }

@@ -57,16 +57,17 @@ namespace UFEDLib
 
             return result;
         }
-        public static SearchedItem ParseModel(XElement searchedItemElement, bool debugAttributes = false)
+        public static SearchedItem ParseModel(XElement element, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
 
             SearchedItem result = new SearchedItem();
-            result.ParseAttributes(searchedItemElement);
+            result.ParseAttributes(element);
 
-            var fieldElements = searchedItemElement.Elements(xNamespace + "field");
-            var multiFieldElements = searchedItemElement.Elements(xNamespace + "multiField");
-            var multiModelFieldElements = searchedItemElement.Elements(xNamespace + "multiModelField");
+            var fieldElements = element.Elements(xNamespace + "field");
+            var modelFieldElements = element.Elements(xNamespace + "modelField");
+            var multiFieldElements = element.Elements(xNamespace + "multiField");
+            var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
 
             foreach (var field in fieldElements)
             {
@@ -117,6 +118,19 @@ namespace UFEDLib
                         if (debugAttributes)
                         {
                             Logger.LogAttribute("SearchedItem Parser: Unhandled field: " + field.Attribute("name").Value);
+                        }
+                        break;
+                }
+            }
+
+            foreach (var modelField in modelFieldElements)
+            {
+                switch (modelField.Attribute("name").Value)
+                {
+                    default:
+                        if (debugAttributes)
+                        {
+                            Logger.LogAttribute("SearchedItem Parser: Unknown modelField: " + modelField.Attribute("name").Value);
                         }
                         break;
                 }

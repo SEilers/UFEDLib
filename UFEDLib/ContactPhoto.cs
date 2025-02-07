@@ -41,14 +41,18 @@ namespace UFEDLib
             return result;
         }
 
-        public static ContactPhoto ParseModel(XElement contactNode, bool debugAttributes = false)
+        public static ContactPhoto ParseModel(XElement element, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
 
             ContactPhoto result = new ContactPhoto();
-            result.ParseAttributes(contactNode);
+            result.ParseAttributes(element);
 
-            var fieldElements = contactNode.Elements(xNamespace + "field");
+            var fieldElements = element.Elements(xNamespace + "field");
+            var modelFieldElements = element.Elements(xNamespace + "modelField");
+            var multiFieldElements = element.Elements(xNamespace + "multiField");
+            var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
+
 
             foreach (var field in fieldElements)
             {
@@ -69,7 +73,20 @@ namespace UFEDLib
                 }
             }
 
-            foreach (var multiField in contactNode.Elements(xNamespace + "multiField"))
+            foreach (var modelField in modelFieldElements)
+            {
+                switch (modelField.Attribute("name").Value)
+                {
+                    default:
+                        if (debugAttributes)
+                        {
+                            Logger.LogAttribute("Contact Photo Parser: Unknown modelField: " + modelField.Attribute("name").Value);
+                        }
+                        break;
+                }
+            }
+
+            foreach (var multiField in multiFieldElements)
             {
                 switch (multiField.Attribute("name").Value)
                 {
@@ -82,20 +99,20 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("Contact PhotoParser: Unhandled multiField: " + multiField.Attribute("name").Value);
+                            Logger.LogAttribute("Contact Photo Parser: Unhandled multiField: " + multiField.Attribute("name").Value);
                         }
                         break;
                 }
             }
 
-            foreach (var multiModelField in contactNode.Elements(xNamespace + "multiModelField"))
+            foreach (var multiModelField in multiModelFieldElements)
             {
                 switch (multiModelField.Attribute("name").Value)
                 {
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("Contact PhotoParser: Unhandled multiModelField: " + multiModelField.Attribute("name").Value);
+                            Logger.LogAttribute("Contact Photo Parser: Unhandled multiModelField: " + multiModelField.Attribute("name").Value);
                         }
                         break;
                 }

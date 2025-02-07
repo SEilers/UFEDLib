@@ -37,6 +37,7 @@ namespace UFEDLib
             "Password",
             "PoweringEvent",
             "SearchedItem",
+            "User",
             "UserAccount",
             "VisitedPage",
             "VoiceMail",
@@ -197,6 +198,7 @@ namespace UFEDLib
         {
             return ParseData<Note>(filename, progress, debugAttributes);
         }
+        
         public static List<Notification> ParseNotifications(string filename, IProgress<int> progress = null, bool debugAttributes = false)
         {
             return ParseData<Notification>(filename, progress, debugAttributes);
@@ -207,18 +209,35 @@ namespace UFEDLib
             return ParseData<Password>(filename, progress, debugAttributes);
         }
 
+        public static List<PoweringEvent> ParsePoweringEvents(string filename, IProgress<int> progress = null, bool debugAttributes = false)
+        {
+            return ParseData<PoweringEvent>(filename, progress, debugAttributes);
+        }
+
         public static List<SearchedItem> ParseSearchedItems(string filename, IProgress<int> progress = null, bool debugAttributes = false)
         {
             return ParseData<SearchedItem>(filename, progress, debugAttributes);
         }
 
-        public static List<VoiceMail> ParseVoiceMails(string filename, IProgress<int> progress = null, bool debugAttributes = false)
+        
+        public static List<User> ParseUsers(string filename, IProgress<int> progress = null, bool debugAttributes = false)
         {
-            return ParseData<VoiceMail>(filename, progress, debugAttributes);
+            return ParseData<User>(filename, progress, debugAttributes);
         }
+
         public static List<UserAccount> ParseUserAccounts(string filename, IProgress<int> progress = null, bool debugAttributes = false)
         {
             return ParseData<UserAccount>(filename, progress, debugAttributes);
+        }
+
+        public static List<VisitedPage> ParseVisitedPages(string filename, IProgress<int> progress = null, bool debugAttributes = false)
+        {
+            return ParseData<VisitedPage>(filename, progress, debugAttributes);
+        }
+
+        public static List<VoiceMail> ParseVoiceMails(string filename, IProgress<int> progress = null, bool debugAttributes = false)
+        {
+            return ParseData<VoiceMail>(filename, progress, debugAttributes);
         }
 
         public static List<WebBookmark> ParseWebBookmarks(string filename, IProgress<int> progress = null, bool debugAttributes = false)

@@ -109,16 +109,17 @@ namespace UFEDLib
         }
 
 
-        public static Contact ParseModel(XElement contactNode, bool debugAttributes = false)
+        public static Contact ParseModel(XElement element, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
 
             Contact result = new Contact();
-            result.ParseAttributes(contactNode);
+            result.ParseAttributes(element);
 
-            var fieldElements = contactNode.Elements(xNamespace + "field");
-            var multiFieldElements = contactNode.Elements(xNamespace + "multiField");
-            var multiModelFieldElements = contactNode.Elements(xNamespace + "multiModelField");
+            var fieldElements = element.Elements(xNamespace + "field");
+            var modelFieldElements = element.Elements(xNamespace + "modelField");
+            var multiFieldElements = element.Elements(xNamespace + "multiField");
+            var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
 
             foreach (var field in fieldElements)
             {
@@ -184,6 +185,19 @@ namespace UFEDLib
                         {
                             string debugAttrubuteText = "Contact Parser: Unknown field: " + field.Attribute("name").Value;
                             Logger.LogAttribute(debugAttrubuteText);
+                        }
+                        break;
+                }
+            }
+
+            foreach (var modelField in modelFieldElements)
+            {
+                switch (modelField.Attribute("name").Value)
+                {
+                    default:
+                        if (debugAttributes)
+                        {
+                            Logger.LogAttribute("Contact Parser: Unknown modelField: " + modelField.Attribute("name").Value);
                         }
                         break;
                 }

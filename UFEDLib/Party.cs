@@ -59,16 +59,17 @@ namespace UFEDLib
             return result;
         }
 
-        public static Party ParseModel(XElement xElement, bool debugAttributes = false)
+        public static Party ParseModel(XElement element, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
 
             Party result = new Party();
-            result.ParseAttributes(xElement);
+            result.ParseAttributes(element);
 
-            var fieldElements = xElement.Elements(xNamespace + "field");
-            var multiFieldElements = xElement.Elements(xNamespace + "multiField");
-            var multiModelFieldElements = xElement.Elements(xNamespace + "multiModelField");
+            var fieldElements = element.Elements(xNamespace + "field");
+            var modelFieldElements = element.Elements(xNamespace + "modelField");
+            var multiFieldElements = element.Elements(xNamespace + "multiField");
+            var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
 
             foreach (var field in fieldElements)
             {
@@ -136,6 +137,19 @@ namespace UFEDLib
                         if (debugAttributes)
                         {
                             Logger.LogAttribute("Party Parser: Unknown field: " + field.Attribute("name").Value);
+                        }
+                        break;
+                }
+            }
+
+            foreach (var modelField in modelFieldElements)
+            {
+                switch (modelField.Attribute("name").Value)
+                {
+                    default:
+                        if (debugAttributes)
+                        {
+                            Logger.LogAttribute("Party Parser: Unknown modelField: " + modelField.Attribute("name").Value);
                         }
                         break;
                 }

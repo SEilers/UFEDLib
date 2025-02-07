@@ -45,13 +45,17 @@ namespace UFEDLib
             return result;
         }
 
-        public static Coordinate ParseModel(XElement coordinateElement, bool debugAttributes = false)
+        public static Coordinate ParseModel(XElement element, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
             Coordinate result = new Coordinate();
-            result.ParseAttributes(coordinateElement);
+            result.ParseAttributes(element);
 
-            var fieldElements = coordinateElement.Elements(xNamespace + "field");
+            var fieldElements = element.Elements(xNamespace + "field");
+            var modelFieldElements = element.Elements(xNamespace + "modelField");
+            var multiFieldElements = element.Elements(xNamespace + "multiField");
+            var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
+
 
             foreach (var fieldElement in fieldElements)
             {
@@ -108,8 +112,21 @@ namespace UFEDLib
 
             }
 
+            foreach (var modelField in modelFieldElements)
+            {
+                switch (modelField.Attribute("name").Value)
+                {
+                    default:
+                        if (debugAttributes)
+                        {
+                            Logger.LogAttribute("Coordinate Parser: Unknown modelField: " + modelField.Attribute("name").Value);
+                        }
+                        break;
+                }
+            }
 
-            foreach (var multiField in coordinateElement.Elements(xNamespace + "multiField"))
+
+            foreach (var multiField in multiFieldElements)
             {
                 try
                 {
@@ -129,7 +146,7 @@ namespace UFEDLib
                 }
             }
 
-            foreach (var multiModelField in coordinateElement.Elements(xNamespace + "multiModelField"))
+            foreach (var multiModelField in multiModelFieldElements)
             {
                 try
                 {

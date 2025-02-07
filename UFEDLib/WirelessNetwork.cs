@@ -52,16 +52,17 @@ namespace UFEDLib
             return result;
         }
 
-        public static WirelessNetwork ParseModel(XElement wirelessNetworkNode, bool debugAttributes = false)
+        public static WirelessNetwork ParseModel(XElement element, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
 
             WirelessNetwork result = new WirelessNetwork();
-            result.ParseAttributes(wirelessNetworkNode);
+            result.ParseAttributes(element);
 
-            var fieldElements = wirelessNetworkNode.Elements(xNamespace + "field");
-            var multiFieldElements = wirelessNetworkNode.Elements(xNamespace + "multiField");
-            var multiModelFieldElements = wirelessNetworkNode.Elements(xNamespace + "multiModelField");
+            var fieldElements = element.Elements(xNamespace + "field");
+            var modelFieldElements = element.Elements(xNamespace + "modelField");
+            var multiFieldElements = element.Elements(xNamespace + "multiField");
+            var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
 
             foreach (var field in fieldElements)
             {
@@ -119,6 +120,19 @@ namespace UFEDLib
                         if (debugAttributes)
                         {
                             Logger.LogAttribute("WirelessNetwork Parser: Unhandled field: " + field.Attribute("name").Value);
+                        }
+                        break;
+                }
+            }
+
+            foreach (var modelField in modelFieldElements)
+            {
+                switch (modelField.Attribute("name").Value)
+                {
+                    default:
+                        if (debugAttributes)
+                        {
+                            Logger.LogAttribute("WirelessNetwork Parser: Unknown modelField: " + modelField.Attribute("name").Value);
                         }
                         break;
                 }

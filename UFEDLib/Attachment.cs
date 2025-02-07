@@ -48,16 +48,17 @@ namespace UFEDLib
             return result;
         }
 
-        public static Attachment ParseModel(XElement attachmentNode, bool debugAttributes = false)
+        public static Attachment ParseModel(XElement element, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
 
             Attachment result = new Attachment();
-            result.ParseAttributes(attachmentNode);
+            result.ParseAttributes(element);
 
-            var fieldElements = attachmentNode.Elements(xNamespace + "field");
-            var multiFieldElements = attachmentNode.Elements(xNamespace + "multiField");
-            var multiModelFieldElements = attachmentNode.Elements(xNamespace + "multiModelField");
+            var fieldElements = element.Elements(xNamespace + "field");
+            var modelFieldElements = element.Elements(xNamespace + "modelField");
+            var multiFieldElements = element.Elements(xNamespace + "multiField");
+            var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
 
             foreach (var field in fieldElements)
             {
@@ -98,7 +99,20 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("AttachmentParser: Unknown field: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("Attachment Parser: Unknown field: " + field.Attribute("name").Value);
+                        }
+                        break;
+                }
+            }
+
+            foreach (var modelField in modelFieldElements)
+            {
+                switch (modelField.Attribute("name").Value)
+                {
+                    default:
+                        if (debugAttributes)
+                        {
+                            Logger.LogAttribute("Attachment Parser: Unknown modelField: " + modelField.Attribute("name").Value);
                         }
                         break;
                 }
@@ -111,7 +125,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("AttachmentParser: Unknown multiField: " + multiField.Attribute("name").Value);
+                            Logger.LogAttribute("Attachment Parser: Unknown multiField: " + multiField.Attribute("name").Value);
                         }
                         break;
                 }
@@ -124,7 +138,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("AttachmentParser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
+                            Logger.LogAttribute("Attachment Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
                         }
                         break;
                 }

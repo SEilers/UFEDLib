@@ -82,15 +82,18 @@ namespace UFEDLib
             return result;
         }
 
-        public static Location ParseModel(XElement locationElelment, bool debugAttributes = false)
+        public static Location ParseModel(XElement element, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
             
             Location result = new Location();
-            result.ParseAttributes(locationElelment);
+            result.ParseAttributes(element);
 
-            var fieldElements = locationElelment.Elements(xNamespace + "field");
-            var modelFieldElements = locationElelment.Elements(xNamespace + "modelField");
+            var fieldElements = element.Elements(xNamespace + "field");
+            var modelFieldElements = element.Elements(xNamespace + "modelField");
+            var multiFieldElements = element.Elements(xNamespace + "multiField");
+            var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
+
 
             try
             {
@@ -230,7 +233,20 @@ namespace UFEDLib
                 }
             }
 
-            foreach (var multiModelField in locationElelment.Elements(xNamespace + "multiModelField"))
+            foreach (var multiField in multiFieldElements)
+            {
+                switch (multiField.Attribute("name").Value)
+                {
+                    default:
+                        if (debugAttributes)
+                        {
+                            Logger.LogAttribute("Location Parser: Unhandled multiField: " + multiField.Attribute("name").Value);
+                        }
+                        break;
+                }
+            }
+
+            foreach (var multiModelField in multiModelFieldElements)
             {
                 switch (multiModelField.Attribute("name").Value)
                 {
