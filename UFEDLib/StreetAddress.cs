@@ -139,7 +139,7 @@ namespace UFEDLib
                         default:
                             if (debugAttributes)
                             {
-                                Logger.LogAttribute("StreetAddress Parser: Unhandled field: " + field.Attribute("name").Value);
+                                Logger.LogAttribute("StreetAddress Parser: Unknown field: " + field.Attribute("name").Value);
                             }
                             break;
                     }
@@ -170,7 +170,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("StreetAddress Parser: Unhandled multiField: " + multiField.Attribute("name").Value);
+                            Logger.LogAttribute("StreetAddress Parser: Unknown multiField: " + multiField.Attribute("name").Value);
                         }
                         break;
                 }
@@ -183,7 +183,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("StreetAddress Parser: Unhandled multiModelField: " + multiModelField.Attribute("name").Value);
+                            Logger.LogAttribute("StreetAddress Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
                         }
                         break;
                 }

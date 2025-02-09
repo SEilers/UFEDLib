@@ -140,7 +140,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("Password Parser: Unhandled field: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("Password Parser: Unknown field: " + field.Attribute("name").Value);
                         }
                         break;
                 }
@@ -166,7 +166,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("Password Parser: Unhandled multiField: " + multiField.Attribute("name").Value);
+                            Logger.LogAttribute("Password Parser: Unknown multiField: " + multiField.Attribute("name").Value);
                         }
                         break;
                 }
@@ -179,7 +179,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("Password Parser: Unhandled multiModelField: " + multiModelField.Attribute("name").Value);
+                            Logger.LogAttribute("Password Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
                         }
                         break;
                 }

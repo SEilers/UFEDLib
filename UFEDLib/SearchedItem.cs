@@ -105,11 +105,7 @@ namespace UFEDLib
                     case "SearchResult":
                         result.SearchResults = field.Value.Trim();
                         break;
-
-                    case "Position":
-                        result.Position = Coordinate.ParseModel(field);
-                        break;
-
+          
                     case "PositionAddress":
                         result.PositionAddress = field.Value.Trim();
                         break;
@@ -117,7 +113,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("SearchedItem Parser: Unhandled field: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("SearchedItem Parser: Unknown field: " + field.Attribute("name").Value);
                         }
                         break;
                 }
@@ -127,6 +123,10 @@ namespace UFEDLib
             {
                 switch (modelField.Attribute("name").Value)
                 {
+                    case "Position":
+                        result.Position = Coordinate.ParseModel(modelField);
+                        break;
+
                     default:
                         if (debugAttributes)
                         {
@@ -143,7 +143,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("SearchedItem Parser: Unhandled multiField: " + multiField.Attribute("name").Value);
+                            Logger.LogAttribute("SearchedItem Parser: Unknown multiField: " + multiField.Attribute("name").Value);
                         }
                         break;
                 }
@@ -156,7 +156,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("SearchedItem Parser: Unhandled multiModelField: " + multiModelField.Attribute("name").Value);
+                            Logger.LogAttribute("SearchedItem Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
                         }
                         break;
                 }

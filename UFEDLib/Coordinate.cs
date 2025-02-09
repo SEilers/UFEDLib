@@ -100,7 +100,7 @@ namespace UFEDLib
                         default:
                             if (debugAttributes)
                             {
-                                Logger.LogAttribute("Coordinate Parser: Unhandled field: " + fieldElement.Attribute("name").Value);
+                                Logger.LogAttribute("Coordinate Parser: Unknown field: " + fieldElement.Attribute("name").Value);
                             }
                             break;
                     }
@@ -135,7 +135,7 @@ namespace UFEDLib
                         default:
                             if (debugAttributes)
                             {
-                                Logger.LogAttribute("Coordinate Parser: Unhandled multiField: " + multiField.Attribute("name").Value);
+                                Logger.LogAttribute("Coordinate Parser: Unknown multiField: " + multiField.Attribute("name").Value);
                             }
                             break;
                     }
@@ -155,7 +155,7 @@ namespace UFEDLib
                         default:
                             if (debugAttributes)
                             {
-                                Logger.LogAttribute("Coordinate Parser: Unhandled multiModelField: " + multiModelField.Attribute("name").Value);
+                                Logger.LogAttribute("Coordinate Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
                             }
                             break;
                     }

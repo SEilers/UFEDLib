@@ -22,6 +22,7 @@ namespace UFEDLib
         public string UserMapping { get; set; }
         public DateTime TimeStamp { get; set; }
         public string Value { get; set; }
+        public string ServiceIdentifier { get; set; }
         #endregion
 
         #region Parsers
@@ -55,6 +56,10 @@ namespace UFEDLib
 
                     case "Key":
                         result.Key = field.Value.Trim();
+                        break;
+
+                    case "ServiceIdentifier":
+                        result.ServiceIdentifier = field.Value.Trim();
                         break;
 
                     case "Value":

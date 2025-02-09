@@ -164,9 +164,9 @@ namespace UFEDLib
             return ParseData<DictionaryWord>(filename, progress, debugAttributes);
         }
 
-        public static List<EMail> ParseEMails(string filename, IProgress<int> progress = null, bool debugAttributes = false)
+        public static List<Email> ParseEmails(string filename, IProgress<int> progress = null, bool debugAttributes = false)
         {
-            return ParseData<EMail>(filename, progress, debugAttributes);
+            return ParseData<Email>(filename, progress, debugAttributes);
         }
 
         public static List<InstalledApplication> ParseInstalledApplications(string filename, IProgress<int> progress = null, bool debugAttributes = false)

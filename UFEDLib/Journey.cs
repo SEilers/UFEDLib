@@ -23,13 +23,12 @@ namespace UFEDLib
         public string Source { get; set; }
         public DateTime StartTime { get; set; }
         public string UserMapping { get; set; }
-
+        public string ServiceIdentifier { get; set; }
         public string Type { get; set; }
         #endregion
 
         #region models
         public Location FromPoint { get; set; }
-
         public Location ToPoint { get; set; }
         #endregion
 
@@ -106,6 +105,10 @@ namespace UFEDLib
                             result.EndTime = DateTime.Parse(field.Value.Trim());
                         break;
 
+                    case "ServiceIdentifier":
+                        result.ServiceIdentifier = field.Value.Trim();
+                        break;
+
                     case "Type":
                         result.Type = field.Value.Trim();
                         break;
@@ -113,7 +116,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("Journey Parser: Unhandled field: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("Journey Parser: Unknown field: " + field.Attribute("name").Value);
                         }
                         break;
                 }
@@ -136,7 +139,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("Journey Parser: Unhandled modelField: " + modelFieldElement.Attribute("name").Value);
+                            Logger.LogAttribute("Journey Parser: Unknown modelField: " + modelFieldElement.Attribute("name").Value);
                         }
                         break;
                 }
@@ -167,7 +170,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("Journey Parser: Unhandled multiModelField: " + multiModelFieldElement.Attribute("name").Value);
+                            Logger.LogAttribute("Journey Parser: Unknown multiModelField: " + multiModelFieldElement.Attribute("name").Value);
                         }
                         break;
                 }

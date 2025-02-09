@@ -17,13 +17,20 @@ namespace UFEDLib
         }
 
         #region fields
+        public string Account { get; set; }
+
+        public string ArtifactFamily { get; set; }
         public DateTime LastVisited { get; set; }
+
+        public string ServiceIdentifier { get; set; }
 
         public string Source { get; set; }
 
         public string Title { get; set; }
 
         public string Url { get; set; }
+
+        public string UrlCacheFile { get; set; }
 
         public string UserMapping { get; set; }
 
@@ -49,8 +56,29 @@ namespace UFEDLib
                 {
                     switch (field.Attribute("name").Value)
                     {
+                        case "Account":
+                            result.Account = field.Value.Trim();
+                            break;
+
+                        case "ArtifactFamily":
+                            result.ArtifactFamily = field.Value.Trim();
+                            break;
+
+                        case "LastVisited":
+                            if (field.Value.Trim() != "")
+                                result.LastVisited = DateTime.Parse(field.Value.Trim());
+                            break;
+
+                        case "ServiceIdentifier":
+                            result.ServiceIdentifier = field.Value.Trim();
+                            break;
+
                         case "Source":
                             result.Source = field.Value.Trim();
+                            break;
+
+                        case "Title":
+                            result.Title = field.Value.Trim();
                             break;
 
                         case "UserMapping":
@@ -61,13 +89,8 @@ namespace UFEDLib
                             result.Url = field.Value.Trim();
                             break;
 
-                        case "Title":
-                            result.Title = field.Value.Trim();
-                            break;
-
-                        case "LastVisited":
-                            if (field.Value.Trim() != "")
-                                result.LastVisited = DateTime.Parse(field.Value.Trim());
+                        case "UrlCacheFile":
+                            result.UrlCacheFile = field.Value.Trim();
                             break;
 
                         case "VisitCount":

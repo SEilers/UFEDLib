@@ -67,7 +67,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("ContactPhoto Parser: Unhandled field: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("ContactPhoto Parser: Unknown field: " + field.Attribute("name").Value);
                         }
                         break;
                 }
@@ -99,7 +99,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("Contact Photo Parser: Unhandled multiField: " + multiField.Attribute("name").Value);
+                            Logger.LogAttribute("Contact Photo Parser: Unknown multiField: " + multiField.Attribute("name").Value);
                         }
                         break;
                 }
@@ -112,7 +112,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("Contact Photo Parser: Unhandled multiModelField: " + multiModelField.Attribute("name").Value);
+                            Logger.LogAttribute("Contact Photo Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
                         }
                         break;
                 }

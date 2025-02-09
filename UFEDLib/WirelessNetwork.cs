@@ -27,6 +27,10 @@ namespace UFEDLib
         public string SecurityMode { get; set; }
         public string SSId { get; set; }
         public string NWConnectionType { get; set; }
+
+        public string Password { get; set; }
+
+        public Coordinate Position { get; set; }
         #endregion
 
         #region Parsers
@@ -116,10 +120,15 @@ namespace UFEDLib
                             result.LastAutoConnection = DateTime.Parse(field.Value.Trim());
                         break;
 
+                    case "Password":
+                        result.Password = field.Value.Trim();
+                        break;
+
+
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("WirelessNetwork Parser: Unhandled field: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("WirelessNetwork Parser: Unknown field: " + field.Attribute("name").Value);
                         }
                         break;
                 }
@@ -129,6 +138,10 @@ namespace UFEDLib
             {
                 switch (modelField.Attribute("name").Value)
                 {
+                    case "Position":
+                        result.Position = Coordinate.ParseModel(modelField);
+                        break;
+
                     default:
                         if (debugAttributes)
                         {
@@ -145,7 +158,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("WirelessNetwork Parser: Unhandled multiField: " + multiField.Attribute("name").Value);
+                            Logger.LogAttribute("WirelessNetwork Parser: Unknown multiField: " + multiField.Attribute("name").Value);
                         }
                         break;
                 }
@@ -158,7 +171,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("WirelessNetwork Parser: Unhandled multiModelField: " + multiModelField.Attribute("name").Value);
+                            Logger.LogAttribute("WirelessNetwork Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
                         }
                         break;
                 }

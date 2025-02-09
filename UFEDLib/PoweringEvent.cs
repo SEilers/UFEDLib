@@ -19,6 +19,7 @@ namespace UFEDLib
         #region fields
         public string Source { get; set; }
         public string UserMapping { get; set; }
+        public string Description { get; set; }
         public String Element { get; set; }
         public String Event { get; set; }
         public DateTime TimeStamp { get; set; }
@@ -55,6 +56,10 @@ namespace UFEDLib
 
                         case "UserMapping":
                             result.UserMapping = field.Value.Trim();
+                            break;
+
+                        case "Description":
+                            result.Description = field.Value.Trim();
                             break;
 
                         case "Element":

@@ -8,7 +8,7 @@ using System.Xml.Linq;
 namespace UFEDLib
 {
     [Serializable]
-    public class EMail : ModelBase, IUfedModelParser<EMail>
+    public class Email : ModelBase, IUfedModelParser<Email>
     {
         public static string GetXmlModelType()
         {
@@ -21,6 +21,8 @@ namespace UFEDLib
         public string EmailHeader { get; set; }
         public string Folder { get; set; }
         public string Priority { get; set; }
+        public string ServiceIdentifier { get; set; }
+        public string Snippet { get; set; }
         public string Source { get; set; }
         public string Status { get; set; }
         public string Subject { get; set; }
@@ -40,10 +42,10 @@ namespace UFEDLib
         #endregion
 
         #region Parsers
-        public static List<EMail> ParseMultiModel(XElement emailsElement, bool debugAttributes = false)
+        public static List<Email> ParseMultiModel(XElement emailsElement, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            List<EMail> result = new List<EMail>();
+            List<Email> result = new List<Email>();
 
             IEnumerable<XElement> emailElements = emailsElement.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "Email");
 
@@ -61,11 +63,11 @@ namespace UFEDLib
 
             return result;
         }
-        public static EMail ParseModel(XElement element, bool debugAttributes = false)
+        public static Email ParseModel(XElement element, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
 
-            EMail result = new EMail();
+            Email result = new Email();
             result.ParseAttributes(element);
 
             var fieldElements = element.Elements(xNamespace + "field");
@@ -84,11 +86,7 @@ namespace UFEDLib
                     case "Status":
                         result.Status = field.Value.Trim();
                         break;
-
-                    case "From":
-                        result.From = Party.ParseModel(field);
-                        break;
-
+               
                     case "Subject":
                         result.Subject = field.Value.Trim();
                         break;
@@ -110,6 +108,14 @@ namespace UFEDLib
                         result.Priority = field.Value.Trim();
                         break;
 
+                    case "ServiceIdentifier":
+                        result.Subject = field.Value.Trim();
+                        break;
+
+                    case "Snippet":
+                        result.Snippet = field.Value.Trim();
+                        break;
+
                     case "Source":
                         result.Source = field.Value.Trim();
                         break;
@@ -125,7 +131,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("EMail Parser: Unknown field: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("Email Parser: Unknown field: " + field.Attribute("name").Value);
                         }
                         break;
                 }
@@ -142,7 +148,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("EMail Parser: Unknown modelField: " + modelField.Attribute("name").Value);
+                            Logger.LogAttribute("Email Parser: Unknown modelField: " + modelField.Attribute("name").Value);
                         }
                         break;
                 }
@@ -155,7 +161,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("EMail Parser: Unknown multiField: " + multiField.Attribute("name").Value);
+                            Logger.LogAttribute("Email Parser: Unknown multiField: " + multiField.Attribute("name").Value);
                         }
                         break;
                 }
@@ -184,7 +190,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("EMail Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
+                            Logger.LogAttribute("Email Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
                         }
                         break;
                 }

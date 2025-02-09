@@ -17,36 +17,24 @@ namespace UFEDLib
 
         #region fields
         public string Category { get; set; }
-
         public string Confidence { get; set; }
-
         public string Description { get; set; }
-
         public string Map { get; set; }
-
         public string Name { get; set; }
+        public string ServiceName { get; set; }
         public string LocationOrigin { get; set; }
         public string Origin { get; set; }
         public string PositionAddress { get; set; }
         public string Precision { get; set; }
-
         public string Source { get; set; }
         public DateTime TimeStamp { get; set; }
-
         public DateTime EndTime { get; set; }
-
         public string Account { get; set; }
-
         public string ServiceIdentifier { get; set; }
-
         public string Type { get; set; }
-
         public string UserMapping { get; set; }
-
         public int AggregatedLocationsCount { get; set; }
-
         public string AccountLocationAffiliation { get; set; }
-
         public string DeviceLocationAffiliation { get; set; }
         #endregion
 
@@ -131,6 +119,10 @@ namespace UFEDLib
                             result.Name = field.Value.Trim();
                             break;
 
+                        case "ServiceName":
+                            result.ServiceName = field.Value.Trim();
+                            break;
+
                         case "Description":
                             result.Description = field.Value.Trim();
                             break;
@@ -179,7 +171,7 @@ namespace UFEDLib
                         default:
                             if (debugAttributes)
                             {
-                                Logger.LogAttribute("Location Parser: Unhandled field: " + field.Attribute("name").Value);
+                                Logger.LogAttribute("Location Parser: Unknown field: " + field.Attribute("name").Value);
                             }
                             break;
                     }
@@ -221,7 +213,7 @@ namespace UFEDLib
                         default:
                             if (debugAttributes)
                             {
-                                Logger.LogAttribute("Location Parser: Unhandled modelField: " + modelField.Attribute("name").Value);
+                                Logger.LogAttribute("Location Parser: Unknown modelField: " + modelField.Attribute("name").Value);
                             }
                             break;
                     }
@@ -240,7 +232,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("Location Parser: Unhandled multiField: " + multiField.Attribute("name").Value);
+                            Logger.LogAttribute("Location Parser: Unknown multiField: " + multiField.Attribute("name").Value);
                         }
                         break;
                 }
@@ -253,7 +245,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("Location Parser: Unhandled multiModelField: " + multiModelField.Attribute("name").Value);
+                            Logger.LogAttribute("Location Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
                         }
                         break;
                 }
