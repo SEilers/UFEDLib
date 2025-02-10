@@ -39,6 +39,32 @@ namespace UFEDLib
             var multiFieldElements = element.Elements(xNamespace + "multiField");
             var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
 
+            ParseFields(fieldElements, result, debugAttributes);
+            ParseModelFields(modelFieldElements, result, debugAttributes);
+            ParseMultiFields(multiFieldElements, result, debugAttributes);
+            ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
+
+            return result;
+        }
+
+        public static List<DictionaryWord> ParseMultiModel(XElement element, bool debugAttributes = false)
+        {
+            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
+            List<DictionaryWord> result = new List<DictionaryWord>();
+
+            IEnumerable<XElement> dictionaryWords = element.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "DictionaryWord");
+
+            foreach (XElement dictionaryWord in dictionaryWords)
+            {
+                DictionaryWord dw = ParseModel(dictionaryWord, debugAttributes);
+                result.Add(dw);
+            }
+
+            return result;
+        }
+
+        public static void ParseFields(IEnumerable<XElement> fieldElements, DictionaryWord result, bool debugAttributes = false)
+        {
             foreach (var field in fieldElements)
             {
                 switch (field.Attribute("name").Value)
@@ -78,63 +104,21 @@ namespace UFEDLib
                         break;
                 }
             }
-
-            foreach (var modelField in modelFieldElements)
-            {
-                switch (modelField.Attribute("name").Value)
-                {
-                    default:
-                        if (debugAttributes)
-                        {
-                            Logger.LogAttribute("DictionaryWord Parser: Unknown modelField: " + modelField.Attribute("name").Value);
-                        }
-                        break;
-                }
-            }
-
-            foreach (var multiField in multiFieldElements)
-            {
-                switch (multiField.Attribute("name").Value)
-                {
-                    default:
-                        if (debugAttributes)
-                        {
-                            Logger.LogAttribute("DictionaryWord Parser:Unknown multiField: " + multiField.Attribute("name").Value);
-                        }
-                        break;
-                }
-            }
-
-            foreach (var multiModelField in multiModelFieldElements)
-            {
-                switch (multiModelField.Attribute("name").Value)
-                {
-                    default:
-                        if (debugAttributes)
-                        {
-                            Logger.LogAttribute("DictionaryWord Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
-                        }
-                        break;
-                }
-            }
-
-            return result;
         }
 
-        public static List<DictionaryWord> ParseMultiModel(XElement element, bool debugAttributes = false)
+        public static void ParseModelFields(IEnumerable<XElement> modelFieldElements, DictionaryWord result, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            List<DictionaryWord> result = new List<DictionaryWord>();
+            IUfedModelParser<DictionaryWord>.CheckModelFields<DictionaryWord>(modelFieldElements, debugAttributes);
+        }
 
-            IEnumerable<XElement> dictionaryWords = element.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "DictionaryWord");
+        public static void ParseMultiFields(IEnumerable<XElement> multiFieldElements, DictionaryWord result, bool debugAttributes = false)
+        {
+            IUfedModelParser<DictionaryWord>.CheckMultiFields<DictionaryWord>(multiFieldElements, debugAttributes);
+        }
 
-            foreach (XElement dictionaryWord in dictionaryWords)
-            {
-                DictionaryWord dw = ParseModel(dictionaryWord, debugAttributes);
-                result.Add(dw);
-            }
-
-            return result;
+        public static void ParseMultiModelFields(IEnumerable<XElement> multiModelFieldElements, DictionaryWord result, bool debugAttributes = false)
+        {
+            IUfedModelParser<DictionaryWord>.CheckMultiModelFields<DictionaryWord>(multiModelFieldElements, debugAttributes);
         }
         #endregion
     }

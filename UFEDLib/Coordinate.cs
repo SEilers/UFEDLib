@@ -56,7 +56,16 @@ namespace UFEDLib
             var multiFieldElements = element.Elements(xNamespace + "multiField");
             var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
 
+            ParseFields(fieldElements, result, debugAttributes);
+            ParseModelFields(modelFieldElements, result, debugAttributes);
+            ParseMultiFields(multiFieldElements, result, debugAttributes);
+            ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
 
+            return result;
+        }
+
+        public static void ParseFields(IEnumerable<XElement> fieldElements, Coordinate result, bool debugAttributes = false)
+        {
             foreach (var fieldElement in fieldElements)
             {
                 try
@@ -111,62 +120,21 @@ namespace UFEDLib
                 }
 
             }
+        }
 
-            foreach (var modelField in modelFieldElements)
-            {
-                switch (modelField.Attribute("name").Value)
-                {
-                    default:
-                        if (debugAttributes)
-                        {
-                            Logger.LogAttribute("Coordinate Parser: Unknown modelField: " + modelField.Attribute("name").Value);
-                        }
-                        break;
-                }
-            }
+        public static void ParseModelFields(IEnumerable<XElement> modelFieldElements, Coordinate result, bool debugAttributes = false)
+        {
+            IUfedModelParser<Coordinate>.CheckModelFields<Coordinate>(modelFieldElements, debugAttributes);
+        }
 
+        public static void ParseMultiFields(IEnumerable<XElement> multiFieldElements, Coordinate result, bool debugAttributes = false)
+        {
+            IUfedModelParser<Coordinate>.CheckMultiFields<Coordinate>(multiFieldElements, debugAttributes);
+        }
 
-            foreach (var multiField in multiFieldElements)
-            {
-                try
-                {
-                    switch (multiField.Attribute("name").Value)
-                    {
-                        default:
-                            if (debugAttributes)
-                            {
-                                Logger.LogAttribute("Coordinate Parser: Unknown multiField: " + multiField.Attribute("name").Value);
-                            }
-                            break;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Error parsing multiField elements in Coordinate Parser" + ex.ToString());
-                }
-            }
-
-            foreach (var multiModelField in multiModelFieldElements)
-            {
-                try
-                {
-                    switch (multiModelField.Attribute("name").Value)
-                    {
-                        default:
-                            if (debugAttributes)
-                            {
-                                Logger.LogAttribute("Coordinate Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
-                            }
-                            break;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Error parsing multiModelField elements in Coordinate Parser" + ex.ToString());
-                }
-            }
-
-            return result;
+        public static void ParseMultiModelFields(IEnumerable<XElement> multiModelFieldElements, Coordinate result, bool debugAttributes = false)
+        {
+            IUfedModelParser<Coordinate>.CheckMultiModelFields<Coordinate>(multiModelFieldElements, debugAttributes);
         }
         #endregion
 

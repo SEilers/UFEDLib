@@ -46,6 +46,32 @@ namespace UFEDLib
             var multiFieldElements = element.Elements(xNamespace + "multiField");
             var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
 
+            ParseFields(fieldElements, result, debugAttributes);
+            ParseModelFields(modelFieldElements, result, debugAttributes);
+            ParseMultiFields(multiFieldElements, result, debugAttributes);
+            ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
+
+            return result;
+        }
+
+        public static List<WebBookmark> ParseMultiModel(XElement element, bool debugAttributes = false)
+        {
+            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
+            List<WebBookmark> result = new List<WebBookmark>();
+
+            IEnumerable<XElement> webBookmarks = element.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "WebBookmark");
+
+            foreach (XElement webBookmark in webBookmarks)
+            {
+                WebBookmark wb = ParseModel(webBookmark, debugAttributes);
+                result.Add(wb);
+            }
+
+            return result;
+        }
+
+        public static void ParseFields(IEnumerable<XElement> fieldElements, WebBookmark result, bool debugAttributes = false)
+        {
             foreach (var field in fieldElements)
             {
                 switch (field.Attribute("name").Value)
@@ -103,63 +129,21 @@ namespace UFEDLib
                         break;
                 }
             }
-
-            foreach (var modelField in modelFieldElements)
-            {
-                switch (modelField.Attribute("name").Value)
-                {
-                    default:
-                        if (debugAttributes)
-                        {
-                            Logger.LogAttribute("WebBookmark Parser: Unknown modelField: " + modelField.Attribute("name").Value);
-                        }
-                        break;
-                }
-            }
-
-            foreach (var multiField in multiFieldElements)
-            {
-                switch (multiField.Attribute("name").Value)
-                {
-                    default:
-                        if (debugAttributes)
-                        {
-                            Logger.LogAttribute("WebBookmark Parser: Unknown multiField: " + multiField.Attribute("name").Value);
-                        }
-                        break;
-                }
-            }
-
-            foreach (var multiModelField in multiModelFieldElements)
-            {
-                switch (multiModelField.Attribute("name").Value)
-                {
-                    default:
-                        if (debugAttributes)
-                        {
-                            Logger.LogAttribute("WebBookmark Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
-                        }
-                        break;
-                }
-            }
-
-            return result;
         }
 
-        public static List<WebBookmark> ParseMultiModel(XElement element, bool debugAttributes = false)
+        public static void ParseModelFields(IEnumerable<XElement> modelFieldElements, WebBookmark result, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            List<WebBookmark> result = new List<WebBookmark>();
+            IUfedModelParser<WebBookmark>.CheckModelFields<WebBookmark>(modelFieldElements, debugAttributes);
+        }
 
-            IEnumerable<XElement> webBookmarks = element.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "WebBookmark");
+        public static void ParseMultiFields(IEnumerable<XElement> multiFieldElements, WebBookmark result, bool debugAttributes = false)
+        {
+            IUfedModelParser<WebBookmark>.CheckMultiFields<WebBookmark>(multiFieldElements, debugAttributes);
+        }
 
-            foreach (XElement webBookmark in webBookmarks)
-            {
-                WebBookmark wb = ParseModel(webBookmark, debugAttributes);
-                result.Add(wb);
-            }
-
-            return result;
+        public static void ParseMultiModelFields(IEnumerable<XElement> multiModelFieldElements, WebBookmark result, bool debugAttributes = false)
+        {
+            IUfedModelParser<WebBookmark>.CheckMultiModelFields<WebBookmark>(multiModelFieldElements, debugAttributes);
         }
 
         #endregion

@@ -25,6 +25,8 @@ namespace UFEDLib
         public double DistanceTraveled { get; set; }
         public double MaxSpeed { get; set; }
         public double FlightsClimbed { get; set; }
+
+        public double MaxHeartrate { get; set; }
         public int TotalSampleCount { get; set; }
 
         public static ActivitySensorData ParseModel(XElement element, bool debugAttributes = false)
@@ -39,6 +41,32 @@ namespace UFEDLib
             var multiFieldElements = element.Elements(xNamespace + "multiField");
             var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
 
+            ParseFields(fieldElements, result, debugAttributes);
+            ParseModelFields(modelFieldElements, result, debugAttributes);
+            ParseMultiFields(multiFieldElements, result, debugAttributes);
+            ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
+
+            return result;
+        }
+
+        public static List<ActivitySensorData> ParseMultiModel(XElement element, bool debugAttributes = false)
+        {
+            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
+            List<ActivitySensorData> result = new List<ActivitySensorData>();
+
+            IEnumerable<XElement> asElements = element.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "ActivitySensorData");
+
+            foreach (XElement asElement in asElements)
+            {
+                ActivitySensorData asd = ParseModel(asElement, debugAttributes);
+                result.Add(asd);
+            }
+
+            return result;
+        }
+
+        public static void ParseFields(IEnumerable<XElement> fieldElements, ActivitySensorData result, bool debugAttributes = false)
+        {
             foreach (var field in fieldElements)
             {
                 switch (field.Attribute("name").Value)
@@ -61,7 +89,7 @@ namespace UFEDLib
 
                     case "From":
                         if (field.Value.Trim() != "")
-                            result.From = DateTime.Parse( field.Value.Trim() ); 
+                            result.From = DateTime.Parse(field.Value.Trim());
                         break;
 
                     case "To":
@@ -84,6 +112,11 @@ namespace UFEDLib
                             result.MaxSpeed = double.Parse(field.Value.Trim());
                         break;
 
+                    case "MaxHeartrate":
+                        if (field.Value.Trim() != "")
+                            result.MaxHeartrate = double.Parse(field.Value.Trim());
+                        break;
+
                     case "FlightsClimbed":
                         if (field.Value.Trim() != "")
                             result.FlightsClimbed = double.Parse(field.Value.Trim());
@@ -103,63 +136,21 @@ namespace UFEDLib
                         break;
                 }
             }
-
-            foreach (var modelField in modelFieldElements)
-            {
-                switch (modelField.Attribute("name").Value)
-                {
-                    default:
-                        if (debugAttributes)
-                        {
-                            Logger.LogAttribute("ActivitySensorData Parser: Unknown modelField: " + modelField.Attribute("name").Value);
-                        }
-                        break;
-                }
-            }
-
-            foreach (var multiField in multiFieldElements)
-            {
-                switch (multiField.Attribute("name").Value)
-                {
-                    default:
-                        if (debugAttributes)
-                        {
-                            Logger.LogAttribute("ActivitySensorData Parser: Unknown multiField: " + multiField.Attribute("name").Value);
-                        }
-                        break;
-                }
-            }
-
-            foreach (var multiModelField in multiModelFieldElements)
-            {
-                switch (multiModelField.Attribute("name").Value)
-                {
-                    default:
-                        if (debugAttributes)
-                        {
-                            Logger.LogAttribute("ActivitySensorData Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
-                        }
-                        break;
-                }
-            }
-
-            return result;
         }
 
-        public static List<ActivitySensorData> ParseMultiModel(XElement element, bool debugAttributes = false)
+        public static void ParseModelFields(IEnumerable<XElement> modelFieldElements, ActivitySensorData result, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            List<ActivitySensorData> result = new List<ActivitySensorData>();
+            IUfedModelParser<ActivitySensorData>.CheckModelFields<ActivitySensorData>(modelFieldElements, debugAttributes);
+        }
 
-            IEnumerable<XElement> asElements = element.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "ActivitySensorData");
+        public static void ParseMultiFields(IEnumerable<XElement> multiFieldElements, ActivitySensorData result, bool debugAttributes = false)
+        {
+            IUfedModelParser<ActivitySensorData>.CheckMultiFields<ActivitySensorData>(multiFieldElements, debugAttributes);
+        }
 
-            foreach (XElement asElement in asElements)
-            {
-                ActivitySensorData asd = ParseModel(asElement, debugAttributes);
-                result.Add(asd);
-            }
-
-            return result;
+        public static void ParseMultiModelFields(IEnumerable<XElement> multiModelFieldElements, ActivitySensorData result, bool debugAttributes = false)
+        {
+            IUfedModelParser<ActivitySensorData>.CheckMultiModelFields<ActivitySensorData>(multiModelFieldElements, debugAttributes);
         }
     }
 }

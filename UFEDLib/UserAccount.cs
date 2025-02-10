@@ -102,7 +102,16 @@ namespace UFEDLib
             var multiFieldElements = element.Elements(xNamespace + "multiField");
             var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
 
+            ParseFields(fieldElements, result, debugAttributes);
+            ParseModelFields(modelFieldElements, result, debugAttributes);
+            ParseMultiFields(multiFieldElements, result, debugAttributes);
+            ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
 
+            return result;
+        }
+
+        public static void ParseFields(IEnumerable<XElement> fieldElements, UserAccount result, bool debugAttributes = false)
+        {
             foreach (var field in fieldElements)
             {
                 switch (field.Attribute("name").Value)
@@ -156,33 +165,20 @@ namespace UFEDLib
                         break;
                 }
             }
+        }
 
-            foreach (var modelField in modelFieldElements)
-            {
-                switch (modelField.Attribute("name").Value)
-                {
-                    default:
-                        if (debugAttributes)
-                        {
-                            Logger.LogAttribute("UserAccount Parser: Unknown modelField: " + modelField.Attribute("name").Value);
-                        }
-                        break;
-                }
-            }
+        public static void ParseModelFields(IEnumerable<XElement> modelFieldElements, UserAccount result, bool debugAttributes = false)
+        {
+            IUfedModelParser<UserAccount>.CheckModelFields<UserAccount>(modelFieldElements, debugAttributes);
+        }
 
-            foreach (var multiField in multiFieldElements)
-            {
-                switch (multiField.Attribute("name").Value)
-                {
-                    default:
-                        if (debugAttributes)
-                        {
-                            Logger.LogAttribute("UserAccount Parser: Unknown multiField: " + multiField.Attribute("name").Value);
-                        }
-                        break;
-                }
-            }
+        public static void ParseMultiFields(IEnumerable<XElement> multiFieldElements, UserAccount result, bool debugAttributes = false)
+        {
+            IUfedModelParser<UserAccount>.CheckMultiFields<UserAccount>(multiFieldElements, debugAttributes);
+        }
 
+        public static void ParseMultiModelFields(IEnumerable<XElement> multiModelFieldElements, UserAccount result, bool debugAttributes = false)
+        {
             foreach (var multiModelField in multiModelFieldElements)
             {
                 switch (multiModelField.Attribute("name").Value)
@@ -211,10 +207,6 @@ namespace UFEDLib
                         break;
                 }
             }
-
-
-            return result;
-
         }
         #endregion
     }

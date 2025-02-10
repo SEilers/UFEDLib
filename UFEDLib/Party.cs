@@ -71,6 +71,16 @@ namespace UFEDLib
             var multiFieldElements = element.Elements(xNamespace + "multiField");
             var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
 
+            ParseFields(fieldElements, result, debugAttributes);
+            ParseModelFields(modelFieldElements, result, debugAttributes);
+            ParseMultiFields(multiFieldElements, result, debugAttributes);
+            ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
+
+            return result;
+        }
+
+        public static void ParseFields(IEnumerable<XElement> fieldElements, Party result, bool debugAttributes = false)
+        {
             foreach (var field in fieldElements)
             {
                 switch (field.Attribute("name").Value)
@@ -141,48 +151,21 @@ namespace UFEDLib
                         break;
                 }
             }
+        }
 
-            foreach (var modelField in modelFieldElements)
-            {
-                switch (modelField.Attribute("name").Value)
-                {
-                    default:
-                        if (debugAttributes)
-                        {
-                            Logger.LogAttribute("Party Parser: Unknown modelField: " + modelField.Attribute("name").Value);
-                        }
-                        break;
-                }
-            }
+        public static void ParseModelFields(IEnumerable<XElement> modelFieldElements, Party result, bool debugAttributes = false)
+        {
+            IUfedModelParser<Party>.CheckModelFields<Party>(modelFieldElements, debugAttributes);
+        }
 
-            foreach (var multiField in multiFieldElements)
-            {
-                switch (multiField.Attribute("name").Value)
-                {
-                    default:
-                        if (debugAttributes)
-                        {
-                            Logger.LogAttribute("Party Parser: Unknown multiField: " + multiField.Attribute("name").Value);
-                        }
-                        break;
-                }
-            }
+        public static void ParseMultiFields(IEnumerable<XElement> multiFieldElements, Party result, bool debugAttributes = false)
+        {
+            IUfedModelParser<Party>.CheckMultiFields<Party>(multiFieldElements, debugAttributes);
+        }
 
-            foreach (var multiModelField in multiModelFieldElements)
-            {
-                switch (multiModelField.Attribute("name").Value)
-                {
-                    default:
-                        if (debugAttributes)
-                        {
-                            Logger.LogAttribute("Party Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
-                        }
-                        break;
-                }
-            }
-
-
-            return result;
+        public static void ParseMultiModelFields(IEnumerable<XElement> multiModelFieldElements, Party result, bool debugAttributes = false)
+        {
+            IUfedModelParser<Party>.CheckMultiModelFields<Party>(multiModelFieldElements, debugAttributes);
         }
         #endregion
     }

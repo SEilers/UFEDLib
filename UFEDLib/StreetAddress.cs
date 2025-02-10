@@ -90,7 +90,16 @@ namespace UFEDLib
             var multiFieldElements = element.Elements(xNamespace + "multiField");
             var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
 
+            ParseFields(fieldElements, result, debugAttributes);
+            ParseModelFields(modelFieldElements, result, debugAttributes);
+            ParseMultiFields(multiFieldElements, result, debugAttributes);
+            ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
 
+            return result;
+        }
+
+        public static void ParseFields(IEnumerable<XElement> fieldElements, StreetAddress result, bool debugAttributes = false)
+        {
             foreach (var field in fieldElements)
             {
                 try
@@ -149,47 +158,21 @@ namespace UFEDLib
                     Console.WriteLine("Error parsing field elements in StreetAddress Parser" + ex.ToString());
                 }
             }
+        }
 
-            foreach (var modelField in modelFieldElements)
-            {
-                switch (modelField.Attribute("name").Value)
-                {
-                    default:
-                        if (debugAttributes)
-                        {
-                            Logger.LogAttribute("StreetAddress Parser: Unknown modelField: " + modelField.Attribute("name").Value);
-                        }
-                        break;
-                }
-            }
+        public static void ParseModelFields(IEnumerable<XElement> modelFieldElements, StreetAddress result, bool debugAttributes = false)
+        {
+            IUfedModelParser<StreetAddress>.CheckModelFields<StreetAddress>(modelFieldElements, debugAttributes);
+        }
 
-            foreach (var multiField in multiFieldElements)
-            {
-                switch (multiField.Attribute("name").Value)
-                {
-                    default:
-                        if (debugAttributes)
-                        {
-                            Logger.LogAttribute("StreetAddress Parser: Unknown multiField: " + multiField.Attribute("name").Value);
-                        }
-                        break;
-                }
-            }
+        public static void ParseMultiFields(IEnumerable<XElement> multiFieldElements, StreetAddress result, bool debugAttributes = false)
+        {
+            IUfedModelParser<StreetAddress>.CheckMultiFields<StreetAddress>(multiFieldElements, debugAttributes);
+        }
 
-            foreach (var multiModelField in multiModelFieldElements)
-            {
-                switch (multiModelField.Attribute("name").Value)
-                {
-                    default:
-                        if (debugAttributes)
-                        {
-                            Logger.LogAttribute("StreetAddress Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
-                        }
-                        break;
-                }
-            }
-
-            return result;
+        public static void ParseMultiModelFields(IEnumerable<XElement> multiModelFieldElements, StreetAddress result, bool debugAttributes = false)
+        {
+            IUfedModelParser<StreetAddress>.CheckMultiModelFields<StreetAddress>(multiModelFieldElements, debugAttributes);
         }
         #endregion
     }

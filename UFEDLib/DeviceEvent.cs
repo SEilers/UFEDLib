@@ -38,6 +38,32 @@ namespace UFEDLib
             var multiFieldElements = element.Elements(xNamespace + "multiField");
             var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
 
+            ParseFields(fieldElements, result, debugAttributes);
+            ParseModelFields(modelFieldElements, result, debugAttributes);
+            ParseMultiFields(multiFieldElements, result, debugAttributes);
+            ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
+
+            return result;
+        }
+
+        public static List<DeviceEvent> ParseMultiModel(XElement element, bool debugAttributes = false)
+        {
+            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
+            List<DeviceEvent> result = new List<DeviceEvent>();
+
+            IEnumerable<XElement> deElements = element.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "DeviceEvent");
+
+            foreach (XElement deElement in deElements)
+            {
+                DeviceEvent aul = ParseModel(deElement, debugAttributes);
+                result.Add(aul);
+            }
+
+            return result;
+        }
+
+        public static void ParseFields(IEnumerable<XElement> fieldElements, DeviceEvent result, bool debugAttributes = false)
+        {
             foreach (var field in fieldElements)
             {
                 switch (field.Attribute("name").Value)
@@ -80,63 +106,21 @@ namespace UFEDLib
                         break;
                 }
             }
-
-            foreach (var modelField in modelFieldElements)
-            {
-                switch (modelField.Attribute("name").Value)
-                {
-                    default:
-                        if (debugAttributes)
-                        {
-                            Logger.LogAttribute("DeviceEvent Parser: Unknown modelField: " + modelField.Attribute("name").Value);
-                        }
-                        break;
-                }
-            }
-
-            foreach (var multiField in multiFieldElements)
-            {
-                switch (multiField.Attribute("name").Value)
-                {
-                    default:
-                        if (debugAttributes)
-                        {
-                            Logger.LogAttribute("DeviceEvent Parser: Unknown multiField: " + multiField.Attribute("name").Value);
-                        }
-                        break;
-                }
-            }
-
-            foreach (var multiModelField in multiModelFieldElements)
-            {
-                switch (multiModelField.Attribute("name").Value)
-                {
-                    default:
-                        if (debugAttributes)
-                        {
-                            Logger.LogAttribute("DeviceEvent Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
-                        }
-                        break;
-                }
-            }
-
-            return result;
         }
 
-        public static List<DeviceEvent> ParseMultiModel(XElement element, bool debugAttributes = false)
+        public static void ParseModelFields(IEnumerable<XElement> modelFieldElements, DeviceEvent result, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            List<DeviceEvent> result = new List<DeviceEvent>();
+            IUfedModelParser<DeviceEvent>.CheckModelFields<DeviceEvent>(modelFieldElements, debugAttributes);
+        }
 
-            IEnumerable<XElement> deElements = element.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "DeviceEvent");
+        public static void ParseMultiFields(IEnumerable<XElement> multiFieldElements, DeviceEvent result, bool debugAttributes = false)
+        {
+            IUfedModelParser<DeviceEvent>.CheckMultiFields<DeviceEvent>(multiFieldElements, debugAttributes);
+        }
 
-            foreach (XElement deElement in deElements)
-            {
-                DeviceEvent aul = ParseModel(deElement, debugAttributes);
-                result.Add(aul);
-            }
-
-            return result;
+        public static void ParseMultiModelFields(IEnumerable<XElement> multiModelFieldElements, DeviceEvent result, bool debugAttributes = false)
+        {
+            IUfedModelParser<DeviceEvent>.CheckMultiModelFields<DeviceEvent>(multiModelFieldElements, debugAttributes);
         }
 
         #endregion

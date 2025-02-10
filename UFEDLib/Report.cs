@@ -40,7 +40,7 @@ namespace UFEDLib
             "User",
             "UserAccount",
             "VisitedPage",
-            "VoiceMail",
+            "Voicemail",
             "WebBookmark",
             "WirelessNetwork"
         };
@@ -235,9 +235,9 @@ namespace UFEDLib
             return ParseData<VisitedPage>(filename, progress, debugAttributes);
         }
 
-        public static List<VoiceMail> ParseVoiceMails(string filename, IProgress<int> progress = null, bool debugAttributes = false)
+        public static List<Voicemail> ParseVoicemails(string filename, IProgress<int> progress = null, bool debugAttributes = false)
         {
-            return ParseData<VoiceMail>(filename, progress, debugAttributes);
+            return ParseData<Voicemail>(filename, progress, debugAttributes);
         }
 
         public static List<WebBookmark> ParseWebBookmarks(string filename, IProgress<int> progress = null, bool debugAttributes = false)

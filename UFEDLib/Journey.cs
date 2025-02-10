@@ -75,6 +75,16 @@ namespace UFEDLib
             var multiFieldElements = element.Elements(xNamespace + "multiField");
             var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
 
+            ParseFields(fieldElements, result, debugAttributes);
+            ParseModelFields(modelFieldElements, result, debugAttributes);
+            ParseMultiFields(multiFieldElements, result, debugAttributes);
+            ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
+
+            return result;
+        }
+
+        public static void ParseFields(IEnumerable<XElement> fieldElements, Journey result, bool debugAttributes = false)
+        {
             foreach (var field in fieldElements)
             {
                 switch (field.Attribute("name").Value)
@@ -122,8 +132,10 @@ namespace UFEDLib
                 }
             }
 
+        }
 
-
+        public static void ParseModelFields(IEnumerable<XElement> modelFieldElements, Journey result, bool debugAttributes = false)
+        {
             foreach (var modelFieldElement in modelFieldElements)
             {
                 switch (modelFieldElement.Attribute("name").Value)
@@ -144,21 +156,15 @@ namespace UFEDLib
                         break;
                 }
             }
+        }
 
-            foreach (var multiField in multiFieldElements)
-            {
-                switch (multiField.Attribute("name").Value)
-                {
-                    default:
-                        if (debugAttributes)
-                        {
-                            Logger.LogAttribute("Journey Parser: Unknown multiField: " + multiField.Attribute("name").Value);
-                        }
-                        break;
-                }
-            }
+        public static void ParseMultiFields(IEnumerable<XElement> multiFieldElements, Journey result, bool debugAttributes = false)
+        {
+            IUfedModelParser<Journey>.CheckMultiFields<Journey>(multiFieldElements, debugAttributes);
+        }
 
-
+        public static void ParseMultiModelFields(IEnumerable<XElement> multiModelFieldElements, Journey result, bool debugAttributes = false)
+        {
             foreach (var multiModelFieldElement in multiModelFieldElements)
             {
                 switch (multiModelFieldElement.Attribute("name").Value)
@@ -175,8 +181,6 @@ namespace UFEDLib
                         break;
                 }
             }
-
-            return result;
         }
         #endregion
     }

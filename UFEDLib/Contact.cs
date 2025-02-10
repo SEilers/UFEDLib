@@ -121,6 +121,16 @@ namespace UFEDLib
             var multiFieldElements = element.Elements(xNamespace + "multiField");
             var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
 
+            ParseFields(fieldElements, result, debugAttributes);
+            ParseModelFields(modelFieldElements, result, debugAttributes);
+            ParseMultiFields(multiFieldElements, result, debugAttributes);
+            ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
+    
+            return result;
+        }
+
+        public static void ParseFields(IEnumerable<XElement> fieldElements, Contact result, bool debugAttributes = false)
+        {
             foreach (var field in fieldElements)
             {
                 switch (field.Attribute("name").Value)
@@ -189,19 +199,16 @@ namespace UFEDLib
                         break;
                 }
             }
+        }
 
-            foreach (var modelField in modelFieldElements)
-            {
-                switch (modelField.Attribute("name").Value)
-                {
-                    default:
-                        if (debugAttributes)
-                        {
-                            Logger.LogAttribute("Contact Parser: Unknown modelField: " + modelField.Attribute("name").Value);
-                        }
-                        break;
-                }
-            }
+        public static void ParseModelFields(IEnumerable<XElement> modelFieldElements, Contact result, bool debugAttributes = false)
+        {
+            IUfedModelParser<Contact>.CheckModelFields<Contact>(modelFieldElements, debugAttributes);
+        }
+
+        public static void ParseMultiFields(IEnumerable<XElement> multiFieldElements, Contact result, bool debugAttributes = false)
+        {
+            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
 
             foreach (var multiField in multiFieldElements)
             {
@@ -228,7 +235,10 @@ namespace UFEDLib
                         break;
                 }
             }
+        }
 
+        public static void ParseMultiModelFields(IEnumerable<XElement> multiModelFieldElements, Contact result, bool debugAttributes = false)
+        {
             foreach (var multiModelField in multiModelFieldElements)
             {
                 switch (multiModelField.Attribute("name").Value)
@@ -261,8 +271,6 @@ namespace UFEDLib
                         break;
                 }
             }
-    
-            return result;
         }
         #endregion
 

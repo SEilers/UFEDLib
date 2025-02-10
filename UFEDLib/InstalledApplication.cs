@@ -43,6 +43,38 @@ namespace UFEDLib
             var multiFieldElements = element.Elements(xNamespace + "multiField");
             var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
 
+            ParseFields(fieldElements, result, debugAttributes);
+            ParseModelFields(modelFieldElements, result, debugAttributes);
+            ParseMultiFields(multiFieldElements, result, debugAttributes);
+            ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
+
+            return result;
+        }
+
+        public static List<InstalledApplication> ParseMultiModel(XElement element, bool debugAttributes = false)
+        {
+            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
+            List<InstalledApplication> result = new List<InstalledApplication>();
+
+            IEnumerable<XElement> iAElements = element.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "InstalledApplication");
+
+            foreach (var iAElement in iAElements)
+            {
+                try
+                {
+                    result.Add(ParseModel(iAElement, debugAttributes));
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error parsing InstalledApplication: " + ex.Message);
+                }
+            }
+
+            return result;
+        }
+
+        public static void ParseFields(IEnumerable<XElement> fieldElements, InstalledApplication result, bool debugAttributes = false)
+        {
             foreach (var field in fieldElements)
             {
                 switch (field.Attribute("name").Value)
@@ -97,69 +129,21 @@ namespace UFEDLib
                         break;
                 }
             }
-
-            foreach (var modelField in modelFieldElements)
-            {
-                switch (modelField.Attribute("name").Value)
-                {
-                    default:
-                        if (debugAttributes)
-                        {
-                            Logger.LogAttribute("InstalledApplication Parser: Unknown modelField: " + modelField.Attribute("name").Value);
-                        }
-                        break;
-                }
-            }
-
-            foreach (var multiField in multiFieldElements)
-            {
-                switch (multiField.Attribute("name").Value)
-                {
-                    default:
-                        if (debugAttributes)
-                        {
-                            Logger.LogAttribute("InstalledApplication Parser:Unknown multiField: " + multiField.Attribute("name").Value);
-                        }
-                        break;
-                }
-            }
-
-            foreach (var multiModelField in multiModelFieldElements)
-            {
-                switch (multiModelField.Attribute("name").Value)
-                {
-                    default:
-                        if (debugAttributes)
-                        {
-                            Logger.LogAttribute("InstalledApplication Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
-                        }
-                        break;
-                }
-            }
-
-            return result;
         }
 
-        public static List<InstalledApplication> ParseMultiModel(XElement element, bool debugAttributes = false)
+        public static void ParseModelFields(IEnumerable<XElement> modelFieldElements, InstalledApplication result, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            List<InstalledApplication> result = new List<InstalledApplication>();
+            IUfedModelParser<InstalledApplication>.CheckModelFields<InstalledApplication>(modelFieldElements, debugAttributes);
+        }
 
-            IEnumerable<XElement> iAElements = element.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "InstalledApplication");
+        public static void ParseMultiFields(IEnumerable<XElement> multiFieldElements, InstalledApplication result, bool debugAttributes = false)
+        {
+            IUfedModelParser<InstalledApplication>.CheckMultiFields<InstalledApplication>(multiFieldElements, debugAttributes);
+        }
 
-            foreach (var iAElement in iAElements)
-            {
-                try
-                {
-                    result.Add(ParseModel(iAElement, debugAttributes));
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Error parsing InstalledApplication: " + ex.Message);
-                }
-            }
-
-            return result;
+        public static void ParseMultiModelFields(IEnumerable<XElement> multiModelFieldElements, InstalledApplication result, bool debugAttributes = false)
+        {
+            IUfedModelParser<InstalledApplication>.CheckMultiModelFields<InstalledApplication>(multiModelFieldElements, debugAttributes);
         }
         #endregion
     }

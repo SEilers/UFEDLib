@@ -37,6 +37,32 @@ namespace UFEDLib
             var multiFieldElements = element.Elements(xNamespace + "multiField");
             var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
 
+            ParseFields(fieldElements, result, debugAttributes);
+            ParseModelFields(modelFieldElements, result, debugAttributes);
+            ParseMultiFields(multiFieldElements, result, debugAttributes);
+            ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
+
+            return result;
+        }
+
+        public static List<Recording> ParseMultiModel(XElement element, bool debugAttributes = false)
+        {
+            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
+            List<Recording> result = new List<Recording>();
+
+            IEnumerable<XElement> recordingElements = element.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "Recording");
+
+            foreach (XElement recordingElement in recordingElements)
+            {
+                Recording re = ParseModel(recordingElement, debugAttributes);
+                result.Add(re);
+            }
+
+            return result;
+        }
+
+        public static void ParseFields(IEnumerable<XElement> fieldElements, Recording result, bool debugAttributes = false)
+        {
             foreach (var field in fieldElements)
             {
                 switch (field.Attribute("name").Value)
@@ -75,63 +101,21 @@ namespace UFEDLib
                         break;
                 }
             }
-
-            foreach (var modelField in modelFieldElements)
-            {
-                switch (modelField.Attribute("name").Value)
-                {
-                    default:
-                        if (debugAttributes)
-                        {
-                            Logger.LogAttribute("Recording Parser: Unknown modelField: " + modelField.Attribute("name").Value);
-                        }
-                        break;
-                }
-            }
-
-            foreach (var multiField in multiFieldElements)
-            {
-                switch (multiField.Attribute("name").Value)
-                {
-                    default:
-                        if (debugAttributes)
-                        {
-                            Logger.LogAttribute("Recording Parser: Unknown multiField: " + multiField.Attribute("name").Value);
-                        }
-                        break;
-                }
-            }
-
-            foreach (var multiModelField in multiModelFieldElements)
-            {
-                switch (multiModelField.Attribute("name").Value)
-                {
-                    default:
-                        if (debugAttributes)
-                        {
-                            Logger.LogAttribute("Recording Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
-                        }
-                        break;
-                }
-            }
-
-            return result;
         }
 
-        public static List<Recording> ParseMultiModel(XElement element, bool debugAttributes = false)
+        public static void ParseModelFields(IEnumerable<XElement> modelFieldElements, Recording result, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            List<Recording> result = new List<Recording>();
+            IUfedModelParser<Recording>.CheckModelFields<Recording>(modelFieldElements, debugAttributes);
+        }
 
-            IEnumerable<XElement> recordingElements = element.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "Recording");
+        public static void ParseMultiFields(IEnumerable<XElement> multiFieldElements, Recording result, bool debugAttributes = false)
+        {
+            IUfedModelParser<Recording>.CheckMultiFields<Recording>(multiFieldElements, debugAttributes);
+        }
 
-            foreach (XElement recordingElement in recordingElements)
-            {
-                Recording re = ParseModel(recordingElement, debugAttributes);
-                result.Add(re);
-            }
-
-            return result;
+        public static void ParseMultiModelFields(IEnumerable<XElement> multiModelFieldElements, Recording result, bool debugAttributes = false)
+        {
+            IUfedModelParser<Recording>.CheckMultiModelFields<Recording>(multiModelFieldElements, debugAttributes);
         }
 
         #endregion

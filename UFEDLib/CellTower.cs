@@ -25,7 +25,11 @@ namespace UFEDLib
         public string NID { get; set; }
         public string BID { get; set; }
         public string SID { get; set; }
-        #endregion 
+        #endregion
+
+        #region models
+        public Coordinate Position { get; set; }
+        #endregion
 
         #region Parsers
         public static CellTower ParseModel(XElement element, bool debugAttributes = false)
@@ -40,6 +44,32 @@ namespace UFEDLib
             var multiFieldElements = element.Elements(xNamespace + "multiField");
             var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
 
+            ParseFields(fieldElements, result, debugAttributes);
+            ParseModelFields(modelFieldElements, result, debugAttributes);
+            ParseMultiFields(multiFieldElements, result, debugAttributes);
+            ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
+
+            return result;
+        }
+
+        public static List<CellTower> ParseMultiModel(XElement element, bool debugAttributes = false)
+        {
+            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
+            List<CellTower> result = new List<CellTower>();
+
+            IEnumerable<XElement> cellTowers = element.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "CellTower");
+
+            foreach (XElement cellTower in cellTowers)
+            {
+                CellTower ct = ParseModel(cellTower, debugAttributes);
+                result.Add(ct);
+            }
+
+            return result;
+        }
+
+        public static void ParseFields(IEnumerable<XElement> fieldElements, CellTower result, bool debugAttributes = false)
+        {
             foreach (var field in fieldElements)
             {
                 switch (field.Attribute("name").Value)
@@ -93,63 +123,36 @@ namespace UFEDLib
                         break;
                 }
             }
+        }
 
+        public static void ParseModelFields(IEnumerable<XElement> modelFieldElements, CellTower result, bool debugAttributes = false)
+        {
             foreach (var modelField in modelFieldElements)
             {
                 switch (modelField.Attribute("name").Value)
                 {
+                    case "Position":
+                        result.Position = Coordinate.ParseModel(modelField, debugAttributes);
+                        break;
+
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("CellTower Parser: Unknown modelField: " + modelField.Attribute("name").Value);
+                            Logger.LogAttribute("CellTower Parser: Unknown field: " + modelField.Attribute("name").Value);
                         }
                         break;
                 }
             }
-
-            foreach (var multiField in multiFieldElements)
-            {
-                switch (multiField.Attribute("name").Value)
-                {
-                    default:
-                        if (debugAttributes)
-                        {
-                            Logger.LogAttribute("CellTower Parser: Unknown multiField: " + multiField.Attribute("name").Value);
-                        }
-                        break;
-                }
-            }
-
-            foreach (var multiModelField in multiModelFieldElements)
-            {
-                switch (multiModelField.Attribute("name").Value)
-                {
-                    default:
-                        if (debugAttributes)
-                        {
-                            Logger.LogAttribute("CellTower Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
-                        }
-                        break;
-                }
-            }
-
-            return result;
         }
 
-        public static List<CellTower> ParseMultiModel(XElement element, bool debugAttributes = false)
+        public static void ParseMultiFields(IEnumerable<XElement> multiFieldElements, CellTower result, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            List<CellTower> result = new List<CellTower>();
+            IUfedModelParser<CellTower>.CheckMultiFields<CellTower>(multiFieldElements, debugAttributes);
+        }
 
-            IEnumerable<XElement> cellTowers = element.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "CellTower");
-
-            foreach (XElement cellTower in cellTowers)
-            {
-                CellTower ct = ParseModel(cellTower, debugAttributes);
-                result.Add(ct);
-            }
-
-            return result;
+        public static void ParseMultiModelFields(IEnumerable<XElement> multiModelFieldElements, CellTower result, bool debugAttributes = false)
+        {
+            IUfedModelParser<CellTower>.CheckMultiModelFields<CellTower>(multiModelFieldElements, debugAttributes);
         }
 
         #endregion

@@ -69,6 +69,16 @@ namespace UFEDLib
             var multiFieldElements = element.Elements(xNamespace + "multiField");
             var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
 
+            ParseFields(fieldElements, result, debugAttributes);
+            ParseModelFields(modelFieldElements, result, debugAttributes);
+            ParseMultiFields(multiFieldElements, result, debugAttributes);
+            ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
+
+            return result;
+        }
+
+        public static void ParseFields(IEnumerable<XElement> fieldElements, SearchedItem result, bool debugAttributes = false)
+        {
             foreach (var field in fieldElements)
             {
                 switch (field.Attribute("name").Value)
@@ -105,7 +115,7 @@ namespace UFEDLib
                     case "SearchResult":
                         result.SearchResults = field.Value.Trim();
                         break;
-          
+
                     case "PositionAddress":
                         result.PositionAddress = field.Value.Trim();
                         break;
@@ -118,7 +128,10 @@ namespace UFEDLib
                         break;
                 }
             }
+        }
 
+        public static void ParseModelFields(IEnumerable<XElement> modelFieldElements, SearchedItem result, bool debugAttributes = false)
+        {
             foreach (var modelField in modelFieldElements)
             {
                 switch (modelField.Attribute("name").Value)
@@ -135,34 +148,16 @@ namespace UFEDLib
                         break;
                 }
             }
+        }
 
-            foreach (var multiField in multiFieldElements)
-            {
-                switch (multiField.Attribute("name").Value)
-                {
-                    default:
-                        if (debugAttributes)
-                        {
-                            Logger.LogAttribute("SearchedItem Parser: Unknown multiField: " + multiField.Attribute("name").Value);
-                        }
-                        break;
-                }
-            }
+        public static void ParseMultiFields(IEnumerable<XElement> multiFieldElements, SearchedItem result, bool debugAttributes = false)
+        {
+            IUfedModelParser<SearchedItem>.CheckMultiFields<SearchedItem>(multiFieldElements, debugAttributes);
+        }
 
-            foreach (var multiModelField in multiModelFieldElements)
-            {
-                switch (multiModelField.Attribute("name").Value)
-                {
-                    default:
-                        if (debugAttributes)
-                        {
-                            Logger.LogAttribute("SearchedItem Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
-                        }
-                        break;
-                }
-            }
-
-            return result;
+        public static void ParseMultiModelFields(IEnumerable<XElement> multiModelFieldElements, SearchedItem result, bool debugAttributes = false)
+        {
+            IUfedModelParser<SearchedItem>.CheckMultiModelFields<SearchedItem>(multiModelFieldElements, debugAttributes);
         }
         #endregion
     }

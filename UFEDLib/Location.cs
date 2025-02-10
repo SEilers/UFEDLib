@@ -36,6 +36,7 @@ namespace UFEDLib
         public int AggregatedLocationsCount { get; set; }
         public string AccountLocationAffiliation { get; set; }
         public string DeviceLocationAffiliation { get; set; }
+        public double GpsHorizontalAccuracy { get; set; }
         #endregion
 
         #region models
@@ -82,105 +83,117 @@ namespace UFEDLib
             var multiFieldElements = element.Elements(xNamespace + "multiField");
             var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
 
+            ParseFields(fieldElements, result, debugAttributes);
+            ParseModelFields(modelFieldElements, result, debugAttributes);
+            ParseMultiFields(multiFieldElements, result, debugAttributes);
+            ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
 
-            try
+            return result;
+        }
+
+        public static void ParseFields(IEnumerable<XElement> fieldElements, Location result, bool debugAttributes = false)
+        {
+            foreach (var field in fieldElements)
             {
-                foreach (var field in fieldElements)
+                switch (field.Attribute("name").Value)
                 {
-                    switch (field.Attribute("name").Value)
-                    {
-                        case "Source":
-                            result.Source = field.Value.Trim();
-                            break;
+                    case "Source":
+                        result.Source = field.Value.Trim();
+                        break;
 
-                        case "UserMapping":
-                            result.UserMapping = field.Value.Trim();
-                            break;
+                    case "UserMapping":
+                        result.UserMapping = field.Value.Trim();
+                        break;
 
-                        case "TimeStamp":
-                            if (field.Value.Trim() != "")
-                                result.TimeStamp = DateTime.Parse(field.Value.Trim());
-                            break;
+                    case "TimeStamp":
+                        if (field.Value.Trim() != "")
+                            result.TimeStamp = DateTime.Parse(field.Value.Trim());
+                        break;
 
-                        case "EndTime":
-                            if (field.Value.Trim() != "")
-                                result.EndTime = DateTime.Parse(field.Value.Trim());
-                            break;
+                    case "EndTime":
+                        if (field.Value.Trim() != "")
+                            result.EndTime = DateTime.Parse(field.Value.Trim());
+                        break;
 
-                        case "Account":
-                            result.Account = field.Value.Trim();
-                            break;
+                    case "Account":
+                        result.Account = field.Value.Trim();
+                        break;
 
-                        case "ServiceIdentifier":
-                            result.ServiceIdentifier = field.Value.Trim();
-                            break;
+                    case "ServiceIdentifier":
+                        result.ServiceIdentifier = field.Value.Trim();
+                        break;
 
-                        case "Name":
-                            result.Name = field.Value.Trim();
-                            break;
+                    case "Name":
+                        result.Name = field.Value.Trim();
+                        break;
 
-                        case "ServiceName":
-                            result.ServiceName = field.Value.Trim();
-                            break;
+                    case "ServiceName":
+                        result.ServiceName = field.Value.Trim();
+                        break;
 
-                        case "Description":
-                            result.Description = field.Value.Trim();
-                            break;
+                    case "Description":
+                        result.Description = field.Value.Trim();
+                        break;
 
-                        case "Type":
-                            result.Type = field.Value.Trim();
-                            break;
+                    case "Type":
+                        result.Type = field.Value.Trim();
+                        break;
 
-                        case "Precision":
-                            result.Precision = field.Value.Trim();
-                            break;
+                    case "Precision":
+                        result.Precision = field.Value.Trim();
+                        break;
 
-                        case "Map":
-                            result.Map = field.Value.Trim();
-                            break;
+                    case "Map":
+                        result.Map = field.Value.Trim();
+                        break;
 
-                        case "Category":
-                            result.Category = field.Value.Trim();
-                            break;
+                    case "Category":
+                        result.Category = field.Value.Trim();
+                        break;
 
-                        case "Confidence":
-                            result.Confidence = field.Value.Trim();
-                            break;
+                    case "Confidence":
+                        result.Confidence = field.Value.Trim();
+                        break;
 
-                        case "Origin":
-                            result.Origin = field.Value.Trim();
-                            break;
+                    case "Origin":
+                        result.Origin = field.Value.Trim();
+                        break;
 
-                        case "PositionAddress":
-                            result.PositionAddress = field.Value.Trim();
-                            break;
+                    case "PositionAddress":
+                        result.PositionAddress = field.Value.Trim();
+                        break;
 
-                        case "AggregatedLocationsCount":
-                            if(field.Value.Trim() != "")
-                                result.AggregatedLocationsCount = int.Parse( field.Value.Trim());
-                            break;
+                    case "AggregatedLocationsCount":
+                        if (field.Value.Trim() != "")
+                            result.AggregatedLocationsCount = int.Parse(field.Value.Trim());
+                        break;
 
-                        case "AccountLocationAffiliation":
-                            result.AccountLocationAffiliation = field.Value.Trim();
-                            break;
+                    case "AccountLocationAffiliation":
+                        result.AccountLocationAffiliation = field.Value.Trim();
+                        break;
 
-                        case "DeviceLocationAffiliation":
-                            result.DeviceLocationAffiliation = field.Value.Trim();
-                            break;
+                    case "DeviceLocationAffiliation":
+                        result.DeviceLocationAffiliation = field.Value.Trim();
+                        break;
 
-                        default:
-                            if (debugAttributes)
-                            {
-                                Logger.LogAttribute("Location Parser: Unknown field: " + field.Attribute("name").Value);
-                            }
-                            break;
-                    }
+                    case "GpsHorizontalAccuracy":
+                        if (field.Value.Trim() != "")
+                            result.GpsHorizontalAccuracy = Double.Parse(field.Value.Trim());
+                        break;
+
+                    default:
+                        if (debugAttributes)
+                        {
+                            Logger.LogAttribute("Location Parser: Unknown field: " + field.Attribute("name").Value);
+                        }
+                        break;
                 }
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error parsing location: " + ex.Message);
-            }
+        }
+
+        public static void ParseModelFields(IEnumerable<XElement> modelFieldElements, Location result, bool debugAttributes = false)
+        {
+            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
 
             foreach (var modelField in modelFieldElements)
             {
@@ -224,34 +237,16 @@ namespace UFEDLib
                     Console.WriteLine("Error parsing location modelField: " + ex.Message);
                 }
             }
+        }
 
-            foreach (var multiField in multiFieldElements)
-            {
-                switch (multiField.Attribute("name").Value)
-                {
-                    default:
-                        if (debugAttributes)
-                        {
-                            Logger.LogAttribute("Location Parser: Unknown multiField: " + multiField.Attribute("name").Value);
-                        }
-                        break;
-                }
-            }
+        public static void ParseMultiFields(IEnumerable<XElement> multiFieldElements, Location result, bool debugAttributes = false)
+        {
+            IUfedModelParser<Location>.CheckMultiFields<Location>(multiFieldElements, debugAttributes);
+        }
 
-            foreach (var multiModelField in multiModelFieldElements)
-            {
-                switch (multiModelField.Attribute("name").Value)
-                {
-                    default:
-                        if (debugAttributes)
-                        {
-                            Logger.LogAttribute("Location Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
-                        }
-                        break;
-                }
-            }
-
-            return result;
+        public static void ParseMultiModelFields(IEnumerable<XElement> multiModelFieldElements, Location result, bool debugAttributes = false)
+        {
+            IUfedModelParser<Location>.CheckMultiModelFields<Location>(multiModelFieldElements, debugAttributes);
         }
         #endregion
     }

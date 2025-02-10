@@ -42,6 +42,32 @@ namespace UFEDLib
             var multiFieldElements = element.Elements(xNamespace + "multiField");
             var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
 
+            ParseFields(fieldElements, result, debugAttributes);
+            ParseModelFields(modelFieldElements, result, debugAttributes);
+            ParseMultiFields(multiFieldElements, result, debugAttributes);
+            ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
+
+            return result;
+        }
+
+        public static List<LogEntry> ParseMultiModel(XElement element, bool debugAttributes = false)
+        {
+            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
+            List<LogEntry> result = new List<LogEntry>();
+
+            IEnumerable<XElement> leElements = element.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "LogEntry");
+
+            foreach (XElement leElement in leElements)
+            {
+                LogEntry dc = ParseModel(leElement, debugAttributes);
+                result.Add(dc);
+            }
+
+            return result;
+        }
+
+        public static void ParseFields(IEnumerable<XElement> fieldElements, LogEntry result, bool debugAttributes = false)
+        {
             foreach (var field in fieldElements)
             {
                 switch (field.Attribute("name").Value)
@@ -103,63 +129,21 @@ namespace UFEDLib
                         break;
                 }
             }
-
-            foreach (var modelField in modelFieldElements)
-            {
-                switch (modelField.Attribute("name").Value)
-                {
-                    default:
-                        if (debugAttributes)
-                        {
-                            Logger.LogAttribute("LogEntry Parser: Unknown modelField: " + modelField.Attribute("name").Value);
-                        }
-                        break;
-                }
-            }
-
-            foreach (var multiField in multiFieldElements)
-            {
-                switch (multiField.Attribute("name").Value)
-                {
-                    default:
-                        if (debugAttributes)
-                        {
-                            Logger.LogAttribute("LogEntry Parser: Unknown multiField: " + multiField.Attribute("name").Value);
-                        }
-                        break;
-                }
-            }
-
-            foreach (var multiModelField in multiModelFieldElements)
-            {
-                switch (multiModelField.Attribute("name").Value)
-                {
-                    default:
-                        if (debugAttributes)
-                        {
-                            Logger.LogAttribute("LogEntry Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
-                        }
-                        break;
-                }
-            }
-
-            return result;
         }
 
-        public static List<LogEntry> ParseMultiModel(XElement element, bool debugAttributes = false)
+        public static void ParseModelFields(IEnumerable<XElement> modelFieldElements, LogEntry result, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            List<LogEntry> result = new List<LogEntry>();
+            IUfedModelParser<LogEntry>.CheckModelFields<LogEntry>(modelFieldElements, debugAttributes);
+        }
 
-            IEnumerable<XElement> leElements = element.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "LogEntry");
+        public static void ParseMultiFields(IEnumerable<XElement> multiFieldElements, LogEntry result, bool debugAttributes = false)
+        {
+            IUfedModelParser<LogEntry>.CheckMultiFields<LogEntry>(multiFieldElements, debugAttributes);
+        }
 
-            foreach (XElement leElement in leElements)
-            {
-                LogEntry dc = ParseModel(leElement, debugAttributes);
-                result.Add(dc);
-            }
-
-            return result;
+        public static void ParseMultiModelFields(IEnumerable<XElement> multiModelFieldElements, LogEntry result, bool debugAttributes = false)
+        {
+            IUfedModelParser<LogEntry>.CheckMultiModelFields<LogEntry>(multiModelFieldElements, debugAttributes);
         }
 
         #endregion

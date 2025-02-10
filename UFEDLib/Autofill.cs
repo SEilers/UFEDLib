@@ -38,6 +38,32 @@ namespace UFEDLib
             var multiFieldElements = element.Elements(xNamespace + "multiField");
             var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
 
+            ParseFields(fieldElements, result, debugAttributes);
+            ParseModelFields(modelFieldElements, result, debugAttributes);
+            ParseMultiFields(multiFieldElements, result, debugAttributes);
+            ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
+
+            return result;
+        }
+
+        public static List<Autofill> ParseMultiModel(XElement element, bool debugAttributes = false)
+        {
+            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
+            List<Autofill> result = new List<Autofill>();
+
+            IEnumerable<XElement> autofills = element.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "Autofill");
+
+            foreach (XElement autofill in autofills)
+            {
+                Autofill a = ParseModel(autofill, debugAttributes);
+                result.Add(a);
+            }
+
+            return result;
+        }
+
+        public static void ParseFields(IEnumerable<XElement> fieldElements, Autofill result, bool debugAttributes = false)
+        {
             foreach (var field in fieldElements)
             {
                 switch (field.Attribute("name").Value)
@@ -84,63 +110,21 @@ namespace UFEDLib
                         break;
                 }
             }
-
-            foreach (var modelField in modelFieldElements)
-            {
-                switch (modelField.Attribute("name").Value)
-                {
-                    default:
-                        if (debugAttributes)
-                        {
-                            Logger.LogAttribute("Autofill Parser: Unknown modelField: " + modelField.Attribute("name").Value);
-                        }
-                        break;
-                }
-            }
-
-            foreach (var multiField in multiFieldElements)
-            {
-                switch (multiField.Attribute("name").Value)
-                {
-                    default:
-                        if (debugAttributes)
-                        {
-                            Logger.LogAttribute("Autofill Parser: Unknown multiField: " + multiField.Attribute("name").Value);
-                        }
-                        break;
-                }
-            }
-
-            foreach (var multiModelField in multiModelFieldElements)
-            {
-                switch (multiModelField.Attribute("name").Value)
-                {
-                    default:
-                        if (debugAttributes)
-                        {
-                            Logger.LogAttribute("Autofill Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
-                        }
-                        break;
-                }
-            }
-
-            return result;
         }
 
-        public static List<Autofill> ParseMultiModel(XElement element, bool debugAttributes = false)
+        public static void ParseModelFields(IEnumerable<XElement> modelFieldElements, Autofill result, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            List<Autofill> result = new List<Autofill>();
+            IUfedModelParser<Autofill>.CheckModelFields<Autofill>(modelFieldElements, debugAttributes);
+        }
 
-            IEnumerable<XElement> autofills = element.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "Autofill");
+        public static void ParseMultiFields(IEnumerable<XElement> multiFieldElements, Autofill result, bool debugAttributes = false)
+        {
+            IUfedModelParser<Autofill>.CheckMultiFields<Autofill>(multiFieldElements, debugAttributes);
+        }
 
-            foreach (XElement autofill in autofills)
-            {
-                Autofill a = ParseModel(autofill, debugAttributes);
-                result.Add(a);
-            }
-
-            return result;
+        public static void ParseMultiModelFields(IEnumerable<XElement> multiModelFieldElements, Autofill result, bool debugAttributes = false)
+        {
+            IUfedModelParser<Autofill>.CheckMultiModelFields<Autofill>(multiModelFieldElements, debugAttributes);
         }
 
         #endregion

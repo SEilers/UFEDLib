@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
@@ -27,11 +28,14 @@ namespace UFEDLib
         public string SecurityMode { get; set; }
         public string SSId { get; set; }
         public string NWConnectionType { get; set; }
-
         public string Password { get; set; }
+        #endregion
 
+        #region models
         public Coordinate Position { get; set; }
         #endregion
+
+
 
         #region Parsers
         public static List<WirelessNetwork> ParseMultiModel(XElement wirelessNetworksElement, bool debugAttributes = false)
@@ -68,6 +72,18 @@ namespace UFEDLib
             var multiFieldElements = element.Elements(xNamespace + "multiField");
             var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
 
+            ParseFields(fieldElements, result, debugAttributes);
+            ParseModelFields(modelFieldElements, result, debugAttributes);
+            ParseMultiFields(multiFieldElements, result, debugAttributes);
+            ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
+
+            return result;
+        }
+        #endregion
+
+
+        public static void ParseFields(IEnumerable<XElement> fieldElements, WirelessNetwork result, bool debugAttributes = false)
+        {
             foreach (var field in fieldElements)
             {
                 switch (field.Attribute("name").Value)
@@ -124,7 +140,6 @@ namespace UFEDLib
                         result.Password = field.Value.Trim();
                         break;
 
-
                     default:
                         if (debugAttributes)
                         {
@@ -133,7 +148,10 @@ namespace UFEDLib
                         break;
                 }
             }
+        }
 
+        public static void ParseModelFields(IEnumerable<XElement> modelFieldElements, WirelessNetwork result, bool debugAttributes = false)
+        {
             foreach (var modelField in modelFieldElements)
             {
                 switch (modelField.Attribute("name").Value)
@@ -150,35 +168,16 @@ namespace UFEDLib
                         break;
                 }
             }
-
-            foreach (var multiField in multiFieldElements)
-            {
-                switch (multiField.Attribute("name").Value)
-                {
-                    default:
-                        if (debugAttributes)
-                        {
-                            Logger.LogAttribute("WirelessNetwork Parser: Unknown multiField: " + multiField.Attribute("name").Value);
-                        }
-                        break;
-                }
-            }
-
-            foreach (var multiModelField in multiModelFieldElements)
-            {
-                switch (multiModelField.Attribute("name").Value)
-                {
-                    default:
-                        if (debugAttributes)
-                        {
-                            Logger.LogAttribute("WirelessNetwork Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
-                        }
-                        break;
-                }
-            }
-
-            return result;
         }
-        #endregion
+
+        public static void ParseMultiFields(IEnumerable<XElement> multiFieldElements, WirelessNetwork result, bool debugAttributes = false)
+        {
+            IUfedModelParser<WirelessNetwork>.CheckMultiFields<WirelessNetwork>(multiFieldElements, debugAttributes);
+        }
+
+        public static void ParseMultiModelFields(IEnumerable<XElement> multiModelFieldElements, WirelessNetwork result, bool debugAttributes = false)
+        {
+            IUfedModelParser<WirelessNetwork>.CheckMultiModelFields<WirelessNetwork>(multiModelFieldElements, debugAttributes);
+        }
     }
 }

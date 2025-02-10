@@ -44,90 +44,10 @@ namespace UFEDLib
             var multiFieldElements = element.Elements(xNamespace + "multiField");
             var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
 
-            try
-            {
-                foreach (XElement field in fieldElements)
-                {
-                    switch (field.Attribute("name").Value)
-                    {
-                        case "Source":
-                            result.Source = field.Value.Trim();
-                            break;
-
-                        case "UserMapping":
-                            result.UserMapping = field.Value.Trim();
-                            break;
-
-                        case "Description":
-                            result.Description = field.Value.Trim();
-                            break;
-
-                        case "Element":
-                            result.Element = field.Value.Trim();
-                            break;
-
-                        case "Event":
-                            result.Event = field.Value.Trim();
-                            break;
-
-                        case "TimeStamp":
-                            if (field.Value.Trim() != "")
-                                result.TimeStamp = DateTime.Parse(field.Value.Trim());
-                            break;
-
-                        default:
-                            if (debugAttributes)
-                            {
-                                Logger.LogAttribute("PoweringEvent Parser: Unknown field: " + field.Attribute("name").Value);
-                            }
-                            break;
-                    }
-                }
-
-                foreach (var modelField in modelFieldElements)
-                {
-                    switch (modelField.Attribute("name").Value)
-                    {
-                        default:
-                            if (debugAttributes)
-                            {
-                                Logger.LogAttribute("PoweringEvent Parser: Unknown modelField: " + modelField.Attribute("name").Value);
-                            }
-                            break;
-                    }
-                }
-
-                foreach (var multiField in multiFieldElements)
-                {
-                    switch (multiField.Attribute("name").Value)
-                    {
-                        default:
-                            if (debugAttributes)
-                            {
-                                Logger.LogAttribute("PoweringEvent Parser: Unknown multiField: " + multiField.Attribute("name").Value);
-                            }
-                            break;
-                    }
-                }
-
-                foreach (var multiModelField in multiModelFieldElements)
-                {
-                    switch (multiModelField.Attribute("name").Value)
-                    {
-                        default:
-                            if (debugAttributes)
-                            {
-                                Logger.LogAttribute("PoweringEvent Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
-                            }
-                            break;
-                    }
-                }
-
-            }
-            catch (Exception ex)
-            {
-                Trace.WriteLine(ex.Message);
-            }
+            ParseFields(fieldElements, result, debugAttributes);
+            ParseModelFields(modelFieldElements, result, debugAttributes);
+            ParseMultiFields(multiFieldElements, result, debugAttributes);
+            ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
 
             return result;
         }
@@ -146,6 +66,62 @@ namespace UFEDLib
             }
 
             return result;
+        }
+
+        public static void ParseFields(IEnumerable<XElement> fieldElements, PoweringEvent result, bool debugAttributes = false)
+        {
+            foreach (XElement field in fieldElements)
+            {
+                switch (field.Attribute("name").Value)
+                {
+                    case "Source":
+                        result.Source = field.Value.Trim();
+                        break;
+
+                    case "UserMapping":
+                        result.UserMapping = field.Value.Trim();
+                        break;
+
+                    case "Description":
+                        result.Description = field.Value.Trim();
+                        break;
+
+                    case "Element":
+                        result.Element = field.Value.Trim();
+                        break;
+
+                    case "Event":
+                        result.Event = field.Value.Trim();
+                        break;
+
+                    case "TimeStamp":
+                        if (field.Value.Trim() != "")
+                            result.TimeStamp = DateTime.Parse(field.Value.Trim());
+                        break;
+
+                    default:
+                        if (debugAttributes)
+                        {
+                            Logger.LogAttribute("PoweringEvent Parser: Unknown field: " + field.Attribute("name").Value);
+                        }
+                        break;
+                }
+            }
+        }
+
+        public static void ParseModelFields(IEnumerable<XElement> modelFieldElements, PoweringEvent result, bool debugAttributes = false)
+        {
+            IUfedModelParser<PoweringEvent>.CheckModelFields<PoweringEvent>(modelFieldElements, debugAttributes);
+        }
+
+        public static void ParseMultiFields(IEnumerable<XElement> multiFieldElements, PoweringEvent result, bool debugAttributes = false)
+        {
+            IUfedModelParser<PoweringEvent>.CheckMultiFields<PoweringEvent>(multiFieldElements, debugAttributes);
+        }
+
+        public static void ParseMultiModelFields(IEnumerable<XElement> multiModelFieldElements, PoweringEvent result, bool debugAttributes = false)
+        {
+            IUfedModelParser<PoweringEvent>.CheckMultiModelFields<PoweringEvent>(multiModelFieldElements, debugAttributes);
         }
         #endregion
     }

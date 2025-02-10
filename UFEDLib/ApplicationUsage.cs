@@ -59,6 +59,38 @@ namespace UFEDLib
             var multiFieldElements = element.Elements(xNamespace + "multiField");
             var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
 
+            ParseFields(fieldElements, result, debugAttributes);
+            ParseModelFields(modelFieldElements, result, debugAttributes);
+            ParseMultiFields(multiFieldElements, result, debugAttributes);
+            ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
+
+            return result;
+        }
+
+        public static List<ApplicationUsage> ParseMultiModel(XElement element, bool debugAttributes = false)
+        {
+            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
+            List<ApplicationUsage> result = new List<ApplicationUsage>();
+
+            IEnumerable<XElement> applicationUsageElements = element.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "ApplicationUsage");
+
+            foreach (var applicationUsageElement in applicationUsageElements)
+            {
+                try
+                {
+                    result.Add(ParseModel(applicationUsageElement, debugAttributes));
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error parsing ApplicationUsage: " + ex.Message);
+                }
+            }
+
+            return result;
+        }
+
+        public static void ParseFields(IEnumerable<XElement> fieldElements, ApplicationUsage result, bool debugAttributes = false)
+        {
             foreach (var field in fieldElements)
             {
                 switch (field.Attribute("name").Value)
@@ -67,6 +99,13 @@ namespace UFEDLib
                         if (field.Value.Trim() != "")
                         {
                             result.ActivationCount = int.Parse(field.Value.Trim());
+                        }
+                        break;
+
+                    case "LaunchCount":
+                        if (field.Value.Trim() != "")
+                        {
+                            result.LaunchCount = int.Parse(field.Value.Trim());
                         }
                         break;
 
@@ -129,69 +168,21 @@ namespace UFEDLib
                         break;
                 }
             }
-
-            foreach (var modelField in modelFieldElements)
-            {
-                switch (modelField.Attribute("name").Value)
-                {
-                    default:
-                        if (debugAttributes)
-                        {
-                            Logger.LogAttribute("ApplicationUsage Parser: Unknown modelField: " + modelField.Attribute("name").Value);
-                        }
-                        break;
-                }
-            }
-
-            foreach (var multiField in multiFieldElements)
-            {
-                switch (multiField.Attribute("name").Value)
-                {
-                    default:
-                        if (debugAttributes)
-                        {
-                            Logger.LogAttribute("ApplicationUsage Parser:Unknown multiField: " + multiField.Attribute("name").Value);
-                        }
-                        break;
-                }
-            }
-
-            foreach (var multiModelField in multiModelFieldElements)
-            {
-                switch (multiModelField.Attribute("name").Value)
-                {
-                    default:
-                        if (debugAttributes)
-                        {
-                            Logger.LogAttribute("ApplicationUsage Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
-                        }
-                        break;
-                }
-            }
-
-            return result;
         }
 
-        public static List<ApplicationUsage> ParseMultiModel(XElement element, bool debugAttributes = false)
+        public static void ParseModelFields(IEnumerable<XElement> modelFieldElements, ApplicationUsage result, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            List<ApplicationUsage> result = new List<ApplicationUsage>();
+            IUfedModelParser<ApplicationUsage>.CheckModelFields<ApplicationUsage>(modelFieldElements, debugAttributes);
+        }
 
-            IEnumerable<XElement> applicationUsageElements = element.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "ApplicationUsage");
+        public static void ParseMultiFields(IEnumerable<XElement> multiFieldElements, ApplicationUsage result, bool debugAttributes = false)
+        {
+            IUfedModelParser<ApplicationUsage>.CheckMultiFields<ApplicationUsage>(multiFieldElements, debugAttributes);
+        }
 
-            foreach (var applicationUsageElement in applicationUsageElements)
-            {
-                try
-                {
-                    result.Add(ParseModel(applicationUsageElement, debugAttributes));
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Error parsing ApplicationUsage: " + ex.Message);
-                }
-            }
-
-            return result;
+        public static void ParseMultiModelFields(IEnumerable<XElement> multiModelFieldElements, ApplicationUsage result, bool debugAttributes = false)
+        {
+            IUfedModelParser<ApplicationUsage>.CheckMultiModelFields<ApplicationUsage>(multiModelFieldElements, debugAttributes);
         }
 
         #endregion

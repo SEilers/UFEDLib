@@ -39,6 +39,32 @@ namespace UFEDLib
             var multiFieldElements = element.Elements(xNamespace + "multiField");
             var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
 
+            ParseFields(fieldElements, result, debugAttributes);
+            ParseModelFields(modelFieldElements, result, debugAttributes);
+            ParseMultiFields(multiFieldElements, result, debugAttributes);
+            ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
+
+            return result;
+        }
+
+        public static List<AppsUsageLog> ParseMultiModel(XElement element, bool debugAttributes = false)
+        {
+            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
+            List<AppsUsageLog> result = new List<AppsUsageLog>();
+
+            IEnumerable<XElement> auElements = element.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "AppsUsageLog");
+
+            foreach (XElement auElement in auElements)
+            {
+                AppsUsageLog aul = ParseModel(auElement, debugAttributes);
+                result.Add(aul);
+            }
+
+            return result;
+        }
+
+        public static void ParseFields(IEnumerable<XElement> fieldElements, AppsUsageLog result, bool debugAttributes = false)
+        {
             foreach (var field in fieldElements)
             {
                 switch (field.Attribute("name").Value)
@@ -89,63 +115,21 @@ namespace UFEDLib
                         break;
                 }
             }
-
-            foreach (var modelField in modelFieldElements)
-            {
-                switch (modelField.Attribute("name").Value)
-                {
-                    default:
-                        if (debugAttributes)
-                        {
-                            Logger.LogAttribute("AppsUsageLog Parser: Unknown modelField: " + modelField.Attribute("name").Value);
-                        }
-                        break;
-                }
-            }
-
-            foreach (var multiField in multiFieldElements)
-            {
-                switch (multiField.Attribute("name").Value)
-                {
-                    default:
-                        if (debugAttributes)
-                        {
-                            Logger.LogAttribute("AppsUsageLog Parser: Unknown multiField: " + multiField.Attribute("name").Value);
-                        }
-                        break;
-                }
-            }
-
-            foreach (var multiModelField in multiModelFieldElements)
-            {
-                switch (multiModelField.Attribute("name").Value)
-                {
-                    default:
-                        if (debugAttributes)
-                        {
-                            Logger.LogAttribute("AppsUsageLog Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
-                        }
-                        break;
-                }
-            }
-
-            return result;
         }
 
-        public static List<AppsUsageLog> ParseMultiModel(XElement element, bool debugAttributes = false)
+        public static void ParseModelFields(IEnumerable<XElement> modelFieldElements, AppsUsageLog result, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            List<AppsUsageLog> result = new List<AppsUsageLog>();
+            IUfedModelParser<AppsUsageLog>.CheckModelFields<AppsUsageLog>(modelFieldElements, debugAttributes);
+        }
 
-            IEnumerable<XElement> auElements = element.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "AppsUsageLog");
+        public static void ParseMultiFields(IEnumerable<XElement> multiFieldElements, AppsUsageLog result, bool debugAttributes = false)
+        {
+            IUfedModelParser<AppsUsageLog>.CheckMultiFields<AppsUsageLog>(multiFieldElements, debugAttributes);
+        }
 
-            foreach (XElement auElement in auElements)
-            {
-                AppsUsageLog aul = ParseModel(auElement, debugAttributes);
-                result.Add(aul);
-            }
-
-            return result;
+        public static void ParseMultiModelFields(IEnumerable<XElement> multiModelFieldElements, AppsUsageLog result, bool debugAttributes = false)
+        {
+            IUfedModelParser<AppsUsageLog>.CheckMultiModelFields<AppsUsageLog>(multiModelFieldElements, debugAttributes);
         }
 
         #endregion

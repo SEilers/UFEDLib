@@ -57,125 +57,10 @@ namespace UFEDLib
             var multiFieldElements = element.Elements(xNamespace + "multiField");
             var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
 
-            try
-            {
-                foreach (XElement field in fieldElements)
-                {
-                    switch (field.Attribute("name").Value)
-                    {
-                        case "Source":
-                            result.Source = field.Value.Trim();
-                            break;
-                        
-                        case "UserMapping":
-                            result.UserMapping = field.Value.Trim();
-                            break;
-
-                        case "ServiceIdentifier":
-                            result.ServiceIdentifier = field.Value.Trim();
-                            break;
-
-                        case "Body":
-                            result.Body = field.Value.Trim();
-                            break;
-                        
-                        case "NotificationId":
-                            result.NotificationId = field.Value.Trim();
-                            break;
-                        
-                        case "Type":
-                            result.Type = field.Value.Trim();
-                            break;
-                        
-                        case "TimeStamp":
-                            if (field.Value.Trim() != "")
-                                result.TimeStamp = DateTime.Parse(field.Value.Trim());
-                            break;
-                        
-                        case "Subject":
-                            result.Subject = field.Value.Trim();
-                            break;
-                        
-                        case "PositionAddress":
-                            result.PositionAddress = field.Value.Trim();
-                            break;
-                        
-                        case "DateRead":
-                            if (field.Value.Trim() != "")
-                                result.DateRead = DateTime.Parse(field.Value.Trim());
-                            break;
-                        
-                        case "Status":
-                            result.Status = field.Value.Trim();
-                            break;
-                   
-                        default:
-                            if (debugAttributes)
-                            {
-                                Logger.LogAttribute("Notification Parser: Unknown field: " + field.Attribute("name").Value);
-                            }
-                            break;
-                    }
-                }
-
-                foreach (var modelField in modelFieldElements)
-                {
-                    switch (modelField.Attribute("name").Value)
-                    {
-                        default:
-                            if (debugAttributes)
-                            {
-                                Logger.LogAttribute("Notification Parser: Unknown modelField: " + modelField.Attribute("name").Value);
-                            }
-                            break;
-                    }
-                }
-
-                foreach (var multiField in multiFieldElements)
-                {
-                    switch (multiField.Attribute("name").Value)
-                    {
-                        case "To":
-                            result.To = Party.ParseModel(multiField, debugAttributes);
-                            break;
-                        case "Position":
-                            result.Position = Coordinate.ParseModel(multiField, debugAttributes);
-                            break;
-              
-                        default:
-                            if (debugAttributes)
-                            {
-                                Logger.LogAttribute("Notification Parser: Unknown multiField: " + multiField.Attribute("name").Value);
-                            }
-                            break;
-                    }
-                }
-
-                foreach (var multiModelField in multiModelFieldElements)
-                {
-                    switch (multiModelField.Attribute("name").Value)
-                    {
-                        case "Participants":
-                            result.Participants = Party.ParseMultiModel(multiModelField);
-                            break;
-                        case "Attachments":
-                            result.Attachments = Attachment.ParseMultiModel(multiModelField, debugAttributes);
-                            break;
-              
-                        default:
-                            if (debugAttributes)
-                            {
-                                Logger.LogAttribute("Notification Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
-                            }
-                            break;
-                    }
-                }
-
-            }
-            catch (Exception ex)
-            {
-                Trace.WriteLine(ex.Message);
-            }
+            ParseFields(fieldElements, result, debugAttributes);
+            ParseModelFields(modelFieldElements, result, debugAttributes);
+            ParseMultiFields(multiFieldElements, result, debugAttributes);
+            ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
 
             return result;
         }
@@ -194,6 +79,119 @@ namespace UFEDLib
             }
 
             return result;
+        }
+
+        public static void ParseFields(IEnumerable<XElement> fieldElements, Notification result, bool debugAttributes = false)
+        {
+            foreach (XElement field in fieldElements)
+            {
+                switch (field.Attribute("name").Value)
+                {
+                    case "Source":
+                        result.Source = field.Value.Trim();
+                        break;
+
+                    case "UserMapping":
+                        result.UserMapping = field.Value.Trim();
+                        break;
+
+                    case "ServiceIdentifier":
+                        result.ServiceIdentifier = field.Value.Trim();
+                        break;
+
+                    case "Body":
+                        result.Body = field.Value.Trim();
+                        break;
+
+                    case "NotificationId":
+                        result.NotificationId = field.Value.Trim();
+                        break;
+
+                    case "Type":
+                        result.Type = field.Value.Trim();
+                        break;
+
+                    case "TimeStamp":
+                        if (field.Value.Trim() != "")
+                            result.TimeStamp = DateTime.Parse(field.Value.Trim());
+                        break;
+
+                    case "Subject":
+                        result.Subject = field.Value.Trim();
+                        break;
+
+                    case "PositionAddress":
+                        result.PositionAddress = field.Value.Trim();
+                        break;
+
+                    case "DateRead":
+                        if (field.Value.Trim() != "")
+                            result.DateRead = DateTime.Parse(field.Value.Trim());
+                        break;
+
+                    case "Status":
+                        result.Status = field.Value.Trim();
+                        break;
+
+                    default:
+                        if (debugAttributes)
+                        {
+                            Logger.LogAttribute("Notification Parser: Unknown field: " + field.Attribute("name").Value);
+                        }
+                        break;
+                }
+            }
+        }
+
+        public static void ParseModelFields(IEnumerable<XElement> modelFieldElements, Notification result, bool debugAttributes = false)
+        {
+            foreach (var modelField in modelFieldElements)
+            {
+                switch (modelField.Attribute("name").Value)
+                {
+                    case "To":
+                        result.To = Party.ParseModel(modelField, debugAttributes);
+                        break;
+                    case "Position":
+                        result.Position = Coordinate.ParseModel(modelField, debugAttributes);
+                        break;
+
+                    default:
+                        if (debugAttributes)
+                        {
+                            Logger.LogAttribute("Notification Parser: Unknown modelField: " + modelField.Attribute("name").Value);
+                        }
+                        break;
+                }
+            }
+        }
+
+        public static void ParseMultiFields(IEnumerable<XElement> multiFieldElements, Notification result, bool debugAttributes = false)
+        {
+            IUfedModelParser<Notification>.CheckMultiFields<Notification>(multiFieldElements, debugAttributes);
+        }
+
+        public static void ParseMultiModelFields(IEnumerable<XElement> multiModelFieldElements, Notification result, bool debugAttributes = false)
+        {
+            foreach (var multiModelField in multiModelFieldElements)
+            {
+                switch (multiModelField.Attribute("name").Value)
+                {
+                    case "Participants":
+                        result.Participants = Party.ParseMultiModel(multiModelField);
+                        break;
+                    case "Attachments":
+                        result.Attachments = Attachment.ParseMultiModel(multiModelField, debugAttributes);
+                        break;
+
+                    default:
+                        if (debugAttributes)
+                        {
+                            Logger.LogAttribute("Notification Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
+                        }
+                        break;
+                }
+            }
         }
         #endregion
 

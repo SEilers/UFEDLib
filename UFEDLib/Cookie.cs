@@ -44,6 +44,32 @@ namespace UFEDLib
             var multiFieldElements = element.Elements(xNamespace + "multiField");
             var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
 
+            ParseFields(fieldElements, result, debugAttributes);
+            ParseModelFields(modelFieldElements, result, debugAttributes);
+            ParseMultiFields(multiFieldElements, result, debugAttributes);
+            ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
+
+            return result;
+        }
+
+        public static List<Cookie> ParseMultiModel(XElement element, bool debugAttributes = false)
+        {
+            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
+            List<Cookie> result = new List<Cookie>();
+
+            IEnumerable<XElement> cookies = element.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "Cookie");
+
+            foreach (XElement cookie in cookies)
+            {
+                Cookie c = ParseModel(cookie, debugAttributes);
+                result.Add(c);
+            }
+
+            return result;
+        }
+
+        public static void ParseFields(IEnumerable<XElement> fieldElements, Cookie result, bool debugAttributes = false)
+        {
             foreach (var field in fieldElements)
             {
                 switch (field.Attribute("name").Value)
@@ -103,63 +129,21 @@ namespace UFEDLib
                         break;
                 }
             }
-
-            foreach (var modelField in modelFieldElements)
-            {
-                switch (modelField.Attribute("name").Value)
-                {
-                    default:
-                        if (debugAttributes)
-                        {
-                            Logger.LogAttribute("Cookie Parser: Unknown modelField: " + modelField.Attribute("name").Value);
-                        }
-                        break;
-                }
-            }
-
-            foreach (var multiField in multiFieldElements)
-            {
-                switch (multiField.Attribute("name").Value)
-                {
-                    default:
-                        if (debugAttributes)
-                        {
-                            Logger.LogAttribute("Cookie Parser:Unknown multiField: " + multiField.Attribute("name").Value);
-                        }
-                        break;
-                }
-            }
-
-            foreach (var multiModelField in multiModelFieldElements)
-            {
-                switch (multiModelField.Attribute("name").Value)
-                {
-                    default:
-                        if (debugAttributes)
-                        {
-                            Logger.LogAttribute("Cookie Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
-                        }
-                        break;
-                }
-            }
-
-            return result;
         }
 
-        public static List<Cookie> ParseMultiModel(XElement element, bool debugAttributes = false)
+        public static void ParseModelFields(IEnumerable<XElement> modelFieldElements, Cookie result, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            List<Cookie> result = new List<Cookie>();
+            IUfedModelParser<Cookie>.CheckModelFields<Cookie>(modelFieldElements, debugAttributes);
+        }
 
-            IEnumerable<XElement> cookies = element.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "Cookie");
+        public static void ParseMultiFields(IEnumerable<XElement> multiFieldElements, Cookie result, bool debugAttributes = false)
+        {
+            IUfedModelParser<Cookie>.CheckMultiFields<Cookie>(multiFieldElements, debugAttributes);
+        }
 
-            foreach (XElement cookie in cookies)
-            {
-                Cookie c = ParseModel(cookie, debugAttributes);
-                result.Add(c);
-            }
-
-            return result;
+        public static void ParseMultiModelFields(IEnumerable<XElement> multiModelFieldElements, Cookie result, bool debugAttributes = false)
+        {
+            IUfedModelParser<Cookie>.CheckMultiModelFields<Cookie>(multiModelFieldElements, debugAttributes);
         }
         #endregion
     }

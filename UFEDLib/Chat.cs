@@ -73,6 +73,16 @@ namespace UFEDLib
             var multiFieldElements = element.Elements(xNamespace + "multiField");
             var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
 
+            ParseFields(fieldElements, result, debugAttributes);
+            ParseModelFields(modelFieldElements, result, debugAttributes);
+            ParseMultiFields(multiFieldElements, result, debugAttributes);
+            ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
+
+            return result;
+        }
+
+        public static void ParseFields(IEnumerable<XElement> fieldElements, Chat result, bool debugAttributes = false)
+        {
             foreach (var field in fieldElements)
             {
                 switch (field.Attribute("name").Value)
@@ -127,34 +137,20 @@ namespace UFEDLib
                         break;
                 }
             }
+        }
 
-            foreach (var modelField in modelFieldElements)
-            {
-                switch (modelField.Attribute("name").Value)
-                {
-                    default:
-                        if (debugAttributes)
-                        {
-                            Logger.LogAttribute("Chat Parser: Unknown modelField: " + modelField.Attribute("name").Value);
-                        }
-                        break;
-                }
-            }
+        public static void ParseModelFields(IEnumerable<XElement> modelFieldElements, Chat result, bool debugAttributes = false)
+        {
+            IUfedModelParser<Chat>.CheckModelFields<Chat>(modelFieldElements, debugAttributes);
+        }
 
-            foreach (var multiField in multiFieldElements)
-            {
-                switch (multiField.Attribute("name").Value)
-                {
-                    default:
-                        if (debugAttributes)
-                        {
-                            Logger.LogAttribute("Chat Parser: Unknown multiField: " + multiField.Attribute("name").Value);
-                        }
-                        break;
-                }
-            }
+        public static void ParseMultiFields(IEnumerable<XElement> multiFieldElements, Chat result, bool debugAttributes = false)
+        {
+            IUfedModelParser<Chat>.CheckMultiFields<Chat>(multiFieldElements, debugAttributes);
+        }
 
-
+        public static void ParseMultiModelFields(IEnumerable<XElement> multiModelFieldElements, Chat result, bool debugAttributes = false)
+        {
             foreach (var multiModelField in multiModelFieldElements)
             {
                 switch (multiModelField.Attribute("name").Value)
@@ -184,8 +180,6 @@ namespace UFEDLib
                         break;
                 }
             }
-
-            return result;
         }
         #endregion
     }

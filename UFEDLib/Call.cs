@@ -92,120 +92,10 @@ namespace UFEDLib
                 var multiFieldElements = element.Elements(xNamespace + "multiField");
                 var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
 
-                foreach (var field in fieldElements)
-                {
-                    switch (field.Attribute("name").Value)
-                    {
-                        case "Type":
-                            result.Type = field.Value.Trim();
-                            break;
-
-                        case "DisconnectionCause":
-                            result.DisconnectionCause = field.Value.Trim();
-                            break;
-
-                        case "TimeStamp":
-                            if (field.Value.Trim() != "")
-                                result.TimeStamp = DateTime.Parse(field.Value.Trim());
-                            break;
-
-                        case "Duration":
-                            if (field.Value.Trim() != "")
-                                result.Duration = TimeSpan.Parse(field.Value.Trim());
-                            break;
-
-                        case "Source":
-                            result.Source = field.Value.Trim();
-                            break;
-
-                        case "UserMapping":
-                            result.UserMapping = field.Value.Trim();
-                            break;
-
-                        case "Direction":
-                            result.Direction = field.Value.Trim();
-                            break;
-
-                        case "Status":
-                            result.Status = field.Value.Trim();
-                            break;
-
-                        case "NetworkName":
-                            result.NetworkName = field.Value.Trim();
-                            break;
-
-                        case "NetworkCode":
-                            result.NetworkCode = field.Value.Trim();
-                            break;
-
-                        case "VideoCall":
-                            result.VideoCall = bool.Parse(field.Value.Trim());
-                            break;
-
-                        case "CountryCode":
-                            result.CountryCode = field.Value.Trim();
-                            break;
-
-                        case "Account":
-                            result.Account = field.Value.Trim();
-                            break;
-
-                        case "ServiceIdentifier":
-                            result.ServiceIdentifier = field.Value.Trim();
-                            break;
-
-                        default:
-                            if (debugAttributes)
-                            {
-                                Logger.LogAttribute("Call Parser: Unknown field: " + field.Attribute("name").Value);
-                            }
-                            break;
-
-                    }
-                }
-
-                foreach (var modelField in modelFieldElements)
-                {
-                    switch (modelField.Attribute("name").Value)
-                    {
-                        default:
-                            if (debugAttributes)
-                            {
-                                Logger.LogAttribute("Call Parser: Unknown modelField: " + modelField.Attribute("name").Value);
-                            }
-                            break;
-                    }
-                }
-
-                foreach (var multiField in multiFieldElements)
-                {
-                    switch (multiField.Attribute("name").Value)
-                    {
-                        default:
-                            if (debugAttributes)
-                            {
-                                Logger.LogAttribute("Call Parser: Unknown multiAttribute: " + multiField.Attribute("name").Value);
-                            }
-                            break;
-                    }
-                }
-
-                foreach (var multiModelField in multiModelFieldElements)
-                {
-                    switch (multiModelField.Attribute("name").Value)
-                    {
-                        case "Parties":
-                            result.Parties = Party.ParseMultiModel(multiModelField, debugAttributes);
-                            break;
-
-                        default:
-                            if (debugAttributes)
-                            {
-                                Logger.LogAttribute("Call Parser: Unknown multiModelAttribute: " + multiModelField.Attribute("name").Value);
-                            }
-                            break;
-                    }
-                }
+                ParseFields(fieldElements, result, debugAttributes);
+                ParseModelFields(modelFieldElements, result, debugAttributes);
+                ParseMultiFields(multiFieldElements, result, debugAttributes);
+                ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
             }
             catch (Exception e)
             {
@@ -213,6 +103,111 @@ namespace UFEDLib
             }
 
             return result;
+        }
+
+        public static void ParseFields(IEnumerable<XElement> fieldElements, Call result, bool debugAttributes = false)
+        {
+            foreach (var field in fieldElements)
+            {
+                switch (field.Attribute("name").Value)
+                {
+                    case "Type":
+                        result.Type = field.Value.Trim();
+                        break;
+
+                    case "DisconnectionCause":
+                        result.DisconnectionCause = field.Value.Trim();
+                        break;
+
+                    case "TimeStamp":
+                        if (field.Value.Trim() != "")
+                            result.TimeStamp = DateTime.Parse(field.Value.Trim());
+                        break;
+
+                    case "Duration":
+                        if (field.Value.Trim() != "")
+                            result.Duration = TimeSpan.Parse(field.Value.Trim());
+                        break;
+
+                    case "Source":
+                        result.Source = field.Value.Trim();
+                        break;
+
+                    case "UserMapping":
+                        result.UserMapping = field.Value.Trim();
+                        break;
+
+                    case "Direction":
+                        result.Direction = field.Value.Trim();
+                        break;
+
+                    case "Status":
+                        result.Status = field.Value.Trim();
+                        break;
+
+                    case "NetworkName":
+                        result.NetworkName = field.Value.Trim();
+                        break;
+
+                    case "NetworkCode":
+                        result.NetworkCode = field.Value.Trim();
+                        break;
+
+                    case "VideoCall":
+                        result.VideoCall = bool.Parse(field.Value.Trim());
+                        break;
+
+                    case "CountryCode":
+                        result.CountryCode = field.Value.Trim();
+                        break;
+
+                    case "Account":
+                        result.Account = field.Value.Trim();
+                        break;
+
+                    case "ServiceIdentifier":
+                        result.ServiceIdentifier = field.Value.Trim();
+                        break;
+
+                    default:
+                        if (debugAttributes)
+                        {
+                            Logger.LogAttribute("Call Parser: Unknown field: " + field.Attribute("name").Value);
+                        }
+                        break;
+
+                }
+            }
+        }
+
+        public static void ParseModelFields(IEnumerable<XElement> modelFieldElements, Call result, bool debugAttributes = false)
+        {
+            IUfedModelParser<Call>.CheckModelFields<Call>(modelFieldElements, debugAttributes);
+        }
+
+        public static void ParseMultiFields(IEnumerable<XElement> multiFieldElements, Call result, bool debugAttributes = false)
+        {
+            IUfedModelParser<Call>.CheckMultiFields<Call>(multiFieldElements, debugAttributes);
+        }
+
+        public static void ParseMultiModelFields(IEnumerable<XElement> multiModelFieldElements, Call result, bool debugAttributes = false)
+        {
+            foreach (var multiModelField in multiModelFieldElements)
+            {
+                switch (multiModelField.Attribute("name").Value)
+                {
+                    case "Parties":
+                        result.Parties = Party.ParseMultiModel(multiModelField, debugAttributes);
+                        break;
+
+                    default:
+                        if (debugAttributes)
+                        {
+                            Logger.LogAttribute("Call Parser: Unknown multiModelAttribute: " + multiModelField.Attribute("name").Value);
+                        }
+                        break;
+                }
+            }
         }
         #endregion
 

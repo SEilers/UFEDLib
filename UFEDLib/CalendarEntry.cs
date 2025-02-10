@@ -62,6 +62,32 @@ namespace UFEDLib
             var multiFieldElements = element.Elements(xNamespace + "multiField");
             var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
 
+            ParseFields(fieldElements, result, debugAttributes);
+            ParseModelFields(modelFieldElements, result, debugAttributes);
+            ParseMultiFields(multiFieldElements, result, debugAttributes);
+            ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
+
+            return result;
+        }
+
+        public static List<CalendarEntry> ParseMultiModel(XElement element, bool debugAttributes = false)
+        {
+            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
+            List<CalendarEntry> result = new List<CalendarEntry>();
+
+            IEnumerable<XElement> ceElements = element.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "CalendarEntry");
+
+            foreach (XElement ceElement in ceElements)
+            {
+                CalendarEntry ce = ParseModel(ceElement, debugAttributes);
+                result.Add(ce);
+            }
+
+            return result;
+        }
+
+        public static void ParseFields(IEnumerable<XElement> fieldElements, CalendarEntry result, bool debugAttributes = false)
+        {
             foreach (var field in fieldElements)
             {
                 switch (field.Attribute("name").Value)
@@ -117,7 +143,7 @@ namespace UFEDLib
                     case "Subject":
                         result.Subject = field.Value.Trim();
                         break;
-         
+
                     case "EndDate":
                         if (field.Value.Trim() != "")
                             result.EndDate = DateTime.Parse(field.Value.Trim());
@@ -151,33 +177,20 @@ namespace UFEDLib
                         break;
                 }
             }
+        }
 
-            foreach (var modelField in modelFieldElements)
-            {
-                switch (modelField.Attribute("name").Value)
-                {
-                    default:
-                        if (debugAttributes)
-                        {
-                            Logger.LogAttribute("CalendarEntry Parser: Unknown modelField: " + modelField.Attribute("name").Value);
-                        }
-                        break;
-                }
-            }
+        public static void ParseModelFields(IEnumerable<XElement> modelFieldElements, CalendarEntry result, bool debugAttributes = false)
+        {
+            IUfedModelParser<CalendarEntry>.CheckModelFields<CalendarEntry>(modelFieldElements, debugAttributes);
+        }
 
-            foreach (var multiField in multiFieldElements)
-            {
-                switch (multiField.Attribute("name").Value)
-                {
-                    default:
-                        if (debugAttributes)
-                        {
-                            Logger.LogAttribute("CalendarEntry Parser: Unknown multiField: " + multiField.Attribute("name").Value);
-                        }
-                        break;
-                }
-            }
+        public static void ParseMultiFields(IEnumerable<XElement> multiFieldElements, CalendarEntry result, bool debugAttributes = false)
+        {
+            IUfedModelParser<CalendarEntry>.CheckMultiFields<CalendarEntry>(multiFieldElements, debugAttributes);
+        }
 
+        public static void ParseMultiModelFields(IEnumerable<XElement> multiModelFieldElements, CalendarEntry result, bool debugAttributes = false)
+        {
             foreach (var multiModelField in multiModelFieldElements)
             {
                 switch (multiModelField.Attribute("name").Value)
@@ -198,24 +211,6 @@ namespace UFEDLib
                         break;
                 }
             }
-
-            return result;
-        }
-
-        public static List<CalendarEntry> ParseMultiModel(XElement element, bool debugAttributes = false)
-        {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            List<CalendarEntry> result = new List<CalendarEntry>();
-
-            IEnumerable<XElement> ceElements = element.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "CalendarEntry");
-
-            foreach (XElement ceElement in ceElements)
-            {
-                CalendarEntry ce = ParseModel(ceElement, debugAttributes);
-                result.Add(ce);
-            }
-
-            return result;
         }
 
         #endregion
