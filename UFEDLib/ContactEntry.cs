@@ -40,10 +40,6 @@ namespace UFEDLib
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
             List<ContactEntry> result = new List<ContactEntry>();
 
-
-            // ContactEntry is UserID, PhoneNumber, EMailAddress, WebAddress
-            //IEnumerable<XElement> contactEntries = ContactEntriesElement.Descendants(xNamespace + "model").Where(x => x.Attribute("type").Value == "ContactEntry");
-
             IEnumerable<XElement> contactEntries = ContactEntriesElement.Elements(xNamespace + "model")
                 .Where(x => x.Attribute("type").Value == "UserID" ||
                     x.Attribute("type").Value == "PhoneNumber" ||

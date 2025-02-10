@@ -16,12 +16,8 @@ namespace UFEDLib
             return "Contact";
         }
 
-
-
         #region fields
         public string Account { get; set; }
-
-        public string AdditionalInfo { get; set; }
 
         public string Group { get; set; }
 
@@ -66,7 +62,7 @@ namespace UFEDLib
 
         #region multiModels
 
-        public Dictionary<string, string> AdditionalInfos { get; set; } = new Dictionary<string, string>();
+        public Dictionary<string, string> AdditionalInfo { get; set; } = new Dictionary<string, string>();
 
         /// <summary>
         /// Addresses collection.
@@ -135,10 +131,6 @@ namespace UFEDLib
             {
                 switch (field.Attribute("name").Value)
                 {
-                    case "AdditionalInfo":
-                        result.AdditionalInfo = field.Value.Trim();
-                        break;
-
                     case "Id":
                         result.Id = field.Value.Trim();
                         break;

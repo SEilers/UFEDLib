@@ -22,6 +22,7 @@ namespace UFEDLib
             "Chat",
             "Contact",
             "Cookie",
+            "CreditCard",
             "DeviceConnectivity",
             "DeviceEvent",
             "DeviceInfoEntry",
@@ -32,10 +33,13 @@ namespace UFEDLib
             "Journey",
             "LogEntry",
             "Location",
+            "MobileCard",
             "Note",
             "Notification",
             "Password",
             "PoweringEvent",
+            "RecognizedDevice",
+            "Recording",
             "SearchedItem",
             "User",
             "UserAccount",
@@ -144,6 +148,11 @@ namespace UFEDLib
             return ParseData<Cookie>(filename, progress, debugAttributes);
         }
 
+        public static List<CreditCard> ParseCreditCards(string filename, IProgress<int> progress = null, bool debugAttributes = false)
+        {
+            return ParseData<CreditCard>(filename, progress, debugAttributes);
+        }
+
         public static List<DeviceConnectivity> ParseDeviceConnectivity(string filename, IProgress<int> progress = null, bool debugAttributes = false)
         {
             return ParseData<DeviceConnectivity>(filename, progress, debugAttributes);
@@ -194,6 +203,11 @@ namespace UFEDLib
             return ParseData<Location>(filename, progress, debugAttributes);
         }
 
+        public static List<MobileCard> ParseMobileCards(string filename, IProgress<int> progress = null, bool debugAttributes = false)
+        {
+            return ParseData<MobileCard>(filename, progress, debugAttributes);
+        }
+
         public static List<Note> ParseNotes(string filename, IProgress<int> progress = null, bool debugAttributes = false)
         {
             return ParseData<Note>(filename, progress, debugAttributes);
@@ -214,11 +228,19 @@ namespace UFEDLib
             return ParseData<PoweringEvent>(filename, progress, debugAttributes);
         }
 
+        public static List<RecognizedDevice> ParseRecognizedDevices(string filename, IProgress<int> progress = null, bool debugAttributes = false)
+        {
+            return ParseData<RecognizedDevice>(filename, progress, debugAttributes);
+        }
+        public static List<Recording> ParseRecordings(string filename, IProgress<int> progress = null, bool debugAttributes = false)
+        {
+            return ParseData<Recording>(filename, progress, debugAttributes);
+        }
+
         public static List<SearchedItem> ParseSearchedItems(string filename, IProgress<int> progress = null, bool debugAttributes = false)
         {
             return ParseData<SearchedItem>(filename, progress, debugAttributes);
         }
-
         
         public static List<User> ParseUsers(string filename, IProgress<int> progress = null, bool debugAttributes = false)
         {
