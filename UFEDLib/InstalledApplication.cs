@@ -21,9 +21,13 @@ namespace UFEDLib
         public string Source { get; set; }
         public string AppGUID { get; set; }
         public string Copyright { get; set; }
+        public DateTime LastLaunched { get; set; }
+        public string DecodingStatus { get; set; }
         public DateTime DeletedDate { get; set; }
         public string Description { get; set; }
         public string Identifier { get; set; }
+        public string IsEmulatable { get; set; }
+        public string OperationMode { get; set; }
         public string Name { get; set; }
         public DateTime PurchaseDate { get; set; }
         public string Version { get; set; }
@@ -95,6 +99,10 @@ namespace UFEDLib
                         result.Copyright = field.Value.Trim();
                         break;
 
+                    case "DecodingStatus":
+                        result.DecodingStatus = field.Value.Trim();
+                        break;
+
                     case "Identifier":
                         result.Identifier = field.Value.Trim();
                         break;
@@ -107,6 +115,14 @@ namespace UFEDLib
                         result.Name = field.Value.Trim();
                         break;
 
+                    case "OperationMode":
+                        result.OperationMode = field.Value.Trim();
+                        break;
+
+                    case "IsEmulatable":
+                        result.IsEmulatable = field.Value.Trim();
+                        break;
+
                     case "Version":
                         result.Version = field.Value.Trim();
                         break;
@@ -114,6 +130,11 @@ namespace UFEDLib
                     case "DeletedDate":
                         if (field.Value.Trim() != "")
                             result.DeletedDate = DateTime.Parse(field.Value.Trim());
+                        break;
+
+                    case "LastLaunched":
+                        if (field.Value.Trim() != "")
+                            result.LastLaunched = DateTime.Parse(field.Value.Trim());
                         break;
 
                     case "PurchaseDate":

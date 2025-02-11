@@ -26,6 +26,11 @@ namespace UFEDLib
         public string extractionId { get; set; }
         public void ParseAttributes(XElement element)
         {
+            if(element == null)
+            {
+                return;
+            }
+
             try
             {
                 this.id = element.Attribute("id")?.Value;

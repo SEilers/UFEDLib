@@ -15,7 +15,9 @@ namespace UFEDLib
         }
 
         #region fields
+        public string Account { get; set; }
         public string Name { get; set; }
+        public string SerialNumber { get; set; }
         public string Source { get; set; }
         public string UserMapping { get; set; } 
         #endregion
@@ -65,8 +67,16 @@ namespace UFEDLib
             {
                 switch (field.Attribute("name").Value)
                 {
+                    case "Account":
+                        result.Account = field.Value.Trim();
+                        break;
+
                     case "Name":
                         result.Name = field.Value.Trim();
+                        break;
+
+                    case "SerialNumber":
+                        result.SerialNumber = field.Value.Trim();
                         break;
 
                     case "Source":

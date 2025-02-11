@@ -28,6 +28,8 @@ namespace UFEDLib
             "DeviceInfoEntry",
             "DictionaryWord",
             "Email",
+            "FileDownload",
+            "FileUpload",
             "InstalledApplication",
             "InstantMessage",
             "Journey",
@@ -41,6 +43,8 @@ namespace UFEDLib
             "RecognizedDevice",
             "Recording",
             "SearchedItem",
+            "SIMData",
+            "SocialMediaActivity",
             "User",
             "UserAccount",
             "VisitedPage",
@@ -178,6 +182,16 @@ namespace UFEDLib
             return ParseData<Email>(filename, progress, debugAttributes);
         }
 
+        public static List<FileDownload> ParseFileDownloads(string filename, IProgress<int> progress = null, bool debugAttributes = false)
+        {
+            return ParseData<FileDownload>(filename, progress, debugAttributes);
+        }
+
+        public static List<FileUpload> ParseFileUploads(string filename, IProgress<int> progress = null, bool debugAttributes = false)
+        {
+            return ParseData<FileUpload>(filename, progress, debugAttributes);
+        }
+
         public static List<InstalledApplication> ParseInstalledApplications(string filename, IProgress<int> progress = null, bool debugAttributes = false)
         {
             return ParseData<InstalledApplication>(filename, progress, debugAttributes);
@@ -241,7 +255,17 @@ namespace UFEDLib
         {
             return ParseData<SearchedItem>(filename, progress, debugAttributes);
         }
-        
+
+        public static List<SIMData> ParseSIMData(string filename, IProgress<int> progress = null, bool debugAttributes = false)
+        {
+            return ParseData<SIMData>(filename, progress, debugAttributes);
+        }
+
+        public static List<SocialMediaActivity> ParseSocialMediaActivities(string filename, IProgress<int> progress = null, bool debugAttributes = false)
+        {
+            return ParseData<SocialMediaActivity>(filename, progress, debugAttributes);
+        }
+
         public static List<User> ParseUsers(string filename, IProgress<int> progress = null, bool debugAttributes = false)
         {
             return ParseData<User>(filename, progress, debugAttributes);
