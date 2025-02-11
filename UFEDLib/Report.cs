@@ -30,6 +30,7 @@ namespace UFEDLib
             "Email",
             "FileDownload",
             "FileUpload",
+            "FinancialAccount",
             "InstalledApplication",
             "InstantMessage",
             "Journey",
@@ -45,6 +46,7 @@ namespace UFEDLib
             "SearchedItem",
             "SIMData",
             "SocialMediaActivity",
+            "TransferOfFunds",
             "User",
             "UserAccount",
             "VisitedPage",
@@ -192,6 +194,11 @@ namespace UFEDLib
             return ParseData<FileUpload>(filename, progress, debugAttributes);
         }
 
+        public static List<FinancialAccount> ParseFinancialAccounts(string filename, IProgress<int> progress = null, bool debugAttributes = false)
+        {
+            return ParseData<FinancialAccount>(filename, progress, debugAttributes);
+        }
+
         public static List<InstalledApplication> ParseInstalledApplications(string filename, IProgress<int> progress = null, bool debugAttributes = false)
         {
             return ParseData<InstalledApplication>(filename, progress, debugAttributes);
@@ -264,6 +271,11 @@ namespace UFEDLib
         public static List<SocialMediaActivity> ParseSocialMediaActivities(string filename, IProgress<int> progress = null, bool debugAttributes = false)
         {
             return ParseData<SocialMediaActivity>(filename, progress, debugAttributes);
+        }
+
+        public static List<TransferOfFunds> ParseTransferOfFunds(string filename, IProgress<int> progress = null, bool debugAttributes = false)
+        {
+            return ParseData<TransferOfFunds>(filename, progress, debugAttributes);
         }
 
         public static List<User> ParseUsers(string filename, IProgress<int> progress = null, bool debugAttributes = false)
