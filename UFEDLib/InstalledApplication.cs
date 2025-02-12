@@ -17,6 +17,7 @@ namespace UFEDLib
         }
 
         #region fields
+        public string ArtifactFamily { get; set; }
         public string UserMapping { get; set; }
         public string Source { get; set; }
         public string AppGUID { get; set; }
@@ -31,6 +32,12 @@ namespace UFEDLib
         public string Name { get; set; }
         public DateTime PurchaseDate { get; set; }
         public string Version { get; set; }
+        #endregion
+
+        #region multiFields
+        public List<string> AssociatedDirectoryPaths { get; set; }
+        public List<string> Categories { get; set; }
+        public List<string> Permissions { get; set; }
         #endregion
 
         #region Parsers
@@ -83,6 +90,10 @@ namespace UFEDLib
             {
                 switch (field.Attribute("name").Value)
                 {
+                    case "ArtifactFamily":
+                        result.ArtifactFamily = field.Value.Trim();
+                        break;
+
                     case "UserMapping":
                         result.UserMapping = field.Value.Trim();
                         break;
@@ -159,7 +170,30 @@ namespace UFEDLib
 
         public static void ParseMultiFields(IEnumerable<XElement> multiFieldElements, InstalledApplication result, bool debugAttributes = false)
         {
-            IUfedModelParser<InstalledApplication>.CheckMultiFields<InstalledApplication>(multiFieldElements, debugAttributes);
+            foreach (var multiField in multiFieldElements)
+            {
+                switch (multiField.Attribute("name").Value)
+                {
+                    case "AssociatedDirectoryPaths":
+                        result.AssociatedDirectoryPaths = multiField.Elements().Select(x => x.Value.Trim()).ToList();
+                        break;
+
+                    case "Categories":
+                        result.Categories = multiField.Elements().Select(x => x.Value.Trim()).ToList();
+                        break;
+
+                    case "Permissions":
+                        result.Permissions = multiField.Elements().Select(x => x.Value.Trim()).ToList();
+                        break;
+
+                    default:
+                        if (debugAttributes)
+                        {
+                            Logger.LogAttribute("InstalledApplication Parser: Unknown multiField: " + multiField.Attribute("name").Value);
+                        }
+                        break;
+                }
+            }
         }
 
         public static void ParseMultiModelFields(IEnumerable<XElement> multiModelFieldElements, InstalledApplication result, bool debugAttributes = false)

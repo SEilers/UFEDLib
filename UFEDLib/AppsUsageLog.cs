@@ -26,6 +26,10 @@ namespace UFEDLib
         public DateTime EndTime { get; set; }
         #endregion
 
+        #region multiField
+        public List<string> AdditionalInfo { get; set; }
+        #endregion
+
         #region Parsers
         public static AppsUsageLog ParseModel(XElement element, bool debugAttributes = false)
         {
@@ -124,7 +128,22 @@ namespace UFEDLib
 
         public static void ParseMultiFields(IEnumerable<XElement> multiFieldElements, AppsUsageLog result, bool debugAttributes = false)
         {
-            IUfedModelParser<AppsUsageLog>.CheckMultiFields<AppsUsageLog>(multiFieldElements, debugAttributes);
+            foreach (var multiField in multiFieldElements)
+            {
+                switch (multiField.Attribute("name").Value)
+                {
+                    case "AdditionalInfo":
+                        result.AdditionalInfo = multiField.Elements().Select(x => x.Value).ToList();
+                        break;
+
+                    default:
+                        if (debugAttributes)
+                        {
+                            Logger.LogAttribute("AppsUsageLog Parser: Unknown multiField: " + multiField.Attribute("name").Value);
+                        }
+                        break;
+                }
+            }
         }
 
         public static void ParseMultiModelFields(IEnumerable<XElement> multiModelFieldElements, AppsUsageLog result, bool debugAttributes = false)

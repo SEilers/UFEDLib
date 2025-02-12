@@ -46,6 +46,7 @@ namespace UFEDLib
         #endregion
 
         #region multiModels
+        public Dictionary<string, string> AdditionalInfo { get; set; } = new Dictionary<string, string>();
         /// <summary>
         /// Addresses collection.
         /// </summary>
@@ -174,7 +175,22 @@ namespace UFEDLib
 
         public static void ParseMultiFields(IEnumerable<XElement> multiFieldElements, UserAccount result, bool debugAttributes = false)
         {
-            IUfedModelParser<UserAccount>.CheckMultiFields<UserAccount>(multiFieldElements, debugAttributes);
+            foreach (var multiField in multiFieldElements)
+            {
+                switch (multiField.Attribute("name").Value)
+                {
+                    case "Notes":
+                        result.Notes = multiField.Elements().Select(x => x.Value.Trim()).ToList();
+                        break;
+
+                    default:
+                        if (debugAttributes)
+                        {
+                            Logger.LogAttribute("UserAccount Parser: Unknown multiField: " + multiField.Attribute("name").Value);
+                        }
+                        break;
+                }
+            }
         }
 
         public static void ParseMultiModelFields(IEnumerable<XElement> multiModelFieldElements, UserAccount result, bool debugAttributes = false)
@@ -183,16 +199,27 @@ namespace UFEDLib
             {
                 switch (multiModelField.Attribute("name").Value)
                 {
-                    case "Photos":
-                        result.Photos = ContactPhoto.ParseMultiModel(multiModelField, debugAttributes);
+                    case "AdditionalInfo":
+                        var kvModelsAdditionalInfo = KeyValueModel.ParseMultiModel(multiModelField, debugAttributes);
+                        foreach (var kvModel in kvModelsAdditionalInfo)
+                        {
+                            if (!string.IsNullOrEmpty(kvModel.Key) && !string.IsNullOrEmpty(kvModel.Value))
+                            {
+                                result.AdditionalInfo[kvModel.Key] = kvModel.Value;
+                            }
+                        }
+                        break;
+
+                    case "Addresses":
+                        result.Addresses = StreetAddress.ParseMultiModel(multiModelField, debugAttributes);
                         break;
 
                     case "Entries":
                         result.Entries = ContactEntry.ParseMultiModel(multiModelField, debugAttributes);
                         break;
 
-                    case "Addresses":
-                        result.Addresses = StreetAddress.ParseMultiModel(multiModelField, debugAttributes);
+                    case "Photos":
+                        result.Photos = ContactPhoto.ParseMultiModel(multiModelField, debugAttributes);
                         break;
 
                     case "Organizations":

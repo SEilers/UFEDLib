@@ -37,6 +37,10 @@ namespace UFEDLib
         public Party To { get; set; }
         #endregion
 
+        #region multiFields
+        public List<string> Notes { get; set; }
+        #endregion
+
         #region multiModels
         public List<Attachment> Attachments { get; set; }
         public List<Party> Participants { get; set; }
@@ -168,7 +172,22 @@ namespace UFEDLib
 
         public static void ParseMultiFields(IEnumerable<XElement> multiFieldElements, Notification result, bool debugAttributes = false)
         {
-            IUfedModelParser<Notification>.CheckMultiFields<Notification>(multiFieldElements, debugAttributes);
+            foreach (var multiField in multiFieldElements)
+            {
+                switch (multiField.Attribute("name").Value)
+                {
+                    case "Notes":
+                        result.Notes = multiField.Elements().Select(x => x.Value.Trim()).ToList();
+                        break;
+
+                    default:
+                        if (debugAttributes)
+                        {
+                            Logger.LogAttribute("Notification Parser: Unknown multiField: " + multiField.Attribute("name").Value);
+                        }
+                        break;
+                }
+            }
         }
 
         public static void ParseMultiModelFields(IEnumerable<XElement> multiModelFieldElements, Notification result, bool debugAttributes = false)

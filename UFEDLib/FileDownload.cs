@@ -19,11 +19,20 @@ namespace UFEDLib
         public string DownloadState { get; set; }
         public DateTime EndTime { get; set; }
         public long FileSize { get; set; }
+        public DateTime LastAccessed { get; set; }
         public string Source { get; set; }
         public DateTime StartTime { get; set; }
         public string TargetPath { get; set; }
         public string Url { get; set; }
         public string UserMapping { get; set; }
+        #endregion
+
+        #region multiFields
+        public List<string> DownloadURLChains { get; set; }
+        #endregion
+
+        #region multiModels
+        public Dictionary<string, string> AdditionalInfo { get; set; } = new Dictionary<string, string>();
         #endregion
 
         #region parsers
@@ -92,6 +101,11 @@ namespace UFEDLib
                             result.EndTime = DateTime.Parse(field.Value.Trim());
                         break;
 
+                    case "LastAccessed":
+                        if (field.Value.Trim() != "")
+                            result.LastAccessed = DateTime.Parse(field.Value.Trim());
+                        break;
+
                     case "Source":
                         result.Source = field.Value.Trim();
                         break;
@@ -130,12 +144,50 @@ namespace UFEDLib
 
         public static void ParseMultiFields(IEnumerable<XElement> multiFieldElements, FileDownload result, bool debugAttributes = false)
         {
-            IUfedModelParser<FileDownload>.CheckMultiFields<FileDownload>(multiFieldElements, debugAttributes);
+            foreach (var field in multiFieldElements)
+            {
+                switch (field.Attribute("name").Value)
+                {
+                    case "DownloadURLChains":
+                        result.DownloadURLChains = field.Elements().Select(x => x.Value.Trim()).ToList();
+                        break;
+
+                    default:
+                        if (debugAttributes)
+                        {
+                            Logger.LogAttribute("FileDownload Parser: Unknown multiField: " + field.Attribute("name").Value);
+                        }
+                        break;
+                }
+            }
         }
 
         public static void ParseMultiModelFields(IEnumerable<XElement> multiModelFieldElements, FileDownload result, bool debugAttributes = false)
         {
-            IUfedModelParser<FileDownload>.CheckMultiModelFields<FileDownload>(multiModelFieldElements, debugAttributes);
+            foreach (var multiModelField in multiModelFieldElements)
+            {
+                switch (multiModelField.Attribute("name").Value)
+                {
+                    case "AdditionalInfo":
+                        var kvModelsAdditionalInfo = KeyValueModel.ParseMultiModel(multiModelField, debugAttributes);
+                        foreach (var kvModel in kvModelsAdditionalInfo)
+                        {
+                            if (!string.IsNullOrEmpty(kvModel.Key) && !string.IsNullOrEmpty(kvModel.Value))
+                            {
+                                result.AdditionalInfo[kvModel.Key] = kvModel.Value;
+                            }
+                        }
+                        break;
+
+                    default:
+                        if (debugAttributes)
+                        {
+                            Logger.LogAttribute("FileDownload Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
+                        }
+                        break;
+                }
+            }
+
         }
         #endregion
     }

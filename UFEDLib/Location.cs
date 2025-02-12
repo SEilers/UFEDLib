@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -178,7 +179,11 @@ namespace UFEDLib
 
                     case "GpsHorizontalAccuracy":
                         if (field.Value.Trim() != "")
-                            result.GpsHorizontalAccuracy = Double.Parse(field.Value.Trim());
+                        {
+                            string gpsHorizontalAccuracy = field.Value.Trim().Replace(",", ".");
+                            result.GpsHorizontalAccuracy = Double.Parse(gpsHorizontalAccuracy, CultureInfo.InvariantCulture);
+                        }
+                            
                         break;
 
                     default:

@@ -24,6 +24,10 @@ namespace UFEDLib
         public string EventType { get; set; }
         #endregion
 
+        #region multiModels
+        public Dictionary<string, string> AdditionalInfo { get; set; } = new Dictionary<string, string>();
+        #endregion
+
 
         #region Parsers
         public static DeviceEvent ParseModel(XElement element, bool debugAttributes = false)
@@ -120,7 +124,29 @@ namespace UFEDLib
 
         public static void ParseMultiModelFields(IEnumerable<XElement> multiModelFieldElements, DeviceEvent result, bool debugAttributes = false)
         {
-            IUfedModelParser<DeviceEvent>.CheckMultiModelFields<DeviceEvent>(multiModelFieldElements, debugAttributes);
+            foreach (var multiModelField in multiModelFieldElements)
+            {
+                switch (multiModelField.Attribute("name").Value)
+                {
+                    case "Additional_Info":
+                        var kvModelsAdditionalInfo = KeyValueModel.ParseMultiModel(multiModelField, debugAttributes);
+                        foreach (var kvModel in kvModelsAdditionalInfo)
+                        {
+                            if (!string.IsNullOrEmpty(kvModel.Key) && !string.IsNullOrEmpty(kvModel.Value))
+                            {
+                                result.AdditionalInfo[kvModel.Key] = kvModel.Value;
+                            }
+                        }
+                        break;
+
+                    default:
+                        if (debugAttributes)
+                        {
+                            Logger.LogAttribute("DeviceEvent Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
+                        }
+                        break;
+                }
+            }
         }
 
         #endregion

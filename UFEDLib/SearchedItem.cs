@@ -20,11 +20,13 @@ namespace UFEDLib
         public string ServiceIdentifier { get; set; }
         public string Account { get; set; }
         public string Origin { get; set; }
+        public string OSUserId { get; set; }
         public string PositionAddress { get; set; }
-        public string SearchResults { get; set; }
         public string Source { get; set; }
         public DateTime TimeStamp { get; set; }
         public string Value { get; set; }
+
+        
         #endregion
 
         #region models
@@ -32,6 +34,10 @@ namespace UFEDLib
         #endregion
 
         #region multiModels
+        #endregion
+
+        #region multiFields
+        public List<string> SearchResults { get; set; }
         #endregion
 
         #region Parsers
@@ -99,6 +105,10 @@ namespace UFEDLib
                         result.Origin = field.Value.Trim();
                         break;
 
+                    case "OSUserId":
+                        result.OSUserId = field.Value.Trim();
+                        break;
+
                     case "TimeStamp":
                         if (field.Value.Trim() != "")
                             result.TimeStamp = DateTime.Parse(field.Value.Trim());
@@ -111,11 +121,7 @@ namespace UFEDLib
                     case "Source":
                         result.Source = field.Value.Trim();
                         break;
-
-                    case "SearchResult":
-                        result.SearchResults = field.Value.Trim();
-                        break;
-
+                    
                     case "PositionAddress":
                         result.PositionAddress = field.Value.Trim();
                         break;
@@ -152,7 +158,22 @@ namespace UFEDLib
 
         public static void ParseMultiFields(IEnumerable<XElement> multiFieldElements, SearchedItem result, bool debugAttributes = false)
         {
-            IUfedModelParser<SearchedItem>.CheckMultiFields<SearchedItem>(multiFieldElements, debugAttributes);
+            foreach (var multiField in multiFieldElements)
+            {
+                switch (multiField.Attribute("name").Value)
+                {
+                    case "SearchResults":
+                        result.SearchResults = multiField.Elements().Select(x => x.Value.Trim()).ToList();
+                        break;
+
+                    default:
+                        if (debugAttributes)
+                        {
+                            Logger.LogAttribute("SearchedItem Parser: Unknown multiField: " + multiField.Attribute("name").Value);
+                        }
+                        break;
+                }
+            }
         }
 
         public static void ParseMultiModelFields(IEnumerable<XElement> multiModelFieldElements, SearchedItem result, bool debugAttributes = false)

@@ -181,7 +181,7 @@ namespace UFEDLib
                 switch (modelField.Attribute("name").Value)
                 {
                     case "Author":
-                        result.Author = Party.ParseModel(modelField.Element("model"), debugAttributes);
+                        result.Author = Party.ParseModel(modelField, debugAttributes);
                         break;
 
                     default:

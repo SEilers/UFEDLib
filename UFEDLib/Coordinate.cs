@@ -76,21 +76,24 @@ namespace UFEDLib
                         case "Longitude":
                             if (fieldElement.Value.Trim() != "")
                             {
-                                result.Longitude = double.Parse(fieldElement.Value.Trim(), CultureInfo.InvariantCulture);
+                                string longitude = fieldElement.Value.Trim().Replace(",", ".");
+                                result.Longitude = double.Parse(longitude, CultureInfo.InvariantCulture);
                             }
                             break;
 
                         case "Latitude":
                             if (fieldElement.Value.Trim() != "")
                             {
-                                result.Latitude = double.Parse(fieldElement.Value.Trim(), CultureInfo.InvariantCulture);
+                                string latitude = fieldElement.Value.Trim().Replace(",", ".");
+                                result.Latitude = double.Parse(latitude, CultureInfo.InvariantCulture);
                             }
                             break;
 
                         case "Elevation":
                             if (fieldElement.Value.Trim() != "")
                             {
-                                result.Elevation = double.Parse(fieldElement.Value.Trim(), CultureInfo.InvariantCulture);
+                                string elevation = fieldElement.Value.Trim().Replace(",", ".");
+                                result.Elevation = double.Parse(elevation, CultureInfo.InvariantCulture);
                             }
                             break;
 

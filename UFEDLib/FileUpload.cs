@@ -31,6 +31,7 @@ namespace UFEDLib
         #endregion
 
         #region multiModels
+        public Dictionary<string, string> AdditionalInfo { get; set; } = new Dictionary<string, string>();
         public List<Party> Participants { get; set; }
         #endregion
 
@@ -156,6 +157,17 @@ namespace UFEDLib
             {
                 switch (multiModelField.Attribute("name").Value)
                 {
+                    case "AdditionalInfo":
+                        var kvModelsAdditionalInfo = KeyValueModel.ParseMultiModel(multiModelField, debugAttributes);
+                        foreach (var kvModel in kvModelsAdditionalInfo)
+                        {
+                            if (!string.IsNullOrEmpty(kvModel.Key) && !string.IsNullOrEmpty(kvModel.Value))
+                            {
+                                result.AdditionalInfo[kvModel.Key] = kvModel.Value;
+                            }
+                        }
+                        break;
+
                     case "Participants":
                         result.Participants = Party.ParseMultiModel(multiModelField, debugAttributes);
                         break;

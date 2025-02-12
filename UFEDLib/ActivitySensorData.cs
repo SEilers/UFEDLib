@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -104,22 +105,34 @@ namespace UFEDLib
 
                     case "DistanceTraveled":
                         if (field.Value.Trim() != "")
-                            result.DistanceTraveled = double.Parse(field.Value.Trim());
+                        {
+                            string distanceTraveled = field.Value.Trim().Replace(",", ".");
+                            result.DistanceTraveled = double.Parse(distanceTraveled, CultureInfo.InvariantCulture);
+                        }
                         break;
 
                     case "MaxSpeed":
                         if (field.Value.Trim() != "")
-                            result.MaxSpeed = double.Parse(field.Value.Trim());
+                        {
+                            string maxSpeed = field.Value.Trim().Replace(",", ".");
+                            result.MaxSpeed = double.Parse(maxSpeed, CultureInfo.InvariantCulture);
+                        }
                         break;
 
                     case "MaxHeartrate":
                         if (field.Value.Trim() != "")
-                            result.MaxHeartrate = double.Parse(field.Value.Trim());
+                        {
+                            string maxHeartrate = field.Value.Trim().Replace(",", ".");
+                            result.MaxHeartrate = double.Parse(maxHeartrate, CultureInfo.InvariantCulture);
+                        }
                         break;
 
                     case "FlightsClimbed":
                         if (field.Value.Trim() != "")
-                            result.FlightsClimbed = double.Parse(field.Value.Trim());
+                        {
+                            string flightsClimbed = field.Value.Trim().Replace(",", ".");
+                            result.FlightsClimbed = double.Parse(flightsClimbed, CultureInfo.InvariantCulture);
+                        }
                         break;
 
                     case "TotalSampleCount":

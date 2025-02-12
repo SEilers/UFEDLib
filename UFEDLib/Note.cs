@@ -32,7 +32,6 @@ namespace UFEDLib
 
         #region models
         public Coordinate Position { get; set; }
-
         public StreetAddress Address { get; set; }
         #endregion
 
@@ -150,7 +149,26 @@ namespace UFEDLib
 
         public static void ParseModelFields(IEnumerable<XElement> modelFieldElements, Note result, bool debugAttributes = false)
         {
-            IUfedModelParser<Note>.CheckModelFields<Note>(modelFieldElements, debugAttributes);
+            foreach (var modelField in modelFieldElements)
+            {
+                switch (modelField.Attribute("name").Value)
+                {
+                    case "Position":
+                        result.Position = Coordinate.ParseModel(modelField, debugAttributes);
+                        break;
+
+                    case "Address":
+                        result.Address = StreetAddress.ParseModel(modelField, debugAttributes);
+                        break;
+
+                    default:
+                        if (debugAttributes)
+                        {
+                            Logger.LogAttribute("Note Parser: Unknown modelField: " + modelField.Attribute("name").Value);
+                        }
+                        break;
+                }
+            }
         }
 
         public static void ParseMultiFields(IEnumerable<XElement> multiFieldElements, Note result, bool debugAttributes = false)

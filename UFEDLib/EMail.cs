@@ -34,6 +34,10 @@ namespace UFEDLib
         public Party From { get; set; }
         #endregion
 
+        #region multiFields
+        public List<string> Labels { get; set; }
+        #endregion
+
         #region multiModels
         public List<Attachment> Attachments { get; set; } = new List<Attachment>();
         public List<Party> Bcc { get; set; } = new List<Party>();
@@ -170,7 +174,22 @@ namespace UFEDLib
 
         public static void ParseMultiFields(IEnumerable<XElement> multiFieldElements, Email result, bool debugAttributes = false)
         {
-            IUfedModelParser<Email>.CheckMultiFields<Email>(multiFieldElements, debugAttributes);
+            foreach (var multiField in multiFieldElements)
+            {
+                switch (multiField.Attribute("name").Value)
+                {
+                    case "Labels":
+                        result.Labels = multiField.Elements().Select(x => x.Value.Trim()).ToList();
+                        break;
+
+                    default:
+                        if (debugAttributes)
+                        {
+                            Logger.LogAttribute("Email Parser: Unknown multiField: " + multiField.Attribute("name").Value);
+                        }
+                        break;
+                }
+            }
         }
 
         public static void ParseMultiModelFields(IEnumerable<XElement> multiModelFieldElements, Email result, bool debugAttributes = false)
