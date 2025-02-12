@@ -303,6 +303,37 @@ Class DeviceInfoEntry  <a class="header-action link-secondary" title="View sourc
 
 
 
+  <a id="UFEDLib_DeviceInfoEntry_TimeStamp_" data-uid="UFEDLib.DeviceInfoEntry.TimeStamp*"></a>
+
+  <h3 id="UFEDLib_DeviceInfoEntry_TimeStamp" data-uid="UFEDLib.DeviceInfoEntry.TimeStamp">
+  TimeStamp
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/DeviceInfoEntry.cs/#L28"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DateTime TimeStamp { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="UFEDLib_DeviceInfoEntry_UserMapping_" data-uid="UFEDLib.DeviceInfoEntry.UserMapping*"></a>
 
   <h3 id="UFEDLib_DeviceInfoEntry_UserMapping" data-uid="UFEDLib.DeviceInfoEntry.UserMapping">
@@ -369,11 +400,46 @@ Class DeviceInfoEntry  <a class="header-action link-secondary" title="View sourc
 
 
 
+  <a id="UFEDLib_DeviceInfoEntry_ParseFields_" data-uid="UFEDLib.DeviceInfoEntry.ParseFields*"></a>
+
+  <h3 id="UFEDLib_DeviceInfoEntry_ParseFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_DeviceInfoEntry_System_Boolean_" data-uid="UFEDLib.DeviceInfoEntry.ParseFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.DeviceInfoEntry,System.Boolean)">
+  ParseFields(IEnumerable&lt;XElement&gt;, DeviceInfoEntry, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/DeviceInfoEntry.cs/#L68"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ParseFields(IEnumerable&lt;XElement&gt; fieldElements, DeviceInfoEntry result, bool debugAttributes = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>fieldElements</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>result</code> <a class="xref" href="UFEDLib.DeviceInfoEntry.html">DeviceInfoEntry</a></dt>
+    <dd></dd>
+    <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="UFEDLib_DeviceInfoEntry_ParseModel_" data-uid="UFEDLib.DeviceInfoEntry.ParseModel*"></a>
 
   <h3 id="UFEDLib_DeviceInfoEntry_ParseModel_System_Xml_Linq_XElement_System_Boolean_" data-uid="UFEDLib.DeviceInfoEntry.ParseModel(System.Xml.Linq.XElement,System.Boolean)">
   ParseModel(XElement, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/DeviceInfoEntry.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/DeviceInfoEntry.cs/#L32"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -407,11 +473,81 @@ Class DeviceInfoEntry  <a class="header-action link-secondary" title="View sourc
 
 
 
+  <a id="UFEDLib_DeviceInfoEntry_ParseModelFields_" data-uid="UFEDLib.DeviceInfoEntry.ParseModelFields*"></a>
+
+  <h3 id="UFEDLib_DeviceInfoEntry_ParseModelFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_DeviceInfoEntry_System_Boolean_" data-uid="UFEDLib.DeviceInfoEntry.ParseModelFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.DeviceInfoEntry,System.Boolean)">
+  ParseModelFields(IEnumerable&lt;XElement&gt;, DeviceInfoEntry, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/DeviceInfoEntry.cs/#L109"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ParseModelFields(IEnumerable&lt;XElement&gt; modelFieldElements, DeviceInfoEntry result, bool debugAttributes = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>modelFieldElements</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>result</code> <a class="xref" href="UFEDLib.DeviceInfoEntry.html">DeviceInfoEntry</a></dt>
+    <dd></dd>
+    <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UFEDLib_DeviceInfoEntry_ParseMultiFields_" data-uid="UFEDLib.DeviceInfoEntry.ParseMultiFields*"></a>
+
+  <h3 id="UFEDLib_DeviceInfoEntry_ParseMultiFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_DeviceInfoEntry_System_Boolean_" data-uid="UFEDLib.DeviceInfoEntry.ParseMultiFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.DeviceInfoEntry,System.Boolean)">
+  ParseMultiFields(IEnumerable&lt;XElement&gt;, DeviceInfoEntry, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/DeviceInfoEntry.cs/#L114"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ParseMultiFields(IEnumerable&lt;XElement&gt; multiFieldElements, DeviceInfoEntry result, bool debugAttributes = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>multiFieldElements</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>result</code> <a class="xref" href="UFEDLib.DeviceInfoEntry.html">DeviceInfoEntry</a></dt>
+    <dd></dd>
+    <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="UFEDLib_DeviceInfoEntry_ParseMultiModel_" data-uid="UFEDLib.DeviceInfoEntry.ParseMultiModel*"></a>
 
   <h3 id="UFEDLib_DeviceInfoEntry_ParseMultiModel_System_Xml_Linq_XElement_System_Boolean_" data-uid="UFEDLib.DeviceInfoEntry.ParseMultiModel(System.Xml.Linq.XElement,System.Boolean)">
   ParseMultiModel(XElement, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/DeviceInfoEntry.cs/#L103"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/DeviceInfoEntry.cs/#L52"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -434,6 +570,41 @@ Class DeviceInfoEntry  <a class="header-action link-secondary" title="View sourc
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="UFEDLib.DeviceInfoEntry.html">DeviceInfoEntry</a>&gt;</dt>
     <dd></dd>
   </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UFEDLib_DeviceInfoEntry_ParseMultiModelFields_" data-uid="UFEDLib.DeviceInfoEntry.ParseMultiModelFields*"></a>
+
+  <h3 id="UFEDLib_DeviceInfoEntry_ParseMultiModelFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_DeviceInfoEntry_System_Boolean_" data-uid="UFEDLib.DeviceInfoEntry.ParseMultiModelFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.DeviceInfoEntry,System.Boolean)">
+  ParseMultiModelFields(IEnumerable&lt;XElement&gt;, DeviceInfoEntry, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/DeviceInfoEntry.cs/#L119"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ParseMultiModelFields(IEnumerable&lt;XElement&gt; multiModelFieldElements, DeviceInfoEntry result, bool debugAttributes = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>multiModelFieldElements</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>result</code> <a class="xref" href="UFEDLib.DeviceInfoEntry.html">DeviceInfoEntry</a></dt>
+    <dd></dd>
+    <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
 
 
 

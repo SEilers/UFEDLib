@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class Recording | UFEDLib </title>
+      <title>Class Voicemail | UFEDLib </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class Recording | UFEDLib ">
+      <meta name="title" content="Class Voicemail | UFEDLib ">
       
       
       <link rel="icon" href="../favicon.ico">
@@ -16,7 +16,7 @@
       
       
       
-      <meta name="docfx:docurl" content="https://github.com/SEilers/UFEDLib/new/master/apiSpec/new?filename=UFEDLib_Recording.md&amp;value=---%0Auid%3A%20UFEDLib.Recording%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/SEilers/UFEDLib/new/master/apiSpec/new?filename=UFEDLib_Voicemail.md&amp;value=---%0Auid%3A%20UFEDLib.Voicemail%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -80,12 +80,12 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="UFEDLib.Recording">
+        <article data-uid="UFEDLib.Voicemail">
 
 
 
-  <h1 id="UFEDLib_Recording" data-uid="UFEDLib.Recording" class="text-break">
-Class Recording  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Recording.cs/#L10"><i class="bi bi-code-slash"></i></a>
+  <h1 id="UFEDLib_Voicemail" data-uid="UFEDLib.Voicemail" class="text-break">
+Class Voicemail  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/VoiceMail.cs/#L10"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,8 @@ Class Recording  <a class="header-action link-secondary" title="View source" hre
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class Recording : ModelBase, IUfedModelParser&lt;Recording&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">[Serializable]
+public class Voicemail : ModelBase, IUfedModelParser&lt;Voicemail&gt;</code></pre>
   </div>
 
 
@@ -108,14 +109,14 @@ Class Recording  <a class="header-action link-secondary" title="View source" hre
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
       <div><a class="xref" href="UFEDLib.ModelBase.html">ModelBase</a></div>
-      <div><span class="xref">Recording</span></div>
+      <div><span class="xref">Voicemail</span></div>
     </dd>
   </dl>
 
   <dl class="typelist implements">
     <dt>Implements</dt>
     <dd>
-      <div><a class="xref" href="UFEDLib.IUfedModelParser-1.html">IUfedModelParser</a>&lt;<a class="xref" href="UFEDLib.Recording.html">Recording</a>&gt;</div>
+      <div><a class="xref" href="UFEDLib.IUfedModelParser-1.html">IUfedModelParser</a>&lt;<a class="xref" href="UFEDLib.Voicemail.html">Voicemail</a>&gt;</div>
     </dd>
   </dl>
 
@@ -179,11 +180,11 @@ Class Recording  <a class="header-action link-secondary" title="View source" hre
 </h2>
 
 
-  <a id="UFEDLib_Recording_Duration_" data-uid="UFEDLib.Recording.Duration*"></a>
+  <a id="UFEDLib_Voicemail_Duration_" data-uid="UFEDLib.Voicemail.Duration*"></a>
 
-  <h3 id="UFEDLib_Recording_Duration" data-uid="UFEDLib.Recording.Duration">
+  <h3 id="UFEDLib_Voicemail_Duration" data-uid="UFEDLib.Voicemail.Duration">
   Duration
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Recording.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/VoiceMail.cs/#L19"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -210,11 +211,104 @@ Class Recording  <a class="header-action link-secondary" title="View source" hre
 
 
 
-  <a id="UFEDLib_Recording_Source_" data-uid="UFEDLib.Recording.Source*"></a>
+  <a id="UFEDLib_Voicemail_From_" data-uid="UFEDLib.Voicemail.From*"></a>
 
-  <h3 id="UFEDLib_Recording_Source" data-uid="UFEDLib.Recording.Source">
+  <h3 id="UFEDLib_Voicemail_From" data-uid="UFEDLib.Voicemail.From">
+  From
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/VoiceMail.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Party From { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UFEDLib.Party.html">Party</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UFEDLib_Voicemail_LastModified_" data-uid="UFEDLib.Voicemail.LastModified*"></a>
+
+  <h3 id="UFEDLib_Voicemail_LastModified" data-uid="UFEDLib.Voicemail.LastModified">
+  LastModified
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/VoiceMail.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DateTime LastModified { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UFEDLib_Voicemail_Name_" data-uid="UFEDLib.Voicemail.Name*"></a>
+
+  <h3 id="UFEDLib_Voicemail_Name" data-uid="UFEDLib.Voicemail.Name">
+  Name
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/VoiceMail.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Name { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UFEDLib_Voicemail_Source_" data-uid="UFEDLib.Voicemail.Source*"></a>
+
+  <h3 id="UFEDLib_Voicemail_Source" data-uid="UFEDLib.Voicemail.Source">
   Source
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Recording.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/VoiceMail.cs/#L22"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -241,18 +335,18 @@ Class Recording  <a class="header-action link-secondary" title="View source" hre
 
 
 
-  <a id="UFEDLib_Recording_TimeStamp_" data-uid="UFEDLib.Recording.TimeStamp*"></a>
+  <a id="UFEDLib_Voicemail_Timestamp_" data-uid="UFEDLib.Voicemail.Timestamp*"></a>
 
-  <h3 id="UFEDLib_Recording_TimeStamp" data-uid="UFEDLib.Recording.TimeStamp">
-  TimeStamp
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Recording.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  <h3 id="UFEDLib_Voicemail_Timestamp" data-uid="UFEDLib.Voicemail.Timestamp">
+  Timestamp
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/VoiceMail.cs/#L23"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public DateTime TimeStamp { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public DateTime Timestamp { get; set; }</code></pre>
   </div>
 
 
@@ -272,42 +366,11 @@ Class Recording  <a class="header-action link-secondary" title="View source" hre
 
 
 
-  <a id="UFEDLib_Recording_Title_" data-uid="UFEDLib.Recording.Title*"></a>
+  <a id="UFEDLib_Voicemail_Type_" data-uid="UFEDLib.Voicemail.Type*"></a>
 
-  <h3 id="UFEDLib_Recording_Title" data-uid="UFEDLib.Recording.Title">
-  Title
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Recording.cs/#L20"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Title { get; set; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-  <a id="UFEDLib_Recording_Type_" data-uid="UFEDLib.Recording.Type*"></a>
-
-  <h3 id="UFEDLib_Recording_Type" data-uid="UFEDLib.Recording.Type">
+  <h3 id="UFEDLib_Voicemail_Type" data-uid="UFEDLib.Voicemail.Type">
   Type
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Recording.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/VoiceMail.cs/#L24"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -334,11 +397,11 @@ Class Recording  <a class="header-action link-secondary" title="View source" hre
 
 
 
-  <a id="UFEDLib_Recording_UserMapping_" data-uid="UFEDLib.Recording.UserMapping*"></a>
+  <a id="UFEDLib_Voicemail_UserMapping_" data-uid="UFEDLib.Voicemail.UserMapping*"></a>
 
-  <h3 id="UFEDLib_Recording_UserMapping" data-uid="UFEDLib.Recording.UserMapping">
+  <h3 id="UFEDLib_Voicemail_UserMapping" data-uid="UFEDLib.Voicemail.UserMapping">
   UserMapping
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Recording.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/VoiceMail.cs/#L25"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -365,15 +428,46 @@ Class Recording  <a class="header-action link-secondary" title="View source" hre
 
 
 
+  <a id="UFEDLib_Voicemail_WasPlayed_" data-uid="UFEDLib.Voicemail.WasPlayed*"></a>
+
+  <h3 id="UFEDLib_Voicemail_WasPlayed" data-uid="UFEDLib.Voicemail.WasPlayed">
+  WasPlayed
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/VoiceMail.cs/#L26"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string WasPlayed { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <h2 class="section" id="methods">Methods
 </h2>
 
 
-  <a id="UFEDLib_Recording_GetXmlModelType_" data-uid="UFEDLib.Recording.GetXmlModelType*"></a>
+  <a id="UFEDLib_Voicemail_GetXmlModelType_" data-uid="UFEDLib.Voicemail.GetXmlModelType*"></a>
 
-  <h3 id="UFEDLib_Recording_GetXmlModelType" data-uid="UFEDLib.Recording.GetXmlModelType">
+  <h3 id="UFEDLib_Voicemail_GetXmlModelType" data-uid="UFEDLib.Voicemail.GetXmlModelType">
   GetXmlModelType()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Recording.cs/#L12"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/VoiceMail.cs/#L13"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -400,25 +494,25 @@ Class Recording  <a class="header-action link-secondary" title="View source" hre
 
 
 
-  <a id="UFEDLib_Recording_ParseFields_" data-uid="UFEDLib.Recording.ParseFields*"></a>
+  <a id="UFEDLib_Voicemail_ParseFields_" data-uid="UFEDLib.Voicemail.ParseFields*"></a>
 
-  <h3 id="UFEDLib_Recording_ParseFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_Recording_System_Boolean_" data-uid="UFEDLib.Recording.ParseFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.Recording,System.Boolean)">
-  ParseFields(IEnumerable&lt;XElement&gt;, Recording, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Recording.cs/#L64"><i class="bi bi-code-slash"></i></a>
+  <h3 id="UFEDLib_Voicemail_ParseFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_Voicemail_System_Boolean_" data-uid="UFEDLib.Voicemail.ParseFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.Voicemail,System.Boolean)">
+  ParseFields(IEnumerable&lt;XElement&gt;, Voicemail, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/VoiceMail.cs/#L71"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void ParseFields(IEnumerable&lt;XElement&gt; fieldElements, Recording result, bool debugAttributes = false)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void ParseFields(IEnumerable&lt;XElement&gt; fieldElements, Voicemail result, bool debugAttributes = false)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>fieldElements</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>&gt;</dt>
     <dd></dd>
-    <dt><code>result</code> <a class="xref" href="UFEDLib.Recording.html">Recording</a></dt>
+    <dt><code>result</code> <a class="xref" href="UFEDLib.Voicemail.html">Voicemail</a></dt>
     <dd></dd>
     <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
@@ -435,18 +529,18 @@ Class Recording  <a class="header-action link-secondary" title="View source" hre
 
 
 
-  <a id="UFEDLib_Recording_ParseModel_" data-uid="UFEDLib.Recording.ParseModel*"></a>
+  <a id="UFEDLib_Voicemail_ParseModel_" data-uid="UFEDLib.Voicemail.ParseModel*"></a>
 
-  <h3 id="UFEDLib_Recording_ParseModel_System_Xml_Linq_XElement_System_Boolean_" data-uid="UFEDLib.Recording.ParseModel(System.Xml.Linq.XElement,System.Boolean)">
+  <h3 id="UFEDLib_Voicemail_ParseModel_System_Xml_Linq_XElement_System_Boolean_" data-uid="UFEDLib.Voicemail.ParseModel(System.Xml.Linq.XElement,System.Boolean)">
   ParseModel(XElement, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Recording.cs/#L28"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/VoiceMail.cs/#L35"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Recording ParseModel(XElement element, bool debugAttributes = false)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Voicemail ParseModel(XElement element, bool debugAttributes = false)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -459,7 +553,7 @@ Class Recording  <a class="header-action link-secondary" title="View source" hre
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="UFEDLib.Recording.html">Recording</a></dt>
+    <dt><a class="xref" href="UFEDLib.Voicemail.html">Voicemail</a></dt>
     <dd></dd>
   </dl>
 
@@ -473,25 +567,25 @@ Class Recording  <a class="header-action link-secondary" title="View source" hre
 
 
 
-  <a id="UFEDLib_Recording_ParseModelFields_" data-uid="UFEDLib.Recording.ParseModelFields*"></a>
+  <a id="UFEDLib_Voicemail_ParseModelFields_" data-uid="UFEDLib.Voicemail.ParseModelFields*"></a>
 
-  <h3 id="UFEDLib_Recording_ParseModelFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_Recording_System_Boolean_" data-uid="UFEDLib.Recording.ParseModelFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.Recording,System.Boolean)">
-  ParseModelFields(IEnumerable&lt;XElement&gt;, Recording, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Recording.cs/#L106"><i class="bi bi-code-slash"></i></a>
+  <h3 id="UFEDLib_Voicemail_ParseModelFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_Voicemail_System_Boolean_" data-uid="UFEDLib.Voicemail.ParseModelFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.Voicemail,System.Boolean)">
+  ParseModelFields(IEnumerable&lt;XElement&gt;, Voicemail, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/VoiceMail.cs/#L122"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void ParseModelFields(IEnumerable&lt;XElement&gt; modelFieldElements, Recording result, bool debugAttributes = false)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void ParseModelFields(IEnumerable&lt;XElement&gt; modelFieldElements, Voicemail result, bool debugAttributes = false)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>modelFieldElements</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>&gt;</dt>
     <dd></dd>
-    <dt><code>result</code> <a class="xref" href="UFEDLib.Recording.html">Recording</a></dt>
+    <dt><code>result</code> <a class="xref" href="UFEDLib.Voicemail.html">Voicemail</a></dt>
     <dd></dd>
     <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
@@ -508,25 +602,25 @@ Class Recording  <a class="header-action link-secondary" title="View source" hre
 
 
 
-  <a id="UFEDLib_Recording_ParseMultiFields_" data-uid="UFEDLib.Recording.ParseMultiFields*"></a>
+  <a id="UFEDLib_Voicemail_ParseMultiFields_" data-uid="UFEDLib.Voicemail.ParseMultiFields*"></a>
 
-  <h3 id="UFEDLib_Recording_ParseMultiFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_Recording_System_Boolean_" data-uid="UFEDLib.Recording.ParseMultiFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.Recording,System.Boolean)">
-  ParseMultiFields(IEnumerable&lt;XElement&gt;, Recording, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Recording.cs/#L111"><i class="bi bi-code-slash"></i></a>
+  <h3 id="UFEDLib_Voicemail_ParseMultiFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_Voicemail_System_Boolean_" data-uid="UFEDLib.Voicemail.ParseMultiFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.Voicemail,System.Boolean)">
+  ParseMultiFields(IEnumerable&lt;XElement&gt;, Voicemail, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/VoiceMail.cs/#L142"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void ParseMultiFields(IEnumerable&lt;XElement&gt; multiFieldElements, Recording result, bool debugAttributes = false)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void ParseMultiFields(IEnumerable&lt;XElement&gt; multiFieldElements, Voicemail result, bool debugAttributes = false)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>multiFieldElements</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>&gt;</dt>
     <dd></dd>
-    <dt><code>result</code> <a class="xref" href="UFEDLib.Recording.html">Recording</a></dt>
+    <dt><code>result</code> <a class="xref" href="UFEDLib.Voicemail.html">Voicemail</a></dt>
     <dd></dd>
     <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
@@ -543,18 +637,18 @@ Class Recording  <a class="header-action link-secondary" title="View source" hre
 
 
 
-  <a id="UFEDLib_Recording_ParseMultiModel_" data-uid="UFEDLib.Recording.ParseMultiModel*"></a>
+  <a id="UFEDLib_Voicemail_ParseMultiModel_" data-uid="UFEDLib.Voicemail.ParseMultiModel*"></a>
 
-  <h3 id="UFEDLib_Recording_ParseMultiModel_System_Xml_Linq_XElement_System_Boolean_" data-uid="UFEDLib.Recording.ParseMultiModel(System.Xml.Linq.XElement,System.Boolean)">
+  <h3 id="UFEDLib_Voicemail_ParseMultiModel_System_Xml_Linq_XElement_System_Boolean_" data-uid="UFEDLib.Voicemail.ParseMultiModel(System.Xml.Linq.XElement,System.Boolean)">
   ParseMultiModel(XElement, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Recording.cs/#L48"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/VoiceMail.cs/#L55"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static List&lt;Recording&gt; ParseMultiModel(XElement element, bool debugAttributes = false)</code></pre>
+    <pre><code class="lang-csharp hljs">public static List&lt;Voicemail&gt; ParseMultiModel(XElement element, bool debugAttributes = false)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -567,7 +661,7 @@ Class Recording  <a class="header-action link-secondary" title="View source" hre
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="UFEDLib.Recording.html">Recording</a>&gt;</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="UFEDLib.Voicemail.html">Voicemail</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -581,25 +675,25 @@ Class Recording  <a class="header-action link-secondary" title="View source" hre
 
 
 
-  <a id="UFEDLib_Recording_ParseMultiModelFields_" data-uid="UFEDLib.Recording.ParseMultiModelFields*"></a>
+  <a id="UFEDLib_Voicemail_ParseMultiModelFields_" data-uid="UFEDLib.Voicemail.ParseMultiModelFields*"></a>
 
-  <h3 id="UFEDLib_Recording_ParseMultiModelFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_Recording_System_Boolean_" data-uid="UFEDLib.Recording.ParseMultiModelFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.Recording,System.Boolean)">
-  ParseMultiModelFields(IEnumerable&lt;XElement&gt;, Recording, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Recording.cs/#L116"><i class="bi bi-code-slash"></i></a>
+  <h3 id="UFEDLib_Voicemail_ParseMultiModelFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_Voicemail_System_Boolean_" data-uid="UFEDLib.Voicemail.ParseMultiModelFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.Voicemail,System.Boolean)">
+  ParseMultiModelFields(IEnumerable&lt;XElement&gt;, Voicemail, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/VoiceMail.cs/#L147"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void ParseMultiModelFields(IEnumerable&lt;XElement&gt; multiModelFieldElements, Recording result, bool debugAttributes = false)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void ParseMultiModelFields(IEnumerable&lt;XElement&gt; multiModelFieldElements, Voicemail result, bool debugAttributes = false)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>multiModelFieldElements</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>&gt;</dt>
     <dd></dd>
-    <dt><code>result</code> <a class="xref" href="UFEDLib.Recording.html">Recording</a></dt>
+    <dt><code>result</code> <a class="xref" href="UFEDLib.Voicemail.html">Voicemail</a></dt>
     <dd></dd>
     <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
@@ -620,7 +714,7 @@ Class Recording  <a class="header-action link-secondary" title="View source" hre
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Recording.cs/#L10" class="edit-link">Edit this page</a>
+          <a href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/VoiceMail.cs/#L10" class="edit-link">Edit this page</a>
         </div>
 
 

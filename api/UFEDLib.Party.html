@@ -177,10 +177,10 @@ public class Party : ModelBase, IUfedModelParser&lt;Party&gt;</code></pre>
 </h2>
 
 
-  <a id="UFEDLib_Party_DateDellivered_" data-uid="UFEDLib.Party.DateDellivered*"></a>
+  <a id="UFEDLib_Party_DateDelivered_" data-uid="UFEDLib.Party.DateDelivered*"></a>
 
-  <h3 id="UFEDLib_Party_DateDellivered" data-uid="UFEDLib.Party.DateDellivered">
-  DateDellivered
+  <h3 id="UFEDLib_Party_DateDelivered" data-uid="UFEDLib.Party.DateDelivered">
+  DateDelivered
   <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Party.cs/#L20"><i class="bi bi-code-slash"></i></a>
   </h3>
 
@@ -188,7 +188,7 @@ public class Party : ModelBase, IUfedModelParser&lt;Party&gt;</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public DateTime DateDellivered { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public DateTime DateDelivered { get; set; }</code></pre>
   </div>
 
 
@@ -260,6 +260,37 @@ public class Party : ModelBase, IUfedModelParser&lt;Party&gt;</code></pre>
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UFEDLib_Party_Distance_" data-uid="UFEDLib.Party.Distance*"></a>
+
+  <h3 id="UFEDLib_Party_Distance" data-uid="UFEDLib.Party.Distance">
+  Distance
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Party.cs/#L31"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Distance { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
   </dl>
 
@@ -487,6 +518,68 @@ public class Party : ModelBase, IUfedModelParser&lt;Party&gt;</code></pre>
 
 
 
+  <a id="UFEDLib_Party_Status_" data-uid="UFEDLib.Party.Status*"></a>
+
+  <h3 id="UFEDLib_Party_Status" data-uid="UFEDLib.Party.Status">
+  Status
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Party.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Status { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UFEDLib_Party_UserMapping_" data-uid="UFEDLib.Party.UserMapping*"></a>
+
+  <h3 id="UFEDLib_Party_UserMapping" data-uid="UFEDLib.Party.UserMapping">
+  UserMapping
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Party.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string UserMapping { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <h2 class="section" id="methods">Methods
 </h2>
 
@@ -522,23 +615,58 @@ public class Party : ModelBase, IUfedModelParser&lt;Party&gt;</code></pre>
 
 
 
-  <a id="UFEDLib_Party_ParseModel_" data-uid="UFEDLib.Party.ParseModel*"></a>
+  <a id="UFEDLib_Party_ParseFields_" data-uid="UFEDLib.Party.ParseFields*"></a>
 
-  <h3 id="UFEDLib_Party_ParseModel_System_Xml_Linq_XElement_System_Boolean_" data-uid="UFEDLib.Party.ParseModel(System.Xml.Linq.XElement,System.Boolean)">
-  ParseModel(XElement, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Party.cs/#L61"><i class="bi bi-code-slash"></i></a>
+  <h3 id="UFEDLib_Party_ParseFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_Party_System_Boolean_" data-uid="UFEDLib.Party.ParseFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.Party,System.Boolean)">
+  ParseFields(IEnumerable&lt;XElement&gt;, Party, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Party.cs/#L82"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Party ParseModel(XElement xElement, bool debugAttributes = false)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void ParseFields(IEnumerable&lt;XElement&gt; fieldElements, Party result, bool debugAttributes = false)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>xElement</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a></dt>
+    <dt><code>fieldElements</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>result</code> <a class="xref" href="UFEDLib.Party.html">Party</a></dt>
+    <dd></dd>
+    <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UFEDLib_Party_ParseModel_" data-uid="UFEDLib.Party.ParseModel*"></a>
+
+  <h3 id="UFEDLib_Party_ParseModel_System_Xml_Linq_XElement_System_Boolean_" data-uid="UFEDLib.Party.ParseModel(System.Xml.Linq.XElement,System.Boolean)">
+  ParseModel(XElement, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Party.cs/#L62"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Party ParseModel(XElement element, bool debugAttributes = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>element</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a></dt>
     <dd></dd>
     <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
@@ -560,11 +688,81 @@ public class Party : ModelBase, IUfedModelParser&lt;Party&gt;</code></pre>
 
 
 
+  <a id="UFEDLib_Party_ParseModelFields_" data-uid="UFEDLib.Party.ParseModelFields*"></a>
+
+  <h3 id="UFEDLib_Party_ParseModelFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_Party_System_Boolean_" data-uid="UFEDLib.Party.ParseModelFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.Party,System.Boolean)">
+  ParseModelFields(IEnumerable&lt;XElement&gt;, Party, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Party.cs/#L156"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ParseModelFields(IEnumerable&lt;XElement&gt; modelFieldElements, Party result, bool debugAttributes = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>modelFieldElements</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>result</code> <a class="xref" href="UFEDLib.Party.html">Party</a></dt>
+    <dd></dd>
+    <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UFEDLib_Party_ParseMultiFields_" data-uid="UFEDLib.Party.ParseMultiFields*"></a>
+
+  <h3 id="UFEDLib_Party_ParseMultiFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_Party_System_Boolean_" data-uid="UFEDLib.Party.ParseMultiFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.Party,System.Boolean)">
+  ParseMultiFields(IEnumerable&lt;XElement&gt;, Party, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Party.cs/#L161"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ParseMultiFields(IEnumerable&lt;XElement&gt; multiFieldElements, Party result, bool debugAttributes = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>multiFieldElements</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>result</code> <a class="xref" href="UFEDLib.Party.html">Party</a></dt>
+    <dd></dd>
+    <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="UFEDLib_Party_ParseMultiModel_" data-uid="UFEDLib.Party.ParseMultiModel*"></a>
 
   <h3 id="UFEDLib_Party_ParseMultiModel_System_Xml_Linq_XElement_System_Boolean_" data-uid="UFEDLib.Party.ParseMultiModel(System.Xml.Linq.XElement,System.Boolean)">
   ParseMultiModel(XElement, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Party.cs/#L45"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Party.cs/#L46"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -598,11 +796,46 @@ public class Party : ModelBase, IUfedModelParser&lt;Party&gt;</code></pre>
 
 
 
+  <a id="UFEDLib_Party_ParseMultiModelFields_" data-uid="UFEDLib.Party.ParseMultiModelFields*"></a>
+
+  <h3 id="UFEDLib_Party_ParseMultiModelFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_Party_System_Boolean_" data-uid="UFEDLib.Party.ParseMultiModelFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.Party,System.Boolean)">
+  ParseMultiModelFields(IEnumerable&lt;XElement&gt;, Party, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Party.cs/#L166"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ParseMultiModelFields(IEnumerable&lt;XElement&gt; multiModelFieldElements, Party result, bool debugAttributes = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>multiModelFieldElements</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>result</code> <a class="xref" href="UFEDLib.Party.html">Party</a></dt>
+    <dd></dd>
+    <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="UFEDLib_Party_ToString_" data-uid="UFEDLib.Party.ToString*"></a>
 
   <h3 id="UFEDLib_Party_ToString" data-uid="UFEDLib.Party.ToString">
   ToString()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Party.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Party.cs/#L40"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns a string that represents the current object.</p>

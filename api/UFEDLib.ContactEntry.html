@@ -244,11 +244,42 @@ public class ContactEntry : ModelBase, IUfedModelParser&lt;ContactEntry&gt;</cod
 
 
 
+  <a id="UFEDLib_ContactEntry_UserMapping_" data-uid="UFEDLib.ContactEntry.UserMapping*"></a>
+
+  <h3 id="UFEDLib_ContactEntry_UserMapping" data-uid="UFEDLib.ContactEntry.UserMapping">
+  UserMapping
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/ContactEntry.cs/#L29"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string UserMapping { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="UFEDLib_ContactEntry_Value_" data-uid="UFEDLib.ContactEntry.Value*"></a>
 
   <h3 id="UFEDLib_ContactEntry_Value" data-uid="UFEDLib.ContactEntry.Value">
   Value
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/ContactEntry.cs/#L32"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/ContactEntry.cs/#L34"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Entry value (phone number or email string).</p>
@@ -311,23 +342,58 @@ public class ContactEntry : ModelBase, IUfedModelParser&lt;ContactEntry&gt;</cod
 
 
 
-  <a id="UFEDLib_ContactEntry_ParseModel_" data-uid="UFEDLib.ContactEntry.ParseModel*"></a>
+  <a id="UFEDLib_ContactEntry_ParseFields_" data-uid="UFEDLib.ContactEntry.ParseFields*"></a>
 
-  <h3 id="UFEDLib_ContactEntry_ParseModel_System_Xml_Linq_XElement_System_Boolean_" data-uid="UFEDLib.ContactEntry.ParseModel(System.Xml.Linq.XElement,System.Boolean)">
-  ParseModel(XElement, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/ContactEntry.cs/#L60"><i class="bi bi-code-slash"></i></a>
+  <h3 id="UFEDLib_ContactEntry_ParseFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_ContactEntry_System_Boolean_" data-uid="UFEDLib.ContactEntry.ParseFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.ContactEntry,System.Boolean)">
+  ParseFields(IEnumerable&lt;XElement&gt;, ContactEntry, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/ContactEntry.cs/#L78"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static ContactEntry ParseModel(XElement contactNode, bool debugAttributes = false)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void ParseFields(IEnumerable&lt;XElement&gt; fieldElements, ContactEntry result, bool debugAttributes = false)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>contactNode</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a></dt>
+    <dt><code>fieldElements</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>result</code> <a class="xref" href="UFEDLib.ContactEntry.html">ContactEntry</a></dt>
+    <dd></dd>
+    <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UFEDLib_ContactEntry_ParseModel_" data-uid="UFEDLib.ContactEntry.ParseModel*"></a>
+
+  <h3 id="UFEDLib_ContactEntry_ParseModel_System_Xml_Linq_XElement_System_Boolean_" data-uid="UFEDLib.ContactEntry.ParseModel(System.Xml.Linq.XElement,System.Boolean)">
+  ParseModel(XElement, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/ContactEntry.cs/#L58"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ContactEntry ParseModel(XElement element, bool debugAttributes = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>element</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a></dt>
     <dd></dd>
     <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
@@ -349,11 +415,81 @@ public class ContactEntry : ModelBase, IUfedModelParser&lt;ContactEntry&gt;</cod
 
 
 
+  <a id="UFEDLib_ContactEntry_ParseModelFields_" data-uid="UFEDLib.ContactEntry.ParseModelFields*"></a>
+
+  <h3 id="UFEDLib_ContactEntry_ParseModelFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_ContactEntry_System_Boolean_" data-uid="UFEDLib.ContactEntry.ParseModelFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.ContactEntry,System.Boolean)">
+  ParseModelFields(IEnumerable&lt;XElement&gt;, ContactEntry, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/ContactEntry.cs/#L109"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ParseModelFields(IEnumerable&lt;XElement&gt; modelFieldElements, ContactEntry result, bool debugAttributes = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>modelFieldElements</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>result</code> <a class="xref" href="UFEDLib.ContactEntry.html">ContactEntry</a></dt>
+    <dd></dd>
+    <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UFEDLib_ContactEntry_ParseMultiFields_" data-uid="UFEDLib.ContactEntry.ParseMultiFields*"></a>
+
+  <h3 id="UFEDLib_ContactEntry_ParseMultiFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_ContactEntry_System_Boolean_" data-uid="UFEDLib.ContactEntry.ParseMultiFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.ContactEntry,System.Boolean)">
+  ParseMultiFields(IEnumerable&lt;XElement&gt;, ContactEntry, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/ContactEntry.cs/#L114"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ParseMultiFields(IEnumerable&lt;XElement&gt; multiFieldElements, ContactEntry result, bool debugAttributes = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>multiFieldElements</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>result</code> <a class="xref" href="UFEDLib.ContactEntry.html">ContactEntry</a></dt>
+    <dd></dd>
+    <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="UFEDLib_ContactEntry_ParseMultiModel_" data-uid="UFEDLib.ContactEntry.ParseMultiModel*"></a>
 
   <h3 id="UFEDLib_ContactEntry_ParseMultiModel_System_Xml_Linq_XElement_System_Boolean_" data-uid="UFEDLib.ContactEntry.ParseMultiModel(System.Xml.Linq.XElement,System.Boolean)">
   ParseMultiModel(XElement, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/ContactEntry.cs/#L36"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/ContactEntry.cs/#L38"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -376,6 +512,41 @@ public class ContactEntry : ModelBase, IUfedModelParser&lt;ContactEntry&gt;</cod
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="UFEDLib.ContactEntry.html">ContactEntry</a>&gt;</dt>
     <dd></dd>
   </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UFEDLib_ContactEntry_ParseMultiModelFields_" data-uid="UFEDLib.ContactEntry.ParseMultiModelFields*"></a>
+
+  <h3 id="UFEDLib_ContactEntry_ParseMultiModelFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_ContactEntry_System_Boolean_" data-uid="UFEDLib.ContactEntry.ParseMultiModelFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.ContactEntry,System.Boolean)">
+  ParseMultiModelFields(IEnumerable&lt;XElement&gt;, ContactEntry, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/ContactEntry.cs/#L119"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ParseMultiModelFields(IEnumerable&lt;XElement&gt; multiModelFieldElements, ContactEntry result, bool debugAttributes = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>multiModelFieldElements</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>result</code> <a class="xref" href="UFEDLib.ContactEntry.html">ContactEntry</a></dt>
+    <dd></dd>
+    <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
 
 
 

@@ -402,6 +402,41 @@ public class Coordinate : ModelBase, IUfedModelParser&lt;Coordinate&gt;</code></
 
 
 
+  <a id="UFEDLib_Coordinate_ParseFields_" data-uid="UFEDLib.Coordinate.ParseFields*"></a>
+
+  <h3 id="UFEDLib_Coordinate_ParseFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_Coordinate_System_Boolean_" data-uid="UFEDLib.Coordinate.ParseFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.Coordinate,System.Boolean)">
+  ParseFields(IEnumerable&lt;XElement&gt;, Coordinate, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Coordinate.cs/#L67"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ParseFields(IEnumerable&lt;XElement&gt; fieldElements, Coordinate result, bool debugAttributes = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>fieldElements</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>result</code> <a class="xref" href="UFEDLib.Coordinate.html">Coordinate</a></dt>
+    <dd></dd>
+    <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="UFEDLib_Coordinate_ParseModel_" data-uid="UFEDLib.Coordinate.ParseModel*"></a>
 
   <h3 id="UFEDLib_Coordinate_ParseModel_System_Xml_Linq_XElement_System_Boolean_" data-uid="UFEDLib.Coordinate.ParseModel(System.Xml.Linq.XElement,System.Boolean)">
@@ -413,12 +448,12 @@ public class Coordinate : ModelBase, IUfedModelParser&lt;Coordinate&gt;</code></
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Coordinate ParseModel(XElement coordinateElement, bool debugAttributes = false)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Coordinate ParseModel(XElement element, bool debugAttributes = false)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>coordinateElement</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a></dt>
+    <dt><code>element</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a></dt>
     <dd></dd>
     <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
@@ -429,6 +464,76 @@ public class Coordinate : ModelBase, IUfedModelParser&lt;Coordinate&gt;</code></
     <dt><a class="xref" href="UFEDLib.Coordinate.html">Coordinate</a></dt>
     <dd></dd>
   </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UFEDLib_Coordinate_ParseModelFields_" data-uid="UFEDLib.Coordinate.ParseModelFields*"></a>
+
+  <h3 id="UFEDLib_Coordinate_ParseModelFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_Coordinate_System_Boolean_" data-uid="UFEDLib.Coordinate.ParseModelFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.Coordinate,System.Boolean)">
+  ParseModelFields(IEnumerable&lt;XElement&gt;, Coordinate, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Coordinate.cs/#L128"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ParseModelFields(IEnumerable&lt;XElement&gt; modelFieldElements, Coordinate result, bool debugAttributes = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>modelFieldElements</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>result</code> <a class="xref" href="UFEDLib.Coordinate.html">Coordinate</a></dt>
+    <dd></dd>
+    <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UFEDLib_Coordinate_ParseMultiFields_" data-uid="UFEDLib.Coordinate.ParseMultiFields*"></a>
+
+  <h3 id="UFEDLib_Coordinate_ParseMultiFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_Coordinate_System_Boolean_" data-uid="UFEDLib.Coordinate.ParseMultiFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.Coordinate,System.Boolean)">
+  ParseMultiFields(IEnumerable&lt;XElement&gt;, Coordinate, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Coordinate.cs/#L133"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ParseMultiFields(IEnumerable&lt;XElement&gt; multiFieldElements, Coordinate result, bool debugAttributes = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>multiFieldElements</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>result</code> <a class="xref" href="UFEDLib.Coordinate.html">Coordinate</a></dt>
+    <dd></dd>
+    <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
 
 
 
@@ -467,6 +572,41 @@ public class Coordinate : ModelBase, IUfedModelParser&lt;Coordinate&gt;</code></
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="UFEDLib.Coordinate.html">Coordinate</a>&gt;</dt>
     <dd></dd>
   </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UFEDLib_Coordinate_ParseMultiModelFields_" data-uid="UFEDLib.Coordinate.ParseMultiModelFields*"></a>
+
+  <h3 id="UFEDLib_Coordinate_ParseMultiModelFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_Coordinate_System_Boolean_" data-uid="UFEDLib.Coordinate.ParseMultiModelFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.Coordinate,System.Boolean)">
+  ParseMultiModelFields(IEnumerable&lt;XElement&gt;, Coordinate, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Coordinate.cs/#L138"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ParseMultiModelFields(IEnumerable&lt;XElement&gt; multiModelFieldElements, Coordinate result, bool debugAttributes = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>multiModelFieldElements</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>result</code> <a class="xref" href="UFEDLib.Coordinate.html">Coordinate</a></dt>
+    <dd></dd>
+    <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
 
 
 

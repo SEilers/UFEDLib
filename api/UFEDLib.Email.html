@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class Notification | UFEDLib </title>
+      <title>Class Email | UFEDLib </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class Notification | UFEDLib ">
+      <meta name="title" content="Class Email | UFEDLib ">
       
       
       <link rel="icon" href="../favicon.ico">
@@ -16,7 +16,7 @@
       
       
       
-      <meta name="docfx:docurl" content="https://github.com/SEilers/UFEDLib/new/master/apiSpec/new?filename=UFEDLib_Notification.md&amp;value=---%0Auid%3A%20UFEDLib.Notification%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/SEilers/UFEDLib/new/master/apiSpec/new?filename=UFEDLib_Email.md&amp;value=---%0Auid%3A%20UFEDLib.Email%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -80,12 +80,12 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="UFEDLib.Notification">
+        <article data-uid="UFEDLib.Email">
 
 
 
-  <h1 id="UFEDLib_Notification" data-uid="UFEDLib.Notification" class="text-break">
-Class Notification  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Notification.cs/#L13"><i class="bi bi-code-slash"></i></a>
+  <h1 id="UFEDLib_Email" data-uid="UFEDLib.Email" class="text-break">
+Class Email  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/EMail.cs/#L10"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -98,7 +98,7 @@ Class Notification  <a class="header-action link-secondary" title="View source" 
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Serializable]
-public class Notification : ModelBase, IUfedModelParser&lt;Notification&gt;</code></pre>
+public class Email : ModelBase, IUfedModelParser&lt;Email&gt;</code></pre>
   </div>
 
 
@@ -109,14 +109,14 @@ public class Notification : ModelBase, IUfedModelParser&lt;Notification&gt;</cod
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
       <div><a class="xref" href="UFEDLib.ModelBase.html">ModelBase</a></div>
-      <div><span class="xref">Notification</span></div>
+      <div><span class="xref">Email</span></div>
     </dd>
   </dl>
 
   <dl class="typelist implements">
     <dt>Implements</dt>
     <dd>
-      <div><a class="xref" href="UFEDLib.IUfedModelParser-1.html">IUfedModelParser</a>&lt;<a class="xref" href="UFEDLib.Notification.html">Notification</a>&gt;</div>
+      <div><a class="xref" href="UFEDLib.IUfedModelParser-1.html">IUfedModelParser</a>&lt;<a class="xref" href="UFEDLib.Email.html">Email</a>&gt;</div>
     </dd>
   </dl>
 
@@ -180,11 +180,42 @@ public class Notification : ModelBase, IUfedModelParser&lt;Notification&gt;</cod
 </h2>
 
 
-  <a id="UFEDLib_Notification_Attachments_" data-uid="UFEDLib.Notification.Attachments*"></a>
+  <a id="UFEDLib_Email_Account_" data-uid="UFEDLib.Email.Account*"></a>
 
-  <h3 id="UFEDLib_Notification_Attachments" data-uid="UFEDLib.Notification.Attachments">
+  <h3 id="UFEDLib_Email_Account" data-uid="UFEDLib.Email.Account">
+  Account
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/EMail.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Account { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UFEDLib_Email_Attachments_" data-uid="UFEDLib.Email.Attachments*"></a>
+
+  <h3 id="UFEDLib_Email_Attachments" data-uid="UFEDLib.Email.Attachments">
   Attachments
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Notification.cs/#L45"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/EMail.cs/#L42"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -211,11 +242,42 @@ public class Notification : ModelBase, IUfedModelParser&lt;Notification&gt;</cod
 
 
 
-  <a id="UFEDLib_Notification_Body_" data-uid="UFEDLib.Notification.Body*"></a>
+  <a id="UFEDLib_Email_Bcc_" data-uid="UFEDLib.Email.Bcc*"></a>
 
-  <h3 id="UFEDLib_Notification_Body" data-uid="UFEDLib.Notification.Body">
+  <h3 id="UFEDLib_Email_Bcc" data-uid="UFEDLib.Email.Bcc">
+  Bcc
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/EMail.cs/#L43"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;Party&gt; Bcc { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="UFEDLib.Party.html">Party</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UFEDLib_Email_Body_" data-uid="UFEDLib.Email.Body*"></a>
+
+  <h3 id="UFEDLib_Email_Body" data-uid="UFEDLib.Email.Body">
   Body
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Notification.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/EMail.cs/#L20"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -242,111 +304,18 @@ public class Notification : ModelBase, IUfedModelParser&lt;Notification&gt;</cod
 
 
 
-  <a id="UFEDLib_Notification_DateRead_" data-uid="UFEDLib.Notification.DateRead*"></a>
+  <a id="UFEDLib_Email_Cc_" data-uid="UFEDLib.Email.Cc*"></a>
 
-  <h3 id="UFEDLib_Notification_DateRead" data-uid="UFEDLib.Notification.DateRead">
-  DateRead
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Notification.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  <h3 id="UFEDLib_Email_Cc" data-uid="UFEDLib.Email.Cc">
+  Cc
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/EMail.cs/#L44"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public DateTime DateRead { get; set; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-  <a id="UFEDLib_Notification_Notes_" data-uid="UFEDLib.Notification.Notes*"></a>
-
-  <h3 id="UFEDLib_Notification_Notes" data-uid="UFEDLib.Notification.Notes">
-  Notes
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Notification.cs/#L41"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public List&lt;string&gt; Notes { get; set; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-  <a id="UFEDLib_Notification_NotificationId_" data-uid="UFEDLib.Notification.NotificationId*"></a>
-
-  <h3 id="UFEDLib_Notification_NotificationId" data-uid="UFEDLib.Notification.NotificationId">
-  NotificationId
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Notification.cs/#L24"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string NotificationId { get; set; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-  <a id="UFEDLib_Notification_Participants_" data-uid="UFEDLib.Notification.Participants*"></a>
-
-  <h3 id="UFEDLib_Notification_Participants" data-uid="UFEDLib.Notification.Participants">
-  Participants
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Notification.cs/#L46"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public List&lt;Party&gt; Participants { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public List&lt;Party&gt; Cc { get; set; }</code></pre>
   </div>
 
 
@@ -366,49 +335,18 @@ public class Notification : ModelBase, IUfedModelParser&lt;Notification&gt;</cod
 
 
 
-  <a id="UFEDLib_Notification_Position_" data-uid="UFEDLib.Notification.Position*"></a>
+  <a id="UFEDLib_Email_EmailHeader_" data-uid="UFEDLib.Email.EmailHeader*"></a>
 
-  <h3 id="UFEDLib_Notification_Position" data-uid="UFEDLib.Notification.Position">
-  Position
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Notification.cs/#L36"><i class="bi bi-code-slash"></i></a>
+  <h3 id="UFEDLib_Email_EmailHeader" data-uid="UFEDLib.Email.EmailHeader">
+  EmailHeader
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/EMail.cs/#L21"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Coordinate Position { get; set; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="UFEDLib.Coordinate.html">Coordinate</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-  <a id="UFEDLib_Notification_PositionAddress_" data-uid="UFEDLib.Notification.PositionAddress*"></a>
-
-  <h3 id="UFEDLib_Notification_PositionAddress" data-uid="UFEDLib.Notification.PositionAddress">
-  PositionAddress
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Notification.cs/#L26"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string PositionAddress { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string EmailHeader { get; set; }</code></pre>
   </div>
 
 
@@ -428,11 +366,135 @@ public class Notification : ModelBase, IUfedModelParser&lt;Notification&gt;</cod
 
 
 
-  <a id="UFEDLib_Notification_ServiceIdentifier_" data-uid="UFEDLib.Notification.ServiceIdentifier*"></a>
+  <a id="UFEDLib_Email_Folder_" data-uid="UFEDLib.Email.Folder*"></a>
 
-  <h3 id="UFEDLib_Notification_ServiceIdentifier" data-uid="UFEDLib.Notification.ServiceIdentifier">
+  <h3 id="UFEDLib_Email_Folder" data-uid="UFEDLib.Email.Folder">
+  Folder
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/EMail.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Folder { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UFEDLib_Email_From_" data-uid="UFEDLib.Email.From*"></a>
+
+  <h3 id="UFEDLib_Email_From" data-uid="UFEDLib.Email.From">
+  From
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/EMail.cs/#L34"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Party From { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UFEDLib.Party.html">Party</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UFEDLib_Email_Labels_" data-uid="UFEDLib.Email.Labels*"></a>
+
+  <h3 id="UFEDLib_Email_Labels" data-uid="UFEDLib.Email.Labels">
+  Labels
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/EMail.cs/#L38"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;string&gt; Labels { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UFEDLib_Email_Priority_" data-uid="UFEDLib.Email.Priority*"></a>
+
+  <h3 id="UFEDLib_Email_Priority" data-uid="UFEDLib.Email.Priority">
+  Priority
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/EMail.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Priority { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UFEDLib_Email_ServiceIdentifier_" data-uid="UFEDLib.Email.ServiceIdentifier*"></a>
+
+  <h3 id="UFEDLib_Email_ServiceIdentifier" data-uid="UFEDLib.Email.ServiceIdentifier">
   ServiceIdentifier
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Notification.cs/#L32"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/EMail.cs/#L24"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -459,11 +521,42 @@ public class Notification : ModelBase, IUfedModelParser&lt;Notification&gt;</cod
 
 
 
-  <a id="UFEDLib_Notification_Source_" data-uid="UFEDLib.Notification.Source*"></a>
+  <a id="UFEDLib_Email_Snippet_" data-uid="UFEDLib.Email.Snippet*"></a>
 
-  <h3 id="UFEDLib_Notification_Source" data-uid="UFEDLib.Notification.Source">
+  <h3 id="UFEDLib_Email_Snippet" data-uid="UFEDLib.Email.Snippet">
+  Snippet
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/EMail.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Snippet { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UFEDLib_Email_Source_" data-uid="UFEDLib.Email.Source*"></a>
+
+  <h3 id="UFEDLib_Email_Source" data-uid="UFEDLib.Email.Source">
   Source
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Notification.cs/#L27"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/EMail.cs/#L26"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -490,11 +583,11 @@ public class Notification : ModelBase, IUfedModelParser&lt;Notification&gt;</cod
 
 
 
-  <a id="UFEDLib_Notification_Status_" data-uid="UFEDLib.Notification.Status*"></a>
+  <a id="UFEDLib_Email_Status_" data-uid="UFEDLib.Email.Status*"></a>
 
-  <h3 id="UFEDLib_Notification_Status" data-uid="UFEDLib.Notification.Status">
+  <h3 id="UFEDLib_Email_Status" data-uid="UFEDLib.Email.Status">
   Status
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Notification.cs/#L28"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/EMail.cs/#L27"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -521,11 +614,11 @@ public class Notification : ModelBase, IUfedModelParser&lt;Notification&gt;</cod
 
 
 
-  <a id="UFEDLib_Notification_Subject_" data-uid="UFEDLib.Notification.Subject*"></a>
+  <a id="UFEDLib_Email_Subject_" data-uid="UFEDLib.Email.Subject*"></a>
 
-  <h3 id="UFEDLib_Notification_Subject" data-uid="UFEDLib.Notification.Subject">
+  <h3 id="UFEDLib_Email_Subject" data-uid="UFEDLib.Email.Subject">
   Subject
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Notification.cs/#L29"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/EMail.cs/#L28"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -552,11 +645,11 @@ public class Notification : ModelBase, IUfedModelParser&lt;Notification&gt;</cod
 
 
 
-  <a id="UFEDLib_Notification_TimeStamp_" data-uid="UFEDLib.Notification.TimeStamp*"></a>
+  <a id="UFEDLib_Email_TimeStamp_" data-uid="UFEDLib.Email.TimeStamp*"></a>
 
-  <h3 id="UFEDLib_Notification_TimeStamp" data-uid="UFEDLib.Notification.TimeStamp">
+  <h3 id="UFEDLib_Email_TimeStamp" data-uid="UFEDLib.Email.TimeStamp">
   TimeStamp
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Notification.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/EMail.cs/#L29"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -583,18 +676,18 @@ public class Notification : ModelBase, IUfedModelParser&lt;Notification&gt;</cod
 
 
 
-  <a id="UFEDLib_Notification_To_" data-uid="UFEDLib.Notification.To*"></a>
+  <a id="UFEDLib_Email_To_" data-uid="UFEDLib.Email.To*"></a>
 
-  <h3 id="UFEDLib_Notification_To" data-uid="UFEDLib.Notification.To">
+  <h3 id="UFEDLib_Email_To" data-uid="UFEDLib.Email.To">
   To
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Notification.cs/#L37"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/EMail.cs/#L45"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Party To { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public List&lt;Party&gt; To { get; set; }</code></pre>
   </div>
 
 
@@ -603,7 +696,7 @@ public class Notification : ModelBase, IUfedModelParser&lt;Notification&gt;</cod
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="UFEDLib.Party.html">Party</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="UFEDLib.Party.html">Party</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -614,42 +707,11 @@ public class Notification : ModelBase, IUfedModelParser&lt;Notification&gt;</cod
 
 
 
-  <a id="UFEDLib_Notification_Type_" data-uid="UFEDLib.Notification.Type*"></a>
+  <a id="UFEDLib_Email_UserMapping_" data-uid="UFEDLib.Email.UserMapping*"></a>
 
-  <h3 id="UFEDLib_Notification_Type" data-uid="UFEDLib.Notification.Type">
-  Type
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Notification.cs/#L25"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Type { get; set; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-  <a id="UFEDLib_Notification_UserMapping_" data-uid="UFEDLib.Notification.UserMapping*"></a>
-
-  <h3 id="UFEDLib_Notification_UserMapping" data-uid="UFEDLib.Notification.UserMapping">
+  <h3 id="UFEDLib_Email_UserMapping" data-uid="UFEDLib.Email.UserMapping">
   UserMapping
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Notification.cs/#L31"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/EMail.cs/#L30"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -680,11 +742,11 @@ public class Notification : ModelBase, IUfedModelParser&lt;Notification&gt;</cod
 </h2>
 
 
-  <a id="UFEDLib_Notification_GetXmlModelType_" data-uid="UFEDLib.Notification.GetXmlModelType*"></a>
+  <a id="UFEDLib_Email_GetXmlModelType_" data-uid="UFEDLib.Email.GetXmlModelType*"></a>
 
-  <h3 id="UFEDLib_Notification_GetXmlModelType" data-uid="UFEDLib.Notification.GetXmlModelType">
+  <h3 id="UFEDLib_Email_GetXmlModelType" data-uid="UFEDLib.Email.GetXmlModelType">
   GetXmlModelType()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Notification.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/EMail.cs/#L13"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -711,25 +773,25 @@ public class Notification : ModelBase, IUfedModelParser&lt;Notification&gt;</cod
 
 
 
-  <a id="UFEDLib_Notification_ParseFields_" data-uid="UFEDLib.Notification.ParseFields*"></a>
+  <a id="UFEDLib_Email_ParseFields_" data-uid="UFEDLib.Email.ParseFields*"></a>
 
-  <h3 id="UFEDLib_Notification_ParseFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_Notification_System_Boolean_" data-uid="UFEDLib.Notification.ParseFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.Notification,System.Boolean)">
-  ParseFields(IEnumerable&lt;XElement&gt;, Notification, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Notification.cs/#L88"><i class="bi bi-code-slash"></i></a>
+  <h3 id="UFEDLib_Email_ParseFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_Email_System_Boolean_" data-uid="UFEDLib.Email.ParseFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.Email,System.Boolean)">
+  ParseFields(IEnumerable&lt;XElement&gt;, Email, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/EMail.cs/#L90"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void ParseFields(IEnumerable&lt;XElement&gt; fieldElements, Notification result, bool debugAttributes = false)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void ParseFields(IEnumerable&lt;XElement&gt; fieldElements, Email result, bool debugAttributes = false)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>fieldElements</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>&gt;</dt>
     <dd></dd>
-    <dt><code>result</code> <a class="xref" href="UFEDLib.Notification.html">Notification</a></dt>
+    <dt><code>result</code> <a class="xref" href="UFEDLib.Email.html">Email</a></dt>
     <dd></dd>
     <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
@@ -746,18 +808,18 @@ public class Notification : ModelBase, IUfedModelParser&lt;Notification&gt;</cod
 
 
 
-  <a id="UFEDLib_Notification_ParseModel_" data-uid="UFEDLib.Notification.ParseModel*"></a>
+  <a id="UFEDLib_Email_ParseModel_" data-uid="UFEDLib.Email.ParseModel*"></a>
 
-  <h3 id="UFEDLib_Notification_ParseModel_System_Xml_Linq_XElement_System_Boolean_" data-uid="UFEDLib.Notification.ParseModel(System.Xml.Linq.XElement,System.Boolean)">
+  <h3 id="UFEDLib_Email_ParseModel_System_Xml_Linq_XElement_System_Boolean_" data-uid="UFEDLib.Email.ParseModel(System.Xml.Linq.XElement,System.Boolean)">
   ParseModel(XElement, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Notification.cs/#L52"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/EMail.cs/#L70"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Notification ParseModel(XElement element, bool debugAttributes = false)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Email ParseModel(XElement element, bool debugAttributes = false)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -770,7 +832,7 @@ public class Notification : ModelBase, IUfedModelParser&lt;Notification&gt;</cod
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="UFEDLib.Notification.html">Notification</a></dt>
+    <dt><a class="xref" href="UFEDLib.Email.html">Email</a></dt>
     <dd></dd>
   </dl>
 
@@ -784,25 +846,25 @@ public class Notification : ModelBase, IUfedModelParser&lt;Notification&gt;</cod
 
 
 
-  <a id="UFEDLib_Notification_ParseModelFields_" data-uid="UFEDLib.Notification.ParseModelFields*"></a>
+  <a id="UFEDLib_Email_ParseModelFields_" data-uid="UFEDLib.Email.ParseModelFields*"></a>
 
-  <h3 id="UFEDLib_Notification_ParseModelFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_Notification_System_Boolean_" data-uid="UFEDLib.Notification.ParseModelFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.Notification,System.Boolean)">
-  ParseModelFields(IEnumerable&lt;XElement&gt;, Notification, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Notification.cs/#L150"><i class="bi bi-code-slash"></i></a>
+  <h3 id="UFEDLib_Email_ParseModelFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_Email_System_Boolean_" data-uid="UFEDLib.Email.ParseModelFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.Email,System.Boolean)">
+  ParseModelFields(IEnumerable&lt;XElement&gt;, Email, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/EMail.cs/#L155"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void ParseModelFields(IEnumerable&lt;XElement&gt; modelFieldElements, Notification result, bool debugAttributes = false)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void ParseModelFields(IEnumerable&lt;XElement&gt; modelFieldElements, Email result, bool debugAttributes = false)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>modelFieldElements</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>&gt;</dt>
     <dd></dd>
-    <dt><code>result</code> <a class="xref" href="UFEDLib.Notification.html">Notification</a></dt>
+    <dt><code>result</code> <a class="xref" href="UFEDLib.Email.html">Email</a></dt>
     <dd></dd>
     <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
@@ -819,25 +881,25 @@ public class Notification : ModelBase, IUfedModelParser&lt;Notification&gt;</cod
 
 
 
-  <a id="UFEDLib_Notification_ParseMultiFields_" data-uid="UFEDLib.Notification.ParseMultiFields*"></a>
+  <a id="UFEDLib_Email_ParseMultiFields_" data-uid="UFEDLib.Email.ParseMultiFields*"></a>
 
-  <h3 id="UFEDLib_Notification_ParseMultiFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_Notification_System_Boolean_" data-uid="UFEDLib.Notification.ParseMultiFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.Notification,System.Boolean)">
-  ParseMultiFields(IEnumerable&lt;XElement&gt;, Notification, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Notification.cs/#L173"><i class="bi bi-code-slash"></i></a>
+  <h3 id="UFEDLib_Email_ParseMultiFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_Email_System_Boolean_" data-uid="UFEDLib.Email.ParseMultiFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.Email,System.Boolean)">
+  ParseMultiFields(IEnumerable&lt;XElement&gt;, Email, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/EMail.cs/#L175"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void ParseMultiFields(IEnumerable&lt;XElement&gt; multiFieldElements, Notification result, bool debugAttributes = false)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void ParseMultiFields(IEnumerable&lt;XElement&gt; multiFieldElements, Email result, bool debugAttributes = false)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>multiFieldElements</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>&gt;</dt>
     <dd></dd>
-    <dt><code>result</code> <a class="xref" href="UFEDLib.Notification.html">Notification</a></dt>
+    <dt><code>result</code> <a class="xref" href="UFEDLib.Email.html">Email</a></dt>
     <dd></dd>
     <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
@@ -854,23 +916,23 @@ public class Notification : ModelBase, IUfedModelParser&lt;Notification&gt;</cod
 
 
 
-  <a id="UFEDLib_Notification_ParseMultiModel_" data-uid="UFEDLib.Notification.ParseMultiModel*"></a>
+  <a id="UFEDLib_Email_ParseMultiModel_" data-uid="UFEDLib.Email.ParseMultiModel*"></a>
 
-  <h3 id="UFEDLib_Notification_ParseMultiModel_System_Xml_Linq_XElement_System_Boolean_" data-uid="UFEDLib.Notification.ParseMultiModel(System.Xml.Linq.XElement,System.Boolean)">
+  <h3 id="UFEDLib_Email_ParseMultiModel_System_Xml_Linq_XElement_System_Boolean_" data-uid="UFEDLib.Email.ParseMultiModel(System.Xml.Linq.XElement,System.Boolean)">
   ParseMultiModel(XElement, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Notification.cs/#L72"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/EMail.cs/#L49"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static List&lt;Notification&gt; ParseMultiModel(XElement element, bool debugAttributes = false)</code></pre>
+    <pre><code class="lang-csharp hljs">public static List&lt;Email&gt; ParseMultiModel(XElement emailsElement, bool debugAttributes = false)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>element</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a></dt>
+    <dt><code>emailsElement</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a></dt>
     <dd></dd>
     <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
@@ -878,7 +940,7 @@ public class Notification : ModelBase, IUfedModelParser&lt;Notification&gt;</cod
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="UFEDLib.Notification.html">Notification</a>&gt;</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="UFEDLib.Email.html">Email</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -892,25 +954,25 @@ public class Notification : ModelBase, IUfedModelParser&lt;Notification&gt;</cod
 
 
 
-  <a id="UFEDLib_Notification_ParseMultiModelFields_" data-uid="UFEDLib.Notification.ParseMultiModelFields*"></a>
+  <a id="UFEDLib_Email_ParseMultiModelFields_" data-uid="UFEDLib.Email.ParseMultiModelFields*"></a>
 
-  <h3 id="UFEDLib_Notification_ParseMultiModelFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_Notification_System_Boolean_" data-uid="UFEDLib.Notification.ParseMultiModelFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.Notification,System.Boolean)">
-  ParseMultiModelFields(IEnumerable&lt;XElement&gt;, Notification, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Notification.cs/#L193"><i class="bi bi-code-slash"></i></a>
+  <h3 id="UFEDLib_Email_ParseMultiModelFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_Email_System_Boolean_" data-uid="UFEDLib.Email.ParseMultiModelFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.Email,System.Boolean)">
+  ParseMultiModelFields(IEnumerable&lt;XElement&gt;, Email, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/EMail.cs/#L195"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void ParseMultiModelFields(IEnumerable&lt;XElement&gt; multiModelFieldElements, Notification result, bool debugAttributes = false)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void ParseMultiModelFields(IEnumerable&lt;XElement&gt; multiModelFieldElements, Email result, bool debugAttributes = false)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>multiModelFieldElements</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>&gt;</dt>
     <dd></dd>
-    <dt><code>result</code> <a class="xref" href="UFEDLib.Notification.html">Notification</a></dt>
+    <dt><code>result</code> <a class="xref" href="UFEDLib.Email.html">Email</a></dt>
     <dd></dd>
     <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
@@ -931,7 +993,7 @@ public class Notification : ModelBase, IUfedModelParser&lt;Notification&gt;</cod
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Notification.cs/#L13" class="edit-link">Edit this page</a>
+          <a href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/EMail.cs/#L10" class="edit-link">Edit this page</a>
         </div>
 
 

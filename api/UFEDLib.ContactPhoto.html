@@ -184,7 +184,7 @@ public class ContactPhoto : ModelBase, IUfedModelParser&lt;ContactPhoto&gt;</cod
 
   <h3 id="UFEDLib_ContactPhoto_Name" data-uid="UFEDLib.ContactPhoto.Name">
   Name
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/ContactPhoto.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/ContactPhoto.cs/#L22"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Filename (if exists).</p>
@@ -216,7 +216,7 @@ public class ContactPhoto : ModelBase, IUfedModelParser&lt;ContactPhoto&gt;</cod
 
   <h3 id="UFEDLib_ContactPhoto_Url" data-uid="UFEDLib.ContactPhoto.Url">
   Url
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/ContactPhoto.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/ContactPhoto.cs/#L23"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -224,6 +224,37 @@ public class ContactPhoto : ModelBase, IUfedModelParser&lt;ContactPhoto&gt;</cod
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string Url { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UFEDLib_ContactPhoto_UserMapping_" data-uid="UFEDLib.ContactPhoto.UserMapping*"></a>
+
+  <h3 id="UFEDLib_ContactPhoto_UserMapping" data-uid="UFEDLib.ContactPhoto.UserMapping">
+  UserMapping
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/ContactPhoto.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string UserMapping { get; set; }</code></pre>
   </div>
 
 
@@ -278,23 +309,58 @@ public class ContactPhoto : ModelBase, IUfedModelParser&lt;ContactPhoto&gt;</cod
 
 
 
-  <a id="UFEDLib_ContactPhoto_ParseModel_" data-uid="UFEDLib.ContactPhoto.ParseModel*"></a>
+  <a id="UFEDLib_ContactPhoto_ParseFields_" data-uid="UFEDLib.ContactPhoto.ParseFields*"></a>
 
-  <h3 id="UFEDLib_ContactPhoto_ParseModel_System_Xml_Linq_XElement_System_Boolean_" data-uid="UFEDLib.ContactPhoto.ParseModel(System.Xml.Linq.XElement,System.Boolean)">
-  ParseModel(XElement, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/ContactPhoto.cs/#L45"><i class="bi bi-code-slash"></i></a>
+  <h3 id="UFEDLib_ContactPhoto_ParseFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_ContactPhoto_System_Boolean_" data-uid="UFEDLib.ContactPhoto.ParseFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.ContactPhoto,System.Boolean)">
+  ParseFields(IEnumerable&lt;XElement&gt;, ContactPhoto, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/ContactPhoto.cs/#L64"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static ContactPhoto ParseModel(XElement contactNode, bool debugAttributes = false)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void ParseFields(IEnumerable&lt;XElement&gt; fieldElements, ContactPhoto result, bool debugAttributes = false)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>contactNode</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a></dt>
+    <dt><code>fieldElements</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>result</code> <a class="xref" href="UFEDLib.ContactPhoto.html">ContactPhoto</a></dt>
+    <dd></dd>
+    <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UFEDLib_ContactPhoto_ParseModel_" data-uid="UFEDLib.ContactPhoto.ParseModel*"></a>
+
+  <h3 id="UFEDLib_ContactPhoto_ParseModel_System_Xml_Linq_XElement_System_Boolean_" data-uid="UFEDLib.ContactPhoto.ParseModel(System.Xml.Linq.XElement,System.Boolean)">
+  ParseModel(XElement, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/ContactPhoto.cs/#L44"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ContactPhoto ParseModel(XElement element, bool debugAttributes = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>element</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a></dt>
     <dd></dd>
     <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
@@ -316,11 +382,81 @@ public class ContactPhoto : ModelBase, IUfedModelParser&lt;ContactPhoto&gt;</cod
 
 
 
+  <a id="UFEDLib_ContactPhoto_ParseModelFields_" data-uid="UFEDLib.ContactPhoto.ParseModelFields*"></a>
+
+  <h3 id="UFEDLib_ContactPhoto_ParseModelFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_ContactPhoto_System_Boolean_" data-uid="UFEDLib.ContactPhoto.ParseModelFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.ContactPhoto,System.Boolean)">
+  ParseModelFields(IEnumerable&lt;XElement&gt;, ContactPhoto, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/ContactPhoto.cs/#L86"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ParseModelFields(IEnumerable&lt;XElement&gt; modelFieldElements, ContactPhoto result, bool debugAttributes = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>modelFieldElements</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>result</code> <a class="xref" href="UFEDLib.ContactPhoto.html">ContactPhoto</a></dt>
+    <dd></dd>
+    <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UFEDLib_ContactPhoto_ParseMultiFields_" data-uid="UFEDLib.ContactPhoto.ParseMultiFields*"></a>
+
+  <h3 id="UFEDLib_ContactPhoto_ParseMultiFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_ContactPhoto_System_Boolean_" data-uid="UFEDLib.ContactPhoto.ParseMultiFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.ContactPhoto,System.Boolean)">
+  ParseMultiFields(IEnumerable&lt;XElement&gt;, ContactPhoto, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/ContactPhoto.cs/#L91"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ParseMultiFields(IEnumerable&lt;XElement&gt; multiFieldElements, ContactPhoto result, bool debugAttributes = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>multiFieldElements</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>result</code> <a class="xref" href="UFEDLib.ContactPhoto.html">ContactPhoto</a></dt>
+    <dd></dd>
+    <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="UFEDLib_ContactPhoto_ParseMultiModel_" data-uid="UFEDLib.ContactPhoto.ParseMultiModel*"></a>
 
   <h3 id="UFEDLib_ContactPhoto_ParseMultiModel_System_Xml_Linq_XElement_System_Boolean_" data-uid="UFEDLib.ContactPhoto.ParseMultiModel(System.Xml.Linq.XElement,System.Boolean)">
   ParseMultiModel(XElement, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/ContactPhoto.cs/#L29"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/ContactPhoto.cs/#L28"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -343,6 +479,41 @@ public class ContactPhoto : ModelBase, IUfedModelParser&lt;ContactPhoto&gt;</cod
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="UFEDLib.ContactPhoto.html">ContactPhoto</a>&gt;</dt>
     <dd></dd>
   </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UFEDLib_ContactPhoto_ParseMultiModelFields_" data-uid="UFEDLib.ContactPhoto.ParseMultiModelFields*"></a>
+
+  <h3 id="UFEDLib_ContactPhoto_ParseMultiModelFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_ContactPhoto_System_Boolean_" data-uid="UFEDLib.ContactPhoto.ParseMultiModelFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.ContactPhoto,System.Boolean)">
+  ParseMultiModelFields(IEnumerable&lt;XElement&gt;, ContactPhoto, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/ContactPhoto.cs/#L113"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ParseMultiModelFields(IEnumerable&lt;XElement&gt; multiModelFieldElements, ContactPhoto result, bool debugAttributes = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>multiModelFieldElements</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>result</code> <a class="xref" href="UFEDLib.ContactPhoto.html">ContactPhoto</a></dt>
+    <dd></dd>
+    <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
 
 
 

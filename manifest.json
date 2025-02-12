@@ -164,6 +164,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.CreditCard.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.CreditCard.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/UFEDLib.DeviceConnectivity.yml",
       "output": {
         ".html": {
@@ -204,10 +214,40 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/UFEDLib.EMail.yml",
+      "source_relative_path": "api/UFEDLib.Email.yml",
       "output": {
         ".html": {
-          "relative_path": "api/UFEDLib.EMail.html"
+          "relative_path": "api/UFEDLib.Email.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.FileDownload.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.FileDownload.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.FileUpload.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.FileUpload.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.FinancialAccount.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.FinancialAccount.html"
         }
       },
       "version": ""
@@ -248,6 +288,16 @@
       "output": {
         ".html": {
           "relative_path": "api/UFEDLib.Journey.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.KeyValueModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.KeyValueModel.html"
         }
       },
       "version": ""
@@ -308,6 +358,16 @@
       "output": {
         ".html": {
           "relative_path": "api/UFEDLib.Map.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.MobileCard.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.MobileCard.html"
         }
       },
       "version": ""
@@ -394,10 +454,30 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.Price.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.Price.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/UFEDLib.ProjectAttributes.yml",
       "output": {
         ".html": {
           "relative_path": "api/UFEDLib.ProjectAttributes.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.RecognizedDevice.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.RecognizedDevice.html"
         }
       },
       "version": ""
@@ -418,6 +498,16 @@
       "output": {
         ".html": {
           "relative_path": "api/UFEDLib.Report.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.SIMData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.SIMData.html"
         }
       },
       "version": ""
@@ -454,10 +544,30 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.SocialMediaActivity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.SocialMediaActivity.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/UFEDLib.StreetAddress.yml",
       "output": {
         ".html": {
           "relative_path": "api/UFEDLib.StreetAddress.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.TransferOfFunds.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.TransferOfFunds.html"
         }
       },
       "version": ""
@@ -494,10 +604,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/UFEDLib.VoiceMail.yml",
+      "source_relative_path": "api/UFEDLib.Voicemail.yml",
       "output": {
         ".html": {
-          "relative_path": "api/UFEDLib.VoiceMail.html"
+          "relative_path": "api/UFEDLib.Voicemail.html"
         }
       },
       "version": ""
@@ -536,11 +646,11 @@
       "type": "Toc",
       "source_relative_path": "api/toc.yml",
       "output": {
-        ".html": {
-          "relative_path": "api/toc.html"
-        },
         ".json": {
           "relative_path": "api/toc.json"
+        },
+        ".html": {
+          "relative_path": "api/toc.html"
         }
       },
       "version": ""
@@ -579,11 +689,11 @@
       "type": "Toc",
       "source_relative_path": "toc.yml",
       "output": {
-        ".html": {
-          "relative_path": "toc.html"
-        },
         ".json": {
           "relative_path": "toc.json"
+        },
+        ".html": {
+          "relative_path": "toc.html"
         }
       },
       "version": ""

@@ -121,6 +121,158 @@ Interface IUfedModelParser&lt;T&gt;  <a class="header-action link-secondary" tit
 </h2>
 
 
+  <a id="UFEDLib_IUfedModelParser_1_CheckFields_" data-uid="UFEDLib.IUfedModelParser`1.CheckFields*"></a>
+
+  <h3 id="UFEDLib_IUfedModelParser_1_CheckFields__1_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__System_Boolean_" data-uid="UFEDLib.IUfedModelParser`1.CheckFields``1(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},System.Boolean)">
+  CheckFields&lt;TModel&gt;(IEnumerable&lt;XElement&gt;, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/IUfedModelParser.cs/#L26"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void CheckFields&lt;TModel&gt;(IEnumerable&lt;XElement&gt; fieldElements, bool debugAttributes = false) where TModel : IUfedModelParser&lt;T&gt;, new()</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>fieldElements</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TModel</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="UFEDLib_IUfedModelParser_1_CheckModelFields_" data-uid="UFEDLib.IUfedModelParser`1.CheckModelFields*"></a>
+
+  <h3 id="UFEDLib_IUfedModelParser_1_CheckModelFields__1_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__System_Boolean_" data-uid="UFEDLib.IUfedModelParser`1.CheckModelFields``1(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},System.Boolean)">
+  CheckModelFields&lt;TModel&gt;(IEnumerable&lt;XElement&gt;, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/IUfedModelParser.cs/#L38"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void CheckModelFields&lt;TModel&gt;(IEnumerable&lt;XElement&gt; modelFieldElements, bool debugAttributes = false) where TModel : IUfedModelParser&lt;T&gt;, new()</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>modelFieldElements</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TModel</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="UFEDLib_IUfedModelParser_1_CheckMultiFields_" data-uid="UFEDLib.IUfedModelParser`1.CheckMultiFields*"></a>
+
+  <h3 id="UFEDLib_IUfedModelParser_1_CheckMultiFields__1_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__System_Boolean_" data-uid="UFEDLib.IUfedModelParser`1.CheckMultiFields``1(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},System.Boolean)">
+  CheckMultiFields&lt;TModel&gt;(IEnumerable&lt;XElement&gt;, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/IUfedModelParser.cs/#L50"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void CheckMultiFields&lt;TModel&gt;(IEnumerable&lt;XElement&gt; multiFieldElements, bool debugAttributes = false) where TModel : IUfedModelParser&lt;T&gt;, new()</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>multiFieldElements</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TModel</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="UFEDLib_IUfedModelParser_1_CheckMultiModelFields_" data-uid="UFEDLib.IUfedModelParser`1.CheckMultiModelFields*"></a>
+
+  <h3 id="UFEDLib_IUfedModelParser_1_CheckMultiModelFields__1_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__System_Boolean_" data-uid="UFEDLib.IUfedModelParser`1.CheckMultiModelFields``1(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},System.Boolean)">
+  CheckMultiModelFields&lt;TModel&gt;(IEnumerable&lt;XElement&gt;, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/IUfedModelParser.cs/#L62"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void CheckMultiModelFields&lt;TModel&gt;(IEnumerable&lt;XElement&gt; multiModelFieldElements, bool debugAttributes = false) where TModel : IUfedModelParser&lt;T&gt;, new()</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>multiModelFieldElements</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TModel</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <a id="UFEDLib_IUfedModelParser_1_GetXmlModelType_" data-uid="UFEDLib.IUfedModelParser`1.GetXmlModelType*"></a>
 
   <h3 id="UFEDLib_IUfedModelParser_1_GetXmlModelType" data-uid="UFEDLib.IUfedModelParser`1.GetXmlModelType">
@@ -141,6 +293,41 @@ Interface IUfedModelParser&lt;T&gt;  <a class="header-action link-secondary" tit
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
   </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UFEDLib_IUfedModelParser_1_ParseFields_" data-uid="UFEDLib.IUfedModelParser`1.ParseFields*"></a>
+
+  <h3 id="UFEDLib_IUfedModelParser_1_ParseFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement___0_System_Boolean_" data-uid="UFEDLib.IUfedModelParser`1.ParseFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},`0,System.Boolean)">
+  ParseFields(IEnumerable&lt;XElement&gt;, T, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/IUfedModelParser.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static abstract void ParseFields(IEnumerable&lt;XElement&gt; fieldElements, T result, bool debugAttributes = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>fieldElements</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>result</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
 
 
 
@@ -190,6 +377,76 @@ Interface IUfedModelParser&lt;T&gt;  <a class="header-action link-secondary" tit
 
 
 
+  <a id="UFEDLib_IUfedModelParser_1_ParseModelFields_" data-uid="UFEDLib.IUfedModelParser`1.ParseModelFields*"></a>
+
+  <h3 id="UFEDLib_IUfedModelParser_1_ParseModelFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement___0_System_Boolean_" data-uid="UFEDLib.IUfedModelParser`1.ParseModelFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},`0,System.Boolean)">
+  ParseModelFields(IEnumerable&lt;XElement&gt;, T, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/IUfedModelParser.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static abstract void ParseModelFields(IEnumerable&lt;XElement&gt; modelFieldElements, T result, bool debugAttributes = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>modelFieldElements</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>result</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UFEDLib_IUfedModelParser_1_ParseMultiFields_" data-uid="UFEDLib.IUfedModelParser`1.ParseMultiFields*"></a>
+
+  <h3 id="UFEDLib_IUfedModelParser_1_ParseMultiFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement___0_System_Boolean_" data-uid="UFEDLib.IUfedModelParser`1.ParseMultiFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},`0,System.Boolean)">
+  ParseMultiFields(IEnumerable&lt;XElement&gt;, T, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/IUfedModelParser.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static abstract void ParseMultiFields(IEnumerable&lt;XElement&gt; multiFieldElements, T result, bool debugAttributes = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>multiFieldElements</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>result</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="UFEDLib_IUfedModelParser_1_ParseMultiModel_" data-uid="UFEDLib.IUfedModelParser`1.ParseMultiModel*"></a>
 
   <h3 id="UFEDLib_IUfedModelParser_1_ParseMultiModel_System_Xml_Linq_XElement_System_Boolean_" data-uid="UFEDLib.IUfedModelParser`1.ParseMultiModel(System.Xml.Linq.XElement,System.Boolean)">
@@ -217,6 +474,41 @@ Interface IUfedModelParser&lt;T&gt;  <a class="header-action link-secondary" tit
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;T&gt;</dt>
     <dd></dd>
   </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UFEDLib_IUfedModelParser_1_ParseMultiModelFields_" data-uid="UFEDLib.IUfedModelParser`1.ParseMultiModelFields*"></a>
+
+  <h3 id="UFEDLib_IUfedModelParser_1_ParseMultiModelFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement___0_System_Boolean_" data-uid="UFEDLib.IUfedModelParser`1.ParseMultiModelFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},`0,System.Boolean)">
+  ParseMultiModelFields(IEnumerable&lt;XElement&gt;, T, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/IUfedModelParser.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static abstract void ParseMultiModelFields(IEnumerable&lt;XElement&gt; multiModelFieldElements, T result, bool debugAttributes = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>multiModelFieldElements</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>result</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
 
 
 
