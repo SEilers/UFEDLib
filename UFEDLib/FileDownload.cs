@@ -20,6 +20,7 @@ namespace UFEDLib
         public DateTime EndTime { get; set; }
         public long FileSize { get; set; }
         public DateTime LastAccessed { get; set; }
+        public string ServiceIdentifier { get; set; }
         public string Source { get; set; }
         public DateTime StartTime { get; set; }
         public string TargetPath { get; set; }
@@ -39,19 +40,27 @@ namespace UFEDLib
         public static FileDownload ParseModel(XElement element, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-
             FileDownload result = new FileDownload();
-            result.ParseAttributes(element);
 
-            var fieldElements = element.Elements(xNamespace + "field");
-            var modelFieldElements = element.Elements(xNamespace + "modelField");
-            var multiFieldElements = element.Elements(xNamespace + "multiField");
-            var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
+            try
+            {
+                result.ParseAttributes(element);
 
-            ParseFields(fieldElements, result, debugAttributes);
-            ParseModelFields(modelFieldElements, result, debugAttributes);
-            ParseMultiFields(multiFieldElements, result, debugAttributes);
-            ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
+                var fieldElements = element.Elements(xNamespace + "field");
+                var modelFieldElements = element.Elements(xNamespace + "modelField");
+                var multiFieldElements = element.Elements(xNamespace + "multiField");
+                var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
+
+                ParseFields(fieldElements, result, debugAttributes);
+                ParseModelFields(modelFieldElements, result, debugAttributes);
+                ParseMultiFields(multiFieldElements, result, debugAttributes);
+                ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
+
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError("FileDownload: Error parsing xml reader attributes " + ex.Message);
+            }
 
             return result;
         }
@@ -104,6 +113,10 @@ namespace UFEDLib
                     case "LastAccessed":
                         if (field.Value.Trim() != "")
                             result.LastAccessed = DateTime.Parse(field.Value.Trim());
+                        break;
+
+                    case "ServiceIdentifier":
+                        result.ServiceIdentifier = field.Value.Trim();
                         break;
 
                     case "Source":

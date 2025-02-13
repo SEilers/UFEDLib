@@ -18,6 +18,7 @@ namespace UFEDLib
         public DateTime DateSent { get; set; }
         public DateTime DateProcessed { get; set; }
         public string Description { get; set; }
+        public string ServiceIdentifier { get; set; }
         public string Source { get; set; }
         public string Status { get; set; }
         public string TransferType { get; set; }
@@ -37,19 +38,26 @@ namespace UFEDLib
         public static TransferOfFunds ParseModel(XElement element, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-
             TransferOfFunds result = new TransferOfFunds();
-            result.ParseAttributes(element);
 
-            var fieldElements = element.Elements(xNamespace + "field");
-            var modelFieldElements = element.Elements(xNamespace + "modelField");
-            var multiFieldElements = element.Elements(xNamespace + "multiField");
-            var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
+            try
+            {
+                result.ParseAttributes(element);
 
-            ParseFields(fieldElements, result, debugAttributes);
-            ParseModelFields(modelFieldElements, result, debugAttributes);
-            ParseMultiFields(multiFieldElements, result, debugAttributes);
-            ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
+                var fieldElements = element.Elements(xNamespace + "field");
+                var modelFieldElements = element.Elements(xNamespace + "modelField");
+                var multiFieldElements = element.Elements(xNamespace + "multiField");
+                var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
+
+                ParseFields(fieldElements, result, debugAttributes);
+                ParseModelFields(modelFieldElements, result, debugAttributes);
+                ParseMultiFields(multiFieldElements, result, debugAttributes);
+                ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError("TransferOfFunds: Error parsing xml reader attributes " + ex.Message);
+            }
 
             return result;
         }
@@ -88,6 +96,10 @@ namespace UFEDLib
 
                     case "Description":
                         result.Description = field.Value.Trim();
+                        break;
+
+                    case "ServiceIdentifier":
+                        result.ServiceIdentifier = field.Value.Trim();
                         break;
 
                     case "Source":

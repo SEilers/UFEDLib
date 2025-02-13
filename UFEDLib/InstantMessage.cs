@@ -62,7 +62,7 @@ namespace UFEDLib
         #endregion
 
         //public MessageStatus Status {get;set;}
-        
+
         public override string ToString()
         {
             return SourceApplication;
@@ -88,17 +88,17 @@ namespace UFEDLib
         public static InstantMessage ParseModel(XElement xElement, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-
             InstantMessage result = new InstantMessage();
-            result.ParseAttributes(xElement);
-
-            var fieldElements = xElement.Elements(xNamespace + "field");
-            var modelFieldElements = xElement.Elements(xNamespace + "modelField");
-            var multiFieldElements = xElement.Elements(xNamespace + "multiField");
-            var multiModelFieldElements = xElement.Elements(xNamespace + "multiModelField");
 
             try
             {
+                result.ParseAttributes(xElement);
+
+                var fieldElements = xElement.Elements(xNamespace + "field");
+                var modelFieldElements = xElement.Elements(xNamespace + "modelField");
+                var multiFieldElements = xElement.Elements(xNamespace + "multiField");
+                var multiModelFieldElements = xElement.Elements(xNamespace + "multiModelField");
+
                 ParseFields(fieldElements, result, debugAttributes);
                 ParseModelFields(modelFieldElements, result, debugAttributes);
                 ParseMultiFields(multiFieldElements, result, debugAttributes);
@@ -106,7 +106,7 @@ namespace UFEDLib
             }
             catch (Exception ex)
             {
-                Trace.WriteLine(ex.Message);
+                Logger.LogError("InstantMessage: Error parsing xml reader attributes " + ex.Message);
             }
 
             return result;
@@ -206,7 +206,7 @@ namespace UFEDLib
                         if (field.Value.Trim() != "")
                             result.SelfDestructDuration = TimeSpan.Parse(field.Value.Trim());
                         break;
-                
+
                     case "ServiceIdentifier":
                         result.ServiceIdentifier = field.Value.Trim();
                         break;

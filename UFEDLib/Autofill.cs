@@ -29,19 +29,25 @@ namespace UFEDLib
         public static Autofill ParseModel(XElement element, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-
             Autofill result = new Autofill();
-            result.ParseAttributes(element);
+            try
+            {
+                result.ParseAttributes(element);
 
-            var fieldElements = element.Elements(xNamespace + "field");
-            var modelFieldElements = element.Elements(xNamespace + "modelField");
-            var multiFieldElements = element.Elements(xNamespace + "multiField");
-            var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
+                var fieldElements = element.Elements(xNamespace + "field");
+                var modelFieldElements = element.Elements(xNamespace + "modelField");
+                var multiFieldElements = element.Elements(xNamespace + "multiField");
+                var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
 
-            ParseFields(fieldElements, result, debugAttributes);
-            ParseModelFields(modelFieldElements, result, debugAttributes);
-            ParseMultiFields(multiFieldElements, result, debugAttributes);
-            ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
+                ParseFields(fieldElements, result, debugAttributes);
+                ParseModelFields(modelFieldElements, result, debugAttributes);
+                ParseMultiFields(multiFieldElements, result, debugAttributes);
+                ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError("Autofill: Error parsing xml reader attributes " + ex.Message);
+            }
 
             return result;
         }

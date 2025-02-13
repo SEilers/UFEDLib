@@ -16,6 +16,7 @@ namespace UFEDLib
 
         #region fields
         public string Key { get; set; }
+        public string UserMapping { get; set; }
         public string Value { get; set; }
         #endregion
 
@@ -65,6 +66,10 @@ namespace UFEDLib
                 {
                     case "Key":
                         result.Key = field.Value.Trim();
+                        break;
+
+                    case "UserMapping":
+                        result.UserMapping = field.Value.Trim();
                         break;
 
                     case "Value":

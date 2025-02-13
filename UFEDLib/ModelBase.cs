@@ -24,6 +24,7 @@ namespace UFEDLib
         public string source_index { get; set; }
 
         public string extractionId { get; set; }
+
         public void ParseAttributes(XElement element)
         {
             if(element == null)

@@ -33,19 +33,27 @@ namespace UFEDLib
         public static LogEntry ParseModel(XElement element, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-
             LogEntry result = new LogEntry();
-            result.ParseAttributes(element);
 
-            var fieldElements = element.Elements(xNamespace + "field");
-            var modelFieldElements = element.Elements(xNamespace + "modelField");
-            var multiFieldElements = element.Elements(xNamespace + "multiField");
-            var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
+            try
+            {
+                result.ParseAttributes(element);
 
-            ParseFields(fieldElements, result, debugAttributes);
-            ParseModelFields(modelFieldElements, result, debugAttributes);
-            ParseMultiFields(multiFieldElements, result, debugAttributes);
-            ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
+                var fieldElements = element.Elements(xNamespace + "field");
+                var modelFieldElements = element.Elements(xNamespace + "modelField");
+                var multiFieldElements = element.Elements(xNamespace + "multiField");
+                var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
+
+                ParseFields(fieldElements, result, debugAttributes);
+                ParseModelFields(modelFieldElements, result, debugAttributes);
+                ParseMultiFields(multiFieldElements, result, debugAttributes);
+                ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
+
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError("LogEntry: Error parsing xml reader attributes " + ex.Message);
+            }
 
             return result;
         }
@@ -98,17 +106,20 @@ namespace UFEDLib
 
                     case "PID":
                         if (field.Value.Trim() != "")
-                            result.PID = int.Parse(field.Value.Trim());
+                            if( int.TryParse(field.Value.Trim(), out int pid))
+                                result.PID = pid;
                         break;
 
                     case "TID":
                         if (field.Value.Trim() != "")
-                            result.TID = int.Parse(field.Value.Trim());
+                            if( int.TryParse(field.Value.Trim(), out int tid))
+                                result.TID = tid;
                         break;
 
                     case "EffectiveUID":
                         if (field.Value.Trim() != "")
-                            result.EffectiveUID = int.Parse(field.Value.Trim());
+                            if( int.TryParse(field.Value.Trim(), out int effectiveUID))
+                                result.EffectiveUID = effectiveUID;
                         break;
 
                     case "TimeStamp":

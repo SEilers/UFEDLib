@@ -50,19 +50,26 @@ namespace UFEDLib
         public static ApplicationUsage ParseModel(XElement element, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-
             ApplicationUsage result = new ApplicationUsage();
-            result.ParseAttributes(element);
+           
+            try
+            {
+                result.ParseAttributes(element);
 
-            var fieldElements = element.Elements(xNamespace + "field");
-            var modelFieldElements = element.Elements(xNamespace + "modelField");
-            var multiFieldElements = element.Elements(xNamespace + "multiField");
-            var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
+                var fieldElements = element.Elements(xNamespace + "field");
+                var modelFieldElements = element.Elements(xNamespace + "modelField");
+                var multiFieldElements = element.Elements(xNamespace + "multiField");
+                var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
 
-            ParseFields(fieldElements, result, debugAttributes);
-            ParseModelFields(modelFieldElements, result, debugAttributes);
-            ParseMultiFields(multiFieldElements, result, debugAttributes);
-            ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
+                ParseFields(fieldElements, result, debugAttributes);
+                ParseModelFields(modelFieldElements, result, debugAttributes);
+                ParseMultiFields(multiFieldElements, result, debugAttributes);
+                ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError("ApplicationUsage: Error parsing xml reader attributes " + ex.Message);
+            }
 
             return result;
         }
@@ -98,14 +105,16 @@ namespace UFEDLib
                     case "ActivationCount":
                         if (field.Value.Trim() != "")
                         {
-                            result.ActivationCount = int.Parse(field.Value.Trim());
+                            if( int.TryParse(field.Value.Trim(), out int activationCount))
+                                result.ActivationCount = activationCount;
                         }
                         break;
 
                     case "LaunchCount":
                         if (field.Value.Trim() != "")
                         {
-                            result.LaunchCount = int.Parse(field.Value.Trim());
+                            if( int.TryParse(field.Value.Trim(), out int launchCount) )
+                                result.LaunchCount = launchCount;
                         }
                         break;
 

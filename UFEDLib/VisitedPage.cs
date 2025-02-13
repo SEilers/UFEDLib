@@ -34,19 +34,28 @@ namespace UFEDLib
         public static VisitedPage ParseModel(XElement element, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-
             VisitedPage result = new VisitedPage();
-            result.ParseAttributes(element);
 
-            var fieldElements = element.Elements(xNamespace + "field");
-            var modelFieldElements = element.Elements(xNamespace + "modelField");
-            var multiFieldElements = element.Elements(xNamespace + "multiField");
-            var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
+            try
+            {
+                result.ParseAttributes(element);
 
-            ParseFields(fieldElements, result, debugAttributes);
-            ParseModelFields(modelFieldElements, result, debugAttributes);
-            ParseMultiFields(multiFieldElements, result, debugAttributes);
-            ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
+                var fieldElements = element.Elements(xNamespace + "field");
+                var modelFieldElements = element.Elements(xNamespace + "modelField");
+                var multiFieldElements = element.Elements(xNamespace + "multiField");
+                var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
+
+                ParseFields(fieldElements, result, debugAttributes);
+                ParseModelFields(modelFieldElements, result, debugAttributes);
+                ParseMultiFields(multiFieldElements, result, debugAttributes);
+                ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
+
+
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError("VisitedPage: Error parsing xml reader attributes " + ex.Message);
+            }
 
             return result;
         }
@@ -112,7 +121,8 @@ namespace UFEDLib
 
                     case "VisitCount":
                         if (field.Value.Trim() != "")
-                            result.VisitCount = int.Parse(field.Value.Trim());
+                            if( int.TryParse(field.Value.Trim(), out int visitCount))
+                                result.VisitCount = visitCount;
                         break;
 
                     case "CanRebuildCacheFile":

@@ -16,40 +16,45 @@ namespace UFEDLib
         }
 
         #region fields
-
-        public string Source { get; set; }
-
-        public string UserMapping { get; set; }
-
         public string Company { get; set; }
-
+        public string CVV { get; set; }
         public string CreditCardNumber { get; set; }
-
+        public DateTime DateLastUsed { get; set; }
         public DateTime ExpirationDate { get; set; }
-
+        public string NameOnCard { get; set; }
+        public string ServiceIdentifier { get; set; }
+        public string Source { get; set; }
+        public string UserMapping { get; set; }
         #endregion
 
         #region Parsers
         public static CreditCard ParseModel(XElement element, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-
             CreditCard result = new CreditCard();
-            result.ParseAttributes(element);
 
-            var fieldElements = element.Elements(xNamespace + "field");
-            var modelFieldElements = element.Elements(xNamespace + "modelField");
-            var multiFieldElements = element.Elements(xNamespace + "multiField");
-            var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
+            try
+            {
+                result.ParseAttributes(element);
 
-            ParseFields(fieldElements, result, debugAttributes);
-            ParseModelFields(modelFieldElements, result, debugAttributes);
-            ParseMultiFields(multiFieldElements, result, debugAttributes);
-            ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
+                var fieldElements = element.Elements(xNamespace + "field");
+                var modelFieldElements = element.Elements(xNamespace + "modelField");
+                var multiFieldElements = element.Elements(xNamespace + "multiField");
+                var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
+
+                ParseFields(fieldElements, result, debugAttributes);
+                ParseModelFields(modelFieldElements, result, debugAttributes);
+                ParseMultiFields(multiFieldElements, result, debugAttributes);
+                ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError("CreditCard: Error parsing xml reader attributes " + ex.Message);
+            }
 
             return result;
         }
-        
+
         public static List<CreditCard> ParseMultiModel(XElement element, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
@@ -76,13 +81,30 @@ namespace UFEDLib
                         result.Company = field.Value.Trim();
                         break;
 
+                    case "CVV":
+                        result.CVV = field.Value.Trim();
+                        break;
+
                     case "CreditCardNumber":
                         result.CreditCardNumber = field.Value.Trim();
+                        break;
+
+                    case "DateLastUsed":
+                        if (field.Value.Trim() != "")
+                            result.DateLastUsed = DateTime.Parse(field.Value.Trim());
                         break;
 
                     case "ExpirationDate":
                         if (field.Value.Trim() != "")
                             result.ExpirationDate = DateTime.Parse(field.Value.Trim());
+                        break;
+
+                    case "NameOnCard":
+                        result.NameOnCard = field.Value.Trim();
+                        break;
+
+                    case "ServiceIdentifier":
+                        result.ServiceIdentifier = field.Value.Trim();
                         break;
 
                     case "Source":

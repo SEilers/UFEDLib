@@ -43,7 +43,7 @@ namespace UFEDLib
 
         public string ServiceIdentifier { get; set; }
 
-        public bool VideoCall { get; set; }
+        public string VideoCall { get; set; }
         #endregion
 
         #region multiModels
@@ -81,12 +81,12 @@ namespace UFEDLib
         public static Call ParseModel(XElement element, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-
             Call result = new Call();
-            result.ParseAttributes(element);
-
+        
             try
             {
+                result.ParseAttributes(element);
+
                 var fieldElements = element.Elements(xNamespace + "field");
                 var modelFieldElements = element.Elements(xNamespace + "modelField");
                 var multiFieldElements = element.Elements(xNamespace + "multiField");
@@ -99,7 +99,7 @@ namespace UFEDLib
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
+                Logger.LogError("Call: Error parsing xml reader attributes " + e.Message);
             }
 
             return result;
@@ -154,7 +154,7 @@ namespace UFEDLib
                         break;
 
                     case "VideoCall":
-                        result.VideoCall = bool.Parse(field.Value.Trim());
+                        result.VideoCall = field.Value.Trim();
                         break;
 
                     case "CountryCode":

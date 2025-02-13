@@ -35,17 +35,24 @@ namespace UFEDLib
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
 
             ActivitySensorData result = new ActivitySensorData();
-            result.ParseAttributes(element);
+            try
+            {
+                result.ParseAttributes(element);
 
-            var fieldElements = element.Elements(xNamespace + "field");
-            var modelFieldElements = element.Elements(xNamespace + "modelField");
-            var multiFieldElements = element.Elements(xNamespace + "multiField");
-            var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
+                var fieldElements = element.Elements(xNamespace + "field");
+                var modelFieldElements = element.Elements(xNamespace + "modelField");
+                var multiFieldElements = element.Elements(xNamespace + "multiField");
+                var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
 
-            ParseFields(fieldElements, result, debugAttributes);
-            ParseModelFields(modelFieldElements, result, debugAttributes);
-            ParseMultiFields(multiFieldElements, result, debugAttributes);
-            ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
+                ParseFields(fieldElements, result, debugAttributes);
+                ParseModelFields(modelFieldElements, result, debugAttributes);
+                ParseMultiFields(multiFieldElements, result, debugAttributes);
+                ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError("ActivitySensorData: Error parsing xml reader attributes " + ex.Message);
+            }
 
             return result;
         }
@@ -107,7 +114,8 @@ namespace UFEDLib
                         if (field.Value.Trim() != "")
                         {
                             string distanceTraveled = field.Value.Trim().Replace(",", ".");
-                            result.DistanceTraveled = double.Parse(distanceTraveled, CultureInfo.InvariantCulture);
+                            if( double.TryParse(distanceTraveled, CultureInfo.InvariantCulture, out double distanceTraveledValue))
+                                result.DistanceTraveled = distanceTraveledValue;
                         }
                         break;
 
@@ -115,7 +123,8 @@ namespace UFEDLib
                         if (field.Value.Trim() != "")
                         {
                             string maxSpeed = field.Value.Trim().Replace(",", ".");
-                            result.MaxSpeed = double.Parse(maxSpeed, CultureInfo.InvariantCulture);
+                            if (double.TryParse(maxSpeed, CultureInfo.InvariantCulture, out double maxSpeedValue))
+                                result.MaxSpeed = maxSpeedValue;
                         }
                         break;
 
@@ -123,7 +132,8 @@ namespace UFEDLib
                         if (field.Value.Trim() != "")
                         {
                             string maxHeartrate = field.Value.Trim().Replace(",", ".");
-                            result.MaxHeartrate = double.Parse(maxHeartrate, CultureInfo.InvariantCulture);
+                            if (double.TryParse(maxHeartrate, CultureInfo.InvariantCulture, out double maxHeartrateValue))
+                                result.MaxHeartrate = maxHeartrateValue;
                         }
                         break;
 
@@ -131,13 +141,17 @@ namespace UFEDLib
                         if (field.Value.Trim() != "")
                         {
                             string flightsClimbed = field.Value.Trim().Replace(",", ".");
-                            result.FlightsClimbed = double.Parse(flightsClimbed, CultureInfo.InvariantCulture);
+                            if(double.TryParse(flightsClimbed, CultureInfo.InvariantCulture, out double flightsClimbedValue))
+                                result.FlightsClimbed = flightsClimbedValue;
                         }
                         break;
 
                     case "TotalSampleCount":
                         if (field.Value.Trim() != "")
-                            result.TotalSampleCount = int.Parse(field.Value.Trim());
+                        {
+                            if (int.TryParse(field.Value.Trim(), out int totalSampleCount))
+                                result.TotalSampleCount = totalSampleCount;
+                        }
                         break;
 
 

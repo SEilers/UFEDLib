@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using System.Xml;
+//using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace UFEDLib
 {
@@ -47,7 +48,7 @@ namespace UFEDLib
                             {
                                 if (reader.Depth == 3 && reader.Name == "model" && reader.IsStartElement())
                                 {
-                                    String modelType = reader.GetAttribute("type");
+                                    string modelType = reader.GetAttribute("type");
                                     if (modelType == T.GetXmlModelType())
                                     {
                                         XElement element = XElement.Load(reader.ReadSubtree());
@@ -86,7 +87,7 @@ namespace UFEDLib
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());
+                Console.WriteLine("Error parsing report.xml" +  ex.ToString());
             }
             finally
             {
@@ -144,7 +145,7 @@ namespace UFEDLib
                                     {
                                         if (reader.Depth == 3 && reader.Name == "model" && reader.IsStartElement())
                                         {
-                                            String modelType = reader.GetAttribute("type");
+                                            string modelType = reader.GetAttribute("type");
 
                                             if (modelType == T.GetXmlModelType())
                                             {
@@ -186,7 +187,7 @@ namespace UFEDLib
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());
+                Console.WriteLine("Error parsing report.xml: " + ex.ToString());
             }
             finally
             {
@@ -236,7 +237,7 @@ namespace UFEDLib
                                     {
                                         if (reader.Depth == 3 && reader.Name == "model" && reader.IsStartElement())
                                         {
-                                            String modelType = reader.GetAttribute("type");
+                                            string modelType = reader.GetAttribute("type");
 
                                             if (!models.Contains(modelType))
                                             {
@@ -284,7 +285,7 @@ namespace UFEDLib
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine(ex.ToString());
+                        Console.WriteLine("Error parsing report.xml: " +  ex.ToString());
                     }
                     finally
                     {
@@ -333,7 +334,7 @@ namespace UFEDLib
                                             {
                                                 if (reader.Depth == 3 && reader.Name == "model" && reader.IsStartElement())
                                                 {
-                                                    String modelType = reader.GetAttribute("type");
+                                                    string modelType = reader.GetAttribute("type");
 
                                                     if (!models.Contains(modelType))
                                                     {
@@ -373,7 +374,7 @@ namespace UFEDLib
                                             }
                                             catch (Exception ex)
                                             {
-                                                Console.WriteLine("Error parsing report.xml: " + ex.Message);
+                                                Console.WriteLine("Error parsing ufdr: " + ex.Message);
                                             }
                                         }
                                     }
@@ -383,7 +384,7 @@ namespace UFEDLib
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine(ex.ToString());
+                        Console.WriteLine("Error parsing ufdr: " + ex.ToString());
                     }
                     finally
                     {
@@ -394,7 +395,7 @@ namespace UFEDLib
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());
+                Console.WriteLine("Error parsing report: " + ex.ToString());
             }
             return models;
         }

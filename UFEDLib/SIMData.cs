@@ -26,19 +26,27 @@ namespace UFEDLib
         public static SIMData ParseModel(XElement element, bool debugAttributes = false)
         {
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-
             SIMData result = new SIMData();
-            result.ParseAttributes(element);
 
-            var fieldElements = element.Elements(xNamespace + "field");
-            var modelFieldElements = element.Elements(xNamespace + "modelField");
-            var multiFieldElements = element.Elements(xNamespace + "multiField");
-            var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
+            try
+            {
+                result.ParseAttributes(element);
 
-            ParseFields(fieldElements, result, debugAttributes);
-            ParseModelFields(modelFieldElements, result, debugAttributes);
-            ParseMultiFields(multiFieldElements, result, debugAttributes);
-            ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
+                var fieldElements = element.Elements(xNamespace + "field");
+                var modelFieldElements = element.Elements(xNamespace + "modelField");
+                var multiFieldElements = element.Elements(xNamespace + "multiField");
+                var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
+
+                ParseFields(fieldElements, result, debugAttributes);
+                ParseModelFields(modelFieldElements, result, debugAttributes);
+                ParseMultiFields(multiFieldElements, result, debugAttributes);
+                ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
+
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError("SIMData: Error parsing xml reader attributes " + ex.Message);
+            }
 
             return result;
         }
@@ -61,8 +69,6 @@ namespace UFEDLib
 
         public static void ParseFields(IEnumerable<XElement> fieldElements, SIMData result, bool debugAttributes = false)
         {
-            IUfedModelParser<SIMData>.CheckFields<SIMData>(fieldElements, debugAttributes);
-
             foreach (var field in fieldElements)
             {
                 switch (field.Attribute("name").Value)
