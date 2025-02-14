@@ -16,17 +16,16 @@ namespace UFEDLib
         }
 
         #region fields
-        public string UserMapping { get; set; }
-
         public string Identifier { get; set; }
-
-        public long SerialNumber { get; set; }
-
         public string Name { get; set; }
-
+        public long SerialNumber { get; set; }
         public DateTime TimeLastLoggedIn { get; set; }
-
+        public string UserMapping { get; set; }
         public string UserType { get; set; }
+        #endregion
+
+        #region multiModels
+        public Dictionary<string, string> AdditionalInfo { get; set; } = new Dictionary<string, string>();
         #endregion
 
 
@@ -129,7 +128,29 @@ namespace UFEDLib
 
         public static void ParseMultiModelFields(IEnumerable<XElement> multiModelFieldElements, User result, bool debugAttributes = false)
         {
-            IUfedModelParser<User>.CheckMultiModelFields<User>(multiModelFieldElements, debugAttributes);
+            foreach (var multiModelField in multiModelFieldElements)
+            {
+                switch (multiModelField.Attribute("name").Value)
+                {
+                    case "AdditionalInfo":
+                        var kvModelsAdditionalInfo = KeyValueModel.ParseMultiModel(multiModelField, debugAttributes);
+                        foreach (var kvModel in kvModelsAdditionalInfo)
+                        {
+                            if (!string.IsNullOrEmpty(kvModel.Key) && !string.IsNullOrEmpty(kvModel.Value))
+                            {
+                                result.AdditionalInfo[kvModel.Key] = kvModel.Value;
+                            }
+                        }
+                        break;
+
+                    default:
+                        if (debugAttributes)
+                        {
+                            Logger.LogAttribute("User Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
+                        }
+                        break;
+                }
+            }
         }
         #endregion
     }

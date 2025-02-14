@@ -37,6 +37,7 @@ namespace UFEDLib
             "LogEntry",
             "Location",
             "MobileCard",
+            "NetworkUsage",
             "Note",
             "Notification",
             "Password",
@@ -227,6 +228,10 @@ namespace UFEDLib
         public static List<MobileCard> ParseMobileCards(string filename, IProgress<int> progress = null, bool debugAttributes = false)
         {
             return ParseData<MobileCard>(filename, progress, debugAttributes);
+        }
+        public static List<NetworkUsage> ParseNetworkUsage(string filename, IProgress<int> progress = null, bool debugAttributes = false)
+        {
+            return ParseData<NetworkUsage>(filename, progress, debugAttributes);
         }
 
         public static List<Note> ParseNotes(string filename, IProgress<int> progress = null, bool debugAttributes = false)

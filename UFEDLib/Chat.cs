@@ -24,7 +24,6 @@ namespace UFEDLib
         public string Source { get; set; }
         public DateTime StartTime { get; set; }
         public string UserMapping { get; set; }
-
         public string ChatType { get; set; }
         #endregion
 
