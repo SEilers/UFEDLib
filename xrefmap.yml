@@ -3741,6 +3741,19 @@ references:
   commentId: T:UFEDLib.CreditCard
   fullName: UFEDLib.CreditCard
   nameWithType: CreditCard
+- uid: UFEDLib.CreditCard.CVV
+  name: CVV
+  href: api/UFEDLib.CreditCard.html#UFEDLib_CreditCard_CVV
+  commentId: P:UFEDLib.CreditCard.CVV
+  fullName: UFEDLib.CreditCard.CVV
+  nameWithType: CreditCard.CVV
+- uid: UFEDLib.CreditCard.CVV*
+  name: CVV
+  href: api/UFEDLib.CreditCard.html#UFEDLib_CreditCard_CVV_
+  commentId: Overload:UFEDLib.CreditCard.CVV
+  isSpec: "True"
+  fullName: UFEDLib.CreditCard.CVV
+  nameWithType: CreditCard.CVV
 - uid: UFEDLib.CreditCard.Company
   name: Company
   href: api/UFEDLib.CreditCard.html#UFEDLib_CreditCard_Company
@@ -3767,6 +3780,19 @@ references:
   isSpec: "True"
   fullName: UFEDLib.CreditCard.CreditCardNumber
   nameWithType: CreditCard.CreditCardNumber
+- uid: UFEDLib.CreditCard.DateLastUsed
+  name: DateLastUsed
+  href: api/UFEDLib.CreditCard.html#UFEDLib_CreditCard_DateLastUsed
+  commentId: P:UFEDLib.CreditCard.DateLastUsed
+  fullName: UFEDLib.CreditCard.DateLastUsed
+  nameWithType: CreditCard.DateLastUsed
+- uid: UFEDLib.CreditCard.DateLastUsed*
+  name: DateLastUsed
+  href: api/UFEDLib.CreditCard.html#UFEDLib_CreditCard_DateLastUsed_
+  commentId: Overload:UFEDLib.CreditCard.DateLastUsed
+  isSpec: "True"
+  fullName: UFEDLib.CreditCard.DateLastUsed
+  nameWithType: CreditCard.DateLastUsed
 - uid: UFEDLib.CreditCard.ExpirationDate
   name: ExpirationDate
   href: api/UFEDLib.CreditCard.html#UFEDLib_CreditCard_ExpirationDate
@@ -3793,6 +3819,19 @@ references:
   isSpec: "True"
   fullName: UFEDLib.CreditCard.GetXmlModelType
   nameWithType: CreditCard.GetXmlModelType
+- uid: UFEDLib.CreditCard.NameOnCard
+  name: NameOnCard
+  href: api/UFEDLib.CreditCard.html#UFEDLib_CreditCard_NameOnCard
+  commentId: P:UFEDLib.CreditCard.NameOnCard
+  fullName: UFEDLib.CreditCard.NameOnCard
+  nameWithType: CreditCard.NameOnCard
+- uid: UFEDLib.CreditCard.NameOnCard*
+  name: NameOnCard
+  href: api/UFEDLib.CreditCard.html#UFEDLib_CreditCard_NameOnCard_
+  commentId: Overload:UFEDLib.CreditCard.NameOnCard
+  isSpec: "True"
+  fullName: UFEDLib.CreditCard.NameOnCard
+  nameWithType: CreditCard.NameOnCard
 - uid: UFEDLib.CreditCard.ParseFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.CreditCard,System.Boolean)
   name: ParseFields(IEnumerable<XElement>, CreditCard, bool)
   href: api/UFEDLib.CreditCard.html#UFEDLib_CreditCard_ParseFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_CreditCard_System_Boolean_
@@ -3889,6 +3928,19 @@ references:
   isSpec: "True"
   fullName: UFEDLib.CreditCard.ParseMultiModelFields
   nameWithType: CreditCard.ParseMultiModelFields
+- uid: UFEDLib.CreditCard.ServiceIdentifier
+  name: ServiceIdentifier
+  href: api/UFEDLib.CreditCard.html#UFEDLib_CreditCard_ServiceIdentifier
+  commentId: P:UFEDLib.CreditCard.ServiceIdentifier
+  fullName: UFEDLib.CreditCard.ServiceIdentifier
+  nameWithType: CreditCard.ServiceIdentifier
+- uid: UFEDLib.CreditCard.ServiceIdentifier*
+  name: ServiceIdentifier
+  href: api/UFEDLib.CreditCard.html#UFEDLib_CreditCard_ServiceIdentifier_
+  commentId: Overload:UFEDLib.CreditCard.ServiceIdentifier
+  isSpec: "True"
+  fullName: UFEDLib.CreditCard.ServiceIdentifier
+  nameWithType: CreditCard.ServiceIdentifier
 - uid: UFEDLib.CreditCard.Source
   name: Source
   href: api/UFEDLib.CreditCard.html#UFEDLib_CreditCard_Source
@@ -5294,6 +5346,19 @@ references:
   isSpec: "True"
   fullName: UFEDLib.FileDownload.ParseMultiModelFields
   nameWithType: FileDownload.ParseMultiModelFields
+- uid: UFEDLib.FileDownload.ServiceIdentifier
+  name: ServiceIdentifier
+  href: api/UFEDLib.FileDownload.html#UFEDLib_FileDownload_ServiceIdentifier
+  commentId: P:UFEDLib.FileDownload.ServiceIdentifier
+  fullName: UFEDLib.FileDownload.ServiceIdentifier
+  nameWithType: FileDownload.ServiceIdentifier
+- uid: UFEDLib.FileDownload.ServiceIdentifier*
+  name: ServiceIdentifier
+  href: api/UFEDLib.FileDownload.html#UFEDLib_FileDownload_ServiceIdentifier_
+  commentId: Overload:UFEDLib.FileDownload.ServiceIdentifier
+  isSpec: "True"
+  fullName: UFEDLib.FileDownload.ServiceIdentifier
+  nameWithType: FileDownload.ServiceIdentifier
 - uid: UFEDLib.FileDownload.Source
   name: Source
   href: api/UFEDLib.FileDownload.html#UFEDLib_FileDownload_Source
@@ -7321,6 +7386,19 @@ references:
   isSpec: "True"
   fullName: UFEDLib.KeyValueModel.ParseMultiModelFields
   nameWithType: KeyValueModel.ParseMultiModelFields
+- uid: UFEDLib.KeyValueModel.UserMapping
+  name: UserMapping
+  href: api/UFEDLib.KeyValueModel.html#UFEDLib_KeyValueModel_UserMapping
+  commentId: P:UFEDLib.KeyValueModel.UserMapping
+  fullName: UFEDLib.KeyValueModel.UserMapping
+  nameWithType: KeyValueModel.UserMapping
+- uid: UFEDLib.KeyValueModel.UserMapping*
+  name: UserMapping
+  href: api/UFEDLib.KeyValueModel.html#UFEDLib_KeyValueModel_UserMapping_
+  commentId: Overload:UFEDLib.KeyValueModel.UserMapping
+  isSpec: "True"
+  fullName: UFEDLib.KeyValueModel.UserMapping
+  nameWithType: KeyValueModel.UserMapping
 - uid: UFEDLib.KeyValueModel.Value
   name: Value
   href: api/UFEDLib.KeyValueModel.html#UFEDLib_KeyValueModel_Value
@@ -8665,6 +8743,277 @@ references:
   isSpec: "True"
   fullName: UFEDLib.ModelParser.ScanModels
   nameWithType: ModelParser.ScanModels
+- uid: UFEDLib.NetworkUsage
+  name: NetworkUsage
+  href: api/UFEDLib.NetworkUsage.html
+  commentId: T:UFEDLib.NetworkUsage
+  fullName: UFEDLib.NetworkUsage
+  nameWithType: NetworkUsage
+- uid: UFEDLib.NetworkUsage.AdditionalInfo
+  name: AdditionalInfo
+  href: api/UFEDLib.NetworkUsage.html#UFEDLib_NetworkUsage_AdditionalInfo
+  commentId: P:UFEDLib.NetworkUsage.AdditionalInfo
+  fullName: UFEDLib.NetworkUsage.AdditionalInfo
+  nameWithType: NetworkUsage.AdditionalInfo
+- uid: UFEDLib.NetworkUsage.AdditionalInfo*
+  name: AdditionalInfo
+  href: api/UFEDLib.NetworkUsage.html#UFEDLib_NetworkUsage_AdditionalInfo_
+  commentId: Overload:UFEDLib.NetworkUsage.AdditionalInfo
+  isSpec: "True"
+  fullName: UFEDLib.NetworkUsage.AdditionalInfo
+  nameWithType: NetworkUsage.AdditionalInfo
+- uid: UFEDLib.NetworkUsage.ApplicationId
+  name: ApplicationId
+  href: api/UFEDLib.NetworkUsage.html#UFEDLib_NetworkUsage_ApplicationId
+  commentId: P:UFEDLib.NetworkUsage.ApplicationId
+  fullName: UFEDLib.NetworkUsage.ApplicationId
+  nameWithType: NetworkUsage.ApplicationId
+- uid: UFEDLib.NetworkUsage.ApplicationId*
+  name: ApplicationId
+  href: api/UFEDLib.NetworkUsage.html#UFEDLib_NetworkUsage_ApplicationId_
+  commentId: Overload:UFEDLib.NetworkUsage.ApplicationId
+  isSpec: "True"
+  fullName: UFEDLib.NetworkUsage.ApplicationId
+  nameWithType: NetworkUsage.ApplicationId
+- uid: UFEDLib.NetworkUsage.DateEnded
+  name: DateEnded
+  href: api/UFEDLib.NetworkUsage.html#UFEDLib_NetworkUsage_DateEnded
+  commentId: P:UFEDLib.NetworkUsage.DateEnded
+  fullName: UFEDLib.NetworkUsage.DateEnded
+  nameWithType: NetworkUsage.DateEnded
+- uid: UFEDLib.NetworkUsage.DateEnded*
+  name: DateEnded
+  href: api/UFEDLib.NetworkUsage.html#UFEDLib_NetworkUsage_DateEnded_
+  commentId: Overload:UFEDLib.NetworkUsage.DateEnded
+  isSpec: "True"
+  fullName: UFEDLib.NetworkUsage.DateEnded
+  nameWithType: NetworkUsage.DateEnded
+- uid: UFEDLib.NetworkUsage.DateStarted
+  name: DateStarted
+  href: api/UFEDLib.NetworkUsage.html#UFEDLib_NetworkUsage_DateStarted
+  commentId: P:UFEDLib.NetworkUsage.DateStarted
+  fullName: UFEDLib.NetworkUsage.DateStarted
+  nameWithType: NetworkUsage.DateStarted
+- uid: UFEDLib.NetworkUsage.DateStarted*
+  name: DateStarted
+  href: api/UFEDLib.NetworkUsage.html#UFEDLib_NetworkUsage_DateStarted_
+  commentId: Overload:UFEDLib.NetworkUsage.DateStarted
+  isSpec: "True"
+  fullName: UFEDLib.NetworkUsage.DateStarted
+  nameWithType: NetworkUsage.DateStarted
+- uid: UFEDLib.NetworkUsage.GetXmlModelType
+  name: GetXmlModelType()
+  href: api/UFEDLib.NetworkUsage.html#UFEDLib_NetworkUsage_GetXmlModelType
+  commentId: M:UFEDLib.NetworkUsage.GetXmlModelType
+  fullName: UFEDLib.NetworkUsage.GetXmlModelType()
+  nameWithType: NetworkUsage.GetXmlModelType()
+- uid: UFEDLib.NetworkUsage.GetXmlModelType*
+  name: GetXmlModelType
+  href: api/UFEDLib.NetworkUsage.html#UFEDLib_NetworkUsage_GetXmlModelType_
+  commentId: Overload:UFEDLib.NetworkUsage.GetXmlModelType
+  isSpec: "True"
+  fullName: UFEDLib.NetworkUsage.GetXmlModelType
+  nameWithType: NetworkUsage.GetXmlModelType
+- uid: UFEDLib.NetworkUsage.IsRoaming
+  name: IsRoaming
+  href: api/UFEDLib.NetworkUsage.html#UFEDLib_NetworkUsage_IsRoaming
+  commentId: P:UFEDLib.NetworkUsage.IsRoaming
+  fullName: UFEDLib.NetworkUsage.IsRoaming
+  nameWithType: NetworkUsage.IsRoaming
+- uid: UFEDLib.NetworkUsage.IsRoaming*
+  name: IsRoaming
+  href: api/UFEDLib.NetworkUsage.html#UFEDLib_NetworkUsage_IsRoaming_
+  commentId: Overload:UFEDLib.NetworkUsage.IsRoaming
+  isSpec: "True"
+  fullName: UFEDLib.NetworkUsage.IsRoaming
+  nameWithType: NetworkUsage.IsRoaming
+- uid: UFEDLib.NetworkUsage.NetworkConnectionType
+  name: NetworkConnectionType
+  href: api/UFEDLib.NetworkUsage.html#UFEDLib_NetworkUsage_NetworkConnectionType
+  commentId: P:UFEDLib.NetworkUsage.NetworkConnectionType
+  fullName: UFEDLib.NetworkUsage.NetworkConnectionType
+  nameWithType: NetworkUsage.NetworkConnectionType
+- uid: UFEDLib.NetworkUsage.NetworkConnectionType*
+  name: NetworkConnectionType
+  href: api/UFEDLib.NetworkUsage.html#UFEDLib_NetworkUsage_NetworkConnectionType_
+  commentId: Overload:UFEDLib.NetworkUsage.NetworkConnectionType
+  isSpec: "True"
+  fullName: UFEDLib.NetworkUsage.NetworkConnectionType
+  nameWithType: NetworkUsage.NetworkConnectionType
+- uid: UFEDLib.NetworkUsage.NumberOfBytesReceived
+  name: NumberOfBytesReceived
+  href: api/UFEDLib.NetworkUsage.html#UFEDLib_NetworkUsage_NumberOfBytesReceived
+  commentId: P:UFEDLib.NetworkUsage.NumberOfBytesReceived
+  fullName: UFEDLib.NetworkUsage.NumberOfBytesReceived
+  nameWithType: NetworkUsage.NumberOfBytesReceived
+- uid: UFEDLib.NetworkUsage.NumberOfBytesReceived*
+  name: NumberOfBytesReceived
+  href: api/UFEDLib.NetworkUsage.html#UFEDLib_NetworkUsage_NumberOfBytesReceived_
+  commentId: Overload:UFEDLib.NetworkUsage.NumberOfBytesReceived
+  isSpec: "True"
+  fullName: UFEDLib.NetworkUsage.NumberOfBytesReceived
+  nameWithType: NetworkUsage.NumberOfBytesReceived
+- uid: UFEDLib.NetworkUsage.NumberOfBytesSent
+  name: NumberOfBytesSent
+  href: api/UFEDLib.NetworkUsage.html#UFEDLib_NetworkUsage_NumberOfBytesSent
+  commentId: P:UFEDLib.NetworkUsage.NumberOfBytesSent
+  fullName: UFEDLib.NetworkUsage.NumberOfBytesSent
+  nameWithType: NetworkUsage.NumberOfBytesSent
+- uid: UFEDLib.NetworkUsage.NumberOfBytesSent*
+  name: NumberOfBytesSent
+  href: api/UFEDLib.NetworkUsage.html#UFEDLib_NetworkUsage_NumberOfBytesSent_
+  commentId: Overload:UFEDLib.NetworkUsage.NumberOfBytesSent
+  isSpec: "True"
+  fullName: UFEDLib.NetworkUsage.NumberOfBytesSent
+  nameWithType: NetworkUsage.NumberOfBytesSent
+- uid: UFEDLib.NetworkUsage.ParseFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.NetworkUsage,System.Boolean)
+  name: ParseFields(IEnumerable<XElement>, NetworkUsage, bool)
+  href: api/UFEDLib.NetworkUsage.html#UFEDLib_NetworkUsage_ParseFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_NetworkUsage_System_Boolean_
+  commentId: M:UFEDLib.NetworkUsage.ParseFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.NetworkUsage,System.Boolean)
+  name.vb: ParseFields(IEnumerable(Of XElement), NetworkUsage, Boolean)
+  fullName: UFEDLib.NetworkUsage.ParseFields(System.Collections.Generic.IEnumerable<System.Xml.Linq.XElement>, UFEDLib.NetworkUsage, bool)
+  fullName.vb: UFEDLib.NetworkUsage.ParseFields(System.Collections.Generic.IEnumerable(Of System.Xml.Linq.XElement), UFEDLib.NetworkUsage, Boolean)
+  nameWithType: NetworkUsage.ParseFields(IEnumerable<XElement>, NetworkUsage, bool)
+  nameWithType.vb: NetworkUsage.ParseFields(IEnumerable(Of XElement), NetworkUsage, Boolean)
+- uid: UFEDLib.NetworkUsage.ParseFields*
+  name: ParseFields
+  href: api/UFEDLib.NetworkUsage.html#UFEDLib_NetworkUsage_ParseFields_
+  commentId: Overload:UFEDLib.NetworkUsage.ParseFields
+  isSpec: "True"
+  fullName: UFEDLib.NetworkUsage.ParseFields
+  nameWithType: NetworkUsage.ParseFields
+- uid: UFEDLib.NetworkUsage.ParseModel(System.Xml.Linq.XElement,System.Boolean)
+  name: ParseModel(XElement, bool)
+  href: api/UFEDLib.NetworkUsage.html#UFEDLib_NetworkUsage_ParseModel_System_Xml_Linq_XElement_System_Boolean_
+  commentId: M:UFEDLib.NetworkUsage.ParseModel(System.Xml.Linq.XElement,System.Boolean)
+  name.vb: ParseModel(XElement, Boolean)
+  fullName: UFEDLib.NetworkUsage.ParseModel(System.Xml.Linq.XElement, bool)
+  fullName.vb: UFEDLib.NetworkUsage.ParseModel(System.Xml.Linq.XElement, Boolean)
+  nameWithType: NetworkUsage.ParseModel(XElement, bool)
+  nameWithType.vb: NetworkUsage.ParseModel(XElement, Boolean)
+- uid: UFEDLib.NetworkUsage.ParseModel*
+  name: ParseModel
+  href: api/UFEDLib.NetworkUsage.html#UFEDLib_NetworkUsage_ParseModel_
+  commentId: Overload:UFEDLib.NetworkUsage.ParseModel
+  isSpec: "True"
+  fullName: UFEDLib.NetworkUsage.ParseModel
+  nameWithType: NetworkUsage.ParseModel
+- uid: UFEDLib.NetworkUsage.ParseModelFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.NetworkUsage,System.Boolean)
+  name: ParseModelFields(IEnumerable<XElement>, NetworkUsage, bool)
+  href: api/UFEDLib.NetworkUsage.html#UFEDLib_NetworkUsage_ParseModelFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_NetworkUsage_System_Boolean_
+  commentId: M:UFEDLib.NetworkUsage.ParseModelFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.NetworkUsage,System.Boolean)
+  name.vb: ParseModelFields(IEnumerable(Of XElement), NetworkUsage, Boolean)
+  fullName: UFEDLib.NetworkUsage.ParseModelFields(System.Collections.Generic.IEnumerable<System.Xml.Linq.XElement>, UFEDLib.NetworkUsage, bool)
+  fullName.vb: UFEDLib.NetworkUsage.ParseModelFields(System.Collections.Generic.IEnumerable(Of System.Xml.Linq.XElement), UFEDLib.NetworkUsage, Boolean)
+  nameWithType: NetworkUsage.ParseModelFields(IEnumerable<XElement>, NetworkUsage, bool)
+  nameWithType.vb: NetworkUsage.ParseModelFields(IEnumerable(Of XElement), NetworkUsage, Boolean)
+- uid: UFEDLib.NetworkUsage.ParseModelFields*
+  name: ParseModelFields
+  href: api/UFEDLib.NetworkUsage.html#UFEDLib_NetworkUsage_ParseModelFields_
+  commentId: Overload:UFEDLib.NetworkUsage.ParseModelFields
+  isSpec: "True"
+  fullName: UFEDLib.NetworkUsage.ParseModelFields
+  nameWithType: NetworkUsage.ParseModelFields
+- uid: UFEDLib.NetworkUsage.ParseMultiFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.NetworkUsage,System.Boolean)
+  name: ParseMultiFields(IEnumerable<XElement>, NetworkUsage, bool)
+  href: api/UFEDLib.NetworkUsage.html#UFEDLib_NetworkUsage_ParseMultiFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_NetworkUsage_System_Boolean_
+  commentId: M:UFEDLib.NetworkUsage.ParseMultiFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.NetworkUsage,System.Boolean)
+  name.vb: ParseMultiFields(IEnumerable(Of XElement), NetworkUsage, Boolean)
+  fullName: UFEDLib.NetworkUsage.ParseMultiFields(System.Collections.Generic.IEnumerable<System.Xml.Linq.XElement>, UFEDLib.NetworkUsage, bool)
+  fullName.vb: UFEDLib.NetworkUsage.ParseMultiFields(System.Collections.Generic.IEnumerable(Of System.Xml.Linq.XElement), UFEDLib.NetworkUsage, Boolean)
+  nameWithType: NetworkUsage.ParseMultiFields(IEnumerable<XElement>, NetworkUsage, bool)
+  nameWithType.vb: NetworkUsage.ParseMultiFields(IEnumerable(Of XElement), NetworkUsage, Boolean)
+- uid: UFEDLib.NetworkUsage.ParseMultiFields*
+  name: ParseMultiFields
+  href: api/UFEDLib.NetworkUsage.html#UFEDLib_NetworkUsage_ParseMultiFields_
+  commentId: Overload:UFEDLib.NetworkUsage.ParseMultiFields
+  isSpec: "True"
+  fullName: UFEDLib.NetworkUsage.ParseMultiFields
+  nameWithType: NetworkUsage.ParseMultiFields
+- uid: UFEDLib.NetworkUsage.ParseMultiModel(System.Xml.Linq.XElement,System.Boolean)
+  name: ParseMultiModel(XElement, bool)
+  href: api/UFEDLib.NetworkUsage.html#UFEDLib_NetworkUsage_ParseMultiModel_System_Xml_Linq_XElement_System_Boolean_
+  commentId: M:UFEDLib.NetworkUsage.ParseMultiModel(System.Xml.Linq.XElement,System.Boolean)
+  name.vb: ParseMultiModel(XElement, Boolean)
+  fullName: UFEDLib.NetworkUsage.ParseMultiModel(System.Xml.Linq.XElement, bool)
+  fullName.vb: UFEDLib.NetworkUsage.ParseMultiModel(System.Xml.Linq.XElement, Boolean)
+  nameWithType: NetworkUsage.ParseMultiModel(XElement, bool)
+  nameWithType.vb: NetworkUsage.ParseMultiModel(XElement, Boolean)
+- uid: UFEDLib.NetworkUsage.ParseMultiModel*
+  name: ParseMultiModel
+  href: api/UFEDLib.NetworkUsage.html#UFEDLib_NetworkUsage_ParseMultiModel_
+  commentId: Overload:UFEDLib.NetworkUsage.ParseMultiModel
+  isSpec: "True"
+  fullName: UFEDLib.NetworkUsage.ParseMultiModel
+  nameWithType: NetworkUsage.ParseMultiModel
+- uid: UFEDLib.NetworkUsage.ParseMultiModelFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.NetworkUsage,System.Boolean)
+  name: ParseMultiModelFields(IEnumerable<XElement>, NetworkUsage, bool)
+  href: api/UFEDLib.NetworkUsage.html#UFEDLib_NetworkUsage_ParseMultiModelFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_NetworkUsage_System_Boolean_
+  commentId: M:UFEDLib.NetworkUsage.ParseMultiModelFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.NetworkUsage,System.Boolean)
+  name.vb: ParseMultiModelFields(IEnumerable(Of XElement), NetworkUsage, Boolean)
+  fullName: UFEDLib.NetworkUsage.ParseMultiModelFields(System.Collections.Generic.IEnumerable<System.Xml.Linq.XElement>, UFEDLib.NetworkUsage, bool)
+  fullName.vb: UFEDLib.NetworkUsage.ParseMultiModelFields(System.Collections.Generic.IEnumerable(Of System.Xml.Linq.XElement), UFEDLib.NetworkUsage, Boolean)
+  nameWithType: NetworkUsage.ParseMultiModelFields(IEnumerable<XElement>, NetworkUsage, bool)
+  nameWithType.vb: NetworkUsage.ParseMultiModelFields(IEnumerable(Of XElement), NetworkUsage, Boolean)
+- uid: UFEDLib.NetworkUsage.ParseMultiModelFields*
+  name: ParseMultiModelFields
+  href: api/UFEDLib.NetworkUsage.html#UFEDLib_NetworkUsage_ParseMultiModelFields_
+  commentId: Overload:UFEDLib.NetworkUsage.ParseMultiModelFields
+  isSpec: "True"
+  fullName: UFEDLib.NetworkUsage.ParseMultiModelFields
+  nameWithType: NetworkUsage.ParseMultiModelFields
+- uid: UFEDLib.NetworkUsage.SSId
+  name: SSId
+  href: api/UFEDLib.NetworkUsage.html#UFEDLib_NetworkUsage_SSId
+  commentId: P:UFEDLib.NetworkUsage.SSId
+  fullName: UFEDLib.NetworkUsage.SSId
+  nameWithType: NetworkUsage.SSId
+- uid: UFEDLib.NetworkUsage.SSId*
+  name: SSId
+  href: api/UFEDLib.NetworkUsage.html#UFEDLib_NetworkUsage_SSId_
+  commentId: Overload:UFEDLib.NetworkUsage.SSId
+  isSpec: "True"
+  fullName: UFEDLib.NetworkUsage.SSId
+  nameWithType: NetworkUsage.SSId
+- uid: UFEDLib.NetworkUsage.Source
+  name: Source
+  href: api/UFEDLib.NetworkUsage.html#UFEDLib_NetworkUsage_Source
+  commentId: P:UFEDLib.NetworkUsage.Source
+  fullName: UFEDLib.NetworkUsage.Source
+  nameWithType: NetworkUsage.Source
+- uid: UFEDLib.NetworkUsage.Source*
+  name: Source
+  href: api/UFEDLib.NetworkUsage.html#UFEDLib_NetworkUsage_Source_
+  commentId: Overload:UFEDLib.NetworkUsage.Source
+  isSpec: "True"
+  fullName: UFEDLib.NetworkUsage.Source
+  nameWithType: NetworkUsage.Source
+- uid: UFEDLib.NetworkUsage.UsageMode
+  name: UsageMode
+  href: api/UFEDLib.NetworkUsage.html#UFEDLib_NetworkUsage_UsageMode
+  commentId: P:UFEDLib.NetworkUsage.UsageMode
+  fullName: UFEDLib.NetworkUsage.UsageMode
+  nameWithType: NetworkUsage.UsageMode
+- uid: UFEDLib.NetworkUsage.UsageMode*
+  name: UsageMode
+  href: api/UFEDLib.NetworkUsage.html#UFEDLib_NetworkUsage_UsageMode_
+  commentId: Overload:UFEDLib.NetworkUsage.UsageMode
+  isSpec: "True"
+  fullName: UFEDLib.NetworkUsage.UsageMode
+  nameWithType: NetworkUsage.UsageMode
+- uid: UFEDLib.NetworkUsage.UserMapping
+  name: UserMapping
+  href: api/UFEDLib.NetworkUsage.html#UFEDLib_NetworkUsage_UserMapping
+  commentId: P:UFEDLib.NetworkUsage.UserMapping
+  fullName: UFEDLib.NetworkUsage.UserMapping
+  nameWithType: NetworkUsage.UserMapping
+- uid: UFEDLib.NetworkUsage.UserMapping*
+  name: UserMapping
+  href: api/UFEDLib.NetworkUsage.html#UFEDLib_NetworkUsage_UserMapping_
+  commentId: Overload:UFEDLib.NetworkUsage.UserMapping
+  isSpec: "True"
+  fullName: UFEDLib.NetworkUsage.UserMapping
+  nameWithType: NetworkUsage.UserMapping
 - uid: UFEDLib.Note
   name: Note
   href: api/UFEDLib.Note.html
@@ -10722,6 +11071,19 @@ references:
   isSpec: "True"
   fullName: UFEDLib.RecognizedDevice.SerialNumber
   nameWithType: RecognizedDevice.SerialNumber
+- uid: UFEDLib.RecognizedDevice.ServiceIdentifier
+  name: ServiceIdentifier
+  href: api/UFEDLib.RecognizedDevice.html#UFEDLib_RecognizedDevice_ServiceIdentifier
+  commentId: P:UFEDLib.RecognizedDevice.ServiceIdentifier
+  fullName: UFEDLib.RecognizedDevice.ServiceIdentifier
+  nameWithType: RecognizedDevice.ServiceIdentifier
+- uid: UFEDLib.RecognizedDevice.ServiceIdentifier*
+  name: ServiceIdentifier
+  href: api/UFEDLib.RecognizedDevice.html#UFEDLib_RecognizedDevice_ServiceIdentifier_
+  commentId: Overload:UFEDLib.RecognizedDevice.ServiceIdentifier
+  isSpec: "True"
+  fullName: UFEDLib.RecognizedDevice.ServiceIdentifier
+  nameWithType: RecognizedDevice.ServiceIdentifier
 - uid: UFEDLib.RecognizedDevice.Source
   name: Source
   href: api/UFEDLib.RecognizedDevice.html#UFEDLib_RecognizedDevice_Source
@@ -11408,6 +11770,22 @@ references:
   isSpec: "True"
   fullName: UFEDLib.Report.ParseMobileCards
   nameWithType: Report.ParseMobileCards
+- uid: UFEDLib.Report.ParseNetworkUsage(System.String,System.IProgress{System.Int32},System.Boolean)
+  name: ParseNetworkUsage(string, IProgress<int>, bool)
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseNetworkUsage_System_String_System_IProgress_System_Int32__System_Boolean_
+  commentId: M:UFEDLib.Report.ParseNetworkUsage(System.String,System.IProgress{System.Int32},System.Boolean)
+  name.vb: ParseNetworkUsage(String, IProgress(Of Integer), Boolean)
+  fullName: UFEDLib.Report.ParseNetworkUsage(string, System.IProgress<int>, bool)
+  fullName.vb: UFEDLib.Report.ParseNetworkUsage(String, System.IProgress(Of Integer), Boolean)
+  nameWithType: Report.ParseNetworkUsage(string, IProgress<int>, bool)
+  nameWithType.vb: Report.ParseNetworkUsage(String, IProgress(Of Integer), Boolean)
+- uid: UFEDLib.Report.ParseNetworkUsage*
+  name: ParseNetworkUsage
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseNetworkUsage_
+  commentId: Overload:UFEDLib.Report.ParseNetworkUsage
+  isSpec: "True"
+  fullName: UFEDLib.Report.ParseNetworkUsage
+  nameWithType: Report.ParseNetworkUsage
 - uid: UFEDLib.Report.ParseNotes(System.String,System.IProgress{System.Int32},System.Boolean)
   name: ParseNotes(string, IProgress<int>, bool)
   href: api/UFEDLib.Report.html#UFEDLib_Report_ParseNotes_System_String_System_IProgress_System_Int32__System_Boolean_
@@ -12554,6 +12932,19 @@ references:
   isSpec: "True"
   fullName: UFEDLib.SocialMediaActivity.ReactionsCount
   nameWithType: SocialMediaActivity.ReactionsCount
+- uid: UFEDLib.SocialMediaActivity.ServiceIdentifier
+  name: ServiceIdentifier
+  href: api/UFEDLib.SocialMediaActivity.html#UFEDLib_SocialMediaActivity_ServiceIdentifier
+  commentId: P:UFEDLib.SocialMediaActivity.ServiceIdentifier
+  fullName: UFEDLib.SocialMediaActivity.ServiceIdentifier
+  nameWithType: SocialMediaActivity.ServiceIdentifier
+- uid: UFEDLib.SocialMediaActivity.ServiceIdentifier*
+  name: ServiceIdentifier
+  href: api/UFEDLib.SocialMediaActivity.html#UFEDLib_SocialMediaActivity_ServiceIdentifier_
+  commentId: Overload:UFEDLib.SocialMediaActivity.ServiceIdentifier
+  isSpec: "True"
+  fullName: UFEDLib.SocialMediaActivity.ServiceIdentifier
+  nameWithType: SocialMediaActivity.ServiceIdentifier
 - uid: UFEDLib.SocialMediaActivity.SharesCount
   name: SharesCount
   href: api/UFEDLib.SocialMediaActivity.html#UFEDLib_SocialMediaActivity_SharesCount
@@ -13083,6 +13474,19 @@ references:
   isSpec: "True"
   fullName: UFEDLib.TransferOfFunds.Participants
   nameWithType: TransferOfFunds.Participants
+- uid: UFEDLib.TransferOfFunds.ServiceIdentifier
+  name: ServiceIdentifier
+  href: api/UFEDLib.TransferOfFunds.html#UFEDLib_TransferOfFunds_ServiceIdentifier
+  commentId: P:UFEDLib.TransferOfFunds.ServiceIdentifier
+  fullName: UFEDLib.TransferOfFunds.ServiceIdentifier
+  nameWithType: TransferOfFunds.ServiceIdentifier
+- uid: UFEDLib.TransferOfFunds.ServiceIdentifier*
+  name: ServiceIdentifier
+  href: api/UFEDLib.TransferOfFunds.html#UFEDLib_TransferOfFunds_ServiceIdentifier_
+  commentId: Overload:UFEDLib.TransferOfFunds.ServiceIdentifier
+  isSpec: "True"
+  fullName: UFEDLib.TransferOfFunds.ServiceIdentifier
+  nameWithType: TransferOfFunds.ServiceIdentifier
 - uid: UFEDLib.TransferOfFunds.Source
   name: Source
   href: api/UFEDLib.TransferOfFunds.html#UFEDLib_TransferOfFunds_Source
@@ -13154,6 +13558,19 @@ references:
   commentId: T:UFEDLib.User
   fullName: UFEDLib.User
   nameWithType: User
+- uid: UFEDLib.User.AdditionalInfo
+  name: AdditionalInfo
+  href: api/UFEDLib.User.html#UFEDLib_User_AdditionalInfo
+  commentId: P:UFEDLib.User.AdditionalInfo
+  fullName: UFEDLib.User.AdditionalInfo
+  nameWithType: User.AdditionalInfo
+- uid: UFEDLib.User.AdditionalInfo*
+  name: AdditionalInfo
+  href: api/UFEDLib.User.html#UFEDLib_User_AdditionalInfo_
+  commentId: Overload:UFEDLib.User.AdditionalInfo
+  isSpec: "True"
+  fullName: UFEDLib.User.AdditionalInfo
+  nameWithType: User.AdditionalInfo
 - uid: UFEDLib.User.GetXmlModelType
   name: GetXmlModelType()
   href: api/UFEDLib.User.html#UFEDLib_User_GetXmlModelType

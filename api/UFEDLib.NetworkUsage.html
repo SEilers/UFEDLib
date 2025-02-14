@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class VisitedPage | UFEDLib </title>
+      <title>Class NetworkUsage | UFEDLib </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class VisitedPage | UFEDLib ">
+      <meta name="title" content="Class NetworkUsage | UFEDLib ">
       
       
       <link rel="icon" href="../favicon.ico">
@@ -16,7 +16,7 @@
       
       
       
-      <meta name="docfx:docurl" content="https://github.com/SEilers/UFEDLib/new/master/apiSpec/new?filename=UFEDLib_VisitedPage.md&amp;value=---%0Auid%3A%20UFEDLib.VisitedPage%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/SEilers/UFEDLib/new/master/apiSpec/new?filename=UFEDLib_NetworkUsage.md&amp;value=---%0Auid%3A%20UFEDLib.NetworkUsage%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -80,12 +80,12 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="UFEDLib.VisitedPage">
+        <article data-uid="UFEDLib.NetworkUsage">
 
 
 
-  <h1 id="UFEDLib_VisitedPage" data-uid="UFEDLib.VisitedPage" class="text-break">
-Class VisitedPage  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/VisitedPage.cs/#L11"><i class="bi bi-code-slash"></i></a>
+  <h1 id="UFEDLib_NetworkUsage" data-uid="UFEDLib.NetworkUsage" class="text-break">
+Class NetworkUsage  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/NetworkUsage.cs/#L11"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,8 +97,7 @@ Class VisitedPage  <a class="header-action link-secondary" title="View source" h
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Serializable]
-public class VisitedPage : ModelBase, IUfedModelParser&lt;VisitedPage&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public class NetworkUsage : ModelBase, IUfedModelParser&lt;NetworkUsage&gt;</code></pre>
   </div>
 
 
@@ -109,14 +108,14 @@ public class VisitedPage : ModelBase, IUfedModelParser&lt;VisitedPage&gt;</code>
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
       <div><a class="xref" href="UFEDLib.ModelBase.html">ModelBase</a></div>
-      <div><span class="xref">VisitedPage</span></div>
+      <div><span class="xref">NetworkUsage</span></div>
     </dd>
   </dl>
 
   <dl class="typelist implements">
     <dt>Implements</dt>
     <dd>
-      <div><a class="xref" href="UFEDLib.IUfedModelParser-1.html">IUfedModelParser</a>&lt;<a class="xref" href="UFEDLib.VisitedPage.html">VisitedPage</a>&gt;</div>
+      <div><a class="xref" href="UFEDLib.IUfedModelParser-1.html">IUfedModelParser</a>&lt;<a class="xref" href="UFEDLib.NetworkUsage.html">NetworkUsage</a>&gt;</div>
     </dd>
   </dl>
 
@@ -180,18 +179,18 @@ public class VisitedPage : ModelBase, IUfedModelParser&lt;VisitedPage&gt;</code>
 </h2>
 
 
-  <a id="UFEDLib_VisitedPage_Account_" data-uid="UFEDLib.VisitedPage.Account*"></a>
+  <a id="UFEDLib_NetworkUsage_AdditionalInfo_" data-uid="UFEDLib.NetworkUsage.AdditionalInfo*"></a>
 
-  <h3 id="UFEDLib_VisitedPage_Account" data-uid="UFEDLib.VisitedPage.Account">
-  Account
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/VisitedPage.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  <h3 id="UFEDLib_NetworkUsage_AdditionalInfo" data-uid="UFEDLib.NetworkUsage.AdditionalInfo">
+  AdditionalInfo
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/NetworkUsage.cs/#L37"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Account { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public Dictionary&lt;string, string&gt; AdditionalInfo { get; set; }</code></pre>
   </div>
 
 
@@ -200,7 +199,7 @@ public class VisitedPage : ModelBase, IUfedModelParser&lt;VisitedPage&gt;</code>
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -211,18 +210,18 @@ public class VisitedPage : ModelBase, IUfedModelParser&lt;VisitedPage&gt;</code>
 
 
 
-  <a id="UFEDLib_VisitedPage_ArtifactFamily_" data-uid="UFEDLib.VisitedPage.ArtifactFamily*"></a>
+  <a id="UFEDLib_NetworkUsage_ApplicationId_" data-uid="UFEDLib.NetworkUsage.ApplicationId*"></a>
 
-  <h3 id="UFEDLib_VisitedPage_ArtifactFamily" data-uid="UFEDLib.VisitedPage.ArtifactFamily">
-  ArtifactFamily
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/VisitedPage.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  <h3 id="UFEDLib_NetworkUsage_ApplicationId" data-uid="UFEDLib.NetworkUsage.ApplicationId">
+  ApplicationId
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/NetworkUsage.cs/#L32"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string ArtifactFamily { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public List&lt;string&gt; ApplicationId { get; set; }</code></pre>
   </div>
 
 
@@ -231,7 +230,7 @@ public class VisitedPage : ModelBase, IUfedModelParser&lt;VisitedPage&gt;</code>
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -242,49 +241,18 @@ public class VisitedPage : ModelBase, IUfedModelParser&lt;VisitedPage&gt;</code>
 
 
 
-  <a id="UFEDLib_VisitedPage_CanRebuildCacheFile_" data-uid="UFEDLib.VisitedPage.CanRebuildCacheFile*"></a>
+  <a id="UFEDLib_NetworkUsage_DateEnded_" data-uid="UFEDLib.NetworkUsage.DateEnded*"></a>
 
-  <h3 id="UFEDLib_VisitedPage_CanRebuildCacheFile" data-uid="UFEDLib.VisitedPage.CanRebuildCacheFile">
-  CanRebuildCacheFile
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/VisitedPage.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  <h3 id="UFEDLib_NetworkUsage_DateEnded" data-uid="UFEDLib.NetworkUsage.DateEnded">
+  DateEnded
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/NetworkUsage.cs/#L19"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string CanRebuildCacheFile { get; set; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-  <a id="UFEDLib_VisitedPage_LastVisited_" data-uid="UFEDLib.VisitedPage.LastVisited*"></a>
-
-  <h3 id="UFEDLib_VisitedPage_LastVisited" data-uid="UFEDLib.VisitedPage.LastVisited">
-  LastVisited
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/VisitedPage.cs/#L22"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public DateTime LastVisited { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public DateTime DateEnded { get; set; }</code></pre>
   </div>
 
 
@@ -304,18 +272,49 @@ public class VisitedPage : ModelBase, IUfedModelParser&lt;VisitedPage&gt;</code>
 
 
 
-  <a id="UFEDLib_VisitedPage_ServiceIdentifier_" data-uid="UFEDLib.VisitedPage.ServiceIdentifier*"></a>
+  <a id="UFEDLib_NetworkUsage_DateStarted_" data-uid="UFEDLib.NetworkUsage.DateStarted*"></a>
 
-  <h3 id="UFEDLib_VisitedPage_ServiceIdentifier" data-uid="UFEDLib.VisitedPage.ServiceIdentifier">
-  ServiceIdentifier
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/VisitedPage.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  <h3 id="UFEDLib_NetworkUsage_DateStarted" data-uid="UFEDLib.NetworkUsage.DateStarted">
+  DateStarted
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/NetworkUsage.cs/#L20"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string ServiceIdentifier { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public DateTime DateStarted { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UFEDLib_NetworkUsage_IsRoaming_" data-uid="UFEDLib.NetworkUsage.IsRoaming*"></a>
+
+  <h3 id="UFEDLib_NetworkUsage_IsRoaming" data-uid="UFEDLib.NetworkUsage.IsRoaming">
+  IsRoaming
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/NetworkUsage.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string IsRoaming { get; set; }</code></pre>
   </div>
 
 
@@ -335,11 +334,135 @@ public class VisitedPage : ModelBase, IUfedModelParser&lt;VisitedPage&gt;</code>
 
 
 
-  <a id="UFEDLib_VisitedPage_Source_" data-uid="UFEDLib.VisitedPage.Source*"></a>
+  <a id="UFEDLib_NetworkUsage_NetworkConnectionType_" data-uid="UFEDLib.NetworkUsage.NetworkConnectionType*"></a>
 
-  <h3 id="UFEDLib_VisitedPage_Source" data-uid="UFEDLib.VisitedPage.Source">
+  <h3 id="UFEDLib_NetworkUsage_NetworkConnectionType" data-uid="UFEDLib.NetworkUsage.NetworkConnectionType">
+  NetworkConnectionType
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/NetworkUsage.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string NetworkConnectionType { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UFEDLib_NetworkUsage_NumberOfBytesReceived_" data-uid="UFEDLib.NetworkUsage.NumberOfBytesReceived*"></a>
+
+  <h3 id="UFEDLib_NetworkUsage_NumberOfBytesReceived" data-uid="UFEDLib.NetworkUsage.NumberOfBytesReceived">
+  NumberOfBytesReceived
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/NetworkUsage.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long NumberOfBytesReceived { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UFEDLib_NetworkUsage_NumberOfBytesSent_" data-uid="UFEDLib.NetworkUsage.NumberOfBytesSent*"></a>
+
+  <h3 id="UFEDLib_NetworkUsage_NumberOfBytesSent" data-uid="UFEDLib.NetworkUsage.NumberOfBytesSent">
+  NumberOfBytesSent
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/NetworkUsage.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long NumberOfBytesSent { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UFEDLib_NetworkUsage_SSId_" data-uid="UFEDLib.NetworkUsage.SSId*"></a>
+
+  <h3 id="UFEDLib_NetworkUsage_SSId" data-uid="UFEDLib.NetworkUsage.SSId">
+  SSId
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/NetworkUsage.cs/#L26"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string SSId { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UFEDLib_NetworkUsage_Source_" data-uid="UFEDLib.NetworkUsage.Source*"></a>
+
+  <h3 id="UFEDLib_NetworkUsage_Source" data-uid="UFEDLib.NetworkUsage.Source">
   Source
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/VisitedPage.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/NetworkUsage.cs/#L25"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -366,18 +489,18 @@ public class VisitedPage : ModelBase, IUfedModelParser&lt;VisitedPage&gt;</code>
 
 
 
-  <a id="UFEDLib_VisitedPage_Title_" data-uid="UFEDLib.VisitedPage.Title*"></a>
+  <a id="UFEDLib_NetworkUsage_UsageMode_" data-uid="UFEDLib.NetworkUsage.UsageMode*"></a>
 
-  <h3 id="UFEDLib_VisitedPage_Title" data-uid="UFEDLib.VisitedPage.Title">
-  Title
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/VisitedPage.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  <h3 id="UFEDLib_NetworkUsage_UsageMode" data-uid="UFEDLib.NetworkUsage.UsageMode">
+  UsageMode
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/NetworkUsage.cs/#L27"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Title { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string UsageMode { get; set; }</code></pre>
   </div>
 
 
@@ -397,73 +520,11 @@ public class VisitedPage : ModelBase, IUfedModelParser&lt;VisitedPage&gt;</code>
 
 
 
-  <a id="UFEDLib_VisitedPage_Url_" data-uid="UFEDLib.VisitedPage.Url*"></a>
+  <a id="UFEDLib_NetworkUsage_UserMapping_" data-uid="UFEDLib.NetworkUsage.UserMapping*"></a>
 
-  <h3 id="UFEDLib_VisitedPage_Url" data-uid="UFEDLib.VisitedPage.Url">
-  Url
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/VisitedPage.cs/#L26"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Url { get; set; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-  <a id="UFEDLib_VisitedPage_UrlCacheFile_" data-uid="UFEDLib.VisitedPage.UrlCacheFile*"></a>
-
-  <h3 id="UFEDLib_VisitedPage_UrlCacheFile" data-uid="UFEDLib.VisitedPage.UrlCacheFile">
-  UrlCacheFile
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/VisitedPage.cs/#L27"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string UrlCacheFile { get; set; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-  <a id="UFEDLib_VisitedPage_UserMapping_" data-uid="UFEDLib.VisitedPage.UserMapping*"></a>
-
-  <h3 id="UFEDLib_VisitedPage_UserMapping" data-uid="UFEDLib.VisitedPage.UserMapping">
+  <h3 id="UFEDLib_NetworkUsage_UserMapping" data-uid="UFEDLib.NetworkUsage.UserMapping">
   UserMapping
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/VisitedPage.cs/#L28"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/NetworkUsage.cs/#L28"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -490,46 +551,15 @@ public class VisitedPage : ModelBase, IUfedModelParser&lt;VisitedPage&gt;</code>
 
 
 
-  <a id="UFEDLib_VisitedPage_VisitCount_" data-uid="UFEDLib.VisitedPage.VisitCount*"></a>
-
-  <h3 id="UFEDLib_VisitedPage_VisitCount" data-uid="UFEDLib.VisitedPage.VisitCount">
-  VisitCount
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/VisitedPage.cs/#L29"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int VisitCount { get; set; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
   <h2 class="section" id="methods">Methods
 </h2>
 
 
-  <a id="UFEDLib_VisitedPage_GetXmlModelType_" data-uid="UFEDLib.VisitedPage.GetXmlModelType*"></a>
+  <a id="UFEDLib_NetworkUsage_GetXmlModelType_" data-uid="UFEDLib.NetworkUsage.GetXmlModelType*"></a>
 
-  <h3 id="UFEDLib_VisitedPage_GetXmlModelType" data-uid="UFEDLib.VisitedPage.GetXmlModelType">
+  <h3 id="UFEDLib_NetworkUsage_GetXmlModelType" data-uid="UFEDLib.NetworkUsage.GetXmlModelType">
   GetXmlModelType()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/VisitedPage.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/NetworkUsage.cs/#L13"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -556,25 +586,25 @@ public class VisitedPage : ModelBase, IUfedModelParser&lt;VisitedPage&gt;</code>
 
 
 
-  <a id="UFEDLib_VisitedPage_ParseFields_" data-uid="UFEDLib.VisitedPage.ParseFields*"></a>
+  <a id="UFEDLib_NetworkUsage_ParseFields_" data-uid="UFEDLib.NetworkUsage.ParseFields*"></a>
 
-  <h3 id="UFEDLib_VisitedPage_ParseFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_VisitedPage_System_Boolean_" data-uid="UFEDLib.VisitedPage.ParseFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.VisitedPage,System.Boolean)">
-  ParseFields(IEnumerable&lt;XElement&gt;, VisitedPage, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/VisitedPage.cs/#L79"><i class="bi bi-code-slash"></i></a>
+  <h3 id="UFEDLib_NetworkUsage_ParseFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_NetworkUsage_System_Boolean_" data-uid="UFEDLib.NetworkUsage.ParseFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.NetworkUsage,System.Boolean)">
+  ParseFields(IEnumerable&lt;XElement&gt;, NetworkUsage, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/NetworkUsage.cs/#L84"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void ParseFields(IEnumerable&lt;XElement&gt; fieldElements, VisitedPage result, bool debugAttributes = false)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void ParseFields(IEnumerable&lt;XElement&gt; fieldElements, NetworkUsage result, bool debugAttributes = false)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>fieldElements</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>&gt;</dt>
     <dd></dd>
-    <dt><code>result</code> <a class="xref" href="UFEDLib.VisitedPage.html">VisitedPage</a></dt>
+    <dt><code>result</code> <a class="xref" href="UFEDLib.NetworkUsage.html">NetworkUsage</a></dt>
     <dd></dd>
     <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
@@ -591,18 +621,18 @@ public class VisitedPage : ModelBase, IUfedModelParser&lt;VisitedPage&gt;</code>
 
 
 
-  <a id="UFEDLib_VisitedPage_ParseModel_" data-uid="UFEDLib.VisitedPage.ParseModel*"></a>
+  <a id="UFEDLib_NetworkUsage_ParseModel_" data-uid="UFEDLib.NetworkUsage.ParseModel*"></a>
 
-  <h3 id="UFEDLib_VisitedPage_ParseModel_System_Xml_Linq_XElement_System_Boolean_" data-uid="UFEDLib.VisitedPage.ParseModel(System.Xml.Linq.XElement,System.Boolean)">
+  <h3 id="UFEDLib_NetworkUsage_ParseModel_System_Xml_Linq_XElement_System_Boolean_" data-uid="UFEDLib.NetworkUsage.ParseModel(System.Xml.Linq.XElement,System.Boolean)">
   ParseModel(XElement, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/VisitedPage.cs/#L34"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/NetworkUsage.cs/#L41"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static VisitedPage ParseModel(XElement element, bool debugAttributes = false)</code></pre>
+    <pre><code class="lang-csharp hljs">public static NetworkUsage ParseModel(XElement element, bool debugAttributes = false)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -615,7 +645,7 @@ public class VisitedPage : ModelBase, IUfedModelParser&lt;VisitedPage&gt;</code>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="UFEDLib.VisitedPage.html">VisitedPage</a></dt>
+    <dt><a class="xref" href="UFEDLib.NetworkUsage.html">NetworkUsage</a></dt>
     <dd></dd>
   </dl>
 
@@ -629,25 +659,25 @@ public class VisitedPage : ModelBase, IUfedModelParser&lt;VisitedPage&gt;</code>
 
 
 
-  <a id="UFEDLib_VisitedPage_ParseModelFields_" data-uid="UFEDLib.VisitedPage.ParseModelFields*"></a>
+  <a id="UFEDLib_NetworkUsage_ParseModelFields_" data-uid="UFEDLib.NetworkUsage.ParseModelFields*"></a>
 
-  <h3 id="UFEDLib_VisitedPage_ParseModelFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_VisitedPage_System_Boolean_" data-uid="UFEDLib.VisitedPage.ParseModelFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.VisitedPage,System.Boolean)">
-  ParseModelFields(IEnumerable&lt;XElement&gt;, VisitedPage, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/VisitedPage.cs/#L142"><i class="bi bi-code-slash"></i></a>
+  <h3 id="UFEDLib_NetworkUsage_ParseModelFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_NetworkUsage_System_Boolean_" data-uid="UFEDLib.NetworkUsage.ParseModelFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.NetworkUsage,System.Boolean)">
+  ParseModelFields(IEnumerable&lt;XElement&gt;, NetworkUsage, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/NetworkUsage.cs/#L148"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void ParseModelFields(IEnumerable&lt;XElement&gt; modelFieldElements, VisitedPage result, bool debugAttributes = false)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void ParseModelFields(IEnumerable&lt;XElement&gt; modelFieldElements, NetworkUsage result, bool debugAttributes = false)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>modelFieldElements</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>&gt;</dt>
     <dd></dd>
-    <dt><code>result</code> <a class="xref" href="UFEDLib.VisitedPage.html">VisitedPage</a></dt>
+    <dt><code>result</code> <a class="xref" href="UFEDLib.NetworkUsage.html">NetworkUsage</a></dt>
     <dd></dd>
     <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
@@ -664,25 +694,25 @@ public class VisitedPage : ModelBase, IUfedModelParser&lt;VisitedPage&gt;</code>
 
 
 
-  <a id="UFEDLib_VisitedPage_ParseMultiFields_" data-uid="UFEDLib.VisitedPage.ParseMultiFields*"></a>
+  <a id="UFEDLib_NetworkUsage_ParseMultiFields_" data-uid="UFEDLib.NetworkUsage.ParseMultiFields*"></a>
 
-  <h3 id="UFEDLib_VisitedPage_ParseMultiFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_VisitedPage_System_Boolean_" data-uid="UFEDLib.VisitedPage.ParseMultiFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.VisitedPage,System.Boolean)">
-  ParseMultiFields(IEnumerable&lt;XElement&gt;, VisitedPage, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/VisitedPage.cs/#L147"><i class="bi bi-code-slash"></i></a>
+  <h3 id="UFEDLib_NetworkUsage_ParseMultiFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_NetworkUsage_System_Boolean_" data-uid="UFEDLib.NetworkUsage.ParseMultiFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.NetworkUsage,System.Boolean)">
+  ParseMultiFields(IEnumerable&lt;XElement&gt;, NetworkUsage, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/NetworkUsage.cs/#L153"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void ParseMultiFields(IEnumerable&lt;XElement&gt; multiFieldElements, VisitedPage result, bool debugAttributes = false)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void ParseMultiFields(IEnumerable&lt;XElement&gt; multiFieldElements, NetworkUsage result, bool debugAttributes = false)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>multiFieldElements</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>&gt;</dt>
     <dd></dd>
-    <dt><code>result</code> <a class="xref" href="UFEDLib.VisitedPage.html">VisitedPage</a></dt>
+    <dt><code>result</code> <a class="xref" href="UFEDLib.NetworkUsage.html">NetworkUsage</a></dt>
     <dd></dd>
     <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
@@ -699,18 +729,18 @@ public class VisitedPage : ModelBase, IUfedModelParser&lt;VisitedPage&gt;</code>
 
 
 
-  <a id="UFEDLib_VisitedPage_ParseMultiModel_" data-uid="UFEDLib.VisitedPage.ParseMultiModel*"></a>
+  <a id="UFEDLib_NetworkUsage_ParseMultiModel_" data-uid="UFEDLib.NetworkUsage.ParseMultiModel*"></a>
 
-  <h3 id="UFEDLib_VisitedPage_ParseMultiModel_System_Xml_Linq_XElement_System_Boolean_" data-uid="UFEDLib.VisitedPage.ParseMultiModel(System.Xml.Linq.XElement,System.Boolean)">
+  <h3 id="UFEDLib_NetworkUsage_ParseMultiModel_System_Xml_Linq_XElement_System_Boolean_" data-uid="UFEDLib.NetworkUsage.ParseMultiModel(System.Xml.Linq.XElement,System.Boolean)">
   ParseMultiModel(XElement, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/VisitedPage.cs/#L63"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/NetworkUsage.cs/#L68"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static List&lt;VisitedPage&gt; ParseMultiModel(XElement element, bool debugAttributes = false)</code></pre>
+    <pre><code class="lang-csharp hljs">public static List&lt;NetworkUsage&gt; ParseMultiModel(XElement element, bool debugAttributes = false)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -723,7 +753,7 @@ public class VisitedPage : ModelBase, IUfedModelParser&lt;VisitedPage&gt;</code>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="UFEDLib.VisitedPage.html">VisitedPage</a>&gt;</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="UFEDLib.NetworkUsage.html">NetworkUsage</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -737,25 +767,25 @@ public class VisitedPage : ModelBase, IUfedModelParser&lt;VisitedPage&gt;</code>
 
 
 
-  <a id="UFEDLib_VisitedPage_ParseMultiModelFields_" data-uid="UFEDLib.VisitedPage.ParseMultiModelFields*"></a>
+  <a id="UFEDLib_NetworkUsage_ParseMultiModelFields_" data-uid="UFEDLib.NetworkUsage.ParseMultiModelFields*"></a>
 
-  <h3 id="UFEDLib_VisitedPage_ParseMultiModelFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_VisitedPage_System_Boolean_" data-uid="UFEDLib.VisitedPage.ParseMultiModelFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.VisitedPage,System.Boolean)">
-  ParseMultiModelFields(IEnumerable&lt;XElement&gt;, VisitedPage, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/VisitedPage.cs/#L152"><i class="bi bi-code-slash"></i></a>
+  <h3 id="UFEDLib_NetworkUsage_ParseMultiModelFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_NetworkUsage_System_Boolean_" data-uid="UFEDLib.NetworkUsage.ParseMultiModelFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.NetworkUsage,System.Boolean)">
+  ParseMultiModelFields(IEnumerable&lt;XElement&gt;, NetworkUsage, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/NetworkUsage.cs/#L173"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void ParseMultiModelFields(IEnumerable&lt;XElement&gt; multiModelFieldElements, VisitedPage result, bool debugAttributes = false)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void ParseMultiModelFields(IEnumerable&lt;XElement&gt; multiModelFieldElements, NetworkUsage result, bool debugAttributes = false)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>multiModelFieldElements</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a>&gt;</dt>
     <dd></dd>
-    <dt><code>result</code> <a class="xref" href="UFEDLib.VisitedPage.html">VisitedPage</a></dt>
+    <dt><code>result</code> <a class="xref" href="UFEDLib.NetworkUsage.html">NetworkUsage</a></dt>
     <dd></dd>
     <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
@@ -776,7 +806,7 @@ public class VisitedPage : ModelBase, IUfedModelParser&lt;VisitedPage&gt;</code>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/VisitedPage.cs/#L11" class="edit-link">Edit this page</a>
+          <a href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/NetworkUsage.cs/#L11" class="edit-link">Edit this page</a>
         </div>
 
 
