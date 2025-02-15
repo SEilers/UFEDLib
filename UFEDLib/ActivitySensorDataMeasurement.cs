@@ -15,6 +15,7 @@ namespace UFEDLib
         }
 
         #region fields
+        public string DeviceName { get; set; }
         public string MeasuredVariableType { get; set; }
         public string Source { get; set; }
         public string Unit { get; set; }
@@ -76,6 +77,10 @@ namespace UFEDLib
             {
                 switch (field.Attribute("name").Value)
                 {
+                    case "DeviceName":
+                        result.DeviceName = field.Value.Trim();
+                        break;
+
                     case "MeasuredVariableType":
                         result.MeasuredVariableType = field.Value.Trim();
                         break;
@@ -118,7 +123,7 @@ namespace UFEDLib
             {
                 switch (multiModelFieldElement.Attribute("name").Value)
                 {
-                    case "ActivitySensorDataSample":
+                    case "Samples":
                         result.Samples = ActivitySensorDataSample.ParseMultiModel(multiModelFieldElement, debugAttributes);
                         break;
 

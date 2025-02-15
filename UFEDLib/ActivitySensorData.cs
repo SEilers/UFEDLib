@@ -18,17 +18,32 @@ namespace UFEDLib
         }
 
         #region fields
+        public DateTime CreationTime { get; set; }
+
+        public string DeviceName { get; set; }
+        public double DistanceTraveled { get; set; }
+
+        public double FlightsClimbed { get; set; }
+
+        public DateTime From { get; set; }
+
+
+        public string Name { get; set; }
+        
+        
+        
+        
+        
+        
+        public double MaxHeartrate { get; set; }
+        public double MaxSpeed { get; set; }
+
         public string UserMapping { get; set; }
         public string Source { get; set; }
-        public string Name { get; set; }
-        public DateTime From { get; set; }
-        public DateTime To { get; set; }
-        public DateTime CreationTime { get; set; }
+
         public string SourceDeviceType { get; set; }
-        public double DistanceTraveled { get; set; }
-        public double MaxSpeed { get; set; }
-        public double FlightsClimbed { get; set; }
-        public double MaxHeartrate { get; set; }
+
+        public DateTime To { get; set; }
         public int TotalSampleCount { get; set; }
         #endregion
 
@@ -87,6 +102,10 @@ namespace UFEDLib
             {
                 switch (field.Attribute("name").Value)
                 {
+                    case "DeviceName":
+                        result.DeviceName = field.Value.Trim();
+                        break;
+
                     case "UserMapping":
                         result.UserMapping = field.Value.Trim();
                         break;

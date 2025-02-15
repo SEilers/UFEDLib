@@ -17,25 +17,24 @@ namespace UFEDLib
         }
 
         #region fields
-        public string Source { get; set; }
-        public string UserMapping { get; set; }
-        public string ServiceIdentifier { get; set; }
-        public DateTime TimeStamp { get; set; }
-        public DateTime EndTime { get; set; }
+        public string ArtifactFamily { get; set; }
         public string BSSId { get; set; }
+        public DateTime EndTime { get; set; }
         public DateTime LastAutoConnection { get; set; }
         public DateTime LastConnection { get; set; }
-        public string SecurityMode { get; set; }
-        public string SSId { get; set; }
         public string NWConnectionType { get; set; }
         public string Password { get; set; }
+        public string SecurityMode { get; set; }
+        public string ServiceIdentifier { get; set; }
+        public string Source { get; set; }
+        public string SSId { get; set; }
+        public DateTime TimeStamp { get; set; }
+        public string UserMapping { get; set; }
         #endregion
 
         #region models
         public Coordinate Position { get; set; }
         #endregion
-
-
 
         #region Parsers
         public static List<WirelessNetwork> ParseMultiModel(XElement wirelessNetworksElement, bool debugAttributes = false)
@@ -88,13 +87,16 @@ namespace UFEDLib
         }
         #endregion
 
-
         public static void ParseFields(IEnumerable<XElement> fieldElements, WirelessNetwork result, bool debugAttributes = false)
         {
             foreach (var field in fieldElements)
             {
                 switch (field.Attribute("name").Value)
                 {
+                    case "ArtifactFamily":
+                        result.ArtifactFamily = field.Value.Trim();
+                        break;
+
                     case "UserMapping":
                         result.UserMapping = field.Value.Trim();
                         break;

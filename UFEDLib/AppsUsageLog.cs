@@ -15,15 +15,15 @@ namespace UFEDLib
         }
 
         #region fields
-        public string UserMapping { get; set; }
-        public string Source { get; set; }
-        public string ServiceIdentifier { get; set; }
-        public string SubModule { get; set; }
         public string Action { get; set; }
-        public string Identifier { get; set; }
         public string ArtifactFamily { get; set; }
-        public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
+        public string Identifier { get; set; }
+        public string ServiceIdentifier { get; set; }
+        public DateTime StartTime { get; set; }
+        public string Source { get; set; }
+        public string SubModule { get; set; }
+        public string UserMapping { get; set; }
         #endregion
 
         #region multiField

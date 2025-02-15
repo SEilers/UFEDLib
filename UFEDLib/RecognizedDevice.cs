@@ -16,6 +16,7 @@ namespace UFEDLib
 
         #region fields
         public string Account { get; set; }
+        public string DeviceModel { get; set; }
         public string DeviceType { get; set; }
         public string Name { get; set; }
         public string SerialNumber { get; set; }
@@ -83,6 +84,10 @@ namespace UFEDLib
                 {
                     case "Account":
                         result.Account = field.Value.Trim();
+                        break;
+
+                    case "DeviceModel":
+                        result.DeviceModel = field.Value.Trim();
                         break;
 
                     case "DeviceType":
