@@ -17,10 +17,16 @@ namespace UFEDLib
         #region fields
         public string AccountID { get; set; }
         public string FinancialAccountType { get; set; }
+        public string FoundInField { get; set; }
         public string FoundInModelId { get; set; }
+        public string FoundInModelType { get; set; }
         public DateTime DateLastUpdated { get; set; }
         public string Source { get; set; }
         public string UserMapping { get; set; }
+        #endregion
+
+        #region multiModels
+        public List<FinancialAsset> Assets { get; set; }
         #endregion
 
         #region parsers
@@ -87,8 +93,16 @@ namespace UFEDLib
                         result.FinancialAccountType = field.Value.Trim();
                         break;
 
+                    case "FoundInField":
+                        result.FoundInField = field.Value.Trim();
+                        break;
+
                     case "FoundInModelId":
                         result.FoundInModelId = field.Value.Trim();
+                        break;
+
+                    case "FoundInModelType":
+                        result.FoundInModelType = field.Value.Trim();
                         break;
 
                     case "Source":
@@ -121,7 +135,23 @@ namespace UFEDLib
 
         public static void ParseMultiModelFields(IEnumerable<XElement> multiModelFieldElements, FinancialAccount result, bool debugAttributes = false)
         {
-            IUfedModelParser<FinancialAccount>.CheckMultiModelFields<FinancialAccount>(multiModelFieldElements, debugAttributes);
+            foreach (var multiModelField in multiModelFieldElements)
+            {
+                switch (multiModelField.Attribute("name").Value)
+                {
+                    case "Assets":
+                        result.Assets = FinancialAsset.ParseMultiModel(multiModelField, debugAttributes);
+                        break;
+
+                    default:
+                        if (debugAttributes)
+                        {
+                            string debugAttrubuteText = "FinancialAccount Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value;
+                            Logger.LogAttribute(debugAttrubuteText);
+                        }
+                        break;
+                }
+            }
         }
         #endregion
     }

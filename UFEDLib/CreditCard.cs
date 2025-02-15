@@ -27,6 +27,10 @@ namespace UFEDLib
         public string UserMapping { get; set; }
         #endregion
 
+        #region models
+        public StreetAddress BillingAddress { get; set; }
+        #endregion
+
         #region Parsers
         public static CreditCard ParseModel(XElement element, bool debugAttributes = false)
         {
@@ -127,7 +131,22 @@ namespace UFEDLib
 
         public static void ParseModelFields(IEnumerable<XElement> modelFieldElements, CreditCard result, bool debugAttributes = false)
         {
-            IUfedModelParser<CreditCard>.CheckModelFields<CreditCard>(modelFieldElements, debugAttributes);
+            foreach (var modelField in modelFieldElements)
+            {
+                switch (modelField.Attribute("name").Value)
+                {
+                    case "BillingAddress":
+                        result.BillingAddress = StreetAddress.ParseModel(modelField.Element("model"), debugAttributes);
+                        break;
+
+                    default:
+                        if (debugAttributes)
+                        {
+                            Logger.LogAttribute("CreditCard Parser: Unknown modelField: " + modelField.Attribute("name").Value);
+                        }
+                        break;
+                }
+            }
         }
 
         public static void ParseMultiFields(IEnumerable<XElement> multiFieldElements, CreditCard result, bool debugAttributes = false)

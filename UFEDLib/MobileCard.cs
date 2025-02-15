@@ -16,8 +16,12 @@ namespace UFEDLib
         }
 
         #region fields
+        public DateTime ActivationTime { get; set; }
         public string Description { get; set; }
+
+        public DateTime ExpirationTime { get; set; }
         public DateTime ModifyTime { get; set; }
+        public string Name { get; set; }
         public DateTime PurchaseTime { get; set; }
         public string Source { get; set; }
         public string Type { get; set; }
@@ -85,13 +89,27 @@ namespace UFEDLib
             {
                 switch (field.Attribute("name").Value)
                 {
+                    case "ActivationTime":
+                        if (field.Value.Trim() != "")
+                            result.ActivationTime = DateTime.Parse(field.Value.Trim());
+                        break;
+
                     case "Description":
                         result.Description = field.Value.Trim();
+                        break;
+
+                    case "ExpirationTime":
+                        if (field.Value.Trim() != "")
+                            result.ExpirationTime = DateTime.Parse(field.Value.Trim());
                         break;
 
                     case "ModifyTime":
                         if (field.Value.Trim() != "")
                             result.ModifyTime = DateTime.Parse(field.Value.Trim());
+                        break;
+
+                    case "Name":
+                        result.Name = field.Value.Trim();
                         break;
 
                     case "PurchaseTime":

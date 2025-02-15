@@ -40,7 +40,8 @@ namespace UFEDLib
         #endregion
 
         #region multiModels
-        public List <Attachment> Attachments { get; set; }
+        public List<Attachment> Attachments { get; set; }
+        public List<Party> TaggedParties { get; set; }
         #endregion
 
         #region parsers
@@ -219,6 +220,10 @@ namespace UFEDLib
                 {
                     case "Attachments":
                         result.Attachments = Attachment.ParseMultiModel(multiModelField, debugAttributes);
+                        break;
+
+                    case "TaggedParties":
+                        result.TaggedParties = Party.ParseMultiModel(multiModelField, debugAttributes);
                         break;
 
                     default:

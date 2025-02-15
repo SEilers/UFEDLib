@@ -57,6 +57,7 @@ namespace UFEDLib
 
         #region multiModels
         public List<Attachment> Attachments { get; set; } = new List<Attachment>();
+        public List <ChatActivity> ActivityLog { get; set; } = new List<ChatActivity>();
         public List<Contact> SharedContacts { get; set; } = new List<Contact>();
         public List<Party> To { get; set; } = new List<Party>();
         #endregion
@@ -268,18 +269,10 @@ namespace UFEDLib
             {
                 switch (multiField.Attribute("name").Value)
                 {
-                    //case "Attachment":
-                    //    result.Attachment = Attachment.ParseModel(multiField, debugAttributes);
-                    //    break;
-                    //case "From":
-                    //    result.From = Party.ParseModel(multiField, debugAttributes);
-                    //    break;
-                    //case "Position":
-                    //    result.Position = Coordinate.ParseModel(multiField, debugAttributes);
-                    //    break;
                     case "JumpTargetId":
                         result.JumpTargetId = multiField.Value.Trim();
                         break;
+
                     default:
                         if (debugAttributes)
                         {
@@ -296,15 +289,22 @@ namespace UFEDLib
             {
                 switch (multiModelField.Attribute("name").Value)
                 {
-                    case "To":
-                        result.To = Party.ParseMultiModel(multiModelField);
+                    case "ActivityLog":
+                        result.ActivityLog = ChatActivity.ParseMultiModel(multiModelField, debugAttributes);
                         break;
+
                     case "Attachments":
                         result.Attachments = Attachment.ParseMultiModel(multiModelField, debugAttributes);
                         break;
+
                     case "SharedContacts":
                         result.SharedContacts = Contact.ParseMultiModel(multiModelField, debugAttributes);
                         break;
+
+                    case "To":
+                        result.To = Party.ParseMultiModel(multiModelField);
+                        break;
+
                     case "MessageExtraData":
                         // TODO: Implement MessageExtraDataParser
                         //result.MessageExtraData = MessageExtraDataParser.Parse(multiModelField, debugAttributes);

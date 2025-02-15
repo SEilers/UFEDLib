@@ -31,6 +31,10 @@ namespace UFEDLib
         public string Distance { get; set; }
         #endregion
 
+        #region multiFields
+        public List<string> IPAddresses { get; set; }
+        #endregion
+
         #region models
         #endregion
 
@@ -168,7 +172,22 @@ namespace UFEDLib
 
         public static void ParseMultiFields(IEnumerable<XElement> multiFieldElements, Party result, bool debugAttributes = false)
         {
-            IUfedModelParser<Party>.CheckMultiFields<Party>(multiFieldElements, debugAttributes);
+            foreach (var multiField in multiFieldElements)
+            {
+                switch (multiField.Attribute("name").Value)
+                {
+                    case "IPAddresses":
+                        result.IPAddresses = multiField.Elements().Select(x => x.Value.Trim()).ToList();
+                        break;
+                    
+                    default:
+                        if (debugAttributes)
+                        {
+                            Logger.LogAttribute("Party Parser: Unknown multiField: " + multiField.Attribute("name").Value);
+                        }
+                        break;
+                }
+            }
         }
 
         public static void ParseMultiModelFields(IEnumerable<XElement> multiModelFieldElements, Party result, bool debugAttributes = false)

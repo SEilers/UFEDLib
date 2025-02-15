@@ -16,6 +16,8 @@ namespace UFEDLib
         {
             return "ActivitySensorData";
         }
+
+        #region fields
         public string UserMapping { get; set; }
         public string Source { get; set; }
         public string Name { get; set; }
@@ -26,9 +28,15 @@ namespace UFEDLib
         public double DistanceTraveled { get; set; }
         public double MaxSpeed { get; set; }
         public double FlightsClimbed { get; set; }
-
         public double MaxHeartrate { get; set; }
         public int TotalSampleCount { get; set; }
+        #endregion
+
+        #region multiModels
+        public List<ActivitySensorDataMeasurement> Measurements { get; set; }
+        #endregion
+
+
 
         public static ActivitySensorData ParseModel(XElement element, bool debugAttributes = false)
         {
@@ -177,7 +185,22 @@ namespace UFEDLib
 
         public static void ParseMultiModelFields(IEnumerable<XElement> multiModelFieldElements, ActivitySensorData result, bool debugAttributes = false)
         {
-            IUfedModelParser<ActivitySensorData>.CheckMultiModelFields<ActivitySensorData>(multiModelFieldElements, debugAttributes);
+            foreach (var multiModelFieldElement in multiModelFieldElements)
+            {
+                switch (multiModelFieldElement.Attribute("name").Value)
+                {
+                    case "Measurements":
+                        result.Measurements = ActivitySensorDataMeasurement.ParseMultiModel(multiModelFieldElement, debugAttributes);
+                        break;
+
+                    default:
+                        if (debugAttributes)
+                        {
+                            Logger.LogAttribute("ActivitySensorData Parser: Unknown multiModelField: " + multiModelFieldElement.Attribute("name").Value);
+                        }
+                        break;
+                }
+            }
         }
     }
 }

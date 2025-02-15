@@ -15,23 +15,18 @@ namespace UFEDLib
         }
 
         #region fields
-
-        public string UserMapping { get; set; }
-
-        public string Source { get; set; }
-
-        public string DeviceName { get; set; }
-
-        public string DeviceType { get; set; }
-
         public string ConnectivityMethod { get; set; }
-
         public string ConnectivityNature { get; set; }
-
+        public string DeviceName { get; set; }
+        public string DeviceType { get; set; }
         public string ServiceIdentifier { get; set; }
-
+        public string Source { get; set; }
+        public string UserMapping { get; set; }
         public DateTime StartTime { get; set; }
+        #endregion
 
+        #region multiModels
+        public Dictionary<string, string> DeviceIdentifiers { get; set; } = new Dictionary<string, string>();
         #endregion
 
         #region Parsers
@@ -139,9 +134,32 @@ namespace UFEDLib
 
         public static void ParseMultiModelFields(IEnumerable<XElement> multiModelFieldElements, DeviceConnectivity result, bool debugAttributes = false)
         {
-            IUfedModelParser<DeviceConnectivity>.CheckMultiModelFields<DeviceConnectivity>(multiModelFieldElements, debugAttributes);
-        }
+            foreach (var multiModelField in multiModelFieldElements)
+            {
+                switch (multiModelField.Attribute("name").Value)
+                {
+               
+                    case "DeviceIdentifiers":
+                        var kvModelsDeviceIdentifiers = KeyValueModel.ParseMultiModel(multiModelField, debugAttributes);
+                        foreach (var diModel in kvModelsDeviceIdentifiers)
+                        {
+                            if (!string.IsNullOrEmpty(diModel.Key) && !string.IsNullOrEmpty(diModel.Value))
+                            {
+                                result.DeviceIdentifiers[diModel.Key] = diModel.Value;
+                            }
+                        }
+                        break;
 
+
+                    default:
+                        if (debugAttributes)
+                        {
+                            Logger.LogAttribute("DeviceConnectivity Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
+                        }
+                        break;
+                }
+            }
+        }
         #endregion
     }
 }

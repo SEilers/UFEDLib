@@ -20,6 +20,7 @@ namespace UFEDLib
         public DateTime DateLastModified { get; set; }
         public string FileType { get; set; }
         public string Name { get; set; }
+        public string ServiceIdentifier { get; set; }
         public string Source { get; set; }
         public string Title { get; set; }
         public string Url { get; set; }
@@ -105,6 +106,10 @@ namespace UFEDLib
 
                     case "Name":
                         result.Name = field.Value.Trim();
+                        break;
+
+                    case "ServiceIdentifier":
+                        result.ServiceIdentifier = field.Value.Trim();
                         break;
 
                     case "Source":
