@@ -87,15 +87,15 @@ namespace UFEDLib
             {
                 result.ParseAttributes(element);
 
-                var fieldElements = element.Elements(xNamespace + "field");
-                var modelFieldElements = element.Elements(xNamespace + "modelField");
-                var multiFieldElements = element.Elements(xNamespace + "multiField");
-                var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
+                var fieldElements = element?.Elements(xNamespace + "field");
+                var modelFieldElements = element?.Elements(xNamespace + "modelField");
+                var multiFieldElements = element?.Elements(xNamespace + "multiField");
+                var multiModelFieldElements = element?.Elements(xNamespace + "multiModelField");
 
-                ParseFields(fieldElements, result, debugAttributes);
-                ParseModelFields(modelFieldElements, result, debugAttributes);
-                ParseMultiFields(multiFieldElements, result, debugAttributes);
-                ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
+                if(fieldElements != null) ParseFields(fieldElements, result, debugAttributes);
+                if(modelFieldElements != null) ParseModelFields(modelFieldElements, result, debugAttributes);
+                if(multiFieldElements != null) ParseMultiFields(multiFieldElements, result, debugAttributes);
+                if(multiModelFieldElements != null) ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
             }
             catch (Exception ex)
             {
