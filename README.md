@@ -1,9 +1,19 @@
 # UFEDLib
-A C# library for parsing the ufed data model from ufdr files and mapping the models to c# objects. 
-Exporting to other formats (Databases, Excel, CSV, JSON...) is not a part of this library. 
+UFEDLib is a C# library designed to parse the UFED data model from UFDR files and map the extracted data into C# objects.
+This library is intended for forensic analysis, allowing developers to extract structured data from UFDR reports.
+
+> [!NOTE]  
+> UFEDLib __does not__ support exporting data to other formats (e.g., databases, Excel, CSV, JSON). Its primary focus is __parsing and mapping__ UFDR data models.
+
+## Installation
+You can install UFEDLib via NuGet:
+```sh
+dotnet add package ufedlibdotnet
+```
+Or manually reference the compiled DLL in your project.
 
 ## Supported Models
-
+UFEDLib currently supports parsing the following data models:
 - ActivitySensorData
 - ApplicationUsage
 - AppsUsageLog
@@ -49,19 +59,27 @@ Exporting to other formats (Databases, Excel, CSV, JSON...) is not a part of thi
 - WirelessNetwork
 
 ## Usage
-Main interface for the usage is the Report Class, which has static functions to parse the models above.
-For exmamle:
+The main interface for working with UFEDLib is the Report class, which provides static functions to parse supported data models.
 
+### Basic Example: Parsing Locations
+
+```csharp
+using UFEDLib;
+using System.Collections.Generic;
+
+// Parse locations from a UFDR file
+List<Location> locations = Report.ParseLocations("report.ufdr");
+
+Console.WriteLine($"Parsed {locations.Count} locations.");
 ```
-List<Location> locations = Report.ParseLocations(fileName);
-```
+The input file can be either:
+- A UFDR file (e.g., report.ufdr)
+- An extracted report.xml file from a UFDR report container
 
-The file can be a ufdr file or a report.xml file you already extracted from the report container.
+### Example: Exporting Location Data to CSV
+This example extracts location models from a UFDR file and writes their timestamp, longitude, and latitude to a CSV file.
 
-### Example Console App
-This short example parses the location models of the ufdr report and exports the timestamp, longitude and latitude to a CSV file.
-
-```
+```csharp
 using UFEDLib;
 using System.Globalization;
 using System.IO;
@@ -97,6 +115,9 @@ using (var writer = new StreamWriter(newFileName))
 }
 ```
 
+
+## License
+This project is licensed under the MIT License.
 
 
 
