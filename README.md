@@ -1,47 +1,99 @@
 # UFEDLib
-A C# library for mapping and parsing the ufed data model. 
-
-Using XMLReader for performance and XElement at the lower level.
-
+A C# library for parsing the ufed data model from ufdr files and mapping the models to c# objects. 
 Exporting to other formats (Databases, Excel, CSV, JSON...) is not a part of this library. 
 
-## Pre-Release Status
-This library is in pre-release status. Meaning it is under heavy development. 
+## Supported Models
 
-First release will be when following items (modelTypes) are feature complete:
+- ActivitySensorData
+- ApplicationUsage
+- AppsUsageLog
+- Autofill
+- CalendarEntry
 - Call
+- CellTower
 - Chat
 - Contact
+- Cookie
+- CreditCard
+- DeviceConnectivity
+- DeviceEvent
+- DeviceInfoEntry
+- DictionaryWord
+- Email
+- FileDownload
+- FileUpload
+- FinancialAccount
+- InstalledApplication
+- InstantMessage
+- Journey
+- LogEntry
+- Location
+- MobileCard
+- NetworkUsage
+- Note
+- Notification
+- Password
+- PoweringEvent
+- PublicTransportationTicket
+- RecognizedDevice
+- Recording
+- SearchedItem
+- SIMData
+- SocialMediaActivity
+- TransferOfFunds
+- User
+- UserAccount
+- VisitedPage
+- Voicemail
+- WebBookmark
+- WirelessNetwork
 
 ## Usage
-This is assuming you already have unzipped the "report.xml" file from the ufdr image.
-Then you can parse the chats of the report in your application like follows:
+Main interface for the usage is the Report Class, which has static functions to parse the models above.
+For exmamle:
 
 ```
-public List<Chat> ParseChats(string xmlFileName)
-{
-    List<Chat> result = new List<Chat>();
-    
-    XmlReaderSettings settings = new XmlReaderSettings();
-    XmlReader reader = XmlReader.Create(xmlFileName, settings);
+List<Location> locations = Report.ParseLocations(fileName);
+```
 
-    while (reader.Read())
+The file can be a ufdr file or a report.xml file you already extracted from the report container.
+
+### Example Console App
+This short example parses the location models of the ufdr report and exports the timestamp, longitude and latitude to a CSV file.
+
+```
+using UFEDLib;
+using System.Globalization;
+using System.IO;
+
+string path = @"C:\Path\To\Your\File\Phone.ufdr";
+
+var locations = Report.ParseLocations(path);
+
+Console.WriteLine("Locations: " + locations.Count);
+
+string fileName = Path.GetFileNameWithoutExtension(path);
+string newFileName = fileName + "_locations.csv";
+
+using (var writer = new StreamWriter(newFileName))
+{
+    writer.WriteLine("TimeStamp;Longitude;Latitude");
+
+    foreach (var location in locations)
     {
-        try
+        double? longitude = location?.Position?.Longitude;
+        double? latitude = location?.Position?.Latitude;
+
+        if (longitude == null || latitude == null)
         {
-            if (reader.NodeType == XmlNodeType.Element && reader.Name == "model" && reader.GetAttribute("type") == "Chat")
-            {
-                XElement chatNode = XElement.Load(reader.ReadSubtree());    
-                Chat chat = ChatParser.Parse(chatNode);
-                result.Add(chat);
-            }
+            continue;
         }
-        catch(Exception ex )
-        {
-            Console.WriteLine(ex.Message);
-        }
-     }
-    return result;
+
+        writer.WriteLine(
+            $"{location.TimeStamp};" +
+            $"{longitude.Value.ToString(CultureInfo.InvariantCulture)};" +
+            $"{latitude.Value.ToString(CultureInfo.InvariantCulture)}");
+    }
 }
 ```
 
