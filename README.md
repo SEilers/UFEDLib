@@ -117,7 +117,7 @@ using (var writer = new StreamWriter(newFileName))
 
 
 ## License
-This project is licensed under the MIT License.
+This project is licensed under the __MIT License__.
 
 
 
