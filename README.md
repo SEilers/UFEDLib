@@ -59,7 +59,7 @@ UFEDLib currently supports parsing the following data models:
 - WirelessNetwork
 
 ## Usage
-The main interface for working with UFEDLib is the Report class, which provides static functions to parse supported data models.
+The main interface for working with UFEDLib is the `Report` class, which provides static functions to parse supported data models.
 
 ### Basic Example: Parsing Locations
 
@@ -68,13 +68,13 @@ using UFEDLib;
 using System.Collections.Generic;
 
 // Parse locations from a UFDR file
-List<Location> locations = Report.ParseLocations("report.ufdr");
+List<Location> locations = Report.ParseLocations("Smartphone.ufdr");
 
 Console.WriteLine($"Parsed {locations.Count} locations.");
 ```
 The input file can be either:
-- A UFDR file (e.g., report.ufdr)
-- An extracted report.xml file from a UFDR report container
+- A UFDR file (e.g., `Smartphone.ufdr`)
+- An extracted `report.xml` file from a UFDR report container
 
 ### Example: Exporting Location Data to CSV
 This example extracts location models from a UFDR file and writes their timestamp, longitude, and latitude to a CSV file.
