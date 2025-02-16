@@ -20,7 +20,9 @@ namespace UFEDLib
         public string ChannelName { get; set; }
         public string ChannelType { get; set; }
         public int CommentCount { get; set; }
+        public DateTime DateModified { get; set; }
         public string IsFromActivityLog { get; set; }
+        public string OriginalPostId { get; set; }
         public string Platform { get; set; }
         public string PrivacySetting { get; set; }
         public int ReactionsCount { get; set; }
@@ -37,6 +39,8 @@ namespace UFEDLib
 
         #region models
         public Party Author { get; set; }
+        public SocialMediaActivity ParentPost { get; set; }
+        public Coordinate Position { get; set; }
         #endregion
 
         #region multiModels
@@ -117,8 +121,17 @@ namespace UFEDLib
                         }
                         break;
 
+                    case "DateModified":
+                        if (field.Value.Trim() != "")
+                            result.DateModified = DateTime.Parse(field.Value.Trim());
+                        break;
+
                     case "IsFromActivityLog":
                         result.IsFromActivityLog = field.Value.Trim();
+                        break;
+
+                    case "OriginalPostId":
+                        result.OriginalPostId = field.Value.Trim();
                         break;
 
                     case "Platform":
@@ -195,6 +208,14 @@ namespace UFEDLib
                 {
                     case "Author":
                         result.Author = Party.ParseModel(modelField, debugAttributes);
+                        break;
+
+                    case "ParentPost":
+                        result.ParentPost = SocialMediaActivity.ParseModel(modelField, debugAttributes);
+                        break;
+
+                    case "Position":
+                        result.Position = Coordinate.ParseModel(modelField, debugAttributes);
                         break;
 
                     default:

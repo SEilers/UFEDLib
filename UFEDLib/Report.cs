@@ -42,6 +42,7 @@ namespace UFEDLib
             "Notification",
             "Password",
             "PoweringEvent",
+            "PublicTransportationTicket",
             "RecognizedDevice",
             "Recording",
             "SearchedItem",
@@ -252,6 +253,11 @@ namespace UFEDLib
         public static List<PoweringEvent> ParsePoweringEvents(string filename, IProgress<int> progress = null, bool debugAttributes = false)
         {
             return ParseData<PoweringEvent>(filename, progress, debugAttributes);
+        }
+
+        public static List<PublicTransportationTicket> ParsePublicTransportationTickets(string filename, IProgress<int> progress = null, bool debugAttributes = false)
+        {
+            return ParseData<PublicTransportationTicket>(filename, progress, debugAttributes);
         }
 
         public static List<RecognizedDevice> ParseRecognizedDevices(string filename, IProgress<int> progress = null, bool debugAttributes = false)
