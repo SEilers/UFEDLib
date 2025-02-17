@@ -22,14 +22,14 @@ namespace UFEDLib
         public string Body { get; set; }
         public DateTime DateRead { get; set; }
         public string NotificationId { get; set; }
-        public string Type { get; set; }
         public string PositionAddress { get; set; }
+        public string ServiceIdentifier { get; set; }
         public string Source { get; set; }
         public string Status { get; set; }
         public string Subject { get; set; }
         public DateTime TimeStamp { get; set; }
+        public string Type { get; set; }
         public string UserMapping { get; set; }
-        public string ServiceIdentifier { get; set; }
         #endregion
 
         #region models

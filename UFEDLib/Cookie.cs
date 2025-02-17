@@ -22,12 +22,11 @@ namespace UFEDLib
         public DateTime LastAccessTime { get; set; }
         public string Name { get; set; }
         public string Path { get; set; }
-        public string UserMapping { get; set; }
-        public string Source { get; set; }
-        public string Value { get; set; }
         public string RelatedApplication { get; set; }
         public string ServiceIdentifier { get; set; }
-
+        public string Source { get; set; }
+        public string UserMapping { get; set; }
+        public string Value { get; set; }
         #endregion
 
 

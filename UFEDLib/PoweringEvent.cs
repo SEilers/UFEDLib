@@ -17,12 +17,12 @@ namespace UFEDLib
         }
 
         #region fields
-        public string Source { get; set; }
-        public string UserMapping { get; set; }
         public string Description { get; set; }
         public String Element { get; set; }
         public String Event { get; set; }
+        public string Source { get; set; }
         public DateTime TimeStamp { get; set; }
+        public string UserMapping { get; set; }
         #endregion
 
         #region models

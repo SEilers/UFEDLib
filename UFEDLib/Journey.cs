@@ -15,16 +15,15 @@ namespace UFEDLib
             return "Journey";
         }
 
-
         #region fields
         public string Account { get; set; }
         public DateTime EndTime { get; set; }
         public string Name { get; set; }
+        public string ServiceIdentifier { get; set; }
         public string Source { get; set; }
         public DateTime StartTime { get; set; }
-        public string UserMapping { get; set; }
-        public string ServiceIdentifier { get; set; }
         public string Type { get; set; }
+        public string UserMapping { get; set; }
         #endregion
 
         #region models

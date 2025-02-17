@@ -17,33 +17,19 @@ namespace UFEDLib
         }
 
         #region fields
-
         public int ActivationCount { get; set; }
-
         public TimeSpan ActiveTime { get; set; }
-
         public TimeSpan BackgroundTime { get; set; }
-
         public DateTime Date { get; set; }
-
-        public DateTime LastLaunch { get; set; }
-
-        public DateTime StartTime { get; set; }
-
         public DateTime EndTime { get; set; }
-
-        public TimeSpan LastUsageDuration { get; set; }
-
-        public int LaunchCount { get; set; }
-
-        public string Name { get; set; }
-
-        public string UserMapping { get; set; }
-
-        public string Source { get; set; }
-
         public string Identifier { get; set; }
-
+        public DateTime LastLaunch { get; set; }
+        public TimeSpan LastUsageDuration { get; set; }
+        public int LaunchCount { get; set; }
+        public string Name { get; set; }
+        public DateTime StartTime { get; set; }
+        public string Source { get; set; }
+        public string UserMapping { get; set; }
         #endregion
 
         #region Parsers

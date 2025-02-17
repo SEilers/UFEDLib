@@ -17,27 +17,27 @@ namespace UFEDLib
         }
 
         #region fields
+        public string Account { get; set; }
+        public string AccountLocationAffiliation { get; set; }
+        public int AggregatedLocationsCount { get; set; }
         public string Category { get; set; }
         public string Confidence { get; set; }
         public string Description { get; set; }
+        public string DeviceLocationAffiliation { get; set; }
+        public DateTime EndTime { get; set; }
+        public double GpsHorizontalAccuracy { get; set; }
+        public string LocationOrigin { get; set; }
         public string Map { get; set; }
         public string Name { get; set; }
-        public string ServiceName { get; set; }
-        public string LocationOrigin { get; set; }
         public string Origin { get; set; }
         public string PositionAddress { get; set; }
         public string Precision { get; set; }
+        public string ServiceIdentifier { get; set; }
+        public string ServiceName { get; set; }
         public string Source { get; set; }
         public DateTime TimeStamp { get; set; }
-        public DateTime EndTime { get; set; }
-        public string Account { get; set; }
-        public string ServiceIdentifier { get; set; }
         public string Type { get; set; }
         public string UserMapping { get; set; }
-        public int AggregatedLocationsCount { get; set; }
-        public string AccountLocationAffiliation { get; set; }
-        public string DeviceLocationAffiliation { get; set; }
-        public double GpsHorizontalAccuracy { get; set; }
         #endregion
 
         #region models
@@ -149,6 +149,10 @@ namespace UFEDLib
 
                     case "Precision":
                         result.Precision = field.Value.Trim();
+                        break;
+
+                    case "LocationOrigin":
+                        result.LocationOrigin = field.Value.Trim();
                         break;
 
                     case "Map":

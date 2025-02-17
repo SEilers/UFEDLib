@@ -16,25 +16,20 @@ namespace UFEDLib
         }
 
         #region fields
-        public string Source { get; set; }
-        public string UserMapping { get; set; }
-
-        public string ServiceIdentifier { get; set; }
         public string AccessGroup { get; set; }
         public string Account { get; set; }
         // The password itself
         public string Data { get; set; }
+        public DateTime DateCreated { get; set; }
+        public DateTime DateModified { get; set; }
         public string GenericAttribute { get; set; }
         public string Label { get; set; }
         public string Server { get; set; }
         public string Service { get; set; }
-
-        // enum with the following values: "Default", "Key", "Secret", "Token"
+        public string ServiceIdentifier { get; set; }
+        public string Source { get; set; }
         public string Type { get; set; }
-
-        public DateTime DateCreated { get; set; }
-
-        public DateTime DateModified { get; set; }
+        public string UserMapping { get; set; }
         #endregion
 
         #region models

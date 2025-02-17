@@ -11,11 +11,8 @@ namespace UFEDLib
     {
         #region fields
         public string Info { get; set; }
-
         public DateTime LastConnected { get; set; }
-
         public string MACAddress { get; set; }
-
         public string Name { get; set; }
         #endregion
     }

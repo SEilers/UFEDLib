@@ -16,6 +16,7 @@ namespace UFEDLib
 
         #region fields
         public string Account { get; set; }
+        public string ChatType { get; set; }
         public string Description { get; set; }
         public string Id { get; set; }
         public DateTime LastActivity { get; set; }
@@ -24,14 +25,12 @@ namespace UFEDLib
         public string Source { get; set; }
         public DateTime StartTime { get; set; }
         public string UserMapping { get; set; }
-        public string ChatType { get; set; }
         #endregion
 
         #region models
         #endregion
 
         #region multiModels
-
         public List<InstantMessage> Messages { get; set; } = new List<InstantMessage>();
         public List<Party> Participants { get; set; } = new List<Party>();
         public List<ContactPhoto> Photos { get; set; } = new List<ContactPhoto>();

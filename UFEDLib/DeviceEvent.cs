@@ -15,13 +15,13 @@ namespace UFEDLib
         }
 
         #region fields
-        public string UserMapping { get; set; }
-        public string Source { get; set; }
-        public string ServiceIdentifier { get; set; }
-        public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
-        public string Value { get; set; }
         public string EventType { get; set; }
+        public string ServiceIdentifier { get; set; }
+        public string Source { get; set; }
+        public DateTime StartTime { get; set; }
+        public string UserMapping { get; set; }
+        public string Value { get; set; }
         #endregion
 
         #region multiModels

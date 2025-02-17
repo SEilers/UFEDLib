@@ -17,24 +17,23 @@ namespace UFEDLib
         }
 
         #region fields
-        public string ArtifactFamily { get; set; }
-        public string UserMapping { get; set; }
-        public string Source { get; set; }
         public string AppGUID { get; set; }
+        public string ArtifactFamily { get; set; }
         public string Copyright { get; set; }
-        public DateTime LastLaunched { get; set; }
         public string DecodingStatus { get; set; }
         public DateTime DeletedDate { get; set; }
-        public DateTime InstallDate { get; set; }
         public string Description { get; set; }
         public string Identifier { get; set; }
+        public DateTime InstallDate { get; set; }
         public string IsEmulatable { get; set; }
-        public string OperationMode { get; set; }
+        public DateTime LastLaunched { get; set; }
         public string Name { get; set; }
+        public string OperationMode { get; set; }
         public DateTime PurchaseDate { get; set; }
-        public string Version { get; set; }
-
         public string ServiceIdentifier { get; set; }
+        public string Source { get; set; }
+        public string UserMapping { get; set; }
+        public string Version { get; set; }
         #endregion
 
         #region multiFields

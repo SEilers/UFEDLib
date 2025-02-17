@@ -18,37 +18,23 @@ namespace UFEDLib
 
         #region fields
         public string Account { get; set; }
-
         public string CountryCode { get; set; }
-
         public string Direction { get; set; }
-
         public string DisconnectionCause { get; set; }
-
         public TimeSpan Duration { get; set; }
-
         public string NetworkCode { get; set; }
-
         public string NetworkName { get; set; }
-
-        public string Source { get; set; }
-
-        public string Status { get; set; }
-
-        public DateTime TimeStamp { get; set; }
-
-        public string Type { get; set; }
-
-        public string UserMapping { get; set; }
-
         public string ServiceIdentifier { get; set; }
-
+        public string Source { get; set; }
+        public string Status { get; set; }
+        public DateTime TimeStamp { get; set; }
+        public string Type { get; set; }
+        public string UserMapping { get; set; }
         public string VideoCall { get; set; }
         #endregion
 
         #region multiModels
         public List<Party> Parties { get; set; } = new List<Party>();
-
         #endregion
 
         public override string ToString()

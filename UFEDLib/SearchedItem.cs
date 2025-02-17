@@ -16,17 +16,15 @@ namespace UFEDLib
         }
 
         #region fields
-        public string UserMapping { get; set; }
-        public string ServiceIdentifier { get; set; }
         public string Account { get; set; }
         public string Origin { get; set; }
         public string OSUserId { get; set; }
         public string PositionAddress { get; set; }
+        public string ServiceIdentifier { get; set; }
         public string Source { get; set; }
         public DateTime TimeStamp { get; set; }
+        public string UserMapping { get; set; }
         public string Value { get; set; }
-
-        
         #endregion
 
         #region models

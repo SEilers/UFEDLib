@@ -16,34 +16,32 @@ namespace UFEDLib
         }
 
         #region fields
-        public string UserMapping { get; set; }
-        public string Source { get; set; }
         public string Account { get; set; }
         public string Availability { get; set; }
         public string Category { get; set; }
+        public string Class { get; set; }
         public string Details { get; set; }
         public DateTime EndDate { get; set; }
         public string Location { get; set; }
         public string Priority { get; set; }
-        public string Status { get; set; }
-        public string Class { get; set; }
-        public string RepeatRule { get; set; }
-        public string RepeatDay { get; set; }
         public DateTime Reminder { get; set; }
+        public string RepeatDay { get; set; }
         public int RepeatInterval { get; set; }
+        public string RepeatRule { get; set; }
         public DateTime RepeatUntil { get; set; }
         public DateTime StartDate { get; set; }
+        public string Status { get; set; }
+        public string Source { get; set; }
         public string Subject { get; set; }
+        public string UserMapping { get; set; }
         #endregion
 
         #region models
         #endregion
 
         #region multiModels
-        
         public List<Attachment> Attachments { get;set; }
         public List<Party> Attendees { get; set; }
-
         #endregion
 
 

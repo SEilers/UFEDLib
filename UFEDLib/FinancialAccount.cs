@@ -16,11 +16,11 @@ namespace UFEDLib
 
         #region fields
         public string AccountID { get; set; }
+        public DateTime DateLastUpdated { get; set; }
         public string FinancialAccountType { get; set; }
         public string FoundInField { get; set; }
         public string FoundInModelId { get; set; }
         public string FoundInModelType { get; set; }
-        public DateTime DateLastUpdated { get; set; }
         public string Source { get; set; }
         public string UserMapping { get; set; }
         #endregion

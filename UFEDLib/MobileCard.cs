@@ -18,7 +18,6 @@ namespace UFEDLib
         #region fields
         public DateTime ActivationTime { get; set; }
         public string Description { get; set; }
-
         public DateTime ExpirationTime { get; set; }
         public DateTime ModifyTime { get; set; }
         public string Name { get; set; }
@@ -35,8 +34,6 @@ namespace UFEDLib
         #region multiModels
         public Dictionary<string, string> AdditionalInfo { get; set; } = new Dictionary<string, string>();
         #endregion
-
-
 
         #region Parsers
         public static List<MobileCard> ParseMultiModel(XElement element, bool debugAttributes = false)

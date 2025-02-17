@@ -16,19 +16,14 @@ namespace UFEDLib
         }
 
         #region fields
-
-        public string Source { get; set; }
-        public string UserMapping { get; set; }
         public string AttachmentExtractedPath { get; set; }
         public string Charset { get; set; }
         public string ContentType { get; set; }
-        //public DataField Data { get; set;}
         public string Filename { get; set; }
+        public string Source { get; set; }
         public string Title { get; set; }
-        /// <summary>
-        /// A URL string associated with the attachment.
-        /// </summary>
         public string URL { get; set; }
+        public string UserMapping { get; set; }
         #endregion
 
         #region Parsers

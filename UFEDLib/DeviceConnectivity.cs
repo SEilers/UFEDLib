@@ -21,8 +21,8 @@ namespace UFEDLib
         public string DeviceType { get; set; }
         public string ServiceIdentifier { get; set; }
         public string Source { get; set; }
-        public string UserMapping { get; set; }
         public DateTime StartTime { get; set; }
+        public string UserMapping { get; set; }
         #endregion
 
         #region multiModels

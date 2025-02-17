@@ -16,10 +16,10 @@ namespace UFEDLib
         }
 
         #region fields
-        public string ServiceIdentifier { get; set; }
         public DateTime LastVisited { get; set; }
         public string Path { get; set; }
         public string PositionAddress { get; set; }
+        public string ServiceIdentifier { get; set; }
         public string Source { get; set; }
         public DateTime TimeStamp { get; set; }
         public string Title { get; set; }
@@ -30,7 +30,6 @@ namespace UFEDLib
 
         #region models
         public Coordinate Position { get; set; }
-
         #endregion
 
         #region Parsers

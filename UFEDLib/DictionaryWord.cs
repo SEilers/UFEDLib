@@ -21,9 +21,8 @@ namespace UFEDLib
         public string Locale { get; set; }
         public string Source { get; set; }
         public string UserMapping { get; set; }
-        public string Word { get; set; }
-
         public string UsagePattern { get; set; }
+        public string Word { get; set; }
         #endregion
 
         #region Parsers

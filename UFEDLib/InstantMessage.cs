@@ -45,14 +45,12 @@ namespace UFEDLib
         public DateTime TimeStamp { get; set; }
         public string Type { get; set; }
         public string UserMapping { get; set; }
-
         #endregion
 
         #region models
         public Attachment Attachment { get; set; }
         public Party From { get; set; }
         public Coordinate Position { get; set; }
-
         #endregion
 
         #region multiModels

@@ -15,17 +15,12 @@ namespace UFEDLib
         }
 
         #region fields
-        public string UserMapping { get; set; }
-
-        public string Source { get; set; }
-
-        public string EntryName { get; set; }
-
-        public string EntryValue { get; set; }
-
         public string EntryCategory { get; set; }
-
+        public string EntryName { get; set; }
+        public string EntryValue { get; set; }
+        public string Source { get; set; }
         public DateTime TimeStamp { get; set; }
+        public string UserMapping { get; set; }
         #endregion
 
         #region Parsers

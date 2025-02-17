@@ -18,11 +18,11 @@ namespace UFEDLib
         public string Account { get; set; }
         public string Key { get; set; }
         public DateTime LastUsedDate { get; set; }
-        public string Source { get; set; }
-        public string UserMapping { get; set; }
-        public DateTime TimeStamp { get; set; }
-        public string Value { get; set; }
         public string ServiceIdentifier { get; set; }
+        public string Source { get; set; }
+        public DateTime TimeStamp { get; set; }
+        public string UserMapping { get; set; }
+        public string Value { get; set; }
         #endregion
 
         #region Parsers

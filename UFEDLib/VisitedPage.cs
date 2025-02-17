@@ -19,6 +19,7 @@ namespace UFEDLib
         #region fields
         public string Account { get; set; }
         public string ArtifactFamily { get; set; }
+        public string CanRebuildCacheFile { get; set; }
         public DateTime LastVisited { get; set; }
         public string ServiceIdentifier { get; set; }
         public string Source { get; set; }
@@ -27,7 +28,6 @@ namespace UFEDLib
         public string UrlCacheFile { get; set; }
         public string UserMapping { get; set; }
         public int VisitCount { get; set; }
-        public string CanRebuildCacheFile { get; set; }
         #endregion
 
         #region Parsers

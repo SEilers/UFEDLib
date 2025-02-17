@@ -15,14 +15,13 @@ namespace UFEDLib
         }
 
         #region fields
-        public string UserMapping { get; set; }
+        public TimeSpan Duration { get; set; }
         public string Source { get; set; }
+        public DateTime TimeStamp { get; set; }
         public string Title { get; set; }
         public string Type { get; set; }
-        public DateTime TimeStamp { get; set; }
-        public TimeSpan Duration { get; set; }
+        public string UserMapping { get; set; }
         #endregion
-
 
         #region Parsers
         public static Recording ParseModel(XElement element, bool debugAttributes = false)

@@ -15,19 +15,18 @@ namespace UFEDLib
         }
 
         #region fields
-        public string UserMapping { get; set; }
-        public string Source { get; set; }
-        public string Identifier { get; set; }
-        public DateTime TimeStamp { get; set; }
-        public DateTime EndTime { get; set; }
         public string Application { get; set; }
         public string Body { get; set; }
-        public string Severity { get; set; }
-        public int PID { get; set; }
-        public int TID { get; set; }
         public int EffectiveUID { get; set; }
+        public DateTime EndTime { get; set; }
+        public string Identifier { get; set; }
+        public int PID { get; set; }
+        public string Severity { get; set; }
+        public string Source { get; set; }
+        public int TID { get; set; }
+        public DateTime TimeStamp { get; set; }
+        public string UserMapping { get; set; }
         #endregion
-
 
         #region Parsers
         public static LogEntry ParseModel(XElement element, bool debugAttributes = false)

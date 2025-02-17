@@ -16,10 +16,10 @@ namespace UFEDLib
         }
 
         #region fields
-        public string UserMapping { get; set; }
         public DateTime DateDelivered { get; set; }
         public DateTime DatePlayed { get; set; }
         public DateTime DateRead { get; set; }
+        public string Distance { get; set; }
         public string Id { get; set; }
         public string Identifier { get; set; }
         public string IPAddress { get; set; }
@@ -28,7 +28,7 @@ namespace UFEDLib
         public string Name { get; set; }
         public string Role { get; set; }
         public string Status { get; set; }
-        public string Distance { get; set; }
+        public string UserMapping { get; set; }
         #endregion
 
         #region multiFields
