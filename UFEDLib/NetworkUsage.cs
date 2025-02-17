@@ -16,12 +16,14 @@ namespace UFEDLib
         }
 
         #region fields
+        public string ArtifactFamily { get; set; }
         public DateTime DateEnded { get; set; }
         public DateTime DateStarted { get; set; }
         public string IsRoaming { get; set; }
         public string NetworkConnectionType { get; set; }
         public long NumberOfBytesReceived { get; set; }
         public long NumberOfBytesSent { get; set; }
+        public string ServiceIdentifier { get; set; }
         public string Source { get; set; }
         public string SSId { get; set; }
         public string UsageMode { get; set; }
@@ -88,6 +90,10 @@ namespace UFEDLib
             {
                 switch (field.Attribute("name").Value)
                 {
+                    case "ArtifactFamily":
+                        result.ArtifactFamily = field.Value.Trim();
+                        break;
+
                     case "DateEnded":
                         result.DateEnded = DateTime.Parse(field.Value.Trim());
                         break;
@@ -116,6 +122,10 @@ namespace UFEDLib
                         {
                             result.NumberOfBytesSent = bytesSent;
                         }
+                        break;
+
+                    case "ServiceIdentifier":
+                        result.ServiceIdentifier = field.Value.Trim();
                         break;
 
                     case "Source":

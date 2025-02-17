@@ -23,6 +23,7 @@ namespace UFEDLib
         public DateTime LastAutoConnection { get; set; }
         public DateTime LastConnection { get; set; }
         public string NWConnectionType { get; set; }
+        public string Package { get; set; }
         public string Password { get; set; }
         public string SecurityMode { get; set; }
         public string ServiceIdentifier { get; set; }
@@ -133,6 +134,10 @@ namespace UFEDLib
 
                     case "NWConnectionType":
                         result.NWConnectionType = field.Value.Trim();
+                        break;
+
+                    case "Package":
+                        result.Package = field.Value.Trim();
                         break;
 
                     case "LastConnection":

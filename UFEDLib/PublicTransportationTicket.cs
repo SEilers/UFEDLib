@@ -86,7 +86,7 @@ namespace UFEDLib
                         result.Account = field.Value.Trim(); 
                         break;
 
-                    case "ScheduledArrivalTime":
+                    case "ScheduledDepartureTime":
                         if( field.Value.Trim() != "" )
                             result.ScheduledDepartureTime = DateTime.Parse(field.Value.Trim());
                         break;
@@ -111,7 +111,6 @@ namespace UFEDLib
                         break;
                 }
             }
-
         }
 
         public static void ParseModelFields(IEnumerable<XElement> modelFieldElements, PublicTransportationTicket result, bool debugAttributes = false)

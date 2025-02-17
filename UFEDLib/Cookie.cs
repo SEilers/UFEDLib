@@ -119,17 +119,26 @@ namespace UFEDLib
 
                         case "CreationTime":
                             if (field.Value.Trim() != "")
-                                result.CreationTime = DateTime.Parse(field.Value.Trim());
+                                if( DateTime.TryParse(field.Value.Trim(), out DateTime dt))
+                                {
+                                    result.CreationTime = dt;
+                                }
                             break;
 
                         case "LastAccessTime":
                             if (field.Value.Trim() != "")
-                                result.LastAccessTime = DateTime.Parse(field.Value.Trim());
+                                if (DateTime.TryParse(field.Value.Trim(), out DateTime dt))
+                                {
+                                    result.LastAccessTime = dt;
+                                }
                             break;
 
                         case "Expiry":
                             if (field.Value.Trim() != "")
-                                result.LastAccessTime = DateTime.Parse(field.Value.Trim());
+                                if (DateTime.TryParse(field.Value.Trim(), out DateTime dt))
+                                {
+                                    result.Expiry = dt;
+                                }
                             break;
 
                         default:

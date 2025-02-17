@@ -25,6 +25,7 @@ namespace UFEDLib
         public DateTime LastLaunched { get; set; }
         public string DecodingStatus { get; set; }
         public DateTime DeletedDate { get; set; }
+        public DateTime InstallDate { get; set; }
         public string Description { get; set; }
         public string Identifier { get; set; }
         public string IsEmulatable { get; set; }
@@ -32,12 +33,18 @@ namespace UFEDLib
         public string Name { get; set; }
         public DateTime PurchaseDate { get; set; }
         public string Version { get; set; }
+
+        public string ServiceIdentifier { get; set; }
         #endregion
 
         #region multiFields
         public List<string> AssociatedDirectoryPaths { get; set; }
         public List<string> Categories { get; set; }
         public List<string> Permissions { get; set; }
+        #endregion
+
+        #region multiModels
+        public List<User> Users { get; set; }
         #endregion
 
         #region Parsers
@@ -161,6 +168,15 @@ namespace UFEDLib
                             result.PurchaseDate = DateTime.Parse(field.Value.Trim());
                         break;
 
+                    case "InstallDate":
+                        if (field.Value.Trim() != "")
+                            result.InstallDate = DateTime.Parse(field.Value.Trim());
+                        break;
+
+                    case "ServiceIdentifier":
+                        result.ServiceIdentifier = field.Value.Trim();
+                        break;
+
                     default:
                         if (debugAttributes)
                         {
@@ -206,7 +222,22 @@ namespace UFEDLib
 
         public static void ParseMultiModelFields(IEnumerable<XElement> multiModelFieldElements, InstalledApplication result, bool debugAttributes = false)
         {
-            IUfedModelParser<InstalledApplication>.CheckMultiModelFields<InstalledApplication>(multiModelFieldElements, debugAttributes);
+            foreach (var multiModelField in multiModelFieldElements)
+            {
+                switch (multiModelField.Attribute("name").Value)
+                {
+                    case "Users":
+                        result.Users = User.ParseMultiModel(multiModelField, debugAttributes);
+                        break;
+
+                    default:
+                        if (debugAttributes)
+                        {
+                            Logger.LogAttribute("InstalledApplication Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
+                        }
+                        break;
+                }
+            }
         }
         #endregion
     }

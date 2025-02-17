@@ -47,5 +47,55 @@ namespace UFEDLib
                 Logger.LogError("ModelBase: Error parsing xml reader attributes " + ex.Message);
             }
         }
+
+        public static T DefaultModelParser<T>(XElement element, bool debugAttributes = false) where T : ModelBase, IUfedModelParser<T>, new()
+        {
+            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
+            T result = new T();
+            result.ParseAttributes(element);
+
+            try
+            {
+                result.ParseAttributes(element);
+
+                var fieldElements = element.Elements(xNamespace + "field");
+                var modelFieldElements = element.Elements(xNamespace + "modelField");
+                var multiFieldElements = element.Elements(xNamespace + "multiField");
+                var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
+
+                T.ParseFields(fieldElements, result, debugAttributes);
+                T.ParseModelFields(modelFieldElements, result, debugAttributes);
+                T.ParseMultiFields(multiFieldElements, result, debugAttributes);
+                T.ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError($"{T.GetXmlModelType()}: Error parsing xml reader attributes {ex.Message}");
+            }           
+
+            return result;
+        }
+
+        public static List<T> DefaultMultiModelParser<T>(XElement element, bool debugAttributes = false) where T : ModelBase, IUfedModelParser<T>, new()
+        {
+            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
+            List<T> result = new List<T>();
+
+            IEnumerable<XElement> modelElements = element.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == T.GetXmlModelType());
+
+            try
+            {
+                foreach (var modelElement in modelElements)
+                {
+                    T model = DefaultModelParser<T>(modelElement, debugAttributes);
+                    result.Add(model);
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError($"{T.GetXmlModelType()}: Error parsing xml reader attributes {ex.Message}");
+            }
+            return result;
+        }
     }
 }

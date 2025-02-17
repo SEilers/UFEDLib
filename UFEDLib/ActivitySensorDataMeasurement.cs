@@ -15,9 +15,12 @@ namespace UFEDLib
         }
 
         #region fields
+        public double AverageValue { get; set; }
         public string DeviceName { get; set; }
+        public double MaximumValue { get; set; }
         public string MeasuredVariableType { get; set; }
         public string Source { get; set; }
+        public double TotalValue { get; set; }
         public string Unit { get; set; }
         public string UserMapping { get; set; }
         #endregion
@@ -77,8 +80,22 @@ namespace UFEDLib
             {
                 switch (field.Attribute("name").Value)
                 {
+                    case "AverageValue":
+                        if (double.TryParse(field.Value.Trim(), out double averageValue))
+                        {
+                            result.AverageValue = averageValue;
+                        }
+                        break;
+
                     case "DeviceName":
                         result.DeviceName = field.Value.Trim();
+                        break;
+
+                    case "MaximumValue":
+                        if (double.TryParse(field.Value.Trim(), out double maximumValue))
+                        {
+                            result.MaximumValue = maximumValue;
+                        }
                         break;
 
                     case "MeasuredVariableType":
@@ -87,6 +104,13 @@ namespace UFEDLib
 
                     case "Source":
                         result.Source = field.Value.Trim();
+                        break;
+
+                    case "TotalValue":
+                        if (double.TryParse(field.Value.Trim(), out double totalValue))
+                        {
+                            result.TotalValue = totalValue;
+                        }
                         break;
 
                     case "Unit":

@@ -15,16 +15,17 @@ namespace UFEDLib
         }
 
         #region fields
-        public string UserMapping { get; set; }
-        public DateTime TimeStamp { get; set; }
-        public string Type { get; set; }
+        public string BID { get; set; }
+        public string CID { get; set; }
+        public string LAC { get; set; }
         public string MCC { get; set; }
         public string MNC { get; set; }
-        public string LAC { get; set; }
-        public string CID { get; set; }
         public string NID { get; set; }
-        public string BID { get; set; }
+        public string Package { get; set; }
         public string SID { get; set; }
+        public DateTime TimeStamp { get; set; }
+        public string Type { get; set; }
+        public string UserMapping { get; set; }
         #endregion
 
         #region models
@@ -107,6 +108,10 @@ namespace UFEDLib
 
                     case "NID":
                         result.NID = field.Value.Trim();
+                        break;
+
+                    case "Package":
+                        result.Package = field.Value.Trim();
                         break;
 
                     case "BID":
