@@ -97,38 +97,9 @@ namespace UFEDLib
             {
                 switch (field.Attribute("name").Value)
                 {
-                    case "UserMapping":
-                        result.UserMapping = field.Value.Trim();
-                        break;
-
-                    case "Id":
-                        result.Id = field.Value.Trim();
-                        break;
-
-                    case "Name":
-                        result.Name = field.Value.Trim();
-                        break;
-
-                    case "Identifier":
-                        result.Identifier = field.Value.Trim();
-                        break;
-
-                    case "Role":
-                        result.Role = field.Value.Trim();
-                        break;
-
                     case "DateDelivered":
                         if (field.Value.Trim() != "")
                             result.DateDelivered = DateTime.Parse(field.Value.Trim());
-                        break;
-
-                    case "DateRead":
-                        if (field.Value.Trim() != "")
-                            result.DateRead = DateTime.Parse(field.Value.Trim());
-                        break;
-
-                    case "IsGroupAdmin":
-                        result.IsGroupAdmin = field.Value.Trim();
                         break;
 
                     case "DatePlayed":
@@ -136,16 +107,29 @@ namespace UFEDLib
                             result.DatePlayed = DateTime.Parse(field.Value.Trim());
                         break;
 
-                    case "IPAddress":
-                        result.IPAddress = field.Value.Trim();
-                        break;
-
-                    case "Status":
-                        result.Status = field.Value.Trim();
+                    case "DateRead":
+                        if (field.Value.Trim() != "")
+                            result.DateRead = DateTime.Parse(field.Value.Trim());
                         break;
 
                     case "Distance":
                         result.Distance = field.Value.Trim();
+                        break;
+
+                    case "Id":
+                        result.Id = field.Value.Trim();
+                        break;
+
+                    case "Identifier":
+                        result.Identifier = field.Value.Trim();
+                        break;
+
+                    case "IPAddress":
+                        result.IPAddress = field.Value.Trim();
+                        break;
+
+                    case "IsGroupAdmin":
+                        result.IsGroupAdmin = field.Value.Trim();
                         break;
 
                     case "IsPhoneOwner":
@@ -153,6 +137,22 @@ namespace UFEDLib
                         {
                             result.IsPhoneOwner = bool.Parse(field.Value.Trim());
                         }
+                        break;
+
+                    case "Name":
+                        result.Name = field.Value.Trim();
+                        break;
+
+                    case "Role":
+                        result.Role = field.Value.Trim();
+                        break;
+
+                    case "Status":
+                        result.Status = field.Value.Trim();
+                        break;
+
+                    case "UserMapping":
+                        result.UserMapping = field.Value.Trim();
                         break;
 
                     default:

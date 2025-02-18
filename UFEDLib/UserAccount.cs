@@ -29,8 +29,8 @@ namespace UFEDLib
         public string ServiceType { get; set; }
         public string Source { get; set; }
         public DateTime TimeCreated { get; set; }
-        public string Username { get; set; }
         public string UserMapping { get; set; }
+        public string Username { get; set; }
         #endregion
 
         #region multiFields
@@ -120,14 +120,6 @@ namespace UFEDLib
             {
                 switch (field.Attribute("name").Value)
                 {
-                    case "UserMapping":
-                        result.UserMapping = field.Value.Trim();
-                        break;
-
-                    case "ServiceIdentifier":
-                        result.ServiceIdentifier = field.Value.Trim();
-                        break;
-
                     case "Id":
                         result.Id = field.Value.Trim();
                         break;
@@ -136,20 +128,24 @@ namespace UFEDLib
                         result.Name = field.Value.Trim();
                         break;
 
-                    case "Username":
-                        result.Username = field.Value.Trim();
-                        break;
-
                     case "Password":
                         result.Password = field.Value.Trim();
+                        break;
+
+                    case "ServerAddress":
+                        result.ServerAddress = field.Value.Trim();
+                        break;
+
+                    case "ServiceIdentifier":
+                        result.ServiceIdentifier = field.Value.Trim();
                         break;
 
                     case "ServiceType":
                         result.ServiceType = field.Value.Trim();
                         break;
 
-                    case "ServerAddress":
-                        result.ServerAddress = field.Value.Trim();
+                    case "Source":
+                        result.Source = field.Value.Trim();
                         break;
 
                     case "TimeCreated":
@@ -157,8 +153,12 @@ namespace UFEDLib
                             result.TimeCreated = DateTime.Parse(field.Value.Trim());
                         break;
 
-                    case "Source":
-                        result.Source = field.Value.Trim();
+                    case "UserMapping":
+                        result.UserMapping = field.Value.Trim();
+                        break;
+
+                    case "Username":
+                        result.Username = field.Value.Trim();
                         break;
 
                     default:

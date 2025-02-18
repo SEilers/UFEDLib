@@ -15,8 +15,8 @@ namespace UFEDLib
         }
 
         #region fields
-        public DateTime DateSent { get; set; }
         public DateTime DateProcessed { get; set; }
+        public DateTime DateSent { get; set; }
         public string Description { get; set; }
         public string ServiceIdentifier { get; set; }
         public string Source { get; set; }
@@ -84,14 +84,14 @@ namespace UFEDLib
             {
                 switch (field.Attribute("name").Value)
                 {
-                    case "DateSent":
-                        if (field.Value.Trim() != "")
-                            result.DateSent = DateTime.Parse(field.Value.Trim());
-                        break;
-
                     case "DateProcessed":
                         if (field.Value.Trim() != "")
                             result.DateProcessed = DateTime.Parse(field.Value.Trim());
+                        break;
+
+                    case "DateSent":
+                        if (field.Value.Trim() != "")
+                            result.DateSent = DateTime.Parse(field.Value.Trim());
                         break;
 
                     case "Description":

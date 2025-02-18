@@ -97,14 +97,6 @@ namespace UFEDLib
             {
                 switch (field.Attribute("name").Value)
                 {
-                    case "UserMapping":
-                        result.UserMapping = field.Value.Trim();
-                        break;
-
-                    case "Source":
-                        result.Source = field.Value.Trim();
-                        break;
-
                     case "Account":
                         result.Account = field.Value.Trim();
                         break;
@@ -113,12 +105,21 @@ namespace UFEDLib
                         result.Availability = field.Value.Trim();
                         break;
 
+                    case "Category":
+                        result.Category = field.Value.Trim();
+                        break;
+
+                    case "Class":
+                        result.Class = field.Value.Trim();
+                        break;
+
                     case "Details":
                         result.Details = field.Value.Trim();
                         break;
 
-                    case "Category":
-                        result.Category = field.Value.Trim();
+                    case "EndDate":
+                        if (field.Value.Trim() != "")
+                            result.EndDate = DateTime.Parse(field.Value.Trim());
                         break;
 
                     case "Location":
@@ -129,39 +130,23 @@ namespace UFEDLib
                         result.Priority = field.Value.Trim();
                         break;
 
-                    case "Status":
-                        result.Status = field.Value.Trim();
-                        break;
-
-                    case "Class":
-                        result.Class = field.Value.Trim();
-                        break;
-
-                    case "RepeatRule":
-                        result.RepeatRule = field.Value.Trim();
+                    case "Reminder":
+                        if (field.Value.Trim() != "")
+                            result.Reminder = DateTime.Parse(field.Value.Trim());
                         break;
 
                     case "RepeatDay":
                         result.RepeatDay = field.Value.Trim();
                         break;
 
-                    case "Subject":
-                        result.Subject = field.Value.Trim();
+                    case "RepeatInterval":
+                        if (field.Value.Trim() != "")
+                            if (int.TryParse(field.Value.Trim(), out int repeatInterval))
+                                result.RepeatInterval = repeatInterval;
                         break;
 
-                    case "EndDate":
-                        if (field.Value.Trim() != "")
-                            result.EndDate = DateTime.Parse(field.Value.Trim());
-                        break;
-
-                    case "StartDate":
-                        if (field.Value.Trim() != "")
-                            result.StartDate = DateTime.Parse(field.Value.Trim());
-                        break;
-
-                    case "Reminder":
-                        if (field.Value.Trim() != "")
-                            result.Reminder = DateTime.Parse(field.Value.Trim());
+                    case "RepeatRule":
+                        result.RepeatRule = field.Value.Trim();
                         break;
 
                     case "RepeatUntil":
@@ -169,10 +154,25 @@ namespace UFEDLib
                             result.RepeatUntil = DateTime.Parse(field.Value.Trim());
                         break;
 
-                    case "RepeatInterval":
+                    case "Source":
+                        result.Source = field.Value.Trim();
+                        break;
+
+                    case "StartDate":
                         if (field.Value.Trim() != "")
-                            if( int.TryParse(field.Value.Trim(), out int repeatInterval))
-                                result.RepeatInterval = repeatInterval;
+                            result.StartDate = DateTime.Parse(field.Value.Trim());
+                        break;
+
+                    case "Status":
+                        result.Status = field.Value.Trim();
+                        break;
+
+                    case "Subject":
+                        result.Subject = field.Value.Trim();
+                        break;
+
+                    case "UserMapping":
+                        result.UserMapping = field.Value.Trim();
                         break;
 
                     default:

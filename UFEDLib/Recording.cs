@@ -74,8 +74,9 @@ namespace UFEDLib
             {
                 switch (field.Attribute("name").Value)
                 {
-                    case "UserMapping":
-                        result.UserMapping = field.Value.Trim();
+                    case "Duration":
+                        if (field.Value.Trim() != "")
+                            result.Duration = TimeSpan.Parse(field.Value.Trim());
                         break;
 
                     case "Source":
@@ -86,18 +87,17 @@ namespace UFEDLib
                         result.Title = field.Value.Trim();
                         break;
 
-                    case "Type":
-                        result.Type = field.Value.Trim();
-                        break;
-
                     case "TimeStamp":
                         if (field.Value.Trim() != "")
                             result.TimeStamp = DateTime.Parse(field.Value.Trim());
                         break;
 
-                    case "Duration":
-                        if (field.Value.Trim() != "")
-                            result.Duration = TimeSpan.Parse(field.Value.Trim());
+                    case "Type":
+                        result.Type = field.Value.Trim();
+                        break;
+
+                    case "UserMapping":
+                        result.UserMapping = field.Value.Trim();
                         break;
 
                     default:

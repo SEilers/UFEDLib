@@ -83,16 +83,10 @@ namespace UFEDLib
             {
                 switch (field.Attribute("name").Value)
                 {
-                    case "UserMapping":
-                        result.UserMapping = field.Value.Trim();
-                        break;
 
-                    case "Source":
-                        result.Source = field.Value.Trim();
-                        break;
-
-                    case "ServiceIdentifier":
-                        result.ServiceIdentifier = field.Value.Trim();
+                    case "LastVisited":
+                        if (field.Value.Trim() != "")
+                            result.LastVisited = DateTime.Parse(field.Value.Trim());
                         break;
 
                     case "Path":
@@ -103,6 +97,19 @@ namespace UFEDLib
                         result.PositionAddress = field.Value.Trim();
                         break;
 
+                    case "ServiceIdentifier":
+                        result.ServiceIdentifier = field.Value.Trim();
+                        break;
+
+                    case "Source":
+                        result.Source = field.Value.Trim();
+                        break;
+
+                    case "TimeStamp":
+                        if (field.Value.Trim() != "")
+                            result.TimeStamp = DateTime.Parse(field.Value.Trim());
+                        break;
+
                     case "Title":
                         result.Title = field.Value.Trim();
                         break;
@@ -111,22 +118,16 @@ namespace UFEDLib
                         result.Url = field.Value.Trim();
                         break;
 
+                    case "UserMapping":
+                        result.UserMapping = field.Value.Trim();
+                        break;
+
                     case "VisitCount":
                         if (field.Value.Trim() != "")
                         {
                             if( int.TryParse(field.Value.Trim(), out int visitCount))
                                 result.VisitCount = visitCount;
                         }
-                        break;
-
-                    case "TimeStamp":
-                        if (field.Value.Trim() != "")
-                            result.TimeStamp = DateTime.Parse(field.Value.Trim());
-                        break;
-
-                    case "LastVisited":
-                        if (field.Value.Trim() != "")
-                            result.LastVisited = DateTime.Parse(field.Value.Trim());
                         break;
 
                     default:

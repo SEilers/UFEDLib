@@ -98,14 +98,6 @@ namespace UFEDLib
             {
                 switch (field.Attribute("name").Value)
                 {
-                    case "UserMapping":
-                        result.UserMapping = field.Value.Trim();
-                        break;
-
-                    case "Source":
-                        result.Source = field.Value.Trim();
-                        break;
-
                     case "Account":
                         result.Account = field.Value.Trim();
                         break;
@@ -114,8 +106,18 @@ namespace UFEDLib
                         result.Body = field.Value.Trim();
                         break;
 
+                    case "Creation":
+                        if (field.Value.Trim() != "")
+                            result.Creation = DateTime.Parse(field.Value.Trim());
+                        break;
+
                     case "Folder":
                         result.Folder = field.Value.Trim();
+                        break;
+
+                    case "Modification":
+                        if (field.Value.Trim() != "")
+                            result.Modification = DateTime.Parse(field.Value.Trim());
                         break;
 
                     case "PositionAddress":
@@ -126,6 +128,10 @@ namespace UFEDLib
                         result.ServiceIdentifier = field.Value.Trim();
                         break;
 
+                    case "Source":
+                        result.Source = field.Value.Trim();
+                        break;
+
                     case "Summary":
                         result.Summary = field.Value.Trim();
                         break;
@@ -134,14 +140,8 @@ namespace UFEDLib
                         result.Title = field.Value.Trim();
                         break;
 
-                    case "Creation":
-                        if (field.Value.Trim() != "")
-                            result.Creation = DateTime.Parse(field.Value.Trim());
-                        break;
-
-                    case "Modification":
-                        if (field.Value.Trim() != "")
-                            result.Modification = DateTime.Parse(field.Value.Trim());
+                    case "UserMapping":
+                        result.UserMapping = field.Value.Trim();
                         break;
 
                     default:
@@ -160,12 +160,12 @@ namespace UFEDLib
             {
                 switch (modelField.Attribute("name").Value)
                 {
-                    case "Position":
-                        result.Position = Coordinate.ParseModel(modelField, debugAttributes);
-                        break;
-
                     case "Address":
                         result.Address = StreetAddress.ParseModel(modelField, debugAttributes);
+                        break;
+
+                    case "Position":
+                        result.Position = Coordinate.ParseModel(modelField, debugAttributes);
                         break;
 
                     default:
@@ -189,7 +189,6 @@ namespace UFEDLib
             {
                 switch (multiModelField.Attribute("name").Value)
                 {
-
                     case "Attachments":
                         result.Attachments = Attachment.ParseMultiModel(multiModelField, debugAttributes);
                         break;

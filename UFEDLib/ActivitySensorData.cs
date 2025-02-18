@@ -88,24 +88,31 @@ namespace UFEDLib
             {
                 switch (field.Attribute("name").Value)
                 {
+                    case "CreationTime":
+                        if (field.Value.Trim() != "")
+                            result.CreationTime = DateTime.Parse(field.Value.Trim());
+                        break;
+
                     case "DeviceName":
                         result.DeviceName = field.Value.Trim();
                         break;
 
-                    case "UserMapping":
-                        result.UserMapping = field.Value.Trim();
+                    case "DistanceTraveled":
+                        if (field.Value.Trim() != "")
+                        {
+                            string distanceTraveled = field.Value.Trim().Replace(",", ".");
+                            if (double.TryParse(distanceTraveled, CultureInfo.InvariantCulture, out double distanceTraveledValue))
+                                result.DistanceTraveled = distanceTraveledValue;
+                        }
                         break;
 
-                    case "Source":
-                        result.Source = field.Value.Trim();
-                        break;
-
-                    case "Name":
-                        result.Name = field.Value.Trim();
-                        break;
-
-                    case "SourceDeviceType":
-                        result.SourceDeviceType = field.Value.Trim();
+                    case "FlightsClimbed":
+                        if (field.Value.Trim() != "")
+                        {
+                            string flightsClimbed = field.Value.Trim().Replace(",", ".");
+                            if (double.TryParse(flightsClimbed, CultureInfo.InvariantCulture, out double flightsClimbedValue))
+                                result.FlightsClimbed = flightsClimbedValue;
+                        }
                         break;
 
                     case "From":
@@ -113,22 +120,16 @@ namespace UFEDLib
                             result.From = DateTime.Parse(field.Value.Trim());
                         break;
 
-                    case "To":
-                        if (field.Value.Trim() != "")
-                            result.To = DateTime.Parse(field.Value.Trim());
+                    case "Name":
+                        result.Name = field.Value.Trim();
                         break;
 
-                    case "CreationTime":
-                        if (field.Value.Trim() != "")
-                            result.CreationTime = DateTime.Parse(field.Value.Trim());
-                        break;
-
-                    case "DistanceTraveled":
+                    case "MaxHeartrate":
                         if (field.Value.Trim() != "")
                         {
-                            string distanceTraveled = field.Value.Trim().Replace(",", ".");
-                            if( double.TryParse(distanceTraveled, CultureInfo.InvariantCulture, out double distanceTraveledValue))
-                                result.DistanceTraveled = distanceTraveledValue;
+                            string maxHeartrate = field.Value.Trim().Replace(",", ".");
+                            if (double.TryParse(maxHeartrate, CultureInfo.InvariantCulture, out double maxHeartrateValue))
+                                result.MaxHeartrate = maxHeartrateValue;
                         }
                         break;
 
@@ -141,22 +142,17 @@ namespace UFEDLib
                         }
                         break;
 
-                    case "MaxHeartrate":
-                        if (field.Value.Trim() != "")
-                        {
-                            string maxHeartrate = field.Value.Trim().Replace(",", ".");
-                            if (double.TryParse(maxHeartrate, CultureInfo.InvariantCulture, out double maxHeartrateValue))
-                                result.MaxHeartrate = maxHeartrateValue;
-                        }
+                    case "Source":
+                        result.Source = field.Value.Trim();
                         break;
 
-                    case "FlightsClimbed":
+                    case "SourceDeviceType":
+                        result.SourceDeviceType = field.Value.Trim();
+                        break;
+
+                    case "To":
                         if (field.Value.Trim() != "")
-                        {
-                            string flightsClimbed = field.Value.Trim().Replace(",", ".");
-                            if(double.TryParse(flightsClimbed, CultureInfo.InvariantCulture, out double flightsClimbedValue))
-                                result.FlightsClimbed = flightsClimbedValue;
-                        }
+                            result.To = DateTime.Parse(field.Value.Trim());
                         break;
 
                     case "TotalSampleCount":
@@ -165,6 +161,10 @@ namespace UFEDLib
                             if (int.TryParse(field.Value.Trim(), out int totalSampleCount))
                                 result.TotalSampleCount = totalSampleCount;
                         }
+                        break;
+
+                    case "UserMapping":
+                        result.UserMapping = field.Value.Trim();
                         break;
 
 

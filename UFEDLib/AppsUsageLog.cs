@@ -80,32 +80,29 @@ namespace UFEDLib
             {
                 switch (field.Attribute("name").Value)
                 {
-                    case "UserMapping":
-                        result.UserMapping = field.Value.Trim();
-                        break;
-
-                    case "Source":
-                        result.Source = field.Value.Trim();
-                        break;
-
-                    case "ServiceIdentifier":
-                        result.ServiceIdentifier = field.Value.Trim();
-                        break;
-
-                    case "SubModule":
-                        result.SubModule = field.Value.Trim();
-                        break;
-
                     case "Action":
                         result.Action = field.Value.Trim();
+                        break;
+
+                    case "ArtifactFamily":
+                        result.ArtifactFamily = field.Value.Trim();
+                        break;
+
+                    case "EndTime":
+                        if (field.Value.Trim() != "")
+                            result.EndTime = DateTime.Parse(field.Value.Trim());
                         break;
 
                     case "Identifier":
                         result.Identifier = field.Value.Trim();
                         break;
 
-                    case "ArtifactFamily":
-                        result.ArtifactFamily = field.Value.Trim();
+                    case "ServiceIdentifier":
+                        result.ServiceIdentifier = field.Value.Trim();
+                        break;
+
+                    case "Source":
+                        result.Source = field.Value.Trim();
                         break;
 
                     case "StartTime":
@@ -113,9 +110,12 @@ namespace UFEDLib
                             result.StartTime = DateTime.Parse(field.Value.Trim());
                         break;
 
-                    case "EndTime":
-                        if (field.Value.Trim() != "")
-                            result.EndTime = DateTime.Parse(field.Value.Trim());
+                    case "SubModule":
+                        result.SubModule = field.Value.Trim();
+                        break;
+
+                    case "UserMapping":
+                        result.UserMapping = field.Value.Trim();
                         break;
 
                     default:

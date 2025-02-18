@@ -96,18 +96,6 @@ namespace UFEDLib
             {
                 switch (field.Attribute("name").Value)
                 {
-                    case "UserMapping":
-                        result.UserMapping = field.Value.Trim();
-                        break;
-
-                    case "Source":
-                        result.Source = field.Value.Trim();
-                        break;
-
-                    case "ServiceIdentifier":
-                        result.ServiceIdentifier = field.Value.Trim();
-                        break;
-
                     case "AccessGroup":
                         result.AccessGroup = field.Value.Trim();
                         break;
@@ -118,6 +106,16 @@ namespace UFEDLib
 
                     case "Data":
                         result.Data = field.Value.Trim();
+                        break;
+
+                    case "DateCreated":
+                        if (field.Value.Trim() != "")
+                            result.DateCreated = DateTime.Parse(field.Value.Trim());
+                        break;
+
+                    case "DateModified":
+                        if (field.Value.Trim() != "")
+                            result.DateModified = DateTime.Parse(field.Value.Trim());
                         break;
 
                     case "GenericAttribute":
@@ -136,18 +134,20 @@ namespace UFEDLib
                         result.Service = field.Value.Trim();
                         break;
 
+                    case "ServiceIdentifier":
+                        result.ServiceIdentifier = field.Value.Trim();
+                        break;
+
+                    case "Source":
+                        result.Source = field.Value.Trim();
+                        break;
+
                     case "Type":
                         result.Type = field.Value.Trim();
                         break;
 
-                    case "DateCreated":
-                        if (field.Value.Trim() != "")
-                            result.DateCreated = DateTime.Parse(field.Value.Trim());
-                        break;
-
-                    case "DateModified":
-                        if (field.Value.Trim() != "")
-                            result.DateModified = DateTime.Parse(field.Value.Trim());
+                    case "UserMapping":
+                        result.UserMapping = field.Value.Trim();
                         break;
 
                     default:

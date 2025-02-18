@@ -84,14 +84,6 @@ namespace UFEDLib
             {
                 switch (field.Attribute("name").Value)
                 {
-                    case "UserMapping":
-                        result.UserMapping = field.Value.Trim();
-                        break;
-
-                    case "Value":
-                        result.Value = field.Value.Trim();
-                        break;
-
                     case "Category":
                         result.Category = field.Value.Trim();
                         break;
@@ -99,6 +91,15 @@ namespace UFEDLib
                     case "Domain":
                         result.Domain = field.Value.Trim();
                         break;
+
+                    case "UserMapping":
+                        result.UserMapping = field.Value.Trim();
+                        break;
+
+                    case "Value":
+                        result.Value = field.Value.Trim();
+                        break;
+      
                     default:
                         if (debugAttributes)
                         {

@@ -121,29 +121,8 @@ namespace UFEDLib
                         result.Body = field.Value.Trim();
                         break;
 
-                    case "Id":
-                        result.Id = field.Value.Trim();
-                        break;
-
-                    case "Folder":
-                        result.Folder = field.Value.Trim();
-                        break;
-
-                    case "SourceApplication":
-                        result.SourceApplication = field.Value.Trim();
-                        break;
-
-                    case "TimeStamp":
-                        if (field.Value.Trim() != "")
-                            result.TimeStamp = DateTime.Parse(field.Value.Trim());
-                        break;
-
-                    case "Subject":
-                        result.Subject = field.Value.Trim();
-                        break;
-
-                    case "DeletionReason":
-                        result.DeletionReason = field.Value.Trim();
+                    case "ChatId":
+                        result.ChatId = field.Value.Trim();
                         break;
 
                     case "DateDeleted":
@@ -151,14 +130,42 @@ namespace UFEDLib
                             result.DateDeleted = DateTime.Parse(field.Value.Trim());
                         break;
 
+                    case "DateDelivered":
+                        if (field.Value.Trim() != "")
+                            result.DateDelivered = DateTime.Parse(field.Value.Trim());
+                        break;
+
                     case "DateRead":
                         if (field.Value.Trim() != "")
                             result.DateRead = DateTime.Parse(field.Value.Trim());
                         break;
 
-                    case "DateDelivered":
-                        if (field.Value.Trim() != "")
-                            result.DateDelivered = DateTime.Parse(field.Value.Trim());
+                    case "DeletionReason":
+                        result.DeletionReason = field.Value.Trim();
+                        break;
+
+                    case "Erased":
+                        result.Erased = field.Value.Trim();
+                        break;
+
+                    case "Folder":
+                        result.Folder = field.Value.Trim();
+                        break;
+
+                    case "FromIsOwner":
+                        result.FromIsOwner = field.Value.Trim();
+                        break;
+
+                    case "Id":
+                        result.Id = field.Value.Trim();
+                        break;
+
+                    case "Identifier":
+                        result.Identifier = field.Value.Trim();
+                        break;
+
+                    case "IsLocationSharing":
+                        result.IsLocationSharing = field.Value.Trim();
                         break;
 
                     case "Label":
@@ -177,30 +184,6 @@ namespace UFEDLib
                         result.Priority = field.Value.Trim();
                         break;
 
-                    case "ChatId":
-                        result.ChatId = field.Value.Trim();
-                        break;
-
-                    case "IsLocationSharing":
-                        result.IsLocationSharing = field.Value.Trim();
-                        break;
-
-                    case "Erased":
-                        result.Erased = field.Value.Trim();
-                        break;
-
-                    case "Source":
-                        result.Source = field.Value.Trim();
-                        break;
-
-                    case "FromIsOwner":
-                        result.FromIsOwner = field.Value.Trim();
-                        break;
-
-                    case "Identifier":
-                        result.Identifier = field.Value.Trim();
-                        break;
-
                     case "SelfDestructDuration":
                         if (field.Value.Trim() != "")
                             result.SelfDestructDuration = TimeSpan.Parse(field.Value.Trim());
@@ -214,8 +197,25 @@ namespace UFEDLib
                         result.SMSC = field.Value.Trim();
                         break;
 
+                    case "Source":
+                        result.Source = field.Value.Trim();
+                        break;
+
+                    case "SourceApplication":
+                        result.SourceApplication = field.Value.Trim();
+                        break;
+
                     case "Status":
                         result.Status = field.Value.Trim();
+                        break;
+
+                    case "Subject":
+                        result.Subject = field.Value.Trim();
+                        break;
+
+                    case "TimeStamp":
+                        if (field.Value.Trim() != "")
+                            result.TimeStamp = DateTime.Parse(field.Value.Trim());
                         break;
 
                     case "Type":
@@ -225,6 +225,7 @@ namespace UFEDLib
                     case "UserMapping":
                         result.UserMapping = field.Value.Trim();
                         break;
+
                     default:
                         if (debugAttributes)
                         {
@@ -244,9 +245,11 @@ namespace UFEDLib
                     case "Attachment":
                         result.Attachment = Attachment.ParseModel(modelField, debugAttributes);
                         break;
+
                     case "From":
                         result.From = Party.ParseModel(modelField, debugAttributes);
                         break;
+
                     case "Position":
                         result.Position = Coordinate.ParseModel(modelField, debugAttributes);
                         break;
@@ -295,17 +298,17 @@ namespace UFEDLib
                         result.Attachments = Attachment.ParseMultiModel(multiModelField, debugAttributes);
                         break;
 
+                    case "MessageExtraData":
+                        // TODO: Implement MessageExtraDataParser
+                        //result.MessageExtraData = MessageExtraDataParser.Parse(multiModelField, debugAttributes);
+                        break;
+
                     case "SharedContacts":
                         result.SharedContacts = Contact.ParseMultiModel(multiModelField, debugAttributes);
                         break;
 
                     case "To":
                         result.To = Party.ParseMultiModel(multiModelField);
-                        break;
-
-                    case "MessageExtraData":
-                        // TODO: Implement MessageExtraDataParser
-                        //result.MessageExtraData = MessageExtraDataParser.Parse(multiModelField, debugAttributes);
                         break;
 
                     default:

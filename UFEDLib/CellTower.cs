@@ -82,12 +82,16 @@ namespace UFEDLib
             {
                 switch (field.Attribute("name").Value)
                 {
-                    case "UserMapping":
-                        result.UserMapping = field.Value.Trim();
+                    case "BID":
+                        result.BID = field.Value.Trim();
                         break;
 
-                    case "Type":
-                        result.Type = field.Value.Trim();
+                    case "CID":
+                        result.CID = field.Value.Trim();
+                        break;
+
+                    case "LAC":
+                        result.LAC = field.Value.Trim();
                         break;
 
                     case "MCC":
@@ -98,24 +102,12 @@ namespace UFEDLib
                         result.MNC = field.Value.Trim();
                         break;
 
-                    case "LAC":
-                        result.LAC = field.Value.Trim();
-                        break;
-
-                    case "CID":
-                        result.CID = field.Value.Trim();
-                        break;
-
                     case "NID":
                         result.NID = field.Value.Trim();
                         break;
 
                     case "Package":
                         result.Package = field.Value.Trim();
-                        break;
-
-                    case "BID":
-                        result.BID = field.Value.Trim();
                         break;
 
                     case "SID":
@@ -125,6 +117,14 @@ namespace UFEDLib
                     case "TimeStamp":
                         if (field.Value.Trim() != "")
                             result.TimeStamp = DateTime.Parse(field.Value.Trim());
+                        break;
+
+                    case "Type":
+                        result.Type = field.Value.Trim();
+                        break;
+
+                    case "UserMapping":
+                        result.UserMapping = field.Value.Trim();
                         break;
 
                     default:

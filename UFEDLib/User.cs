@@ -80,12 +80,12 @@ namespace UFEDLib
             {
                 switch (field.Attribute("name").Value)
                 {
-                    case "UserMapping":
-                        result.UserMapping = field.Value.Trim();
-                        break;
-
                     case "Identifier":
                         result.Identifier = field.Value.Trim();
+                        break;
+
+                    case "Name":
+                        result.Name = field.Value.Trim();
                         break;
 
                     case "SerialNumber":
@@ -93,8 +93,8 @@ namespace UFEDLib
                             result.SerialNumber = long.Parse(field.Value.Trim());
                         break;
 
-                    case "Name":
-                        result.Name = field.Value.Trim();
+                    case "UserMapping":
+                        result.UserMapping = field.Value.Trim();
                         break;
 
                     case "UserType":

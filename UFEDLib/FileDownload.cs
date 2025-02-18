@@ -98,16 +98,16 @@ namespace UFEDLib
                         result.DownloadState = field.Value.Trim();
                         break;
 
+                    case "EndTime":
+                        if (field.Value.Trim() != "")
+                            result.EndTime = DateTime.Parse(field.Value.Trim());
+                        break;
+
                     case "FileSize":
                         if (long.TryParse(field.Value.Trim(), out long fileSize))
                         {
                             result.FileSize = fileSize;
                         }
-                        break;
-
-                    case "EndTime":
-                        if (field.Value.Trim() != "")
-                            result.EndTime = DateTime.Parse(field.Value.Trim());
                         break;
 
                     case "LastAccessed":

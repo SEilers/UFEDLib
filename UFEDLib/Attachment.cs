@@ -92,16 +92,16 @@ namespace UFEDLib
                         result.Filename = field.Value.Trim();
                         break;
 
+                    case "Source":
+                        result.Source = field.Value.Trim();
+                        break;
+
                     case "Title":
                         result.Title = field.Value.Trim();
                         break;
 
                     case "URL":
                         result.URL = field.Value.Trim();
-                        break;
-
-                    case "Source":
-                        result.Source = field.Value.Trim();
                         break;
 
                     case "UserMapping":

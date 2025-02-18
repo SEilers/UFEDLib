@@ -120,6 +120,14 @@ namespace UFEDLib
             {
                 switch (field.Attribute("name").Value)
                 {
+                    case "Account":
+                        result.Account = field.Value.Trim();
+                        break;
+
+                    case "Group":
+                        result.Group = field.Value.Trim();
+                        break;
+
                     case "Id":
                         result.Id = field.Value.Trim();
                         break;
@@ -128,25 +136,24 @@ namespace UFEDLib
                         result.Name = field.Value.Trim();
                         break;
 
-                    case "Source":
-                        result.Source = field.Value.Trim();
-                        break;
-
-                    case "Group":
-                        result.Group = field.Value.Trim();
-                        break;
-
-                    case "Account":
-                        result.Account = field.Value.Trim();
-                        break;
-
                     case "ServiceIdentifier":
                         result.ServiceIdentifier = field.Value.Trim();
+                        break;
+
+                    case "Source":
+                        result.Source = field.Value.Trim();
                         break;
 
                     case "TimeContacted":
                         if (field.Value.Trim() != "")
                             result.TimeContacted = DateTime.Parse(field.Value.Trim());
+                        break;
+
+                    case "TimesContacted":
+                        if (int.TryParse(field.Value.Trim(), out int timesContacted))
+                        {
+                            result.TimesContacted = timesContacted;
+                        }
                         break;
 
                     case "TimeCreated":
@@ -157,13 +164,6 @@ namespace UFEDLib
                     case "TimeModified":
                         if (field.Value.Trim() != "")
                             result.TimeModified = DateTime.Parse(field.Value.Trim());
-                        break;
-
-                    case "TimesContacted":
-                        if(int.TryParse(field.Value.Trim(), out int timesContacted))
-                        {
-                            result.TimesContacted = timesContacted;
-                        }
                         break;
 
                     case "Type":
@@ -198,12 +198,12 @@ namespace UFEDLib
             {
                 switch (multiField.Attribute("name").Value)
                 {
-                    case "Notes":
-                        result.Notes = multiField.Elements(xNamespace + "field").Select(x => x.Value.Trim()).ToList();
-                        break;
-
                     case "InteractionStatuses":
                         result.InteractionStatuses = multiField.Elements(xNamespace + "field").Select(x => x.Value.Trim()).ToList();
+                        break;
+
+                    case "Notes":
+                        result.Notes = multiField.Elements(xNamespace + "field").Select(x => x.Value.Trim()).ToList();
                         break;
 
                     case "UserTags":
@@ -238,16 +238,16 @@ namespace UFEDLib
                         }
                         break;
 
-                    case "Photos":
-                        result.Photos = ContactPhoto.ParseMultiModel(multiModelField, debugAttributes);
+                    case "Addresses":
+                        result.Addresses = StreetAddress.ParseMultiModel(multiModelField, debugAttributes);
                         break;
 
                     case "Entries":
                         result.Entries = ContactEntry.ParseMultiModel(multiModelField, debugAttributes);
                         break;
 
-                    case "Addresses":
-                        result.Addresses = StreetAddress.ParseMultiModel(multiModelField, debugAttributes);
+                    case "Photos":
+                        result.Photos = ContactPhoto.ParseMultiModel(multiModelField, debugAttributes);
                         break;
 
                     case "Organizations":

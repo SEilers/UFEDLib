@@ -98,21 +98,8 @@ namespace UFEDLib
                         result.ArtifactFamily = field.Value.Trim();
                         break;
 
-                    case "UserMapping":
-                        result.UserMapping = field.Value.Trim();
-                        break;
-
-                    case "Source":
-                        result.Source = field.Value.Trim();
-                        break;
-
-                    case "ServiceIdentifier":
-                        result.ServiceIdentifier = field.Value.Trim();
-                        break;
-
-                    case "TimeStamp":
-                        if (field.Value.Trim() != "")
-                            result.TimeStamp = DateTime.Parse(field.Value.Trim());
+                    case "BSSId":
+                        result.BSSId = field.Value.Trim();
                         break;
 
                     case "EndTime":
@@ -120,16 +107,14 @@ namespace UFEDLib
                             result.EndTime = DateTime.Parse(field.Value.Trim());
                         break;
 
-                    case "BSSId":
-                        result.BSSId = field.Value.Trim();
+                    case "LastAutoConnection":
+                        if (field.Value.Trim() != "")
+                            result.LastAutoConnection = DateTime.Parse(field.Value.Trim());
                         break;
 
-                    case "SSId":
-                        result.SSId = field.Value.Trim();
-                        break;
-
-                    case "SecurityMode":
-                        result.SecurityMode = field.Value.Trim();
+                    case "LastConnection":
+                        if (field.Value.Trim() != "")
+                            result.LastConnection = DateTime.Parse(field.Value.Trim());
                         break;
 
                     case "NWConnectionType":
@@ -140,18 +125,33 @@ namespace UFEDLib
                         result.Package = field.Value.Trim();
                         break;
 
-                    case "LastConnection":
-                        if (field.Value.Trim() != "")
-                            result.LastConnection = DateTime.Parse(field.Value.Trim());
-                        break;
-
-                    case "LastAutoConnection":
-                        if (field.Value.Trim() != "")
-                            result.LastAutoConnection = DateTime.Parse(field.Value.Trim());
-                        break;
-
                     case "Password":
                         result.Password = field.Value.Trim();
+                        break;
+
+                    case "SecurityMode":
+                        result.SecurityMode = field.Value.Trim();
+                        break;
+
+                    case "ServiceIdentifier":
+                        result.ServiceIdentifier = field.Value.Trim();
+                        break;
+
+                    case "Source":
+                        result.Source = field.Value.Trim();
+                        break;
+
+                    case "SSId":
+                        result.SSId = field.Value.Trim();
+                        break;
+
+                    case "TimeStamp":
+                        if (field.Value.Trim() != "")
+                            result.TimeStamp = DateTime.Parse(field.Value.Trim());
+                        break;
+
+                    case "UserMapping":
+                        result.UserMapping = field.Value.Trim();
                         break;
 
                     default:

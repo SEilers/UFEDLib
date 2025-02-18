@@ -17,8 +17,8 @@ namespace UFEDLib
 
         #region fields
         public string Company { get; set; }
-        public string CVV { get; set; }
         public string CreditCardNumber { get; set; }
+        public string CVV { get; set; }
         public DateTime DateLastUsed { get; set; }
         public DateTime ExpirationDate { get; set; }
         public string NameOnCard { get; set; }
@@ -85,12 +85,12 @@ namespace UFEDLib
                         result.Company = field.Value.Trim();
                         break;
 
-                    case "CVV":
-                        result.CVV = field.Value.Trim();
-                        break;
-
                     case "CreditCardNumber":
                         result.CreditCardNumber = field.Value.Trim();
+                        break;
+
+                    case "CVV":
+                        result.CVV = field.Value.Trim();
                         break;
 
                     case "DateLastUsed":

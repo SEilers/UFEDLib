@@ -77,9 +77,11 @@ namespace UFEDLib
                     case "Name":
                         result.Name = field.Value.Trim();
                         break;
+
                     case "UserMapping":
                         result.UserMapping = field.Value.Trim();
                         break;
+
                     default:
                         if (debugAttributes)
                         {
@@ -105,8 +107,10 @@ namespace UFEDLib
                         // TODO: Check for an example
                         result.Url = multiField.Value.Trim();
                         break;
+
                     case "Data":
                         break;
+
                     default:
                         if (debugAttributes)
                         {

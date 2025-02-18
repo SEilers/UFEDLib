@@ -99,41 +99,8 @@ namespace UFEDLib
             {
                 switch (field.Attribute("name").Value)
                 {
-                    case "Source":
-                        result.Source = field.Value.Trim();
-                        break;
-
-                    case "UserMapping":
-                        result.UserMapping = field.Value.Trim();
-                        break;
-
-                    case "ServiceIdentifier":
-                        result.ServiceIdentifier = field.Value.Trim();
-                        break;
-
                     case "Body":
                         result.Body = field.Value.Trim();
-                        break;
-
-                    case "NotificationId":
-                        result.NotificationId = field.Value.Trim();
-                        break;
-
-                    case "Type":
-                        result.Type = field.Value.Trim();
-                        break;
-
-                    case "TimeStamp":
-                        if (field.Value.Trim() != "")
-                            result.TimeStamp = DateTime.Parse(field.Value.Trim());
-                        break;
-
-                    case "Subject":
-                        result.Subject = field.Value.Trim();
-                        break;
-
-                    case "PositionAddress":
-                        result.PositionAddress = field.Value.Trim();
                         break;
 
                     case "DateRead":
@@ -141,8 +108,41 @@ namespace UFEDLib
                             result.DateRead = DateTime.Parse(field.Value.Trim());
                         break;
 
+                    case "NotificationId":
+                        result.NotificationId = field.Value.Trim();
+                        break;
+
+                    case "PositionAddress":
+                        result.PositionAddress = field.Value.Trim();
+                        break;
+
+                    case "ServiceIdentifier":
+                        result.ServiceIdentifier = field.Value.Trim();
+                        break;
+
+                    case "Source":
+                        result.Source = field.Value.Trim();
+                        break;
+
                     case "Status":
                         result.Status = field.Value.Trim();
+                        break;
+
+                    case "Subject":
+                        result.Subject = field.Value.Trim();
+                        break;
+
+                    case "TimeStamp":
+                        if (field.Value.Trim() != "")
+                            result.TimeStamp = DateTime.Parse(field.Value.Trim());
+                        break;
+
+                    case "Type":
+                        result.Type = field.Value.Trim();
+                        break;
+
+                    case "UserMapping":
+                        result.UserMapping = field.Value.Trim();
                         break;
 
                     default:
@@ -161,13 +161,14 @@ namespace UFEDLib
             {
                 switch (modelField.Attribute("name").Value)
                 {
-                    case "To":
-                        result.To = Party.ParseModel(modelField, debugAttributes);
-                        break;
                     case "Position":
                         result.Position = Coordinate.ParseModel(modelField, debugAttributes);
                         break;
 
+                    case "To":
+                        result.To = Party.ParseModel(modelField, debugAttributes);
+                        break;
+                    
                     default:
                         if (debugAttributes)
                         {
@@ -204,13 +205,14 @@ namespace UFEDLib
             {
                 switch (multiModelField.Attribute("name").Value)
                 {
-                    case "Participants":
-                        result.Participants = Party.ParseMultiModel(multiModelField);
-                        break;
                     case "Attachments":
                         result.Attachments = Attachment.ParseMultiModel(multiModelField, debugAttributes);
                         break;
 
+                    case "Participants":
+                        result.Participants = Party.ParseMultiModel(multiModelField);
+                        break;
+                    
                     default:
                         if (debugAttributes)
                         {

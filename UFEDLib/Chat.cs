@@ -95,6 +95,10 @@ namespace UFEDLib
                         result.Account = field.Value.Trim();
                         break;
 
+                    case "ChatType":
+                        result.ChatType = field.Value.Trim();
+                        break;
+
                     case "Description":
                         result.Description = field.Value.Trim();
                         break;
@@ -127,10 +131,6 @@ namespace UFEDLib
 
                     case "UserMapping":
                         result.UserMapping = field.Value.Trim();
-                        break;
-
-                    case "ChatType":
-                        result.ChatType = field.Value.Trim();
                         break;
 
                     default:

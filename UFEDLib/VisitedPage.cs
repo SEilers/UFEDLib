@@ -49,8 +49,6 @@ namespace UFEDLib
                 ParseModelFields(modelFieldElements, result, debugAttributes);
                 ParseMultiFields(multiFieldElements, result, debugAttributes);
                 ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
-
-
             }
             catch (Exception ex)
             {
@@ -90,6 +88,10 @@ namespace UFEDLib
                         result.ArtifactFamily = field.Value.Trim();
                         break;
 
+                    case "CanRebuildCacheFile":
+                        result.CanRebuildCacheFile = field.Value.Trim();
+                        break;
+
                     case "LastVisited":
                         if (field.Value.Trim() != "")
                             result.LastVisited = DateTime.Parse(field.Value.Trim());
@@ -107,10 +109,6 @@ namespace UFEDLib
                         result.Title = field.Value.Trim();
                         break;
 
-                    case "UserMapping":
-                        result.UserMapping = field.Value.Trim();
-                        break;
-
                     case "Url":
                         result.Url = field.Value.Trim();
                         break;
@@ -119,14 +117,14 @@ namespace UFEDLib
                         result.UrlCacheFile = field.Value.Trim();
                         break;
 
+                    case "UserMapping":
+                        result.UserMapping = field.Value.Trim();
+                        break;
+
                     case "VisitCount":
                         if (field.Value.Trim() != "")
                             if( int.TryParse(field.Value.Trim(), out int visitCount))
                                 result.VisitCount = visitCount;
-                        break;
-
-                    case "CanRebuildCacheFile":
-                        result.CanRebuildCacheFile = field.Value.Trim();
                         break;
 
                     default:

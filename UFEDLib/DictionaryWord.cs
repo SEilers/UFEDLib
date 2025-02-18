@@ -75,32 +75,32 @@ namespace UFEDLib
             {
                 switch (field.Attribute("name").Value)
                 {
-                    case "UserMapping":
-                        result.UserMapping = field.Value.Trim();
-                        break;
-
-                    case "Source":
-                        result.Source = field.Value.Trim();
+                    case "Frequency":
+                        if (field.Value.Trim() != "")
+                        {
+                            if (int.TryParse(field.Value.Trim(), out int frequency))
+                                result.Frequency = frequency;
+                        }
                         break;
 
                     case "Locale":
                         result.Locale = field.Value.Trim();
                         break;
 
+                    case "Source":
+                        result.Source = field.Value.Trim();
+                        break;
+
                     case "UsagePattern":
                         result.UsagePattern = field.Value.Trim();
                         break;
 
-                    case "Word":
-                        result.Word = field.Value.Trim();
+                    case "UserMapping":
+                        result.UserMapping = field.Value.Trim();
                         break;
 
-                    case "Frequency":
-                        if (field.Value.Trim() != "")
-                        {
-                            if( int.TryParse(field.Value.Trim(), out int frequency))
-                                result.Frequency = frequency;
-                        }
+                    case "Word":
+                        result.Word = field.Value.Trim();
                         break;
 
                     default:

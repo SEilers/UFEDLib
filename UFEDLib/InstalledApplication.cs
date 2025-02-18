@@ -104,20 +104,12 @@ namespace UFEDLib
             {
                 switch (field.Attribute("name").Value)
                 {
-                    case "ArtifactFamily":
-                        result.ArtifactFamily = field.Value.Trim();
-                        break;
-
-                    case "UserMapping":
-                        result.UserMapping = field.Value.Trim();
-                        break;
-
-                    case "Source":
-                        result.Source = field.Value.Trim();
-                        break;
-
                     case "AppGUID":
                         result.AppGUID = field.Value.Trim();
+                        break;
+
+                    case "ArtifactFamily":
+                        result.ArtifactFamily = field.Value.Trim();
                         break;
 
                     case "Copyright":
@@ -128,12 +120,31 @@ namespace UFEDLib
                         result.DecodingStatus = field.Value.Trim();
                         break;
 
-                    case "Identifier":
-                        result.Identifier = field.Value.Trim();
+                    case "DeletedDate":
+                        if (field.Value.Trim() != "")
+                            result.DeletedDate = DateTime.Parse(field.Value.Trim());
                         break;
 
                     case "Description":
                         result.Description = field.Value.Trim();
+                        break;
+               
+                    case "Identifier":
+                        result.Identifier = field.Value.Trim();
+                        break;
+
+                    case "InstallDate":
+                        if (field.Value.Trim() != "")
+                            result.InstallDate = DateTime.Parse(field.Value.Trim());
+                        break;
+
+                    case "IsEmulatable":
+                        result.IsEmulatable = field.Value.Trim();
+                        break;
+
+                    case "LastLaunched":
+                        if (field.Value.Trim() != "")
+                            result.LastLaunched = DateTime.Parse(field.Value.Trim());
                         break;
 
                     case "Name":
@@ -144,36 +155,25 @@ namespace UFEDLib
                         result.OperationMode = field.Value.Trim();
                         break;
 
-                    case "IsEmulatable":
-                        result.IsEmulatable = field.Value.Trim();
-                        break;
-
-                    case "Version":
-                        result.Version = field.Value.Trim();
-                        break;
-
-                    case "DeletedDate":
-                        if (field.Value.Trim() != "")
-                            result.DeletedDate = DateTime.Parse(field.Value.Trim());
-                        break;
-
-                    case "LastLaunched":
-                        if (field.Value.Trim() != "")
-                            result.LastLaunched = DateTime.Parse(field.Value.Trim());
-                        break;
-
                     case "PurchaseDate":
                         if (field.Value.Trim() != "")
                             result.PurchaseDate = DateTime.Parse(field.Value.Trim());
                         break;
 
-                    case "InstallDate":
-                        if (field.Value.Trim() != "")
-                            result.InstallDate = DateTime.Parse(field.Value.Trim());
-                        break;
-
                     case "ServiceIdentifier":
                         result.ServiceIdentifier = field.Value.Trim();
+                        break;
+
+                    case "Source":
+                        result.Source = field.Value.Trim();
+                        break;
+
+                    case "UserMapping":
+                        result.UserMapping = field.Value.Trim();
+                        break;
+
+                    case "Version":
+                        result.Version = field.Value.Trim();
                         break;
 
                     default:

@@ -96,16 +96,21 @@ namespace UFEDLib
             {
                 switch (field.Attribute("name").Value)
                 {
-                    case "UserMapping":
-                        result.UserMapping = field.Value.Trim();
-                        break;
-
                     case "Account":
                         result.Account = field.Value.Trim();
                         break;
 
+                    case "EndTime":
+                        if (field.Value.Trim() != "")
+                            result.EndTime = DateTime.Parse(field.Value.Trim());
+                        break;
+
                     case "Name":
                         result.Name = field.Value.Trim();
+                        break;
+
+                    case "ServiceIdentifier":
+                        result.ServiceIdentifier = field.Value.Trim();
                         break;
 
                     case "Source":
@@ -117,17 +122,12 @@ namespace UFEDLib
                             result.StartTime = DateTime.Parse(field.Value.Trim());
                         break;
 
-                    case "EndTime":
-                        if (field.Value.Trim() != "")
-                            result.EndTime = DateTime.Parse(field.Value.Trim());
-                        break;
-
-                    case "ServiceIdentifier":
-                        result.ServiceIdentifier = field.Value.Trim();
-                        break;
-
                     case "Type":
                         result.Type = field.Value.Trim();
+                        break;
+
+                    case "UserMapping":
+                        result.UserMapping = field.Value.Trim();
                         break;
 
                     default:
@@ -138,7 +138,6 @@ namespace UFEDLib
                         break;
                 }
             }
-
         }
 
         public static void ParseModelFields(IEnumerable<XElement> modelFieldElements, Journey result, bool debugAttributes = false)

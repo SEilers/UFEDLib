@@ -101,16 +101,8 @@ namespace UFEDLib
             {
                 switch (field.Attribute("name").Value)
                 {
-                    case "Folder":
-                        result.Folder = field.Value.Trim();
-                        break;
-
-                    case "Status":
-                        result.Status = field.Value.Trim();
-                        break;
-
-                    case "Subject":
-                        result.Subject = field.Value.Trim();
+                    case "Account":
+                        result.Account = field.Value.Trim();
                         break;
 
                     case "Body":
@@ -121,9 +113,8 @@ namespace UFEDLib
                         result.EmailHeader = field.Value.Trim();
                         break;
 
-                    case "TimeStamp":
-                        if (field.Value.Trim() != "")
-                            result.TimeStamp = DateTime.Parse(field.Value.Trim());
+                    case "Folder":
+                        result.Folder = field.Value.Trim();
                         break;
 
                     case "Priority":
@@ -142,12 +133,21 @@ namespace UFEDLib
                         result.Source = field.Value.Trim();
                         break;
 
-                    case "UserMapping":
-                        result.UserMapping = field.Value.Trim();
+                    case "Status":
+                        result.Status = field.Value.Trim();
                         break;
 
-                    case "Account":
-                        result.Account = field.Value.Trim();
+                    case "Subject":
+                        result.Subject = field.Value.Trim();
+                        break;
+
+                    case "TimeStamp":
+                        if (field.Value.Trim() != "")
+                            result.TimeStamp = DateTime.Parse(field.Value.Trim());
+                        break;
+
+                    case "UserMapping":
+                        result.UserMapping = field.Value.Trim();
                         break;
 
                     default:
@@ -206,20 +206,20 @@ namespace UFEDLib
             {
                 switch (multiModelField.Attribute("name").Value)
                 {
-                    case "To":
-                        result.To = Party.ParseMultiModel(multiModelField, debugAttributes);
-                        break;
-
-                    case "Cc":
-                        result.Cc = Party.ParseMultiModel(multiModelField, debugAttributes);
+                    case "Attachments":
+                        result.Attachments = Attachment.ParseMultiModel(multiModelField, debugAttributes);
                         break;
 
                     case "Bcc":
                         result.Bcc = Party.ParseMultiModel(multiModelField, debugAttributes);
                         break;
 
-                    case "Attachments":
-                        result.Attachments = Attachment.ParseMultiModel(multiModelField, debugAttributes);
+                    case "Cc":
+                        result.Cc = Party.ParseMultiModel(multiModelField, debugAttributes);
+                        break;
+
+                    case "To":
+                        result.To = Party.ParseMultiModel(multiModelField, debugAttributes);
                         break;
 
                     default:

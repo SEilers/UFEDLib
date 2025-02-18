@@ -96,6 +96,40 @@ namespace UFEDLib
                         }
                         break;
 
+                    case "ActiveTime":
+                        if (field.Value.Trim() != "")
+                            result.ActiveTime = TimeSpan.Parse(field.Value.Trim());
+                        break;
+
+                    case "BackgroundTime":
+                        if (field.Value.Trim() != "")
+                            result.BackgroundTime = TimeSpan.Parse(field.Value.Trim());
+                        break;
+
+                    case "Date":
+                        if (field.Value.Trim() != "")
+                            result.Date = DateTime.Parse(field.Value.Trim());
+                        break;
+
+                    case "EndTime":
+                        if (field.Value.Trim() != "")
+                            result.EndTime = DateTime.Parse(field.Value.Trim());
+                        break;
+
+                    case "Identifier":
+                        result.Identifier = field.Value.Trim();
+                        break;
+
+                    case "LastLaunch":
+                        if (field.Value.Trim() != "")
+                            result.LastLaunch = DateTime.Parse(field.Value.Trim());
+                        break;
+
+                    case "LastUsageDuration":
+                        if (field.Value.Trim() != "")
+                            result.LastUsageDuration = TimeSpan.Parse(field.Value.Trim());
+                        break;
+
                     case "LaunchCount":
                         if (field.Value.Trim() != "")
                         {
@@ -104,21 +138,8 @@ namespace UFEDLib
                         }
                         break;
 
-                    case "UserMapping":
-                        result.UserMapping = field.Value.Trim();
-                        break;
-
-                    case "Source":
-                        result.Source = field.Value.Trim();
-                        break;
-
-                    case "Identifier":
-                        result.Identifier = field.Value.Trim();
-                        break;
-
-                    case "Date":
-                        if (field.Value.Trim() != "")
-                            result.Date = DateTime.Parse(field.Value.Trim());
+                    case "Name":
+                        result.Name = field.Value.Trim();
                         break;
 
                     case "StartTime":
@@ -126,33 +147,12 @@ namespace UFEDLib
                             result.StartTime = DateTime.Parse(field.Value.Trim());
                         break;
 
-                    case "EndTime":
-                        if (field.Value.Trim() != "")
-                            result.EndTime = DateTime.Parse(field.Value.Trim());
+                    case "Source":
+                        result.Source = field.Value.Trim();
                         break;
 
-                    case "LastLaunch":
-                        if (field.Value.Trim() != "")
-                            result.LastLaunch = DateTime.Parse(field.Value.Trim());
-                        break;
-
-                    case "Name":
-                        result.Name = field.Value.Trim();
-                        break;
-
-                    case "ActiveTime":
-                        if (field.Value.Trim() != "")
-                            result.ActiveTime = TimeSpan.Parse(field.Value.Trim());
-                        break;
-
-                    case "LastUsageDuration":
-                        if (field.Value.Trim() != "")
-                            result.LastUsageDuration = TimeSpan.Parse(field.Value.Trim());
-                        break;
-
-                    case "BackgroundTime":
-                        if (field.Value.Trim() != "")
-                            result.BackgroundTime = TimeSpan.Parse(field.Value.Trim());
+                    case "UserMapping":
+                        result.UserMapping = field.Value.Trim();
                         break;
 
                     default:

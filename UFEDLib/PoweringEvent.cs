@@ -82,14 +82,6 @@ namespace UFEDLib
             {
                 switch (field.Attribute("name").Value)
                 {
-                    case "Source":
-                        result.Source = field.Value.Trim();
-                        break;
-
-                    case "UserMapping":
-                        result.UserMapping = field.Value.Trim();
-                        break;
-
                     case "Description":
                         result.Description = field.Value.Trim();
                         break;
@@ -102,9 +94,17 @@ namespace UFEDLib
                         result.Event = field.Value.Trim();
                         break;
 
+                    case "Source":
+                        result.Source = field.Value.Trim();
+                        break;
+
                     case "TimeStamp":
                         if (field.Value.Trim() != "")
                             result.TimeStamp = DateTime.Parse(field.Value.Trim());
+                        break;
+
+                    case "UserMapping":
+                        result.UserMapping = field.Value.Trim();
                         break;
 
                     default:

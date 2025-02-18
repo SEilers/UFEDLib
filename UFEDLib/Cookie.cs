@@ -80,47 +80,25 @@ namespace UFEDLib
             {
                 try
                 {
-
-
                     switch (field.Attribute("name").Value)
                     {
-                        case "UserMapping":
-                            result.UserMapping = field.Value.Trim();
-                            break;
-
-                        case "Source":
-                            result.Source = field.Value.Trim();
-                            break;
-
-                        case "ServiceIdentifier":
-                            result.ServiceIdentifier = field.Value.Trim();
+                        case "CreationTime":
+                            if (field.Value.Trim() != "")
+                                if (DateTime.TryParse(field.Value.Trim(), out DateTime dt))
+                                {
+                                    result.CreationTime = dt;
+                                }
                             break;
 
                         case "Domain":
                             result.Domain = field.Value.Trim();
                             break;
 
-                        case "Name":
-                            result.Name = field.Value.Trim();
-                            break;
-
-                        case "Path":
-                            result.Path = field.Value.Trim();
-                            break;
-
-                        case "Value":
-                            result.Value = field.Value.Trim();
-                            break;
-
-                        case "RelatedApplication":
-                            result.RelatedApplication = field.Value.Trim();
-                            break;
-
-                        case "CreationTime":
+                        case "Expiry":
                             if (field.Value.Trim() != "")
-                                if( DateTime.TryParse(field.Value.Trim(), out DateTime dt))
+                                if (DateTime.TryParse(field.Value.Trim(), out DateTime dt))
                                 {
-                                    result.CreationTime = dt;
+                                    result.Expiry = dt;
                                 }
                             break;
 
@@ -132,12 +110,32 @@ namespace UFEDLib
                                 }
                             break;
 
-                        case "Expiry":
-                            if (field.Value.Trim() != "")
-                                if (DateTime.TryParse(field.Value.Trim(), out DateTime dt))
-                                {
-                                    result.Expiry = dt;
-                                }
+                        case "Name":
+                            result.Name = field.Value.Trim();
+                            break;
+
+                        case "Path":
+                            result.Path = field.Value.Trim();
+                            break;
+
+                        case "RelatedApplication":
+                            result.RelatedApplication = field.Value.Trim();
+                            break;
+
+                        case "ServiceIdentifier":
+                            result.ServiceIdentifier = field.Value.Trim();
+                            break;
+
+                        case "Source":
+                            result.Source = field.Value.Trim();
+                            break;
+
+                        case "UserMapping":
+                            result.UserMapping = field.Value.Trim();
+                            break;
+
+                        case "Value":
+                            result.Value = field.Value.Trim();
                             break;
 
                         default:

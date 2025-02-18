@@ -105,58 +105,18 @@ namespace UFEDLib
             {
                 switch (field.Attribute("name").Value)
                 {
-                    case "Source":
-                        result.Source = field.Value.Trim();
-                        break;
-
-                    case "UserMapping":
-                        result.UserMapping = field.Value.Trim();
-                        break;
-
-                    case "TimeStamp":
-                        if (field.Value.Trim() != "")
-                            result.TimeStamp = DateTime.Parse(field.Value.Trim());
-                        break;
-
-                    case "EndTime":
-                        if (field.Value.Trim() != "")
-                            result.EndTime = DateTime.Parse(field.Value.Trim());
-                        break;
-
                     case "Account":
                         result.Account = field.Value.Trim();
                         break;
 
-                    case "ServiceIdentifier":
-                        result.ServiceIdentifier = field.Value.Trim();
+                    case "AccountLocationAffiliation":
+                        result.AccountLocationAffiliation = field.Value.Trim();
                         break;
 
-                    case "Name":
-                        result.Name = field.Value.Trim();
-                        break;
-
-                    case "ServiceName":
-                        result.ServiceName = field.Value.Trim();
-                        break;
-
-                    case "Description":
-                        result.Description = field.Value.Trim();
-                        break;
-
-                    case "Type":
-                        result.Type = field.Value.Trim();
-                        break;
-
-                    case "Precision":
-                        result.Precision = field.Value.Trim();
-                        break;
-
-                    case "LocationOrigin":
-                        result.LocationOrigin = field.Value.Trim();
-                        break;
-
-                    case "Map":
-                        result.Map = field.Value.Trim();
+                    case "AggregatedLocationsCount":
+                        if (field.Value.Trim() != "")
+                            if (int.TryParse(field.Value.Trim(), out int aggregatedLocationsCount))
+                                result.AggregatedLocationsCount = aggregatedLocationsCount;
                         break;
 
                     case "Category":
@@ -167,26 +127,17 @@ namespace UFEDLib
                         result.Confidence = field.Value.Trim();
                         break;
 
-                    case "Origin":
-                        result.Origin = field.Value.Trim();
-                        break;
-
-                    case "PositionAddress":
-                        result.PositionAddress = field.Value.Trim();
-                        break;
-
-                    case "AggregatedLocationsCount":
-                        if (field.Value.Trim() != "")
-                            if( int.TryParse(field.Value.Trim(), out int aggregatedLocationsCount))
-                                result.AggregatedLocationsCount = aggregatedLocationsCount;
-                        break;
-
-                    case "AccountLocationAffiliation":
-                        result.AccountLocationAffiliation = field.Value.Trim();
+                    case "Description":
+                        result.Description = field.Value.Trim();
                         break;
 
                     case "DeviceLocationAffiliation":
                         result.DeviceLocationAffiliation = field.Value.Trim();
+                        break;
+
+                    case "EndTime":
+                        if (field.Value.Trim() != "")
+                            result.EndTime = DateTime.Parse(field.Value.Trim());
                         break;
 
                     case "GpsHorizontalAccuracy":
@@ -195,7 +146,55 @@ namespace UFEDLib
                             string gpsHorizontalAccuracy = field.Value.Trim().Replace(",", ".");
                             result.GpsHorizontalAccuracy = Double.Parse(gpsHorizontalAccuracy, CultureInfo.InvariantCulture);
                         }
-                            
+                        break;
+
+                    case "LocationOrigin":
+                        result.LocationOrigin = field.Value.Trim();
+                        break;
+
+                    case "Map":
+                        result.Map = field.Value.Trim();
+                        break;
+
+                    case "Name":
+                        result.Name = field.Value.Trim();
+                        break;
+
+                    case "Origin":
+                        result.Origin = field.Value.Trim();
+                        break;
+
+                    case "PositionAddress":
+                        result.PositionAddress = field.Value.Trim();
+                        break;
+
+                    case "Precision":
+                        result.Precision = field.Value.Trim();
+                        break;
+
+                    case "ServiceIdentifier":
+                        result.ServiceIdentifier = field.Value.Trim();
+                        break;
+
+                    case "ServiceName":
+                        result.ServiceName = field.Value.Trim();
+                        break;
+
+                    case "Source":
+                        result.Source = field.Value.Trim();
+                        break;
+
+                    case "TimeStamp":
+                        if (field.Value.Trim() != "")
+                            result.TimeStamp = DateTime.Parse(field.Value.Trim());
+                        break;
+
+                    case "Type":
+                        result.Type = field.Value.Trim();
+                        break;
+
+                    case "UserMapping":
+                        result.UserMapping = field.Value.Trim();
                         break;
 
                     default:
@@ -216,9 +215,18 @@ namespace UFEDLib
             {
                 try
                 {
-
                     switch (modelField.Attribute("name").Value)
                     {
+                        case "Address":
+                            var addressModel = modelField.Element(xNamespace + "model");
+
+                            if (addressModel == null)
+                            {
+                                break;
+                            }
+                            result.Address = StreetAddress.ParseModel(addressModel);
+                            break;
+
                         case "Position":
                             var coordinateModel = modelField.Element(xNamespace + "model");
 
@@ -230,16 +238,6 @@ namespace UFEDLib
                             result.Position = Coordinate.ParseModel(coordinateModel);
                             break;
 
-                        case "Address":
-                            var addressModel = modelField.Element(xNamespace + "model");
-
-                            if (addressModel == null)
-                            {
-                                break;
-                            }
-                            result.Address = StreetAddress.ParseModel(addressModel);
-                            break;
-
                         default:
                             if (debugAttributes)
                             {
@@ -247,7 +245,6 @@ namespace UFEDLib
                             }
                             break;
                     }
-
                 }
                 catch (Exception ex)
                 {

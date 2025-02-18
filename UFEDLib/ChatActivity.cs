@@ -82,6 +82,10 @@ namespace UFEDLib
                     case "Action":
                         result.Action = field.Value.Trim();
                         break;
+                    
+                    case "Source":
+                        result.Source = field.Value.Trim();
+                        break;
 
                     case "SystemMessageBody":
                         result.SystemMessageBody = field.Value.Trim();
@@ -94,10 +98,6 @@ namespace UFEDLib
                     case "SystemMessageTimeStamp":
                         if(field.Value.Trim() != "")
                             result.SystemMessageTimeStamp = DateTime.Parse(field.Value.Trim());
-                        break;
-
-                    case "Source":
-                        result.Source = field.Value.Trim();
                         break;
 
                     case "UserMapping":

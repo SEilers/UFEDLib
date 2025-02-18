@@ -97,17 +97,20 @@ namespace UFEDLib
             {
                 switch (field.Attribute("name").Value)
                 {
-                    case "Type":
-                        result.Type = field.Value.Trim();
+                    case "Account":
+                        result.Account = field.Value.Trim();
+                        break;
+
+                    case "CountryCode":
+                        result.CountryCode = field.Value.Trim();
                         break;
 
                     case "DisconnectionCause":
                         result.DisconnectionCause = field.Value.Trim();
                         break;
 
-                    case "TimeStamp":
-                        if (field.Value.Trim() != "")
-                            result.TimeStamp = DateTime.Parse(field.Value.Trim());
+                    case "Direction":
+                        result.Direction = field.Value.Trim();
                         break;
 
                     case "Duration":
@@ -115,44 +118,41 @@ namespace UFEDLib
                             result.Duration = TimeSpan.Parse(field.Value.Trim());
                         break;
 
-                    case "Source":
-                        result.Source = field.Value.Trim();
-                        break;
-
-                    case "UserMapping":
-                        result.UserMapping = field.Value.Trim();
-                        break;
-
-                    case "Direction":
-                        result.Direction = field.Value.Trim();
-                        break;
-
-                    case "Status":
-                        result.Status = field.Value.Trim();
+                    case "NetworkCode":
+                        result.NetworkCode = field.Value.Trim();
                         break;
 
                     case "NetworkName":
                         result.NetworkName = field.Value.Trim();
                         break;
 
-                    case "NetworkCode":
-                        result.NetworkCode = field.Value.Trim();
+                    case "ServiceIdentifier":
+                        result.ServiceIdentifier = field.Value.Trim();
+                        break;
+
+                    case "Status":
+                        result.Status = field.Value.Trim();
+                        break;
+
+                    case "Source":
+                        result.Source = field.Value.Trim();
+                        break;
+
+                    case "TimeStamp":
+                        if (field.Value.Trim() != "")
+                            result.TimeStamp = DateTime.Parse(field.Value.Trim());
+                        break;
+
+                    case "Type":
+                        result.Type = field.Value.Trim();
+                        break;
+
+                    case "UserMapping":
+                        result.UserMapping = field.Value.Trim();
                         break;
 
                     case "VideoCall":
                         result.VideoCall = field.Value.Trim();
-                        break;
-
-                    case "CountryCode":
-                        result.CountryCode = field.Value.Trim();
-                        break;
-
-                    case "Account":
-                        result.Account = field.Value.Trim();
-                        break;
-
-                    case "ServiceIdentifier":
-                        result.ServiceIdentifier = field.Value.Trim();
                         break;
 
                     default:

@@ -17,9 +17,9 @@ namespace UFEDLib
         #region fields
         public string Category { get; set; }
         public string Name { get; set; }
-        public string Value { get; set; }
         public string Source { get; set; }
         public string UserMapping { get; set; }
+        public string Value { get; set; }
         #endregion
 
         #region parsers

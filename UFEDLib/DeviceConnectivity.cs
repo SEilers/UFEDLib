@@ -79,12 +79,12 @@ namespace UFEDLib
             {
                 switch (field.Attribute("name").Value)
                 {
-                    case "UserMapping":
-                        result.UserMapping = field.Value.Trim();
+                    case "ConnectivityMethod":
+                        result.ConnectivityMethod = field.Value.Trim();
                         break;
 
-                    case "Source":
-                        result.Source = field.Value.Trim();
+                    case "ConnectivityNature":
+                        result.ConnectivityNature = field.Value.Trim();
                         break;
 
                     case "DeviceName":
@@ -99,17 +99,17 @@ namespace UFEDLib
                         result.ServiceIdentifier = field.Value.Trim();
                         break;
 
-                    case "ConnectivityMethod":
-                        result.ConnectivityMethod = field.Value.Trim();
-                        break;
-
-                    case "ConnectivityNature":
-                        result.ConnectivityNature = field.Value.Trim();
+                    case "Source":
+                        result.Source = field.Value.Trim();
                         break;
 
                     case "StartTime":
                         if (field.Value.Trim() != "")
                             result.StartTime = DateTime.Parse(field.Value.Trim());
+                        break;
+
+                    case "UserMapping":
+                        result.UserMapping = field.Value.Trim();
                         break;
 
                     default:

@@ -79,18 +79,6 @@ namespace UFEDLib
             {
                 switch (field.Attribute("name").Value)
                 {
-                    case "UserMapping":
-                        result.UserMapping = field.Value.Trim();
-                        break;
-
-                    case "Source":
-                        result.Source = field.Value.Trim();
-                        break;
-
-                    case "Identifier":
-                        result.Identifier = field.Value.Trim();
-                        break;
-
                     case "Application":
                         result.Application = field.Value.Trim();
                         break;
@@ -99,26 +87,39 @@ namespace UFEDLib
                         result.Body = field.Value.Trim();
                         break;
 
-                    case "Severity":
-                        result.Severity = field.Value.Trim();
+                    case "EffectiveUID":
+                        if (field.Value.Trim() != "")
+                            if (int.TryParse(field.Value.Trim(), out int effectiveUID))
+                                result.EffectiveUID = effectiveUID;
+                        break;
+
+                    case "EndTime":
+                        if (field.Value.Trim() != "")
+                            result.EndTime = DateTime.Parse(field.Value.Trim());
+                        break;
+
+                    case "Identifier":
+                        result.Identifier = field.Value.Trim();
                         break;
 
                     case "PID":
                         if (field.Value.Trim() != "")
-                            if( int.TryParse(field.Value.Trim(), out int pid))
+                            if (int.TryParse(field.Value.Trim(), out int pid))
                                 result.PID = pid;
+                        break;
+
+                    case "Severity":
+                        result.Severity = field.Value.Trim();
+                        break;
+
+                    case "Source":
+                        result.Source = field.Value.Trim();
                         break;
 
                     case "TID":
                         if (field.Value.Trim() != "")
-                            if( int.TryParse(field.Value.Trim(), out int tid))
+                            if (int.TryParse(field.Value.Trim(), out int tid))
                                 result.TID = tid;
-                        break;
-
-                    case "EffectiveUID":
-                        if (field.Value.Trim() != "")
-                            if( int.TryParse(field.Value.Trim(), out int effectiveUID))
-                                result.EffectiveUID = effectiveUID;
                         break;
 
                     case "TimeStamp":
@@ -126,9 +127,8 @@ namespace UFEDLib
                             result.TimeStamp = DateTime.Parse(field.Value.Trim());
                         break;
 
-                    case "EndTime":
-                        if (field.Value.Trim() != "")
-                            result.EndTime = DateTime.Parse(field.Value.Trim());
+                    case "UserMapping":
+                        result.UserMapping = field.Value.Trim();
                         break;
 
                     default:

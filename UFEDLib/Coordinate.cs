@@ -81,6 +81,18 @@ namespace UFEDLib
 
                     switch (fieldElement.Attribute("name").Value)
                     {
+                        case "Comment":
+                            result.Comment = fieldElement.Value.Trim();
+                            break;
+
+                        case "Elevation":
+                            if (fieldElement.Value.Trim() != "")
+                            {
+                                string elevation = fieldElement.Value.Trim().Replace(",", ".");
+                                result.Elevation = double.Parse(elevation, CultureInfo.InvariantCulture);
+                            }
+                            break;
+
                         case "Longitude":
                             if (fieldElement.Value.Trim() != "")
                             {
@@ -97,20 +109,8 @@ namespace UFEDLib
                             }
                             break;
 
-                        case "Elevation":
-                            if (fieldElement.Value.Trim() != "")
-                            {
-                                string elevation = fieldElement.Value.Trim().Replace(",", ".");
-                                result.Elevation = double.Parse(elevation, CultureInfo.InvariantCulture);
-                            }
-                            break;
-
                         case "Map":
                             result.Map = fieldElement.Value.Trim();
-                            break;
-
-                        case "Comment":
-                            result.Comment = fieldElement.Value.Trim();
                             break;
 
                         case "PositionAddress":

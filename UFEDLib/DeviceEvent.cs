@@ -78,24 +78,21 @@ namespace UFEDLib
             {
                 switch (field.Attribute("name").Value)
                 {
-                    case "UserMapping":
-                        result.UserMapping = field.Value.Trim();
+                    case "EndTime":
+                        if (field.Value.Trim() != "")
+                            result.EndTime = DateTime.Parse(field.Value.Trim());
                         break;
 
-                    case "Source":
-                        result.Source = field.Value.Trim();
+                    case "EventType":
+                        result.EventType = field.Value.Trim();
                         break;
 
                     case "ServiceIdentifier":
                         result.ServiceIdentifier = field.Value.Trim();
                         break;
 
-                    case "Value":
-                        result.Value = field.Value.Trim();
-                        break;
-
-                    case "EventType":
-                        result.EventType = field.Value.Trim();
+                    case "Source":
+                        result.Source = field.Value.Trim();
                         break;
 
                     case "StartTime":
@@ -103,9 +100,12 @@ namespace UFEDLib
                             result.StartTime = DateTime.Parse(field.Value.Trim());
                         break;
 
-                    case "EndTime":
-                        if (field.Value.Trim() != "")
-                            result.EndTime = DateTime.Parse(field.Value.Trim());
+                    case "UserMapping":
+                        result.UserMapping = field.Value.Trim();
+                        break;
+
+                    case "Value":
+                        result.Value = field.Value.Trim();
                         break;
 
                     default:

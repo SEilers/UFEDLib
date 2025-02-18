@@ -95,14 +95,6 @@ namespace UFEDLib
             {
                 switch (field.Attribute("name").Value)
                 {
-                    case "UserMapping":
-                        result.UserMapping = field.Value.Trim();
-                        break;
-
-                    case "ServiceIdentifier":
-                        result.ServiceIdentifier = field.Value.Trim();
-                        break;
-
                     case "Account":
                         result.Account = field.Value.Trim();
                         break;
@@ -115,21 +107,29 @@ namespace UFEDLib
                         result.OSUserId = field.Value.Trim();
                         break;
 
-                    case "TimeStamp":
-                        if (field.Value.Trim() != "")
-                            result.TimeStamp = DateTime.Parse(field.Value.Trim());
+                    case "PositionAddress":
+                        result.PositionAddress = field.Value.Trim();
                         break;
 
-                    case "Value":
-                        result.Value = field.Value.Trim();
+                    case "ServiceIdentifier":
+                        result.ServiceIdentifier = field.Value.Trim();
                         break;
 
                     case "Source":
                         result.Source = field.Value.Trim();
                         break;
-                    
-                    case "PositionAddress":
-                        result.PositionAddress = field.Value.Trim();
+
+                    case "TimeStamp":
+                        if (field.Value.Trim() != "")
+                            result.TimeStamp = DateTime.Parse(field.Value.Trim());
+                        break;
+
+                    case "UserMapping":
+                        result.UserMapping = field.Value.Trim();
+                        break;
+
+                    case "Value":
+                        result.Value = field.Value.Trim();
                         break;
 
                     default:
