@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using System.Xml;
+using System.IO;
+using System.IO.Compression;
 
 namespace UFEDLib
 {
@@ -39,6 +41,53 @@ namespace UFEDLib
         public List<Tuple<string, string>> ExtractionData { get; set; } = new List<Tuple<string, string>>();
 
         public List<Tuple<string, string>> DeviceInfo { get; set; } = new List<Tuple<string, string>>();
+
+        public static ProjectAttributes Parse(string filename)
+        {
+            if (!File.Exists(filename))
+            {
+                Console.WriteLine("File not found: " + filename);
+                return null;
+            }
+
+            try
+            {
+                using (ZipArchive zip = ZipFile.OpenRead(filename))
+                {
+                    var report = zip.GetEntry("report.xml");
+
+                    if (report == null)
+                    {
+                        Console.WriteLine("report.xml not found in the ufdr file");
+                        return null;
+                    }
+
+
+                    using (Stream reportStream = report.Open())
+                    {
+                        using (StreamReader sr = new StreamReader(reportStream))
+                        {
+                            XmlReaderSettings xmlReaderSettings = new XmlReaderSettings
+                            {
+                                CheckCharacters = false
+                            };
+         
+                            using (XmlReader reader = XmlReader.Create(sr, xmlReaderSettings))
+                            {
+                                var result = ProjectAttributes.Parse(reader);
+                                return result;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError(ex.ToString());
+            }
+
+            return null;
+        }
 
         public static ProjectAttributes Parse(XmlReader reader)
         {

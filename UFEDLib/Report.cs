@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
@@ -105,6 +106,11 @@ namespace UFEDLib
             {
                 throw new ArgumentException("Unsupported file format: " + filename);
             }
+        }
+
+        public static ProjectAttributes ParseProjectAttributes( string filename, IProgress<int> progress = null)
+        {
+            return ProjectAttributes.Parse(filename);
         }
 
         public static List<ActivitySensorData> ParseActivitySensorData(string filename, IProgress<int> progress = null, bool debugAttributes = false)
