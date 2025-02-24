@@ -26,6 +26,19 @@ references:
   isSpec: "True"
   fullName: UFEDLib.ActivitySensorData.CreationTime
   nameWithType: ActivitySensorData.CreationTime
+- uid: UFEDLib.ActivitySensorData.DeviceName
+  name: DeviceName
+  href: api/UFEDLib.ActivitySensorData.html#UFEDLib_ActivitySensorData_DeviceName
+  commentId: P:UFEDLib.ActivitySensorData.DeviceName
+  fullName: UFEDLib.ActivitySensorData.DeviceName
+  nameWithType: ActivitySensorData.DeviceName
+- uid: UFEDLib.ActivitySensorData.DeviceName*
+  name: DeviceName
+  href: api/UFEDLib.ActivitySensorData.html#UFEDLib_ActivitySensorData_DeviceName_
+  commentId: Overload:UFEDLib.ActivitySensorData.DeviceName
+  isSpec: "True"
+  fullName: UFEDLib.ActivitySensorData.DeviceName
+  nameWithType: ActivitySensorData.DeviceName
 - uid: UFEDLib.ActivitySensorData.DistanceTraveled
   name: DistanceTraveled
   href: api/UFEDLib.ActivitySensorData.html#UFEDLib_ActivitySensorData_DistanceTraveled
@@ -104,6 +117,19 @@ references:
   isSpec: "True"
   fullName: UFEDLib.ActivitySensorData.MaxSpeed
   nameWithType: ActivitySensorData.MaxSpeed
+- uid: UFEDLib.ActivitySensorData.Measurements
+  name: Measurements
+  href: api/UFEDLib.ActivitySensorData.html#UFEDLib_ActivitySensorData_Measurements
+  commentId: P:UFEDLib.ActivitySensorData.Measurements
+  fullName: UFEDLib.ActivitySensorData.Measurements
+  nameWithType: ActivitySensorData.Measurements
+- uid: UFEDLib.ActivitySensorData.Measurements*
+  name: Measurements
+  href: api/UFEDLib.ActivitySensorData.html#UFEDLib_ActivitySensorData_Measurements_
+  commentId: Overload:UFEDLib.ActivitySensorData.Measurements
+  isSpec: "True"
+  fullName: UFEDLib.ActivitySensorData.Measurements
+  nameWithType: ActivitySensorData.Measurements
 - uid: UFEDLib.ActivitySensorData.Name
   name: Name
   href: api/UFEDLib.ActivitySensorData.html#UFEDLib_ActivitySensorData_Name
@@ -278,6 +304,431 @@ references:
   isSpec: "True"
   fullName: UFEDLib.ActivitySensorData.UserMapping
   nameWithType: ActivitySensorData.UserMapping
+- uid: UFEDLib.ActivitySensorDataMeasurement
+  name: ActivitySensorDataMeasurement
+  href: api/UFEDLib.ActivitySensorDataMeasurement.html
+  commentId: T:UFEDLib.ActivitySensorDataMeasurement
+  fullName: UFEDLib.ActivitySensorDataMeasurement
+  nameWithType: ActivitySensorDataMeasurement
+- uid: UFEDLib.ActivitySensorDataMeasurement.AverageValue
+  name: AverageValue
+  href: api/UFEDLib.ActivitySensorDataMeasurement.html#UFEDLib_ActivitySensorDataMeasurement_AverageValue
+  commentId: P:UFEDLib.ActivitySensorDataMeasurement.AverageValue
+  fullName: UFEDLib.ActivitySensorDataMeasurement.AverageValue
+  nameWithType: ActivitySensorDataMeasurement.AverageValue
+- uid: UFEDLib.ActivitySensorDataMeasurement.AverageValue*
+  name: AverageValue
+  href: api/UFEDLib.ActivitySensorDataMeasurement.html#UFEDLib_ActivitySensorDataMeasurement_AverageValue_
+  commentId: Overload:UFEDLib.ActivitySensorDataMeasurement.AverageValue
+  isSpec: "True"
+  fullName: UFEDLib.ActivitySensorDataMeasurement.AverageValue
+  nameWithType: ActivitySensorDataMeasurement.AverageValue
+- uid: UFEDLib.ActivitySensorDataMeasurement.DeviceName
+  name: DeviceName
+  href: api/UFEDLib.ActivitySensorDataMeasurement.html#UFEDLib_ActivitySensorDataMeasurement_DeviceName
+  commentId: P:UFEDLib.ActivitySensorDataMeasurement.DeviceName
+  fullName: UFEDLib.ActivitySensorDataMeasurement.DeviceName
+  nameWithType: ActivitySensorDataMeasurement.DeviceName
+- uid: UFEDLib.ActivitySensorDataMeasurement.DeviceName*
+  name: DeviceName
+  href: api/UFEDLib.ActivitySensorDataMeasurement.html#UFEDLib_ActivitySensorDataMeasurement_DeviceName_
+  commentId: Overload:UFEDLib.ActivitySensorDataMeasurement.DeviceName
+  isSpec: "True"
+  fullName: UFEDLib.ActivitySensorDataMeasurement.DeviceName
+  nameWithType: ActivitySensorDataMeasurement.DeviceName
+- uid: UFEDLib.ActivitySensorDataMeasurement.GetXmlModelType
+  name: GetXmlModelType()
+  href: api/UFEDLib.ActivitySensorDataMeasurement.html#UFEDLib_ActivitySensorDataMeasurement_GetXmlModelType
+  commentId: M:UFEDLib.ActivitySensorDataMeasurement.GetXmlModelType
+  fullName: UFEDLib.ActivitySensorDataMeasurement.GetXmlModelType()
+  nameWithType: ActivitySensorDataMeasurement.GetXmlModelType()
+- uid: UFEDLib.ActivitySensorDataMeasurement.GetXmlModelType*
+  name: GetXmlModelType
+  href: api/UFEDLib.ActivitySensorDataMeasurement.html#UFEDLib_ActivitySensorDataMeasurement_GetXmlModelType_
+  commentId: Overload:UFEDLib.ActivitySensorDataMeasurement.GetXmlModelType
+  isSpec: "True"
+  fullName: UFEDLib.ActivitySensorDataMeasurement.GetXmlModelType
+  nameWithType: ActivitySensorDataMeasurement.GetXmlModelType
+- uid: UFEDLib.ActivitySensorDataMeasurement.MaximumValue
+  name: MaximumValue
+  href: api/UFEDLib.ActivitySensorDataMeasurement.html#UFEDLib_ActivitySensorDataMeasurement_MaximumValue
+  commentId: P:UFEDLib.ActivitySensorDataMeasurement.MaximumValue
+  fullName: UFEDLib.ActivitySensorDataMeasurement.MaximumValue
+  nameWithType: ActivitySensorDataMeasurement.MaximumValue
+- uid: UFEDLib.ActivitySensorDataMeasurement.MaximumValue*
+  name: MaximumValue
+  href: api/UFEDLib.ActivitySensorDataMeasurement.html#UFEDLib_ActivitySensorDataMeasurement_MaximumValue_
+  commentId: Overload:UFEDLib.ActivitySensorDataMeasurement.MaximumValue
+  isSpec: "True"
+  fullName: UFEDLib.ActivitySensorDataMeasurement.MaximumValue
+  nameWithType: ActivitySensorDataMeasurement.MaximumValue
+- uid: UFEDLib.ActivitySensorDataMeasurement.MeasuredVariableType
+  name: MeasuredVariableType
+  href: api/UFEDLib.ActivitySensorDataMeasurement.html#UFEDLib_ActivitySensorDataMeasurement_MeasuredVariableType
+  commentId: P:UFEDLib.ActivitySensorDataMeasurement.MeasuredVariableType
+  fullName: UFEDLib.ActivitySensorDataMeasurement.MeasuredVariableType
+  nameWithType: ActivitySensorDataMeasurement.MeasuredVariableType
+- uid: UFEDLib.ActivitySensorDataMeasurement.MeasuredVariableType*
+  name: MeasuredVariableType
+  href: api/UFEDLib.ActivitySensorDataMeasurement.html#UFEDLib_ActivitySensorDataMeasurement_MeasuredVariableType_
+  commentId: Overload:UFEDLib.ActivitySensorDataMeasurement.MeasuredVariableType
+  isSpec: "True"
+  fullName: UFEDLib.ActivitySensorDataMeasurement.MeasuredVariableType
+  nameWithType: ActivitySensorDataMeasurement.MeasuredVariableType
+- uid: UFEDLib.ActivitySensorDataMeasurement.ParseFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.ActivitySensorDataMeasurement,System.Boolean)
+  name: ParseFields(IEnumerable<XElement>, ActivitySensorDataMeasurement, bool)
+  href: api/UFEDLib.ActivitySensorDataMeasurement.html#UFEDLib_ActivitySensorDataMeasurement_ParseFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_ActivitySensorDataMeasurement_System_Boolean_
+  commentId: M:UFEDLib.ActivitySensorDataMeasurement.ParseFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.ActivitySensorDataMeasurement,System.Boolean)
+  name.vb: ParseFields(IEnumerable(Of XElement), ActivitySensorDataMeasurement, Boolean)
+  fullName: UFEDLib.ActivitySensorDataMeasurement.ParseFields(System.Collections.Generic.IEnumerable<System.Xml.Linq.XElement>, UFEDLib.ActivitySensorDataMeasurement, bool)
+  fullName.vb: UFEDLib.ActivitySensorDataMeasurement.ParseFields(System.Collections.Generic.IEnumerable(Of System.Xml.Linq.XElement), UFEDLib.ActivitySensorDataMeasurement, Boolean)
+  nameWithType: ActivitySensorDataMeasurement.ParseFields(IEnumerable<XElement>, ActivitySensorDataMeasurement, bool)
+  nameWithType.vb: ActivitySensorDataMeasurement.ParseFields(IEnumerable(Of XElement), ActivitySensorDataMeasurement, Boolean)
+- uid: UFEDLib.ActivitySensorDataMeasurement.ParseFields*
+  name: ParseFields
+  href: api/UFEDLib.ActivitySensorDataMeasurement.html#UFEDLib_ActivitySensorDataMeasurement_ParseFields_
+  commentId: Overload:UFEDLib.ActivitySensorDataMeasurement.ParseFields
+  isSpec: "True"
+  fullName: UFEDLib.ActivitySensorDataMeasurement.ParseFields
+  nameWithType: ActivitySensorDataMeasurement.ParseFields
+- uid: UFEDLib.ActivitySensorDataMeasurement.ParseModel(System.Xml.Linq.XElement,System.Boolean)
+  name: ParseModel(XElement, bool)
+  href: api/UFEDLib.ActivitySensorDataMeasurement.html#UFEDLib_ActivitySensorDataMeasurement_ParseModel_System_Xml_Linq_XElement_System_Boolean_
+  commentId: M:UFEDLib.ActivitySensorDataMeasurement.ParseModel(System.Xml.Linq.XElement,System.Boolean)
+  name.vb: ParseModel(XElement, Boolean)
+  fullName: UFEDLib.ActivitySensorDataMeasurement.ParseModel(System.Xml.Linq.XElement, bool)
+  fullName.vb: UFEDLib.ActivitySensorDataMeasurement.ParseModel(System.Xml.Linq.XElement, Boolean)
+  nameWithType: ActivitySensorDataMeasurement.ParseModel(XElement, bool)
+  nameWithType.vb: ActivitySensorDataMeasurement.ParseModel(XElement, Boolean)
+- uid: UFEDLib.ActivitySensorDataMeasurement.ParseModel*
+  name: ParseModel
+  href: api/UFEDLib.ActivitySensorDataMeasurement.html#UFEDLib_ActivitySensorDataMeasurement_ParseModel_
+  commentId: Overload:UFEDLib.ActivitySensorDataMeasurement.ParseModel
+  isSpec: "True"
+  fullName: UFEDLib.ActivitySensorDataMeasurement.ParseModel
+  nameWithType: ActivitySensorDataMeasurement.ParseModel
+- uid: UFEDLib.ActivitySensorDataMeasurement.ParseModelFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.ActivitySensorDataMeasurement,System.Boolean)
+  name: ParseModelFields(IEnumerable<XElement>, ActivitySensorDataMeasurement, bool)
+  href: api/UFEDLib.ActivitySensorDataMeasurement.html#UFEDLib_ActivitySensorDataMeasurement_ParseModelFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_ActivitySensorDataMeasurement_System_Boolean_
+  commentId: M:UFEDLib.ActivitySensorDataMeasurement.ParseModelFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.ActivitySensorDataMeasurement,System.Boolean)
+  name.vb: ParseModelFields(IEnumerable(Of XElement), ActivitySensorDataMeasurement, Boolean)
+  fullName: UFEDLib.ActivitySensorDataMeasurement.ParseModelFields(System.Collections.Generic.IEnumerable<System.Xml.Linq.XElement>, UFEDLib.ActivitySensorDataMeasurement, bool)
+  fullName.vb: UFEDLib.ActivitySensorDataMeasurement.ParseModelFields(System.Collections.Generic.IEnumerable(Of System.Xml.Linq.XElement), UFEDLib.ActivitySensorDataMeasurement, Boolean)
+  nameWithType: ActivitySensorDataMeasurement.ParseModelFields(IEnumerable<XElement>, ActivitySensorDataMeasurement, bool)
+  nameWithType.vb: ActivitySensorDataMeasurement.ParseModelFields(IEnumerable(Of XElement), ActivitySensorDataMeasurement, Boolean)
+- uid: UFEDLib.ActivitySensorDataMeasurement.ParseModelFields*
+  name: ParseModelFields
+  href: api/UFEDLib.ActivitySensorDataMeasurement.html#UFEDLib_ActivitySensorDataMeasurement_ParseModelFields_
+  commentId: Overload:UFEDLib.ActivitySensorDataMeasurement.ParseModelFields
+  isSpec: "True"
+  fullName: UFEDLib.ActivitySensorDataMeasurement.ParseModelFields
+  nameWithType: ActivitySensorDataMeasurement.ParseModelFields
+- uid: UFEDLib.ActivitySensorDataMeasurement.ParseMultiFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.ActivitySensorDataMeasurement,System.Boolean)
+  name: ParseMultiFields(IEnumerable<XElement>, ActivitySensorDataMeasurement, bool)
+  href: api/UFEDLib.ActivitySensorDataMeasurement.html#UFEDLib_ActivitySensorDataMeasurement_ParseMultiFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_ActivitySensorDataMeasurement_System_Boolean_
+  commentId: M:UFEDLib.ActivitySensorDataMeasurement.ParseMultiFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.ActivitySensorDataMeasurement,System.Boolean)
+  name.vb: ParseMultiFields(IEnumerable(Of XElement), ActivitySensorDataMeasurement, Boolean)
+  fullName: UFEDLib.ActivitySensorDataMeasurement.ParseMultiFields(System.Collections.Generic.IEnumerable<System.Xml.Linq.XElement>, UFEDLib.ActivitySensorDataMeasurement, bool)
+  fullName.vb: UFEDLib.ActivitySensorDataMeasurement.ParseMultiFields(System.Collections.Generic.IEnumerable(Of System.Xml.Linq.XElement), UFEDLib.ActivitySensorDataMeasurement, Boolean)
+  nameWithType: ActivitySensorDataMeasurement.ParseMultiFields(IEnumerable<XElement>, ActivitySensorDataMeasurement, bool)
+  nameWithType.vb: ActivitySensorDataMeasurement.ParseMultiFields(IEnumerable(Of XElement), ActivitySensorDataMeasurement, Boolean)
+- uid: UFEDLib.ActivitySensorDataMeasurement.ParseMultiFields*
+  name: ParseMultiFields
+  href: api/UFEDLib.ActivitySensorDataMeasurement.html#UFEDLib_ActivitySensorDataMeasurement_ParseMultiFields_
+  commentId: Overload:UFEDLib.ActivitySensorDataMeasurement.ParseMultiFields
+  isSpec: "True"
+  fullName: UFEDLib.ActivitySensorDataMeasurement.ParseMultiFields
+  nameWithType: ActivitySensorDataMeasurement.ParseMultiFields
+- uid: UFEDLib.ActivitySensorDataMeasurement.ParseMultiModel(System.Xml.Linq.XElement,System.Boolean)
+  name: ParseMultiModel(XElement, bool)
+  href: api/UFEDLib.ActivitySensorDataMeasurement.html#UFEDLib_ActivitySensorDataMeasurement_ParseMultiModel_System_Xml_Linq_XElement_System_Boolean_
+  commentId: M:UFEDLib.ActivitySensorDataMeasurement.ParseMultiModel(System.Xml.Linq.XElement,System.Boolean)
+  name.vb: ParseMultiModel(XElement, Boolean)
+  fullName: UFEDLib.ActivitySensorDataMeasurement.ParseMultiModel(System.Xml.Linq.XElement, bool)
+  fullName.vb: UFEDLib.ActivitySensorDataMeasurement.ParseMultiModel(System.Xml.Linq.XElement, Boolean)
+  nameWithType: ActivitySensorDataMeasurement.ParseMultiModel(XElement, bool)
+  nameWithType.vb: ActivitySensorDataMeasurement.ParseMultiModel(XElement, Boolean)
+- uid: UFEDLib.ActivitySensorDataMeasurement.ParseMultiModel*
+  name: ParseMultiModel
+  href: api/UFEDLib.ActivitySensorDataMeasurement.html#UFEDLib_ActivitySensorDataMeasurement_ParseMultiModel_
+  commentId: Overload:UFEDLib.ActivitySensorDataMeasurement.ParseMultiModel
+  isSpec: "True"
+  fullName: UFEDLib.ActivitySensorDataMeasurement.ParseMultiModel
+  nameWithType: ActivitySensorDataMeasurement.ParseMultiModel
+- uid: UFEDLib.ActivitySensorDataMeasurement.ParseMultiModelFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.ActivitySensorDataMeasurement,System.Boolean)
+  name: ParseMultiModelFields(IEnumerable<XElement>, ActivitySensorDataMeasurement, bool)
+  href: api/UFEDLib.ActivitySensorDataMeasurement.html#UFEDLib_ActivitySensorDataMeasurement_ParseMultiModelFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_ActivitySensorDataMeasurement_System_Boolean_
+  commentId: M:UFEDLib.ActivitySensorDataMeasurement.ParseMultiModelFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.ActivitySensorDataMeasurement,System.Boolean)
+  name.vb: ParseMultiModelFields(IEnumerable(Of XElement), ActivitySensorDataMeasurement, Boolean)
+  fullName: UFEDLib.ActivitySensorDataMeasurement.ParseMultiModelFields(System.Collections.Generic.IEnumerable<System.Xml.Linq.XElement>, UFEDLib.ActivitySensorDataMeasurement, bool)
+  fullName.vb: UFEDLib.ActivitySensorDataMeasurement.ParseMultiModelFields(System.Collections.Generic.IEnumerable(Of System.Xml.Linq.XElement), UFEDLib.ActivitySensorDataMeasurement, Boolean)
+  nameWithType: ActivitySensorDataMeasurement.ParseMultiModelFields(IEnumerable<XElement>, ActivitySensorDataMeasurement, bool)
+  nameWithType.vb: ActivitySensorDataMeasurement.ParseMultiModelFields(IEnumerable(Of XElement), ActivitySensorDataMeasurement, Boolean)
+- uid: UFEDLib.ActivitySensorDataMeasurement.ParseMultiModelFields*
+  name: ParseMultiModelFields
+  href: api/UFEDLib.ActivitySensorDataMeasurement.html#UFEDLib_ActivitySensorDataMeasurement_ParseMultiModelFields_
+  commentId: Overload:UFEDLib.ActivitySensorDataMeasurement.ParseMultiModelFields
+  isSpec: "True"
+  fullName: UFEDLib.ActivitySensorDataMeasurement.ParseMultiModelFields
+  nameWithType: ActivitySensorDataMeasurement.ParseMultiModelFields
+- uid: UFEDLib.ActivitySensorDataMeasurement.Samples
+  name: Samples
+  href: api/UFEDLib.ActivitySensorDataMeasurement.html#UFEDLib_ActivitySensorDataMeasurement_Samples
+  commentId: P:UFEDLib.ActivitySensorDataMeasurement.Samples
+  fullName: UFEDLib.ActivitySensorDataMeasurement.Samples
+  nameWithType: ActivitySensorDataMeasurement.Samples
+- uid: UFEDLib.ActivitySensorDataMeasurement.Samples*
+  name: Samples
+  href: api/UFEDLib.ActivitySensorDataMeasurement.html#UFEDLib_ActivitySensorDataMeasurement_Samples_
+  commentId: Overload:UFEDLib.ActivitySensorDataMeasurement.Samples
+  isSpec: "True"
+  fullName: UFEDLib.ActivitySensorDataMeasurement.Samples
+  nameWithType: ActivitySensorDataMeasurement.Samples
+- uid: UFEDLib.ActivitySensorDataMeasurement.Source
+  name: Source
+  href: api/UFEDLib.ActivitySensorDataMeasurement.html#UFEDLib_ActivitySensorDataMeasurement_Source
+  commentId: P:UFEDLib.ActivitySensorDataMeasurement.Source
+  fullName: UFEDLib.ActivitySensorDataMeasurement.Source
+  nameWithType: ActivitySensorDataMeasurement.Source
+- uid: UFEDLib.ActivitySensorDataMeasurement.Source*
+  name: Source
+  href: api/UFEDLib.ActivitySensorDataMeasurement.html#UFEDLib_ActivitySensorDataMeasurement_Source_
+  commentId: Overload:UFEDLib.ActivitySensorDataMeasurement.Source
+  isSpec: "True"
+  fullName: UFEDLib.ActivitySensorDataMeasurement.Source
+  nameWithType: ActivitySensorDataMeasurement.Source
+- uid: UFEDLib.ActivitySensorDataMeasurement.TotalValue
+  name: TotalValue
+  href: api/UFEDLib.ActivitySensorDataMeasurement.html#UFEDLib_ActivitySensorDataMeasurement_TotalValue
+  commentId: P:UFEDLib.ActivitySensorDataMeasurement.TotalValue
+  fullName: UFEDLib.ActivitySensorDataMeasurement.TotalValue
+  nameWithType: ActivitySensorDataMeasurement.TotalValue
+- uid: UFEDLib.ActivitySensorDataMeasurement.TotalValue*
+  name: TotalValue
+  href: api/UFEDLib.ActivitySensorDataMeasurement.html#UFEDLib_ActivitySensorDataMeasurement_TotalValue_
+  commentId: Overload:UFEDLib.ActivitySensorDataMeasurement.TotalValue
+  isSpec: "True"
+  fullName: UFEDLib.ActivitySensorDataMeasurement.TotalValue
+  nameWithType: ActivitySensorDataMeasurement.TotalValue
+- uid: UFEDLib.ActivitySensorDataMeasurement.Unit
+  name: Unit
+  href: api/UFEDLib.ActivitySensorDataMeasurement.html#UFEDLib_ActivitySensorDataMeasurement_Unit
+  commentId: P:UFEDLib.ActivitySensorDataMeasurement.Unit
+  fullName: UFEDLib.ActivitySensorDataMeasurement.Unit
+  nameWithType: ActivitySensorDataMeasurement.Unit
+- uid: UFEDLib.ActivitySensorDataMeasurement.Unit*
+  name: Unit
+  href: api/UFEDLib.ActivitySensorDataMeasurement.html#UFEDLib_ActivitySensorDataMeasurement_Unit_
+  commentId: Overload:UFEDLib.ActivitySensorDataMeasurement.Unit
+  isSpec: "True"
+  fullName: UFEDLib.ActivitySensorDataMeasurement.Unit
+  nameWithType: ActivitySensorDataMeasurement.Unit
+- uid: UFEDLib.ActivitySensorDataMeasurement.UserMapping
+  name: UserMapping
+  href: api/UFEDLib.ActivitySensorDataMeasurement.html#UFEDLib_ActivitySensorDataMeasurement_UserMapping
+  commentId: P:UFEDLib.ActivitySensorDataMeasurement.UserMapping
+  fullName: UFEDLib.ActivitySensorDataMeasurement.UserMapping
+  nameWithType: ActivitySensorDataMeasurement.UserMapping
+- uid: UFEDLib.ActivitySensorDataMeasurement.UserMapping*
+  name: UserMapping
+  href: api/UFEDLib.ActivitySensorDataMeasurement.html#UFEDLib_ActivitySensorDataMeasurement_UserMapping_
+  commentId: Overload:UFEDLib.ActivitySensorDataMeasurement.UserMapping
+  isSpec: "True"
+  fullName: UFEDLib.ActivitySensorDataMeasurement.UserMapping
+  nameWithType: ActivitySensorDataMeasurement.UserMapping
+- uid: UFEDLib.ActivitySensorDataSample
+  name: ActivitySensorDataSample
+  href: api/UFEDLib.ActivitySensorDataSample.html
+  commentId: T:UFEDLib.ActivitySensorDataSample
+  fullName: UFEDLib.ActivitySensorDataSample
+  nameWithType: ActivitySensorDataSample
+- uid: UFEDLib.ActivitySensorDataSample.DateEnded
+  name: DateEnded
+  href: api/UFEDLib.ActivitySensorDataSample.html#UFEDLib_ActivitySensorDataSample_DateEnded
+  commentId: P:UFEDLib.ActivitySensorDataSample.DateEnded
+  fullName: UFEDLib.ActivitySensorDataSample.DateEnded
+  nameWithType: ActivitySensorDataSample.DateEnded
+- uid: UFEDLib.ActivitySensorDataSample.DateEnded*
+  name: DateEnded
+  href: api/UFEDLib.ActivitySensorDataSample.html#UFEDLib_ActivitySensorDataSample_DateEnded_
+  commentId: Overload:UFEDLib.ActivitySensorDataSample.DateEnded
+  isSpec: "True"
+  fullName: UFEDLib.ActivitySensorDataSample.DateEnded
+  nameWithType: ActivitySensorDataSample.DateEnded
+- uid: UFEDLib.ActivitySensorDataSample.DateSampled
+  name: DateSampled
+  href: api/UFEDLib.ActivitySensorDataSample.html#UFEDLib_ActivitySensorDataSample_DateSampled
+  commentId: P:UFEDLib.ActivitySensorDataSample.DateSampled
+  fullName: UFEDLib.ActivitySensorDataSample.DateSampled
+  nameWithType: ActivitySensorDataSample.DateSampled
+- uid: UFEDLib.ActivitySensorDataSample.DateSampled*
+  name: DateSampled
+  href: api/UFEDLib.ActivitySensorDataSample.html#UFEDLib_ActivitySensorDataSample_DateSampled_
+  commentId: Overload:UFEDLib.ActivitySensorDataSample.DateSampled
+  isSpec: "True"
+  fullName: UFEDLib.ActivitySensorDataSample.DateSampled
+  nameWithType: ActivitySensorDataSample.DateSampled
+- uid: UFEDLib.ActivitySensorDataSample.GetXmlModelType
+  name: GetXmlModelType()
+  href: api/UFEDLib.ActivitySensorDataSample.html#UFEDLib_ActivitySensorDataSample_GetXmlModelType
+  commentId: M:UFEDLib.ActivitySensorDataSample.GetXmlModelType
+  fullName: UFEDLib.ActivitySensorDataSample.GetXmlModelType()
+  nameWithType: ActivitySensorDataSample.GetXmlModelType()
+- uid: UFEDLib.ActivitySensorDataSample.GetXmlModelType*
+  name: GetXmlModelType
+  href: api/UFEDLib.ActivitySensorDataSample.html#UFEDLib_ActivitySensorDataSample_GetXmlModelType_
+  commentId: Overload:UFEDLib.ActivitySensorDataSample.GetXmlModelType
+  isSpec: "True"
+  fullName: UFEDLib.ActivitySensorDataSample.GetXmlModelType
+  nameWithType: ActivitySensorDataSample.GetXmlModelType
+- uid: UFEDLib.ActivitySensorDataSample.ParseFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.ActivitySensorDataSample,System.Boolean)
+  name: ParseFields(IEnumerable<XElement>, ActivitySensorDataSample, bool)
+  href: api/UFEDLib.ActivitySensorDataSample.html#UFEDLib_ActivitySensorDataSample_ParseFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_ActivitySensorDataSample_System_Boolean_
+  commentId: M:UFEDLib.ActivitySensorDataSample.ParseFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.ActivitySensorDataSample,System.Boolean)
+  name.vb: ParseFields(IEnumerable(Of XElement), ActivitySensorDataSample, Boolean)
+  fullName: UFEDLib.ActivitySensorDataSample.ParseFields(System.Collections.Generic.IEnumerable<System.Xml.Linq.XElement>, UFEDLib.ActivitySensorDataSample, bool)
+  fullName.vb: UFEDLib.ActivitySensorDataSample.ParseFields(System.Collections.Generic.IEnumerable(Of System.Xml.Linq.XElement), UFEDLib.ActivitySensorDataSample, Boolean)
+  nameWithType: ActivitySensorDataSample.ParseFields(IEnumerable<XElement>, ActivitySensorDataSample, bool)
+  nameWithType.vb: ActivitySensorDataSample.ParseFields(IEnumerable(Of XElement), ActivitySensorDataSample, Boolean)
+- uid: UFEDLib.ActivitySensorDataSample.ParseFields*
+  name: ParseFields
+  href: api/UFEDLib.ActivitySensorDataSample.html#UFEDLib_ActivitySensorDataSample_ParseFields_
+  commentId: Overload:UFEDLib.ActivitySensorDataSample.ParseFields
+  isSpec: "True"
+  fullName: UFEDLib.ActivitySensorDataSample.ParseFields
+  nameWithType: ActivitySensorDataSample.ParseFields
+- uid: UFEDLib.ActivitySensorDataSample.ParseModel(System.Xml.Linq.XElement,System.Boolean)
+  name: ParseModel(XElement, bool)
+  href: api/UFEDLib.ActivitySensorDataSample.html#UFEDLib_ActivitySensorDataSample_ParseModel_System_Xml_Linq_XElement_System_Boolean_
+  commentId: M:UFEDLib.ActivitySensorDataSample.ParseModel(System.Xml.Linq.XElement,System.Boolean)
+  name.vb: ParseModel(XElement, Boolean)
+  fullName: UFEDLib.ActivitySensorDataSample.ParseModel(System.Xml.Linq.XElement, bool)
+  fullName.vb: UFEDLib.ActivitySensorDataSample.ParseModel(System.Xml.Linq.XElement, Boolean)
+  nameWithType: ActivitySensorDataSample.ParseModel(XElement, bool)
+  nameWithType.vb: ActivitySensorDataSample.ParseModel(XElement, Boolean)
+- uid: UFEDLib.ActivitySensorDataSample.ParseModel*
+  name: ParseModel
+  href: api/UFEDLib.ActivitySensorDataSample.html#UFEDLib_ActivitySensorDataSample_ParseModel_
+  commentId: Overload:UFEDLib.ActivitySensorDataSample.ParseModel
+  isSpec: "True"
+  fullName: UFEDLib.ActivitySensorDataSample.ParseModel
+  nameWithType: ActivitySensorDataSample.ParseModel
+- uid: UFEDLib.ActivitySensorDataSample.ParseModelFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.ActivitySensorDataSample,System.Boolean)
+  name: ParseModelFields(IEnumerable<XElement>, ActivitySensorDataSample, bool)
+  href: api/UFEDLib.ActivitySensorDataSample.html#UFEDLib_ActivitySensorDataSample_ParseModelFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_ActivitySensorDataSample_System_Boolean_
+  commentId: M:UFEDLib.ActivitySensorDataSample.ParseModelFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.ActivitySensorDataSample,System.Boolean)
+  name.vb: ParseModelFields(IEnumerable(Of XElement), ActivitySensorDataSample, Boolean)
+  fullName: UFEDLib.ActivitySensorDataSample.ParseModelFields(System.Collections.Generic.IEnumerable<System.Xml.Linq.XElement>, UFEDLib.ActivitySensorDataSample, bool)
+  fullName.vb: UFEDLib.ActivitySensorDataSample.ParseModelFields(System.Collections.Generic.IEnumerable(Of System.Xml.Linq.XElement), UFEDLib.ActivitySensorDataSample, Boolean)
+  nameWithType: ActivitySensorDataSample.ParseModelFields(IEnumerable<XElement>, ActivitySensorDataSample, bool)
+  nameWithType.vb: ActivitySensorDataSample.ParseModelFields(IEnumerable(Of XElement), ActivitySensorDataSample, Boolean)
+- uid: UFEDLib.ActivitySensorDataSample.ParseModelFields*
+  name: ParseModelFields
+  href: api/UFEDLib.ActivitySensorDataSample.html#UFEDLib_ActivitySensorDataSample_ParseModelFields_
+  commentId: Overload:UFEDLib.ActivitySensorDataSample.ParseModelFields
+  isSpec: "True"
+  fullName: UFEDLib.ActivitySensorDataSample.ParseModelFields
+  nameWithType: ActivitySensorDataSample.ParseModelFields
+- uid: UFEDLib.ActivitySensorDataSample.ParseMultiFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.ActivitySensorDataSample,System.Boolean)
+  name: ParseMultiFields(IEnumerable<XElement>, ActivitySensorDataSample, bool)
+  href: api/UFEDLib.ActivitySensorDataSample.html#UFEDLib_ActivitySensorDataSample_ParseMultiFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_ActivitySensorDataSample_System_Boolean_
+  commentId: M:UFEDLib.ActivitySensorDataSample.ParseMultiFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.ActivitySensorDataSample,System.Boolean)
+  name.vb: ParseMultiFields(IEnumerable(Of XElement), ActivitySensorDataSample, Boolean)
+  fullName: UFEDLib.ActivitySensorDataSample.ParseMultiFields(System.Collections.Generic.IEnumerable<System.Xml.Linq.XElement>, UFEDLib.ActivitySensorDataSample, bool)
+  fullName.vb: UFEDLib.ActivitySensorDataSample.ParseMultiFields(System.Collections.Generic.IEnumerable(Of System.Xml.Linq.XElement), UFEDLib.ActivitySensorDataSample, Boolean)
+  nameWithType: ActivitySensorDataSample.ParseMultiFields(IEnumerable<XElement>, ActivitySensorDataSample, bool)
+  nameWithType.vb: ActivitySensorDataSample.ParseMultiFields(IEnumerable(Of XElement), ActivitySensorDataSample, Boolean)
+- uid: UFEDLib.ActivitySensorDataSample.ParseMultiFields*
+  name: ParseMultiFields
+  href: api/UFEDLib.ActivitySensorDataSample.html#UFEDLib_ActivitySensorDataSample_ParseMultiFields_
+  commentId: Overload:UFEDLib.ActivitySensorDataSample.ParseMultiFields
+  isSpec: "True"
+  fullName: UFEDLib.ActivitySensorDataSample.ParseMultiFields
+  nameWithType: ActivitySensorDataSample.ParseMultiFields
+- uid: UFEDLib.ActivitySensorDataSample.ParseMultiModel(System.Xml.Linq.XElement,System.Boolean)
+  name: ParseMultiModel(XElement, bool)
+  href: api/UFEDLib.ActivitySensorDataSample.html#UFEDLib_ActivitySensorDataSample_ParseMultiModel_System_Xml_Linq_XElement_System_Boolean_
+  commentId: M:UFEDLib.ActivitySensorDataSample.ParseMultiModel(System.Xml.Linq.XElement,System.Boolean)
+  name.vb: ParseMultiModel(XElement, Boolean)
+  fullName: UFEDLib.ActivitySensorDataSample.ParseMultiModel(System.Xml.Linq.XElement, bool)
+  fullName.vb: UFEDLib.ActivitySensorDataSample.ParseMultiModel(System.Xml.Linq.XElement, Boolean)
+  nameWithType: ActivitySensorDataSample.ParseMultiModel(XElement, bool)
+  nameWithType.vb: ActivitySensorDataSample.ParseMultiModel(XElement, Boolean)
+- uid: UFEDLib.ActivitySensorDataSample.ParseMultiModel*
+  name: ParseMultiModel
+  href: api/UFEDLib.ActivitySensorDataSample.html#UFEDLib_ActivitySensorDataSample_ParseMultiModel_
+  commentId: Overload:UFEDLib.ActivitySensorDataSample.ParseMultiModel
+  isSpec: "True"
+  fullName: UFEDLib.ActivitySensorDataSample.ParseMultiModel
+  nameWithType: ActivitySensorDataSample.ParseMultiModel
+- uid: UFEDLib.ActivitySensorDataSample.ParseMultiModelFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.ActivitySensorDataSample,System.Boolean)
+  name: ParseMultiModelFields(IEnumerable<XElement>, ActivitySensorDataSample, bool)
+  href: api/UFEDLib.ActivitySensorDataSample.html#UFEDLib_ActivitySensorDataSample_ParseMultiModelFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_ActivitySensorDataSample_System_Boolean_
+  commentId: M:UFEDLib.ActivitySensorDataSample.ParseMultiModelFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.ActivitySensorDataSample,System.Boolean)
+  name.vb: ParseMultiModelFields(IEnumerable(Of XElement), ActivitySensorDataSample, Boolean)
+  fullName: UFEDLib.ActivitySensorDataSample.ParseMultiModelFields(System.Collections.Generic.IEnumerable<System.Xml.Linq.XElement>, UFEDLib.ActivitySensorDataSample, bool)
+  fullName.vb: UFEDLib.ActivitySensorDataSample.ParseMultiModelFields(System.Collections.Generic.IEnumerable(Of System.Xml.Linq.XElement), UFEDLib.ActivitySensorDataSample, Boolean)
+  nameWithType: ActivitySensorDataSample.ParseMultiModelFields(IEnumerable<XElement>, ActivitySensorDataSample, bool)
+  nameWithType.vb: ActivitySensorDataSample.ParseMultiModelFields(IEnumerable(Of XElement), ActivitySensorDataSample, Boolean)
+- uid: UFEDLib.ActivitySensorDataSample.ParseMultiModelFields*
+  name: ParseMultiModelFields
+  href: api/UFEDLib.ActivitySensorDataSample.html#UFEDLib_ActivitySensorDataSample_ParseMultiModelFields_
+  commentId: Overload:UFEDLib.ActivitySensorDataSample.ParseMultiModelFields
+  isSpec: "True"
+  fullName: UFEDLib.ActivitySensorDataSample.ParseMultiModelFields
+  nameWithType: ActivitySensorDataSample.ParseMultiModelFields
+- uid: UFEDLib.ActivitySensorDataSample.Quantity
+  name: Quantity
+  href: api/UFEDLib.ActivitySensorDataSample.html#UFEDLib_ActivitySensorDataSample_Quantity
+  commentId: P:UFEDLib.ActivitySensorDataSample.Quantity
+  fullName: UFEDLib.ActivitySensorDataSample.Quantity
+  nameWithType: ActivitySensorDataSample.Quantity
+- uid: UFEDLib.ActivitySensorDataSample.Quantity*
+  name: Quantity
+  href: api/UFEDLib.ActivitySensorDataSample.html#UFEDLib_ActivitySensorDataSample_Quantity_
+  commentId: Overload:UFEDLib.ActivitySensorDataSample.Quantity
+  isSpec: "True"
+  fullName: UFEDLib.ActivitySensorDataSample.Quantity
+  nameWithType: ActivitySensorDataSample.Quantity
+- uid: UFEDLib.ActivitySensorDataSample.ServiceIdentifier
+  name: ServiceIdentifier
+  href: api/UFEDLib.ActivitySensorDataSample.html#UFEDLib_ActivitySensorDataSample_ServiceIdentifier
+  commentId: P:UFEDLib.ActivitySensorDataSample.ServiceIdentifier
+  fullName: UFEDLib.ActivitySensorDataSample.ServiceIdentifier
+  nameWithType: ActivitySensorDataSample.ServiceIdentifier
+- uid: UFEDLib.ActivitySensorDataSample.ServiceIdentifier*
+  name: ServiceIdentifier
+  href: api/UFEDLib.ActivitySensorDataSample.html#UFEDLib_ActivitySensorDataSample_ServiceIdentifier_
+  commentId: Overload:UFEDLib.ActivitySensorDataSample.ServiceIdentifier
+  isSpec: "True"
+  fullName: UFEDLib.ActivitySensorDataSample.ServiceIdentifier
+  nameWithType: ActivitySensorDataSample.ServiceIdentifier
+- uid: UFEDLib.ActivitySensorDataSample.Source
+  name: Source
+  href: api/UFEDLib.ActivitySensorDataSample.html#UFEDLib_ActivitySensorDataSample_Source
+  commentId: P:UFEDLib.ActivitySensorDataSample.Source
+  fullName: UFEDLib.ActivitySensorDataSample.Source
+  nameWithType: ActivitySensorDataSample.Source
+- uid: UFEDLib.ActivitySensorDataSample.Source*
+  name: Source
+  href: api/UFEDLib.ActivitySensorDataSample.html#UFEDLib_ActivitySensorDataSample_Source_
+  commentId: Overload:UFEDLib.ActivitySensorDataSample.Source
+  isSpec: "True"
+  fullName: UFEDLib.ActivitySensorDataSample.Source
+  nameWithType: ActivitySensorDataSample.Source
+- uid: UFEDLib.ActivitySensorDataSample.UserMapping
+  name: UserMapping
+  href: api/UFEDLib.ActivitySensorDataSample.html#UFEDLib_ActivitySensorDataSample_UserMapping
+  commentId: P:UFEDLib.ActivitySensorDataSample.UserMapping
+  fullName: UFEDLib.ActivitySensorDataSample.UserMapping
+  nameWithType: ActivitySensorDataSample.UserMapping
+- uid: UFEDLib.ActivitySensorDataSample.UserMapping*
+  name: UserMapping
+  href: api/UFEDLib.ActivitySensorDataSample.html#UFEDLib_ActivitySensorDataSample_UserMapping_
+  commentId: Overload:UFEDLib.ActivitySensorDataSample.UserMapping
+  isSpec: "True"
+  fullName: UFEDLib.ActivitySensorDataSample.UserMapping
+  nameWithType: ActivitySensorDataSample.UserMapping
 - uid: UFEDLib.ApplicationUsage
   name: ApplicationUsage
   href: api/UFEDLib.ApplicationUsage.html
@@ -1245,64 +1696,6 @@ references:
   isSpec: "True"
   fullName: UFEDLib.Autofill.Value
   nameWithType: Autofill.Value
-- uid: UFEDLib.BluetoothDevice
-  name: BluetoothDevice
-  href: api/UFEDLib.BluetoothDevice.html
-  commentId: T:UFEDLib.BluetoothDevice
-  fullName: UFEDLib.BluetoothDevice
-  nameWithType: BluetoothDevice
-- uid: UFEDLib.BluetoothDevice.Info
-  name: Info
-  href: api/UFEDLib.BluetoothDevice.html#UFEDLib_BluetoothDevice_Info
-  commentId: P:UFEDLib.BluetoothDevice.Info
-  fullName: UFEDLib.BluetoothDevice.Info
-  nameWithType: BluetoothDevice.Info
-- uid: UFEDLib.BluetoothDevice.Info*
-  name: Info
-  href: api/UFEDLib.BluetoothDevice.html#UFEDLib_BluetoothDevice_Info_
-  commentId: Overload:UFEDLib.BluetoothDevice.Info
-  isSpec: "True"
-  fullName: UFEDLib.BluetoothDevice.Info
-  nameWithType: BluetoothDevice.Info
-- uid: UFEDLib.BluetoothDevice.LastConnected
-  name: LastConnected
-  href: api/UFEDLib.BluetoothDevice.html#UFEDLib_BluetoothDevice_LastConnected
-  commentId: P:UFEDLib.BluetoothDevice.LastConnected
-  fullName: UFEDLib.BluetoothDevice.LastConnected
-  nameWithType: BluetoothDevice.LastConnected
-- uid: UFEDLib.BluetoothDevice.LastConnected*
-  name: LastConnected
-  href: api/UFEDLib.BluetoothDevice.html#UFEDLib_BluetoothDevice_LastConnected_
-  commentId: Overload:UFEDLib.BluetoothDevice.LastConnected
-  isSpec: "True"
-  fullName: UFEDLib.BluetoothDevice.LastConnected
-  nameWithType: BluetoothDevice.LastConnected
-- uid: UFEDLib.BluetoothDevice.MACAddress
-  name: MACAddress
-  href: api/UFEDLib.BluetoothDevice.html#UFEDLib_BluetoothDevice_MACAddress
-  commentId: P:UFEDLib.BluetoothDevice.MACAddress
-  fullName: UFEDLib.BluetoothDevice.MACAddress
-  nameWithType: BluetoothDevice.MACAddress
-- uid: UFEDLib.BluetoothDevice.MACAddress*
-  name: MACAddress
-  href: api/UFEDLib.BluetoothDevice.html#UFEDLib_BluetoothDevice_MACAddress_
-  commentId: Overload:UFEDLib.BluetoothDevice.MACAddress
-  isSpec: "True"
-  fullName: UFEDLib.BluetoothDevice.MACAddress
-  nameWithType: BluetoothDevice.MACAddress
-- uid: UFEDLib.BluetoothDevice.Name
-  name: Name
-  href: api/UFEDLib.BluetoothDevice.html#UFEDLib_BluetoothDevice_Name
-  commentId: P:UFEDLib.BluetoothDevice.Name
-  fullName: UFEDLib.BluetoothDevice.Name
-  nameWithType: BluetoothDevice.Name
-- uid: UFEDLib.BluetoothDevice.Name*
-  name: Name
-  href: api/UFEDLib.BluetoothDevice.html#UFEDLib_BluetoothDevice_Name_
-  commentId: Overload:UFEDLib.BluetoothDevice.Name
-  isSpec: "True"
-  fullName: UFEDLib.BluetoothDevice.Name
-  nameWithType: BluetoothDevice.Name
 - uid: UFEDLib.CalendarEntry
   name: CalendarEntry
   href: api/UFEDLib.CalendarEntry.html
@@ -2001,51 +2394,6 @@ references:
   isSpec: "True"
   fullName: UFEDLib.Call.VideoCall
   nameWithType: Call.VideoCall
-- uid: UFEDLib.CarvedString
-  name: CarvedString
-  href: api/UFEDLib.CarvedString.html
-  commentId: T:UFEDLib.CarvedString
-  fullName: UFEDLib.CarvedString
-  nameWithType: CarvedString
-- uid: UFEDLib.CarvedString.MetaData
-  name: MetaData
-  href: api/UFEDLib.CarvedString.html#UFEDLib_CarvedString_MetaData
-  commentId: P:UFEDLib.CarvedString.MetaData
-  fullName: UFEDLib.CarvedString.MetaData
-  nameWithType: CarvedString.MetaData
-- uid: UFEDLib.CarvedString.MetaData*
-  name: MetaData
-  href: api/UFEDLib.CarvedString.html#UFEDLib_CarvedString_MetaData_
-  commentId: Overload:UFEDLib.CarvedString.MetaData
-  isSpec: "True"
-  fullName: UFEDLib.CarvedString.MetaData
-  nameWithType: CarvedString.MetaData
-- uid: UFEDLib.CarvedString.Source
-  name: Source
-  href: api/UFEDLib.CarvedString.html#UFEDLib_CarvedString_Source
-  commentId: P:UFEDLib.CarvedString.Source
-  fullName: UFEDLib.CarvedString.Source
-  nameWithType: CarvedString.Source
-- uid: UFEDLib.CarvedString.Source*
-  name: Source
-  href: api/UFEDLib.CarvedString.html#UFEDLib_CarvedString_Source_
-  commentId: Overload:UFEDLib.CarvedString.Source
-  isSpec: "True"
-  fullName: UFEDLib.CarvedString.Source
-  nameWithType: CarvedString.Source
-- uid: UFEDLib.CarvedString.Value
-  name: Value
-  href: api/UFEDLib.CarvedString.html#UFEDLib_CarvedString_Value
-  commentId: P:UFEDLib.CarvedString.Value
-  fullName: UFEDLib.CarvedString.Value
-  nameWithType: CarvedString.Value
-- uid: UFEDLib.CarvedString.Value*
-  name: Value
-  href: api/UFEDLib.CarvedString.html#UFEDLib_CarvedString_Value_
-  commentId: Overload:UFEDLib.CarvedString.Value
-  isSpec: "True"
-  fullName: UFEDLib.CarvedString.Value
-  nameWithType: CarvedString.Value
 - uid: UFEDLib.CellTower
   name: CellTower
   href: api/UFEDLib.CellTower.html
@@ -2143,6 +2491,19 @@ references:
   isSpec: "True"
   fullName: UFEDLib.CellTower.NID
   nameWithType: CellTower.NID
+- uid: UFEDLib.CellTower.Package
+  name: Package
+  href: api/UFEDLib.CellTower.html#UFEDLib_CellTower_Package
+  commentId: P:UFEDLib.CellTower.Package
+  fullName: UFEDLib.CellTower.Package
+  nameWithType: CellTower.Package
+- uid: UFEDLib.CellTower.Package*
+  name: Package
+  href: api/UFEDLib.CellTower.html#UFEDLib_CellTower_Package_
+  commentId: Overload:UFEDLib.CellTower.Package
+  isSpec: "True"
+  fullName: UFEDLib.CellTower.Package
+  nameWithType: CellTower.Package
 - uid: UFEDLib.CellTower.ParseFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.CellTower,System.Boolean)
   name: ParseFields(IEnumerable<XElement>, CellTower, bool)
   href: api/UFEDLib.CellTower.html#UFEDLib_CellTower_ParseFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_CellTower_System_Boolean_
@@ -2588,6 +2949,212 @@ references:
   isSpec: "True"
   fullName: UFEDLib.Chat.UserMapping
   nameWithType: Chat.UserMapping
+- uid: UFEDLib.ChatActivity
+  name: ChatActivity
+  href: api/UFEDLib.ChatActivity.html
+  commentId: T:UFEDLib.ChatActivity
+  fullName: UFEDLib.ChatActivity
+  nameWithType: ChatActivity
+- uid: UFEDLib.ChatActivity.Action
+  name: Action
+  href: api/UFEDLib.ChatActivity.html#UFEDLib_ChatActivity_Action
+  commentId: P:UFEDLib.ChatActivity.Action
+  fullName: UFEDLib.ChatActivity.Action
+  nameWithType: ChatActivity.Action
+- uid: UFEDLib.ChatActivity.Action*
+  name: Action
+  href: api/UFEDLib.ChatActivity.html#UFEDLib_ChatActivity_Action_
+  commentId: Overload:UFEDLib.ChatActivity.Action
+  isSpec: "True"
+  fullName: UFEDLib.ChatActivity.Action
+  nameWithType: ChatActivity.Action
+- uid: UFEDLib.ChatActivity.GetXmlModelType
+  name: GetXmlModelType()
+  href: api/UFEDLib.ChatActivity.html#UFEDLib_ChatActivity_GetXmlModelType
+  commentId: M:UFEDLib.ChatActivity.GetXmlModelType
+  fullName: UFEDLib.ChatActivity.GetXmlModelType()
+  nameWithType: ChatActivity.GetXmlModelType()
+- uid: UFEDLib.ChatActivity.GetXmlModelType*
+  name: GetXmlModelType
+  href: api/UFEDLib.ChatActivity.html#UFEDLib_ChatActivity_GetXmlModelType_
+  commentId: Overload:UFEDLib.ChatActivity.GetXmlModelType
+  isSpec: "True"
+  fullName: UFEDLib.ChatActivity.GetXmlModelType
+  nameWithType: ChatActivity.GetXmlModelType
+- uid: UFEDLib.ChatActivity.ParseFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.ChatActivity,System.Boolean)
+  name: ParseFields(IEnumerable<XElement>, ChatActivity, bool)
+  href: api/UFEDLib.ChatActivity.html#UFEDLib_ChatActivity_ParseFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_ChatActivity_System_Boolean_
+  commentId: M:UFEDLib.ChatActivity.ParseFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.ChatActivity,System.Boolean)
+  name.vb: ParseFields(IEnumerable(Of XElement), ChatActivity, Boolean)
+  fullName: UFEDLib.ChatActivity.ParseFields(System.Collections.Generic.IEnumerable<System.Xml.Linq.XElement>, UFEDLib.ChatActivity, bool)
+  fullName.vb: UFEDLib.ChatActivity.ParseFields(System.Collections.Generic.IEnumerable(Of System.Xml.Linq.XElement), UFEDLib.ChatActivity, Boolean)
+  nameWithType: ChatActivity.ParseFields(IEnumerable<XElement>, ChatActivity, bool)
+  nameWithType.vb: ChatActivity.ParseFields(IEnumerable(Of XElement), ChatActivity, Boolean)
+- uid: UFEDLib.ChatActivity.ParseFields*
+  name: ParseFields
+  href: api/UFEDLib.ChatActivity.html#UFEDLib_ChatActivity_ParseFields_
+  commentId: Overload:UFEDLib.ChatActivity.ParseFields
+  isSpec: "True"
+  fullName: UFEDLib.ChatActivity.ParseFields
+  nameWithType: ChatActivity.ParseFields
+- uid: UFEDLib.ChatActivity.ParseModel(System.Xml.Linq.XElement,System.Boolean)
+  name: ParseModel(XElement, bool)
+  href: api/UFEDLib.ChatActivity.html#UFEDLib_ChatActivity_ParseModel_System_Xml_Linq_XElement_System_Boolean_
+  commentId: M:UFEDLib.ChatActivity.ParseModel(System.Xml.Linq.XElement,System.Boolean)
+  name.vb: ParseModel(XElement, Boolean)
+  fullName: UFEDLib.ChatActivity.ParseModel(System.Xml.Linq.XElement, bool)
+  fullName.vb: UFEDLib.ChatActivity.ParseModel(System.Xml.Linq.XElement, Boolean)
+  nameWithType: ChatActivity.ParseModel(XElement, bool)
+  nameWithType.vb: ChatActivity.ParseModel(XElement, Boolean)
+- uid: UFEDLib.ChatActivity.ParseModel*
+  name: ParseModel
+  href: api/UFEDLib.ChatActivity.html#UFEDLib_ChatActivity_ParseModel_
+  commentId: Overload:UFEDLib.ChatActivity.ParseModel
+  isSpec: "True"
+  fullName: UFEDLib.ChatActivity.ParseModel
+  nameWithType: ChatActivity.ParseModel
+- uid: UFEDLib.ChatActivity.ParseModelFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.ChatActivity,System.Boolean)
+  name: ParseModelFields(IEnumerable<XElement>, ChatActivity, bool)
+  href: api/UFEDLib.ChatActivity.html#UFEDLib_ChatActivity_ParseModelFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_ChatActivity_System_Boolean_
+  commentId: M:UFEDLib.ChatActivity.ParseModelFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.ChatActivity,System.Boolean)
+  name.vb: ParseModelFields(IEnumerable(Of XElement), ChatActivity, Boolean)
+  fullName: UFEDLib.ChatActivity.ParseModelFields(System.Collections.Generic.IEnumerable<System.Xml.Linq.XElement>, UFEDLib.ChatActivity, bool)
+  fullName.vb: UFEDLib.ChatActivity.ParseModelFields(System.Collections.Generic.IEnumerable(Of System.Xml.Linq.XElement), UFEDLib.ChatActivity, Boolean)
+  nameWithType: ChatActivity.ParseModelFields(IEnumerable<XElement>, ChatActivity, bool)
+  nameWithType.vb: ChatActivity.ParseModelFields(IEnumerable(Of XElement), ChatActivity, Boolean)
+- uid: UFEDLib.ChatActivity.ParseModelFields*
+  name: ParseModelFields
+  href: api/UFEDLib.ChatActivity.html#UFEDLib_ChatActivity_ParseModelFields_
+  commentId: Overload:UFEDLib.ChatActivity.ParseModelFields
+  isSpec: "True"
+  fullName: UFEDLib.ChatActivity.ParseModelFields
+  nameWithType: ChatActivity.ParseModelFields
+- uid: UFEDLib.ChatActivity.ParseMultiFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.ChatActivity,System.Boolean)
+  name: ParseMultiFields(IEnumerable<XElement>, ChatActivity, bool)
+  href: api/UFEDLib.ChatActivity.html#UFEDLib_ChatActivity_ParseMultiFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_ChatActivity_System_Boolean_
+  commentId: M:UFEDLib.ChatActivity.ParseMultiFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.ChatActivity,System.Boolean)
+  name.vb: ParseMultiFields(IEnumerable(Of XElement), ChatActivity, Boolean)
+  fullName: UFEDLib.ChatActivity.ParseMultiFields(System.Collections.Generic.IEnumerable<System.Xml.Linq.XElement>, UFEDLib.ChatActivity, bool)
+  fullName.vb: UFEDLib.ChatActivity.ParseMultiFields(System.Collections.Generic.IEnumerable(Of System.Xml.Linq.XElement), UFEDLib.ChatActivity, Boolean)
+  nameWithType: ChatActivity.ParseMultiFields(IEnumerable<XElement>, ChatActivity, bool)
+  nameWithType.vb: ChatActivity.ParseMultiFields(IEnumerable(Of XElement), ChatActivity, Boolean)
+- uid: UFEDLib.ChatActivity.ParseMultiFields*
+  name: ParseMultiFields
+  href: api/UFEDLib.ChatActivity.html#UFEDLib_ChatActivity_ParseMultiFields_
+  commentId: Overload:UFEDLib.ChatActivity.ParseMultiFields
+  isSpec: "True"
+  fullName: UFEDLib.ChatActivity.ParseMultiFields
+  nameWithType: ChatActivity.ParseMultiFields
+- uid: UFEDLib.ChatActivity.ParseMultiModel(System.Xml.Linq.XElement,System.Boolean)
+  name: ParseMultiModel(XElement, bool)
+  href: api/UFEDLib.ChatActivity.html#UFEDLib_ChatActivity_ParseMultiModel_System_Xml_Linq_XElement_System_Boolean_
+  commentId: M:UFEDLib.ChatActivity.ParseMultiModel(System.Xml.Linq.XElement,System.Boolean)
+  name.vb: ParseMultiModel(XElement, Boolean)
+  fullName: UFEDLib.ChatActivity.ParseMultiModel(System.Xml.Linq.XElement, bool)
+  fullName.vb: UFEDLib.ChatActivity.ParseMultiModel(System.Xml.Linq.XElement, Boolean)
+  nameWithType: ChatActivity.ParseMultiModel(XElement, bool)
+  nameWithType.vb: ChatActivity.ParseMultiModel(XElement, Boolean)
+- uid: UFEDLib.ChatActivity.ParseMultiModel*
+  name: ParseMultiModel
+  href: api/UFEDLib.ChatActivity.html#UFEDLib_ChatActivity_ParseMultiModel_
+  commentId: Overload:UFEDLib.ChatActivity.ParseMultiModel
+  isSpec: "True"
+  fullName: UFEDLib.ChatActivity.ParseMultiModel
+  nameWithType: ChatActivity.ParseMultiModel
+- uid: UFEDLib.ChatActivity.ParseMultiModelFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.ChatActivity,System.Boolean)
+  name: ParseMultiModelFields(IEnumerable<XElement>, ChatActivity, bool)
+  href: api/UFEDLib.ChatActivity.html#UFEDLib_ChatActivity_ParseMultiModelFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_ChatActivity_System_Boolean_
+  commentId: M:UFEDLib.ChatActivity.ParseMultiModelFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.ChatActivity,System.Boolean)
+  name.vb: ParseMultiModelFields(IEnumerable(Of XElement), ChatActivity, Boolean)
+  fullName: UFEDLib.ChatActivity.ParseMultiModelFields(System.Collections.Generic.IEnumerable<System.Xml.Linq.XElement>, UFEDLib.ChatActivity, bool)
+  fullName.vb: UFEDLib.ChatActivity.ParseMultiModelFields(System.Collections.Generic.IEnumerable(Of System.Xml.Linq.XElement), UFEDLib.ChatActivity, Boolean)
+  nameWithType: ChatActivity.ParseMultiModelFields(IEnumerable<XElement>, ChatActivity, bool)
+  nameWithType.vb: ChatActivity.ParseMultiModelFields(IEnumerable(Of XElement), ChatActivity, Boolean)
+- uid: UFEDLib.ChatActivity.ParseMultiModelFields*
+  name: ParseMultiModelFields
+  href: api/UFEDLib.ChatActivity.html#UFEDLib_ChatActivity_ParseMultiModelFields_
+  commentId: Overload:UFEDLib.ChatActivity.ParseMultiModelFields
+  isSpec: "True"
+  fullName: UFEDLib.ChatActivity.ParseMultiModelFields
+  nameWithType: ChatActivity.ParseMultiModelFields
+- uid: UFEDLib.ChatActivity.Participant
+  name: Participant
+  href: api/UFEDLib.ChatActivity.html#UFEDLib_ChatActivity_Participant
+  commentId: P:UFEDLib.ChatActivity.Participant
+  fullName: UFEDLib.ChatActivity.Participant
+  nameWithType: ChatActivity.Participant
+- uid: UFEDLib.ChatActivity.Participant*
+  name: Participant
+  href: api/UFEDLib.ChatActivity.html#UFEDLib_ChatActivity_Participant_
+  commentId: Overload:UFEDLib.ChatActivity.Participant
+  isSpec: "True"
+  fullName: UFEDLib.ChatActivity.Participant
+  nameWithType: ChatActivity.Participant
+- uid: UFEDLib.ChatActivity.Source
+  name: Source
+  href: api/UFEDLib.ChatActivity.html#UFEDLib_ChatActivity_Source
+  commentId: P:UFEDLib.ChatActivity.Source
+  fullName: UFEDLib.ChatActivity.Source
+  nameWithType: ChatActivity.Source
+- uid: UFEDLib.ChatActivity.Source*
+  name: Source
+  href: api/UFEDLib.ChatActivity.html#UFEDLib_ChatActivity_Source_
+  commentId: Overload:UFEDLib.ChatActivity.Source
+  isSpec: "True"
+  fullName: UFEDLib.ChatActivity.Source
+  nameWithType: ChatActivity.Source
+- uid: UFEDLib.ChatActivity.SystemMessageBody
+  name: SystemMessageBody
+  href: api/UFEDLib.ChatActivity.html#UFEDLib_ChatActivity_SystemMessageBody
+  commentId: P:UFEDLib.ChatActivity.SystemMessageBody
+  fullName: UFEDLib.ChatActivity.SystemMessageBody
+  nameWithType: ChatActivity.SystemMessageBody
+- uid: UFEDLib.ChatActivity.SystemMessageBody*
+  name: SystemMessageBody
+  href: api/UFEDLib.ChatActivity.html#UFEDLib_ChatActivity_SystemMessageBody_
+  commentId: Overload:UFEDLib.ChatActivity.SystemMessageBody
+  isSpec: "True"
+  fullName: UFEDLib.ChatActivity.SystemMessageBody
+  nameWithType: ChatActivity.SystemMessageBody
+- uid: UFEDLib.ChatActivity.SystemMessageId
+  name: SystemMessageId
+  href: api/UFEDLib.ChatActivity.html#UFEDLib_ChatActivity_SystemMessageId
+  commentId: P:UFEDLib.ChatActivity.SystemMessageId
+  fullName: UFEDLib.ChatActivity.SystemMessageId
+  nameWithType: ChatActivity.SystemMessageId
+- uid: UFEDLib.ChatActivity.SystemMessageId*
+  name: SystemMessageId
+  href: api/UFEDLib.ChatActivity.html#UFEDLib_ChatActivity_SystemMessageId_
+  commentId: Overload:UFEDLib.ChatActivity.SystemMessageId
+  isSpec: "True"
+  fullName: UFEDLib.ChatActivity.SystemMessageId
+  nameWithType: ChatActivity.SystemMessageId
+- uid: UFEDLib.ChatActivity.SystemMessageTimeStamp
+  name: SystemMessageTimeStamp
+  href: api/UFEDLib.ChatActivity.html#UFEDLib_ChatActivity_SystemMessageTimeStamp
+  commentId: P:UFEDLib.ChatActivity.SystemMessageTimeStamp
+  fullName: UFEDLib.ChatActivity.SystemMessageTimeStamp
+  nameWithType: ChatActivity.SystemMessageTimeStamp
+- uid: UFEDLib.ChatActivity.SystemMessageTimeStamp*
+  name: SystemMessageTimeStamp
+  href: api/UFEDLib.ChatActivity.html#UFEDLib_ChatActivity_SystemMessageTimeStamp_
+  commentId: Overload:UFEDLib.ChatActivity.SystemMessageTimeStamp
+  isSpec: "True"
+  fullName: UFEDLib.ChatActivity.SystemMessageTimeStamp
+  nameWithType: ChatActivity.SystemMessageTimeStamp
+- uid: UFEDLib.ChatActivity.UserMapping
+  name: UserMapping
+  href: api/UFEDLib.ChatActivity.html#UFEDLib_ChatActivity_UserMapping
+  commentId: P:UFEDLib.ChatActivity.UserMapping
+  fullName: UFEDLib.ChatActivity.UserMapping
+  nameWithType: ChatActivity.UserMapping
+- uid: UFEDLib.ChatActivity.UserMapping*
+  name: UserMapping
+  href: api/UFEDLib.ChatActivity.html#UFEDLib_ChatActivity_UserMapping_
+  commentId: Overload:UFEDLib.ChatActivity.UserMapping
+  isSpec: "True"
+  fullName: UFEDLib.ChatActivity.UserMapping
+  nameWithType: ChatActivity.UserMapping
 - uid: UFEDLib.Contact
   name: Contact
   href: api/UFEDLib.Contact.html
@@ -3741,6 +4308,19 @@ references:
   commentId: T:UFEDLib.CreditCard
   fullName: UFEDLib.CreditCard
   nameWithType: CreditCard
+- uid: UFEDLib.CreditCard.BillingAddress
+  name: BillingAddress
+  href: api/UFEDLib.CreditCard.html#UFEDLib_CreditCard_BillingAddress
+  commentId: P:UFEDLib.CreditCard.BillingAddress
+  fullName: UFEDLib.CreditCard.BillingAddress
+  nameWithType: CreditCard.BillingAddress
+- uid: UFEDLib.CreditCard.BillingAddress*
+  name: BillingAddress
+  href: api/UFEDLib.CreditCard.html#UFEDLib_CreditCard_BillingAddress_
+  commentId: Overload:UFEDLib.CreditCard.BillingAddress
+  isSpec: "True"
+  fullName: UFEDLib.CreditCard.BillingAddress
+  nameWithType: CreditCard.BillingAddress
 - uid: UFEDLib.CreditCard.CVV
   name: CVV
   href: api/UFEDLib.CreditCard.html#UFEDLib_CreditCard_CVV
@@ -3999,6 +4579,19 @@ references:
   isSpec: "True"
   fullName: UFEDLib.DeviceConnectivity.ConnectivityNature
   nameWithType: DeviceConnectivity.ConnectivityNature
+- uid: UFEDLib.DeviceConnectivity.DeviceIdentifiers
+  name: DeviceIdentifiers
+  href: api/UFEDLib.DeviceConnectivity.html#UFEDLib_DeviceConnectivity_DeviceIdentifiers
+  commentId: P:UFEDLib.DeviceConnectivity.DeviceIdentifiers
+  fullName: UFEDLib.DeviceConnectivity.DeviceIdentifiers
+  nameWithType: DeviceConnectivity.DeviceIdentifiers
+- uid: UFEDLib.DeviceConnectivity.DeviceIdentifiers*
+  name: DeviceIdentifiers
+  href: api/UFEDLib.DeviceConnectivity.html#UFEDLib_DeviceConnectivity_DeviceIdentifiers_
+  commentId: Overload:UFEDLib.DeviceConnectivity.DeviceIdentifiers
+  isSpec: "True"
+  fullName: UFEDLib.DeviceConnectivity.DeviceIdentifiers
+  nameWithType: DeviceConnectivity.DeviceIdentifiers
 - uid: UFEDLib.DeviceConnectivity.DeviceName
   name: DeviceName
   href: api/UFEDLib.DeviceConnectivity.html#UFEDLib_DeviceConnectivity_DeviceName
@@ -5643,6 +6236,19 @@ references:
   isSpec: "True"
   fullName: UFEDLib.FileUpload.Participants
   nameWithType: FileUpload.Participants
+- uid: UFEDLib.FileUpload.ServiceIdentifier
+  name: ServiceIdentifier
+  href: api/UFEDLib.FileUpload.html#UFEDLib_FileUpload_ServiceIdentifier
+  commentId: P:UFEDLib.FileUpload.ServiceIdentifier
+  fullName: UFEDLib.FileUpload.ServiceIdentifier
+  nameWithType: FileUpload.ServiceIdentifier
+- uid: UFEDLib.FileUpload.ServiceIdentifier*
+  name: ServiceIdentifier
+  href: api/UFEDLib.FileUpload.html#UFEDLib_FileUpload_ServiceIdentifier_
+  commentId: Overload:UFEDLib.FileUpload.ServiceIdentifier
+  isSpec: "True"
+  fullName: UFEDLib.FileUpload.ServiceIdentifier
+  nameWithType: FileUpload.ServiceIdentifier
 - uid: UFEDLib.FileUpload.Source
   name: Source
   href: api/UFEDLib.FileUpload.html#UFEDLib_FileUpload_Source
@@ -5714,6 +6320,19 @@ references:
   isSpec: "True"
   fullName: UFEDLib.FinancialAccount.AccountID
   nameWithType: FinancialAccount.AccountID
+- uid: UFEDLib.FinancialAccount.Assets
+  name: Assets
+  href: api/UFEDLib.FinancialAccount.html#UFEDLib_FinancialAccount_Assets
+  commentId: P:UFEDLib.FinancialAccount.Assets
+  fullName: UFEDLib.FinancialAccount.Assets
+  nameWithType: FinancialAccount.Assets
+- uid: UFEDLib.FinancialAccount.Assets*
+  name: Assets
+  href: api/UFEDLib.FinancialAccount.html#UFEDLib_FinancialAccount_Assets_
+  commentId: Overload:UFEDLib.FinancialAccount.Assets
+  isSpec: "True"
+  fullName: UFEDLib.FinancialAccount.Assets
+  nameWithType: FinancialAccount.Assets
 - uid: UFEDLib.FinancialAccount.DateLastUpdated
   name: DateLastUpdated
   href: api/UFEDLib.FinancialAccount.html#UFEDLib_FinancialAccount_DateLastUpdated
@@ -5740,6 +6359,19 @@ references:
   isSpec: "True"
   fullName: UFEDLib.FinancialAccount.FinancialAccountType
   nameWithType: FinancialAccount.FinancialAccountType
+- uid: UFEDLib.FinancialAccount.FoundInField
+  name: FoundInField
+  href: api/UFEDLib.FinancialAccount.html#UFEDLib_FinancialAccount_FoundInField
+  commentId: P:UFEDLib.FinancialAccount.FoundInField
+  fullName: UFEDLib.FinancialAccount.FoundInField
+  nameWithType: FinancialAccount.FoundInField
+- uid: UFEDLib.FinancialAccount.FoundInField*
+  name: FoundInField
+  href: api/UFEDLib.FinancialAccount.html#UFEDLib_FinancialAccount_FoundInField_
+  commentId: Overload:UFEDLib.FinancialAccount.FoundInField
+  isSpec: "True"
+  fullName: UFEDLib.FinancialAccount.FoundInField
+  nameWithType: FinancialAccount.FoundInField
 - uid: UFEDLib.FinancialAccount.FoundInModelId
   name: FoundInModelId
   href: api/UFEDLib.FinancialAccount.html#UFEDLib_FinancialAccount_FoundInModelId
@@ -5753,6 +6385,19 @@ references:
   isSpec: "True"
   fullName: UFEDLib.FinancialAccount.FoundInModelId
   nameWithType: FinancialAccount.FoundInModelId
+- uid: UFEDLib.FinancialAccount.FoundInModelType
+  name: FoundInModelType
+  href: api/UFEDLib.FinancialAccount.html#UFEDLib_FinancialAccount_FoundInModelType
+  commentId: P:UFEDLib.FinancialAccount.FoundInModelType
+  fullName: UFEDLib.FinancialAccount.FoundInModelType
+  nameWithType: FinancialAccount.FoundInModelType
+- uid: UFEDLib.FinancialAccount.FoundInModelType*
+  name: FoundInModelType
+  href: api/UFEDLib.FinancialAccount.html#UFEDLib_FinancialAccount_FoundInModelType_
+  commentId: Overload:UFEDLib.FinancialAccount.FoundInModelType
+  isSpec: "True"
+  fullName: UFEDLib.FinancialAccount.FoundInModelType
+  nameWithType: FinancialAccount.FoundInModelType
 - uid: UFEDLib.FinancialAccount.GetXmlModelType
   name: GetXmlModelType()
   href: api/UFEDLib.FinancialAccount.html#UFEDLib_FinancialAccount_GetXmlModelType
@@ -5888,6 +6533,173 @@ references:
   isSpec: "True"
   fullName: UFEDLib.FinancialAccount.UserMapping
   nameWithType: FinancialAccount.UserMapping
+- uid: UFEDLib.FinancialAsset
+  name: FinancialAsset
+  href: api/UFEDLib.FinancialAsset.html
+  commentId: T:UFEDLib.FinancialAsset
+  fullName: UFEDLib.FinancialAsset
+  nameWithType: FinancialAsset
+- uid: UFEDLib.FinancialAsset.Currency
+  name: Currency
+  href: api/UFEDLib.FinancialAsset.html#UFEDLib_FinancialAsset_Currency
+  commentId: P:UFEDLib.FinancialAsset.Currency
+  fullName: UFEDLib.FinancialAsset.Currency
+  nameWithType: FinancialAsset.Currency
+- uid: UFEDLib.FinancialAsset.Currency*
+  name: Currency
+  href: api/UFEDLib.FinancialAsset.html#UFEDLib_FinancialAsset_Currency_
+  commentId: Overload:UFEDLib.FinancialAsset.Currency
+  isSpec: "True"
+  fullName: UFEDLib.FinancialAsset.Currency
+  nameWithType: FinancialAsset.Currency
+- uid: UFEDLib.FinancialAsset.DateLastUpdated
+  name: DateLastUpdated
+  href: api/UFEDLib.FinancialAsset.html#UFEDLib_FinancialAsset_DateLastUpdated
+  commentId: P:UFEDLib.FinancialAsset.DateLastUpdated
+  fullName: UFEDLib.FinancialAsset.DateLastUpdated
+  nameWithType: FinancialAsset.DateLastUpdated
+- uid: UFEDLib.FinancialAsset.DateLastUpdated*
+  name: DateLastUpdated
+  href: api/UFEDLib.FinancialAsset.html#UFEDLib_FinancialAsset_DateLastUpdated_
+  commentId: Overload:UFEDLib.FinancialAsset.DateLastUpdated
+  isSpec: "True"
+  fullName: UFEDLib.FinancialAsset.DateLastUpdated
+  nameWithType: FinancialAsset.DateLastUpdated
+- uid: UFEDLib.FinancialAsset.GetXmlModelType
+  name: GetXmlModelType()
+  href: api/UFEDLib.FinancialAsset.html#UFEDLib_FinancialAsset_GetXmlModelType
+  commentId: M:UFEDLib.FinancialAsset.GetXmlModelType
+  fullName: UFEDLib.FinancialAsset.GetXmlModelType()
+  nameWithType: FinancialAsset.GetXmlModelType()
+- uid: UFEDLib.FinancialAsset.GetXmlModelType*
+  name: GetXmlModelType
+  href: api/UFEDLib.FinancialAsset.html#UFEDLib_FinancialAsset_GetXmlModelType_
+  commentId: Overload:UFEDLib.FinancialAsset.GetXmlModelType
+  isSpec: "True"
+  fullName: UFEDLib.FinancialAsset.GetXmlModelType
+  nameWithType: FinancialAsset.GetXmlModelType
+- uid: UFEDLib.FinancialAsset.ParseFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.FinancialAsset,System.Boolean)
+  name: ParseFields(IEnumerable<XElement>, FinancialAsset, bool)
+  href: api/UFEDLib.FinancialAsset.html#UFEDLib_FinancialAsset_ParseFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_FinancialAsset_System_Boolean_
+  commentId: M:UFEDLib.FinancialAsset.ParseFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.FinancialAsset,System.Boolean)
+  name.vb: ParseFields(IEnumerable(Of XElement), FinancialAsset, Boolean)
+  fullName: UFEDLib.FinancialAsset.ParseFields(System.Collections.Generic.IEnumerable<System.Xml.Linq.XElement>, UFEDLib.FinancialAsset, bool)
+  fullName.vb: UFEDLib.FinancialAsset.ParseFields(System.Collections.Generic.IEnumerable(Of System.Xml.Linq.XElement), UFEDLib.FinancialAsset, Boolean)
+  nameWithType: FinancialAsset.ParseFields(IEnumerable<XElement>, FinancialAsset, bool)
+  nameWithType.vb: FinancialAsset.ParseFields(IEnumerable(Of XElement), FinancialAsset, Boolean)
+- uid: UFEDLib.FinancialAsset.ParseFields*
+  name: ParseFields
+  href: api/UFEDLib.FinancialAsset.html#UFEDLib_FinancialAsset_ParseFields_
+  commentId: Overload:UFEDLib.FinancialAsset.ParseFields
+  isSpec: "True"
+  fullName: UFEDLib.FinancialAsset.ParseFields
+  nameWithType: FinancialAsset.ParseFields
+- uid: UFEDLib.FinancialAsset.ParseModel(System.Xml.Linq.XElement,System.Boolean)
+  name: ParseModel(XElement, bool)
+  href: api/UFEDLib.FinancialAsset.html#UFEDLib_FinancialAsset_ParseModel_System_Xml_Linq_XElement_System_Boolean_
+  commentId: M:UFEDLib.FinancialAsset.ParseModel(System.Xml.Linq.XElement,System.Boolean)
+  name.vb: ParseModel(XElement, Boolean)
+  fullName: UFEDLib.FinancialAsset.ParseModel(System.Xml.Linq.XElement, bool)
+  fullName.vb: UFEDLib.FinancialAsset.ParseModel(System.Xml.Linq.XElement, Boolean)
+  nameWithType: FinancialAsset.ParseModel(XElement, bool)
+  nameWithType.vb: FinancialAsset.ParseModel(XElement, Boolean)
+- uid: UFEDLib.FinancialAsset.ParseModel*
+  name: ParseModel
+  href: api/UFEDLib.FinancialAsset.html#UFEDLib_FinancialAsset_ParseModel_
+  commentId: Overload:UFEDLib.FinancialAsset.ParseModel
+  isSpec: "True"
+  fullName: UFEDLib.FinancialAsset.ParseModel
+  nameWithType: FinancialAsset.ParseModel
+- uid: UFEDLib.FinancialAsset.ParseModelFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.FinancialAsset,System.Boolean)
+  name: ParseModelFields(IEnumerable<XElement>, FinancialAsset, bool)
+  href: api/UFEDLib.FinancialAsset.html#UFEDLib_FinancialAsset_ParseModelFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_FinancialAsset_System_Boolean_
+  commentId: M:UFEDLib.FinancialAsset.ParseModelFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.FinancialAsset,System.Boolean)
+  name.vb: ParseModelFields(IEnumerable(Of XElement), FinancialAsset, Boolean)
+  fullName: UFEDLib.FinancialAsset.ParseModelFields(System.Collections.Generic.IEnumerable<System.Xml.Linq.XElement>, UFEDLib.FinancialAsset, bool)
+  fullName.vb: UFEDLib.FinancialAsset.ParseModelFields(System.Collections.Generic.IEnumerable(Of System.Xml.Linq.XElement), UFEDLib.FinancialAsset, Boolean)
+  nameWithType: FinancialAsset.ParseModelFields(IEnumerable<XElement>, FinancialAsset, bool)
+  nameWithType.vb: FinancialAsset.ParseModelFields(IEnumerable(Of XElement), FinancialAsset, Boolean)
+- uid: UFEDLib.FinancialAsset.ParseModelFields*
+  name: ParseModelFields
+  href: api/UFEDLib.FinancialAsset.html#UFEDLib_FinancialAsset_ParseModelFields_
+  commentId: Overload:UFEDLib.FinancialAsset.ParseModelFields
+  isSpec: "True"
+  fullName: UFEDLib.FinancialAsset.ParseModelFields
+  nameWithType: FinancialAsset.ParseModelFields
+- uid: UFEDLib.FinancialAsset.ParseMultiFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.FinancialAsset,System.Boolean)
+  name: ParseMultiFields(IEnumerable<XElement>, FinancialAsset, bool)
+  href: api/UFEDLib.FinancialAsset.html#UFEDLib_FinancialAsset_ParseMultiFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_FinancialAsset_System_Boolean_
+  commentId: M:UFEDLib.FinancialAsset.ParseMultiFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.FinancialAsset,System.Boolean)
+  name.vb: ParseMultiFields(IEnumerable(Of XElement), FinancialAsset, Boolean)
+  fullName: UFEDLib.FinancialAsset.ParseMultiFields(System.Collections.Generic.IEnumerable<System.Xml.Linq.XElement>, UFEDLib.FinancialAsset, bool)
+  fullName.vb: UFEDLib.FinancialAsset.ParseMultiFields(System.Collections.Generic.IEnumerable(Of System.Xml.Linq.XElement), UFEDLib.FinancialAsset, Boolean)
+  nameWithType: FinancialAsset.ParseMultiFields(IEnumerable<XElement>, FinancialAsset, bool)
+  nameWithType.vb: FinancialAsset.ParseMultiFields(IEnumerable(Of XElement), FinancialAsset, Boolean)
+- uid: UFEDLib.FinancialAsset.ParseMultiFields*
+  name: ParseMultiFields
+  href: api/UFEDLib.FinancialAsset.html#UFEDLib_FinancialAsset_ParseMultiFields_
+  commentId: Overload:UFEDLib.FinancialAsset.ParseMultiFields
+  isSpec: "True"
+  fullName: UFEDLib.FinancialAsset.ParseMultiFields
+  nameWithType: FinancialAsset.ParseMultiFields
+- uid: UFEDLib.FinancialAsset.ParseMultiModel(System.Xml.Linq.XElement,System.Boolean)
+  name: ParseMultiModel(XElement, bool)
+  href: api/UFEDLib.FinancialAsset.html#UFEDLib_FinancialAsset_ParseMultiModel_System_Xml_Linq_XElement_System_Boolean_
+  commentId: M:UFEDLib.FinancialAsset.ParseMultiModel(System.Xml.Linq.XElement,System.Boolean)
+  name.vb: ParseMultiModel(XElement, Boolean)
+  fullName: UFEDLib.FinancialAsset.ParseMultiModel(System.Xml.Linq.XElement, bool)
+  fullName.vb: UFEDLib.FinancialAsset.ParseMultiModel(System.Xml.Linq.XElement, Boolean)
+  nameWithType: FinancialAsset.ParseMultiModel(XElement, bool)
+  nameWithType.vb: FinancialAsset.ParseMultiModel(XElement, Boolean)
+- uid: UFEDLib.FinancialAsset.ParseMultiModel*
+  name: ParseMultiModel
+  href: api/UFEDLib.FinancialAsset.html#UFEDLib_FinancialAsset_ParseMultiModel_
+  commentId: Overload:UFEDLib.FinancialAsset.ParseMultiModel
+  isSpec: "True"
+  fullName: UFEDLib.FinancialAsset.ParseMultiModel
+  nameWithType: FinancialAsset.ParseMultiModel
+- uid: UFEDLib.FinancialAsset.ParseMultiModelFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.FinancialAsset,System.Boolean)
+  name: ParseMultiModelFields(IEnumerable<XElement>, FinancialAsset, bool)
+  href: api/UFEDLib.FinancialAsset.html#UFEDLib_FinancialAsset_ParseMultiModelFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_FinancialAsset_System_Boolean_
+  commentId: M:UFEDLib.FinancialAsset.ParseMultiModelFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.FinancialAsset,System.Boolean)
+  name.vb: ParseMultiModelFields(IEnumerable(Of XElement), FinancialAsset, Boolean)
+  fullName: UFEDLib.FinancialAsset.ParseMultiModelFields(System.Collections.Generic.IEnumerable<System.Xml.Linq.XElement>, UFEDLib.FinancialAsset, bool)
+  fullName.vb: UFEDLib.FinancialAsset.ParseMultiModelFields(System.Collections.Generic.IEnumerable(Of System.Xml.Linq.XElement), UFEDLib.FinancialAsset, Boolean)
+  nameWithType: FinancialAsset.ParseMultiModelFields(IEnumerable<XElement>, FinancialAsset, bool)
+  nameWithType.vb: FinancialAsset.ParseMultiModelFields(IEnumerable(Of XElement), FinancialAsset, Boolean)
+- uid: UFEDLib.FinancialAsset.ParseMultiModelFields*
+  name: ParseMultiModelFields
+  href: api/UFEDLib.FinancialAsset.html#UFEDLib_FinancialAsset_ParseMultiModelFields_
+  commentId: Overload:UFEDLib.FinancialAsset.ParseMultiModelFields
+  isSpec: "True"
+  fullName: UFEDLib.FinancialAsset.ParseMultiModelFields
+  nameWithType: FinancialAsset.ParseMultiModelFields
+- uid: UFEDLib.FinancialAsset.Source
+  name: Source
+  href: api/UFEDLib.FinancialAsset.html#UFEDLib_FinancialAsset_Source
+  commentId: P:UFEDLib.FinancialAsset.Source
+  fullName: UFEDLib.FinancialAsset.Source
+  nameWithType: FinancialAsset.Source
+- uid: UFEDLib.FinancialAsset.Source*
+  name: Source
+  href: api/UFEDLib.FinancialAsset.html#UFEDLib_FinancialAsset_Source_
+  commentId: Overload:UFEDLib.FinancialAsset.Source
+  isSpec: "True"
+  fullName: UFEDLib.FinancialAsset.Source
+  nameWithType: FinancialAsset.Source
+- uid: UFEDLib.FinancialAsset.UserMapping
+  name: UserMapping
+  href: api/UFEDLib.FinancialAsset.html#UFEDLib_FinancialAsset_UserMapping
+  commentId: P:UFEDLib.FinancialAsset.UserMapping
+  fullName: UFEDLib.FinancialAsset.UserMapping
+  nameWithType: FinancialAsset.UserMapping
+- uid: UFEDLib.FinancialAsset.UserMapping*
+  name: UserMapping
+  href: api/UFEDLib.FinancialAsset.html#UFEDLib_FinancialAsset_UserMapping_
+  commentId: Overload:UFEDLib.FinancialAsset.UserMapping
+  isSpec: "True"
+  fullName: UFEDLib.FinancialAsset.UserMapping
+  nameWithType: FinancialAsset.UserMapping
 - uid: UFEDLib.IUfedModelParser`1
   name: IUfedModelParser<T>
   href: api/UFEDLib.IUfedModelParser-1.html
@@ -6230,6 +7042,19 @@ references:
   isSpec: "True"
   fullName: UFEDLib.InstalledApplication.Identifier
   nameWithType: InstalledApplication.Identifier
+- uid: UFEDLib.InstalledApplication.InstallDate
+  name: InstallDate
+  href: api/UFEDLib.InstalledApplication.html#UFEDLib_InstalledApplication_InstallDate
+  commentId: P:UFEDLib.InstalledApplication.InstallDate
+  fullName: UFEDLib.InstalledApplication.InstallDate
+  nameWithType: InstalledApplication.InstallDate
+- uid: UFEDLib.InstalledApplication.InstallDate*
+  name: InstallDate
+  href: api/UFEDLib.InstalledApplication.html#UFEDLib_InstalledApplication_InstallDate_
+  commentId: Overload:UFEDLib.InstalledApplication.InstallDate
+  isSpec: "True"
+  fullName: UFEDLib.InstalledApplication.InstallDate
+  nameWithType: InstalledApplication.InstallDate
 - uid: UFEDLib.InstalledApplication.IsEmulatable
   name: IsEmulatable
   href: api/UFEDLib.InstalledApplication.html#UFEDLib_InstalledApplication_IsEmulatable
@@ -6404,6 +7229,19 @@ references:
   isSpec: "True"
   fullName: UFEDLib.InstalledApplication.PurchaseDate
   nameWithType: InstalledApplication.PurchaseDate
+- uid: UFEDLib.InstalledApplication.ServiceIdentifier
+  name: ServiceIdentifier
+  href: api/UFEDLib.InstalledApplication.html#UFEDLib_InstalledApplication_ServiceIdentifier
+  commentId: P:UFEDLib.InstalledApplication.ServiceIdentifier
+  fullName: UFEDLib.InstalledApplication.ServiceIdentifier
+  nameWithType: InstalledApplication.ServiceIdentifier
+- uid: UFEDLib.InstalledApplication.ServiceIdentifier*
+  name: ServiceIdentifier
+  href: api/UFEDLib.InstalledApplication.html#UFEDLib_InstalledApplication_ServiceIdentifier_
+  commentId: Overload:UFEDLib.InstalledApplication.ServiceIdentifier
+  isSpec: "True"
+  fullName: UFEDLib.InstalledApplication.ServiceIdentifier
+  nameWithType: InstalledApplication.ServiceIdentifier
 - uid: UFEDLib.InstalledApplication.Source
   name: Source
   href: api/UFEDLib.InstalledApplication.html#UFEDLib_InstalledApplication_Source
@@ -6430,6 +7268,19 @@ references:
   isSpec: "True"
   fullName: UFEDLib.InstalledApplication.UserMapping
   nameWithType: InstalledApplication.UserMapping
+- uid: UFEDLib.InstalledApplication.Users
+  name: Users
+  href: api/UFEDLib.InstalledApplication.html#UFEDLib_InstalledApplication_Users
+  commentId: P:UFEDLib.InstalledApplication.Users
+  fullName: UFEDLib.InstalledApplication.Users
+  nameWithType: InstalledApplication.Users
+- uid: UFEDLib.InstalledApplication.Users*
+  name: Users
+  href: api/UFEDLib.InstalledApplication.html#UFEDLib_InstalledApplication_Users_
+  commentId: Overload:UFEDLib.InstalledApplication.Users
+  isSpec: "True"
+  fullName: UFEDLib.InstalledApplication.Users
+  nameWithType: InstalledApplication.Users
 - uid: UFEDLib.InstalledApplication.Version
   name: Version
   href: api/UFEDLib.InstalledApplication.html#UFEDLib_InstalledApplication_Version
@@ -6449,6 +7300,19 @@ references:
   commentId: T:UFEDLib.InstantMessage
   fullName: UFEDLib.InstantMessage
   nameWithType: InstantMessage
+- uid: UFEDLib.InstantMessage.ActivityLog
+  name: ActivityLog
+  href: api/UFEDLib.InstantMessage.html#UFEDLib_InstantMessage_ActivityLog
+  commentId: P:UFEDLib.InstantMessage.ActivityLog
+  fullName: UFEDLib.InstantMessage.ActivityLog
+  nameWithType: InstantMessage.ActivityLog
+- uid: UFEDLib.InstantMessage.ActivityLog*
+  name: ActivityLog
+  href: api/UFEDLib.InstantMessage.html#UFEDLib_InstantMessage_ActivityLog_
+  commentId: Overload:UFEDLib.InstantMessage.ActivityLog
+  isSpec: "True"
+  fullName: UFEDLib.InstantMessage.ActivityLog
+  nameWithType: InstantMessage.ActivityLog
 - uid: UFEDLib.InstantMessage.Attachment
   name: Attachment
   href: api/UFEDLib.InstantMessage.html#UFEDLib_InstantMessage_Attachment
@@ -8173,12 +9037,6 @@ references:
   commentId: F:UFEDLib.Logger.attributeSet
   fullName: UFEDLib.Logger.attributeSet
   nameWithType: Logger.attributeSet
-- uid: UFEDLib.MMS
-  name: MMS
-  href: api/UFEDLib.MMS.html
-  commentId: T:UFEDLib.MMS
-  fullName: UFEDLib.MMS
-  nameWithType: MMS
 - uid: UFEDLib.MailMessage
   name: MailMessage
   href: api/UFEDLib.MailMessage.html
@@ -8366,6 +9224,19 @@ references:
   commentId: T:UFEDLib.MobileCard
   fullName: UFEDLib.MobileCard
   nameWithType: MobileCard
+- uid: UFEDLib.MobileCard.ActivationTime
+  name: ActivationTime
+  href: api/UFEDLib.MobileCard.html#UFEDLib_MobileCard_ActivationTime
+  commentId: P:UFEDLib.MobileCard.ActivationTime
+  fullName: UFEDLib.MobileCard.ActivationTime
+  nameWithType: MobileCard.ActivationTime
+- uid: UFEDLib.MobileCard.ActivationTime*
+  name: ActivationTime
+  href: api/UFEDLib.MobileCard.html#UFEDLib_MobileCard_ActivationTime_
+  commentId: Overload:UFEDLib.MobileCard.ActivationTime
+  isSpec: "True"
+  fullName: UFEDLib.MobileCard.ActivationTime
+  nameWithType: MobileCard.ActivationTime
 - uid: UFEDLib.MobileCard.AdditionalInfo
   name: AdditionalInfo
   href: api/UFEDLib.MobileCard.html#UFEDLib_MobileCard_AdditionalInfo
@@ -8392,6 +9263,19 @@ references:
   isSpec: "True"
   fullName: UFEDLib.MobileCard.Description
   nameWithType: MobileCard.Description
+- uid: UFEDLib.MobileCard.ExpirationTime
+  name: ExpirationTime
+  href: api/UFEDLib.MobileCard.html#UFEDLib_MobileCard_ExpirationTime
+  commentId: P:UFEDLib.MobileCard.ExpirationTime
+  fullName: UFEDLib.MobileCard.ExpirationTime
+  nameWithType: MobileCard.ExpirationTime
+- uid: UFEDLib.MobileCard.ExpirationTime*
+  name: ExpirationTime
+  href: api/UFEDLib.MobileCard.html#UFEDLib_MobileCard_ExpirationTime_
+  commentId: Overload:UFEDLib.MobileCard.ExpirationTime
+  isSpec: "True"
+  fullName: UFEDLib.MobileCard.ExpirationTime
+  nameWithType: MobileCard.ExpirationTime
 - uid: UFEDLib.MobileCard.GetXmlModelType
   name: GetXmlModelType()
   href: api/UFEDLib.MobileCard.html#UFEDLib_MobileCard_GetXmlModelType
@@ -8418,6 +9302,19 @@ references:
   isSpec: "True"
   fullName: UFEDLib.MobileCard.ModifyTime
   nameWithType: MobileCard.ModifyTime
+- uid: UFEDLib.MobileCard.Name
+  name: Name
+  href: api/UFEDLib.MobileCard.html#UFEDLib_MobileCard_Name
+  commentId: P:UFEDLib.MobileCard.Name
+  fullName: UFEDLib.MobileCard.Name
+  nameWithType: MobileCard.Name
+- uid: UFEDLib.MobileCard.Name*
+  name: Name
+  href: api/UFEDLib.MobileCard.html#UFEDLib_MobileCard_Name_
+  commentId: Overload:UFEDLib.MobileCard.Name
+  isSpec: "True"
+  fullName: UFEDLib.MobileCard.Name
+  nameWithType: MobileCard.Name
 - uid: UFEDLib.MobileCard.Organization
   name: Organization
   href: api/UFEDLib.MobileCard.html#UFEDLib_MobileCard_Organization
@@ -8585,6 +9482,38 @@ references:
   commentId: T:UFEDLib.ModelBase
   fullName: UFEDLib.ModelBase
   nameWithType: ModelBase
+- uid: UFEDLib.ModelBase.DefaultModelParser*
+  name: DefaultModelParser
+  href: api/UFEDLib.ModelBase.html#UFEDLib_ModelBase_DefaultModelParser_
+  commentId: Overload:UFEDLib.ModelBase.DefaultModelParser
+  isSpec: "True"
+  fullName: UFEDLib.ModelBase.DefaultModelParser
+  nameWithType: ModelBase.DefaultModelParser
+- uid: UFEDLib.ModelBase.DefaultModelParser``1(System.Xml.Linq.XElement,System.Boolean)
+  name: DefaultModelParser<T>(XElement, bool)
+  href: api/UFEDLib.ModelBase.html#UFEDLib_ModelBase_DefaultModelParser__1_System_Xml_Linq_XElement_System_Boolean_
+  commentId: M:UFEDLib.ModelBase.DefaultModelParser``1(System.Xml.Linq.XElement,System.Boolean)
+  name.vb: DefaultModelParser(Of T)(XElement, Boolean)
+  fullName: UFEDLib.ModelBase.DefaultModelParser<T>(System.Xml.Linq.XElement, bool)
+  fullName.vb: UFEDLib.ModelBase.DefaultModelParser(Of T)(System.Xml.Linq.XElement, Boolean)
+  nameWithType: ModelBase.DefaultModelParser<T>(XElement, bool)
+  nameWithType.vb: ModelBase.DefaultModelParser(Of T)(XElement, Boolean)
+- uid: UFEDLib.ModelBase.DefaultMultiModelParser*
+  name: DefaultMultiModelParser
+  href: api/UFEDLib.ModelBase.html#UFEDLib_ModelBase_DefaultMultiModelParser_
+  commentId: Overload:UFEDLib.ModelBase.DefaultMultiModelParser
+  isSpec: "True"
+  fullName: UFEDLib.ModelBase.DefaultMultiModelParser
+  nameWithType: ModelBase.DefaultMultiModelParser
+- uid: UFEDLib.ModelBase.DefaultMultiModelParser``1(System.Xml.Linq.XElement,System.Boolean)
+  name: DefaultMultiModelParser<T>(XElement, bool)
+  href: api/UFEDLib.ModelBase.html#UFEDLib_ModelBase_DefaultMultiModelParser__1_System_Xml_Linq_XElement_System_Boolean_
+  commentId: M:UFEDLib.ModelBase.DefaultMultiModelParser``1(System.Xml.Linq.XElement,System.Boolean)
+  name.vb: DefaultMultiModelParser(Of T)(XElement, Boolean)
+  fullName: UFEDLib.ModelBase.DefaultMultiModelParser<T>(System.Xml.Linq.XElement, bool)
+  fullName.vb: UFEDLib.ModelBase.DefaultMultiModelParser(Of T)(System.Xml.Linq.XElement, Boolean)
+  nameWithType: ModelBase.DefaultMultiModelParser<T>(XElement, bool)
+  nameWithType.vb: ModelBase.DefaultMultiModelParser(Of T)(XElement, Boolean)
 - uid: UFEDLib.ModelBase.ParseAttributes(System.Xml.Linq.XElement)
   name: ParseAttributes(XElement)
   href: api/UFEDLib.ModelBase.html#UFEDLib_ModelBase_ParseAttributes_System_Xml_Linq_XElement_
@@ -8775,6 +9704,19 @@ references:
   isSpec: "True"
   fullName: UFEDLib.NetworkUsage.ApplicationId
   nameWithType: NetworkUsage.ApplicationId
+- uid: UFEDLib.NetworkUsage.ArtifactFamily
+  name: ArtifactFamily
+  href: api/UFEDLib.NetworkUsage.html#UFEDLib_NetworkUsage_ArtifactFamily
+  commentId: P:UFEDLib.NetworkUsage.ArtifactFamily
+  fullName: UFEDLib.NetworkUsage.ArtifactFamily
+  nameWithType: NetworkUsage.ArtifactFamily
+- uid: UFEDLib.NetworkUsage.ArtifactFamily*
+  name: ArtifactFamily
+  href: api/UFEDLib.NetworkUsage.html#UFEDLib_NetworkUsage_ArtifactFamily_
+  commentId: Overload:UFEDLib.NetworkUsage.ArtifactFamily
+  isSpec: "True"
+  fullName: UFEDLib.NetworkUsage.ArtifactFamily
+  nameWithType: NetworkUsage.ArtifactFamily
 - uid: UFEDLib.NetworkUsage.DateEnded
   name: DateEnded
   href: api/UFEDLib.NetworkUsage.html#UFEDLib_NetworkUsage_DateEnded
@@ -8975,6 +9917,19 @@ references:
   isSpec: "True"
   fullName: UFEDLib.NetworkUsage.SSId
   nameWithType: NetworkUsage.SSId
+- uid: UFEDLib.NetworkUsage.ServiceIdentifier
+  name: ServiceIdentifier
+  href: api/UFEDLib.NetworkUsage.html#UFEDLib_NetworkUsage_ServiceIdentifier
+  commentId: P:UFEDLib.NetworkUsage.ServiceIdentifier
+  fullName: UFEDLib.NetworkUsage.ServiceIdentifier
+  nameWithType: NetworkUsage.ServiceIdentifier
+- uid: UFEDLib.NetworkUsage.ServiceIdentifier*
+  name: ServiceIdentifier
+  href: api/UFEDLib.NetworkUsage.html#UFEDLib_NetworkUsage_ServiceIdentifier_
+  commentId: Overload:UFEDLib.NetworkUsage.ServiceIdentifier
+  isSpec: "True"
+  fullName: UFEDLib.NetworkUsage.ServiceIdentifier
+  nameWithType: NetworkUsage.ServiceIdentifier
 - uid: UFEDLib.NetworkUsage.Source
   name: Source
   href: api/UFEDLib.NetworkUsage.html#UFEDLib_NetworkUsage_Source
@@ -9872,6 +10827,19 @@ references:
   isSpec: "True"
   fullName: UFEDLib.Party.IPAddress
   nameWithType: Party.IPAddress
+- uid: UFEDLib.Party.IPAddresses
+  name: IPAddresses
+  href: api/UFEDLib.Party.html#UFEDLib_Party_IPAddresses
+  commentId: P:UFEDLib.Party.IPAddresses
+  fullName: UFEDLib.Party.IPAddresses
+  nameWithType: Party.IPAddresses
+- uid: UFEDLib.Party.IPAddresses*
+  name: IPAddresses
+  href: api/UFEDLib.Party.html#UFEDLib_Party_IPAddresses_
+  commentId: Overload:UFEDLib.Party.IPAddresses
+  isSpec: "True"
+  fullName: UFEDLib.Party.IPAddresses
+  nameWithType: Party.IPAddresses
 - uid: UFEDLib.Party.Id
   name: Id
   href: api/UFEDLib.Party.html#UFEDLib_Party_Id
@@ -10813,12 +11781,15 @@ references:
   isSpec: "True"
   fullName: UFEDLib.ProjectAttributes.NodeCount
   nameWithType: ProjectAttributes.NodeCount
-- uid: UFEDLib.ProjectAttributes.Parse(System.Xml.XmlReader)
-  name: Parse(XmlReader)
-  href: api/UFEDLib.ProjectAttributes.html#UFEDLib_ProjectAttributes_Parse_System_Xml_XmlReader_
-  commentId: M:UFEDLib.ProjectAttributes.Parse(System.Xml.XmlReader)
-  fullName: UFEDLib.ProjectAttributes.Parse(System.Xml.XmlReader)
-  nameWithType: ProjectAttributes.Parse(XmlReader)
+- uid: UFEDLib.ProjectAttributes.Parse(System.String,System.IProgress{System.Int32})
+  name: Parse(string, IProgress<int>)
+  href: api/UFEDLib.ProjectAttributes.html#UFEDLib_ProjectAttributes_Parse_System_String_System_IProgress_System_Int32__
+  commentId: M:UFEDLib.ProjectAttributes.Parse(System.String,System.IProgress{System.Int32})
+  name.vb: Parse(String, IProgress(Of Integer))
+  fullName: UFEDLib.ProjectAttributes.Parse(string, System.IProgress<int>)
+  fullName.vb: UFEDLib.ProjectAttributes.Parse(String, System.IProgress(Of Integer))
+  nameWithType: ProjectAttributes.Parse(string, IProgress<int>)
+  nameWithType.vb: ProjectAttributes.Parse(String, IProgress(Of Integer))
 - uid: UFEDLib.ProjectAttributes.Parse*
   name: Parse
   href: api/UFEDLib.ProjectAttributes.html#UFEDLib_ProjectAttributes_Parse_
@@ -10891,6 +11862,225 @@ references:
   isSpec: "True"
   fullName: UFEDLib.ProjectAttributes.SourceExtractionsFullName
   nameWithType: ProjectAttributes.SourceExtractionsFullName
+- uid: UFEDLib.PublicTransportationTicket
+  name: PublicTransportationTicket
+  href: api/UFEDLib.PublicTransportationTicket.html
+  commentId: T:UFEDLib.PublicTransportationTicket
+  fullName: UFEDLib.PublicTransportationTicket
+  nameWithType: PublicTransportationTicket
+- uid: UFEDLib.PublicTransportationTicket.Account
+  name: Account
+  href: api/UFEDLib.PublicTransportationTicket.html#UFEDLib_PublicTransportationTicket_Account
+  commentId: P:UFEDLib.PublicTransportationTicket.Account
+  fullName: UFEDLib.PublicTransportationTicket.Account
+  nameWithType: PublicTransportationTicket.Account
+- uid: UFEDLib.PublicTransportationTicket.Account*
+  name: Account
+  href: api/UFEDLib.PublicTransportationTicket.html#UFEDLib_PublicTransportationTicket_Account_
+  commentId: Overload:UFEDLib.PublicTransportationTicket.Account
+  isSpec: "True"
+  fullName: UFEDLib.PublicTransportationTicket.Account
+  nameWithType: PublicTransportationTicket.Account
+- uid: UFEDLib.PublicTransportationTicket.ArrivalAddress
+  name: ArrivalAddress
+  href: api/UFEDLib.PublicTransportationTicket.html#UFEDLib_PublicTransportationTicket_ArrivalAddress
+  commentId: P:UFEDLib.PublicTransportationTicket.ArrivalAddress
+  fullName: UFEDLib.PublicTransportationTicket.ArrivalAddress
+  nameWithType: PublicTransportationTicket.ArrivalAddress
+- uid: UFEDLib.PublicTransportationTicket.ArrivalAddress*
+  name: ArrivalAddress
+  href: api/UFEDLib.PublicTransportationTicket.html#UFEDLib_PublicTransportationTicket_ArrivalAddress_
+  commentId: Overload:UFEDLib.PublicTransportationTicket.ArrivalAddress
+  isSpec: "True"
+  fullName: UFEDLib.PublicTransportationTicket.ArrivalAddress
+  nameWithType: PublicTransportationTicket.ArrivalAddress
+- uid: UFEDLib.PublicTransportationTicket.DepartureAddress
+  name: DepartureAddress
+  href: api/UFEDLib.PublicTransportationTicket.html#UFEDLib_PublicTransportationTicket_DepartureAddress
+  commentId: P:UFEDLib.PublicTransportationTicket.DepartureAddress
+  fullName: UFEDLib.PublicTransportationTicket.DepartureAddress
+  nameWithType: PublicTransportationTicket.DepartureAddress
+- uid: UFEDLib.PublicTransportationTicket.DepartureAddress*
+  name: DepartureAddress
+  href: api/UFEDLib.PublicTransportationTicket.html#UFEDLib_PublicTransportationTicket_DepartureAddress_
+  commentId: Overload:UFEDLib.PublicTransportationTicket.DepartureAddress
+  isSpec: "True"
+  fullName: UFEDLib.PublicTransportationTicket.DepartureAddress
+  nameWithType: PublicTransportationTicket.DepartureAddress
+- uid: UFEDLib.PublicTransportationTicket.GetXmlModelType
+  name: GetXmlModelType()
+  href: api/UFEDLib.PublicTransportationTicket.html#UFEDLib_PublicTransportationTicket_GetXmlModelType
+  commentId: M:UFEDLib.PublicTransportationTicket.GetXmlModelType
+  fullName: UFEDLib.PublicTransportationTicket.GetXmlModelType()
+  nameWithType: PublicTransportationTicket.GetXmlModelType()
+- uid: UFEDLib.PublicTransportationTicket.GetXmlModelType*
+  name: GetXmlModelType
+  href: api/UFEDLib.PublicTransportationTicket.html#UFEDLib_PublicTransportationTicket_GetXmlModelType_
+  commentId: Overload:UFEDLib.PublicTransportationTicket.GetXmlModelType
+  isSpec: "True"
+  fullName: UFEDLib.PublicTransportationTicket.GetXmlModelType
+  nameWithType: PublicTransportationTicket.GetXmlModelType
+- uid: UFEDLib.PublicTransportationTicket.ParseFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.PublicTransportationTicket,System.Boolean)
+  name: ParseFields(IEnumerable<XElement>, PublicTransportationTicket, bool)
+  href: api/UFEDLib.PublicTransportationTicket.html#UFEDLib_PublicTransportationTicket_ParseFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_PublicTransportationTicket_System_Boolean_
+  commentId: M:UFEDLib.PublicTransportationTicket.ParseFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.PublicTransportationTicket,System.Boolean)
+  name.vb: ParseFields(IEnumerable(Of XElement), PublicTransportationTicket, Boolean)
+  fullName: UFEDLib.PublicTransportationTicket.ParseFields(System.Collections.Generic.IEnumerable<System.Xml.Linq.XElement>, UFEDLib.PublicTransportationTicket, bool)
+  fullName.vb: UFEDLib.PublicTransportationTicket.ParseFields(System.Collections.Generic.IEnumerable(Of System.Xml.Linq.XElement), UFEDLib.PublicTransportationTicket, Boolean)
+  nameWithType: PublicTransportationTicket.ParseFields(IEnumerable<XElement>, PublicTransportationTicket, bool)
+  nameWithType.vb: PublicTransportationTicket.ParseFields(IEnumerable(Of XElement), PublicTransportationTicket, Boolean)
+- uid: UFEDLib.PublicTransportationTicket.ParseFields*
+  name: ParseFields
+  href: api/UFEDLib.PublicTransportationTicket.html#UFEDLib_PublicTransportationTicket_ParseFields_
+  commentId: Overload:UFEDLib.PublicTransportationTicket.ParseFields
+  isSpec: "True"
+  fullName: UFEDLib.PublicTransportationTicket.ParseFields
+  nameWithType: PublicTransportationTicket.ParseFields
+- uid: UFEDLib.PublicTransportationTicket.ParseModel(System.Xml.Linq.XElement,System.Boolean)
+  name: ParseModel(XElement, bool)
+  href: api/UFEDLib.PublicTransportationTicket.html#UFEDLib_PublicTransportationTicket_ParseModel_System_Xml_Linq_XElement_System_Boolean_
+  commentId: M:UFEDLib.PublicTransportationTicket.ParseModel(System.Xml.Linq.XElement,System.Boolean)
+  name.vb: ParseModel(XElement, Boolean)
+  fullName: UFEDLib.PublicTransportationTicket.ParseModel(System.Xml.Linq.XElement, bool)
+  fullName.vb: UFEDLib.PublicTransportationTicket.ParseModel(System.Xml.Linq.XElement, Boolean)
+  nameWithType: PublicTransportationTicket.ParseModel(XElement, bool)
+  nameWithType.vb: PublicTransportationTicket.ParseModel(XElement, Boolean)
+- uid: UFEDLib.PublicTransportationTicket.ParseModel*
+  name: ParseModel
+  href: api/UFEDLib.PublicTransportationTicket.html#UFEDLib_PublicTransportationTicket_ParseModel_
+  commentId: Overload:UFEDLib.PublicTransportationTicket.ParseModel
+  isSpec: "True"
+  fullName: UFEDLib.PublicTransportationTicket.ParseModel
+  nameWithType: PublicTransportationTicket.ParseModel
+- uid: UFEDLib.PublicTransportationTicket.ParseModelFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.PublicTransportationTicket,System.Boolean)
+  name: ParseModelFields(IEnumerable<XElement>, PublicTransportationTicket, bool)
+  href: api/UFEDLib.PublicTransportationTicket.html#UFEDLib_PublicTransportationTicket_ParseModelFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_PublicTransportationTicket_System_Boolean_
+  commentId: M:UFEDLib.PublicTransportationTicket.ParseModelFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.PublicTransportationTicket,System.Boolean)
+  name.vb: ParseModelFields(IEnumerable(Of XElement), PublicTransportationTicket, Boolean)
+  fullName: UFEDLib.PublicTransportationTicket.ParseModelFields(System.Collections.Generic.IEnumerable<System.Xml.Linq.XElement>, UFEDLib.PublicTransportationTicket, bool)
+  fullName.vb: UFEDLib.PublicTransportationTicket.ParseModelFields(System.Collections.Generic.IEnumerable(Of System.Xml.Linq.XElement), UFEDLib.PublicTransportationTicket, Boolean)
+  nameWithType: PublicTransportationTicket.ParseModelFields(IEnumerable<XElement>, PublicTransportationTicket, bool)
+  nameWithType.vb: PublicTransportationTicket.ParseModelFields(IEnumerable(Of XElement), PublicTransportationTicket, Boolean)
+- uid: UFEDLib.PublicTransportationTicket.ParseModelFields*
+  name: ParseModelFields
+  href: api/UFEDLib.PublicTransportationTicket.html#UFEDLib_PublicTransportationTicket_ParseModelFields_
+  commentId: Overload:UFEDLib.PublicTransportationTicket.ParseModelFields
+  isSpec: "True"
+  fullName: UFEDLib.PublicTransportationTicket.ParseModelFields
+  nameWithType: PublicTransportationTicket.ParseModelFields
+- uid: UFEDLib.PublicTransportationTicket.ParseMultiFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.PublicTransportationTicket,System.Boolean)
+  name: ParseMultiFields(IEnumerable<XElement>, PublicTransportationTicket, bool)
+  href: api/UFEDLib.PublicTransportationTicket.html#UFEDLib_PublicTransportationTicket_ParseMultiFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_PublicTransportationTicket_System_Boolean_
+  commentId: M:UFEDLib.PublicTransportationTicket.ParseMultiFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.PublicTransportationTicket,System.Boolean)
+  name.vb: ParseMultiFields(IEnumerable(Of XElement), PublicTransportationTicket, Boolean)
+  fullName: UFEDLib.PublicTransportationTicket.ParseMultiFields(System.Collections.Generic.IEnumerable<System.Xml.Linq.XElement>, UFEDLib.PublicTransportationTicket, bool)
+  fullName.vb: UFEDLib.PublicTransportationTicket.ParseMultiFields(System.Collections.Generic.IEnumerable(Of System.Xml.Linq.XElement), UFEDLib.PublicTransportationTicket, Boolean)
+  nameWithType: PublicTransportationTicket.ParseMultiFields(IEnumerable<XElement>, PublicTransportationTicket, bool)
+  nameWithType.vb: PublicTransportationTicket.ParseMultiFields(IEnumerable(Of XElement), PublicTransportationTicket, Boolean)
+- uid: UFEDLib.PublicTransportationTicket.ParseMultiFields*
+  name: ParseMultiFields
+  href: api/UFEDLib.PublicTransportationTicket.html#UFEDLib_PublicTransportationTicket_ParseMultiFields_
+  commentId: Overload:UFEDLib.PublicTransportationTicket.ParseMultiFields
+  isSpec: "True"
+  fullName: UFEDLib.PublicTransportationTicket.ParseMultiFields
+  nameWithType: PublicTransportationTicket.ParseMultiFields
+- uid: UFEDLib.PublicTransportationTicket.ParseMultiModel(System.Xml.Linq.XElement,System.Boolean)
+  name: ParseMultiModel(XElement, bool)
+  href: api/UFEDLib.PublicTransportationTicket.html#UFEDLib_PublicTransportationTicket_ParseMultiModel_System_Xml_Linq_XElement_System_Boolean_
+  commentId: M:UFEDLib.PublicTransportationTicket.ParseMultiModel(System.Xml.Linq.XElement,System.Boolean)
+  name.vb: ParseMultiModel(XElement, Boolean)
+  fullName: UFEDLib.PublicTransportationTicket.ParseMultiModel(System.Xml.Linq.XElement, bool)
+  fullName.vb: UFEDLib.PublicTransportationTicket.ParseMultiModel(System.Xml.Linq.XElement, Boolean)
+  nameWithType: PublicTransportationTicket.ParseMultiModel(XElement, bool)
+  nameWithType.vb: PublicTransportationTicket.ParseMultiModel(XElement, Boolean)
+- uid: UFEDLib.PublicTransportationTicket.ParseMultiModel*
+  name: ParseMultiModel
+  href: api/UFEDLib.PublicTransportationTicket.html#UFEDLib_PublicTransportationTicket_ParseMultiModel_
+  commentId: Overload:UFEDLib.PublicTransportationTicket.ParseMultiModel
+  isSpec: "True"
+  fullName: UFEDLib.PublicTransportationTicket.ParseMultiModel
+  nameWithType: PublicTransportationTicket.ParseMultiModel
+- uid: UFEDLib.PublicTransportationTicket.ParseMultiModelFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.PublicTransportationTicket,System.Boolean)
+  name: ParseMultiModelFields(IEnumerable<XElement>, PublicTransportationTicket, bool)
+  href: api/UFEDLib.PublicTransportationTicket.html#UFEDLib_PublicTransportationTicket_ParseMultiModelFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_PublicTransportationTicket_System_Boolean_
+  commentId: M:UFEDLib.PublicTransportationTicket.ParseMultiModelFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.PublicTransportationTicket,System.Boolean)
+  name.vb: ParseMultiModelFields(IEnumerable(Of XElement), PublicTransportationTicket, Boolean)
+  fullName: UFEDLib.PublicTransportationTicket.ParseMultiModelFields(System.Collections.Generic.IEnumerable<System.Xml.Linq.XElement>, UFEDLib.PublicTransportationTicket, bool)
+  fullName.vb: UFEDLib.PublicTransportationTicket.ParseMultiModelFields(System.Collections.Generic.IEnumerable(Of System.Xml.Linq.XElement), UFEDLib.PublicTransportationTicket, Boolean)
+  nameWithType: PublicTransportationTicket.ParseMultiModelFields(IEnumerable<XElement>, PublicTransportationTicket, bool)
+  nameWithType.vb: PublicTransportationTicket.ParseMultiModelFields(IEnumerable(Of XElement), PublicTransportationTicket, Boolean)
+- uid: UFEDLib.PublicTransportationTicket.ParseMultiModelFields*
+  name: ParseMultiModelFields
+  href: api/UFEDLib.PublicTransportationTicket.html#UFEDLib_PublicTransportationTicket_ParseMultiModelFields_
+  commentId: Overload:UFEDLib.PublicTransportationTicket.ParseMultiModelFields
+  isSpec: "True"
+  fullName: UFEDLib.PublicTransportationTicket.ParseMultiModelFields
+  nameWithType: PublicTransportationTicket.ParseMultiModelFields
+- uid: UFEDLib.PublicTransportationTicket.Passengers
+  name: Passengers
+  href: api/UFEDLib.PublicTransportationTicket.html#UFEDLib_PublicTransportationTicket_Passengers
+  commentId: P:UFEDLib.PublicTransportationTicket.Passengers
+  fullName: UFEDLib.PublicTransportationTicket.Passengers
+  nameWithType: PublicTransportationTicket.Passengers
+- uid: UFEDLib.PublicTransportationTicket.Passengers*
+  name: Passengers
+  href: api/UFEDLib.PublicTransportationTicket.html#UFEDLib_PublicTransportationTicket_Passengers_
+  commentId: Overload:UFEDLib.PublicTransportationTicket.Passengers
+  isSpec: "True"
+  fullName: UFEDLib.PublicTransportationTicket.Passengers
+  nameWithType: PublicTransportationTicket.Passengers
+- uid: UFEDLib.PublicTransportationTicket.ScheduledDepartureTime
+  name: ScheduledDepartureTime
+  href: api/UFEDLib.PublicTransportationTicket.html#UFEDLib_PublicTransportationTicket_ScheduledDepartureTime
+  commentId: P:UFEDLib.PublicTransportationTicket.ScheduledDepartureTime
+  fullName: UFEDLib.PublicTransportationTicket.ScheduledDepartureTime
+  nameWithType: PublicTransportationTicket.ScheduledDepartureTime
+- uid: UFEDLib.PublicTransportationTicket.ScheduledDepartureTime*
+  name: ScheduledDepartureTime
+  href: api/UFEDLib.PublicTransportationTicket.html#UFEDLib_PublicTransportationTicket_ScheduledDepartureTime_
+  commentId: Overload:UFEDLib.PublicTransportationTicket.ScheduledDepartureTime
+  isSpec: "True"
+  fullName: UFEDLib.PublicTransportationTicket.ScheduledDepartureTime
+  nameWithType: PublicTransportationTicket.ScheduledDepartureTime
+- uid: UFEDLib.PublicTransportationTicket.ServiceIdentifier
+  name: ServiceIdentifier
+  href: api/UFEDLib.PublicTransportationTicket.html#UFEDLib_PublicTransportationTicket_ServiceIdentifier
+  commentId: P:UFEDLib.PublicTransportationTicket.ServiceIdentifier
+  fullName: UFEDLib.PublicTransportationTicket.ServiceIdentifier
+  nameWithType: PublicTransportationTicket.ServiceIdentifier
+- uid: UFEDLib.PublicTransportationTicket.ServiceIdentifier*
+  name: ServiceIdentifier
+  href: api/UFEDLib.PublicTransportationTicket.html#UFEDLib_PublicTransportationTicket_ServiceIdentifier_
+  commentId: Overload:UFEDLib.PublicTransportationTicket.ServiceIdentifier
+  isSpec: "True"
+  fullName: UFEDLib.PublicTransportationTicket.ServiceIdentifier
+  nameWithType: PublicTransportationTicket.ServiceIdentifier
+- uid: UFEDLib.PublicTransportationTicket.Source
+  name: Source
+  href: api/UFEDLib.PublicTransportationTicket.html#UFEDLib_PublicTransportationTicket_Source
+  commentId: P:UFEDLib.PublicTransportationTicket.Source
+  fullName: UFEDLib.PublicTransportationTicket.Source
+  nameWithType: PublicTransportationTicket.Source
+- uid: UFEDLib.PublicTransportationTicket.Source*
+  name: Source
+  href: api/UFEDLib.PublicTransportationTicket.html#UFEDLib_PublicTransportationTicket_Source_
+  commentId: Overload:UFEDLib.PublicTransportationTicket.Source
+  isSpec: "True"
+  fullName: UFEDLib.PublicTransportationTicket.Source
+  nameWithType: PublicTransportationTicket.Source
+- uid: UFEDLib.PublicTransportationTicket.UserMapping
+  name: UserMapping
+  href: api/UFEDLib.PublicTransportationTicket.html#UFEDLib_PublicTransportationTicket_UserMapping
+  commentId: P:UFEDLib.PublicTransportationTicket.UserMapping
+  fullName: UFEDLib.PublicTransportationTicket.UserMapping
+  nameWithType: PublicTransportationTicket.UserMapping
+- uid: UFEDLib.PublicTransportationTicket.UserMapping*
+  name: UserMapping
+  href: api/UFEDLib.PublicTransportationTicket.html#UFEDLib_PublicTransportationTicket_UserMapping_
+  commentId: Overload:UFEDLib.PublicTransportationTicket.UserMapping
+  isSpec: "True"
+  fullName: UFEDLib.PublicTransportationTicket.UserMapping
+  nameWithType: PublicTransportationTicket.UserMapping
 - uid: UFEDLib.RecognizedDevice
   name: RecognizedDevice
   href: api/UFEDLib.RecognizedDevice.html
@@ -10936,6 +12126,32 @@ references:
   isSpec: "True"
   fullName: UFEDLib.RecognizedDevice.DeviceIdentifiers
   nameWithType: RecognizedDevice.DeviceIdentifiers
+- uid: UFEDLib.RecognizedDevice.DeviceModel
+  name: DeviceModel
+  href: api/UFEDLib.RecognizedDevice.html#UFEDLib_RecognizedDevice_DeviceModel
+  commentId: P:UFEDLib.RecognizedDevice.DeviceModel
+  fullName: UFEDLib.RecognizedDevice.DeviceModel
+  nameWithType: RecognizedDevice.DeviceModel
+- uid: UFEDLib.RecognizedDevice.DeviceModel*
+  name: DeviceModel
+  href: api/UFEDLib.RecognizedDevice.html#UFEDLib_RecognizedDevice_DeviceModel_
+  commentId: Overload:UFEDLib.RecognizedDevice.DeviceModel
+  isSpec: "True"
+  fullName: UFEDLib.RecognizedDevice.DeviceModel
+  nameWithType: RecognizedDevice.DeviceModel
+- uid: UFEDLib.RecognizedDevice.DeviceType
+  name: DeviceType
+  href: api/UFEDLib.RecognizedDevice.html#UFEDLib_RecognizedDevice_DeviceType
+  commentId: P:UFEDLib.RecognizedDevice.DeviceType
+  fullName: UFEDLib.RecognizedDevice.DeviceType
+  nameWithType: RecognizedDevice.DeviceType
+- uid: UFEDLib.RecognizedDevice.DeviceType*
+  name: DeviceType
+  href: api/UFEDLib.RecognizedDevice.html#UFEDLib_RecognizedDevice_DeviceType_
+  commentId: Overload:UFEDLib.RecognizedDevice.DeviceType
+  isSpec: "True"
+  fullName: UFEDLib.RecognizedDevice.DeviceType
+  nameWithType: RecognizedDevice.DeviceType
 - uid: UFEDLib.RecognizedDevice.GetXmlModelType
   name: GetXmlModelType()
   href: api/UFEDLib.RecognizedDevice.html#UFEDLib_RecognizedDevice_GetXmlModelType
@@ -11850,6 +13066,38 @@ references:
   isSpec: "True"
   fullName: UFEDLib.Report.ParsePoweringEvents
   nameWithType: Report.ParsePoweringEvents
+- uid: UFEDLib.Report.ParseProjectAttributes(System.String,System.IProgress{System.Int32})
+  name: ParseProjectAttributes(string, IProgress<int>)
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseProjectAttributes_System_String_System_IProgress_System_Int32__
+  commentId: M:UFEDLib.Report.ParseProjectAttributes(System.String,System.IProgress{System.Int32})
+  name.vb: ParseProjectAttributes(String, IProgress(Of Integer))
+  fullName: UFEDLib.Report.ParseProjectAttributes(string, System.IProgress<int>)
+  fullName.vb: UFEDLib.Report.ParseProjectAttributes(String, System.IProgress(Of Integer))
+  nameWithType: Report.ParseProjectAttributes(string, IProgress<int>)
+  nameWithType.vb: Report.ParseProjectAttributes(String, IProgress(Of Integer))
+- uid: UFEDLib.Report.ParseProjectAttributes*
+  name: ParseProjectAttributes
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseProjectAttributes_
+  commentId: Overload:UFEDLib.Report.ParseProjectAttributes
+  isSpec: "True"
+  fullName: UFEDLib.Report.ParseProjectAttributes
+  nameWithType: Report.ParseProjectAttributes
+- uid: UFEDLib.Report.ParsePublicTransportationTickets(System.String,System.IProgress{System.Int32},System.Boolean)
+  name: ParsePublicTransportationTickets(string, IProgress<int>, bool)
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParsePublicTransportationTickets_System_String_System_IProgress_System_Int32__System_Boolean_
+  commentId: M:UFEDLib.Report.ParsePublicTransportationTickets(System.String,System.IProgress{System.Int32},System.Boolean)
+  name.vb: ParsePublicTransportationTickets(String, IProgress(Of Integer), Boolean)
+  fullName: UFEDLib.Report.ParsePublicTransportationTickets(string, System.IProgress<int>, bool)
+  fullName.vb: UFEDLib.Report.ParsePublicTransportationTickets(String, System.IProgress(Of Integer), Boolean)
+  nameWithType: Report.ParsePublicTransportationTickets(string, IProgress<int>, bool)
+  nameWithType.vb: Report.ParsePublicTransportationTickets(String, IProgress(Of Integer), Boolean)
+- uid: UFEDLib.Report.ParsePublicTransportationTickets*
+  name: ParsePublicTransportationTickets
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParsePublicTransportationTickets_
+  commentId: Overload:UFEDLib.Report.ParsePublicTransportationTickets
+  isSpec: "True"
+  fullName: UFEDLib.Report.ParsePublicTransportationTickets
+  nameWithType: Report.ParsePublicTransportationTickets
 - uid: UFEDLib.Report.ParseRecognizedDevices(System.String,System.IProgress{System.Int32},System.Boolean)
   name: ParseRecognizedDevices(string, IProgress<int>, bool)
   href: api/UFEDLib.Report.html#UFEDLib_Report_ParseRecognizedDevices_System_String_System_IProgress_System_Int32__System_Boolean_
@@ -12222,103 +13470,6 @@ references:
   isSpec: "True"
   fullName: UFEDLib.SIMData.Value
   nameWithType: SIMData.Value
-- uid: UFEDLib.SMS
-  name: SMS
-  href: api/UFEDLib.SMS.html
-  commentId: T:UFEDLib.SMS
-  fullName: UFEDLib.SMS
-  nameWithType: SMS
-- uid: UFEDLib.SMS.Body
-  name: Body
-  href: api/UFEDLib.SMS.html#UFEDLib_SMS_Body
-  commentId: P:UFEDLib.SMS.Body
-  fullName: UFEDLib.SMS.Body
-  nameWithType: SMS.Body
-- uid: UFEDLib.SMS.Body*
-  name: Body
-  href: api/UFEDLib.SMS.html#UFEDLib_SMS_Body_
-  commentId: Overload:UFEDLib.SMS.Body
-  isSpec: "True"
-  fullName: UFEDLib.SMS.Body
-  nameWithType: SMS.Body
-- uid: UFEDLib.SMS.Folder
-  name: Folder
-  href: api/UFEDLib.SMS.html#UFEDLib_SMS_Folder
-  commentId: P:UFEDLib.SMS.Folder
-  fullName: UFEDLib.SMS.Folder
-  nameWithType: SMS.Folder
-- uid: UFEDLib.SMS.Folder*
-  name: Folder
-  href: api/UFEDLib.SMS.html#UFEDLib_SMS_Folder_
-  commentId: Overload:UFEDLib.SMS.Folder
-  isSpec: "True"
-  fullName: UFEDLib.SMS.Folder
-  nameWithType: SMS.Folder
-- uid: UFEDLib.SMS.Parties
-  name: Parties
-  href: api/UFEDLib.SMS.html#UFEDLib_SMS_Parties
-  commentId: P:UFEDLib.SMS.Parties
-  fullName: UFEDLib.SMS.Parties
-  nameWithType: SMS.Parties
-- uid: UFEDLib.SMS.Parties*
-  name: Parties
-  href: api/UFEDLib.SMS.html#UFEDLib_SMS_Parties_
-  commentId: Overload:UFEDLib.SMS.Parties
-  isSpec: "True"
-  fullName: UFEDLib.SMS.Parties
-  nameWithType: SMS.Parties
-- uid: UFEDLib.SMS.SMSC
-  name: SMSC
-  href: api/UFEDLib.SMS.html#UFEDLib_SMS_SMSC
-  commentId: P:UFEDLib.SMS.SMSC
-  fullName: UFEDLib.SMS.SMSC
-  nameWithType: SMS.SMSC
-- uid: UFEDLib.SMS.SMSC*
-  name: SMSC
-  href: api/UFEDLib.SMS.html#UFEDLib_SMS_SMSC_
-  commentId: Overload:UFEDLib.SMS.SMSC
-  isSpec: "True"
-  fullName: UFEDLib.SMS.SMSC
-  nameWithType: SMS.SMSC
-- uid: UFEDLib.SMS.Source
-  name: Source
-  href: api/UFEDLib.SMS.html#UFEDLib_SMS_Source
-  commentId: P:UFEDLib.SMS.Source
-  fullName: UFEDLib.SMS.Source
-  nameWithType: SMS.Source
-- uid: UFEDLib.SMS.Source*
-  name: Source
-  href: api/UFEDLib.SMS.html#UFEDLib_SMS_Source_
-  commentId: Overload:UFEDLib.SMS.Source
-  isSpec: "True"
-  fullName: UFEDLib.SMS.Source
-  nameWithType: SMS.Source
-- uid: UFEDLib.SMS.Status
-  name: Status
-  href: api/UFEDLib.SMS.html#UFEDLib_SMS_Status
-  commentId: P:UFEDLib.SMS.Status
-  fullName: UFEDLib.SMS.Status
-  nameWithType: SMS.Status
-- uid: UFEDLib.SMS.Status*
-  name: Status
-  href: api/UFEDLib.SMS.html#UFEDLib_SMS_Status_
-  commentId: Overload:UFEDLib.SMS.Status
-  isSpec: "True"
-  fullName: UFEDLib.SMS.Status
-  nameWithType: SMS.Status
-- uid: UFEDLib.SMS.TimeStamp
-  name: TimeStamp
-  href: api/UFEDLib.SMS.html#UFEDLib_SMS_TimeStamp
-  commentId: P:UFEDLib.SMS.TimeStamp
-  fullName: UFEDLib.SMS.TimeStamp
-  nameWithType: SMS.TimeStamp
-- uid: UFEDLib.SMS.TimeStamp*
-  name: TimeStamp
-  href: api/UFEDLib.SMS.html#UFEDLib_SMS_TimeStamp_
-  commentId: Overload:UFEDLib.SMS.TimeStamp
-  isSpec: "True"
-  fullName: UFEDLib.SMS.TimeStamp
-  nameWithType: SMS.TimeStamp
 - uid: UFEDLib.SearchedItem
   name: SearchedItem
   href: api/UFEDLib.SearchedItem.html
@@ -12771,6 +13922,19 @@ references:
   isSpec: "True"
   fullName: UFEDLib.SocialMediaActivity.CommentCount
   nameWithType: SocialMediaActivity.CommentCount
+- uid: UFEDLib.SocialMediaActivity.DateModified
+  name: DateModified
+  href: api/UFEDLib.SocialMediaActivity.html#UFEDLib_SocialMediaActivity_DateModified
+  commentId: P:UFEDLib.SocialMediaActivity.DateModified
+  fullName: UFEDLib.SocialMediaActivity.DateModified
+  nameWithType: SocialMediaActivity.DateModified
+- uid: UFEDLib.SocialMediaActivity.DateModified*
+  name: DateModified
+  href: api/UFEDLib.SocialMediaActivity.html#UFEDLib_SocialMediaActivity_DateModified_
+  commentId: Overload:UFEDLib.SocialMediaActivity.DateModified
+  isSpec: "True"
+  fullName: UFEDLib.SocialMediaActivity.DateModified
+  nameWithType: SocialMediaActivity.DateModified
 - uid: UFEDLib.SocialMediaActivity.GetXmlModelType
   name: GetXmlModelType()
   href: api/UFEDLib.SocialMediaActivity.html#UFEDLib_SocialMediaActivity_GetXmlModelType
@@ -12797,6 +13961,32 @@ references:
   isSpec: "True"
   fullName: UFEDLib.SocialMediaActivity.IsFromActivityLog
   nameWithType: SocialMediaActivity.IsFromActivityLog
+- uid: UFEDLib.SocialMediaActivity.OriginalPostId
+  name: OriginalPostId
+  href: api/UFEDLib.SocialMediaActivity.html#UFEDLib_SocialMediaActivity_OriginalPostId
+  commentId: P:UFEDLib.SocialMediaActivity.OriginalPostId
+  fullName: UFEDLib.SocialMediaActivity.OriginalPostId
+  nameWithType: SocialMediaActivity.OriginalPostId
+- uid: UFEDLib.SocialMediaActivity.OriginalPostId*
+  name: OriginalPostId
+  href: api/UFEDLib.SocialMediaActivity.html#UFEDLib_SocialMediaActivity_OriginalPostId_
+  commentId: Overload:UFEDLib.SocialMediaActivity.OriginalPostId
+  isSpec: "True"
+  fullName: UFEDLib.SocialMediaActivity.OriginalPostId
+  nameWithType: SocialMediaActivity.OriginalPostId
+- uid: UFEDLib.SocialMediaActivity.ParentPost
+  name: ParentPost
+  href: api/UFEDLib.SocialMediaActivity.html#UFEDLib_SocialMediaActivity_ParentPost
+  commentId: P:UFEDLib.SocialMediaActivity.ParentPost
+  fullName: UFEDLib.SocialMediaActivity.ParentPost
+  nameWithType: SocialMediaActivity.ParentPost
+- uid: UFEDLib.SocialMediaActivity.ParentPost*
+  name: ParentPost
+  href: api/UFEDLib.SocialMediaActivity.html#UFEDLib_SocialMediaActivity_ParentPost_
+  commentId: Overload:UFEDLib.SocialMediaActivity.ParentPost
+  isSpec: "True"
+  fullName: UFEDLib.SocialMediaActivity.ParentPost
+  nameWithType: SocialMediaActivity.ParentPost
 - uid: UFEDLib.SocialMediaActivity.ParseFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.SocialMediaActivity,System.Boolean)
   name: ParseFields(IEnumerable<XElement>, SocialMediaActivity, bool)
   href: api/UFEDLib.SocialMediaActivity.html#UFEDLib_SocialMediaActivity_ParseFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_SocialMediaActivity_System_Boolean_
@@ -12906,6 +14096,19 @@ references:
   isSpec: "True"
   fullName: UFEDLib.SocialMediaActivity.Platform
   nameWithType: SocialMediaActivity.Platform
+- uid: UFEDLib.SocialMediaActivity.Position
+  name: Position
+  href: api/UFEDLib.SocialMediaActivity.html#UFEDLib_SocialMediaActivity_Position
+  commentId: P:UFEDLib.SocialMediaActivity.Position
+  fullName: UFEDLib.SocialMediaActivity.Position
+  nameWithType: SocialMediaActivity.Position
+- uid: UFEDLib.SocialMediaActivity.Position*
+  name: Position
+  href: api/UFEDLib.SocialMediaActivity.html#UFEDLib_SocialMediaActivity_Position_
+  commentId: Overload:UFEDLib.SocialMediaActivity.Position
+  isSpec: "True"
+  fullName: UFEDLib.SocialMediaActivity.Position
+  nameWithType: SocialMediaActivity.Position
 - uid: UFEDLib.SocialMediaActivity.PrivacySetting
   name: PrivacySetting
   href: api/UFEDLib.SocialMediaActivity.html#UFEDLib_SocialMediaActivity_PrivacySetting
@@ -12997,6 +14200,19 @@ references:
   isSpec: "True"
   fullName: UFEDLib.SocialMediaActivity.Status
   nameWithType: SocialMediaActivity.Status
+- uid: UFEDLib.SocialMediaActivity.TaggedParties
+  name: TaggedParties
+  href: api/UFEDLib.SocialMediaActivity.html#UFEDLib_SocialMediaActivity_TaggedParties
+  commentId: P:UFEDLib.SocialMediaActivity.TaggedParties
+  fullName: UFEDLib.SocialMediaActivity.TaggedParties
+  nameWithType: SocialMediaActivity.TaggedParties
+- uid: UFEDLib.SocialMediaActivity.TaggedParties*
+  name: TaggedParties
+  href: api/UFEDLib.SocialMediaActivity.html#UFEDLib_SocialMediaActivity_TaggedParties_
+  commentId: Overload:UFEDLib.SocialMediaActivity.TaggedParties
+  isSpec: "True"
+  fullName: UFEDLib.SocialMediaActivity.TaggedParties
+  nameWithType: SocialMediaActivity.TaggedParties
 - uid: UFEDLib.SocialMediaActivity.TimeStamp
   name: TimeStamp
   href: api/UFEDLib.SocialMediaActivity.html#UFEDLib_SocialMediaActivity_TimeStamp
@@ -14835,6 +16051,19 @@ references:
   commentId: T:UFEDLib.WirelessNetwork
   fullName: UFEDLib.WirelessNetwork
   nameWithType: WirelessNetwork
+- uid: UFEDLib.WirelessNetwork.ArtifactFamily
+  name: ArtifactFamily
+  href: api/UFEDLib.WirelessNetwork.html#UFEDLib_WirelessNetwork_ArtifactFamily
+  commentId: P:UFEDLib.WirelessNetwork.ArtifactFamily
+  fullName: UFEDLib.WirelessNetwork.ArtifactFamily
+  nameWithType: WirelessNetwork.ArtifactFamily
+- uid: UFEDLib.WirelessNetwork.ArtifactFamily*
+  name: ArtifactFamily
+  href: api/UFEDLib.WirelessNetwork.html#UFEDLib_WirelessNetwork_ArtifactFamily_
+  commentId: Overload:UFEDLib.WirelessNetwork.ArtifactFamily
+  isSpec: "True"
+  fullName: UFEDLib.WirelessNetwork.ArtifactFamily
+  nameWithType: WirelessNetwork.ArtifactFamily
 - uid: UFEDLib.WirelessNetwork.BSSId
   name: BSSId
   href: api/UFEDLib.WirelessNetwork.html#UFEDLib_WirelessNetwork_BSSId
@@ -14913,6 +16142,19 @@ references:
   isSpec: "True"
   fullName: UFEDLib.WirelessNetwork.NWConnectionType
   nameWithType: WirelessNetwork.NWConnectionType
+- uid: UFEDLib.WirelessNetwork.Package
+  name: Package
+  href: api/UFEDLib.WirelessNetwork.html#UFEDLib_WirelessNetwork_Package
+  commentId: P:UFEDLib.WirelessNetwork.Package
+  fullName: UFEDLib.WirelessNetwork.Package
+  nameWithType: WirelessNetwork.Package
+- uid: UFEDLib.WirelessNetwork.Package*
+  name: Package
+  href: api/UFEDLib.WirelessNetwork.html#UFEDLib_WirelessNetwork_Package_
+  commentId: Overload:UFEDLib.WirelessNetwork.Package
+  isSpec: "True"
+  fullName: UFEDLib.WirelessNetwork.Package
+  nameWithType: WirelessNetwork.Package
 - uid: UFEDLib.WirelessNetwork.ParseFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.WirelessNetwork,System.Boolean)
   name: ParseFields(IEnumerable<XElement>, WirelessNetwork, bool)
   href: api/UFEDLib.WirelessNetwork.html#UFEDLib_WirelessNetwork_ParseFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_WirelessNetwork_System_Boolean_

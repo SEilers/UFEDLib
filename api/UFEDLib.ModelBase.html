@@ -117,16 +117,17 @@ public class ModelBase</code></pre>
     <dt>Derived</dt>
     <dd>
       <div><a class="xref" href="UFEDLib.ActivitySensorData.html">ActivitySensorData</a></div>
+      <div><a class="xref" href="UFEDLib.ActivitySensorDataMeasurement.html">ActivitySensorDataMeasurement</a></div>
+      <div><a class="xref" href="UFEDLib.ActivitySensorDataSample.html">ActivitySensorDataSample</a></div>
       <div><a class="xref" href="UFEDLib.ApplicationUsage.html">ApplicationUsage</a></div>
       <div><a class="xref" href="UFEDLib.AppsUsageLog.html">AppsUsageLog</a></div>
       <div><a class="xref" href="UFEDLib.Attachment.html">Attachment</a></div>
       <div><a class="xref" href="UFEDLib.Autofill.html">Autofill</a></div>
-      <div><a class="xref" href="UFEDLib.BluetoothDevice.html">BluetoothDevice</a></div>
       <div><a class="xref" href="UFEDLib.CalendarEntry.html">CalendarEntry</a></div>
       <div><a class="xref" href="UFEDLib.Call.html">Call</a></div>
-      <div><a class="xref" href="UFEDLib.CarvedString.html">CarvedString</a></div>
       <div><a class="xref" href="UFEDLib.CellTower.html">CellTower</a></div>
       <div><a class="xref" href="UFEDLib.Chat.html">Chat</a></div>
+      <div><a class="xref" href="UFEDLib.ChatActivity.html">ChatActivity</a></div>
       <div><a class="xref" href="UFEDLib.Contact.html">Contact</a></div>
       <div><a class="xref" href="UFEDLib.ContactEntry.html">ContactEntry</a></div>
       <div><a class="xref" href="UFEDLib.ContactPhoto.html">ContactPhoto</a></div>
@@ -141,13 +142,13 @@ public class ModelBase</code></pre>
       <div><a class="xref" href="UFEDLib.FileDownload.html">FileDownload</a></div>
       <div><a class="xref" href="UFEDLib.FileUpload.html">FileUpload</a></div>
       <div><a class="xref" href="UFEDLib.FinancialAccount.html">FinancialAccount</a></div>
+      <div><a class="xref" href="UFEDLib.FinancialAsset.html">FinancialAsset</a></div>
       <div><a class="xref" href="UFEDLib.InstalledApplication.html">InstalledApplication</a></div>
       <div><a class="xref" href="UFEDLib.InstantMessage.html">InstantMessage</a></div>
       <div><a class="xref" href="UFEDLib.Journey.html">Journey</a></div>
       <div><a class="xref" href="UFEDLib.KeyValueModel.html">KeyValueModel</a></div>
       <div><a class="xref" href="UFEDLib.Location.html">Location</a></div>
       <div><a class="xref" href="UFEDLib.LogEntry.html">LogEntry</a></div>
-      <div><a class="xref" href="UFEDLib.MMS.html">MMS</a></div>
       <div><a class="xref" href="UFEDLib.MailMessage.html">MailMessage</a></div>
       <div><a class="xref" href="UFEDLib.Map.html">Map</a></div>
       <div><a class="xref" href="UFEDLib.MobileCard.html">MobileCard</a></div>
@@ -159,10 +160,10 @@ public class ModelBase</code></pre>
       <div><a class="xref" href="UFEDLib.Password.html">Password</a></div>
       <div><a class="xref" href="UFEDLib.PoweringEvent.html">PoweringEvent</a></div>
       <div><a class="xref" href="UFEDLib.Price.html">Price</a></div>
+      <div><a class="xref" href="UFEDLib.PublicTransportationTicket.html">PublicTransportationTicket</a></div>
       <div><a class="xref" href="UFEDLib.RecognizedDevice.html">RecognizedDevice</a></div>
       <div><a class="xref" href="UFEDLib.Recording.html">Recording</a></div>
       <div><a class="xref" href="UFEDLib.SIMData.html">SIMData</a></div>
-      <div><a class="xref" href="UFEDLib.SMS.html">SMS</a></div>
       <div><a class="xref" href="UFEDLib.SearchedItem.html">SearchedItem</a></div>
       <div><a class="xref" href="UFEDLib.SharedFile.html">SharedFile</a></div>
       <div><a class="xref" href="UFEDLib.SocialMediaActivity.html">SocialMediaActivity</a></div>
@@ -431,6 +432,92 @@ public class ModelBase</code></pre>
 
   <h2 class="section" id="methods">Methods
 </h2>
+
+
+  <a id="UFEDLib_ModelBase_DefaultModelParser_" data-uid="UFEDLib.ModelBase.DefaultModelParser*"></a>
+
+  <h3 id="UFEDLib_ModelBase_DefaultModelParser__1_System_Xml_Linq_XElement_System_Boolean_" data-uid="UFEDLib.ModelBase.DefaultModelParser``1(System.Xml.Linq.XElement,System.Boolean)">
+  DefaultModelParser&lt;T&gt;(XElement, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/ModelBase.cs/#L51"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static T DefaultModelParser&lt;T&gt;(XElement element, bool debugAttributes = false) where T : ModelBase, IUfedModelParser&lt;T&gt;, new()</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>element</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a></dt>
+    <dd></dd>
+    <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="UFEDLib_ModelBase_DefaultMultiModelParser_" data-uid="UFEDLib.ModelBase.DefaultMultiModelParser*"></a>
+
+  <h3 id="UFEDLib_ModelBase_DefaultMultiModelParser__1_System_Xml_Linq_XElement_System_Boolean_" data-uid="UFEDLib.ModelBase.DefaultMultiModelParser``1(System.Xml.Linq.XElement,System.Boolean)">
+  DefaultMultiModelParser&lt;T&gt;(XElement, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/ModelBase.cs/#L84"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static List&lt;T&gt; DefaultMultiModelParser&lt;T&gt;(XElement element, bool debugAttributes = false) where T : ModelBase, IUfedModelParser&lt;T&gt;, new()</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>element</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.linq.xelement">XElement</a></dt>
+    <dd></dd>
+    <dt><code>debugAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;T&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
 
 
   <a id="UFEDLib_ModelBase_ParseAttributes_" data-uid="UFEDLib.ModelBase.ParseAttributes*"></a>

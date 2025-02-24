@@ -149,6 +149,12 @@ public class CreditCard : ModelBase, IUfedModelParser&lt;CreditCard&gt;</code></
       <a class="xref" href="UFEDLib.ModelBase.html#UFEDLib_ModelBase_ParseAttributes_System_Xml_Linq_XElement_">ModelBase.ParseAttributes(XElement)</a>
     </div>
     <div>
+      <a class="xref" href="UFEDLib.ModelBase.html#UFEDLib_ModelBase_DefaultModelParser__1_System_Xml_Linq_XElement_System_Boolean_">ModelBase.DefaultModelParser&lt;T&gt;(XElement, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="UFEDLib.ModelBase.html#UFEDLib_ModelBase_DefaultMultiModelParser__1_System_Xml_Linq_XElement_System_Boolean_">ModelBase.DefaultMultiModelParser&lt;T&gt;(XElement, bool)</a>
+    </div>
+    <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
     </div>
     <div>
@@ -180,11 +186,42 @@ public class CreditCard : ModelBase, IUfedModelParser&lt;CreditCard&gt;</code></
 </h2>
 
 
+  <a id="UFEDLib_CreditCard_BillingAddress_" data-uid="UFEDLib.CreditCard.BillingAddress*"></a>
+
+  <h3 id="UFEDLib_CreditCard_BillingAddress" data-uid="UFEDLib.CreditCard.BillingAddress">
+  BillingAddress
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CreditCard.cs/#L31"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public StreetAddress BillingAddress { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UFEDLib.StreetAddress.html">StreetAddress</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="UFEDLib_CreditCard_CVV_" data-uid="UFEDLib.CreditCard.CVV*"></a>
 
   <h3 id="UFEDLib_CreditCard_CVV" data-uid="UFEDLib.CreditCard.CVV">
   CVV
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CreditCard.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CreditCard.cs/#L21"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -246,7 +283,7 @@ public class CreditCard : ModelBase, IUfedModelParser&lt;CreditCard&gt;</code></
 
   <h3 id="UFEDLib_CreditCard_CreditCardNumber" data-uid="UFEDLib.CreditCard.CreditCardNumber">
   CreditCardNumber
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CreditCard.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CreditCard.cs/#L20"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -498,7 +535,7 @@ public class CreditCard : ModelBase, IUfedModelParser&lt;CreditCard&gt;</code></
 
   <h3 id="UFEDLib_CreditCard_ParseFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_CreditCard_System_Boolean_" data-uid="UFEDLib.CreditCard.ParseFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.CreditCard,System.Boolean)">
   ParseFields(IEnumerable&lt;XElement&gt;, CreditCard, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CreditCard.cs/#L74"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CreditCard.cs/#L78"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -533,7 +570,7 @@ public class CreditCard : ModelBase, IUfedModelParser&lt;CreditCard&gt;</code></
 
   <h3 id="UFEDLib_CreditCard_ParseModel_System_Xml_Linq_XElement_System_Boolean_" data-uid="UFEDLib.CreditCard.ParseModel(System.Xml.Linq.XElement,System.Boolean)">
   ParseModel(XElement, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CreditCard.cs/#L31"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CreditCard.cs/#L35"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -571,7 +608,7 @@ public class CreditCard : ModelBase, IUfedModelParser&lt;CreditCard&gt;</code></
 
   <h3 id="UFEDLib_CreditCard_ParseModelFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_CreditCard_System_Boolean_" data-uid="UFEDLib.CreditCard.ParseModelFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.CreditCard,System.Boolean)">
   ParseModelFields(IEnumerable&lt;XElement&gt;, CreditCard, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CreditCard.cs/#L128"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CreditCard.cs/#L132"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -606,7 +643,7 @@ public class CreditCard : ModelBase, IUfedModelParser&lt;CreditCard&gt;</code></
 
   <h3 id="UFEDLib_CreditCard_ParseMultiFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_CreditCard_System_Boolean_" data-uid="UFEDLib.CreditCard.ParseMultiFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.CreditCard,System.Boolean)">
   ParseMultiFields(IEnumerable&lt;XElement&gt;, CreditCard, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CreditCard.cs/#L133"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CreditCard.cs/#L152"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -641,7 +678,7 @@ public class CreditCard : ModelBase, IUfedModelParser&lt;CreditCard&gt;</code></
 
   <h3 id="UFEDLib_CreditCard_ParseMultiModel_System_Xml_Linq_XElement_System_Boolean_" data-uid="UFEDLib.CreditCard.ParseMultiModel(System.Xml.Linq.XElement,System.Boolean)">
   ParseMultiModel(XElement, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CreditCard.cs/#L58"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CreditCard.cs/#L62"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -679,7 +716,7 @@ public class CreditCard : ModelBase, IUfedModelParser&lt;CreditCard&gt;</code></
 
   <h3 id="UFEDLib_CreditCard_ParseMultiModelFields_System_Collections_Generic_IEnumerable_System_Xml_Linq_XElement__UFEDLib_CreditCard_System_Boolean_" data-uid="UFEDLib.CreditCard.ParseMultiModelFields(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},UFEDLib.CreditCard,System.Boolean)">
   ParseMultiModelFields(IEnumerable&lt;XElement&gt;, CreditCard, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CreditCard.cs/#L138"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/CreditCard.cs/#L157"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
