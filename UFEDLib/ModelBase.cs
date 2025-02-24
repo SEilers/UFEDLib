@@ -50,10 +50,15 @@ namespace UFEDLib
 
         public static T DefaultModelParser<T>(XElement element, bool debugAttributes = false) where T : ModelBase, IUfedModelParser<T>, new()
         {
+            if(element == null)
+            {
+                Logger.LogWarning($"{T.GetXmlModelType()}: element is null");
+                return null;
+            }
+
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
             T result = new T();
-            result.ParseAttributes(element);
-
+    
             try
             {
                 result.ParseAttributes(element);
