@@ -110,7 +110,7 @@ namespace UFEDLib
 
         public static ProjectAttributes ParseProjectAttributes( string filename, IProgress<int> progress = null)
         {
-            return ProjectAttributes.Parse(filename);
+            return ProjectAttributes.Parse(filename, progress);
         }
 
         public static List<ActivitySensorData> ParseActivitySensorData(string filename, IProgress<int> progress = null, bool debugAttributes = false)
