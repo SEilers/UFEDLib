@@ -33,45 +33,12 @@ namespace UFEDLib
         #region Parsers
         public static Cookie ParseModel(XElement element, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            Cookie result = new Cookie();
-
-            try
-            {
-                result.ParseAttributes(element);
-
-                var fieldElements = element.Elements(xNamespace + "field");
-                var modelFieldElements = element.Elements(xNamespace + "modelField");
-                var multiFieldElements = element.Elements(xNamespace + "multiField");
-                var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
-
-                ParseFields(fieldElements, result, debugAttributes);
-                ParseModelFields(modelFieldElements, result, debugAttributes);
-                ParseMultiFields(multiFieldElements, result, debugAttributes);
-                ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError("Cookie: Error parsing xml reader attributes " + ex.Message);
-            }
-
-            return result;
+            return DefaultModelParser<Cookie>(element, debugAttributes);
         }
 
         public static List<Cookie> ParseMultiModel(XElement element, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            List<Cookie> result = new List<Cookie>();
-
-            IEnumerable<XElement> cookies = element.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "Cookie");
-
-            foreach (XElement cookie in cookies)
-            {
-                Cookie c = ParseModel(cookie, debugAttributes);
-                result.Add(c);
-            }
-
-            return result;
+            return DefaultMultiModelParser<Cookie>(element, debugAttributes);
         }
 
         public static void ParseFields(IEnumerable<XElement> fieldElements, Cookie result, bool debugAttributes = false)

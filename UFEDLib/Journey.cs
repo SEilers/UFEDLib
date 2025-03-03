@@ -39,55 +39,15 @@ namespace UFEDLib
         #endregion
 
         #region Parsers
-        public static List<Journey> ParseMultiModel(XElement journeysElement, bool debugAttributes = false)
-        {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            List<Journey> result = new List<Journey>();
-
-            IEnumerable<XElement> journeyElements = journeysElement.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "Journey");
-
-            foreach (var journeyElement in journeyElements)
-            {
-                try
-                {
-                    result.Add(ParseModel(journeyElement, debugAttributes));
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Error parsing chat: " + ex.Message);
-                }
-            }
-
-            return result;
-        }
-
-
+     
         public static Journey ParseModel(XElement element, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            Journey result = new Journey();
+            return DefaultModelParser<Journey>(element, debugAttributes);
+        }
 
-            try
-            {
-                result.ParseAttributes(element);
-
-                var fieldElements = element.Elements(xNamespace + "field");
-                var modelFieldElements = element.Elements(xNamespace + "modelField");
-                var multiFieldElements = element.Elements(xNamespace + "multiField");
-                var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
-
-                ParseFields(fieldElements, result, debugAttributes);
-                ParseModelFields(modelFieldElements, result, debugAttributes);
-                ParseMultiFields(multiFieldElements, result, debugAttributes);
-                ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
-
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError("Journey: Error parsing xml reader attributes  " + ex.Message);
-            }
-
-            return result;
+        public static List<Journey> ParseMultiModel(XElement journeysElement, bool debugAttributes = false)
+        {
+            return DefaultMultiModelParser<Journey>(journeysElement, debugAttributes);
         }
 
         public static void ParseFields(IEnumerable<XElement> fieldElements, Journey result, bool debugAttributes = false)

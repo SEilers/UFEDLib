@@ -47,48 +47,15 @@ namespace UFEDLib
         }
 
         #region Parsers
-        public static List<Party> ParseMultiModel(XElement partiesElement, bool debugAttributes = false)
-        {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            List<Party> result = new List<Party>();
-
-            IEnumerable<XElement> parties = partiesElement.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "Party");
-
-            foreach (XElement party in parties)
-            {
-                Party p = ParseModel(party, debugAttributes);
-                result.Add(p);
-            }
-
-            return result;
-        }
-
+     
         public static Party ParseModel(XElement element, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            Party result = new Party();
+            return DefaultModelParser<Party>(element, debugAttributes);
+        }
 
-            try
-            {
-                result.ParseAttributes(element);
-
-                var fieldElements = element.Elements(xNamespace + "field");
-                var modelFieldElements = element.Elements(xNamespace + "modelField");
-                var multiFieldElements = element.Elements(xNamespace + "multiField");
-                var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
-
-                ParseFields(fieldElements, result, debugAttributes);
-                ParseModelFields(modelFieldElements, result, debugAttributes);
-                ParseMultiFields(multiFieldElements, result, debugAttributes);
-                ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
-
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError("Party: Error parsing xml reader attributes: " + ex.Message);
-            }
-
-            return result;
+        public static List<Party> ParseMultiModel(XElement partiesElement, bool debugAttributes = false)
+        {
+            return DefaultMultiModelParser<Party>(partiesElement, debugAttributes);
         }
 
         public static void ParseFields(IEnumerable<XElement> fieldElements, Party result, bool debugAttributes = false)

@@ -26,46 +26,12 @@ namespace UFEDLib
         #region Parsers
         public static Recording ParseModel(XElement element, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            Recording result = new Recording();
-
-            try
-            {
-                result.ParseAttributes(element);
-
-                var fieldElements = element.Elements(xNamespace + "field");
-                var modelFieldElements = element.Elements(xNamespace + "modelField");
-                var multiFieldElements = element.Elements(xNamespace + "multiField");
-                var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
-
-                ParseFields(fieldElements, result, debugAttributes);
-                ParseModelFields(modelFieldElements, result, debugAttributes);
-                ParseMultiFields(multiFieldElements, result, debugAttributes);
-                ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
-
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError("Recording: Error parsing xml reader attributes " + ex.Message);
-            }
-
-            return result;
+            return DefaultModelParser<Recording>(element, debugAttributes);
         }
 
         public static List<Recording> ParseMultiModel(XElement element, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            List<Recording> result = new List<Recording>();
-
-            IEnumerable<XElement> recordingElements = element.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "Recording");
-
-            foreach (XElement recordingElement in recordingElements)
-            {
-                Recording re = ParseModel(recordingElement, debugAttributes);
-                result.Add(re);
-            }
-
-            return result;
+            return DefaultMultiModelParser<Recording>(element, debugAttributes);
         }
 
         public static void ParseFields(IEnumerable<XElement> fieldElements, Recording result, bool debugAttributes = false)

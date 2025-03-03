@@ -33,45 +33,12 @@ namespace UFEDLib
         #region Parsers
         public static VisitedPage ParseModel(XElement element, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            VisitedPage result = new VisitedPage();
-
-            try
-            {
-                result.ParseAttributes(element);
-
-                var fieldElements = element.Elements(xNamespace + "field");
-                var modelFieldElements = element.Elements(xNamespace + "modelField");
-                var multiFieldElements = element.Elements(xNamespace + "multiField");
-                var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
-
-                ParseFields(fieldElements, result, debugAttributes);
-                ParseModelFields(modelFieldElements, result, debugAttributes);
-                ParseMultiFields(multiFieldElements, result, debugAttributes);
-                ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError("VisitedPage: Error parsing xml reader attributes " + ex.Message);
-            }
-
-            return result;
+            return DefaultModelParser<VisitedPage>(element, debugAttributes);
         }
 
         public static List<VisitedPage> ParseMultiModel(XElement element, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            List<VisitedPage> result = new List<VisitedPage>();
-
-            IEnumerable<XElement> vPElements = element.Elements(xNamespace + "model").Where(element => element.Attribute("type").Value == "VisitedPage");
-
-            foreach (XElement vPElement in vPElements)
-            {
-                VisitedPage im = ParseModel(vPElement, debugAttributes);
-                result.Add(im);
-            }
-
-            return result;
+            return DefaultMultiModelParser<VisitedPage>(element, debugAttributes);
         }
 
         public static void ParseFields(IEnumerable<XElement> fieldElements, VisitedPage result, bool debugAttributes = false)
@@ -123,7 +90,7 @@ namespace UFEDLib
 
                     case "VisitCount":
                         if (field.Value.Trim() != "")
-                            if( int.TryParse(field.Value.Trim(), out int visitCount))
+                            if (int.TryParse(field.Value.Trim(), out int visitCount))
                                 result.VisitCount = visitCount;
                         break;
 

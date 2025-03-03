@@ -28,45 +28,12 @@ namespace UFEDLib
         #region Parsers
         public static DictionaryWord ParseModel(XElement element, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            DictionaryWord result = new DictionaryWord();
-
-            try
-            {
-                result.ParseAttributes(element);
-
-                var fieldElements = element.Elements(xNamespace + "field");
-                var modelFieldElements = element.Elements(xNamespace + "modelField");
-                var multiFieldElements = element.Elements(xNamespace + "multiField");
-                var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
-
-                ParseFields(fieldElements, result, debugAttributes);
-                ParseModelFields(modelFieldElements, result, debugAttributes);
-                ParseMultiFields(multiFieldElements, result, debugAttributes);
-                ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError("DictionaryWord: Error parsing xml reader attributes " + ex.Message);
-            }
-
-            return result;
+            return DefaultModelParser<DictionaryWord>(element, debugAttributes);
         }
 
         public static List<DictionaryWord> ParseMultiModel(XElement element, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            List<DictionaryWord> result = new List<DictionaryWord>();
-
-            IEnumerable<XElement> dictionaryWords = element.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "DictionaryWord");
-
-            foreach (XElement dictionaryWord in dictionaryWords)
-            {
-                DictionaryWord dw = ParseModel(dictionaryWord, debugAttributes);
-                result.Add(dw);
-            }
-
-            return result;
+            return DefaultMultiModelParser<DictionaryWord>(element, debugAttributes);
         }
 
         public static void ParseFields(IEnumerable<XElement> fieldElements, DictionaryWord result, bool debugAttributes = false)

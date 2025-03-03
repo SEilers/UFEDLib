@@ -26,45 +26,12 @@ namespace UFEDLib
         #region Parsers
         public static DeviceInfoEntry ParseModel(XElement element, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            DeviceInfoEntry result = new DeviceInfoEntry();
-
-            try
-            {
-                result.ParseAttributes(element);
-
-                var fieldElements = element.Elements(xNamespace + "field");
-                var modelFieldElements = element.Elements(xNamespace + "modelField");
-                var multiFieldElements = element.Elements(xNamespace + "multiField");
-                var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
-
-                ParseFields(fieldElements, result, debugAttributes);
-                ParseModelFields(modelFieldElements, result, debugAttributes);
-                ParseMultiFields(multiFieldElements, result, debugAttributes);
-                ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError("DeviceInfoEntry: Error parsing xml reader attributes " + ex.Message);
-            }
-
-            return result;
+            return DefaultModelParser<DeviceInfoEntry>(element, debugAttributes);
         }
 
         public static List<DeviceInfoEntry> ParseMultiModel(XElement element, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            List<DeviceInfoEntry> result = new List<DeviceInfoEntry>();
-
-            IEnumerable<XElement> dieElements = element.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "DeviceInfoEntry");
-
-            foreach (XElement dieElement in dieElements)
-            {
-                DeviceInfoEntry die = ParseModel(dieElement, debugAttributes);
-                result.Add(die);
-            }
-
-            return result;
+            return DefaultMultiModelParser<DeviceInfoEntry>(element, debugAttributes);
         }
 
         public static void ParseFields(IEnumerable<XElement> fieldElements, DeviceInfoEntry result, bool debugAttributes = false)

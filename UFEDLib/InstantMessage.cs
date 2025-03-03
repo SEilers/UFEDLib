@@ -55,7 +55,7 @@ namespace UFEDLib
 
         #region multiModels
         public List<Attachment> Attachments { get; set; } = new List<Attachment>();
-        public List <ChatActivity> ActivityLog { get; set; } = new List<ChatActivity>();
+        public List<ChatActivity> ActivityLog { get; set; } = new List<ChatActivity>();
         public List<Contact> SharedContacts { get; set; } = new List<Contact>();
         public List<Party> To { get; set; } = new List<Party>();
         #endregion
@@ -68,47 +68,14 @@ namespace UFEDLib
         }
 
         #region Parsers
-        public static List<InstantMessage> ParseMultiModel(XElement messagesElement, bool debugAttributes = false)
-        {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            List<InstantMessage> result = new List<InstantMessage>();
-
-            IEnumerable<XElement> instantMessages = messagesElement.Elements(xNamespace + "model").Where(element => element.Attribute("type").Value == "InstantMessage");
-
-            foreach (XElement message in instantMessages)
-            {
-                InstantMessage im = ParseModel(message, debugAttributes);
-                result.Add(im);
-            }
-
-            return result;
-        }
 
         public static InstantMessage ParseModel(XElement xElement, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            InstantMessage result = new InstantMessage();
-
-            try
-            {
-                result.ParseAttributes(xElement);
-
-                var fieldElements = xElement.Elements(xNamespace + "field");
-                var modelFieldElements = xElement.Elements(xNamespace + "modelField");
-                var multiFieldElements = xElement.Elements(xNamespace + "multiField");
-                var multiModelFieldElements = xElement.Elements(xNamespace + "multiModelField");
-
-                ParseFields(fieldElements, result, debugAttributes);
-                ParseModelFields(modelFieldElements, result, debugAttributes);
-                ParseMultiFields(multiFieldElements, result, debugAttributes);
-                ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError("InstantMessage: Error parsing xml reader attributes " + ex.Message);
-            }
-
-            return result;
+            return DefaultModelParser<InstantMessage>(xElement, debugAttributes);
+        }
+        public static List<InstantMessage> ParseMultiModel(XElement messagesElement, bool debugAttributes = false)
+        {
+            return DefaultMultiModelParser<InstantMessage>(messagesElement, debugAttributes);
         }
 
         public static void ParseFields(IEnumerable<XElement> fieldElements, InstantMessage result, bool debugAttributes = false)

@@ -32,46 +32,12 @@ namespace UFEDLib
         #region parsers
         public static FinancialAccount ParseModel(XElement element, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            FinancialAccount result = new FinancialAccount();
-
-            try
-            {
-                result.ParseAttributes(element);
-
-                var fieldElements = element.Elements(xNamespace + "field");
-                var modelFieldElements = element.Elements(xNamespace + "modelField");
-                var multiFieldElements = element.Elements(xNamespace + "multiField");
-                var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
-
-                ParseFields(fieldElements, result, debugAttributes);
-                ParseModelFields(modelFieldElements, result, debugAttributes);
-                ParseMultiFields(multiFieldElements, result, debugAttributes);
-                ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
-
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError("FinancialAccount: Error parsing xml reader attributes " + ex.Message);
-            }
-
-            return result;
+            return DefaultModelParser<FinancialAccount>(element, debugAttributes);
         }
 
         public static List<FinancialAccount> ParseMultiModel(XElement element, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            List<FinancialAccount> result = new List<FinancialAccount>();
-
-            IEnumerable<XElement> FinancialAccountElements = element.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "FinancialAccount");
-
-            foreach (XElement FinancialAccountElement in FinancialAccountElements)
-            {
-                FinancialAccount em = ParseModel(FinancialAccountElement, debugAttributes);
-                result.Add(em);
-            }
-
-            return result;
+            return DefaultMultiModelParser<FinancialAccount>(element, debugAttributes);
         }
 
         public static void ParseFields(IEnumerable<XElement> fieldElements, FinancialAccount result, bool debugAttributes = false)
@@ -85,7 +51,7 @@ namespace UFEDLib
                         break;
 
                     case "DateLastUpdated":
-                        if( field.Value.Trim() != "")
+                        if (field.Value.Trim() != "")
                             result.DateLastUpdated = DateTime.Parse(field.Value.Trim());
                         break;
 

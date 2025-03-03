@@ -37,45 +37,12 @@ namespace UFEDLib
         #region parsers
         public static TransferOfFunds ParseModel(XElement element, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            TransferOfFunds result = new TransferOfFunds();
-
-            try
-            {
-                result.ParseAttributes(element);
-
-                var fieldElements = element.Elements(xNamespace + "field");
-                var modelFieldElements = element.Elements(xNamespace + "modelField");
-                var multiFieldElements = element.Elements(xNamespace + "multiField");
-                var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
-
-                ParseFields(fieldElements, result, debugAttributes);
-                ParseModelFields(modelFieldElements, result, debugAttributes);
-                ParseMultiFields(multiFieldElements, result, debugAttributes);
-                ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError("TransferOfFunds: Error parsing xml reader attributes " + ex.Message);
-            }
-
-            return result;
+            return DefaultModelParser<TransferOfFunds>(element, debugAttributes);
         }
 
         public static List<TransferOfFunds> ParseMultiModel(XElement element, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            List<TransferOfFunds> result = new List<TransferOfFunds>();
-
-            IEnumerable<XElement> TransferOfFundsElements = element.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "TransferOfFunds");
-
-            foreach (XElement TransferOfFundsElement in TransferOfFundsElements)
-            {
-                TransferOfFunds em = ParseModel(TransferOfFundsElement, debugAttributes);
-                result.Add(em);
-            }
-
-            return result;
+            return DefaultMultiModelParser<TransferOfFunds>(element, debugAttributes);
         }
 
         public static void ParseFields(IEnumerable<XElement> fieldElements, TransferOfFunds result, bool debugAttributes = false)

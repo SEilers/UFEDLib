@@ -71,47 +71,15 @@ namespace UFEDLib
         #endregion
 
         #region Parsers
-        public static List<Contact> ParseMultiModel(XElement contactsElement, bool debugAttributes = false)
-        {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            List<Contact> result = new List<Contact>();
-
-            IEnumerable<XElement> contacts = contactsElement.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "Contact");
-
-            foreach (XElement contact in contacts)
-            {
-                Contact c = ParseModel(contact, debugAttributes);
-                result.Add(c);
-            }
-
-            return result;
-        }
-
-
+       
         public static Contact ParseModel(XElement element, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            Contact result = new Contact();
-            try
-            {
-                result.ParseAttributes(element);
+            return DefaultModelParser<Contact>(element, debugAttributes);
+        }
 
-                var fieldElements = element.Elements(xNamespace + "field");
-                var modelFieldElements = element.Elements(xNamespace + "modelField");
-                var multiFieldElements = element.Elements(xNamespace + "multiField");
-                var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
-
-                ParseFields(fieldElements, result, debugAttributes);
-                ParseModelFields(modelFieldElements, result, debugAttributes);
-                ParseMultiFields(multiFieldElements, result, debugAttributes);
-                ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError("Contact: Error parsing xml reader attributes  " + ex.Message);
-            }
-
-            return result;
+        public static List<Contact> ParseMultiModel(XElement contactsElement, bool debugAttributes = false)
+        {
+            return DefaultMultiModelParser<Contact>(contactsElement, debugAttributes);
         }
 
         public static void ParseFields(IEnumerable<XElement> fieldElements, Contact result, bool debugAttributes = false)

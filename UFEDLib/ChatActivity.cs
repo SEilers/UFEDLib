@@ -30,45 +30,12 @@ namespace UFEDLib
         #region parsers
         public static ChatActivity ParseModel(XElement element, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            ChatActivity result = new ChatActivity();
-
-            try
-            {
-                result.ParseAttributes(element);
-
-                var fieldElements = element.Elements(xNamespace + "field");
-                var modelFieldElements = element.Elements(xNamespace + "modelField");
-                var multiFieldElements = element.Elements(xNamespace + "multiField");
-                var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
-
-                ParseFields(fieldElements, result, debugAttributes);
-                ParseModelFields(modelFieldElements, result, debugAttributes);
-                ParseMultiFields(multiFieldElements, result, debugAttributes);
-                ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError("ChatActivity: Error parsing xml reader attributes " + ex.Message);
-            }
-
-            return result;
+            return DefaultModelParser<ChatActivity>(element, debugAttributes);
         }
 
         public static List<ChatActivity> ParseMultiModel(XElement element, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            List<ChatActivity> result = new List<ChatActivity>();
-
-            IEnumerable<XElement> ChatActivityElements = element.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "ChatActivity");
-
-            foreach (XElement ChatActivityElement in ChatActivityElements)
-            {
-                ChatActivity em = ParseModel(ChatActivityElement, debugAttributes);
-                result.Add(em);
-            }
-
-            return result;
+            return DefaultMultiModelParser<ChatActivity>(element, debugAttributes);
         }
 
         public static void ParseFields(IEnumerable<XElement> fieldElements, ChatActivity result, bool debugAttributes = false)
@@ -82,7 +49,7 @@ namespace UFEDLib
                     case "Action":
                         result.Action = field.Value.Trim();
                         break;
-                    
+
                     case "Source":
                         result.Source = field.Value.Trim();
                         break;
@@ -96,7 +63,7 @@ namespace UFEDLib
                         break;
 
                     case "SystemMessageTimeStamp":
-                        if(field.Value.Trim() != "")
+                        if (field.Value.Trim() != "")
                             result.SystemMessageTimeStamp = DateTime.Parse(field.Value.Trim());
                         break;
 

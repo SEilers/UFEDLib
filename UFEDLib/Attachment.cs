@@ -27,47 +27,14 @@ namespace UFEDLib
         #endregion
 
         #region Parsers
-        public static List<Attachment> ParseMultiModel(XElement attachmentElement, bool debugAttributes = false)
-        {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            List<Attachment> result = new List<Attachment>();
-
-            IEnumerable<XElement> attachments = attachmentElement.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "Attachment");
-
-            foreach (XElement attachment in attachments)
-            {
-                Attachment a = ParseModel(attachment, debugAttributes);
-                result.Add(a);
-            }
-
-            return result;
-        }
-
         public static Attachment ParseModel(XElement element, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            Attachment result = new Attachment();
+            return DefaultModelParser<Attachment>(element, debugAttributes);
+        }
 
-            try
-            {
-                result.ParseAttributes(element);
-
-                var fieldElements = element.Elements(xNamespace + "field");
-                var modelFieldElements = element.Elements(xNamespace + "modelField");
-                var multiFieldElements = element.Elements(xNamespace + "multiField");
-                var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
-
-                ParseFields(fieldElements, result, debugAttributes);
-                ParseModelFields(modelFieldElements, result, debugAttributes);
-                ParseMultiFields(multiFieldElements, result, debugAttributes);
-                ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError("Attachment: Error parsing xml reader attributes " + ex.Message);
-            }
-
-            return result;
+        public static List<Attachment> ParseMultiModel(XElement attachmentElement, bool debugAttributes = false)
+        {
+            return DefaultMultiModelParser<Attachment>(attachmentElement, debugAttributes);
         }
 
         public static void ParseFields(IEnumerable<XElement> fieldElements, Attachment result, bool debugAttributes = false)

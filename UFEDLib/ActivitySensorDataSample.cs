@@ -26,45 +26,12 @@ namespace UFEDLib
         #region parsers
         public static ActivitySensorDataSample ParseModel(XElement element, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            ActivitySensorDataSample result = new ActivitySensorDataSample();
-
-            try
-            {
-                result.ParseAttributes(element);
-
-                var fieldElements = element.Elements(xNamespace + "field");
-                var modelFieldElements = element.Elements(xNamespace + "modelField");
-                var multiFieldElements = element.Elements(xNamespace + "multiField");
-                var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
-
-                ParseFields(fieldElements, result, debugAttributes);
-                ParseModelFields(modelFieldElements, result, debugAttributes);
-                ParseMultiFields(multiFieldElements, result, debugAttributes);
-                ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError("ActivitySensorDataSample: Error parsing xml reader attributes " + ex.Message);
-            }
-
-            return result;
+            return DefaultModelParser<ActivitySensorDataSample>(element, debugAttributes);
         }
 
         public static List<ActivitySensorDataSample> ParseMultiModel(XElement element, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            List<ActivitySensorDataSample> result = new List<ActivitySensorDataSample>();
-
-            IEnumerable<XElement> ActivitySensorDataSampleElements = element.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "ActivitySensorDataSample");
-
-            foreach (XElement ActivitySensorDataSampleElement in ActivitySensorDataSampleElements)
-            {
-                ActivitySensorDataSample em = ParseModel(ActivitySensorDataSampleElement, debugAttributes);
-                result.Add(em);
-            }
-
-            return result;
+            return DefaultMultiModelParser<ActivitySensorDataSample>(element, debugAttributes);
         }
 
         public static void ParseFields(IEnumerable<XElement> fieldElements, ActivitySensorDataSample result, bool debugAttributes = false)

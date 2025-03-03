@@ -50,52 +50,12 @@ namespace UFEDLib
 
         public static InstalledApplication ParseModel(XElement element, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            InstalledApplication result = new InstalledApplication();
-
-            try
-            {
-                result.ParseAttributes(element);
-
-                var fieldElements = element.Elements(xNamespace + "field");
-                var modelFieldElements = element.Elements(xNamespace + "modelField");
-                var multiFieldElements = element.Elements(xNamespace + "multiField");
-                var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
-
-                ParseFields(fieldElements, result, debugAttributes);
-                ParseModelFields(modelFieldElements, result, debugAttributes);
-                ParseMultiFields(multiFieldElements, result, debugAttributes);
-                ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
-
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError("InstalledApplication: Error parsing xml reader attributes " + ex.Message);
-            }
-
-            return result;
+            return DefaultModelParser<InstalledApplication>(element, debugAttributes);
         }
 
         public static List<InstalledApplication> ParseMultiModel(XElement element, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            List<InstalledApplication> result = new List<InstalledApplication>();
-
-            IEnumerable<XElement> iAElements = element.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "InstalledApplication");
-
-            foreach (var iAElement in iAElements)
-            {
-                try
-                {
-                    result.Add(ParseModel(iAElement, debugAttributes));
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Error parsing InstalledApplication: " + ex.Message);
-                }
-            }
-
-            return result;
+            return DefaultMultiModelParser<InstalledApplication>(element, debugAttributes);
         }
 
         public static void ParseFields(IEnumerable<XElement> fieldElements, InstalledApplication result, bool debugAttributes = false)
@@ -128,7 +88,7 @@ namespace UFEDLib
                     case "Description":
                         result.Description = field.Value.Trim();
                         break;
-               
+
                     case "Identifier":
                         result.Identifier = field.Value.Trim();
                         break;

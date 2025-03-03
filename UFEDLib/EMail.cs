@@ -46,53 +46,14 @@ namespace UFEDLib
         #endregion
 
         #region Parsers
-        public static List<Email> ParseMultiModel(XElement emailsElement, bool debugAttributes = false)
-        {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            List<Email> result = new List<Email>();
-
-            IEnumerable<XElement> emailElements = emailsElement.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "Email");
-
-            foreach (var emailElement in emailElements)
-            {
-                try
-                {
-                    result.Add(ParseModel(emailElement, debugAttributes));
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Error parsing EMail: " + ex.Message);
-                }
-            }
-
-            return result;
-        }
+       
         public static Email ParseModel(XElement element, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            Email result = new Email();
-
-            try
-            {
-                result.ParseAttributes(element);
-
-                var fieldElements = element.Elements(xNamespace + "field");
-                var modelFieldElements = element.Elements(xNamespace + "modelField");
-                var multiFieldElements = element.Elements(xNamespace + "multiField");
-                var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
-
-                ParseFields(fieldElements, result, debugAttributes);
-                ParseModelFields(modelFieldElements, result, debugAttributes);
-                ParseMultiFields(multiFieldElements, result, debugAttributes);
-                ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
-
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError("Email: Error parsing xml reader attributes " + ex.Message);
-            }
-
-            return result;
+            return DefaultModelParser<Email>(element, debugAttributes);
+        }
+        public static List<Email> ParseMultiModel(XElement emailsElement, bool debugAttributes = false)
+        {
+            return DefaultMultiModelParser<Email>(emailsElement, debugAttributes);
         }
 
         public static void ParseFields(IEnumerable<XElement> fieldElements, Email result, bool debugAttributes = false)

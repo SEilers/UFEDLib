@@ -27,45 +27,12 @@ namespace UFEDLib
         #region Parsers
         public static List<ContactPhoto> ParseMultiModel(XElement contactPhotosElement, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            List<ContactPhoto> result = new List<ContactPhoto>();
-
-            IEnumerable<XElement> contactPhotos = contactPhotosElement.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "ContactPhoto");
-
-            foreach (XElement contactPhoto in contactPhotos)
-            {
-                ContactPhoto c = ParseModel(contactPhoto, debugAttributes);
-                result.Add(c);
-            }
-
-            return result;
+            return DefaultMultiModelParser<ContactPhoto>(contactPhotosElement, debugAttributes);
         }
 
         public static ContactPhoto ParseModel(XElement element, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            ContactPhoto result = new ContactPhoto();
-
-            try
-            {
-                result.ParseAttributes(element);
-
-                var fieldElements = element.Elements(xNamespace + "field");
-                var modelFieldElements = element.Elements(xNamespace + "modelField");
-                var multiFieldElements = element.Elements(xNamespace + "multiField");
-                var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
-
-                ParseFields(fieldElements, result, debugAttributes);
-                ParseModelFields(modelFieldElements, result, debugAttributes);
-                ParseMultiFields(multiFieldElements, result, debugAttributes);
-                ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError("ContactPhoto: Error parsing xml reader attributes " + ex.Message);
-            }
-
-            return result;
+            return DefaultModelParser<ContactPhoto>(element, debugAttributes);
         }
 
         public static void ParseFields(IEnumerable<XElement> fieldElements, ContactPhoto result, bool debugAttributes = false)

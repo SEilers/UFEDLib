@@ -31,46 +31,12 @@ namespace UFEDLib
         #region Parsers
         public static LogEntry ParseModel(XElement element, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            LogEntry result = new LogEntry();
-
-            try
-            {
-                result.ParseAttributes(element);
-
-                var fieldElements = element.Elements(xNamespace + "field");
-                var modelFieldElements = element.Elements(xNamespace + "modelField");
-                var multiFieldElements = element.Elements(xNamespace + "multiField");
-                var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
-
-                ParseFields(fieldElements, result, debugAttributes);
-                ParseModelFields(modelFieldElements, result, debugAttributes);
-                ParseMultiFields(multiFieldElements, result, debugAttributes);
-                ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
-
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError("LogEntry: Error parsing xml reader attributes " + ex.Message);
-            }
-
-            return result;
+            return DefaultModelParser<LogEntry>(element, debugAttributes);
         }
 
         public static List<LogEntry> ParseMultiModel(XElement element, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            List<LogEntry> result = new List<LogEntry>();
-
-            IEnumerable<XElement> leElements = element.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "LogEntry");
-
-            foreach (XElement leElement in leElements)
-            {
-                LogEntry dc = ParseModel(leElement, debugAttributes);
-                result.Add(dc);
-            }
-
-            return result;
+            return DefaultMultiModelParser<LogEntry>(element, debugAttributes);
         }
 
         public static void ParseFields(IEnumerable<XElement> fieldElements, LogEntry result, bool debugAttributes = false)

@@ -50,45 +50,12 @@ namespace UFEDLib
 
         public static CalendarEntry ParseModel(XElement element, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            CalendarEntry result = new CalendarEntry();
-
-            try 
-            { 
-                result.ParseAttributes(element);
-
-                var fieldElements = element.Elements(xNamespace + "field");
-                var modelFieldElements = element.Elements(xNamespace + "modelField");
-                var multiFieldElements = element.Elements(xNamespace + "multiField");
-                var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
-
-                ParseFields(fieldElements, result, debugAttributes);
-                ParseModelFields(modelFieldElements, result, debugAttributes);
-                ParseMultiFields(multiFieldElements, result, debugAttributes);
-                ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
-            }
-            catch(Exception ex)
-            {
-                Logger.LogError("CalendarEntry: Error parsing xml reader attributes: " + ex.Message);
-            }
-
-            return result;
+            return DefaultModelParser<CalendarEntry>(element, debugAttributes);
         }
 
         public static List<CalendarEntry> ParseMultiModel(XElement element, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            List<CalendarEntry> result = new List<CalendarEntry>();
-
-            IEnumerable<XElement> ceElements = element.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "CalendarEntry");
-
-            foreach (XElement ceElement in ceElements)
-            {
-                CalendarEntry ce = ParseModel(ceElement, debugAttributes);
-                result.Add(ce);
-            }
-
-            return result;
+            return DefaultMultiModelParser<CalendarEntry>(element, debugAttributes);
         }
 
         public static void ParseFields(IEnumerable<XElement> fieldElements, CalendarEntry result, bool debugAttributes = false)

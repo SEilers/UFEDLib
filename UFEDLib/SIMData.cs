@@ -25,46 +25,12 @@ namespace UFEDLib
         #region parsers
         public static SIMData ParseModel(XElement element, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            SIMData result = new SIMData();
-
-            try
-            {
-                result.ParseAttributes(element);
-
-                var fieldElements = element.Elements(xNamespace + "field");
-                var modelFieldElements = element.Elements(xNamespace + "modelField");
-                var multiFieldElements = element.Elements(xNamespace + "multiField");
-                var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
-
-                ParseFields(fieldElements, result, debugAttributes);
-                ParseModelFields(modelFieldElements, result, debugAttributes);
-                ParseMultiFields(multiFieldElements, result, debugAttributes);
-                ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
-
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError("SIMData: Error parsing xml reader attributes " + ex.Message);
-            }
-
-            return result;
+            return DefaultModelParser<SIMData>(element, debugAttributes);
         }
 
         public static List<SIMData> ParseMultiModel(XElement element, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            List<SIMData> result = new List<SIMData>();
-
-            IEnumerable<XElement> SIMDataElements = element.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "SIMData");
-
-            foreach (XElement SIMDataElement in SIMDataElements)
-            {
-                SIMData em = ParseModel(SIMDataElement, debugAttributes);
-                result.Add(em);
-            }
-
-            return result;
+            return DefaultMultiModelParser<SIMData>(element, debugAttributes);
         }
 
         public static void ParseFields(IEnumerable<XElement> fieldElements, SIMData result, bool debugAttributes = false)

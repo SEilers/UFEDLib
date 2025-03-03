@@ -34,45 +34,12 @@ namespace UFEDLib
         #region Parsers
         public static Voicemail ParseModel(XElement element, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            Voicemail result = new Voicemail();
-
-            try
-            {
-                result.ParseAttributes(element);
-
-                var fieldElements = element.Elements(xNamespace + "field");
-                var modelFieldElements = element.Elements(xNamespace + "modelField");
-                var multiFieldElements = element.Elements(xNamespace + "multiField");
-                var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
-
-                ParseFields(fieldElements, result, debugAttributes);
-                ParseModelFields(modelFieldElements, result, debugAttributes);
-                ParseMultiFields(multiFieldElements, result, debugAttributes);
-                ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError("Voicemail: Error parsing xml reader attributes " + ex.Message);
-            }
-
-            return result;
+            return DefaultModelParser<Voicemail>(element, debugAttributes);
         }
 
         public static List<Voicemail> ParseMultiModel(XElement element, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            List<Voicemail> result = new List<Voicemail>();
-
-            IEnumerable<XElement> vmElements = element.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "VoiceMail");
-
-            foreach (XElement vmElement in vmElements)
-            {
-                Voicemail vm = ParseModel(vmElement, debugAttributes);
-                result.Add(vm);
-            }
-
-            return result;
+            return DefaultMultiModelParser<Voicemail>(element, debugAttributes);
         }
 
         public static void ParseFields(IEnumerable<XElement> fieldElements, Voicemail result, bool debugAttributes = false)

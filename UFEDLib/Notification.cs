@@ -51,46 +51,12 @@ namespace UFEDLib
         #region Parsers
         public static Notification ParseModel(XElement element, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            Notification result = new Notification();
-
-            try
-            {
-                result.ParseAttributes(element);
-
-                var fieldElements = element.Elements(xNamespace + "field");
-                var modelFieldElements = element.Elements(xNamespace + "modelField");
-                var multiFieldElements = element.Elements(xNamespace + "multiField");
-                var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
-
-                ParseFields(fieldElements, result, debugAttributes);
-                ParseModelFields(modelFieldElements, result, debugAttributes);
-                ParseMultiFields(multiFieldElements, result, debugAttributes);
-                ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
-
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError("Notification: Error parsing xml reader attributes " + ex.Message);
-            }
-
-            return result;
+            return DefaultModelParser<Notification>(element, debugAttributes);
         }
 
         public static List<Notification> ParseMultiModel(XElement element, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            List<Notification> result = new List<Notification>();
-
-            IEnumerable<XElement> notificationElements = element.Elements(xNamespace + "model").Where(element => element.Attribute("type").Value == "Notification");
-
-            foreach (XElement notificationElement in notificationElements)
-            {
-                Notification im = ParseModel(notificationElement, debugAttributes);
-                result.Add(im);
-            }
-
-            return result;
+            return DefaultMultiModelParser<Notification>(element, debugAttributes);
         }
 
         public static void ParseFields(IEnumerable<XElement> fieldElements, Notification result, bool debugAttributes = false)
@@ -168,7 +134,7 @@ namespace UFEDLib
                     case "To":
                         result.To = Party.ParseModel(modelField, debugAttributes);
                         break;
-                    
+
                     default:
                         if (debugAttributes)
                         {
@@ -212,7 +178,7 @@ namespace UFEDLib
                     case "Participants":
                         result.Participants = Party.ParseMultiModel(multiModelField);
                         break;
-                    
+
                     default:
                         if (debugAttributes)
                         {

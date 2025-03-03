@@ -43,52 +43,14 @@ namespace UFEDLib
         }
 
         #region Parsers
-        public static List<Call> ParseMultiModel(XElement callsElement, bool debugAttributes = false)
-        {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            List<Call> result = new List<Call>();
-
-            IEnumerable<XElement> callElements = callsElement.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "Call");
-
-            foreach (var callElement in callElements)
-            {
-                try
-                {
-                    result.Add(ParseModel(callElement, debugAttributes));
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Error parsing call: " + ex.Message);
-                }
-            }
-
-            return result;
-        }
         public static Call ParseModel(XElement element, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            Call result = new Call();
-        
-            try
-            {
-                result.ParseAttributes(element);
+            return DefaultModelParser<Call>(element, debugAttributes);
+        }
 
-                var fieldElements = element.Elements(xNamespace + "field");
-                var modelFieldElements = element.Elements(xNamespace + "modelField");
-                var multiFieldElements = element.Elements(xNamespace + "multiField");
-                var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
-
-                ParseFields(fieldElements, result, debugAttributes);
-                ParseModelFields(modelFieldElements, result, debugAttributes);
-                ParseMultiFields(multiFieldElements, result, debugAttributes);
-                ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
-            }
-            catch (Exception e)
-            {
-                Logger.LogError("Call: Error parsing xml reader attributes " + e.Message);
-            }
-
-            return result;
+        public static List<Call> ParseMultiModel(XElement callsElement, bool debugAttributes = false)
+        {
+            return DefaultMultiModelParser<Call>(callsElement, debugAttributes);
         }
 
         public static void ParseFields(IEnumerable<XElement> fieldElements, Call result, bool debugAttributes = false)

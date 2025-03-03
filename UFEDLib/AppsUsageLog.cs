@@ -33,45 +33,12 @@ namespace UFEDLib
         #region Parsers
         public static AppsUsageLog ParseModel(XElement element, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            AppsUsageLog result = new AppsUsageLog();
-
-            try
-            {
-                result.ParseAttributes(element);
-
-                var fieldElements = element.Elements(xNamespace + "field");
-                var modelFieldElements = element.Elements(xNamespace + "modelField");
-                var multiFieldElements = element.Elements(xNamespace + "multiField");
-                var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
-
-                ParseFields(fieldElements, result, debugAttributes);
-                ParseModelFields(modelFieldElements, result, debugAttributes);
-                ParseMultiFields(multiFieldElements, result, debugAttributes);
-                ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError("AppsUsageLog: Error parsing xml reader attributes " + ex.Message);
-            }
-
-            return result;
+            return DefaultModelParser<AppsUsageLog>(element, debugAttributes);
         }
 
         public static List<AppsUsageLog> ParseMultiModel(XElement element, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            List<AppsUsageLog> result = new List<AppsUsageLog>();
-
-            IEnumerable<XElement> auElements = element.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "AppsUsageLog");
-
-            foreach (XElement auElement in auElements)
-            {
-                AppsUsageLog aul = ParseModel(auElement, debugAttributes);
-                result.Add(aul);
-            }
-
-            return result;
+            return DefaultMultiModelParser<AppsUsageLog>(element, debugAttributes);
         }
 
         public static void ParseFields(IEnumerable<XElement> fieldElements, AppsUsageLog result, bool debugAttributes = false)

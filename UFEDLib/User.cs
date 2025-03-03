@@ -32,46 +32,12 @@ namespace UFEDLib
         #region Parsers
         public static User ParseModel(XElement element, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            User result = new User();
-
-            try
-            {
-                result.ParseAttributes(element);
-
-                var fieldElements = element.Elements(xNamespace + "field");
-                var modelFieldElements = element.Elements(xNamespace + "modelField");
-                var multiFieldElements = element.Elements(xNamespace + "multiField");
-                var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
-
-                ParseFields(fieldElements, result, debugAttributes);
-                ParseModelFields(modelFieldElements, result, debugAttributes);
-                ParseMultiFields(multiFieldElements, result, debugAttributes);
-                ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
-
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError("User: Error parsing xml reader attributes " + ex.Message);
-            }
-
-            return result;
+            return DefaultModelParser<User>(element, debugAttributes);
         }
 
         public static List<User> ParseMultiModel(XElement element, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            List<User> result = new List<User>();
-
-            IEnumerable<XElement> uElements = element.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "User");
-
-            foreach (XElement uElement in uElements)
-            {
-                User aul = ParseModel(uElement, debugAttributes);
-                result.Add(aul);
-            }
-
-            return result;
+            return DefaultMultiModelParser<User>(element, debugAttributes);
         }
 
         public static void ParseFields(IEnumerable<XElement> fieldElements, User result, bool debugAttributes = false)

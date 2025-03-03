@@ -32,49 +32,16 @@ namespace UFEDLib
 
 
         #region Parsers
-        public static List<RecognizedDevice> ParseMultiModel(XElement element, bool debugAttributes = false)
-        {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            List<RecognizedDevice> result = new List<RecognizedDevice>();
-
-            IEnumerable<XElement> recognizedDeviceElements = element.Elements(xNamespace + "model").Where(element => element.Attribute("type").Value == "RecognizedDevice");
-
-            foreach (XElement recognizedDeviceElement in recognizedDeviceElements)
-            {
-                RecognizedDevice rd = ParseModel(recognizedDeviceElement, debugAttributes);
-                result.Add(rd);
-            }
-
-            return result;
-        }
-
+       
         public static RecognizedDevice ParseModel(XElement element, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            RecognizedDevice result = new RecognizedDevice();
-
-            try
-            {
-                result.ParseAttributes(element);
-
-                var fieldElements = element.Elements(xNamespace + "field");
-                var modelFieldElements = element.Elements(xNamespace + "modelField");
-                var multiFieldElements = element.Elements(xNamespace + "multiField");
-                var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
-
-                ParseFields(fieldElements, result, debugAttributes);
-                ParseModelFields(modelFieldElements, result, debugAttributes);
-                ParseMultiFields(multiFieldElements, result, debugAttributes);
-                ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError("RecognizedDevice: Error parsing xml reader attributes " + ex.Message);
-            }
-
-            return result;
+            return DefaultModelParser<RecognizedDevice>(element, debugAttributes);
         }
 
+        public static List<RecognizedDevice> ParseMultiModel(XElement element, bool debugAttributes = false)
+        {
+            return DefaultMultiModelParser<RecognizedDevice>(element, debugAttributes);
+        }
 
         public static void ParseFields(IEnumerable<XElement> fieldElements, RecognizedDevice result, bool debugAttributes = false)
         {

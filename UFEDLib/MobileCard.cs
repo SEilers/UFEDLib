@@ -36,50 +36,17 @@ namespace UFEDLib
         #endregion
 
         #region Parsers
-        public static List<MobileCard> ParseMultiModel(XElement element, bool debugAttributes = false)
-        {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            List<MobileCard> result = new List<MobileCard>();
-
-            IEnumerable<XElement> mobileCardElements = element.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "MobileCard");
-
-            foreach (XElement mobileCardElement in mobileCardElements)
-            {
-                MobileCard mc = ParseModel(mobileCardElement, debugAttributes);
-                result.Add(mc);
-            }
-
-            return result;
-        }
-
+      
         public static MobileCard ParseModel(XElement element, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            MobileCard result = new MobileCard();
-
-            try
-            {
-                result.ParseAttributes(element);
-
-                var fieldElements = element.Elements(xNamespace + "field");
-                var modelFieldElements = element.Elements(xNamespace + "modelField");
-                var multiFieldElements = element.Elements(xNamespace + "multiField");
-                var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
-
-                ParseFields(fieldElements, result, debugAttributes);
-                ParseModelFields(modelFieldElements, result, debugAttributes);
-                ParseMultiFields(multiFieldElements, result, debugAttributes);
-                ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
-
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError("MobileCard: Error parsing xml reader attributes " + ex.Message);
-            }
- 
-            return result;
+            return DefaultModelParser<MobileCard>(element, debugAttributes);
         }
-        
+
+        public static List<MobileCard> ParseMultiModel(XElement element, bool debugAttributes = false)
+        {
+            return DefaultMultiModelParser<MobileCard>(element, debugAttributes);
+        }
+
         public static void ParseFields(IEnumerable<XElement> fieldElements, MobileCard result, bool debugAttributes = false)
         {
             foreach (var field in fieldElements)

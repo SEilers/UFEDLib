@@ -35,51 +35,12 @@ namespace UFEDLib
         #region Parsers
         public static ApplicationUsage ParseModel(XElement element, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            ApplicationUsage result = new ApplicationUsage();
-           
-            try
-            {
-                result.ParseAttributes(element);
-
-                var fieldElements = element.Elements(xNamespace + "field");
-                var modelFieldElements = element.Elements(xNamespace + "modelField");
-                var multiFieldElements = element.Elements(xNamespace + "multiField");
-                var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
-
-                ParseFields(fieldElements, result, debugAttributes);
-                ParseModelFields(modelFieldElements, result, debugAttributes);
-                ParseMultiFields(multiFieldElements, result, debugAttributes);
-                ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError("ApplicationUsage: Error parsing xml reader attributes " + ex.Message);
-            }
-
-            return result;
+            return DefaultModelParser<ApplicationUsage>(element, debugAttributes);
         }
 
         public static List<ApplicationUsage> ParseMultiModel(XElement element, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            List<ApplicationUsage> result = new List<ApplicationUsage>();
-
-            IEnumerable<XElement> applicationUsageElements = element.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "ApplicationUsage");
-
-            foreach (var applicationUsageElement in applicationUsageElements)
-            {
-                try
-                {
-                    result.Add(ParseModel(applicationUsageElement, debugAttributes));
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Error parsing ApplicationUsage: " + ex.Message);
-                }
-            }
-
-            return result;
+            return DefaultMultiModelParser<ApplicationUsage>(element, debugAttributes);
         }
 
         public static void ParseFields(IEnumerable<XElement> fieldElements, ApplicationUsage result, bool debugAttributes = false)

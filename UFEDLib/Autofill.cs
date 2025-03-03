@@ -28,44 +28,12 @@ namespace UFEDLib
         #region Parsers
         public static Autofill ParseModel(XElement element, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            Autofill result = new Autofill();
-            try
-            {
-                result.ParseAttributes(element);
-
-                var fieldElements = element.Elements(xNamespace + "field");
-                var modelFieldElements = element.Elements(xNamespace + "modelField");
-                var multiFieldElements = element.Elements(xNamespace + "multiField");
-                var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
-
-                ParseFields(fieldElements, result, debugAttributes);
-                ParseModelFields(modelFieldElements, result, debugAttributes);
-                ParseMultiFields(multiFieldElements, result, debugAttributes);
-                ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError("Autofill: Error parsing xml reader attributes " + ex.Message);
-            }
-
-            return result;
+            return DefaultModelParser<Autofill>(element, debugAttributes);
         }
 
         public static List<Autofill> ParseMultiModel(XElement element, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            List<Autofill> result = new List<Autofill>();
-
-            IEnumerable<XElement> autofills = element.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "Autofill");
-
-            foreach (XElement autofill in autofills)
-            {
-                Autofill a = ParseModel(autofill, debugAttributes);
-                result.Add(a);
-            }
-
-            return result;
+            return DefaultMultiModelParser<Autofill>(element, debugAttributes);
         }
 
         public static void ParseFields(IEnumerable<XElement> fieldElements, Autofill result, bool debugAttributes = false)

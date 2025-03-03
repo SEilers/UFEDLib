@@ -39,54 +39,15 @@ namespace UFEDLib
         #endregion
 
         #region Parsers
-        public static List<SearchedItem> ParseMultiModel(XElement searchedItemsElement, bool debugAttributes = false)
-        {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
 
-            List<SearchedItem> result = new List<SearchedItem>();
-           
-            IEnumerable<XElement> searchedItemElements = searchedItemsElement.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "SearchedItem");
-
-            foreach (var searchedItemElement in searchedItemElements)
-            {
-                try
-                {
-                    result.Add(ParseModel(searchedItemElement, debugAttributes));
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Error parsing searched item: " + ex.Message);
-                }
-            }
-
-            return result;
-        }
         public static SearchedItem ParseModel(XElement element, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            SearchedItem result = new SearchedItem();
+            return DefaultModelParser<SearchedItem>(element, debugAttributes);
+        }
 
-            try
-            {
-                result.ParseAttributes(element);
-
-                var fieldElements = element.Elements(xNamespace + "field");
-                var modelFieldElements = element.Elements(xNamespace + "modelField");
-                var multiFieldElements = element.Elements(xNamespace + "multiField");
-                var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
-
-                ParseFields(fieldElements, result, debugAttributes);
-                ParseModelFields(modelFieldElements, result, debugAttributes);
-                ParseMultiFields(multiFieldElements, result, debugAttributes);
-                ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
-
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError("SearchedItem: Error parsing xml reader attributes " + ex.Message);
-            }
-
-            return result;
+        public static List<SearchedItem> ParseMultiModel(XElement searchedItemsElement, bool debugAttributes = false)
+        {
+            return DefaultMultiModelParser<SearchedItem>(searchedItemsElement, debugAttributes);
         }
 
         public static void ParseFields(IEnumerable<XElement> fieldElements, SearchedItem result, bool debugAttributes = false)

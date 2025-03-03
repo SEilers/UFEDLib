@@ -22,45 +22,12 @@ namespace UFEDLib
         #region parsers
         public static Price ParseModel(XElement element, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            Price result = new Price();
-
-            try
-            {
-                result.ParseAttributes(element);
-
-                var fieldElements = element.Elements(xNamespace + "field");
-                var modelFieldElements = element.Elements(xNamespace + "modelField");
-                var multiFieldElements = element.Elements(xNamespace + "multiField");
-                var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
-
-                ParseFields(fieldElements, result, debugAttributes);
-                ParseModelFields(modelFieldElements, result, debugAttributes);
-                ParseMultiFields(multiFieldElements, result, debugAttributes);
-                ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError("Price: Error parsing xml reader attributes " + ex.Message);
-            }
-
-            return result;
+            return DefaultModelParser<Price>(element, debugAttributes);
         }
 
         public static List<Price> ParseMultiModel(XElement element, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            List<Price> result = new List<Price>();
-
-            IEnumerable<XElement> PriceElements = element.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "Price");
-
-            foreach (XElement PriceElement in PriceElements)
-            {
-                Price em = ParseModel(PriceElement, debugAttributes);
-                result.Add(em);
-            }
-
-            return result;
+            return DefaultMultiModelParser<Price>(element, debugAttributes);
         }
 
         public static void ParseFields(IEnumerable<XElement> fieldElements, Price result, bool debugAttributes = false)
@@ -70,7 +37,7 @@ namespace UFEDLib
                 switch (field.Attribute("name").Value)
                 {
                     case "Amount":
-                        if(double.TryParse(field.Value, out double amount))
+                        if (double.TryParse(field.Value, out double amount))
                         {
                             result.Amount = amount;
                         }

@@ -47,54 +47,15 @@ namespace UFEDLib
         #endregion
 
         #region Parsers
-        public static List<StreetAddress> ParseMultiModel(XElement streetAddresssElement, bool debugAttributes = false)
-        {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            List<StreetAddress> result = new List<StreetAddress>();
-
-            IEnumerable<XElement> streetAddresses = streetAddresssElement.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "StreetAddress");
-
-            foreach (XElement streetAddress in streetAddresses)
-            {
-                try
-                {
-                    StreetAddress s = ParseModel(streetAddress, debugAttributes);
-                    result.Add(s);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Error parsing street address: " + ex.Message);
-                }
-            }
-
-            return result;
-        }
-
+      
         public static StreetAddress ParseModel(XElement element, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            StreetAddress result = new StreetAddress();
+            return DefaultModelParser<StreetAddress>(element, debugAttributes);
+        }
 
-            try
-            {
-                result.ParseAttributes(element);
-
-                var fieldElements = element?.Elements(xNamespace + "field");
-                var modelFieldElements = element?.Elements(xNamespace + "modelField");
-                var multiFieldElements = element?.Elements(xNamespace + "multiField");
-                var multiModelFieldElements = element?.Elements(xNamespace + "multiModelField");
-
-                if(fieldElements != null) ParseFields(fieldElements, result, debugAttributes);
-                if(modelFieldElements != null) ParseModelFields(modelFieldElements, result, debugAttributes);
-                if(multiFieldElements != null) ParseMultiFields(multiFieldElements, result, debugAttributes);
-                if(multiModelFieldElements != null) ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError("StreetAddress: Error parsing xml reader attributes: " + ex.Message);
-            }
-
-            return result;
+        public static List<StreetAddress> ParseMultiModel(XElement streetAddresssElement, bool debugAttributes = false)
+        {
+            return DefaultMultiModelParser<StreetAddress>(streetAddresssElement, debugAttributes);
         }
 
         public static void ParseFields(IEnumerable<XElement> fieldElements, StreetAddress result, bool debugAttributes = false)

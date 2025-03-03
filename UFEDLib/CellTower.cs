@@ -35,45 +35,12 @@ namespace UFEDLib
         #region Parsers
         public static CellTower ParseModel(XElement element, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            CellTower result = new CellTower();
-
-            try
-            {
-                result.ParseAttributes(element);
-
-                var fieldElements = element.Elements(xNamespace + "field");
-                var modelFieldElements = element.Elements(xNamespace + "modelField");
-                var multiFieldElements = element.Elements(xNamespace + "multiField");
-                var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
-
-                ParseFields(fieldElements, result, debugAttributes);
-                ParseModelFields(modelFieldElements, result, debugAttributes);
-                ParseMultiFields(multiFieldElements, result, debugAttributes);
-                ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError("CellTower: Error parsing xml reader attributes " + ex.Message);
-            }
-
-            return result;
+            return DefaultModelParser<CellTower>(element, debugAttributes);
         }
 
         public static List<CellTower> ParseMultiModel(XElement element, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            List<CellTower> result = new List<CellTower>();
-
-            IEnumerable<XElement> cellTowers = element.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "CellTower");
-
-            foreach (XElement cellTower in cellTowers)
-            {
-                CellTower ct = ParseModel(cellTower, debugAttributes);
-                result.Add(ct);
-            }
-
-            return result;
+            return DefaultMultiModelParser<CellTower>(element, debugAttributes);
         }
 
         public static void ParseFields(IEnumerable<XElement> fieldElements, CellTower result, bool debugAttributes = false)

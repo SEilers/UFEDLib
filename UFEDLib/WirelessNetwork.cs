@@ -38,53 +38,13 @@ namespace UFEDLib
         #endregion
 
         #region Parsers
-        public static List<WirelessNetwork> ParseMultiModel(XElement wirelessNetworksElement, bool debugAttributes = false)
-        {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            List<WirelessNetwork> result = new List<WirelessNetwork>();
-
-            IEnumerable<XElement> wirelessNetworkElements = wirelessNetworksElement.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "WirelessNetwork");
-
-            foreach (var wirelessNetworkElement in wirelessNetworkElements)
-            {
-                try
-                {
-                    result.Add(ParseModel(wirelessNetworkElement, debugAttributes));
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Error parsing wireles network: " + ex.Message);
-                }
-            }
-
-            return result;
-        }
-
         public static WirelessNetwork ParseModel(XElement element, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            WirelessNetwork result = new WirelessNetwork();
-
-            try
-            {
-                result.ParseAttributes(element);
-
-                var fieldElements = element.Elements(xNamespace + "field");
-                var modelFieldElements = element.Elements(xNamespace + "modelField");
-                var multiFieldElements = element.Elements(xNamespace + "multiField");
-                var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
-
-                ParseFields(fieldElements, result, debugAttributes);
-                ParseModelFields(modelFieldElements, result, debugAttributes);
-                ParseMultiFields(multiFieldElements, result, debugAttributes);
-                ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError("WirelessNetwork: Error parsing xml reader attributes " + ex.Message);
-            }
-
-            return result;
+            return DefaultModelParser<WirelessNetwork>(element, debugAttributes);
+        }
+        public static List<WirelessNetwork> ParseMultiModel(XElement wirelessNetworksElement, bool debugAttributes = false)
+        {
+            return DefaultMultiModelParser<WirelessNetwork>(wirelessNetworksElement, debugAttributes);
         }
         #endregion
 

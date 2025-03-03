@@ -29,47 +29,14 @@ namespace UFEDLib
         #endregion
 
         #region Parsers
-        public static List<Coordinate> ParseMultiModel(XElement corrdinatesElement, bool debugAttributes = false)
-        {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            List<Coordinate> result = new List<Coordinate>();
-
-            IEnumerable<XElement> corrdinateElements = corrdinatesElement.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "Coordinate");
-
-            foreach (XElement coordinate in corrdinateElements)
-            {
-                Coordinate c = ParseModel(coordinate, debugAttributes);
-                result.Add(c);
-            }
-
-            return result;
-        }
 
         public static Coordinate ParseModel(XElement element, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            Coordinate result = new Coordinate();
-
-            try
-            {
-                result.ParseAttributes(element);
-
-                var fieldElements = element.Elements(xNamespace + "field");
-                var modelFieldElements = element.Elements(xNamespace + "modelField");
-                var multiFieldElements = element.Elements(xNamespace + "multiField");
-                var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
-
-                ParseFields(fieldElements, result, debugAttributes);
-                ParseModelFields(modelFieldElements, result, debugAttributes);
-                ParseMultiFields(multiFieldElements, result, debugAttributes);
-                ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError("Coordinate: Error parsing xml reader attributes " + ex.Message);
-            }
-
-            return result;
+           return DefaultModelParser<Coordinate>(element, debugAttributes);
+        }
+        public static List<Coordinate> ParseMultiModel(XElement corrdinatesElement, bool debugAttributes = false)
+        {
+            return DefaultMultiModelParser<Coordinate>(corrdinatesElement, debugAttributes);
         }
 
         public static void ParseFields(IEnumerable<XElement> fieldElements, Coordinate result, bool debugAttributes = false)

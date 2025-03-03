@@ -35,46 +35,12 @@ namespace UFEDLib
         #region Parsers
         public static WebBookmark ParseModel(XElement element, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            WebBookmark result = new WebBookmark();
-
-            try
-            {
-                result.ParseAttributes(element);
-
-                var fieldElements = element.Elements(xNamespace + "field");
-                var modelFieldElements = element.Elements(xNamespace + "modelField");
-                var multiFieldElements = element.Elements(xNamespace + "multiField");
-                var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
-
-                ParseFields(fieldElements, result, debugAttributes);
-                ParseModelFields(modelFieldElements, result, debugAttributes);
-                ParseMultiFields(multiFieldElements, result, debugAttributes);
-                ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
-
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError("WebBookmark: Error parsing xml reader attributes " + ex.Message);
-            }
-
-            return result;
+            return DefaultModelParser<WebBookmark>(element, debugAttributes);
         }
 
         public static List<WebBookmark> ParseMultiModel(XElement element, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            List<WebBookmark> result = new List<WebBookmark>();
-
-            IEnumerable<XElement> webBookmarks = element.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "WebBookmark");
-
-            foreach (XElement webBookmark in webBookmarks)
-            {
-                WebBookmark wb = ParseModel(webBookmark, debugAttributes);
-                result.Add(wb);
-            }
-
-            return result;
+            return DefaultMultiModelParser<WebBookmark>(element, debugAttributes);
         }
 
         public static void ParseFields(IEnumerable<XElement> fieldElements, WebBookmark result, bool debugAttributes = false)
@@ -125,7 +91,7 @@ namespace UFEDLib
                     case "VisitCount":
                         if (field.Value.Trim() != "")
                         {
-                            if( int.TryParse(field.Value.Trim(), out int visitCount))
+                            if (int.TryParse(field.Value.Trim(), out int visitCount))
                                 result.VisitCount = visitCount;
                         }
                         break;

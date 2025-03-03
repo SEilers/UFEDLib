@@ -15,13 +15,13 @@ namespace UFEDLib
         }
 
         #region fields
-        public string Account {  get; set; }
+        public string Account { get; set; }
         public DateTime ScheduledDepartureTime { get; set; }
         public string ServiceIdentifier { get; set; }
         public string Source { get; set; }
         public string UserMapping { get; set; }
         #endregion
-        
+
         #region models
         public StreetAddress ArrivalAddress { get; set; }
         public StreetAddress DepartureAddress { get; set; }
@@ -35,45 +35,12 @@ namespace UFEDLib
         #region parsers
         public static PublicTransportationTicket ParseModel(XElement element, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            PublicTransportationTicket result = new PublicTransportationTicket();
-
-            try
-            {
-                result.ParseAttributes(element);
-
-                var fieldElements = element.Elements(xNamespace + "field");
-                var modelFieldElements = element.Elements(xNamespace + "modelField");
-                var multiFieldElements = element.Elements(xNamespace + "multiField");
-                var multiModelFieldElements = element.Elements(xNamespace + "multiModelField");
-
-                ParseFields(fieldElements, result, debugAttributes);
-                ParseModelFields(modelFieldElements, result, debugAttributes);
-                ParseMultiFields(multiFieldElements, result, debugAttributes);
-                ParseMultiModelFields(multiModelFieldElements, result, debugAttributes);
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError("PublicTransportationTicket: Error parsing xml reader attributes " + ex.Message);
-            }
-
-            return result;
+            return DefaultModelParser<PublicTransportationTicket>(element, debugAttributes);
         }
 
         public static List<PublicTransportationTicket> ParseMultiModel(XElement element, bool debugAttributes = false)
         {
-            XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
-            List<PublicTransportationTicket> result = new List<PublicTransportationTicket>();
-
-            IEnumerable<XElement> PublicTransportationTicketElements = element.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == "PublicTransportationTicket");
-
-            foreach (XElement PublicTransportationTicketElement in PublicTransportationTicketElements)
-            {
-                PublicTransportationTicket em = ParseModel(PublicTransportationTicketElement, debugAttributes);
-                result.Add(em);
-            }
-
-            return result;
+            return DefaultMultiModelParser<PublicTransportationTicket>(element, debugAttributes);
         }
 
         public static void ParseFields(IEnumerable<XElement> fieldElements, PublicTransportationTicket result, bool debugAttributes = false)
@@ -83,11 +50,11 @@ namespace UFEDLib
                 switch (field.Attribute("name").Value)
                 {
                     case "Account":
-                        result.Account = field.Value.Trim(); 
+                        result.Account = field.Value.Trim();
                         break;
 
                     case "ScheduledDepartureTime":
-                        if( field.Value.Trim() != "" )
+                        if (field.Value.Trim() != "")
                             result.ScheduledDepartureTime = DateTime.Parse(field.Value.Trim());
                         break;
 
