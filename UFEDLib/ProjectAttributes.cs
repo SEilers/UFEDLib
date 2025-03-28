@@ -218,6 +218,12 @@ namespace UFEDLib
                             {
                                 break;
                             }
+
+                            // Stop parsing if we reach the decodedData section - no more metadate from here on
+                            if (reader.Depth == 1 && reader.Name == "decodedData")
+                            {
+                                break;
+                            }
                         }
                         catch (Exception ex)
                         {
