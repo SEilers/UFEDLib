@@ -97,10 +97,13 @@ namespace UFEDLib
         {
             foreach (var modelField in modelFieldElements)
             {
+                XNamespace ns = modelField.Name.Namespace;
+                XElement modelElement = modelField.Element(ns + "model");
+
                 switch (modelField.Attribute("name").Value)
                 {
                     case "From":
-                        result.From = Party.ParseModel(modelField, debugAttributes);
+                        result.From = Party.ParseModel(modelElement, debugAttributes);
                         break;
 
                     default:

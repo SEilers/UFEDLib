@@ -118,14 +118,17 @@ namespace UFEDLib
         {
             foreach (var modelField in modelFieldElements)
             {
+                XNamespace ns = modelField.Name.Namespace;
+                XElement modelElement = modelField.Element(ns + "model");
+
                 switch (modelField.Attribute("name").Value)
                 {
                     case "Address":
-                        result.Address = StreetAddress.ParseModel(modelField, debugAttributes);
+                        result.Address = StreetAddress.ParseModel(modelElement, debugAttributes);
                         break;
 
                     case "Position":
-                        result.Position = Coordinate.ParseModel(modelField, debugAttributes);
+                        result.Position = Coordinate.ParseModel(modelElement, debugAttributes);
                         break;
 
                     default:

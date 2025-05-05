@@ -104,14 +104,17 @@ namespace UFEDLib
         {
             foreach (var modelFieldElement in modelFieldElements)
             {
+                XNamespace ns = modelFieldElement.Name.Namespace;
+                XElement modelElement = modelFieldElement.Element(ns + "model");
+
                 switch (modelFieldElement.Attribute("name").Value)
                 {
                     case "FromPoint":
-                        result.FromPoint = Location.ParseModel(modelFieldElement, debugAttributes);
+                        result.FromPoint = Location.ParseModel(modelElement, debugAttributes);
                         break;
 
                     case "ToPoint":
-                        result.ToPoint = Location.ParseModel(modelFieldElement, debugAttributes);
+                        result.ToPoint = Location.ParseModel(modelElement, debugAttributes);
                         break;
 
                     default:

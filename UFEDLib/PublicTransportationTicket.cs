@@ -84,14 +84,17 @@ namespace UFEDLib
         {
             foreach (var modelField in modelFieldElements)
             {
+                XNamespace ns = modelField.Name.Namespace;
+                XElement modelElement = modelField.Element(ns + "model");
+
                 switch (modelField.Attribute("name").Value)
                 {
                     case "ArrivalAddress":
-                        result.ArrivalAddress = StreetAddress.ParseModel(modelField, debugAttributes);
+                        result.ArrivalAddress = StreetAddress.ParseModel(modelElement, debugAttributes);
                         break;
 
                     case "DepartureAddress":
-                        result.DepartureAddress = StreetAddress.ParseModel(modelField, debugAttributes);
+                        result.DepartureAddress = StreetAddress.ParseModel(modelElement, debugAttributes);
                         break;
 
                     default:

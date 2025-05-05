@@ -52,8 +52,13 @@ namespace UFEDLib
         {
             if(element == null)
             {
-                Logger.LogWarning($"{T.GetXmlModelType()}: element is null");
+                //Logger.LogWarning($"{T.GetXmlModelType()}: element is null");
                 return null;
+            }
+
+            if (element.Name.LocalName != "model")
+            {
+                Logger.LogWarning($"{typeof(T).Name}: Expected 'model' element, got '{element.Name.LocalName}'");
             }
 
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";

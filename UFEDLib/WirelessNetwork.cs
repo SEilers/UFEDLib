@@ -128,10 +128,13 @@ namespace UFEDLib
         {
             foreach (var modelField in modelFieldElements)
             {
+                XNamespace ns = modelField.Name.Namespace;
+                XElement modelElement = modelField.Element(ns + "model");
+
                 switch (modelField.Attribute("name").Value)
                 {
                     case "Position":
-                        result.Position = Coordinate.ParseModel(modelField);
+                        result.Position = Coordinate.ParseModel(modelElement);
                         break;
 
                     default:

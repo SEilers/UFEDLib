@@ -99,14 +99,17 @@ namespace UFEDLib
         {
             foreach (var modelField in modelFieldElements)
             {
-                switch(modelField.Attribute("name").Value)
+                XNamespace ns = modelField.Name.Namespace;
+                XElement modelElement = modelField.Element(ns + "model");
+
+                switch (modelField.Attribute("name").Value)
                 {
                     case "Fee":
-                        result.Fee = Price.ParseModel(modelField, debugAttributes);
+                        result.Fee = Price.ParseModel(modelElement, debugAttributes);
                         break;
 
                     case "TransferAmount":
-                        result.TransferAmount = Price.ParseModel(modelField, debugAttributes);
+                        result.TransferAmount = Price.ParseModel(modelElement, debugAttributes);
                         break;
 
                     default:

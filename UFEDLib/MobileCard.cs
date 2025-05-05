@@ -107,10 +107,13 @@ namespace UFEDLib
         {
             foreach (var modelField in modelFieldElements)
             {
+                XNamespace ns = modelField.Name.Namespace;
+                XElement modelElement = modelField.Element(ns + "model");
+
                 switch (modelField.Attribute("name").Value)
                 {
                     case "Organization":
-                        result.Organization = Organization.ParseModel(modelField, debugAttributes);
+                        result.Organization = Organization.ParseModel(modelElement, debugAttributes);
                         break;
 
                     default:

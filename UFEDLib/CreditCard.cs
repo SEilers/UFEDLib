@@ -100,10 +100,13 @@ namespace UFEDLib
         {
             foreach (var modelField in modelFieldElements)
             {
+                XNamespace ns = modelField.Name.Namespace;
+                XElement modelElement = modelField.Element(ns + "model");
+
                 switch (modelField.Attribute("name").Value)
                 {
                     case "BillingAddress":
-                        result.BillingAddress = StreetAddress.ParseModel(modelField.Element("model"), debugAttributes);
+                        result.BillingAddress = StreetAddress.ParseModel(modelElement.Element("model"), debugAttributes);
                         break;
 
                     default:

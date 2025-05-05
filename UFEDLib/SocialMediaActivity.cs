@@ -171,18 +171,21 @@ namespace UFEDLib
         {
             foreach (var modelField in modelFieldElements)
             {
+                XNamespace ns = modelField.Name.Namespace;
+                XElement modelElement = modelField.Element(ns + "model");
+
                 switch (modelField.Attribute("name").Value)
                 {
                     case "Author":
-                        result.Author = Party.ParseModel(modelField, debugAttributes);
+                        result.Author = Party.ParseModel(modelElement, debugAttributes);
                         break;
 
                     case "ParentPost":
-                        result.ParentPost = SocialMediaActivity.ParseModel(modelField, debugAttributes);
+                        result.ParentPost = SocialMediaActivity.ParseModel(modelElement, debugAttributes);
                         break;
 
                     case "Position":
-                        result.Position = Coordinate.ParseModel(modelField, debugAttributes);
+                        result.Position = Coordinate.ParseModel(modelElement, debugAttributes);
                         break;
 
                     default:
