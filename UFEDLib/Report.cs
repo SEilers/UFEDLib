@@ -108,10 +108,45 @@ namespace UFEDLib
             }
         }
 
+        // Metadata parsers
+
+        #region Metadata
+
         public static ProjectAttributes ParseProjectAttributes( string filename, IProgress<int> progress = null)
         {
             return ProjectAttributes.Parse(filename, progress);
         }
+
+        public static List<(string name, string value)> ParseAdditionalFields(string filename)
+        {
+            return AdditionalFields.Parse(filename);
+        }
+
+        public static List<(string name, string value)> ParseCaseInformation(string filename)
+        {
+            return CaseInformation.Parse(filename);
+        }
+
+        public static List<(string id, string name, string value)> ParseDeviceInfo(string filename)
+        {
+            return DeviceInfo.Parse(filename);
+        }
+
+        public static List<(string name, string value)> ParseExtractionData(string filename)
+        {
+            return ExtractionData.Parse(filename);
+        }
+
+        public static ProjectInfos ParseProjectInfos(string filename)
+        {
+            return ProjectInfos.Parse(filename);
+        }
+
+        #endregion
+
+        // Model parsers
+
+        #region Models
 
         public static List<ActivitySensorData> ParseActivitySensorData(string filename, IProgress<int> progress = null, bool debugAttributes = false)
         {
@@ -143,7 +178,7 @@ namespace UFEDLib
             return ParseData<Call>(filename, progress, debugAttributes);
         }
 
-        public static List<CellTower> ParsCellTowers(string filename, IProgress<int> progress = null, bool debugAttributes = false)
+        public static List<CellTower> ParseCellTowers(string filename, IProgress<int> progress = null, bool debugAttributes = false)
         {
             return ParseData<CellTower>(filename, progress, debugAttributes);
         }
@@ -324,5 +359,7 @@ namespace UFEDLib
         {
             return ParseData<WirelessNetwork>(filename, progress, debugAttributes);
         }
+
+        #endregion
     }
 }
