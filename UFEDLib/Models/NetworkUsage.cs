@@ -8,6 +8,7 @@ using System.Xml.Linq;
 
 namespace UFEDLib
 {
+    [Serializable]
     public class NetworkUsage : ModelBase, IUfedModelParser<NetworkUsage>
     {
         public static string GetXmlModelType()
@@ -31,7 +32,7 @@ namespace UFEDLib
         #endregion
 
         #region multiFields
-        public List<String> ApplicationId { get; set; }
+        public List<string> ApplicationId { get; set; }
         #endregion
 
 

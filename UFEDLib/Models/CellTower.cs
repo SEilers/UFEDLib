@@ -7,6 +7,7 @@ using System.Xml.Linq;
 
 namespace UFEDLib
 {
+    [Serializable]
     public class CellTower : ModelBase, IUfedModelParser<CellTower>
     {
         public static string GetXmlModelType()

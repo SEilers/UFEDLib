@@ -7,6 +7,7 @@ using System.Xml.Linq;
 
 namespace UFEDLib
 {
+    [Serializable]
     public class SocialMediaActivity : ModelBase, IUfedModelParser<SocialMediaActivity>
     {
         public static string GetXmlModelType()
@@ -181,7 +182,7 @@ namespace UFEDLib
                         break;
 
                     case "ParentPost":
-                        result.ParentPost = SocialMediaActivity.ParseModel(modelElement, debugAttributes);
+                        result.ParentPost = ParseModel(modelElement, debugAttributes);
                         break;
 
                     case "Position":

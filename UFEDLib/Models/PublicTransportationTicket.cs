@@ -7,6 +7,7 @@ using System.Xml.Linq;
 
 namespace UFEDLib
 {
+    [Serializable]
     public class PublicTransportationTicket : ModelBase, IUfedModelParser<PublicTransportationTicket>
     {
         public static string GetXmlModelType()

@@ -7,6 +7,7 @@ using System.Xml.Linq;
 
 namespace UFEDLib
 {
+    [Serializable]
     public class RecognizedDevice : ModelBase, IUfedModelParser<RecognizedDevice>
     {
         public static string GetXmlModelType()

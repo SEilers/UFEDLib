@@ -7,6 +7,7 @@ using System.Xml.Linq;
 
 namespace UFEDLib
 {
+    [Serializable]
     public class ActivitySensorDataSample : ModelBase, IUfedModelParser<ActivitySensorDataSample>
     {
         public static string GetXmlModelType()

@@ -7,6 +7,7 @@ using System.Xml.Linq;
 
 namespace UFEDLib
 {
+    [Serializable]
     public class AppsUsageLog : ModelBase, IUfedModelParser<AppsUsageLog>
     {
         public static string GetXmlModelType()

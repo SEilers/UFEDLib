@@ -7,6 +7,7 @@ using System.Xml.Linq;
 
 namespace UFEDLib
 {
+    [Serializable]
     public class TransferOfFunds : ModelBase, IUfedModelParser<TransferOfFunds>
     {
         public static string GetXmlModelType()

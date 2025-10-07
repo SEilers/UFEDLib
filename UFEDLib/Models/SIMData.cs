@@ -7,6 +7,7 @@ using System.Xml.Linq;
 
 namespace UFEDLib
 {
+    [Serializable]
     public class SIMData : ModelBase, IUfedModelParser<SIMData>
     {
         public static string GetXmlModelType()

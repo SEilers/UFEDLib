@@ -15,25 +15,25 @@ namespace UFEDLib
     public class ProjectAttributes
     {
         // Image File Attributes
-        public String FileName { get; set; }
+        public string FileName { get; set; }
 
         public double FileSizeInBytes { get; set; }
 
         // UFED Project Attributes
 
-        public String ProjectName { get; set; }
+        public string ProjectName { get; set; }
 
         public string ProjectId { get; set; }
 
-        public String ReportVersion { get; set; }
+        public string ReportVersion { get; set; }
 
         public int NodeCount { get; set; }
 
         public int ModelCount { get; set; }
 
-        public String SourceExtractionsDeviceName { get; set; }
+        public string SourceExtractionsDeviceName { get; set; }
 
-        public String SourceExtractionsFullName { get; set; }
+        public string SourceExtractionsFullName { get; set; }
 
         public List<Tuple<string, string>> CaseInformation { get; set; } = new List<Tuple<string, string>>();
 

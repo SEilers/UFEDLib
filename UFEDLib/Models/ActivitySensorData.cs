@@ -8,8 +8,10 @@ using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Linq;
 
+
 namespace UFEDLib
 {
+    [Serializable]
     public class ActivitySensorData : ModelBase, IUfedModelParser<ActivitySensorData>
     {
         public static string GetXmlModelType()

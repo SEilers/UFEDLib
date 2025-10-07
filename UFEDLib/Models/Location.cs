@@ -105,7 +105,7 @@ namespace UFEDLib
                         if (field.Value.Trim() != "")
                         {
                             string gpsHorizontalAccuracy = field.Value.Trim().Replace(",", ".");
-                            result.GpsHorizontalAccuracy = Double.Parse(gpsHorizontalAccuracy, CultureInfo.InvariantCulture);
+                            result.GpsHorizontalAccuracy = double.Parse(gpsHorizontalAccuracy, CultureInfo.InvariantCulture);
                         }
                         break;
 

@@ -7,6 +7,7 @@ using System.Xml.Linq;
 
 namespace UFEDLib
 {
+    [Serializable]
     public class FileDownload : ModelBase, IUfedModelParser<FileDownload>
     {
         public static string GetXmlModelType()

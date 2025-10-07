@@ -18,8 +18,8 @@ namespace UFEDLib
 
         #region fields
         public string Description { get; set; }
-        public String Element { get; set; }
-        public String Event { get; set; }
+        public string Element { get; set; }
+        public string Event { get; set; }
         public string Source { get; set; }
         public DateTime TimeStamp { get; set; }
         public string UserMapping { get; set; }

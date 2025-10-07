@@ -7,6 +7,7 @@ using System.Xml.Linq;
 
 namespace UFEDLib
 {
+    [Serializable]
     public class Recording : ModelBase, IUfedModelParser<Recording>
     {
         public static string GetXmlModelType()

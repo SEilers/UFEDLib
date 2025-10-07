@@ -8,6 +8,7 @@ using System.Xml.Linq;
 
 namespace UFEDLib
 {
+    [Serializable]
     public class User : ModelBase, IUfedModelParser<User>
     {
         public static string GetXmlModelType()
