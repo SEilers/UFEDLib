@@ -729,6 +729,41 @@ references:
   isSpec: "True"
   fullName: UFEDLib.ActivitySensorDataSample.UserMapping
   nameWithType: ActivitySensorDataSample.UserMapping
+- uid: UFEDLib.AdditionalFields
+  name: AdditionalFields
+  href: api/UFEDLib.AdditionalFields.html
+  commentId: T:UFEDLib.AdditionalFields
+  fullName: UFEDLib.AdditionalFields
+  nameWithType: AdditionalFields
+- uid: UFEDLib.AdditionalFields.Parse(System.String)
+  name: Parse(string)
+  href: api/UFEDLib.AdditionalFields.html#UFEDLib_AdditionalFields_Parse_System_String_
+  commentId: M:UFEDLib.AdditionalFields.Parse(System.String)
+  name.vb: Parse(String)
+  fullName: UFEDLib.AdditionalFields.Parse(string)
+  fullName.vb: UFEDLib.AdditionalFields.Parse(String)
+  nameWithType: AdditionalFields.Parse(string)
+  nameWithType.vb: AdditionalFields.Parse(String)
+- uid: UFEDLib.AdditionalFields.Parse*
+  name: Parse
+  href: api/UFEDLib.AdditionalFields.html#UFEDLib_AdditionalFields_Parse_
+  commentId: Overload:UFEDLib.AdditionalFields.Parse
+  isSpec: "True"
+  fullName: UFEDLib.AdditionalFields.Parse
+  nameWithType: AdditionalFields.Parse
+- uid: UFEDLib.AdditionalFields.ParseAdditionalFields(System.IO.Stream)
+  name: ParseAdditionalFields(Stream)
+  href: api/UFEDLib.AdditionalFields.html#UFEDLib_AdditionalFields_ParseAdditionalFields_System_IO_Stream_
+  commentId: M:UFEDLib.AdditionalFields.ParseAdditionalFields(System.IO.Stream)
+  fullName: UFEDLib.AdditionalFields.ParseAdditionalFields(System.IO.Stream)
+  nameWithType: AdditionalFields.ParseAdditionalFields(Stream)
+- uid: UFEDLib.AdditionalFields.ParseAdditionalFields*
+  name: ParseAdditionalFields
+  href: api/UFEDLib.AdditionalFields.html#UFEDLib_AdditionalFields_ParseAdditionalFields_
+  commentId: Overload:UFEDLib.AdditionalFields.ParseAdditionalFields
+  isSpec: "True"
+  fullName: UFEDLib.AdditionalFields.ParseAdditionalFields
+  nameWithType: AdditionalFields.ParseAdditionalFields
 - uid: UFEDLib.ApplicationUsage
   name: ApplicationUsage
   href: api/UFEDLib.ApplicationUsage.html
@@ -2394,6 +2429,41 @@ references:
   isSpec: "True"
   fullName: UFEDLib.Call.VideoCall
   nameWithType: Call.VideoCall
+- uid: UFEDLib.CaseInformation
+  name: CaseInformation
+  href: api/UFEDLib.CaseInformation.html
+  commentId: T:UFEDLib.CaseInformation
+  fullName: UFEDLib.CaseInformation
+  nameWithType: CaseInformation
+- uid: UFEDLib.CaseInformation.Parse(System.String)
+  name: Parse(string)
+  href: api/UFEDLib.CaseInformation.html#UFEDLib_CaseInformation_Parse_System_String_
+  commentId: M:UFEDLib.CaseInformation.Parse(System.String)
+  name.vb: Parse(String)
+  fullName: UFEDLib.CaseInformation.Parse(string)
+  fullName.vb: UFEDLib.CaseInformation.Parse(String)
+  nameWithType: CaseInformation.Parse(string)
+  nameWithType.vb: CaseInformation.Parse(String)
+- uid: UFEDLib.CaseInformation.Parse*
+  name: Parse
+  href: api/UFEDLib.CaseInformation.html#UFEDLib_CaseInformation_Parse_
+  commentId: Overload:UFEDLib.CaseInformation.Parse
+  isSpec: "True"
+  fullName: UFEDLib.CaseInformation.Parse
+  nameWithType: CaseInformation.Parse
+- uid: UFEDLib.CaseInformation.ParseCaseInformation(System.IO.Stream)
+  name: ParseCaseInformation(Stream)
+  href: api/UFEDLib.CaseInformation.html#UFEDLib_CaseInformation_ParseCaseInformation_System_IO_Stream_
+  commentId: M:UFEDLib.CaseInformation.ParseCaseInformation(System.IO.Stream)
+  fullName: UFEDLib.CaseInformation.ParseCaseInformation(System.IO.Stream)
+  nameWithType: CaseInformation.ParseCaseInformation(Stream)
+- uid: UFEDLib.CaseInformation.ParseCaseInformation*
+  name: ParseCaseInformation
+  href: api/UFEDLib.CaseInformation.html#UFEDLib_CaseInformation_ParseCaseInformation_
+  commentId: Overload:UFEDLib.CaseInformation.ParseCaseInformation
+  isSpec: "True"
+  fullName: UFEDLib.CaseInformation.ParseCaseInformation
+  nameWithType: CaseInformation.ParseCaseInformation
 - uid: UFEDLib.CellTower
   name: CellTower
   href: api/UFEDLib.CellTower.html
@@ -4998,6 +5068,41 @@ references:
   isSpec: "True"
   fullName: UFEDLib.DeviceEvent.Value
   nameWithType: DeviceEvent.Value
+- uid: UFEDLib.DeviceInfo
+  name: DeviceInfo
+  href: api/UFEDLib.DeviceInfo.html
+  commentId: T:UFEDLib.DeviceInfo
+  fullName: UFEDLib.DeviceInfo
+  nameWithType: DeviceInfo
+- uid: UFEDLib.DeviceInfo.Parse(System.String)
+  name: Parse(string)
+  href: api/UFEDLib.DeviceInfo.html#UFEDLib_DeviceInfo_Parse_System_String_
+  commentId: M:UFEDLib.DeviceInfo.Parse(System.String)
+  name.vb: Parse(String)
+  fullName: UFEDLib.DeviceInfo.Parse(string)
+  fullName.vb: UFEDLib.DeviceInfo.Parse(String)
+  nameWithType: DeviceInfo.Parse(string)
+  nameWithType.vb: DeviceInfo.Parse(String)
+- uid: UFEDLib.DeviceInfo.Parse*
+  name: Parse
+  href: api/UFEDLib.DeviceInfo.html#UFEDLib_DeviceInfo_Parse_
+  commentId: Overload:UFEDLib.DeviceInfo.Parse
+  isSpec: "True"
+  fullName: UFEDLib.DeviceInfo.Parse
+  nameWithType: DeviceInfo.Parse
+- uid: UFEDLib.DeviceInfo.ParseDeviceInfo(System.IO.Stream)
+  name: ParseDeviceInfo(Stream)
+  href: api/UFEDLib.DeviceInfo.html#UFEDLib_DeviceInfo_ParseDeviceInfo_System_IO_Stream_
+  commentId: M:UFEDLib.DeviceInfo.ParseDeviceInfo(System.IO.Stream)
+  fullName: UFEDLib.DeviceInfo.ParseDeviceInfo(System.IO.Stream)
+  nameWithType: DeviceInfo.ParseDeviceInfo(Stream)
+- uid: UFEDLib.DeviceInfo.ParseDeviceInfo*
+  name: ParseDeviceInfo
+  href: api/UFEDLib.DeviceInfo.html#UFEDLib_DeviceInfo_ParseDeviceInfo_
+  commentId: Overload:UFEDLib.DeviceInfo.ParseDeviceInfo
+  isSpec: "True"
+  fullName: UFEDLib.DeviceInfo.ParseDeviceInfo
+  nameWithType: DeviceInfo.ParseDeviceInfo
 - uid: UFEDLib.DeviceInfoEntry
   name: DeviceInfoEntry
   href: api/UFEDLib.DeviceInfoEntry.html
@@ -5733,6 +5838,41 @@ references:
   isSpec: "True"
   fullName: UFEDLib.Email.UserMapping
   nameWithType: Email.UserMapping
+- uid: UFEDLib.ExtractionData
+  name: ExtractionData
+  href: api/UFEDLib.ExtractionData.html
+  commentId: T:UFEDLib.ExtractionData
+  fullName: UFEDLib.ExtractionData
+  nameWithType: ExtractionData
+- uid: UFEDLib.ExtractionData.Parse(System.String)
+  name: Parse(string)
+  href: api/UFEDLib.ExtractionData.html#UFEDLib_ExtractionData_Parse_System_String_
+  commentId: M:UFEDLib.ExtractionData.Parse(System.String)
+  name.vb: Parse(String)
+  fullName: UFEDLib.ExtractionData.Parse(string)
+  fullName.vb: UFEDLib.ExtractionData.Parse(String)
+  nameWithType: ExtractionData.Parse(string)
+  nameWithType.vb: ExtractionData.Parse(String)
+- uid: UFEDLib.ExtractionData.Parse*
+  name: Parse
+  href: api/UFEDLib.ExtractionData.html#UFEDLib_ExtractionData_Parse_
+  commentId: Overload:UFEDLib.ExtractionData.Parse
+  isSpec: "True"
+  fullName: UFEDLib.ExtractionData.Parse
+  nameWithType: ExtractionData.Parse
+- uid: UFEDLib.ExtractionData.ParseExtractionData(System.IO.Stream)
+  name: ParseExtractionData(Stream)
+  href: api/UFEDLib.ExtractionData.html#UFEDLib_ExtractionData_ParseExtractionData_System_IO_Stream_
+  commentId: M:UFEDLib.ExtractionData.ParseExtractionData(System.IO.Stream)
+  fullName: UFEDLib.ExtractionData.ParseExtractionData(System.IO.Stream)
+  nameWithType: ExtractionData.ParseExtractionData(Stream)
+- uid: UFEDLib.ExtractionData.ParseExtractionData*
+  name: ParseExtractionData
+  href: api/UFEDLib.ExtractionData.html#UFEDLib_ExtractionData_ParseExtractionData_
+  commentId: Overload:UFEDLib.ExtractionData.ParseExtractionData
+  isSpec: "True"
+  fullName: UFEDLib.ExtractionData.ParseExtractionData
+  nameWithType: ExtractionData.ParseExtractionData
 - uid: UFEDLib.FileDownload
   name: FileDownload
   href: api/UFEDLib.FileDownload.html
@@ -11862,6 +12002,101 @@ references:
   isSpec: "True"
   fullName: UFEDLib.ProjectAttributes.SourceExtractionsFullName
   nameWithType: ProjectAttributes.SourceExtractionsFullName
+- uid: UFEDLib.ProjectInfos
+  name: ProjectInfos
+  href: api/UFEDLib.ProjectInfos.html
+  commentId: T:UFEDLib.ProjectInfos
+  fullName: UFEDLib.ProjectInfos
+  nameWithType: ProjectInfos
+- uid: UFEDLib.ProjectInfos.MediaResults
+  name: MediaResults
+  href: api/UFEDLib.ProjectInfos.html#UFEDLib_ProjectInfos_MediaResults
+  commentId: F:UFEDLib.ProjectInfos.MediaResults
+  fullName: UFEDLib.ProjectInfos.MediaResults
+  nameWithType: ProjectInfos.MediaResults
+- uid: UFEDLib.ProjectInfos.Parse(System.String)
+  name: Parse(string)
+  href: api/UFEDLib.ProjectInfos.html#UFEDLib_ProjectInfos_Parse_System_String_
+  commentId: M:UFEDLib.ProjectInfos.Parse(System.String)
+  name.vb: Parse(String)
+  fullName: UFEDLib.ProjectInfos.Parse(string)
+  fullName.vb: UFEDLib.ProjectInfos.Parse(String)
+  nameWithType: ProjectInfos.Parse(string)
+  nameWithType.vb: ProjectInfos.Parse(String)
+- uid: UFEDLib.ProjectInfos.Parse*
+  name: Parse
+  href: api/UFEDLib.ProjectInfos.html#UFEDLib_ProjectInfos_Parse_
+  commentId: Overload:UFEDLib.ProjectInfos.Parse
+  isSpec: "True"
+  fullName: UFEDLib.ProjectInfos.Parse
+  nameWithType: ProjectInfos.Parse
+- uid: UFEDLib.ProjectInfos.ParseProjectInfos(System.IO.Stream)
+  name: ParseProjectInfos(Stream)
+  href: api/UFEDLib.ProjectInfos.html#UFEDLib_ProjectInfos_ParseProjectInfos_System_IO_Stream_
+  commentId: M:UFEDLib.ProjectInfos.ParseProjectInfos(System.IO.Stream)
+  fullName: UFEDLib.ProjectInfos.ParseProjectInfos(System.IO.Stream)
+  nameWithType: ProjectInfos.ParseProjectInfos(Stream)
+- uid: UFEDLib.ProjectInfos.ParseProjectInfos*
+  name: ParseProjectInfos
+  href: api/UFEDLib.ProjectInfos.html#UFEDLib_ProjectInfos_ParseProjectInfos_
+  commentId: Overload:UFEDLib.ProjectInfos.ParseProjectInfos
+  isSpec: "True"
+  fullName: UFEDLib.ProjectInfos.ParseProjectInfos
+  nameWithType: ProjectInfos.ParseProjectInfos
+- uid: UFEDLib.ProjectInfos.ProjectModelCount
+  name: ProjectModelCount
+  href: api/UFEDLib.ProjectInfos.html#UFEDLib_ProjectInfos_ProjectModelCount
+  commentId: F:UFEDLib.ProjectInfos.ProjectModelCount
+  fullName: UFEDLib.ProjectInfos.ProjectModelCount
+  nameWithType: ProjectInfos.ProjectModelCount
+- uid: UFEDLib.ProjectInfos.ProjectNodeCount
+  name: ProjectNodeCount
+  href: api/UFEDLib.ProjectInfos.html#UFEDLib_ProjectInfos_ProjectNodeCount
+  commentId: F:UFEDLib.ProjectInfos.ProjectNodeCount
+  fullName: UFEDLib.ProjectInfos.ProjectNodeCount
+  nameWithType: ProjectInfos.ProjectNodeCount
+- uid: UFEDLib.ProjectInfos.containsGarbage
+  name: containsGarbage
+  href: api/UFEDLib.ProjectInfos.html#UFEDLib_ProjectInfos_containsGarbage
+  commentId: F:UFEDLib.ProjectInfos.containsGarbage
+  fullName: UFEDLib.ProjectInfos.containsGarbage
+  nameWithType: ProjectInfos.containsGarbage
+- uid: UFEDLib.ProjectInfos.extractionType
+  name: extractionType
+  href: api/UFEDLib.ProjectInfos.html#UFEDLib_ProjectInfos_extractionType
+  commentId: F:UFEDLib.ProjectInfos.extractionType
+  fullName: UFEDLib.ProjectInfos.extractionType
+  nameWithType: ProjectInfos.extractionType
+- uid: UFEDLib.ProjectInfos.licenseId
+  name: licenseId
+  href: api/UFEDLib.ProjectInfos.html#UFEDLib_ProjectInfos_licenseId
+  commentId: F:UFEDLib.ProjectInfos.licenseId
+  fullName: UFEDLib.ProjectInfos.licenseId
+  nameWithType: ProjectInfos.licenseId
+- uid: UFEDLib.ProjectInfos.name
+  name: name
+  href: api/UFEDLib.ProjectInfos.html#UFEDLib_ProjectInfos_name
+  commentId: F:UFEDLib.ProjectInfos.name
+  fullName: UFEDLib.ProjectInfos.name
+  nameWithType: ProjectInfos.name
+- uid: UFEDLib.ProjectInfos.projectId
+  name: projectId
+  href: api/UFEDLib.ProjectInfos.html#UFEDLib_ProjectInfos_projectId
+  commentId: F:UFEDLib.ProjectInfos.projectId
+  fullName: UFEDLib.ProjectInfos.projectId
+  nameWithType: ProjectInfos.projectId
+- uid: UFEDLib.ProjectInfos.reportVersion
+  name: reportVersion
+  href: api/UFEDLib.ProjectInfos.html#UFEDLib_ProjectInfos_reportVersion
+  commentId: F:UFEDLib.ProjectInfos.reportVersion
+  fullName: UFEDLib.ProjectInfos.reportVersion
+  nameWithType: ProjectInfos.reportVersion
+- uid: UFEDLib.ProjectInfos.xmlns
+  name: xmlns
+  href: api/UFEDLib.ProjectInfos.html#UFEDLib_ProjectInfos_xmlns
+  commentId: F:UFEDLib.ProjectInfos.xmlns
+  fullName: UFEDLib.ProjectInfos.xmlns
+  nameWithType: ProjectInfos.xmlns
 - uid: UFEDLib.PublicTransportationTicket
   name: PublicTransportationTicket
   href: api/UFEDLib.PublicTransportationTicket.html
@@ -12570,22 +12805,6 @@ references:
   isSpec: "True"
   fullName: UFEDLib.Report.GetUnsupportedModels
   nameWithType: Report.GetUnsupportedModels
-- uid: UFEDLib.Report.ParsCellTowers(System.String,System.IProgress{System.Int32},System.Boolean)
-  name: ParsCellTowers(string, IProgress<int>, bool)
-  href: api/UFEDLib.Report.html#UFEDLib_Report_ParsCellTowers_System_String_System_IProgress_System_Int32__System_Boolean_
-  commentId: M:UFEDLib.Report.ParsCellTowers(System.String,System.IProgress{System.Int32},System.Boolean)
-  name.vb: ParsCellTowers(String, IProgress(Of Integer), Boolean)
-  fullName: UFEDLib.Report.ParsCellTowers(string, System.IProgress<int>, bool)
-  fullName.vb: UFEDLib.Report.ParsCellTowers(String, System.IProgress(Of Integer), Boolean)
-  nameWithType: Report.ParsCellTowers(string, IProgress<int>, bool)
-  nameWithType.vb: Report.ParsCellTowers(String, IProgress(Of Integer), Boolean)
-- uid: UFEDLib.Report.ParsCellTowers*
-  name: ParsCellTowers
-  href: api/UFEDLib.Report.html#UFEDLib_Report_ParsCellTowers_
-  commentId: Overload:UFEDLib.Report.ParsCellTowers
-  isSpec: "True"
-  fullName: UFEDLib.Report.ParsCellTowers
-  nameWithType: Report.ParsCellTowers
 - uid: UFEDLib.Report.ParseActivitySensorData(System.String,System.IProgress{System.Int32},System.Boolean)
   name: ParseActivitySensorData(string, IProgress<int>, bool)
   href: api/UFEDLib.Report.html#UFEDLib_Report_ParseActivitySensorData_System_String_System_IProgress_System_Int32__System_Boolean_
@@ -12602,6 +12821,22 @@ references:
   isSpec: "True"
   fullName: UFEDLib.Report.ParseActivitySensorData
   nameWithType: Report.ParseActivitySensorData
+- uid: UFEDLib.Report.ParseAdditionalFields(System.String)
+  name: ParseAdditionalFields(string)
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseAdditionalFields_System_String_
+  commentId: M:UFEDLib.Report.ParseAdditionalFields(System.String)
+  name.vb: ParseAdditionalFields(String)
+  fullName: UFEDLib.Report.ParseAdditionalFields(string)
+  fullName.vb: UFEDLib.Report.ParseAdditionalFields(String)
+  nameWithType: Report.ParseAdditionalFields(string)
+  nameWithType.vb: Report.ParseAdditionalFields(String)
+- uid: UFEDLib.Report.ParseAdditionalFields*
+  name: ParseAdditionalFields
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseAdditionalFields_
+  commentId: Overload:UFEDLib.Report.ParseAdditionalFields
+  isSpec: "True"
+  fullName: UFEDLib.Report.ParseAdditionalFields
+  nameWithType: Report.ParseAdditionalFields
 - uid: UFEDLib.Report.ParseApplicationUsages(System.String,System.IProgress{System.Int32},System.Boolean)
   name: ParseApplicationUsages(string, IProgress<int>, bool)
   href: api/UFEDLib.Report.html#UFEDLib_Report_ParseApplicationUsages_System_String_System_IProgress_System_Int32__System_Boolean_
@@ -12682,6 +12917,38 @@ references:
   isSpec: "True"
   fullName: UFEDLib.Report.ParseCalls
   nameWithType: Report.ParseCalls
+- uid: UFEDLib.Report.ParseCaseInformation(System.String)
+  name: ParseCaseInformation(string)
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseCaseInformation_System_String_
+  commentId: M:UFEDLib.Report.ParseCaseInformation(System.String)
+  name.vb: ParseCaseInformation(String)
+  fullName: UFEDLib.Report.ParseCaseInformation(string)
+  fullName.vb: UFEDLib.Report.ParseCaseInformation(String)
+  nameWithType: Report.ParseCaseInformation(string)
+  nameWithType.vb: Report.ParseCaseInformation(String)
+- uid: UFEDLib.Report.ParseCaseInformation*
+  name: ParseCaseInformation
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseCaseInformation_
+  commentId: Overload:UFEDLib.Report.ParseCaseInformation
+  isSpec: "True"
+  fullName: UFEDLib.Report.ParseCaseInformation
+  nameWithType: Report.ParseCaseInformation
+- uid: UFEDLib.Report.ParseCellTowers(System.String,System.IProgress{System.Int32},System.Boolean)
+  name: ParseCellTowers(string, IProgress<int>, bool)
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseCellTowers_System_String_System_IProgress_System_Int32__System_Boolean_
+  commentId: M:UFEDLib.Report.ParseCellTowers(System.String,System.IProgress{System.Int32},System.Boolean)
+  name.vb: ParseCellTowers(String, IProgress(Of Integer), Boolean)
+  fullName: UFEDLib.Report.ParseCellTowers(string, System.IProgress<int>, bool)
+  fullName.vb: UFEDLib.Report.ParseCellTowers(String, System.IProgress(Of Integer), Boolean)
+  nameWithType: Report.ParseCellTowers(string, IProgress<int>, bool)
+  nameWithType.vb: Report.ParseCellTowers(String, IProgress(Of Integer), Boolean)
+- uid: UFEDLib.Report.ParseCellTowers*
+  name: ParseCellTowers
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseCellTowers_
+  commentId: Overload:UFEDLib.Report.ParseCellTowers
+  isSpec: "True"
+  fullName: UFEDLib.Report.ParseCellTowers
+  nameWithType: Report.ParseCellTowers
 - uid: UFEDLib.Report.ParseChats(System.String,System.IProgress{System.Int32},System.Boolean)
   name: ParseChats(string, IProgress<int>, bool)
   href: api/UFEDLib.Report.html#UFEDLib_Report_ParseChats_System_String_System_IProgress_System_Int32__System_Boolean_
@@ -12794,6 +13061,22 @@ references:
   isSpec: "True"
   fullName: UFEDLib.Report.ParseDeviceEvent
   nameWithType: Report.ParseDeviceEvent
+- uid: UFEDLib.Report.ParseDeviceInfo(System.String)
+  name: ParseDeviceInfo(string)
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseDeviceInfo_System_String_
+  commentId: M:UFEDLib.Report.ParseDeviceInfo(System.String)
+  name.vb: ParseDeviceInfo(String)
+  fullName: UFEDLib.Report.ParseDeviceInfo(string)
+  fullName.vb: UFEDLib.Report.ParseDeviceInfo(String)
+  nameWithType: Report.ParseDeviceInfo(string)
+  nameWithType.vb: Report.ParseDeviceInfo(String)
+- uid: UFEDLib.Report.ParseDeviceInfo*
+  name: ParseDeviceInfo
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseDeviceInfo_
+  commentId: Overload:UFEDLib.Report.ParseDeviceInfo
+  isSpec: "True"
+  fullName: UFEDLib.Report.ParseDeviceInfo
+  nameWithType: Report.ParseDeviceInfo
 - uid: UFEDLib.Report.ParseDeviceInfoEntry(System.String,System.IProgress{System.Int32},System.Boolean)
   name: ParseDeviceInfoEntry(string, IProgress<int>, bool)
   href: api/UFEDLib.Report.html#UFEDLib_Report_ParseDeviceInfoEntry_System_String_System_IProgress_System_Int32__System_Boolean_
@@ -12842,6 +13125,22 @@ references:
   isSpec: "True"
   fullName: UFEDLib.Report.ParseEmails
   nameWithType: Report.ParseEmails
+- uid: UFEDLib.Report.ParseExtractionData(System.String)
+  name: ParseExtractionData(string)
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseExtractionData_System_String_
+  commentId: M:UFEDLib.Report.ParseExtractionData(System.String)
+  name.vb: ParseExtractionData(String)
+  fullName: UFEDLib.Report.ParseExtractionData(string)
+  fullName.vb: UFEDLib.Report.ParseExtractionData(String)
+  nameWithType: Report.ParseExtractionData(string)
+  nameWithType.vb: Report.ParseExtractionData(String)
+- uid: UFEDLib.Report.ParseExtractionData*
+  name: ParseExtractionData
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseExtractionData_
+  commentId: Overload:UFEDLib.Report.ParseExtractionData
+  isSpec: "True"
+  fullName: UFEDLib.Report.ParseExtractionData
+  nameWithType: Report.ParseExtractionData
 - uid: UFEDLib.Report.ParseFileDownloads(System.String,System.IProgress{System.Int32},System.Boolean)
   name: ParseFileDownloads(string, IProgress<int>, bool)
   href: api/UFEDLib.Report.html#UFEDLib_Report_ParseFileDownloads_System_String_System_IProgress_System_Int32__System_Boolean_
@@ -13082,6 +13381,22 @@ references:
   isSpec: "True"
   fullName: UFEDLib.Report.ParseProjectAttributes
   nameWithType: Report.ParseProjectAttributes
+- uid: UFEDLib.Report.ParseProjectInfos(System.String)
+  name: ParseProjectInfos(string)
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseProjectInfos_System_String_
+  commentId: M:UFEDLib.Report.ParseProjectInfos(System.String)
+  name.vb: ParseProjectInfos(String)
+  fullName: UFEDLib.Report.ParseProjectInfos(string)
+  fullName.vb: UFEDLib.Report.ParseProjectInfos(String)
+  nameWithType: Report.ParseProjectInfos(string)
+  nameWithType.vb: Report.ParseProjectInfos(String)
+- uid: UFEDLib.Report.ParseProjectInfos*
+  name: ParseProjectInfos
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseProjectInfos_
+  commentId: Overload:UFEDLib.Report.ParseProjectInfos
+  isSpec: "True"
+  fullName: UFEDLib.Report.ParseProjectInfos
+  nameWithType: Report.ParseProjectInfos
 - uid: UFEDLib.Report.ParsePublicTransportationTickets(System.String,System.IProgress{System.Int32},System.Boolean)
   name: ParsePublicTransportationTickets(string, IProgress<int>, bool)
   href: api/UFEDLib.Report.html#UFEDLib_Report_ParsePublicTransportationTickets_System_String_System_IProgress_System_Int32__System_Boolean_

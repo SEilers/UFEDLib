@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class Map | UFEDLib </title>
+      <title>Class DeviceInfo | UFEDLib </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class Map | UFEDLib ">
+      <meta name="title" content="Class DeviceInfo | UFEDLib ">
       
       
       <link rel="icon" href="../favicon.ico">
@@ -16,7 +16,7 @@
       
       
       
-      <meta name="docfx:docurl" content="https://github.com/SEilers/UFEDLib/new/master/apiSpec/new?filename=UFEDLib_Map.md&amp;value=---%0Auid%3A%20UFEDLib.Map%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/SEilers/UFEDLib/new/master/apiSpec/new?filename=UFEDLib_DeviceInfo.md&amp;value=---%0Auid%3A%20UFEDLib.DeviceInfo%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -80,12 +80,12 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="UFEDLib.Map">
+        <article data-uid="UFEDLib.DeviceInfo">
 
 
 
-  <h1 id="UFEDLib_Map" data-uid="UFEDLib.Map" class="text-break">
-Class Map  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Models/Map.cs/#L9"><i class="bi bi-code-slash"></i></a>
+  <h1 id="UFEDLib_DeviceInfo" data-uid="UFEDLib.DeviceInfo" class="text-break">
+Class DeviceInfo  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/MetaData/DeviceInfo.cs/#L13"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,8 +97,7 @@ Class Map  <a class="header-action link-secondary" title="View source" href="htt
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Serializable]
-public class Map : ModelBase</code></pre>
+    <pre><code class="lang-csharp hljs">public class DeviceInfo</code></pre>
   </div>
 
 
@@ -108,8 +107,7 @@ public class Map : ModelBase</code></pre>
     <dt>Inheritance</dt>
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-      <div><a class="xref" href="UFEDLib.ModelBase.html">ModelBase</a></div>
-      <div><span class="xref">Map</span></div>
+      <div><span class="xref">DeviceInfo</span></div>
     </dd>
   </dl>
 
@@ -118,36 +116,6 @@ public class Map : ModelBase</code></pre>
   <dl class="typelist inheritedMembers">
     <dt>Inherited Members</dt>
     <dd>
-    <div>
-      <a class="xref" href="UFEDLib.ModelBase.html#UFEDLib_ModelBase_id">ModelBase.id</a>
-    </div>
-    <div>
-      <a class="xref" href="UFEDLib.ModelBase.html#UFEDLib_ModelBase_type">ModelBase.type</a>
-    </div>
-    <div>
-      <a class="xref" href="UFEDLib.ModelBase.html#UFEDLib_ModelBase_deleted_state">ModelBase.deleted_state</a>
-    </div>
-    <div>
-      <a class="xref" href="UFEDLib.ModelBase.html#UFEDLib_ModelBase_decoding_confidence">ModelBase.decoding_confidence</a>
-    </div>
-    <div>
-      <a class="xref" href="UFEDLib.ModelBase.html#UFEDLib_ModelBase_isrelated">ModelBase.isrelated</a>
-    </div>
-    <div>
-      <a class="xref" href="UFEDLib.ModelBase.html#UFEDLib_ModelBase_source_index">ModelBase.source_index</a>
-    </div>
-    <div>
-      <a class="xref" href="UFEDLib.ModelBase.html#UFEDLib_ModelBase_extractionId">ModelBase.extractionId</a>
-    </div>
-    <div>
-      <a class="xref" href="UFEDLib.ModelBase.html#UFEDLib_ModelBase_ParseAttributes_System_Xml_Linq_XElement_">ModelBase.ParseAttributes(XElement)</a>
-    </div>
-    <div>
-      <a class="xref" href="UFEDLib.ModelBase.html#UFEDLib_ModelBase_DefaultModelParser__1_System_Xml_Linq_XElement_System_Boolean_">ModelBase.DefaultModelParser&lt;T&gt;(XElement, bool)</a>
-    </div>
-    <div>
-      <a class="xref" href="UFEDLib.ModelBase.html#UFEDLib_ModelBase_DefaultMultiModelParser__1_System_Xml_Linq_XElement_System_Boolean_">ModelBase.DefaultMultiModelParser&lt;T&gt;(XElement, bool)</a>
-    </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
     </div>
@@ -176,31 +144,33 @@ public class Map : ModelBase</code></pre>
 
 
 
-  <h2 class="section" id="properties">Properties
+  <h2 class="section" id="methods">Methods
 </h2>
 
 
-  <a id="UFEDLib_Map_Source_" data-uid="UFEDLib.Map.Source*"></a>
+  <a id="UFEDLib_DeviceInfo_Parse_" data-uid="UFEDLib.DeviceInfo.Parse*"></a>
 
-  <h3 id="UFEDLib_Map_Source" data-uid="UFEDLib.Map.Source">
-  Source
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Models/Map.cs/#L13"><i class="bi bi-code-slash"></i></a>
+  <h3 id="UFEDLib_DeviceInfo_Parse_System_String_" data-uid="UFEDLib.DeviceInfo.Parse(System.String)">
+  Parse(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/MetaData/DeviceInfo.cs/#L15"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Source { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public static List&lt;(string id, string name, string value)&gt; Parse(string fileName)</code></pre>
   </div>
 
-
-
-
-
-  <h4 class="section">Property Value</h4>
+  <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><code>fileName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.string,system.string,system.string-.id">id</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.string,system.string,system.string-.name">name</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.string,system.string,system.string-.value">value</a>)&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -211,60 +181,37 @@ public class Map : ModelBase</code></pre>
 
 
 
-  <a id="UFEDLib_Map_Tiles_" data-uid="UFEDLib.Map.Tiles*"></a>
 
-  <h3 id="UFEDLib_Map_Tiles" data-uid="UFEDLib.Map.Tiles">
-  Tiles
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Models/Map.cs/#L18"><i class="bi bi-code-slash"></i></a>
+
+
+  <a id="UFEDLib_DeviceInfo_ParseDeviceInfo_" data-uid="UFEDLib.DeviceInfo.ParseDeviceInfo*"></a>
+
+  <h3 id="UFEDLib_DeviceInfo_ParseDeviceInfo_System_IO_Stream_" data-uid="UFEDLib.DeviceInfo.ParseDeviceInfo(System.IO.Stream)">
+  ParseDeviceInfo(Stream)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/MetaData/DeviceInfo.cs/#L54"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public List&lt;string&gt; Tiles { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public static List&lt;(string id, string name, string value)&gt; ParseDeviceInfo(Stream stream)</code></pre>
   </div>
 
-
-
-
-
-  <h4 class="section">Property Value</h4>
+  <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dt><code>stream</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.string,system.string,system.string-.id">id</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.string,system.string,system.string-.name">name</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.string,system.string,system.string-.value">value</a>)&gt;</dt>
     <dd></dd>
   </dl>
 
 
 
-
-
-
-
-
-  <a id="UFEDLib_Map_ZoomLevel_" data-uid="UFEDLib.Map.ZoomLevel*"></a>
-
-  <h3 id="UFEDLib_Map_ZoomLevel" data-uid="UFEDLib.Map.ZoomLevel">
-  ZoomLevel
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Models/Map.cs/#L14"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int ZoomLevel { get; set; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd></dd>
-  </dl>
 
 
 
@@ -277,7 +224,7 @@ public class Map : ModelBase</code></pre>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Models/Map.cs/#L9" class="edit-link">Edit this page</a>
+          <a href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/MetaData/DeviceInfo.cs/#L13" class="edit-link">Edit this page</a>
         </div>
 
 

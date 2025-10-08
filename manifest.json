@@ -46,6 +46,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.AdditionalFields.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.AdditionalFields.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UFEDLib.AdditionalFields",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/UFEDLib.ApplicationUsage.yml",
       "output": {
         ".html": {
@@ -126,6 +140,20 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "UFEDLib.Call",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.CaseInformation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.CaseInformation.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UFEDLib.CaseInformation",
       "Summary": null
     },
     {
@@ -284,6 +312,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.DeviceInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.DeviceInfo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UFEDLib.DeviceInfo",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/UFEDLib.DeviceInfoEntry.yml",
       "output": {
         ".html": {
@@ -322,6 +364,20 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "UFEDLib.Email",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.ExtractionData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.ExtractionData.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UFEDLib.ExtractionData",
       "Summary": null
     },
     {
@@ -686,6 +742,20 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "UFEDLib.ProjectAttributes",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFEDLib.ProjectInfos.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFEDLib.ProjectInfos.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UFEDLib.ProjectInfos",
       "Summary": null
     },
     {
