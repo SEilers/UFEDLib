@@ -13,16 +13,16 @@ namespace UFEDLib
 {
     public class ProjectInfos
     {
-        public string projectId = "";
-        public string name = "";
-        public string reportVersion = "";
-        public string licenseId = "";
-        public string containsGarbage = "";
-        public string extractionType = "";
-        public string ProjectNodeCount = "";
-        public string ProjectModelCount = "";
-        public string MediaResults = "";
-        public string xmlns = "";
+        public string projectId { get; set; }  = "";
+        public string name { get; set; } = "";
+        public string reportVersion { get; set; } = "";
+        public string licenseId { get; set; } = "";
+        public string containsGarbage { get; set; } = "";
+        public string extractionType { get; set; } = "";
+        public string ProjectNodeCount { get; set; } = "";
+        public string ProjectModelCount { get; set; } = "";
+        public string MediaResults { get; set; } = "";
+        public string xmlns { get; set; } = "";
 
         public static ProjectInfos Parse(string fileName)
         {
