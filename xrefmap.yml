@@ -12011,7 +12011,14 @@ references:
 - uid: UFEDLib.ProjectInfos.MediaResults
   name: MediaResults
   href: api/UFEDLib.ProjectInfos.html#UFEDLib_ProjectInfos_MediaResults
-  commentId: F:UFEDLib.ProjectInfos.MediaResults
+  commentId: P:UFEDLib.ProjectInfos.MediaResults
+  fullName: UFEDLib.ProjectInfos.MediaResults
+  nameWithType: ProjectInfos.MediaResults
+- uid: UFEDLib.ProjectInfos.MediaResults*
+  name: MediaResults
+  href: api/UFEDLib.ProjectInfos.html#UFEDLib_ProjectInfos_MediaResults_
+  commentId: Overload:UFEDLib.ProjectInfos.MediaResults
+  isSpec: "True"
   fullName: UFEDLib.ProjectInfos.MediaResults
   nameWithType: ProjectInfos.MediaResults
 - uid: UFEDLib.ProjectInfos.Parse(System.String)
@@ -12046,55 +12053,118 @@ references:
 - uid: UFEDLib.ProjectInfos.ProjectModelCount
   name: ProjectModelCount
   href: api/UFEDLib.ProjectInfos.html#UFEDLib_ProjectInfos_ProjectModelCount
-  commentId: F:UFEDLib.ProjectInfos.ProjectModelCount
+  commentId: P:UFEDLib.ProjectInfos.ProjectModelCount
+  fullName: UFEDLib.ProjectInfos.ProjectModelCount
+  nameWithType: ProjectInfos.ProjectModelCount
+- uid: UFEDLib.ProjectInfos.ProjectModelCount*
+  name: ProjectModelCount
+  href: api/UFEDLib.ProjectInfos.html#UFEDLib_ProjectInfos_ProjectModelCount_
+  commentId: Overload:UFEDLib.ProjectInfos.ProjectModelCount
+  isSpec: "True"
   fullName: UFEDLib.ProjectInfos.ProjectModelCount
   nameWithType: ProjectInfos.ProjectModelCount
 - uid: UFEDLib.ProjectInfos.ProjectNodeCount
   name: ProjectNodeCount
   href: api/UFEDLib.ProjectInfos.html#UFEDLib_ProjectInfos_ProjectNodeCount
-  commentId: F:UFEDLib.ProjectInfos.ProjectNodeCount
+  commentId: P:UFEDLib.ProjectInfos.ProjectNodeCount
+  fullName: UFEDLib.ProjectInfos.ProjectNodeCount
+  nameWithType: ProjectInfos.ProjectNodeCount
+- uid: UFEDLib.ProjectInfos.ProjectNodeCount*
+  name: ProjectNodeCount
+  href: api/UFEDLib.ProjectInfos.html#UFEDLib_ProjectInfos_ProjectNodeCount_
+  commentId: Overload:UFEDLib.ProjectInfos.ProjectNodeCount
+  isSpec: "True"
   fullName: UFEDLib.ProjectInfos.ProjectNodeCount
   nameWithType: ProjectInfos.ProjectNodeCount
 - uid: UFEDLib.ProjectInfos.containsGarbage
   name: containsGarbage
   href: api/UFEDLib.ProjectInfos.html#UFEDLib_ProjectInfos_containsGarbage
-  commentId: F:UFEDLib.ProjectInfos.containsGarbage
+  commentId: P:UFEDLib.ProjectInfos.containsGarbage
+  fullName: UFEDLib.ProjectInfos.containsGarbage
+  nameWithType: ProjectInfos.containsGarbage
+- uid: UFEDLib.ProjectInfos.containsGarbage*
+  name: containsGarbage
+  href: api/UFEDLib.ProjectInfos.html#UFEDLib_ProjectInfos_containsGarbage_
+  commentId: Overload:UFEDLib.ProjectInfos.containsGarbage
+  isSpec: "True"
   fullName: UFEDLib.ProjectInfos.containsGarbage
   nameWithType: ProjectInfos.containsGarbage
 - uid: UFEDLib.ProjectInfos.extractionType
   name: extractionType
   href: api/UFEDLib.ProjectInfos.html#UFEDLib_ProjectInfos_extractionType
-  commentId: F:UFEDLib.ProjectInfos.extractionType
+  commentId: P:UFEDLib.ProjectInfos.extractionType
+  fullName: UFEDLib.ProjectInfos.extractionType
+  nameWithType: ProjectInfos.extractionType
+- uid: UFEDLib.ProjectInfos.extractionType*
+  name: extractionType
+  href: api/UFEDLib.ProjectInfos.html#UFEDLib_ProjectInfos_extractionType_
+  commentId: Overload:UFEDLib.ProjectInfos.extractionType
+  isSpec: "True"
   fullName: UFEDLib.ProjectInfos.extractionType
   nameWithType: ProjectInfos.extractionType
 - uid: UFEDLib.ProjectInfos.licenseId
   name: licenseId
   href: api/UFEDLib.ProjectInfos.html#UFEDLib_ProjectInfos_licenseId
-  commentId: F:UFEDLib.ProjectInfos.licenseId
+  commentId: P:UFEDLib.ProjectInfos.licenseId
+  fullName: UFEDLib.ProjectInfos.licenseId
+  nameWithType: ProjectInfos.licenseId
+- uid: UFEDLib.ProjectInfos.licenseId*
+  name: licenseId
+  href: api/UFEDLib.ProjectInfos.html#UFEDLib_ProjectInfos_licenseId_
+  commentId: Overload:UFEDLib.ProjectInfos.licenseId
+  isSpec: "True"
   fullName: UFEDLib.ProjectInfos.licenseId
   nameWithType: ProjectInfos.licenseId
 - uid: UFEDLib.ProjectInfos.name
   name: name
   href: api/UFEDLib.ProjectInfos.html#UFEDLib_ProjectInfos_name
-  commentId: F:UFEDLib.ProjectInfos.name
+  commentId: P:UFEDLib.ProjectInfos.name
+  fullName: UFEDLib.ProjectInfos.name
+  nameWithType: ProjectInfos.name
+- uid: UFEDLib.ProjectInfos.name*
+  name: name
+  href: api/UFEDLib.ProjectInfos.html#UFEDLib_ProjectInfos_name_
+  commentId: Overload:UFEDLib.ProjectInfos.name
+  isSpec: "True"
   fullName: UFEDLib.ProjectInfos.name
   nameWithType: ProjectInfos.name
 - uid: UFEDLib.ProjectInfos.projectId
   name: projectId
   href: api/UFEDLib.ProjectInfos.html#UFEDLib_ProjectInfos_projectId
-  commentId: F:UFEDLib.ProjectInfos.projectId
+  commentId: P:UFEDLib.ProjectInfos.projectId
+  fullName: UFEDLib.ProjectInfos.projectId
+  nameWithType: ProjectInfos.projectId
+- uid: UFEDLib.ProjectInfos.projectId*
+  name: projectId
+  href: api/UFEDLib.ProjectInfos.html#UFEDLib_ProjectInfos_projectId_
+  commentId: Overload:UFEDLib.ProjectInfos.projectId
+  isSpec: "True"
   fullName: UFEDLib.ProjectInfos.projectId
   nameWithType: ProjectInfos.projectId
 - uid: UFEDLib.ProjectInfos.reportVersion
   name: reportVersion
   href: api/UFEDLib.ProjectInfos.html#UFEDLib_ProjectInfos_reportVersion
-  commentId: F:UFEDLib.ProjectInfos.reportVersion
+  commentId: P:UFEDLib.ProjectInfos.reportVersion
+  fullName: UFEDLib.ProjectInfos.reportVersion
+  nameWithType: ProjectInfos.reportVersion
+- uid: UFEDLib.ProjectInfos.reportVersion*
+  name: reportVersion
+  href: api/UFEDLib.ProjectInfos.html#UFEDLib_ProjectInfos_reportVersion_
+  commentId: Overload:UFEDLib.ProjectInfos.reportVersion
+  isSpec: "True"
   fullName: UFEDLib.ProjectInfos.reportVersion
   nameWithType: ProjectInfos.reportVersion
 - uid: UFEDLib.ProjectInfos.xmlns
   name: xmlns
   href: api/UFEDLib.ProjectInfos.html#UFEDLib_ProjectInfos_xmlns
-  commentId: F:UFEDLib.ProjectInfos.xmlns
+  commentId: P:UFEDLib.ProjectInfos.xmlns
+  fullName: UFEDLib.ProjectInfos.xmlns
+  nameWithType: ProjectInfos.xmlns
+- uid: UFEDLib.ProjectInfos.xmlns*
+  name: xmlns
+  href: api/UFEDLib.ProjectInfos.html#UFEDLib_ProjectInfos_xmlns_
+  commentId: Overload:UFEDLib.ProjectInfos.xmlns
+  isSpec: "True"
   fullName: UFEDLib.ProjectInfos.xmlns
   nameWithType: ProjectInfos.xmlns
 - uid: UFEDLib.PublicTransportationTicket
