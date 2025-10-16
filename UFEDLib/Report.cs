@@ -117,22 +117,22 @@ namespace UFEDLib
             return ProjectAttributes.Parse(filename, progress);
         }
 
-        public static List<(string name, string value)> ParseAdditionalFields(string filename)
+        public static string ParseAdditionalFields(string filename)
         {
             return AdditionalFields.Parse(filename);
         }
 
-        public static List<(string name, string value)> ParseCaseInformation(string filename)
+        public static string ParseCaseInformation(string filename)
         {
             return CaseInformation.Parse(filename);
         }
 
-        public static List<(string id, string name, string value)> ParseDeviceInfo(string filename)
+        public static string ParseDeviceInfo(string filename)
         {
             return DeviceInfo.Parse(filename);
         }
 
-        public static List<(string name, string value)> ParseExtractionData(string filename)
+        public static string ParseExtractionData(string filename)
         {
             return ExtractionData.Parse(filename);
         }
