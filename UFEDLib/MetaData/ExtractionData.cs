@@ -4,6 +4,7 @@ using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Linq;
@@ -12,7 +13,7 @@ namespace UFEDLib
 {
     public class ExtractionData
     {
-        public static List<(string name, string value)> Parse(String fileName)
+        public static string Parse(String fileName)
         {
             List<(string name, string value)> ExtractionData = null;
 
@@ -29,8 +30,7 @@ namespace UFEDLib
 
                     using (Stream reportStream = report.Open())
                     {
-                        ExtractionData = ParseExtractionData(reportStream);
-                        return ExtractionData;
+                        return ParseExtractionData(reportStream);
                     }
                 }
             }
@@ -38,8 +38,7 @@ namespace UFEDLib
             {
                 using (FileStream fs = new FileStream(fileName, FileMode.Open, FileAccess.Read))
                 {
-                    ExtractionData = ParseExtractionData(fs);
-                    return ExtractionData;
+                    return ParseExtractionData(fs);
                 }
             }
             else
@@ -47,14 +46,13 @@ namespace UFEDLib
                 Console.WriteLine("Unsupported file type: " + fileName);
             }
 
-            // return empty list if file type is unsupported
-            return new List<(string name, string value)>();
+            return "";
         }
 
 
-        public static List<(string name, string value)> ParseExtractionData(Stream stream)
+        public static string ParseExtractionData(Stream stream)
         {
-            List<(string name, string value)> result = new List<(string name, string value)>();
+            List<(string name, string value)> nameValueList = new List<(string name, string value)>();
             bool fieldsRead = false;
 
             using (StreamReader sr = new StreamReader(stream))
@@ -75,7 +73,7 @@ namespace UFEDLib
                                 string name = (string)att.Attribute("name");
                                 string value = att.Value;
 
-                                result.Add((name, value));
+                                nameValueList.Add((name, value));
                             }
                             attReader.Close();
                             fieldsRead = true;
@@ -88,6 +86,8 @@ namespace UFEDLib
                     }
                 }
             }
+
+            var result = JsonSerializer.Serialize(nameValueList.ToDictionary(x => x.name, x => x.value), new JsonSerializerOptions { WriteIndented = true });
 
             return result;
         }

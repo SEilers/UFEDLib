@@ -4,6 +4,7 @@ using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Linq;
@@ -12,7 +13,7 @@ namespace UFEDLib
 {
     public class DeviceInfo
     {
-        public static List<(string id, string name, string value)> Parse(String fileName)
+        public static string Parse(String fileName)
         {
             List<(string id, string name, string value)> DeviceInfo = null;
 
@@ -29,8 +30,7 @@ namespace UFEDLib
 
                     using (Stream reportStream = report.Open())
                     {
-                        DeviceInfo = ParseDeviceInfo(reportStream);
-                        return DeviceInfo;
+                        return ParseDeviceInfo(reportStream);
                     }
                 }
             }
@@ -38,8 +38,7 @@ namespace UFEDLib
             {
                 using (FileStream fs = new FileStream(fileName, FileMode.Open, FileAccess.Read))
                 {
-                    DeviceInfo = ParseDeviceInfo(fs);
-                    return DeviceInfo;
+                    return ParseDeviceInfo(fs);
                 }
             }
             else
@@ -47,11 +46,10 @@ namespace UFEDLib
                 Console.WriteLine("Unsupported file type: " + fileName);
             }
 
-            // return empty list if file type is unsupported
-            return new List<(string id, string name, string value)>();
+            return "";
         }
 
-        public static List<(string id, string name, string value)> ParseDeviceInfo(Stream stream)
+        public static string ParseDeviceInfo(Stream stream)
         {
             var DeviceInfo = new List<(string id, string name, string value)>();
             bool fieldsRead = false;
@@ -89,7 +87,13 @@ namespace UFEDLib
                 }
             }
 
-            return DeviceInfo;
+            var jsonReady = DeviceInfo
+           .Select(x => new Dictionary<string, string> { [x.name] = x.value })
+           .ToList();
+
+            var result = JsonSerializer.Serialize(jsonReady, new JsonSerializerOptions { WriteIndented = true });
+
+            return result;
         }
     }
 }
