@@ -18,11 +18,17 @@ namespace UFEDLib
         {
             var projectInfos = UFEDLib.Report.ParseProjectInfos(fileName);
 
+            var tempPath = Path.GetTempPath();
+
             string version = projectInfos.reportVersion;
             string projectId = projectInfos.projectId;
             string dbFileName = projectId + ".db";
             string dbJsonFileName = projectId + ".json";
             string restoreDbFileName = projectId + ".sql";
+
+            dbFileName = Path.Combine(tempPath, dbFileName);
+            dbJsonFileName = Path.Combine(tempPath, dbJsonFileName);
+            restoreDbFileName = Path.Combine(tempPath, restoreDbFileName);
 
             if (String.IsNullOrEmpty(version))
             {
