@@ -85,7 +85,7 @@
 
 
   <h1 id="UFEDLib_DeviceInfo" data-uid="UFEDLib.DeviceInfo" class="text-break">
-Class DeviceInfo  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/MetaData/DeviceInfo.cs/#L14"><i class="bi bi-code-slash"></i></a>
+Class DeviceInfo  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/MetaData/DeviceInfo.cs/#L15"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -148,11 +148,85 @@ Class DeviceInfo  <a class="header-action link-secondary" title="View source" hr
 </h2>
 
 
+  <a id="UFEDLib_DeviceInfo_GetDeviceInfoEntries_" data-uid="UFEDLib.DeviceInfo.GetDeviceInfoEntries*"></a>
+
+  <h3 id="UFEDLib_DeviceInfo_GetDeviceInfoEntries_System_String_System_String_" data-uid="UFEDLib.DeviceInfo.GetDeviceInfoEntries(System.String,System.String)">
+  GetDeviceInfoEntries(string, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/MetaData/DeviceInfo.cs/#L249"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static List&lt;Tuple&lt;string, string&gt;&gt; GetDeviceInfoEntries(string schemaName, string dbSqlFilePath)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>schemaName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>dbSqlFilePath</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.tuple-2">Tuple</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UFEDLib_DeviceInfo_GetSchemaName_" data-uid="UFEDLib.DeviceInfo.GetSchemaName*"></a>
+
+  <h3 id="UFEDLib_DeviceInfo_GetSchemaName_System_String_" data-uid="UFEDLib.DeviceInfo.GetSchemaName(System.String)">
+  GetSchemaName(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/MetaData/DeviceInfo.cs/#L237"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string GetSchemaName(string dbJsonFilePath)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>dbJsonFilePath</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="UFEDLib_DeviceInfo_Parse_" data-uid="UFEDLib.DeviceInfo.Parse*"></a>
 
   <h3 id="UFEDLib_DeviceInfo_Parse_System_String_" data-uid="UFEDLib.DeviceInfo.Parse(System.String)">
   Parse(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/MetaData/DeviceInfo.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/MetaData/DeviceInfo.cs/#L17"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -184,18 +258,18 @@ Class DeviceInfo  <a class="header-action link-secondary" title="View source" hr
 
 
 
-  <a id="UFEDLib_DeviceInfo_ParseDeviceInfo_" data-uid="UFEDLib.DeviceInfo.ParseDeviceInfo*"></a>
+  <a id="UFEDLib_DeviceInfo_ParseDeviceInfoXML_" data-uid="UFEDLib.DeviceInfo.ParseDeviceInfoXML*"></a>
 
-  <h3 id="UFEDLib_DeviceInfo_ParseDeviceInfo_System_IO_Stream_" data-uid="UFEDLib.DeviceInfo.ParseDeviceInfo(System.IO.Stream)">
-  ParseDeviceInfo(Stream)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/MetaData/DeviceInfo.cs/#L52"><i class="bi bi-code-slash"></i></a>
+  <h3 id="UFEDLib_DeviceInfo_ParseDeviceInfoXML_System_IO_Stream_" data-uid="UFEDLib.DeviceInfo.ParseDeviceInfoXML(System.IO.Stream)">
+  ParseDeviceInfoXML(Stream)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/MetaData/DeviceInfo.cs/#L162"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string ParseDeviceInfo(Stream stream)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string ParseDeviceInfoXML(Stream stream)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -224,7 +298,7 @@ Class DeviceInfo  <a class="header-action link-secondary" title="View source" hr
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/MetaData/DeviceInfo.cs/#L14" class="edit-link">Edit this page</a>
+          <a href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/MetaData/DeviceInfo.cs/#L15" class="edit-link">Edit this page</a>
         </div>
 
 

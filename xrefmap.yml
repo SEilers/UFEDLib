@@ -5074,6 +5074,38 @@ references:
   commentId: T:UFEDLib.DeviceInfo
   fullName: UFEDLib.DeviceInfo
   nameWithType: DeviceInfo
+- uid: UFEDLib.DeviceInfo.GetDeviceInfoEntries(System.String,System.String)
+  name: GetDeviceInfoEntries(string, string)
+  href: api/UFEDLib.DeviceInfo.html#UFEDLib_DeviceInfo_GetDeviceInfoEntries_System_String_System_String_
+  commentId: M:UFEDLib.DeviceInfo.GetDeviceInfoEntries(System.String,System.String)
+  name.vb: GetDeviceInfoEntries(String, String)
+  fullName: UFEDLib.DeviceInfo.GetDeviceInfoEntries(string, string)
+  fullName.vb: UFEDLib.DeviceInfo.GetDeviceInfoEntries(String, String)
+  nameWithType: DeviceInfo.GetDeviceInfoEntries(string, string)
+  nameWithType.vb: DeviceInfo.GetDeviceInfoEntries(String, String)
+- uid: UFEDLib.DeviceInfo.GetDeviceInfoEntries*
+  name: GetDeviceInfoEntries
+  href: api/UFEDLib.DeviceInfo.html#UFEDLib_DeviceInfo_GetDeviceInfoEntries_
+  commentId: Overload:UFEDLib.DeviceInfo.GetDeviceInfoEntries
+  isSpec: "True"
+  fullName: UFEDLib.DeviceInfo.GetDeviceInfoEntries
+  nameWithType: DeviceInfo.GetDeviceInfoEntries
+- uid: UFEDLib.DeviceInfo.GetSchemaName(System.String)
+  name: GetSchemaName(string)
+  href: api/UFEDLib.DeviceInfo.html#UFEDLib_DeviceInfo_GetSchemaName_System_String_
+  commentId: M:UFEDLib.DeviceInfo.GetSchemaName(System.String)
+  name.vb: GetSchemaName(String)
+  fullName: UFEDLib.DeviceInfo.GetSchemaName(string)
+  fullName.vb: UFEDLib.DeviceInfo.GetSchemaName(String)
+  nameWithType: DeviceInfo.GetSchemaName(string)
+  nameWithType.vb: DeviceInfo.GetSchemaName(String)
+- uid: UFEDLib.DeviceInfo.GetSchemaName*
+  name: GetSchemaName
+  href: api/UFEDLib.DeviceInfo.html#UFEDLib_DeviceInfo_GetSchemaName_
+  commentId: Overload:UFEDLib.DeviceInfo.GetSchemaName
+  isSpec: "True"
+  fullName: UFEDLib.DeviceInfo.GetSchemaName
+  nameWithType: DeviceInfo.GetSchemaName
 - uid: UFEDLib.DeviceInfo.Parse(System.String)
   name: Parse(string)
   href: api/UFEDLib.DeviceInfo.html#UFEDLib_DeviceInfo_Parse_System_String_
@@ -5090,19 +5122,19 @@ references:
   isSpec: "True"
   fullName: UFEDLib.DeviceInfo.Parse
   nameWithType: DeviceInfo.Parse
-- uid: UFEDLib.DeviceInfo.ParseDeviceInfo(System.IO.Stream)
-  name: ParseDeviceInfo(Stream)
-  href: api/UFEDLib.DeviceInfo.html#UFEDLib_DeviceInfo_ParseDeviceInfo_System_IO_Stream_
-  commentId: M:UFEDLib.DeviceInfo.ParseDeviceInfo(System.IO.Stream)
-  fullName: UFEDLib.DeviceInfo.ParseDeviceInfo(System.IO.Stream)
-  nameWithType: DeviceInfo.ParseDeviceInfo(Stream)
-- uid: UFEDLib.DeviceInfo.ParseDeviceInfo*
-  name: ParseDeviceInfo
-  href: api/UFEDLib.DeviceInfo.html#UFEDLib_DeviceInfo_ParseDeviceInfo_
-  commentId: Overload:UFEDLib.DeviceInfo.ParseDeviceInfo
+- uid: UFEDLib.DeviceInfo.ParseDeviceInfoXML(System.IO.Stream)
+  name: ParseDeviceInfoXML(Stream)
+  href: api/UFEDLib.DeviceInfo.html#UFEDLib_DeviceInfo_ParseDeviceInfoXML_System_IO_Stream_
+  commentId: M:UFEDLib.DeviceInfo.ParseDeviceInfoXML(System.IO.Stream)
+  fullName: UFEDLib.DeviceInfo.ParseDeviceInfoXML(System.IO.Stream)
+  nameWithType: DeviceInfo.ParseDeviceInfoXML(Stream)
+- uid: UFEDLib.DeviceInfo.ParseDeviceInfoXML*
+  name: ParseDeviceInfoXML
+  href: api/UFEDLib.DeviceInfo.html#UFEDLib_DeviceInfo_ParseDeviceInfoXML_
+  commentId: Overload:UFEDLib.DeviceInfo.ParseDeviceInfoXML
   isSpec: "True"
-  fullName: UFEDLib.DeviceInfo.ParseDeviceInfo
-  nameWithType: DeviceInfo.ParseDeviceInfo
+  fullName: UFEDLib.DeviceInfo.ParseDeviceInfoXML
+  nameWithType: DeviceInfo.ParseDeviceInfoXML
 - uid: UFEDLib.DeviceInfoEntry
   name: DeviceInfoEntry
   href: api/UFEDLib.DeviceInfoEntry.html
