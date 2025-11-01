@@ -14,7 +14,7 @@ namespace UFEDLib
 {
     public class DeviceInfo
     {
-        public static string Parse(String fileName)
+        public static List<(string name, string value)> Parse(String fileName)
         {
             var projectInfos = UFEDLib.Report.ParseProjectInfos(fileName);
 
@@ -33,13 +33,13 @@ namespace UFEDLib
             if (String.IsNullOrEmpty(version))
             {
                 Console.WriteLine("Could not determine report version.");
-                return "";
+                return null;
             }
 
             if (string.IsNullOrEmpty(projectId))
             {
                 Console.WriteLine("Could not determine project ID.");
-                return "";
+                return null;
             }
 
             var v = new Version(version);
@@ -83,7 +83,7 @@ namespace UFEDLib
                 if (!pg_restore_installed)
                 {
                     Console.WriteLine("pg_restore is not installed or not found in PATH. Please install PostgreSQL client tools to extract device infos from reports with version >= 8.5.");
-                    return "";
+                    return null;
                 }
 
                 using (ZipArchive archive = ZipFile.Open(fileName, ZipArchiveMode.Read))
@@ -98,7 +98,7 @@ namespace UFEDLib
                     else
                     {
                         Console.WriteLine("Database file not found in the report.");
-                        return "";
+                        return null;
                     }
 
                     if (caseDbJson != null)
@@ -108,7 +108,7 @@ namespace UFEDLib
                     else
                     {
                         Console.WriteLine("Database Json file not found in the report.");
-                        return "";
+                        return null;
                     }
 
                     // check if pg_restore exists on the system
@@ -130,7 +130,7 @@ namespace UFEDLib
                     {
                         Console.WriteLine("pg_restore failed:");
                         Console.WriteLine(error);
-                        return "";
+                        return null;
                     }
                     else
                     {
@@ -142,11 +142,11 @@ namespace UFEDLib
 
                     var deviceInfoEntries = GetDeviceInfoEntries(schemaName, restoreDbFileName);
 
-                    var jsonReady = deviceInfoEntries
-                   .Select(x => new Dictionary<string, string> { [x.Item1] = x.Item2 })
-                   .ToList();
+                   // var jsonReady = deviceInfoEntries
+                   //.Select(x => new Dictionary<string, string> { [x.Item1] = x.Item2 })
+                   //.ToList();
 
-                    var result = JsonSerializer.Serialize(jsonReady, new JsonSerializerOptions { WriteIndented = true });
+                   // var result = JsonSerializer.Serialize(jsonReady, new JsonSerializerOptions { WriteIndented = true });
 
                     // cleanup
                     if (File.Exists(dbFileName)) File.Delete(dbFileName);
@@ -155,19 +155,57 @@ namespace UFEDLib
 
                     if (File.Exists(restoreDbFileName)) File.Delete(restoreDbFileName);
 
-                    return result;
+                    return deviceInfoEntries;
                 }
             }
 
-            return "";
+            return null;
+        }
+
+
+        // Device Info contains usually serveral entries with the same name, so we cannot use a dictionary here
+        // e.g. ICCID can appear multiple times
+        // Therefore we return a list of tuples here
+        public static string ParseToJsonArray(String fileName)
+        {
+            var nameValueList = Parse(fileName);
+     
+            var jsonReady = nameValueList
+           .Select(x => new Dictionary<string, string> { [x.Item1] = x.Item2 })
+           .ToList();
+
+            var result = JsonSerializer.Serialize(jsonReady, new JsonSerializerOptions { WriteIndented = true });
+
+            return result;
+        }
+
+
+        // Device Info contains usually serveral entries with the same name
+        // e.g. ICCID can appear multiple times
+        // in this method we aggregate the values with the same name into a comma separated string
+        // having a dictionary as result and joining the values with the same name to a list    
+        public static string ParseToJsonDictionary(String fileName)
+        {
+            var nameValueList = Parse(fileName);
+
+            var aggregatedDict = nameValueList
+                .GroupBy(x => x.name)
+                .ToDictionary(
+                    g => g.Key,
+                    g => string.Join(", ", g.Select(x => x.value))
+                );
+
+            var result = JsonSerializer.Serialize(aggregatedDict, new JsonSerializerOptions { WriteIndented = true });
+
+            return result;
         }
 
 
 
 
-        public static string ParseDeviceInfoXML(Stream stream)
+        public static List<(string name, string value)> ParseDeviceInfoXML(Stream stream)
         {
-            var DeviceInfo = new List<(string id, string name, string value)>();
+            var DeviceInfo = new List<(string name, string value)>();
             bool fieldsRead = false;
 
             using (stream)
@@ -185,11 +223,11 @@ namespace UFEDLib
 
                         foreach (XElement att in attributes)
                         {
-                            string id = (string)att.Attribute("id");
+                            //string id = (string)att.Attribute("id");
                             string name = (string)att.Attribute("name");
                             string value = att.Value;
 
-                            DeviceInfo.Add((id, name, value));
+                            DeviceInfo.Add((name, value));
                         }
                         attReader.Close();
 
@@ -203,13 +241,13 @@ namespace UFEDLib
                 }
             }
 
-            var jsonReady = DeviceInfo
-           .Select(x => new Dictionary<string, string> { [x.name] = x.value })
-           .ToList();
+           // var jsonReady = DeviceInfo
+           //.Select(x => new Dictionary<string, string> { [x.name] = x.value })
+           //.ToList();
 
-            var result = JsonSerializer.Serialize(jsonReady, new JsonSerializerOptions { WriteIndented = true });
+           // var result = JsonSerializer.Serialize(jsonReady, new JsonSerializerOptions { WriteIndented = true });
 
-            return result;
+            return DeviceInfo;
         }
 
         static bool CanExecute(string programName)
@@ -252,7 +290,7 @@ namespace UFEDLib
             }
         }
 
-        public static List<Tuple<string, string>> GetDeviceInfoEntries(string schemaName, string dbSqlFilePath)
+        public static List<(string name, string value)> GetDeviceInfoEntries(string schemaName, string dbSqlFilePath)
         {
             string deviceInfoEntriesDataStart = "COPY " + "\"" + schemaName + "\"" + "." + "\"DeviceInfoEntries\"";
 
@@ -283,7 +321,7 @@ namespace UFEDLib
                 }
             }
 
-            List<Tuple<string, string>> deviceInfoEntries = new List<Tuple<string, string>>();
+            List<(string name, string value)> deviceInfoEntries =  new List<(string name, string value)>();
 
             foreach (var entry in deviceInfoEntriesData)
             {
@@ -292,7 +330,7 @@ namespace UFEDLib
                 if (parts.Length >= 4)
                 {
                     // add the first two parts as a tuple to the list
-                    deviceInfoEntries.Add(new Tuple<string, string>(parts[2], parts[3]));
+                    deviceInfoEntries.Add((parts[2], parts[3]));
                 }
             }
 

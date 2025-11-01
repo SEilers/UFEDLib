@@ -8,6 +8,7 @@ using System.Xml;
 using System.IO;
 using System.IO.Compression;
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
 
 namespace UFEDLib
 {
@@ -31,17 +32,13 @@ namespace UFEDLib
 
         public int ModelCount { get; set; }
 
-        public string SourceExtractionsDeviceName { get; set; }
+        public List<(string name, string value)> CaseInformation { get; set; } = new List<(string name, string value)>();
 
-        public string SourceExtractionsFullName { get; set; }
+        public List<(string name, string value)> AdditionalFields { get; set; } = new List<(string name, string value)>();
 
-        public List<Tuple<string, string>> CaseInformation { get; set; } = new List<Tuple<string, string>>();
+        public List<(string name, string value)> ExtractionData { get; set; } = new List<(string name, string value)>();
 
-        public List<Tuple<string, string>> AdditionalFields { get; set; } = new List<Tuple<string, string>>();
-
-        public List<Tuple<string, string>> ExtractionData { get; set; } = new List<Tuple<string, string>>();
-
-        public List<Tuple<string, string>> DeviceInfo { get; set; } = new List<Tuple<string, string>>();
+        public List<(string name, string value)> DeviceInfo { get; set; } = new List<(string name, string value)>();
 
         public static ProjectAttributes Parse(string filename, IProgress<int> progress = null)
         {
@@ -143,7 +140,7 @@ namespace UFEDLib
                                     string name = (string)att.Attribute("name");
                                     string value = att.Value;
 
-                                    ufedProjectAttributes.AdditionalFields.Add(Tuple.Create(name, value));
+                                    ufedProjectAttributes.AdditionalFields.Add((name, value));
                                 }
                                 readAddítionalFields = true;
 
@@ -160,7 +157,7 @@ namespace UFEDLib
                                     string name = (string)att.Attribute("name");
                                     string value = att.Value;
 
-                                    ufedProjectAttributes.ExtractionData.Add(Tuple.Create(name, value));
+                                    ufedProjectAttributes.ExtractionData.Add((name, value));
                                 }
 
                                 readExtractionData = true;
@@ -177,7 +174,7 @@ namespace UFEDLib
                                     string name = (string)att.Attribute("name");
                                     string value = att.Value;
 
-                                    ufedProjectAttributes.DeviceInfo.Add(Tuple.Create(name, value));
+                                    ufedProjectAttributes.DeviceInfo.Add((name, value));
                                 }
 
                                 readDeviceInfo = true;
@@ -194,7 +191,7 @@ namespace UFEDLib
                                     string name = (string)att.Attribute("name");
                                     string value = att.Value;
 
-                                    ufedProjectAttributes.CaseInformation.Add(Tuple.Create(name, value));
+                                    ufedProjectAttributes.CaseInformation.Add((name, value));
                                 }
 
                                 readCaseInformation = true;

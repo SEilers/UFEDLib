@@ -13,7 +13,7 @@ namespace UFEDLib
 {
     public class AdditionalFields
     {
-        public static string Parse (String fileName)
+        public static List<(string name, string value)> Parse (String fileName)
         {
             List<(string name, string value)> AdditionalFields = null;
 
@@ -46,10 +46,17 @@ namespace UFEDLib
                 Console.WriteLine("Unsupported file type: " + fileName);
             }
 
-            return "";
+            return null;
         }
 
-        public static string ParseAdditionalFields(Stream stream)
+        public static string ParseToJson(String fileName)
+        {
+            var nameValueList = Parse(fileName);
+            var result = JsonSerializer.Serialize(nameValueList.ToDictionary(x => x.name, x => x.value), new JsonSerializerOptions { WriteIndented = true });
+            return result;
+        }
+
+        public static List<(string name, string value)> ParseAdditionalFields(Stream stream)
         {
             List<(string name, string value)> nameValueList = new List<(string name, string value)>();
             bool fieldsRead = false;
@@ -87,9 +94,7 @@ namespace UFEDLib
                 }
             }
 
-            var result = JsonSerializer.Serialize(nameValueList.ToDictionary(x => x.name, x => x.value), new JsonSerializerOptions { WriteIndented = true });
-
-            return result;
+            return nameValueList;
         }
 
     }

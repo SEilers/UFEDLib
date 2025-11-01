@@ -13,10 +13,8 @@ namespace UFEDLib
 {
     public class ExtractionData
     {
-        public static string Parse(String fileName)
+        public static List<(string name, string value)> Parse(String fileName)
         {
-            List<(string name, string value)> ExtractionData = null;
-
             if (fileName.EndsWith(".ufdr", StringComparison.OrdinalIgnoreCase))
             {
                 using (ZipArchive zip = ZipFile.OpenRead(fileName))
@@ -46,15 +44,41 @@ namespace UFEDLib
                 Console.WriteLine("Unsupported file type: " + fileName);
             }
 
-            return "";
+            return null;
+        }
+
+        public static string ParseToJson(String fileName)
+        {
+            var nameValueList = Parse(fileName);
+            var blocks = new List<Dictionary<string, string>>();
+            var currentBlock = new Dictionary<string, string>();
+            foreach (var item in nameValueList)
+            {
+                if (item.name == "DeviceInfoExtractionStartDateTime")
+                {
+                    if (currentBlock.Count > 0)
+                    {
+                        blocks.Add(currentBlock);
+                        currentBlock = new Dictionary<string, string>();
+                    }
+                }
+                currentBlock[item.name] = item.value;
+            }
+            if (currentBlock.Count > 0)
+            {
+                blocks.Add(currentBlock);
+            }
+            var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
+            string result = JsonSerializer.Serialize(blocks, jsonOptions);
+            return result;
         }
 
 
-        public static string ParseExtractionData(Stream stream)
+        public static List<(string name, string value)> ParseExtractionData(Stream stream)
         {
             List<(string name, string value)> nameValueList = new List<(string name, string value)>();
             bool fieldsRead = false;
-
+    
             using (StreamReader sr = new StreamReader(stream))
             {
                 using (XmlReader reader = XmlReader.Create(sr, new XmlReaderSettings { CheckCharacters = false }))
@@ -87,9 +111,7 @@ namespace UFEDLib
                 }
             }
 
-            var result = JsonSerializer.Serialize(nameValueList.ToDictionary(x => x.name, x => x.value), new JsonSerializerOptions { WriteIndented = true });
-
-            return result;
+            return nameValueList;
         }
     }
 }

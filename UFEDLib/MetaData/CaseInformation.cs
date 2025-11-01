@@ -13,7 +13,7 @@ namespace UFEDLib
 {
     public class CaseInformation
     {
-        public static string Parse(String fileName)
+        public static List<(string name, string value)> Parse(String fileName)
         {
             List<(string name, string value)> CaseInformation = null;
 
@@ -46,11 +46,18 @@ namespace UFEDLib
                 Console.WriteLine("Unsupported file type: " + fileName);
             }
 
-            return "";
+            return null;
+        }
+
+        public static string ParseToJson(String fileName)
+        {
+            var nameValueList = Parse(fileName);
+            var result = JsonSerializer.Serialize(nameValueList.ToDictionary(x => x.name, x => x.value), new JsonSerializerOptions { WriteIndented = true });
+            return result;
         }
 
 
-        public static string ParseCaseInformation(Stream stream)
+        public static List<(string name, string value)> ParseCaseInformation(Stream stream)
         {
             List<(string name, string value)> nameValueList = new List<(string name, string value)>();
 
@@ -89,9 +96,9 @@ namespace UFEDLib
                 }
             }
 
-            var result = JsonSerializer.Serialize(nameValueList.ToDictionary(x => x.name, x => x.value), new JsonSerializerOptions { WriteIndented = true });
+            
 
-            return result;
+            return nameValueList;
         }
     }
 }
