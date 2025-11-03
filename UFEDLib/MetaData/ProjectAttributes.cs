@@ -67,7 +67,16 @@ namespace UFEDLib
                        
                         using (Stream reportStream = report.Open())
                         {
-                            return ParseProjectAttributes(reportStream, reportSize, progress);
+                            ProjectAttributes result = ParseProjectAttributes(reportStream, reportSize, progress);
+
+                            Version v = new Version(result.ReportVersion);
+
+                            if (v >= new Version("8.5"))
+                            {
+                                result.DeviceInfo = UFEDLib.DeviceInfo.Parse(filename);
+                            }
+
+                            return result;
                         }
                     }
                 }
@@ -75,7 +84,16 @@ namespace UFEDLib
                 {
                     using (FileStream fs = new FileStream(filename, FileMode.Open, FileAccess.Read))
                     {
-                        return ParseProjectAttributes(fs, reportSize, progress);
+                        ProjectAttributes result = ParseProjectAttributes(fs, reportSize, progress);
+
+                        Version v = new Version(result.ReportVersion);
+
+                        if (v >= new Version("8.5"))
+                        {
+                            result.DeviceInfo = UFEDLib.DeviceInfo.Parse(filename);
+                        }
+
+                        return result;
                     }
                 }
             }
