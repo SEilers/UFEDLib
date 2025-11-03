@@ -132,10 +132,6 @@ namespace UFEDLib
                         Console.WriteLine(error);
                         return null;
                     }
-                    else
-                    {
-                        Console.WriteLine($"Database extracted successfully to '{restoreDbFileName}' database.");
-                    }
 
                     // parse device info from the SQL file
                     string schemaName = GetSchemaName(dbJsonFileName);
