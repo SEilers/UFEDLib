@@ -159,7 +159,7 @@ Class ExtractionData  <a class="header-action link-secondary" title="View source
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string Parse(string fileName)</code></pre>
+    <pre><code class="lang-csharp hljs">public static List&lt;(string name, string value)&gt; Parse(string fileName)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -170,7 +170,7 @@ Class ExtractionData  <a class="header-action link-secondary" title="View source
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.string,system.string-.name">name</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.string,system.string-.value">value</a>)&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -188,19 +188,55 @@ Class ExtractionData  <a class="header-action link-secondary" title="View source
 
   <h3 id="UFEDLib_ExtractionData_ParseExtractionData_System_IO_Stream_" data-uid="UFEDLib.ExtractionData.ParseExtractionData(System.IO.Stream)">
   ParseExtractionData(Stream)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/MetaData/ExtractionData.cs/#L53"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/MetaData/ExtractionData.cs/#L77"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string ParseExtractionData(Stream stream)</code></pre>
+    <pre><code class="lang-csharp hljs">public static List&lt;(string name, string value)&gt; ParseExtractionData(Stream stream)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>stream</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.string,system.string-.name">name</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.string,system.string-.value">value</a>)&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UFEDLib_ExtractionData_ParseToJson_" data-uid="UFEDLib.ExtractionData.ParseToJson*"></a>
+
+  <h3 id="UFEDLib_ExtractionData_ParseToJson_System_String_" data-uid="UFEDLib.ExtractionData.ParseToJson(System.String)">
+  ParseToJson(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/MetaData/ExtractionData.cs/#L50"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string ParseToJson(string fileName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>fileName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
   </dl>
 

@@ -152,14 +152,14 @@ Class DeviceInfo  <a class="header-action link-secondary" title="View source" hr
 
   <h3 id="UFEDLib_DeviceInfo_GetDeviceInfoEntries_System_String_System_String_" data-uid="UFEDLib.DeviceInfo.GetDeviceInfoEntries(System.String,System.String)">
   GetDeviceInfoEntries(string, string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/MetaData/DeviceInfo.cs/#L255"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/MetaData/DeviceInfo.cs/#L289"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static List&lt;Tuple&lt;string, string&gt;&gt; GetDeviceInfoEntries(string schemaName, string dbSqlFilePath)</code></pre>
+    <pre><code class="lang-csharp hljs">public static List&lt;(string name, string value)&gt; GetDeviceInfoEntries(string schemaName, string dbSqlFilePath)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -172,7 +172,7 @@ Class DeviceInfo  <a class="header-action link-secondary" title="View source" hr
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.tuple-2">Tuple</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;&gt;</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.string,system.string-.name">name</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.string,system.string-.value">value</a>)&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -190,7 +190,7 @@ Class DeviceInfo  <a class="header-action link-secondary" title="View source" hr
 
   <h3 id="UFEDLib_DeviceInfo_GetSchemaName_System_String_" data-uid="UFEDLib.DeviceInfo.GetSchemaName(System.String)">
   GetSchemaName(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/MetaData/DeviceInfo.cs/#L243"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/MetaData/DeviceInfo.cs/#L277"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -233,7 +233,79 @@ Class DeviceInfo  <a class="header-action link-secondary" title="View source" hr
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string Parse(string fileName)</code></pre>
+    <pre><code class="lang-csharp hljs">public static List&lt;(string name, string value)&gt; Parse(string fileName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>fileName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.string,system.string-.name">name</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.string,system.string-.value">value</a>)&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UFEDLib_DeviceInfo_ParseDeviceInfoXML_" data-uid="UFEDLib.DeviceInfo.ParseDeviceInfoXML*"></a>
+
+  <h3 id="UFEDLib_DeviceInfo_ParseDeviceInfoXML_System_IO_Stream_" data-uid="UFEDLib.DeviceInfo.ParseDeviceInfoXML(System.IO.Stream)">
+  ParseDeviceInfoXML(Stream)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/MetaData/DeviceInfo.cs/#L202"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static List&lt;(string name, string value)&gt; ParseDeviceInfoXML(Stream stream)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>stream</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.string,system.string-.name">name</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.string,system.string-.value">value</a>)&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UFEDLib_DeviceInfo_ParseToJsonArray_" data-uid="UFEDLib.DeviceInfo.ParseToJsonArray*"></a>
+
+  <h3 id="UFEDLib_DeviceInfo_ParseToJsonArray_System_String_" data-uid="UFEDLib.DeviceInfo.ParseToJsonArray(System.String)">
+  ParseToJsonArray(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/MetaData/DeviceInfo.cs/#L165"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string ParseToJsonArray(string fileName)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -258,23 +330,23 @@ Class DeviceInfo  <a class="header-action link-secondary" title="View source" hr
 
 
 
-  <a id="UFEDLib_DeviceInfo_ParseDeviceInfoXML_" data-uid="UFEDLib.DeviceInfo.ParseDeviceInfoXML*"></a>
+  <a id="UFEDLib_DeviceInfo_ParseToJsonDictionary_" data-uid="UFEDLib.DeviceInfo.ParseToJsonDictionary*"></a>
 
-  <h3 id="UFEDLib_DeviceInfo_ParseDeviceInfoXML_System_IO_Stream_" data-uid="UFEDLib.DeviceInfo.ParseDeviceInfoXML(System.IO.Stream)">
-  ParseDeviceInfoXML(Stream)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/MetaData/DeviceInfo.cs/#L168"><i class="bi bi-code-slash"></i></a>
+  <h3 id="UFEDLib_DeviceInfo_ParseToJsonDictionary_System_String_" data-uid="UFEDLib.DeviceInfo.ParseToJsonDictionary(System.String)">
+  ParseToJsonDictionary(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/MetaData/DeviceInfo.cs/#L183"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string ParseDeviceInfoXML(Stream stream)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string ParseToJsonDictionary(string fileName)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>stream</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
+    <dt><code>fileName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
   </dl>
 

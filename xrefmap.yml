@@ -764,6 +764,22 @@ references:
   isSpec: "True"
   fullName: UFEDLib.AdditionalFields.ParseAdditionalFields
   nameWithType: AdditionalFields.ParseAdditionalFields
+- uid: UFEDLib.AdditionalFields.ParseToJson(System.String)
+  name: ParseToJson(string)
+  href: api/UFEDLib.AdditionalFields.html#UFEDLib_AdditionalFields_ParseToJson_System_String_
+  commentId: M:UFEDLib.AdditionalFields.ParseToJson(System.String)
+  name.vb: ParseToJson(String)
+  fullName: UFEDLib.AdditionalFields.ParseToJson(string)
+  fullName.vb: UFEDLib.AdditionalFields.ParseToJson(String)
+  nameWithType: AdditionalFields.ParseToJson(string)
+  nameWithType.vb: AdditionalFields.ParseToJson(String)
+- uid: UFEDLib.AdditionalFields.ParseToJson*
+  name: ParseToJson
+  href: api/UFEDLib.AdditionalFields.html#UFEDLib_AdditionalFields_ParseToJson_
+  commentId: Overload:UFEDLib.AdditionalFields.ParseToJson
+  isSpec: "True"
+  fullName: UFEDLib.AdditionalFields.ParseToJson
+  nameWithType: AdditionalFields.ParseToJson
 - uid: UFEDLib.ApplicationUsage
   name: ApplicationUsage
   href: api/UFEDLib.ApplicationUsage.html
@@ -2464,6 +2480,22 @@ references:
   isSpec: "True"
   fullName: UFEDLib.CaseInformation.ParseCaseInformation
   nameWithType: CaseInformation.ParseCaseInformation
+- uid: UFEDLib.CaseInformation.ParseToJson(System.String)
+  name: ParseToJson(string)
+  href: api/UFEDLib.CaseInformation.html#UFEDLib_CaseInformation_ParseToJson_System_String_
+  commentId: M:UFEDLib.CaseInformation.ParseToJson(System.String)
+  name.vb: ParseToJson(String)
+  fullName: UFEDLib.CaseInformation.ParseToJson(string)
+  fullName.vb: UFEDLib.CaseInformation.ParseToJson(String)
+  nameWithType: CaseInformation.ParseToJson(string)
+  nameWithType.vb: CaseInformation.ParseToJson(String)
+- uid: UFEDLib.CaseInformation.ParseToJson*
+  name: ParseToJson
+  href: api/UFEDLib.CaseInformation.html#UFEDLib_CaseInformation_ParseToJson_
+  commentId: Overload:UFEDLib.CaseInformation.ParseToJson
+  isSpec: "True"
+  fullName: UFEDLib.CaseInformation.ParseToJson
+  nameWithType: CaseInformation.ParseToJson
 - uid: UFEDLib.CellTower
   name: CellTower
   href: api/UFEDLib.CellTower.html
@@ -5135,6 +5167,38 @@ references:
   isSpec: "True"
   fullName: UFEDLib.DeviceInfo.ParseDeviceInfoXML
   nameWithType: DeviceInfo.ParseDeviceInfoXML
+- uid: UFEDLib.DeviceInfo.ParseToJsonArray(System.String)
+  name: ParseToJsonArray(string)
+  href: api/UFEDLib.DeviceInfo.html#UFEDLib_DeviceInfo_ParseToJsonArray_System_String_
+  commentId: M:UFEDLib.DeviceInfo.ParseToJsonArray(System.String)
+  name.vb: ParseToJsonArray(String)
+  fullName: UFEDLib.DeviceInfo.ParseToJsonArray(string)
+  fullName.vb: UFEDLib.DeviceInfo.ParseToJsonArray(String)
+  nameWithType: DeviceInfo.ParseToJsonArray(string)
+  nameWithType.vb: DeviceInfo.ParseToJsonArray(String)
+- uid: UFEDLib.DeviceInfo.ParseToJsonArray*
+  name: ParseToJsonArray
+  href: api/UFEDLib.DeviceInfo.html#UFEDLib_DeviceInfo_ParseToJsonArray_
+  commentId: Overload:UFEDLib.DeviceInfo.ParseToJsonArray
+  isSpec: "True"
+  fullName: UFEDLib.DeviceInfo.ParseToJsonArray
+  nameWithType: DeviceInfo.ParseToJsonArray
+- uid: UFEDLib.DeviceInfo.ParseToJsonDictionary(System.String)
+  name: ParseToJsonDictionary(string)
+  href: api/UFEDLib.DeviceInfo.html#UFEDLib_DeviceInfo_ParseToJsonDictionary_System_String_
+  commentId: M:UFEDLib.DeviceInfo.ParseToJsonDictionary(System.String)
+  name.vb: ParseToJsonDictionary(String)
+  fullName: UFEDLib.DeviceInfo.ParseToJsonDictionary(string)
+  fullName.vb: UFEDLib.DeviceInfo.ParseToJsonDictionary(String)
+  nameWithType: DeviceInfo.ParseToJsonDictionary(string)
+  nameWithType.vb: DeviceInfo.ParseToJsonDictionary(String)
+- uid: UFEDLib.DeviceInfo.ParseToJsonDictionary*
+  name: ParseToJsonDictionary
+  href: api/UFEDLib.DeviceInfo.html#UFEDLib_DeviceInfo_ParseToJsonDictionary_
+  commentId: Overload:UFEDLib.DeviceInfo.ParseToJsonDictionary
+  isSpec: "True"
+  fullName: UFEDLib.DeviceInfo.ParseToJsonDictionary
+  nameWithType: DeviceInfo.ParseToJsonDictionary
 - uid: UFEDLib.DeviceInfoEntry
   name: DeviceInfoEntry
   href: api/UFEDLib.DeviceInfoEntry.html
@@ -5905,6 +5969,22 @@ references:
   isSpec: "True"
   fullName: UFEDLib.ExtractionData.ParseExtractionData
   nameWithType: ExtractionData.ParseExtractionData
+- uid: UFEDLib.ExtractionData.ParseToJson(System.String)
+  name: ParseToJson(string)
+  href: api/UFEDLib.ExtractionData.html#UFEDLib_ExtractionData_ParseToJson_System_String_
+  commentId: M:UFEDLib.ExtractionData.ParseToJson(System.String)
+  name.vb: ParseToJson(String)
+  fullName: UFEDLib.ExtractionData.ParseToJson(string)
+  fullName.vb: UFEDLib.ExtractionData.ParseToJson(String)
+  nameWithType: ExtractionData.ParseToJson(string)
+  nameWithType.vb: ExtractionData.ParseToJson(String)
+- uid: UFEDLib.ExtractionData.ParseToJson*
+  name: ParseToJson
+  href: api/UFEDLib.ExtractionData.html#UFEDLib_ExtractionData_ParseToJson_
+  commentId: Overload:UFEDLib.ExtractionData.ParseToJson
+  isSpec: "True"
+  fullName: UFEDLib.ExtractionData.ParseToJson
+  nameWithType: ExtractionData.ParseToJson
 - uid: UFEDLib.FileDownload
   name: FileDownload
   href: api/UFEDLib.FileDownload.html
@@ -12008,32 +12088,6 @@ references:
   isSpec: "True"
   fullName: UFEDLib.ProjectAttributes.ReportVersion
   nameWithType: ProjectAttributes.ReportVersion
-- uid: UFEDLib.ProjectAttributes.SourceExtractionsDeviceName
-  name: SourceExtractionsDeviceName
-  href: api/UFEDLib.ProjectAttributes.html#UFEDLib_ProjectAttributes_SourceExtractionsDeviceName
-  commentId: P:UFEDLib.ProjectAttributes.SourceExtractionsDeviceName
-  fullName: UFEDLib.ProjectAttributes.SourceExtractionsDeviceName
-  nameWithType: ProjectAttributes.SourceExtractionsDeviceName
-- uid: UFEDLib.ProjectAttributes.SourceExtractionsDeviceName*
-  name: SourceExtractionsDeviceName
-  href: api/UFEDLib.ProjectAttributes.html#UFEDLib_ProjectAttributes_SourceExtractionsDeviceName_
-  commentId: Overload:UFEDLib.ProjectAttributes.SourceExtractionsDeviceName
-  isSpec: "True"
-  fullName: UFEDLib.ProjectAttributes.SourceExtractionsDeviceName
-  nameWithType: ProjectAttributes.SourceExtractionsDeviceName
-- uid: UFEDLib.ProjectAttributes.SourceExtractionsFullName
-  name: SourceExtractionsFullName
-  href: api/UFEDLib.ProjectAttributes.html#UFEDLib_ProjectAttributes_SourceExtractionsFullName
-  commentId: P:UFEDLib.ProjectAttributes.SourceExtractionsFullName
-  fullName: UFEDLib.ProjectAttributes.SourceExtractionsFullName
-  nameWithType: ProjectAttributes.SourceExtractionsFullName
-- uid: UFEDLib.ProjectAttributes.SourceExtractionsFullName*
-  name: SourceExtractionsFullName
-  href: api/UFEDLib.ProjectAttributes.html#UFEDLib_ProjectAttributes_SourceExtractionsFullName_
-  commentId: Overload:UFEDLib.ProjectAttributes.SourceExtractionsFullName
-  isSpec: "True"
-  fullName: UFEDLib.ProjectAttributes.SourceExtractionsFullName
-  nameWithType: ProjectAttributes.SourceExtractionsFullName
 - uid: UFEDLib.ProjectInfos
   name: ProjectInfos
   href: api/UFEDLib.ProjectInfos.html
@@ -12939,6 +12993,22 @@ references:
   isSpec: "True"
   fullName: UFEDLib.Report.ParseAdditionalFields
   nameWithType: Report.ParseAdditionalFields
+- uid: UFEDLib.Report.ParseAdditionalFieldsToJson(System.String)
+  name: ParseAdditionalFieldsToJson(string)
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseAdditionalFieldsToJson_System_String_
+  commentId: M:UFEDLib.Report.ParseAdditionalFieldsToJson(System.String)
+  name.vb: ParseAdditionalFieldsToJson(String)
+  fullName: UFEDLib.Report.ParseAdditionalFieldsToJson(string)
+  fullName.vb: UFEDLib.Report.ParseAdditionalFieldsToJson(String)
+  nameWithType: Report.ParseAdditionalFieldsToJson(string)
+  nameWithType.vb: Report.ParseAdditionalFieldsToJson(String)
+- uid: UFEDLib.Report.ParseAdditionalFieldsToJson*
+  name: ParseAdditionalFieldsToJson
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseAdditionalFieldsToJson_
+  commentId: Overload:UFEDLib.Report.ParseAdditionalFieldsToJson
+  isSpec: "True"
+  fullName: UFEDLib.Report.ParseAdditionalFieldsToJson
+  nameWithType: Report.ParseAdditionalFieldsToJson
 - uid: UFEDLib.Report.ParseApplicationUsages(System.String,System.IProgress{System.Int32},System.Boolean)
   name: ParseApplicationUsages(string, IProgress<int>, bool)
   href: api/UFEDLib.Report.html#UFEDLib_Report_ParseApplicationUsages_System_String_System_IProgress_System_Int32__System_Boolean_
@@ -13035,6 +13105,22 @@ references:
   isSpec: "True"
   fullName: UFEDLib.Report.ParseCaseInformation
   nameWithType: Report.ParseCaseInformation
+- uid: UFEDLib.Report.ParseCaseInformationToJson(System.String)
+  name: ParseCaseInformationToJson(string)
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseCaseInformationToJson_System_String_
+  commentId: M:UFEDLib.Report.ParseCaseInformationToJson(System.String)
+  name.vb: ParseCaseInformationToJson(String)
+  fullName: UFEDLib.Report.ParseCaseInformationToJson(string)
+  fullName.vb: UFEDLib.Report.ParseCaseInformationToJson(String)
+  nameWithType: Report.ParseCaseInformationToJson(string)
+  nameWithType.vb: Report.ParseCaseInformationToJson(String)
+- uid: UFEDLib.Report.ParseCaseInformationToJson*
+  name: ParseCaseInformationToJson
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseCaseInformationToJson_
+  commentId: Overload:UFEDLib.Report.ParseCaseInformationToJson
+  isSpec: "True"
+  fullName: UFEDLib.Report.ParseCaseInformationToJson
+  nameWithType: Report.ParseCaseInformationToJson
 - uid: UFEDLib.Report.ParseCellTowers(System.String,System.IProgress{System.Int32},System.Boolean)
   name: ParseCellTowers(string, IProgress<int>, bool)
   href: api/UFEDLib.Report.html#UFEDLib_Report_ParseCellTowers_System_String_System_IProgress_System_Int32__System_Boolean_
@@ -13195,6 +13281,38 @@ references:
   isSpec: "True"
   fullName: UFEDLib.Report.ParseDeviceInfoEntry
   nameWithType: Report.ParseDeviceInfoEntry
+- uid: UFEDLib.Report.ParseDeviceInfoToJsonArray(System.String)
+  name: ParseDeviceInfoToJsonArray(string)
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseDeviceInfoToJsonArray_System_String_
+  commentId: M:UFEDLib.Report.ParseDeviceInfoToJsonArray(System.String)
+  name.vb: ParseDeviceInfoToJsonArray(String)
+  fullName: UFEDLib.Report.ParseDeviceInfoToJsonArray(string)
+  fullName.vb: UFEDLib.Report.ParseDeviceInfoToJsonArray(String)
+  nameWithType: Report.ParseDeviceInfoToJsonArray(string)
+  nameWithType.vb: Report.ParseDeviceInfoToJsonArray(String)
+- uid: UFEDLib.Report.ParseDeviceInfoToJsonArray*
+  name: ParseDeviceInfoToJsonArray
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseDeviceInfoToJsonArray_
+  commentId: Overload:UFEDLib.Report.ParseDeviceInfoToJsonArray
+  isSpec: "True"
+  fullName: UFEDLib.Report.ParseDeviceInfoToJsonArray
+  nameWithType: Report.ParseDeviceInfoToJsonArray
+- uid: UFEDLib.Report.ParseDeviceInfoToJsonDictionary(System.String)
+  name: ParseDeviceInfoToJsonDictionary(string)
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseDeviceInfoToJsonDictionary_System_String_
+  commentId: M:UFEDLib.Report.ParseDeviceInfoToJsonDictionary(System.String)
+  name.vb: ParseDeviceInfoToJsonDictionary(String)
+  fullName: UFEDLib.Report.ParseDeviceInfoToJsonDictionary(string)
+  fullName.vb: UFEDLib.Report.ParseDeviceInfoToJsonDictionary(String)
+  nameWithType: Report.ParseDeviceInfoToJsonDictionary(string)
+  nameWithType.vb: Report.ParseDeviceInfoToJsonDictionary(String)
+- uid: UFEDLib.Report.ParseDeviceInfoToJsonDictionary*
+  name: ParseDeviceInfoToJsonDictionary
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseDeviceInfoToJsonDictionary_
+  commentId: Overload:UFEDLib.Report.ParseDeviceInfoToJsonDictionary
+  isSpec: "True"
+  fullName: UFEDLib.Report.ParseDeviceInfoToJsonDictionary
+  nameWithType: Report.ParseDeviceInfoToJsonDictionary
 - uid: UFEDLib.Report.ParseDictionaryWords(System.String,System.IProgress{System.Int32},System.Boolean)
   name: ParseDictionaryWords(string, IProgress<int>, bool)
   href: api/UFEDLib.Report.html#UFEDLib_Report_ParseDictionaryWords_System_String_System_IProgress_System_Int32__System_Boolean_
@@ -13243,6 +13361,22 @@ references:
   isSpec: "True"
   fullName: UFEDLib.Report.ParseExtractionData
   nameWithType: Report.ParseExtractionData
+- uid: UFEDLib.Report.ParseExtractionDataToJson(System.String)
+  name: ParseExtractionDataToJson(string)
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseExtractionDataToJson_System_String_
+  commentId: M:UFEDLib.Report.ParseExtractionDataToJson(System.String)
+  name.vb: ParseExtractionDataToJson(String)
+  fullName: UFEDLib.Report.ParseExtractionDataToJson(string)
+  fullName.vb: UFEDLib.Report.ParseExtractionDataToJson(String)
+  nameWithType: Report.ParseExtractionDataToJson(string)
+  nameWithType.vb: Report.ParseExtractionDataToJson(String)
+- uid: UFEDLib.Report.ParseExtractionDataToJson*
+  name: ParseExtractionDataToJson
+  href: api/UFEDLib.Report.html#UFEDLib_Report_ParseExtractionDataToJson_
+  commentId: Overload:UFEDLib.Report.ParseExtractionDataToJson
+  isSpec: "True"
+  fullName: UFEDLib.Report.ParseExtractionDataToJson
+  nameWithType: Report.ParseExtractionDataToJson
 - uid: UFEDLib.Report.ParseFileDownloads(System.String,System.IProgress{System.Int32},System.Boolean)
   name: ParseFileDownloads(string, IProgress<int>, bool)
   href: api/UFEDLib.Report.html#UFEDLib_Report_ParseFileDownloads_System_String_System_IProgress_System_Int32__System_Boolean_

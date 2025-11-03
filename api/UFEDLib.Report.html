@@ -255,7 +255,7 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="UFEDLib_Report_ParseActivitySensorData_System_String_System_IProgress_System_Int32__System_Boolean_" data-uid="UFEDLib.Report.ParseActivitySensorData(System.String,System.IProgress{System.Int32},System.Boolean)">
   ParseActivitySensorData(string, IProgress&lt;int&gt;, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L151"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L176"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -302,7 +302,43 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string ParseAdditionalFields(string filename)</code></pre>
+    <pre><code class="lang-csharp hljs">public static List&lt;(string name, string value)&gt; ParseAdditionalFields(string filename)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>filename</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.string,system.string-.name">name</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.string,system.string-.value">value</a>)&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UFEDLib_Report_ParseAdditionalFieldsToJson_" data-uid="UFEDLib.Report.ParseAdditionalFieldsToJson*"></a>
+
+  <h3 id="UFEDLib_Report_ParseAdditionalFieldsToJson_System_String_" data-uid="UFEDLib.Report.ParseAdditionalFieldsToJson(System.String)">
+  ParseAdditionalFieldsToJson(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L125"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string ParseAdditionalFieldsToJson(string filename)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -331,7 +367,7 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="UFEDLib_Report_ParseApplicationUsages_System_String_System_IProgress_System_Int32__System_Boolean_" data-uid="UFEDLib.Report.ParseApplicationUsages(System.String,System.IProgress{System.Int32},System.Boolean)">
   ParseApplicationUsages(string, IProgress&lt;int&gt;, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L156"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L181"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -371,7 +407,7 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="UFEDLib_Report_ParseAppsUsageLogs_System_String_System_IProgress_System_Int32__System_Boolean_" data-uid="UFEDLib.Report.ParseAppsUsageLogs(System.String,System.IProgress{System.Int32},System.Boolean)">
   ParseAppsUsageLogs(string, IProgress&lt;int&gt;, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L161"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L186"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -411,7 +447,7 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="UFEDLib_Report_ParseAutofills_System_String_System_IProgress_System_Int32__System_Boolean_" data-uid="UFEDLib.Report.ParseAutofills(System.String,System.IProgress{System.Int32},System.Boolean)">
   ParseAutofills(string, IProgress&lt;int&gt;, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L166"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L191"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -451,7 +487,7 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="UFEDLib_Report_ParseCalendarEntry_System_String_System_IProgress_System_Int32__System_Boolean_" data-uid="UFEDLib.Report.ParseCalendarEntry(System.String,System.IProgress{System.Int32},System.Boolean)">
   ParseCalendarEntry(string, IProgress&lt;int&gt;, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L171"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L196"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -491,7 +527,7 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="UFEDLib_Report_ParseCalls_System_String_System_IProgress_System_Int32__System_Boolean_" data-uid="UFEDLib.Report.ParseCalls(System.String,System.IProgress{System.Int32},System.Boolean)">
   ParseCalls(string, IProgress&lt;int&gt;, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L176"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L201"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -531,14 +567,50 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="UFEDLib_Report_ParseCaseInformation_System_String_" data-uid="UFEDLib.Report.ParseCaseInformation(System.String)">
   ParseCaseInformation(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L125"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L130"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string ParseCaseInformation(string filename)</code></pre>
+    <pre><code class="lang-csharp hljs">public static List&lt;(string name, string value)&gt; ParseCaseInformation(string filename)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>filename</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.string,system.string-.name">name</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.string,system.string-.value">value</a>)&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UFEDLib_Report_ParseCaseInformationToJson_" data-uid="UFEDLib.Report.ParseCaseInformationToJson*"></a>
+
+  <h3 id="UFEDLib_Report_ParseCaseInformationToJson_System_String_" data-uid="UFEDLib.Report.ParseCaseInformationToJson(System.String)">
+  ParseCaseInformationToJson(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L135"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string ParseCaseInformationToJson(string filename)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -567,7 +639,7 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="UFEDLib_Report_ParseCellTowers_System_String_System_IProgress_System_Int32__System_Boolean_" data-uid="UFEDLib.Report.ParseCellTowers(System.String,System.IProgress{System.Int32},System.Boolean)">
   ParseCellTowers(string, IProgress&lt;int&gt;, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L181"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L206"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -607,7 +679,7 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="UFEDLib_Report_ParseChats_System_String_System_IProgress_System_Int32__System_Boolean_" data-uid="UFEDLib.Report.ParseChats(System.String,System.IProgress{System.Int32},System.Boolean)">
   ParseChats(string, IProgress&lt;int&gt;, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L186"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L211"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -647,7 +719,7 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="UFEDLib_Report_ParseContacts_System_String_System_IProgress_System_Int32__System_Boolean_" data-uid="UFEDLib.Report.ParseContacts(System.String,System.IProgress{System.Int32},System.Boolean)">
   ParseContacts(string, IProgress&lt;int&gt;, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L191"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L216"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -687,7 +759,7 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="UFEDLib_Report_ParseCookies_System_String_System_IProgress_System_Int32__System_Boolean_" data-uid="UFEDLib.Report.ParseCookies(System.String,System.IProgress{System.Int32},System.Boolean)">
   ParseCookies(string, IProgress&lt;int&gt;, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L195"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L220"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -727,7 +799,7 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="UFEDLib_Report_ParseCreditCards_System_String_System_IProgress_System_Int32__System_Boolean_" data-uid="UFEDLib.Report.ParseCreditCards(System.String,System.IProgress{System.Int32},System.Boolean)">
   ParseCreditCards(string, IProgress&lt;int&gt;, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L200"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L225"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -812,7 +884,7 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="UFEDLib_Report_ParseDeviceConnectivity_System_String_System_IProgress_System_Int32__System_Boolean_" data-uid="UFEDLib.Report.ParseDeviceConnectivity(System.String,System.IProgress{System.Int32},System.Boolean)">
   ParseDeviceConnectivity(string, IProgress&lt;int&gt;, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L205"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L230"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -852,7 +924,7 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="UFEDLib_Report_ParseDeviceEvent_System_String_System_IProgress_System_Int32__System_Boolean_" data-uid="UFEDLib.Report.ParseDeviceEvent(System.String,System.IProgress{System.Int32},System.Boolean)">
   ParseDeviceEvent(string, IProgress&lt;int&gt;, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L210"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L235"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -892,14 +964,14 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="UFEDLib_Report_ParseDeviceInfo_System_String_" data-uid="UFEDLib.Report.ParseDeviceInfo(System.String)">
   ParseDeviceInfo(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L130"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L140"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string ParseDeviceInfo(string filename)</code></pre>
+    <pre><code class="lang-csharp hljs">public static List&lt;(string name, string value)&gt; ParseDeviceInfo(string filename)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -910,7 +982,7 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.string,system.string-.name">name</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.string,system.string-.value">value</a>)&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -928,7 +1000,7 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="UFEDLib_Report_ParseDeviceInfoEntry_System_String_System_IProgress_System_Int32__System_Boolean_" data-uid="UFEDLib.Report.ParseDeviceInfoEntry(System.String,System.IProgress{System.Int32},System.Boolean)">
   ParseDeviceInfoEntry(string, IProgress&lt;int&gt;, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L215"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L240"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -964,11 +1036,83 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
 
 
+  <a id="UFEDLib_Report_ParseDeviceInfoToJsonArray_" data-uid="UFEDLib.Report.ParseDeviceInfoToJsonArray*"></a>
+
+  <h3 id="UFEDLib_Report_ParseDeviceInfoToJsonArray_System_String_" data-uid="UFEDLib.Report.ParseDeviceInfoToJsonArray(System.String)">
+  ParseDeviceInfoToJsonArray(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L145"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string ParseDeviceInfoToJsonArray(string filename)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>filename</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UFEDLib_Report_ParseDeviceInfoToJsonDictionary_" data-uid="UFEDLib.Report.ParseDeviceInfoToJsonDictionary*"></a>
+
+  <h3 id="UFEDLib_Report_ParseDeviceInfoToJsonDictionary_System_String_" data-uid="UFEDLib.Report.ParseDeviceInfoToJsonDictionary(System.String)">
+  ParseDeviceInfoToJsonDictionary(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L150"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string ParseDeviceInfoToJsonDictionary(string filename)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>filename</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="UFEDLib_Report_ParseDictionaryWords_" data-uid="UFEDLib.Report.ParseDictionaryWords*"></a>
 
   <h3 id="UFEDLib_Report_ParseDictionaryWords_System_String_System_IProgress_System_Int32__System_Boolean_" data-uid="UFEDLib.Report.ParseDictionaryWords(System.String,System.IProgress{System.Int32},System.Boolean)">
   ParseDictionaryWords(string, IProgress&lt;int&gt;, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L220"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L245"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1008,7 +1152,7 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="UFEDLib_Report_ParseEmails_System_String_System_IProgress_System_Int32__System_Boolean_" data-uid="UFEDLib.Report.ParseEmails(System.String,System.IProgress{System.Int32},System.Boolean)">
   ParseEmails(string, IProgress&lt;int&gt;, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L225"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L250"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1048,14 +1192,50 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="UFEDLib_Report_ParseExtractionData_System_String_" data-uid="UFEDLib.Report.ParseExtractionData(System.String)">
   ParseExtractionData(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L135"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L155"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string ParseExtractionData(string filename)</code></pre>
+    <pre><code class="lang-csharp hljs">public static List&lt;(string name, string value)&gt; ParseExtractionData(string filename)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>filename</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.string,system.string-.name">name</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.string,system.string-.value">value</a>)&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UFEDLib_Report_ParseExtractionDataToJson_" data-uid="UFEDLib.Report.ParseExtractionDataToJson*"></a>
+
+  <h3 id="UFEDLib_Report_ParseExtractionDataToJson_System_String_" data-uid="UFEDLib.Report.ParseExtractionDataToJson(System.String)">
+  ParseExtractionDataToJson(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L160"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string ParseExtractionDataToJson(string filename)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -1084,7 +1264,7 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="UFEDLib_Report_ParseFileDownloads_System_String_System_IProgress_System_Int32__System_Boolean_" data-uid="UFEDLib.Report.ParseFileDownloads(System.String,System.IProgress{System.Int32},System.Boolean)">
   ParseFileDownloads(string, IProgress&lt;int&gt;, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L230"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L255"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1124,7 +1304,7 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="UFEDLib_Report_ParseFileUploads_System_String_System_IProgress_System_Int32__System_Boolean_" data-uid="UFEDLib.Report.ParseFileUploads(System.String,System.IProgress{System.Int32},System.Boolean)">
   ParseFileUploads(string, IProgress&lt;int&gt;, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L235"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L260"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1164,7 +1344,7 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="UFEDLib_Report_ParseFinancialAccounts_System_String_System_IProgress_System_Int32__System_Boolean_" data-uid="UFEDLib.Report.ParseFinancialAccounts(System.String,System.IProgress{System.Int32},System.Boolean)">
   ParseFinancialAccounts(string, IProgress&lt;int&gt;, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L240"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L265"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1204,7 +1384,7 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="UFEDLib_Report_ParseInstalledApplications_System_String_System_IProgress_System_Int32__System_Boolean_" data-uid="UFEDLib.Report.ParseInstalledApplications(System.String,System.IProgress{System.Int32},System.Boolean)">
   ParseInstalledApplications(string, IProgress&lt;int&gt;, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L245"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L270"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1244,7 +1424,7 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="UFEDLib_Report_ParseInstantMessages_System_String_System_IProgress_System_Int32__System_Boolean_" data-uid="UFEDLib.Report.ParseInstantMessages(System.String,System.IProgress{System.Int32},System.Boolean)">
   ParseInstantMessages(string, IProgress&lt;int&gt;, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L250"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L275"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1284,7 +1464,7 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="UFEDLib_Report_ParseJourneys_System_String_System_IProgress_System_Int32__System_Boolean_" data-uid="UFEDLib.Report.ParseJourneys(System.String,System.IProgress{System.Int32},System.Boolean)">
   ParseJourneys(string, IProgress&lt;int&gt;, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L255"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L280"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1324,7 +1504,7 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="UFEDLib_Report_ParseLocations_System_String_System_IProgress_System_Int32__System_Boolean_" data-uid="UFEDLib.Report.ParseLocations(System.String,System.IProgress{System.Int32},System.Boolean)">
   ParseLocations(string, IProgress&lt;int&gt;, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L265"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L290"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1364,7 +1544,7 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="UFEDLib_Report_ParseLogEntries_System_String_System_IProgress_System_Int32__System_Boolean_" data-uid="UFEDLib.Report.ParseLogEntries(System.String,System.IProgress{System.Int32},System.Boolean)">
   ParseLogEntries(string, IProgress&lt;int&gt;, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L260"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L285"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1404,7 +1584,7 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="UFEDLib_Report_ParseMobileCards_System_String_System_IProgress_System_Int32__System_Boolean_" data-uid="UFEDLib.Report.ParseMobileCards(System.String,System.IProgress{System.Int32},System.Boolean)">
   ParseMobileCards(string, IProgress&lt;int&gt;, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L270"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L295"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1444,7 +1624,7 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="UFEDLib_Report_ParseNetworkUsage_System_String_System_IProgress_System_Int32__System_Boolean_" data-uid="UFEDLib.Report.ParseNetworkUsage(System.String,System.IProgress{System.Int32},System.Boolean)">
   ParseNetworkUsage(string, IProgress&lt;int&gt;, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L274"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L299"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1484,7 +1664,7 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="UFEDLib_Report_ParseNotes_System_String_System_IProgress_System_Int32__System_Boolean_" data-uid="UFEDLib.Report.ParseNotes(System.String,System.IProgress{System.Int32},System.Boolean)">
   ParseNotes(string, IProgress&lt;int&gt;, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L279"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L304"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1524,7 +1704,7 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="UFEDLib_Report_ParseNotifications_System_String_System_IProgress_System_Int32__System_Boolean_" data-uid="UFEDLib.Report.ParseNotifications(System.String,System.IProgress{System.Int32},System.Boolean)">
   ParseNotifications(string, IProgress&lt;int&gt;, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L284"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L309"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1564,7 +1744,7 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="UFEDLib_Report_ParsePasswords_System_String_System_IProgress_System_Int32__System_Boolean_" data-uid="UFEDLib.Report.ParsePasswords(System.String,System.IProgress{System.Int32},System.Boolean)">
   ParsePasswords(string, IProgress&lt;int&gt;, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L289"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L314"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1604,7 +1784,7 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="UFEDLib_Report_ParsePoweringEvents_System_String_System_IProgress_System_Int32__System_Boolean_" data-uid="UFEDLib.Report.ParsePoweringEvents(System.String,System.IProgress{System.Int32},System.Boolean)">
   ParsePoweringEvents(string, IProgress&lt;int&gt;, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L294"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L319"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1682,7 +1862,7 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="UFEDLib_Report_ParseProjectInfos_System_String_" data-uid="UFEDLib.Report.ParseProjectInfos(System.String)">
   ParseProjectInfos(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L140"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L165"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1718,7 +1898,7 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="UFEDLib_Report_ParsePublicTransportationTickets_System_String_System_IProgress_System_Int32__System_Boolean_" data-uid="UFEDLib.Report.ParsePublicTransportationTickets(System.String,System.IProgress{System.Int32},System.Boolean)">
   ParsePublicTransportationTickets(string, IProgress&lt;int&gt;, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L299"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L324"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1758,7 +1938,7 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="UFEDLib_Report_ParseRecognizedDevices_System_String_System_IProgress_System_Int32__System_Boolean_" data-uid="UFEDLib.Report.ParseRecognizedDevices(System.String,System.IProgress{System.Int32},System.Boolean)">
   ParseRecognizedDevices(string, IProgress&lt;int&gt;, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L304"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L329"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1798,7 +1978,7 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="UFEDLib_Report_ParseRecordings_System_String_System_IProgress_System_Int32__System_Boolean_" data-uid="UFEDLib.Report.ParseRecordings(System.String,System.IProgress{System.Int32},System.Boolean)">
   ParseRecordings(string, IProgress&lt;int&gt;, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L308"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L333"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1838,7 +2018,7 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="UFEDLib_Report_ParseSIMData_System_String_System_IProgress_System_Int32__System_Boolean_" data-uid="UFEDLib.Report.ParseSIMData(System.String,System.IProgress{System.Int32},System.Boolean)">
   ParseSIMData(string, IProgress&lt;int&gt;, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L318"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L343"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1878,7 +2058,7 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="UFEDLib_Report_ParseSearchedItems_System_String_System_IProgress_System_Int32__System_Boolean_" data-uid="UFEDLib.Report.ParseSearchedItems(System.String,System.IProgress{System.Int32},System.Boolean)">
   ParseSearchedItems(string, IProgress&lt;int&gt;, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L313"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L338"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1918,7 +2098,7 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="UFEDLib_Report_ParseSocialMediaActivities_System_String_System_IProgress_System_Int32__System_Boolean_" data-uid="UFEDLib.Report.ParseSocialMediaActivities(System.String,System.IProgress{System.Int32},System.Boolean)">
   ParseSocialMediaActivities(string, IProgress&lt;int&gt;, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L323"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L348"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1958,7 +2138,7 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="UFEDLib_Report_ParseTransferOfFunds_System_String_System_IProgress_System_Int32__System_Boolean_" data-uid="UFEDLib.Report.ParseTransferOfFunds(System.String,System.IProgress{System.Int32},System.Boolean)">
   ParseTransferOfFunds(string, IProgress&lt;int&gt;, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L328"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L353"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1998,7 +2178,7 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="UFEDLib_Report_ParseUserAccounts_System_String_System_IProgress_System_Int32__System_Boolean_" data-uid="UFEDLib.Report.ParseUserAccounts(System.String,System.IProgress{System.Int32},System.Boolean)">
   ParseUserAccounts(string, IProgress&lt;int&gt;, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L338"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L363"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -2038,7 +2218,7 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="UFEDLib_Report_ParseUsers_System_String_System_IProgress_System_Int32__System_Boolean_" data-uid="UFEDLib.Report.ParseUsers(System.String,System.IProgress{System.Int32},System.Boolean)">
   ParseUsers(string, IProgress&lt;int&gt;, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L333"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L358"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -2078,7 +2258,7 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="UFEDLib_Report_ParseVisitedPages_System_String_System_IProgress_System_Int32__System_Boolean_" data-uid="UFEDLib.Report.ParseVisitedPages(System.String,System.IProgress{System.Int32},System.Boolean)">
   ParseVisitedPages(string, IProgress&lt;int&gt;, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L343"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L368"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -2118,7 +2298,7 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="UFEDLib_Report_ParseVoicemails_System_String_System_IProgress_System_Int32__System_Boolean_" data-uid="UFEDLib.Report.ParseVoicemails(System.String,System.IProgress{System.Int32},System.Boolean)">
   ParseVoicemails(string, IProgress&lt;int&gt;, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L348"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L373"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -2158,7 +2338,7 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="UFEDLib_Report_ParseWebBookmarks_System_String_System_IProgress_System_Int32__System_Boolean_" data-uid="UFEDLib.Report.ParseWebBookmarks(System.String,System.IProgress{System.Int32},System.Boolean)">
   ParseWebBookmarks(string, IProgress&lt;int&gt;, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L353"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L378"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -2198,7 +2378,7 @@ Class Report  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="UFEDLib_Report_ParseWirelessNetworks_System_String_System_IProgress_System_Int32__System_Boolean_" data-uid="UFEDLib.Report.ParseWirelessNetworks(System.String,System.IProgress{System.Int32},System.Boolean)">
   ParseWirelessNetworks(string, IProgress&lt;int&gt;, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L358"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SEilers/UFEDLib/blob/master/UFEDLib/Report.cs/#L383"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
