@@ -60,8 +60,6 @@ namespace UFEDLib
         public List<Party> To { get; set; } = new List<Party>();
         #endregion
 
-        //public MessageStatus Status {get;set;}
-
         public override string ToString()
         {
             return SourceApplication;

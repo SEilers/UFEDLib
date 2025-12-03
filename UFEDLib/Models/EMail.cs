@@ -83,7 +83,7 @@ namespace UFEDLib
                         break;
 
                     case "ServiceIdentifier":
-                        result.Subject = field.Value.Trim();
+                        result.ServiceIdentifier = field.Value.Trim();
                         break;
 
                     case "Snippet":
