@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -131,10 +132,6 @@ namespace UFEDLib
                         Console.WriteLine("pg_restore failed:");
                         Console.WriteLine(error);
                         return null;
-                    }
-                    else
-                    {
-                        Console.WriteLine($"Database extracted successfully to '{restoreDbFileName}' database.");
                     }
 
                     // parse device info from the SQL file
@@ -296,6 +293,9 @@ namespace UFEDLib
 
             List<string> deviceInfoEntriesData = new List<string>();
 
+            string startLine = "";
+
+
             if (File.Exists(dbSqlFilePath))
             {
                 //find the positision of the line that starts with "COPY " + "\"" + schemaName + "\"" + "." + "\"DeviceInfoEntries\""
@@ -306,6 +306,9 @@ namespace UFEDLib
                     {
                         if (line.StartsWith(deviceInfoEntriesDataStart))
                         {
+                            // found the line, now we can read the data
+                            startLine = line;
+
                             while ((line = sr.ReadLine()) != null)
                             {
                                 if (line.StartsWith("\\.")) // end of COPY data
@@ -314,7 +317,6 @@ namespace UFEDLib
                                 }
                                 deviceInfoEntriesData.Add(line);
                             }
-                            // found the line, now we can read the data
                             break;
                         }
                     }
@@ -323,15 +325,32 @@ namespace UFEDLib
 
             List<(string name, string value)> deviceInfoEntries =  new List<(string name, string value)>();
 
+            var columnNames = startLine.Split(',');
+
+            for( int i = 0; i < columnNames.Length; i++)
+            {
+                columnNames[i] = columnNames[i].Trim();
+            }
+
+            string EntryColumnName = "EntryName";
+            string ValueColumnName = "EntryValue";
+
+            int entryIndex = Array.IndexOf(columnNames, "\"" + EntryColumnName + "\"");
+            int valueIndex = Array.IndexOf(columnNames, "\"" + ValueColumnName + "\"");
+
+            if( entryIndex == -1 || valueIndex == -1)
+            {
+                Console.WriteLine("Could not find EntryName or EntryValue columns in DeviceInfoEntries table.");
+                return deviceInfoEntries;
+            }
+
+            int maxIndex = Math.Max(entryIndex, valueIndex);
+
             foreach (var entry in deviceInfoEntriesData)
             {
                 // split the line by tab character
                 var parts = entry.Split('\t');
-                if (parts.Length >= 4)
-                {
-                    // add the first two parts as a tuple to the list
-                    deviceInfoEntries.Add((parts[2], parts[3]));
-                }
+                deviceInfoEntries.Add((parts[entryIndex], parts[valueIndex]));
             }
 
             return deviceInfoEntries;

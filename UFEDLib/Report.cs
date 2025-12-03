@@ -142,6 +142,16 @@ namespace UFEDLib
             return DeviceInfo.Parse(filename);
         }
 
+        public static string ParseDeviceInfoToJsonArray(string filename)
+        {
+            return DeviceInfo.ParseToJsonArray(filename);
+        }
+
+        public static string ParseDeviceInfoToJsonDictionary(string filename)
+        {
+            return DeviceInfo.ParseToJsonDictionary(filename);
+        }
+
         public static List<(string name, string value)> ParseExtractionData(string filename)
         {
             return ExtractionData.Parse(filename);
