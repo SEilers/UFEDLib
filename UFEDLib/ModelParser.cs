@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO.Compression;
+using System.Diagnostics;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Xml.Linq;
 using System.Xml;
+using System.Xml.Linq;
 
 namespace UFEDLib
 {
@@ -30,63 +31,66 @@ namespace UFEDLib
             {
                 using (StreamReader sr = new StreamReader(xmlReportFile))
                 {
-                    XmlReaderSettings xmlReaderSettings = new XmlReaderSettings
-                    {
-                        CheckCharacters = false
-                    };
+                    results = CoreParser<T>(sr, reportSize, progress, debugAttributes);
 
-                    long currentPosition = 0;
-                    int lastPercent = 0;
-                    bool modelFound = false;
+                    //XmlReaderSettings xmlReaderSettings = new XmlReaderSettings
+                    //{
+                    //    CheckCharacters = false
+                    //};
 
-                    using (XmlReader reader = XmlReader.Create(sr, xmlReaderSettings))
-                    {
-                        while (reader.Read())
-                        {
-                            try
-                            {
-                                if (reader.Depth == 3 && reader.Name == "model" && reader.IsStartElement())
-                                {
-                                    string modelType = reader.GetAttribute("type");
-                                    if (modelType == T.GetXmlModelType())
-                                    {
-                                        XElement element = XElement.Load(reader.ReadSubtree());
-                                        results.Add(T.ParseModel(element, debugAttributes));
-                                        modelFound = true;
-                                    }
-                                }
+                    //long currentPosition = 0;
+                    //int lastPercent = 0;
+                    //bool modelFound = false;
 
-                                if (progress != null)
-                                {
-                                    if (reportSize > 0)
-                                    {
-                                        currentPosition = sr.BaseStream.Position;
-                                        int percent = (int)((double)currentPosition / reportSize * 100);
-                                        if (percent > lastPercent)
-                                        {
-                                            lastPercent = percent;
-                                            progress.Report(percent);
-                                        }
-                                    }
+                    //using (XmlReader reader = XmlReader.Create(sr, xmlReaderSettings))
+                    //{
+                    //    while (reader.Read())
+                    //    {
+                    //        try
+                    //        {
+                    //            if (reader.Depth == 3 && reader.Name == "model" && reader.IsStartElement())
+                    //            {
+                    //                string modelType = reader.GetAttribute("type");
+                    //                if (modelType == T.GetXmlModelType())
+                    //                {
+                    //                    XElement element = XElement.Load(reader.ReadSubtree());
+                    //                    results.Add(T.ParseModel(element, debugAttributes));
+                    //                    modelFound = true;
+                    //                }
+                    //            }
 
-                                    if (modelFound && reader.Depth == 2)
-                                    {
-                                        progress.Report(100);
-                                        return results;
-                                    }
-                                }
-                            }
-                            catch (Exception ex)
-                            {
-                                Console.WriteLine("Error parsing report.xml: " + ex.Message);
-                            }
-                        }
-                    }
+                    //            if (progress != null)
+                    //            {
+                    //                if (reportSize > 0)
+                    //                {
+                    //                    currentPosition = sr.BaseStream.Position;
+                    //                    int percent = (int)((double)currentPosition / reportSize * 100);
+                    //                    if (percent > lastPercent)
+                    //                    {
+                    //                        lastPercent = percent;
+                    //                        progress.Report(percent);
+                    //                    }
+                    //                }
+
+                    //                if (modelFound && reader.Depth == 2)
+                    //                {
+                    //                    progress.Report(100);
+                    //                    return results;
+                    //                }
+                    //            }
+                    //        }
+                    //        catch (Exception ex)
+                    //        {
+                    //            Console.WriteLine("Error parsing report.xml: " + ex.Message);
+                    //        }
+                    //    }
+                    //}
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error parsing report.xml" +  ex.ToString());
+                //Console.WriteLine("Error parsing report.xml" +  ex.ToString());
+                throw new Exception("Error parsing report.xml: " + ex.Message, ex.InnerException);
             }
             finally
             {
@@ -127,66 +131,70 @@ namespace UFEDLib
                     {
                         using (StreamReader sr = new StreamReader(reportStream))
                         {
-                            XmlReaderSettings xmlReaderSettings = new XmlReaderSettings
-                            {
-                                CheckCharacters = false
-                            };
+                            results = CoreParser<T>(sr, reportSize, progress, debugAttributes);
 
-                            long currentPosition = 0;
-                            int lastPercent = 0;
-                            bool modelFound = false;
 
-                            using (XmlReader reader = XmlReader.Create(sr, xmlReaderSettings))
-                            {
-                                while (reader.Read())
-                                {
-                                    try
-                                    {
-                                        if (reader.Depth == 3 && reader.Name == "model" && reader.IsStartElement())
-                                        {
-                                            string modelType = reader.GetAttribute("type");
+                            //XmlReaderSettings xmlReaderSettings = new XmlReaderSettings
+                            //{
+                            //    CheckCharacters = false
+                            //};
 
-                                            if (modelType == T.GetXmlModelType())
-                                            {
-                                                XElement element = XElement.Load(reader.ReadSubtree());
-                                                results.Add(T.ParseModel(element, debugAttributes));
-                                                modelFound = true;
-                                            }
-                                        }
+                            //long currentPosition = 0;
+                            //int lastPercent = 0;
+                            //bool modelFound = false;
 
-                                        if (progress != null)
-                                        {
-                                            if (reportSize > 0)
-                                            {
-                                                currentPosition = sr.BaseStream.Position;
-                                                int percent = (int)((double)currentPosition / reportSize * 100);
-                                                if (percent > lastPercent)
-                                                {
-                                                    lastPercent = percent;
-                                                    progress.Report(percent);
-                                                }
-                                            }
+                            //using (XmlReader reader = XmlReader.Create(sr, xmlReaderSettings))
+                            //{
+                            //    while (reader.Read())
+                            //    {
+                            //        try
+                            //        {
+                            //            if (reader.Depth == 3 && reader.Name == "model" && reader.IsStartElement())
+                            //            {
+                            //                string modelType = reader.GetAttribute("type");
 
-                                            if (modelFound && reader.Depth == 2)
-                                            {
-                                                progress.Report(100);
-                                                return results;
-                                            }
-                                        }
-                                    }
-                                    catch (Exception ex)
-                                    {
-                                        Console.WriteLine("Error parsing report.xml: " + ex.Message);
-                                    }
-                                }
-                            }
+                            //                if (modelType == T.GetXmlModelType())
+                            //                {
+                            //                    XElement element = XElement.Load(reader.ReadSubtree());
+                            //                    results.Add(T.ParseModel(element, debugAttributes));
+                            //                    modelFound = true;
+                            //                }
+                            //            }
+
+                            //            if (progress != null)
+                            //            {
+                            //                if (reportSize > 0)
+                            //                {
+                            //                    currentPosition = sr.BaseStream.Position;
+                            //                    int percent = (int)((double)currentPosition / reportSize * 100);
+                            //                    if (percent > lastPercent)
+                            //                    {
+                            //                        lastPercent = percent;
+                            //                        progress.Report(percent);
+                            //                    }
+                            //                }
+
+                            //                if (modelFound && reader.Depth == 2)
+                            //                {
+                            //                    progress.Report(100);
+                            //                    return results;
+                            //                }
+                            //            }
+                            //        }
+                            //        catch (Exception ex)
+                            //        {
+                            //            Console.WriteLine("Error parsing report.xml: " + ex.Message);
+                            //        }
+                            //    }
+                            //}
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error parsing report.xml: " + ex.ToString());
+                //Console.WriteLine("Error parsing report.xml: " + ex.ToString());
+                throw new Exception("Error parsing report.xml: " + ex.Message, ex.InnerException);
             }
             finally
             {
@@ -194,6 +202,67 @@ namespace UFEDLib
                     progress.Report(100);
             }
 
+            return results;
+        }
+
+        private static List<T> CoreParser<T>( StreamReader sr, long reportSize, IProgress<int> progress = null, bool debugAttributes = false) where T : ModelBase, IUfedModelParser<T>, new()
+        {
+            var results = new List<T>();
+
+            XmlReaderSettings xmlReaderSettings = new XmlReaderSettings
+            {
+                CheckCharacters = false
+            };
+
+            long currentPosition = 0;
+            int lastPercent = 0;
+            bool modelFound = false;
+
+            using (XmlReader reader = XmlReader.Create(sr, xmlReaderSettings))
+            {
+                while (reader.Read())
+                {
+                    try
+                    {
+                        if (reader.Depth == 3 && reader.Name == "model" && reader.IsStartElement())
+                        {
+                            string modelType = reader.GetAttribute("type");
+
+                            if (modelType == T.GetXmlModelType())
+                            {
+                                XElement element = XElement.Load(reader.ReadSubtree());
+                                results.Add(T.ParseModel(element, debugAttributes));
+                                modelFound = true;
+                            }
+                        }
+
+                        if (progress != null)
+                        {
+                            if (reportSize > 0)
+                            {
+                                currentPosition = sr.BaseStream.Position;
+                                int percent = (int)((double)currentPosition / reportSize * 100);
+                                if (percent > lastPercent)
+                                {
+                                    lastPercent = percent;
+                                    progress.Report(percent);
+                                }
+                            }
+
+                            if (modelFound && reader.Depth == 2)
+                            {
+                                progress.Report(100);
+                                return results;
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        //Console.WriteLine("Error parsing report.xml: " + ex.Message);
+                        throw new Exception("Error parsing report.xml: " + ex.Message, ex.InnerException);
+                    }
+                }
+            }
             return results;
         }
     

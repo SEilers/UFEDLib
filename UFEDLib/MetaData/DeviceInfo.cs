@@ -120,7 +120,10 @@ namespace UFEDLib
                     pgRestoreProcess.StartInfo.Arguments = $"-f {restoreDbFileName} {dbFileName}";
                     pgRestoreProcess.StartInfo.RedirectStandardOutput = true;
                     pgRestoreProcess.StartInfo.RedirectStandardError = true;
+                    // suppress the console window of pg_restore
                     pgRestoreProcess.StartInfo.UseShellExecute = false;
+                    pgRestoreProcess.StartInfo.CreateNoWindow = true;
+                    pgRestoreProcess.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
                     pgRestoreProcess.Start();
 
                     string output = pgRestoreProcess.StandardOutput.ReadToEnd();
