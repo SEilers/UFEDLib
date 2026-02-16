@@ -16,14 +16,14 @@ namespace UFEDLib
         }
 
         #region fields
-        public string ConnectivityMethod { get; set; }
-        public string ConnectivityNature { get; set; }
-        public string DeviceName { get; set; }
-        public string DeviceType { get; set; }
-        public string ServiceIdentifier { get; set; }
-        public string Source { get; set; }
-        public DateTime StartTime { get; set; }
-        public string UserMapping { get; set; }
+        public string ConnectivityMethod { get; set; } = "";
+        public string ConnectivityNature { get; set; } = "";
+        public string DeviceName { get; set; } = "";
+        public string DeviceType { get; set; } = "";
+        public string ServiceIdentifier { get; set; } = "";
+        public string Source { get; set; } = "";
+        public DateTime StartTime { get; set; } = DateTime.MinValue;
+        public string UserMapping { get; set; } = "";
         #endregion
 
         #region multiModels
@@ -45,7 +45,10 @@ namespace UFEDLib
         {
             foreach (var field in fieldElements)
             {
-                switch (field.Attribute("name").Value)
+                var fieldName = ModelBase.GetAttributeValueOrLog(field, "name", debugAttributes);
+                if (fieldName == null) continue;
+
+                switch (fieldName)
                 {
                     case "ConnectivityMethod":
                         result.ConnectivityMethod = field.Value.Trim();
@@ -83,7 +86,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("DeviceConnectivity Parser: Unknown field: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("DeviceConnectivity Parser: Unknown field: " + fieldName);
                         }
                         break;
                 }

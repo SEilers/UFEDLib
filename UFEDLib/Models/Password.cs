@@ -16,20 +16,20 @@ namespace UFEDLib
         }
 
         #region fields
-        public string AccessGroup { get; set; }
-        public string Account { get; set; }
+        public string AccessGroup { get; set; } = "";
+        public string Account { get; set; } = "";
         // The password itself
-        public string Data { get; set; }
-        public DateTime DateCreated { get; set; }
-        public DateTime DateModified { get; set; }
-        public string GenericAttribute { get; set; }
-        public string Label { get; set; }
-        public string Server { get; set; }
-        public string Service { get; set; }
-        public string ServiceIdentifier { get; set; }
-        public string Source { get; set; }
-        public string Type { get; set; }
-        public string UserMapping { get; set; }
+        public string Data { get; set; } = "";
+        public DateTime DateCreated { get; set; } = DateTime.MinValue;
+        public DateTime DateModified { get; set; } = DateTime.MinValue;
+        public string GenericAttribute { get; set; } = "";
+        public string Label { get; set; } = "";
+        public string Server { get; set; } = "";
+        public string Service { get; set; } = "";
+        public string ServiceIdentifier { get; set; } = "";
+        public string Source { get; set; } = "";
+        public string Type { get; set; } = "";
+        public string UserMapping { get; set; } = "";
         #endregion
 
         #region models
@@ -53,7 +53,10 @@ namespace UFEDLib
         {
             foreach (var field in fieldElements)
             {
-                switch (field.Attribute("name").Value)
+                var fieldName = ModelBase.GetAttributeValueOrLog(field, "name", debugAttributes);
+                if (fieldName == null) continue;
+
+                switch (fieldName)
                 {
                     case "AccessGroup":
                         result.AccessGroup = field.Value.Trim();
@@ -112,7 +115,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("Password Parser: Unknown field: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("Password Parser: Unknown field: " + fieldName);
                         }
                         break;
                 }

@@ -10,11 +10,11 @@ namespace UFEDLib
     public class SharedFile : ModelBase
     {
         #region fields
-        public string Caption { get; set; }
-        public Party Owner { get; set; }
-        public string Source { get; set; }
-        public DateTime TimeStamp { get; set; }
-        public string Type { get; set; }
+        public string Caption { get; set; } = "";
+        public Party Owner { get; set; } = new Party();
+        public string Source { get; set; } = "";
+        public DateTime TimeStamp { get; set; } = DateTime.MinValue;
+        public string Type { get; set; } = "";
         #endregion
 
         #region models
@@ -22,7 +22,7 @@ namespace UFEDLib
 
         #region multiModels
         public List<InstantMessage> Comments { get; set; } = new List<InstantMessage>();
-        public List<Party> Responders { get; set; }
+        public List<Party> Responders { get; set; } = new List<Party>();
         #endregion
     }
 }

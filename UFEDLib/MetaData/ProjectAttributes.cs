@@ -16,21 +16,20 @@ namespace UFEDLib
     public class ProjectAttributes
     {
         // Image File Attributes
-        public string FileName { get; set; }
+        public string FileName { get; set; } = "";
 
-        public double FileSizeInBytes { get; set; }
+        public double FileSizeInBytes { get; set; } = 0;
 
         // UFED Project Attributes
 
-        public string ProjectName { get; set; }
+        public string ProjectName { get; set; } = "";
+        public string ProjectId { get; set; } = "";
 
-        public string ProjectId { get; set; }
+        public string ReportVersion { get; set; } = "";
 
-        public string ReportVersion { get; set; }
+        public int NodeCount { get; set; } = 0;
 
-        public int NodeCount { get; set; }
-
-        public int ModelCount { get; set; }
+        public int ModelCount { get; set; } = 0;
 
         public List<(string name, string value)> CaseInformation { get; set; } = new List<(string name, string value)>();
 
@@ -40,7 +39,7 @@ namespace UFEDLib
 
         public List<(string name, string value)> DeviceInfo { get; set; } = new List<(string name, string value)>();
 
-        public static ProjectAttributes Parse(string filename, IProgress<int> progress = null)
+        public static ProjectAttributes Parse(string filename, IProgress<int>? progress = null)
         {
             if (!File.Exists(filename))
             {
@@ -105,7 +104,7 @@ namespace UFEDLib
             return null;
         }
 
-        private static ProjectAttributes ParseProjectAttributes( Stream stream, long reportSize, IProgress<int> progress = null)
+        private static ProjectAttributes ParseProjectAttributes( Stream stream, long reportSize, IProgress<int>? progress = null)
         {
             long currentPosition = 0;
             int lastPercent = 0;

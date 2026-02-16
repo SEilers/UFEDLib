@@ -17,12 +17,12 @@ namespace UFEDLib
         }
 
         #region fields
-        public string Identifier { get; set; }
-        public string Name { get; set; }
-        public long SerialNumber { get; set; }
-        public DateTime TimeLastLoggedIn { get; set; }
-        public string UserMapping { get; set; }
-        public string UserType { get; set; }
+        public string Identifier { get; set; } = "";
+        public string Name { get; set; } = "";
+        public long SerialNumber { get; set; } = 0;
+        public DateTime TimeLastLoggedIn { get; set; } = DateTime.MinValue;
+        public string UserMapping { get; set; } = "";
+        public string UserType { get; set; } = "";
         #endregion
 
         #region multiModels
@@ -45,7 +45,10 @@ namespace UFEDLib
         {
             foreach (var field in fieldElements)
             {
-                switch (field.Attribute("name").Value)
+                var fieldName = ModelBase.GetAttributeValueOrLog(field, "name", debugAttributes);
+                if (fieldName == null) continue;
+
+                switch (fieldName)
                 {
                     case "Identifier":
                         result.Identifier = field.Value.Trim();
@@ -76,7 +79,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("User Parser: Unknown field: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("User Parser: Unknown field: " + fieldName);
                         }
                         break;
                 }

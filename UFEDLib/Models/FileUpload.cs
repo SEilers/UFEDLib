@@ -16,16 +16,16 @@ namespace UFEDLib
         }
 
         #region fields
-        public string Account { get; set; }
-        public DateTime DateUploaded { get; set; }
-        public DateTime DateLastModified { get; set; }
-        public string FileType { get; set; }
-        public string Name { get; set; }
-        public string ServiceIdentifier { get; set; }
-        public string Source { get; set; }
-        public string Title { get; set; }
-        public string Url { get; set; }
-        public string UserMapping { get; set; }
+        public string Account { get; set; } = "";
+        public DateTime DateUploaded { get; set; } = DateTime.MinValue;
+        public DateTime DateLastModified { get; set; } = DateTime.MinValue;
+        public string FileType { get; set; } = "";
+        public string Name { get; set; } = "";
+        public string ServiceIdentifier { get; set; } = "";
+        public string Source { get; set; } = "";
+        public string Title { get; set; } = "";
+        public string Url { get; set; } = "";
+        public string UserMapping { get; set; } = "";
         #endregion
 
         #region models
@@ -52,7 +52,10 @@ namespace UFEDLib
         {
             foreach (var field in fieldElements)
             {
-                switch (field.Attribute("name").Value)
+                var fieldName = ModelBase.GetAttributeValueOrLog(field, "name", debugAttributes);
+                if (fieldName == null) continue;
+
+                switch (fieldName)
                 {
                     case "Account":
                         result.Account = field.Value.Trim();
@@ -99,7 +102,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("FileUpload Parser: Unknown field: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("FileUpload Parser: Unknown field: " + fieldName);
                         }
                         break;
                 }

@@ -19,25 +19,25 @@ namespace UFEDLib
         /// <summary>
         /// Same values as ContactEntry categories
         /// </summary>
-        public string Category { get; set; }
-        public string City { get; set; }
-        public string Country { get; set; }
-        public string HouseNumber { get; set; }
-        public string Neighborhood { get; set; }
-        public string POBox { get; set; }
+        public string Category { get; set; } = "";
+        public string City { get; set; } = "";
+        public string Country { get; set; } = "";
+        public string HouseNumber { get; set; } = "";
+        public string Neighborhood { get; set; } = "";
+        public string POBox { get; set; } = "";
         /// <summary>
         /// Address Postal Code or ZIP.
         /// </summary>
-        public string PostalCode { get; set; }
-        public string State { get; set; }
+        public string PostalCode { get; set; } = "";
+        public string State { get; set; } = "";
         /// <summary>
         /// Street information.
         /// </summary>
-        public string Street1 { get; set; }
+        public string Street1 { get; set; } = "";
         /// <summary>
         /// Additional street information
         /// </summary>
-        public string Street2 { get; set; }
+        public string Street2 { get; set; } = "";
         #endregion
 
         #region models
@@ -62,10 +62,13 @@ namespace UFEDLib
         {
             foreach (var field in fieldElements)
             {
+                var fieldName = ModelBase.GetAttributeValueOrLog(field, "name", debugAttributes);
+                if (fieldName == null) continue;
+
                 try
                 {
 
-                    switch (field.Attribute("name").Value)
+                    switch (fieldName)
                     {
                         case "Category":
                             result.Category = field.Value.Trim();
@@ -109,7 +112,7 @@ namespace UFEDLib
                         default:
                             if (debugAttributes)
                             {
-                                Logger.LogAttribute("StreetAddress Parser: Unknown field: " + field.Attribute("name").Value);
+                                Logger.LogAttribute("StreetAddress Parser: Unknown field: " + fieldName);
                             }
                             break;
                     }

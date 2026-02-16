@@ -16,24 +16,24 @@ namespace UFEDLib
         }
 
         #region fields
-        public string Account { get; set; }
-        public string Group { get; set; }
-        public string Id { get; set; }
+        public string Account { get; set; } = "";
+        public string Group { get; set; } = "";
+        public string Id { get; set; } = "";
         /// <summary>
         /// Contact Name.
         /// </summary>
-        public string Name { get; set; }
-        public string ServiceIdentifier { get; set; }
+        public string Name { get; set; } = "";
+        public string ServiceIdentifier { get; set; } = "";
         /// <summary>
         /// Contact Source.
         /// </summary>
-        public string Source { get; set; }
-        public DateTime TimeContacted { get; set; }
-        public int TimesContacted { get; set; }
-        public DateTime TimeCreated { get; set; }
-        public DateTime TimeModified { get; set; }
-        public string UserMapping { get; set; }
-        public string Type { get; set; }
+        public string Source { get; set; } = "";
+        public DateTime TimeContacted { get; set; } = DateTime.MinValue;
+        public int TimesContacted { get; set; } = 0;
+        public DateTime TimeCreated { get; set; } = DateTime.MinValue;
+        public DateTime TimeModified { get; set; } = DateTime.MinValue;
+        public string UserMapping { get; set; } = "";
+        public string Type { get; set; } = "";
         #endregion
 
         #region multiFields
@@ -84,7 +84,10 @@ namespace UFEDLib
         {
             foreach (var field in fieldElements)
             {
-                switch (field.Attribute("name").Value)
+                var fieldName = ModelBase.GetAttributeValueOrLog(field, "name", debugAttributes);
+                if (fieldName == null) continue;
+
+                switch (fieldName)
                 {
                     case "Account":
                         result.Account = field.Value.Trim();
@@ -143,7 +146,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            string debugAttrubuteText = "Contact Parser: Unknown field: " + field.Attribute("name").Value;
+                            string debugAttrubuteText = "Contact Parser: Unknown field: " + fieldName;
                             Logger.LogAttribute(debugAttrubuteText);
                         }
                         break;

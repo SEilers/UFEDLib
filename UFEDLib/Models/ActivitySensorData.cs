@@ -20,19 +20,19 @@ namespace UFEDLib
         }
 
         #region fields
-        public DateTime CreationTime { get; set; }
-        public string DeviceName { get; set; }
-        public double DistanceTraveled { get; set; }
-        public double FlightsClimbed { get; set; }
-        public DateTime From { get; set; }
-        public string Name { get; set; }
-        public double MaxHeartrate { get; set; }
-        public double MaxSpeed { get; set; }
-        public string UserMapping { get; set; }
-        public string Source { get; set; }
-        public string SourceDeviceType { get; set; }
-        public DateTime To { get; set; }
-        public int TotalSampleCount { get; set; }
+        public DateTime CreationTime { get; set; } = DateTime.MinValue;
+        public string DeviceName { get; set; } = "";
+        public double DistanceTraveled { get; set; } = 0.0;
+        public double FlightsClimbed { get; set; } = 0.0;
+        public DateTime From { get; set; } = DateTime.MinValue;
+        public string Name { get; set; } = "";          
+        public double MaxHeartrate { get; set; } = 0.0;
+        public double MaxSpeed { get; set; } = 0.0;
+        public string UserMapping { get; set; } = "";
+        public string Source { get; set; } = "";
+        public string SourceDeviceType { get; set; } = "";  
+        public DateTime To { get; set; } = DateTime.MinValue;
+        public int TotalSampleCount { get; set; } = 0;
         #endregion
 
         #region multiModels
@@ -55,7 +55,10 @@ namespace UFEDLib
         {
             foreach (var field in fieldElements)
             {
-                switch (field.Attribute("name").Value)
+                var fieldName = ModelBase.GetAttributeValueOrLog(field, "name", debugAttributes);
+                if (fieldName == null) continue;
+
+                switch (fieldName)
                 {
                     case "CreationTime":
                         if (field.Value.Trim() != "")
@@ -140,7 +143,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("ActivitySensorData Parser: Unknown field: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("ActivitySensorData Parser: Unknown field: " + fieldName);
                         }
                         break;
                 }

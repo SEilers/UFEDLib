@@ -18,10 +18,10 @@ namespace UFEDLib
         #region fields
         public DateTime DateSampled { get; set; }
         public DateTime DateEnded { get; set; }
-        public double Quantity { get; set; }
-        public string ServiceIdentifier { get; set; }
-        public string Source { get; set; }
-        public string UserMapping { get; set; }
+        public double Quantity { get; set; } = 0;
+        public string ServiceIdentifier { get; set; } = "";
+        public string Source { get; set; } = "";
+        public string UserMapping { get; set; } = "";
         #endregion
 
         #region parsers
@@ -41,7 +41,10 @@ namespace UFEDLib
 
             foreach (var field in fieldElements)
             {
-                switch (field.Attribute("name").Value)
+                var fieldName = ModelBase.GetAttributeValueOrLog(field, "name", debugAttributes);
+                if (fieldName == null) continue;
+
+                switch (fieldName)
                 {
                     case "DateSampled":
                         if(DateTime.TryParse(field.Value.Trim(), out DateTime dateSampled))
@@ -79,7 +82,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("ActivitySensorDataSample Parser: Unknown field: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("ActivitySensorDataSample Parser: Unknown field: " + fieldName);
                         }
                         break;
                 }

@@ -17,17 +17,17 @@ namespace UFEDLib
         }
 
         #region fields
-        public string Account { get; set; }
-        public string ArtifactFamily { get; set; }
-        public string CanRebuildCacheFile { get; set; }
-        public DateTime LastVisited { get; set; }
-        public string ServiceIdentifier { get; set; }
-        public string Source { get; set; }
-        public string Title { get; set; }
-        public string Url { get; set; }
-        public string UrlCacheFile { get; set; }
-        public string UserMapping { get; set; }
-        public int VisitCount { get; set; }
+        public string Account { get; set; } = "";
+        public string ArtifactFamily { get; set; } = "";
+        public string CanRebuildCacheFile { get; set; } = "";
+        public DateTime LastVisited { get; set; } = DateTime.MinValue;
+        public string ServiceIdentifier { get; set; } = "";
+        public string Source { get; set; } = "";
+        public string Title { get; set; } = "";
+        public string Url { get; set; } = "";
+        public string UrlCacheFile { get; set; } = "";
+        public string UserMapping { get; set; } = "";
+        public int VisitCount { get; set; } = 0;
         #endregion
 
         #region Parsers
@@ -45,7 +45,10 @@ namespace UFEDLib
         {
             foreach (XElement field in fieldElements)
             {
-                switch (field.Attribute("name").Value)
+                var fieldName = ModelBase.GetAttributeValueOrLog(field, "name", debugAttributes);
+                if (fieldName == null) continue;
+
+                switch (fieldName)
                 {
                     case "Account":
                         result.Account = field.Value.Trim();
@@ -97,7 +100,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("VisitedPage Parser: Unknown field: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("VisitedPage Parser: Unknown field: " + fieldName);
                         }
                         break;
                 }

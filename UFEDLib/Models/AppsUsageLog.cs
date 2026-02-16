@@ -16,15 +16,15 @@ namespace UFEDLib
         }
 
         #region fields
-        public string Action { get; set; }
-        public string ArtifactFamily { get; set; }
-        public DateTime EndTime { get; set; }
-        public string Identifier { get; set; }
-        public string ServiceIdentifier { get; set; }
-        public DateTime StartTime { get; set; }
-        public string Source { get; set; }
-        public string SubModule { get; set; }
-        public string UserMapping { get; set; }
+        public string Action { get; set; } = "";
+        public string ArtifactFamily { get; set; } = "";
+        public DateTime EndTime { get; set; } = DateTime.MinValue;
+        public string Identifier { get; set; } = "";
+        public string ServiceIdentifier { get; set; } = "";
+        public DateTime StartTime { get; set; } = DateTime.MinValue;
+        public string Source { get; set; } = "";
+        public string SubModule { get; set; } = "";
+        public string UserMapping { get; set; } = "";
         #endregion
 
         #region multiField
@@ -46,7 +46,10 @@ namespace UFEDLib
         {
             foreach (var field in fieldElements)
             {
-                switch (field.Attribute("name").Value)
+                var fieldName = ModelBase.GetAttributeValueOrLog(field, "name", debugAttributes);
+                if (fieldName == null) continue;
+
+                switch (fieldName)
                 {
                     case "Action":
                         result.Action = field.Value.Trim();
@@ -89,7 +92,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("AppsUsageLog Parser: Unknown field: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("AppsUsageLog Parser: Unknown field: " + fieldName);
                         }
                         break;
                 }

@@ -16,17 +16,17 @@ namespace UFEDLib
         }
 
         #region fields
-        public string BID { get; set; }
-        public string CID { get; set; }
-        public string LAC { get; set; }
-        public string MCC { get; set; }
-        public string MNC { get; set; }
-        public string NID { get; set; }
-        public string Package { get; set; }
-        public string SID { get; set; }
-        public DateTime TimeStamp { get; set; }
-        public string Type { get; set; }
-        public string UserMapping { get; set; }
+        public string BID { get; set; } = "";
+        public string CID { get; set; } = "";
+        public string LAC { get; set; } = "";
+        public string MCC { get; set; } = "";
+        public string MNC { get; set; } = "";
+        public string NID { get; set; } = "";
+        public string Package { get; set; } = "";
+        public string SID { get; set; } = "";
+        public DateTime TimeStamp { get; set; } = DateTime.MinValue;
+        public string Type { get; set; } = "";
+        public string UserMapping { get; set; } = "";
         #endregion
 
         #region models
@@ -48,7 +48,10 @@ namespace UFEDLib
         {
             foreach (var field in fieldElements)
             {
-                switch (field.Attribute("name").Value)
+                var fieldName = ModelBase.GetAttributeValueOrLog(field, "name", debugAttributes);
+                if (fieldName == null) continue;
+
+                switch (fieldName)
                 {
                     case "BID":
                         result.BID = field.Value.Trim();
@@ -98,7 +101,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("CellTower Parser: Unknown field: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("CellTower Parser: Unknown field: " + fieldName);
                         }
                         break;
                 }

@@ -16,14 +16,14 @@ namespace UFEDLib
         }
 
         #region fields
-        public double AverageValue { get; set; }
-        public string DeviceName { get; set; }
-        public double MaximumValue { get; set; }
-        public string MeasuredVariableType { get; set; }
-        public string Source { get; set; }
-        public double TotalValue { get; set; }
-        public string Unit { get; set; }
-        public string UserMapping { get; set; }
+        public double AverageValue { get; set; } = 0;
+        public string DeviceName { get; set; } = "";
+        public double MaximumValue { get; set; } = 0;
+        public string MeasuredVariableType { get; set; } = "";
+        public string Source { get; set; } = "";    
+        public double TotalValue { get; set; } = 0;
+        public string Unit { get; set; } = "";
+        public string UserMapping { get; set; } = "";
         #endregion
 
         #region multiModels
@@ -46,7 +46,10 @@ namespace UFEDLib
 
             foreach (var field in fieldElements)
             {
-                switch (field.Attribute("name").Value)
+                var fieldName = ModelBase.GetAttributeValueOrLog(field, "name", debugAttributes);
+                if (fieldName == null) continue;
+
+                switch (fieldName)
                 {
                     case "AverageValue":
                         if (double.TryParse(field.Value.Trim(), out double averageValue))
@@ -92,7 +95,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("ActivitySensorDataMeasurement Parser: Unknown field: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("ActivitySensorDataMeasurement Parser: Unknown field: " + fieldName);
                         }
                         break;
                 }

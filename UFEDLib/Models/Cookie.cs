@@ -16,17 +16,17 @@ namespace UFEDLib
         }
 
         #region fields
-        public DateTime CreationTime { get; set; }
-        public string Domain { get; set; }
-        public DateTime Expiry { get; set; }
-        public DateTime LastAccessTime { get; set; }
-        public string Name { get; set; }
-        public string Path { get; set; }
-        public string RelatedApplication { get; set; }
-        public string ServiceIdentifier { get; set; }
-        public string Source { get; set; }
-        public string UserMapping { get; set; }
-        public string Value { get; set; }
+        public DateTime CreationTime { get; set; } = DateTime.MinValue;
+        public string Domain { get; set; } = "";
+        public DateTime Expiry { get; set; } = DateTime.MinValue;
+        public DateTime LastAccessTime { get; set; } = DateTime.MinValue;
+        public string Name { get; set; } = "";
+        public string Path { get; set; } = "";
+        public string RelatedApplication { get; set; } = "";
+        public string ServiceIdentifier { get; set; } = "";
+        public string Source { get; set; } = "";
+        public string UserMapping { get; set; } = "";
+        public string Value { get; set; } = "";
         #endregion
 
 
@@ -45,9 +45,12 @@ namespace UFEDLib
         {
             foreach (var field in fieldElements)
             {
+                var fieldName = ModelBase.GetAttributeValueOrLog(field, "name", debugAttributes);
+                if (fieldName == null) continue;
+
                 try
                 {
-                    switch (field.Attribute("name").Value)
+                    switch (fieldName)
                     {
                         case "CreationTime":
                             if (field.Value.Trim() != "")
@@ -108,14 +111,14 @@ namespace UFEDLib
                         default:
                             if (debugAttributes)
                             {
-                                Logger.LogAttribute("Cookie Parser: Unknown field: " + field.Attribute("name").Value);
+                                Logger.LogAttribute("Cookie Parser: Unknown field: " + fieldName);
                             }
                             break;
                     }
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Error parsing field: " + field.Attribute("name").Value + " - " + ex.Message);
+                    Console.WriteLine("Error parsing field: " + fieldName + " - " + ex.Message);
                 }
             }
         }

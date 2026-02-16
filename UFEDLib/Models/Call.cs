@@ -18,20 +18,20 @@ namespace UFEDLib
         }
 
         #region fields
-        public string Account { get; set; }
-        public string CountryCode { get; set; }
-        public string Direction { get; set; }
-        public string DisconnectionCause { get; set; }
-        public TimeSpan Duration { get; set; }
-        public string NetworkCode { get; set; }
-        public string NetworkName { get; set; }
-        public string ServiceIdentifier { get; set; }
-        public string Source { get; set; }
-        public string Status { get; set; }
-        public DateTime TimeStamp { get; set; }
-        public string Type { get; set; }
-        public string UserMapping { get; set; }
-        public string VideoCall { get; set; }
+        public string Account { get; set; } = "";
+        public string CountryCode { get; set; } = "";
+        public string Direction { get; set; } = "";
+        public string DisconnectionCause { get; set; } = "";
+        public TimeSpan Duration { get; set; } = TimeSpan.Zero;
+        public string NetworkCode { get; set; } = "";   
+        public string NetworkName { get; set; } = "";
+        public string ServiceIdentifier { get; set; } = "";
+        public string Source { get; set; } = "";
+        public string Status { get; set; } = "";
+        public DateTime TimeStamp { get; set; } = DateTime.MinValue;
+        public string Type { get; set; } = "";
+        public string UserMapping { get; set; } = "";
+        public string VideoCall { get; set; } = "";
         #endregion
 
         #region multiModels
@@ -58,7 +58,10 @@ namespace UFEDLib
         {
             foreach (var field in fieldElements)
             {
-                switch (field.Attribute("name").Value)
+                var fieldName = ModelBase.GetAttributeValueOrLog(field, "name", debugAttributes);
+                if (fieldName == null) continue;
+
+                switch (fieldName)
                 {
                     case "Account":
                         result.Account = field.Value.Trim();
@@ -121,7 +124,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("Call Parser: Unknown field: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("Call Parser: Unknown field: " + fieldName);
                         }
                         break;
 

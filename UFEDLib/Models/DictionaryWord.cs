@@ -17,12 +17,12 @@ namespace UFEDLib
         }
 
         #region fields
-        public int Frequency { get; set; }
-        public string Locale { get; set; }
-        public string Source { get; set; }
-        public string UserMapping { get; set; }
-        public string UsagePattern { get; set; }
-        public string Word { get; set; }
+        public int Frequency { get; set; } = 0;
+        public string Locale { get; set; } = "";
+        public string Source { get; set; } = "";
+        public string UserMapping { get; set; } = "";
+        public string UsagePattern { get; set; } = "";
+        public string Word { get; set; } = "";
         #endregion
 
         #region Parsers
@@ -40,7 +40,10 @@ namespace UFEDLib
         {
             foreach (var field in fieldElements)
             {
-                switch (field.Attribute("name").Value)
+                var fieldName = ModelBase.GetAttributeValueOrLog(field, "name", debugAttributes);
+                if (fieldName == null) continue;
+
+                switch (fieldName)
                 {
                     case "Frequency":
                         if (field.Value.Trim() != "")
@@ -73,7 +76,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("DictionaryWord Parser: Unknown field: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("DictionaryWord Parser: Unknown field: " + fieldName);
                         }
                         break;
                 }

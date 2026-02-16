@@ -16,16 +16,16 @@ namespace UFEDLib
         }
 
         #region fields
-        public DateTime LastVisited { get; set; }
-        public string Path { get; set; }
-        public string PositionAddress { get; set; }
-        public string ServiceIdentifier { get; set; }
-        public string Source { get; set; }
-        public DateTime TimeStamp { get; set; }
-        public string Title { get; set; }
-        public string Url { get; set; }
-        public string UserMapping { get; set; }
-        public int VisitCount { get; set; }
+        public DateTime LastVisited { get; set; } = DateTime.MinValue;
+        public string Path { get; set; } = "";
+        public string PositionAddress { get; set; } = "";
+        public string ServiceIdentifier { get; set; } = "";
+        public string Source { get; set; } = "";
+        public DateTime TimeStamp { get; set; } = DateTime.MinValue;
+        public string Title { get; set; } = "";
+        public string Url { get; set; } = "";
+        public string UserMapping { get; set; } = "";
+        public int VisitCount { get; set; } = 0;
         #endregion
 
         #region models
@@ -47,7 +47,10 @@ namespace UFEDLib
         {
             foreach (var field in fieldElements)
             {
-                switch (field.Attribute("name").Value)
+                var fieldName = ModelBase.GetAttributeValueOrLog(field, "name", debugAttributes);
+                if (fieldName == null) continue;
+
+                switch (fieldName)
                 {
 
                     case "LastVisited":
@@ -99,7 +102,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("WebBookmark Parser: Unknown field: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("WebBookmark Parser: Unknown field: " + fieldName);
                         }
                         break;
                 }

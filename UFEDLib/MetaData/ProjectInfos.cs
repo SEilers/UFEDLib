@@ -24,9 +24,9 @@ namespace UFEDLib
         public string MediaResults { get; set; } = "";
         public string xmlns { get; set; } = "";
 
-        public static ProjectInfos Parse(string fileName)
+        public static ProjectInfos? Parse(string fileName)
         {
-            ProjectInfos projectInfos = null;
+            ProjectInfos? projectInfos = null;
 
             if (fileName.EndsWith(".ufdr", StringComparison.OrdinalIgnoreCase))
             {
@@ -62,7 +62,7 @@ namespace UFEDLib
             return projectInfos;
         }
 
-        public static ProjectInfos ParseProjectInfos(Stream stream)
+        public static ProjectInfos? ParseProjectInfos(Stream stream)
         {
             ProjectInfos result = new ProjectInfos();
 
@@ -78,17 +78,16 @@ namespace UFEDLib
                         {
                             if (reader.Depth == 0 && reader.Name == "project" && reader.IsStartElement())
                             {
-                                result.projectId = reader.GetAttribute("id");
-                                result.name = reader.GetAttribute("name");
-                                result.reportVersion = reader.GetAttribute("reportVersion");
-                                result.licenseId = reader.GetAttribute("licenseID");
-                                result.containsGarbage = reader.GetAttribute("containsGarbage");
-                                result.extractionType = reader.GetAttribute("extractionType");
-                                result.ProjectNodeCount = reader.GetAttribute("NodeCount");
-                                result.ProjectModelCount = reader.GetAttribute("ModelCount");
-                                result.MediaResults = reader.GetAttribute("MediaResults");
-                                result.xmlns = reader.GetAttribute("xmlns");
-
+                                result.projectId = reader.GetAttribute("id") ?? "";
+                                result.name = reader.GetAttribute("name") ?? "";
+                                result.reportVersion = reader.GetAttribute("reportVersion") ?? "";
+                                result.licenseId = reader.GetAttribute("licenseID") ?? "";
+                                result.containsGarbage = reader.GetAttribute("containsGarbage") ?? "";
+                                result.extractionType = reader.GetAttribute("extractionType") ?? "";
+                                result.ProjectNodeCount = reader.GetAttribute("NodeCount") ?? "";
+                                result.ProjectModelCount = reader.GetAttribute("ModelCount") ?? "";
+                                result.MediaResults = reader.GetAttribute("MediaResults") ?? "";
+                                result.xmlns = reader.GetAttribute("xmlns") ?? "";
                                 extracted = true;
                             }
 

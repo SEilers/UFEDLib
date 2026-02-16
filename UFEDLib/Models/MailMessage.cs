@@ -11,11 +11,11 @@ namespace UFEDLib
     {
 
         #region fields
-        public string Body { get; set; }
-        public string Folder { get; set; }
-        public string Source { get; set; }
-        public string Subject { get; set; }
-        public DateTime TimeStamp { get; set; }
+        public string Body { get; set; } = "";
+        public string Folder { get; set; } = "";
+        public string Source { get; set; } = "";
+        public string Subject { get; set; } = "";
+        public DateTime TimeStamp { get; set; } = DateTime.MinValue;
         // public MessageStatus 
         #endregion
 

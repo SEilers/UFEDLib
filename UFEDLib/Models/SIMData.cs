@@ -16,11 +16,11 @@ namespace UFEDLib
         }
 
         #region fields
-        public string Category { get; set; }
-        public string Name { get; set; }
-        public string Source { get; set; }
-        public string UserMapping { get; set; }
-        public string Value { get; set; }
+        public string Category { get; set; } = "";
+        public string Name { get; set; } = "";
+        public string Source { get; set; } = "";
+        public string UserMapping { get; set; } = "";
+        public string Value { get; set; } = "";
         #endregion
 
         #region parsers
@@ -38,7 +38,10 @@ namespace UFEDLib
         {
             foreach (var field in fieldElements)
             {
-                switch (field.Attribute("name").Value)
+                var fieldName = ModelBase.GetAttributeValueOrLog(field, "name", debugAttributes);
+                if (fieldName == null) continue;
+
+                switch (fieldName)
                 {
                     case "Category":
                         result.Category = field.Value.Trim();
@@ -63,7 +66,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("SIMData Parser: Unknown field: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("SIMData Parser: Unknown field: " + fieldName);
                         }
                         break;
                 }

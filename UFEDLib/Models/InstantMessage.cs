@@ -18,39 +18,39 @@ namespace UFEDLib
         }
 
         #region fields
-        public string Body { get; set; }
-        public string ChatId { get; set; }
-        public DateTime DateDeleted { get; set; }
-        public DateTime DateDelivered { get; set; }
-        public DateTime DateRead { get; set; }
-        public string DeletionReason { get; set; }
-        public string Erased { get; set; }
-        public string Folder { get; set; }
-        public string FromIsOwner { get; set; }
-        public string Id { get; set; }
-        public string Identifier { get; set; }
-        public string IsLocationSharing { get; set; }
-        public string JumpTargetId { get; set; }
-        public string Label { get; set; }
-        public string Platform { get; set; }
-        public string PositionAddress { get; set; }
-        public string Priority { get; set; }
-        public TimeSpan SelfDestructDuration { get; set; }
-        public string ServiceIdentifier { get; set; }
-        public string SMSC { get; set; }
-        public string Source { get; set; }
-        public string SourceApplication { get; set; }
-        public string Status { get; set; }
-        public string Subject { get; set; }
-        public DateTime TimeStamp { get; set; }
-        public string Type { get; set; }
-        public string UserMapping { get; set; }
+        public string Body { get; set; } = "";
+        public string ChatId { get; set; } = "";
+        public DateTime DateDeleted { get; set; } = DateTime.MinValue;
+        public DateTime DateDelivered { get; set; } = DateTime.MinValue;
+        public DateTime DateRead { get; set; } = DateTime.MinValue;
+        public string DeletionReason { get; set; } = "";
+        public string Erased { get; set; } = "";
+        public string Folder { get; set; } = "";
+        public string FromIsOwner { get; set; } = "";
+        public string Id { get; set; } = "";
+        public string Identifier { get; set; } = "";
+        public string IsLocationSharing { get; set; } = "";
+        public string JumpTargetId { get; set; } = "";
+        public string Label { get; set; } = "";
+        public string Platform { get; set; } = "";
+        public string PositionAddress { get; set; } = "";
+        public string Priority { get; set; } = "";
+        public TimeSpan SelfDestructDuration { get; set; } = TimeSpan.Zero;
+        public string ServiceIdentifier { get; set; } = "";
+        public string SMSC { get; set; } = "";
+        public string Source { get; set; } = "";
+        public string SourceApplication { get; set; } = "";
+        public string Status { get; set; } = "";
+        public string Subject { get; set; } = "";
+        public DateTime TimeStamp { get; set; } = DateTime.MinValue;
+        public string Type { get; set; } = "";
+        public string UserMapping { get; set; } = "";
         #endregion
 
         #region models
-        public Attachment Attachment { get; set; }
-        public Party From { get; set; }
-        public Coordinate Position { get; set; }
+        public Attachment? Attachment { get; set; }
+        public Party? From { get; set; }
+        public Coordinate? Position { get; set; }
         #endregion
 
         #region multiModels
@@ -80,7 +80,10 @@ namespace UFEDLib
         {
             foreach (XElement field in fieldElements)
             {
-                switch (field.Attribute("name").Value)
+                var fieldName = ModelBase.GetAttributeValueOrLog(field, "name", debugAttributes);
+                if (fieldName == null) continue;
+
+                switch (fieldName)
                 {
                     case "Body":
                         result.Body = field.Value.Trim();
@@ -194,7 +197,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("InstantMessage Parser: Unknown field: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("InstantMessage Parser: Unknown field: " + fieldName);
                         }
                         break;
                 }

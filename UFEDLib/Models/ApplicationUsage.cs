@@ -17,19 +17,19 @@ namespace UFEDLib
         }
 
         #region fields
-        public int ActivationCount { get; set; }
-        public TimeSpan ActiveTime { get; set; }
-        public TimeSpan BackgroundTime { get; set; }
-        public DateTime Date { get; set; }
-        public DateTime EndTime { get; set; }
-        public string Identifier { get; set; }
-        public DateTime LastLaunch { get; set; }
-        public TimeSpan LastUsageDuration { get; set; }
-        public int LaunchCount { get; set; }
-        public string Name { get; set; }
-        public DateTime StartTime { get; set; }
-        public string Source { get; set; }
-        public string UserMapping { get; set; }
+        public int ActivationCount { get; set; } = 0;
+        public TimeSpan ActiveTime { get; set; } = TimeSpan.Zero;
+        public TimeSpan BackgroundTime { get; set; } = TimeSpan.Zero;
+        public DateTime Date { get; set; } = DateTime.MinValue;
+        public DateTime EndTime { get; set; } = DateTime.MinValue;
+        public string Identifier { get; set; } = "";
+        public DateTime LastLaunch { get; set; } = DateTime.MinValue;
+        public TimeSpan LastUsageDuration { get; set; } = TimeSpan.Zero;
+        public int LaunchCount { get; set; } = 0;
+        public string Name { get; set; } = "";
+        public DateTime StartTime { get; set; } = DateTime.MinValue;
+        public string Source { get; set; } = "";
+        public string UserMapping { get; set; } = "";
         #endregion
 
         #region Parsers
@@ -47,7 +47,10 @@ namespace UFEDLib
         {
             foreach (var field in fieldElements)
             {
-                switch (field.Attribute("name").Value)
+                var fieldName = ModelBase.GetAttributeValueOrLog(field, "name", debugAttributes);
+                if (fieldName == null) continue;
+
+                switch (fieldName)
                 {
                     case "ActivationCount":
                         if (field.Value.Trim() != "")
@@ -119,7 +122,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("ApplicationUsage Parser: Unknown field: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("ApplicationUsage Parser: Unknown field: " + fieldName);
                         }
                         break;
                 }

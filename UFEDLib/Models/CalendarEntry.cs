@@ -16,32 +16,33 @@ namespace UFEDLib
         }
 
         #region fields
-        public string Account { get; set; }
-        public string Availability { get; set; }
-        public string Category { get; set; }
-        public string Class { get; set; }
-        public string Details { get; set; }
-        public DateTime EndDate { get; set; }
-        public string Location { get; set; }
-        public string Priority { get; set; }
-        public DateTime Reminder { get; set; }
-        public string RepeatDay { get; set; }
-        public int RepeatInterval { get; set; }
-        public string RepeatRule { get; set; }
-        public DateTime RepeatUntil { get; set; }
-        public DateTime StartDate { get; set; }
-        public string Status { get; set; }
-        public string Source { get; set; }
-        public string Subject { get; set; }
-        public string UserMapping { get; set; }
+        public string Account { get; set; } = "";
+        public string Availability { get; set; } = "";
+        public string Category { get; set; } = "";
+        public string Class { get; set; } = "";
+        public string Details { get; set; } = "";
+        public DateTime EndDate { get; set; } = DateTime.MinValue;
+        public string Location { get; set; } = "";
+        public string Priority { get; set; } = "";
+        public DateTime Reminder { get; set; } = DateTime.MinValue;
+        public string RepeatDay { get; set; } = "";
+        public int RepeatInterval { get; set; } = 0;
+        public string RepeatRule { get; set; } = "";
+        public DateTime RepeatUntil { get; set; } = DateTime.MinValue;
+        public DateTime StartDate { get; set; } = DateTime.MinValue;
+        public string Status { get; set; } = "";
+        public string Source { get; set; } = "";
+        public string Subject { get; set; } = "";
+        public string UserMapping { get; set; } = "";
         #endregion
 
         #region models
         #endregion
 
         #region multiModels
-        public List<Attachment> Attachments { get;set; }
-        public List<Party> Attendees { get; set; }
+        public List<Attachment> Attachments { get;set; } = [];
+
+        public List<Party> Attendees { get; set; } = [];
         #endregion
 
 
@@ -62,7 +63,10 @@ namespace UFEDLib
         {
             foreach (var field in fieldElements)
             {
-                switch (field.Attribute("name").Value)
+                var fieldName = ModelBase.GetAttributeValueOrLog(field, "name", debugAttributes);
+                if (fieldName == null) continue;
+
+                switch (fieldName)
                 {
                     case "Account":
                         result.Account = field.Value.Trim();
@@ -145,7 +149,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("CalendarEntry Parser: Unknown field: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("CalendarEntry Parser: Unknown field: " + fieldName);
                         }
                         break;
                 }

@@ -16,8 +16,8 @@ namespace UFEDLib
         }
 
         #region fields
-        public double Amount { get; set; }
-        public string Currency { get; set; }
+        public double Amount { get; set; } = 0.0;
+        public string Currency { get; set; } = "";
         #endregion
 
         #region parsers
@@ -35,7 +35,10 @@ namespace UFEDLib
         {
             foreach (var field in fieldElements)
             {
-                switch (field.Attribute("name").Value)
+                var fieldName = ModelBase.GetAttributeValueOrLog(field, "name", debugAttributes);
+                if (fieldName == null) continue;
+
+                switch (fieldName)
                 {
                     case "Amount":
                         if (double.TryParse(field.Value, out double amount))
@@ -51,7 +54,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("Price Parser: Unknown field: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("Price Parser: Unknown field: " + fieldName);
                         }
                         break;
                 }

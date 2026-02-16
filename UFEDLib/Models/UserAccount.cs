@@ -18,23 +18,23 @@ namespace UFEDLib
 
 
         #region fields
-        public string Id { get; set; }
-        public string Name { get; set; }
-        public string Password { get; set; }
-        public string ServerAddress { get; set; }
-        public string ServiceIdentifier { get; set; }
+        public string Id { get; set; } = "";
+        public string Name { get; set; } = "";
+        public string Password { get; set; } = "";
+        public string ServerAddress { get; set; } = "";
+        public string ServiceIdentifier { get; set; } = "";
         /// <summary>
         /// The app or service from which the account was extracted.
         /// </summary>
-        public string ServiceType { get; set; }
-        public string Source { get; set; }
-        public DateTime TimeCreated { get; set; }
-        public string UserMapping { get; set; }
-        public string Username { get; set; }
+        public string ServiceType { get; set; } = "";
+        public string Source { get; set; } = "";
+        public DateTime TimeCreated { get; set; } = DateTime.MinValue;
+        public string UserMapping { get; set; } = "";
+        public string Username { get; set; } = "";
         #endregion
 
         #region multiFields
-        public List<string> Notes { get; set; }
+        public List<string> Notes { get; set; } = new List<string>();
         #endregion
 
         #region models
@@ -78,7 +78,10 @@ namespace UFEDLib
         {
             foreach (var field in fieldElements)
             {
-                switch (field.Attribute("name").Value)
+                var fieldName = ModelBase.GetAttributeValueOrLog(field, "name", debugAttributes);
+                if (fieldName == null) continue;
+
+                switch (fieldName)
                 {
                     case "Id":
                         result.Id = field.Value.Trim();
@@ -124,7 +127,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("UserAccount Parser: Unknown field: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("UserAccount Parser: Unknown field: " + fieldName);
                         }
                         break;
                 }

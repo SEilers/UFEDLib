@@ -17,27 +17,27 @@ namespace UFEDLib
         }
 
         #region fields
-        public string Account { get; set; }
-        public string AccountLocationAffiliation { get; set; }
-        public int AggregatedLocationsCount { get; set; }
-        public string Category { get; set; }
-        public string Confidence { get; set; }
-        public string Description { get; set; }
-        public string DeviceLocationAffiliation { get; set; }
-        public DateTime EndTime { get; set; }
-        public double GpsHorizontalAccuracy { get; set; }
-        public string LocationOrigin { get; set; }
-        public string Map { get; set; }
-        public string Name { get; set; }
-        public string Origin { get; set; }
-        public string PositionAddress { get; set; }
-        public string Precision { get; set; }
-        public string ServiceIdentifier { get; set; }
-        public string ServiceName { get; set; }
-        public string Source { get; set; }
-        public DateTime TimeStamp { get; set; }
-        public string Type { get; set; }
-        public string UserMapping { get; set; }
+        public string Account { get; set; } = "";
+        public string AccountLocationAffiliation { get; set; } = "";
+        public int AggregatedLocationsCount { get; set; } = 0;
+        public string Category { get; set; } = "";
+        public string Confidence { get; set; } = "";
+        public string Description { get; set; } = "";
+        public string DeviceLocationAffiliation { get; set; } = "";
+        public DateTime EndTime { get; set; } = DateTime.MinValue;
+        public double GpsHorizontalAccuracy { get; set; } = 0.0;
+        public string LocationOrigin { get; set; } = "";
+        public string Map { get; set; } = "";
+        public string Name { get; set; } = "";
+        public string Origin { get; set; } = "";
+        public string PositionAddress { get; set; } = "";
+        public string Precision { get; set; } = "";
+        public string ServiceIdentifier { get; set; } = "";
+        public string ServiceName { get; set; } = "";
+        public string Source { get; set; } = "";
+        public DateTime TimeStamp { get; set; } = DateTime.MinValue;
+        public string Type { get; set; } = "";
+        public string UserMapping { get; set; } = "";
         #endregion
 
         #region models
@@ -64,7 +64,10 @@ namespace UFEDLib
         {
             foreach (var field in fieldElements)
             {
-                switch (field.Attribute("name").Value)
+                var fieldName = ModelBase.GetAttributeValueOrLog(field, "name", debugAttributes);
+                if (fieldName == null) continue;
+
+                switch (fieldName)
                 {
                     case "Account":
                         result.Account = field.Value.Trim();
@@ -161,7 +164,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("Location Parser: Unknown field: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("Location Parser: Unknown field: " + fieldName);
                         }
                         break;
                 }

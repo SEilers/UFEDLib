@@ -19,12 +19,12 @@ namespace UFEDLib
         /// <summary>
         /// Oragnization name.
         /// </summary>
-        public string Name { get; set; }
+        public string Name { get; set; } = "";
 
         /// <summary>
         /// Contact’s position in the organization
         /// </summary>
-        public string Position { get; set; }
+        public string Position { get; set; } = "";
         #endregion
 
         #region models
@@ -49,7 +49,10 @@ namespace UFEDLib
         {
             foreach (var field in fieldElements)
             {
-                switch (field.Attribute("name").Value)
+                var fieldName = ModelBase.GetAttributeValueOrLog(field, "name", debugAttributes);
+                if (fieldName == null) continue;
+
+                switch (fieldName)
                 {
                     case "Name":
                         result.Name = field.Value.Trim();
@@ -62,7 +65,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("Organization Parser: Unknown field: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("Organization Parser: Unknown field: " + fieldName);
                         }
                         break;
                 }

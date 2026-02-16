@@ -16,12 +16,12 @@ namespace UFEDLib
         }
 
         #region fields
-        public string EntryCategory { get; set; }
-        public string EntryName { get; set; }
-        public string EntryValue { get; set; }
-        public string Source { get; set; }
-        public DateTime TimeStamp { get; set; }
-        public string UserMapping { get; set; }
+        public string EntryCategory { get; set; } = "";
+        public string EntryName { get; set; } = "";
+        public string EntryValue { get; set; } = "";
+        public string Source { get; set; } = "";
+        public DateTime TimeStamp { get; set; } = DateTime.MinValue;
+        public string UserMapping { get; set; } = "";
         #endregion
 
         #region Parsers
@@ -39,7 +39,10 @@ namespace UFEDLib
         {
             foreach (var field in fieldElements)
             {
-                switch (field.Attribute("name").Value)
+                var fieldName = ModelBase.GetAttributeValueOrLog(field, "name", debugAttributes);
+                if (fieldName == null) continue;
+
+                switch (fieldName)
                 {
                     case "EntryCategory":
                         result.EntryCategory = field.Value.Trim();
@@ -69,7 +72,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("DeviceInfoEntry Parser: Unknown field: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("DeviceInfoEntry Parser: Unknown field: " + fieldName);
                         }
                         break;
                 }

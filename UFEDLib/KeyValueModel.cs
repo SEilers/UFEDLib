@@ -15,9 +15,9 @@ namespace UFEDLib
         }
 
         #region fields
-        public string Key { get; set; }
-        public string UserMapping { get; set; }
-        public string Value { get; set; }
+        public string? Key { get; set; }
+        public string? UserMapping { get; set; }
+        public string? Value { get; set; }
         #endregion
 
         #region parsers

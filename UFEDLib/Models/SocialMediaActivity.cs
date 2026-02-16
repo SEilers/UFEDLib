@@ -16,30 +16,30 @@ namespace UFEDLib
         }
 
         #region fields
-        public string Account { get; set; }
-        public string Body { get; set; }
-        public string ChannelName { get; set; }
-        public string ChannelType { get; set; }
+        public string Account { get; set; } = "";
+        public string Body { get; set; } = "";
+        public string ChannelName { get; set; } = "";
+        public string ChannelType { get; set; } = "";
         public int CommentCount { get; set; }
         public DateTime DateModified { get; set; }
-        public string IsFromActivityLog { get; set; }
-        public string OriginalPostId { get; set; }
-        public string Platform { get; set; }
-        public string PrivacySetting { get; set; }
+        public string IsFromActivityLog { get; set; } = "";
+        public string OriginalPostId { get; set; } = "";
+        public string Platform { get; set; } = "";
+        public string PrivacySetting { get; set; } = "";
         public int ReactionsCount { get; set; }
-        public string ServiceIdentifier { get; set; }
+        public string ServiceIdentifier { get; set; } = "";
         public int SharesCount { get; set; }
-        public string SocialActivityType { get; set; }
-        public string Source { get; set; }
-        public string Status { get; set; }
+        public string SocialActivityType { get; set; } = "";
+        public string Source { get; set; } = "";
+        public string Status { get; set; } = "";
         public DateTime TimeStamp { get; set; }
-        public string Title { get; set; }
-        public string Url { get; set; }
-        public string UserMapping { get; set; }
+        public string Title { get; set; } = "";
+        public string Url { get; set; } = "";
+        public string UserMapping { get; set; } = "";   
         #endregion
 
         #region models
-        public Party Author { get; set; }
+        public Party Author { get; set; } 
         public SocialMediaActivity ParentPost { get; set; }
         public Coordinate Position { get; set; }
         #endregion
@@ -64,7 +64,10 @@ namespace UFEDLib
         {
             foreach (var field in fieldElements)
             {
-                switch (field.Attribute("name").Value)
+                var fieldName = ModelBase.GetAttributeValueOrLog(field, "name", debugAttributes);
+                if (fieldName == null) continue;
+
+                switch (fieldName)
                 {
                     case "Account":
                         result.Account = field.Value.Trim();
@@ -160,7 +163,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("SocialMediaActivity Parser: Unknown field: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("SocialMediaActivity Parser: Unknown field: " + fieldName);
                         }
                         break;
                 }

@@ -17,15 +17,15 @@ namespace UFEDLib
         }
 
         #region fields
-        public DateTime ActivationTime { get; set; }
-        public string Description { get; set; }
-        public DateTime ExpirationTime { get; set; }
-        public DateTime ModifyTime { get; set; }
-        public string Name { get; set; }
-        public DateTime PurchaseTime { get; set; }
-        public string Source { get; set; }
-        public string Type { get; set; }
-        public string UserMapping { get; set; }
+        public DateTime ActivationTime { get; set; } = DateTime.MinValue;
+        public string Description { get; set; } = "";
+        public DateTime ExpirationTime { get; set; } = DateTime.MinValue;
+        public DateTime ModifyTime { get; set; } = DateTime.MinValue;
+        public string Name { get; set; } = "";
+        public DateTime PurchaseTime { get; set; } = DateTime.MinValue;
+        public string Source { get; set; } = "";
+        public string Type { get; set; } = "";
+        public string UserMapping { get; set; } = "";
         #endregion
 
         #region models
@@ -52,7 +52,10 @@ namespace UFEDLib
         {
             foreach (var field in fieldElements)
             {
-                switch (field.Attribute("name").Value)
+                var fieldName = ModelBase.GetAttributeValueOrLog(field, "name", debugAttributes);
+                if (fieldName == null) continue;
+
+                switch (fieldName)
                 {
                     case "ActivationTime":
                         if (field.Value.Trim() != "")
@@ -97,7 +100,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("MobileCard Parser: Unknown field: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("MobileCard Parser: Unknown field: " + fieldName);
                         }
                         break;
                 }

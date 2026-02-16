@@ -16,13 +16,13 @@ namespace UFEDLib
         }
 
         #region fields
-        public DateTime EndTime { get; set; }
-        public string EventType { get; set; }
-        public string ServiceIdentifier { get; set; }
-        public string Source { get; set; }
-        public DateTime StartTime { get; set; }
-        public string UserMapping { get; set; }
-        public string Value { get; set; }
+        public DateTime EndTime { get; set; } = DateTime.MinValue;
+        public string EventType { get; set; } = "";
+        public string ServiceIdentifier { get; set; } = "";
+        public string Source { get; set; } = "";
+        public DateTime StartTime { get; set; } = DateTime.MinValue;
+        public string UserMapping { get; set; } = "";
+        public string Value { get; set; } = "";
         #endregion
 
         #region multiModels
@@ -45,7 +45,10 @@ namespace UFEDLib
         {
             foreach (var field in fieldElements)
             {
-                switch (field.Attribute("name").Value)
+                var fieldName = ModelBase.GetAttributeValueOrLog(field, "name", debugAttributes);
+                if (fieldName == null) continue;
+
+                switch (fieldName)
                 {
                     case "EndTime":
                         if (field.Value.Trim() != "")
@@ -80,7 +83,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("DeviceEvent Parser: Unknown field: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("DeviceEvent Parser: Unknown field: " + fieldName);
                         }
                         break;
                 }

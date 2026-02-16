@@ -13,7 +13,7 @@ namespace UFEDLib
 {
     public class ModelParser
     {
-        public static List<T> ParseXMLReport<T>(string xmlReportFile, IProgress<int> progress = null, bool debugAttributes = false) where T : ModelBase, IUfedModelParser<T>, new()
+        public static List<T> ParseXMLReport<T>(string xmlReportFile, IProgress<int>? progress = null, bool debugAttributes = false) where T : ModelBase, IUfedModelParser<T>, new()
         {
             if(!File.Exists(xmlReportFile))
             {
@@ -26,70 +26,15 @@ namespace UFEDLib
 
             var results = new List<T>();
 
-
             try
             {
                 using (StreamReader sr = new StreamReader(xmlReportFile))
                 {
                     results = CoreParser<T>(sr, reportSize, progress, debugAttributes);
-
-                    //XmlReaderSettings xmlReaderSettings = new XmlReaderSettings
-                    //{
-                    //    CheckCharacters = false
-                    //};
-
-                    //long currentPosition = 0;
-                    //int lastPercent = 0;
-                    //bool modelFound = false;
-
-                    //using (XmlReader reader = XmlReader.Create(sr, xmlReaderSettings))
-                    //{
-                    //    while (reader.Read())
-                    //    {
-                    //        try
-                    //        {
-                    //            if (reader.Depth == 3 && reader.Name == "model" && reader.IsStartElement())
-                    //            {
-                    //                string modelType = reader.GetAttribute("type");
-                    //                if (modelType == T.GetXmlModelType())
-                    //                {
-                    //                    XElement element = XElement.Load(reader.ReadSubtree());
-                    //                    results.Add(T.ParseModel(element, debugAttributes));
-                    //                    modelFound = true;
-                    //                }
-                    //            }
-
-                    //            if (progress != null)
-                    //            {
-                    //                if (reportSize > 0)
-                    //                {
-                    //                    currentPosition = sr.BaseStream.Position;
-                    //                    int percent = (int)((double)currentPosition / reportSize * 100);
-                    //                    if (percent > lastPercent)
-                    //                    {
-                    //                        lastPercent = percent;
-                    //                        progress.Report(percent);
-                    //                    }
-                    //                }
-
-                    //                if (modelFound && reader.Depth == 2)
-                    //                {
-                    //                    progress.Report(100);
-                    //                    return results;
-                    //                }
-                    //            }
-                    //        }
-                    //        catch (Exception ex)
-                    //        {
-                    //            Console.WriteLine("Error parsing report.xml: " + ex.Message);
-                    //        }
-                    //    }
-                    //}
                 }
             }
             catch (Exception ex)
             {
-                //Console.WriteLine("Error parsing report.xml" +  ex.ToString());
                 throw new Exception("Error parsing report.xml: " + ex.Message, ex.InnerException);
             }
             finally
@@ -101,7 +46,7 @@ namespace UFEDLib
             return results;
         }
 
-        public static List<T> ParseUfdr<T>(string ufdrFileName, IProgress<int> progress = null, bool debugAttributes = false) where T : ModelBase, IUfedModelParser<T>, new()
+        public static List<T> ParseUfdr<T>(string ufdrFileName, IProgress<int>? progress = null, bool debugAttributes = false) where T : ModelBase, IUfedModelParser<T>, new()
         {
             var results = new List<T>();
 
@@ -122,7 +67,7 @@ namespace UFEDLib
                     if (report == null)
                     {
                         Console.WriteLine("report.xml not found in the ufdr file");
-                        return null;
+                        return results;
                     }
 
                     reportSize = report.Length;
@@ -132,68 +77,12 @@ namespace UFEDLib
                         using (StreamReader sr = new StreamReader(reportStream))
                         {
                             results = CoreParser<T>(sr, reportSize, progress, debugAttributes);
-
-
-                            //XmlReaderSettings xmlReaderSettings = new XmlReaderSettings
-                            //{
-                            //    CheckCharacters = false
-                            //};
-
-                            //long currentPosition = 0;
-                            //int lastPercent = 0;
-                            //bool modelFound = false;
-
-                            //using (XmlReader reader = XmlReader.Create(sr, xmlReaderSettings))
-                            //{
-                            //    while (reader.Read())
-                            //    {
-                            //        try
-                            //        {
-                            //            if (reader.Depth == 3 && reader.Name == "model" && reader.IsStartElement())
-                            //            {
-                            //                string modelType = reader.GetAttribute("type");
-
-                            //                if (modelType == T.GetXmlModelType())
-                            //                {
-                            //                    XElement element = XElement.Load(reader.ReadSubtree());
-                            //                    results.Add(T.ParseModel(element, debugAttributes));
-                            //                    modelFound = true;
-                            //                }
-                            //            }
-
-                            //            if (progress != null)
-                            //            {
-                            //                if (reportSize > 0)
-                            //                {
-                            //                    currentPosition = sr.BaseStream.Position;
-                            //                    int percent = (int)((double)currentPosition / reportSize * 100);
-                            //                    if (percent > lastPercent)
-                            //                    {
-                            //                        lastPercent = percent;
-                            //                        progress.Report(percent);
-                            //                    }
-                            //                }
-
-                            //                if (modelFound && reader.Depth == 2)
-                            //                {
-                            //                    progress.Report(100);
-                            //                    return results;
-                            //                }
-                            //            }
-                            //        }
-                            //        catch (Exception ex)
-                            //        {
-                            //            Console.WriteLine("Error parsing report.xml: " + ex.Message);
-                            //        }
-                            //    }
-                            //}
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-                //Console.WriteLine("Error parsing report.xml: " + ex.ToString());
                 throw new Exception("Error parsing report.xml: " + ex.Message, ex.InnerException);
             }
             finally
@@ -205,7 +94,7 @@ namespace UFEDLib
             return results;
         }
 
-        private static List<T> CoreParser<T>( StreamReader sr, long reportSize, IProgress<int> progress = null, bool debugAttributes = false) where T : ModelBase, IUfedModelParser<T>, new()
+        private static List<T> CoreParser<T>( StreamReader sr, long reportSize, IProgress<int>?progress = null, bool debugAttributes = false) where T : ModelBase, IUfedModelParser<T>, new()
         {
             var results = new List<T>();
 
@@ -258,7 +147,6 @@ namespace UFEDLib
                     }
                     catch (Exception ex)
                     {
-                        //Console.WriteLine("Error parsing report.xml: " + ex.Message);
                         throw new Exception("Error parsing report.xml: " + ex.Message, ex.InnerException);
                     }
                 }
@@ -268,7 +156,7 @@ namespace UFEDLib
     
         
         
-        public static List<string> ScanModels( string fileName, IProgress<int> progress = null)
+        public static List<string> ScanModels( string fileName, IProgress<int>? progress = null)
         {
             List<string> models = new List<string>();
             if (!File.Exists(fileName))

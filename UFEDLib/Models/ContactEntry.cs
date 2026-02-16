@@ -19,16 +19,16 @@ namespace UFEDLib
         /// <summary>
         /// Entry category (work, home etc).
         /// </summary>
-        public string Category { get; set; }
+        public string Category { get; set; } = "";
         /// <summary>
         /// Entry domain (phone number, email, web address etc)
         /// </summary>
-        public string Domain { get; set; }
-        public string UserMapping { get; set; }
+        public string Domain { get; set; } = "";
+        public string UserMapping { get; set; } = "";
         /// <summary>
         /// Entry value (phone number or email string).
         /// </summary>
-        public string Value { get; set; }
+        public string Value { get; set; } = "";
         #endregion
 
         #region Parsers
@@ -61,7 +61,10 @@ namespace UFEDLib
         {
             foreach (var field in fieldElements)
             {
-                switch (field.Attribute("name").Value)
+                var fieldName = ModelBase.GetAttributeValueOrLog(field, "name", debugAttributes);
+                if (fieldName == null) continue;
+
+                switch (fieldName)
                 {
                     case "Category":
                         result.Category = field.Value.Trim();
@@ -82,7 +85,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("ContactEntry Parser: Unknown attribute: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("ContactEntry Parser: Unknown attribute: " + fieldName);
                         }
                         break;
                 }

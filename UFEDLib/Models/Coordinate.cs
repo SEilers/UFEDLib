@@ -17,15 +17,15 @@ namespace UFEDLib
         }
 
         #region fields
-        public string Comment { get; set; }
-        public double Elevation { get; set; }
-        public double Latitude { get; set; }
-        public double Longitude { get; set; }
+        public string Comment { get; set; } = "";
+        public double Elevation { get; set; } = 0.0;
+        public double Latitude { get; set; } = 0.0;
+        public double Longitude { get; set; } = 0.0;
         /// <summary>
         /// Free text map to which the coordinate relates.
         /// </summary>
-        public string Map { get; set; }
-        public string PositionAddress { get; set; }
+        public string Map { get; set; } = "";
+        public string PositionAddress { get; set; } = "";
         #endregion
 
         #region Parsers
@@ -43,10 +43,12 @@ namespace UFEDLib
         {
             foreach (var fieldElement in fieldElements)
             {
+                var fieldName = ModelBase.GetAttributeValueOrLog(fieldElement, "name", debugAttributes);
+                if (fieldName == null) continue;
+
                 try
                 {
-
-                    switch (fieldElement.Attribute("name").Value)
+                    switch (fieldName)
                     {
                         case "Comment":
                             result.Comment = fieldElement.Value.Trim();
@@ -87,7 +89,7 @@ namespace UFEDLib
                         default:
                             if (debugAttributes)
                             {
-                                Logger.LogAttribute("Coordinate Parser: Unknown field: " + fieldElement.Attribute("name").Value);
+                                Logger.LogAttribute("Coordinate Parser: Unknown field: " + fieldName);
                             }
                             break;
                     }

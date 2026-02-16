@@ -16,12 +16,12 @@ namespace UFEDLib
         }
 
         #region fields
-        public string Action { get; set; }
-        public string Source { get; set; }
-        public string SystemMessageBody { get; set; }
-        public string SystemMessageId { get; set; }
-        public DateTime SystemMessageTimeStamp { get; set; }
-        public string UserMapping { get; set; }
+        public string Action { get; set; } = "";
+        public string Source { get; set; } = "";
+        public string SystemMessageBody { get; set; } = "";
+        public string SystemMessageId { get; set; } = "";
+        public DateTime SystemMessageTimeStamp { get; set; } = DateTime.MinValue;
+        public string UserMapping { get; set; } = "";
         #endregion
 
         #region models
@@ -45,7 +45,10 @@ namespace UFEDLib
 
             foreach (var field in fieldElements)
             {
-                switch (field.Attribute("name").Value)
+                var fieldName = ModelBase.GetAttributeValueOrLog(field, "name", debugAttributes);
+                if (fieldName == null) continue;
+
+                switch (fieldName)
                 {
                     case "Action":
                         result.Action = field.Value.Trim();
@@ -75,7 +78,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("ChatActivity Parser: Unknown field: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("ChatActivity Parser: Unknown field: " + fieldName);
                         }
                         break;
                 }

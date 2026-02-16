@@ -15,8 +15,6 @@ namespace UFEDLib
     {
         public static List<(string name, string value)> Parse (String fileName)
         {
-            List<(string name, string value)> AdditionalFields = null;
-
             if (fileName.EndsWith(".ufdr", StringComparison.OrdinalIgnoreCase))
             {
                 using (ZipArchive zip = ZipFile.OpenRead(fileName))
@@ -46,7 +44,8 @@ namespace UFEDLib
                 Console.WriteLine("Unsupported file type: " + fileName);
             }
 
-            return null;
+            // Return an empty list if the file type is unsupported or if parsing fails
+            return new List<(string name, string value)>();
         }
 
         public static string ParseToJson(String fileName)

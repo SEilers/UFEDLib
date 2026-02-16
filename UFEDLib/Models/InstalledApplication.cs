@@ -17,33 +17,33 @@ namespace UFEDLib
         }
 
         #region fields
-        public string AppGUID { get; set; }
-        public string ArtifactFamily { get; set; }
-        public string Copyright { get; set; }
-        public string DecodingStatus { get; set; }
-        public DateTime DeletedDate { get; set; }
-        public string Description { get; set; }
-        public string Identifier { get; set; }
-        public DateTime InstallDate { get; set; }
-        public string IsEmulatable { get; set; }
-        public DateTime LastLaunched { get; set; }
-        public string Name { get; set; }
-        public string OperationMode { get; set; }
-        public DateTime PurchaseDate { get; set; }
-        public string ServiceIdentifier { get; set; }
-        public string Source { get; set; }
-        public string UserMapping { get; set; }
-        public string Version { get; set; }
+        public string AppGUID { get; set; } = "";
+        public  string ArtifactFamily { get; set; } = "";
+        public  string Copyright { get; set; } = "";
+        public string DecodingStatus { get; set; } = "";
+        public DateTime DeletedDate { get; set; } = DateTime.MinValue;
+        public string Description { get; set; } = "";
+        public string Identifier { get; set; } = "";
+        public DateTime InstallDate { get; set; } = DateTime.MinValue;
+        public string IsEmulatable { get; set; } = "";
+        public DateTime LastLaunched { get; set; } = DateTime.MinValue;
+        public string Name { get; set; } = "";
+        public string OperationMode { get; set; } = "";
+        public DateTime PurchaseDate { get; set; } = DateTime.MinValue;
+        public string ServiceIdentifier { get; set; } = "";
+        public string Source { get; set; } = "";
+        public string UserMapping { get; set; } = "";
+        public string Version { get; set; } = "";
         #endregion
 
         #region multiFields
-        public List<string> AssociatedDirectoryPaths { get; set; }
-        public List<string> Categories { get; set; }
-        public List<string> Permissions { get; set; }
+        public List<string> AssociatedDirectoryPaths { get; set; } = [];
+        public List<string> Categories { get; set; } = [];
+        public List<string> Permissions { get; set; } = [];
         #endregion
 
         #region multiModels
-        public List<User> Users { get; set; }
+        public List<User> Users { get; set; } = [];
         #endregion
 
         #region Parsers
@@ -62,7 +62,10 @@ namespace UFEDLib
         {
             foreach (var field in fieldElements)
             {
-                switch (field.Attribute("name").Value)
+                var fieldName = ModelBase.GetAttributeValueOrLog(field, "name", debugAttributes);
+                if (fieldName == null) continue;
+
+                switch (fieldName)
                 {
                     case "AppGUID":
                         result.AppGUID = field.Value.Trim();
@@ -139,7 +142,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("InstalledApplication Parser: Unknown field: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("InstalledApplication Parser: Unknown field: " + fieldName);
                         }
                         break;
                 }

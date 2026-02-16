@@ -16,17 +16,17 @@ namespace UFEDLib
         }
 
         #region fields
-        public string Application { get; set; }
-        public string Body { get; set; }
-        public int EffectiveUID { get; set; }
-        public DateTime EndTime { get; set; }
-        public string Identifier { get; set; }
-        public int PID { get; set; }
-        public string Severity { get; set; }
-        public string Source { get; set; }
-        public int TID { get; set; }
-        public DateTime TimeStamp { get; set; }
-        public string UserMapping { get; set; }
+        public string Application { get; set; } = "";
+        public string Body { get; set; } = "";
+        public int EffectiveUID { get; set; } = 0;
+        public DateTime EndTime { get; set; } = DateTime.MinValue;
+        public string Identifier { get; set; } = "";
+        public int PID { get; set; } = 0;
+        public string Severity { get; set; } = "";
+        public string Source { get; set; } = "";
+        public int TID { get; set; } = 0;
+        public DateTime TimeStamp { get; set; } = DateTime.MinValue;
+        public string UserMapping { get; set; } = "";
         #endregion
 
         #region Parsers
@@ -44,7 +44,10 @@ namespace UFEDLib
         {
             foreach (var field in fieldElements)
             {
-                switch (field.Attribute("name").Value)
+                var fieldName = ModelBase.GetAttributeValueOrLog(field, "name", debugAttributes);
+                if (fieldName == null) continue;
+
+                switch (fieldName)
                 {
                     case "Application":
                         result.Application = field.Value.Trim();
@@ -101,7 +104,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("LogEntry Parser: Unknown field: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("LogEntry Parser: Unknown field: " + fieldName);
                         }
                         break;
                 }

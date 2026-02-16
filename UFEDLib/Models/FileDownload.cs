@@ -16,21 +16,21 @@ namespace UFEDLib
         }
 
         #region fields
-        public long BytesReceived { get; set; }
-        public string DownloadState { get; set; }
-        public DateTime EndTime { get; set; }
-        public long FileSize { get; set; }
-        public DateTime LastAccessed { get; set; }
-        public string ServiceIdentifier { get; set; }
-        public string Source { get; set; }
-        public DateTime StartTime { get; set; }
-        public string TargetPath { get; set; }
-        public string Url { get; set; }
-        public string UserMapping { get; set; }
+        public long BytesReceived { get; set; } = 0;
+        public string DownloadState { get; set; } = "";
+        public DateTime EndTime { get; set; } = DateTime.MinValue;
+        public long FileSize { get; set; } = 0;
+        public DateTime LastAccessed { get; set; } = DateTime.MinValue;
+        public string ServiceIdentifier { get; set; } = "";
+        public string Source { get; set; } = "";
+        public DateTime StartTime { get; set; } = DateTime.MinValue;
+        public string TargetPath { get; set; } = "";
+        public string Url { get; set; } = "";
+        public string UserMapping { get; set; } = "";
         #endregion
 
         #region multiFields
-        public List<string> DownloadURLChains { get; set; }
+        public List<string>? DownloadURLChains { get; set; }
         #endregion
 
         #region multiModels
@@ -52,7 +52,10 @@ namespace UFEDLib
         {
             foreach (var field in fieldElements)
             {
-                switch (field.Attribute("name").Value)
+                var fieldName = ModelBase.GetAttributeValueOrLog(field, "name", debugAttributes);
+                if (fieldName == null) continue;
+
+                switch (fieldName)
                 {
                     case "BytesReceived":
                         if (long.TryParse(field.Value.Trim(), out long bytesReceived))
@@ -110,7 +113,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("FileDownload Parser: Unknown field: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("FileDownload Parser: Unknown field: " + fieldName);
                         }
                         break;
                 }
