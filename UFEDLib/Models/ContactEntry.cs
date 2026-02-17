@@ -24,7 +24,6 @@ namespace UFEDLib
         /// Entry domain (phone number, email, web address etc)
         /// </summary>
         public string Domain { get; set; } = "";
-        public string UserMapping { get; set; } = "";
         /// <summary>
         /// Entry value (phone number or email string).
         /// </summary>

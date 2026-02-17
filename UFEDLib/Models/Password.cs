@@ -26,10 +26,7 @@ namespace UFEDLib
         public string Label { get; set; } = "";
         public string Server { get; set; } = "";
         public string Service { get; set; } = "";
-        public string ServiceIdentifier { get; set; } = "";
-        public string Source { get; set; } = "";
         public string Type { get; set; } = "";
-        public string UserMapping { get; set; } = "";
         #endregion
 
         #region models

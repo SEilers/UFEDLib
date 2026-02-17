@@ -19,11 +19,8 @@ namespace UFEDLib
         public string Account { get; set; } = "";
         public DateTime EndTime { get; set; } = DateTime.MinValue;
         public string Name { get; set; } = "";
-        public string ServiceIdentifier { get; set; } = "";
-        public string Source { get; set; } = "";
         public DateTime StartTime { get; set; } = DateTime.MinValue;
         public string Type { get; set; } = "";
-        public string UserMapping { get; set; } = "";
         #endregion
 
         #region models

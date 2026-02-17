@@ -11,6 +11,12 @@ namespace UFEDLib
     [Serializable]
     public class ModelBase
     { 
+        public string ServiceIdentifier { get; set; } = "";
+
+        public string Source { get; set; } = "";
+
+        public string UserMapping { get; set; } = "";
+
         public string id { get; set; } = "";
 
         public string type { get; set; } = "";

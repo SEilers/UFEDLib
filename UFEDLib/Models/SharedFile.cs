@@ -12,7 +12,6 @@ namespace UFEDLib
         #region fields
         public string Caption { get; set; } = "";
         public Party Owner { get; set; } = new Party();
-        public string Source { get; set; } = "";
         public DateTime TimeStamp { get; set; } = DateTime.MinValue;
         public string Type { get; set; } = "";
         #endregion

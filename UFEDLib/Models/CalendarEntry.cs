@@ -31,9 +31,7 @@ namespace UFEDLib
         public DateTime RepeatUntil { get; set; } = DateTime.MinValue;
         public DateTime StartDate { get; set; } = DateTime.MinValue;
         public string Status { get; set; } = "";
-        public string Source { get; set; } = "";
         public string Subject { get; set; } = "";
-        public string UserMapping { get; set; } = "";
         #endregion
 
         #region models

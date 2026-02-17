@@ -27,15 +27,12 @@ namespace UFEDLib
         public string Platform { get; set; } = "";
         public string PrivacySetting { get; set; } = "";
         public int ReactionsCount { get; set; }
-        public string ServiceIdentifier { get; set; } = "";
         public int SharesCount { get; set; }
         public string SocialActivityType { get; set; } = "";
-        public string Source { get; set; } = "";
         public string Status { get; set; } = "";
         public DateTime TimeStamp { get; set; }
         public string Title { get; set; } = "";
         public string Url { get; set; } = "";
-        public string UserMapping { get; set; } = "";   
         #endregion
 
         #region models

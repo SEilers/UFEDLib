@@ -21,7 +21,6 @@ namespace UFEDLib
         public string Name { get; set; } = "";
         public long SerialNumber { get; set; } = 0;
         public DateTime TimeLastLoggedIn { get; set; } = DateTime.MinValue;
-        public string UserMapping { get; set; } = "";
         public string UserType { get; set; } = "";
         #endregion
 

@@ -21,13 +21,10 @@ namespace UFEDLib
         public string EmailHeader { get; set; } = "";
         public string Folder { get; set; } = "";
         public string Priority { get; set; } = "";
-        public string ServiceIdentifier { get; set; } = "";
         public string Snippet { get; set; } = "";
-        public string Source { get; set; } = "";
         public string Status { get; set; } = "";
         public string Subject { get; set; } = "";
         public DateTime TimeStamp { get; set; } = DateTime.MinValue;
-        public string UserMapping { get; set; } = "";
         #endregion
 
         #region models

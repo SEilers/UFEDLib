@@ -36,15 +36,12 @@ namespace UFEDLib
         public string PositionAddress { get; set; } = "";
         public string Priority { get; set; } = "";
         public TimeSpan SelfDestructDuration { get; set; } = TimeSpan.Zero;
-        public string ServiceIdentifier { get; set; } = "";
         public string SMSC { get; set; } = "";
-        public string Source { get; set; } = "";
         public string SourceApplication { get; set; } = "";
         public string Status { get; set; } = "";
         public string Subject { get; set; } = "";
         public DateTime TimeStamp { get; set; } = DateTime.MinValue;
         public string Type { get; set; } = "";
-        public string UserMapping { get; set; } = "";
         #endregion
 
         #region models

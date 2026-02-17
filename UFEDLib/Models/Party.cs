@@ -28,7 +28,6 @@ namespace UFEDLib
         public string Name { get; set; } = "";
         public string Role { get; set; } = "";
         public string Status { get; set; } = "";
-        public string UserMapping { get; set; } = "";
         #endregion
 
         #region multiFields

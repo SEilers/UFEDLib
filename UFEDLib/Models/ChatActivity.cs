@@ -17,11 +17,9 @@ namespace UFEDLib
 
         #region fields
         public string Action { get; set; } = "";
-        public string Source { get; set; } = "";
         public string SystemMessageBody { get; set; } = "";
         public string SystemMessageId { get; set; } = "";
         public DateTime SystemMessageTimeStamp { get; set; } = DateTime.MinValue;
-        public string UserMapping { get; set; } = "";
         #endregion
 
         #region models

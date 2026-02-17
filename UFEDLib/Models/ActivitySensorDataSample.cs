@@ -16,12 +16,9 @@ namespace UFEDLib
         }
 
         #region fields
-        public DateTime DateSampled { get; set; }
-        public DateTime DateEnded { get; set; }
+        public DateTime DateSampled { get; set; } = DateTime.MinValue;
+        public DateTime DateEnded { get; set; } = DateTime.MinValue;
         public double Quantity { get; set; } = 0;
-        public string ServiceIdentifier { get; set; } = "";
-        public string Source { get; set; } = "";
-        public string UserMapping { get; set; } = "";
         #endregion
 
         #region parsers

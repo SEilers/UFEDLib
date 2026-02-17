@@ -20,9 +20,7 @@ namespace UFEDLib
         public string Description { get; set; } = "";
         public string Element { get; set; } = "";
         public string Event { get; set; } = "";
-        public string Source { get; set; } = "";
         public DateTime TimeStamp { get; set; } = DateTime.MinValue;
-        public string UserMapping { get; set; } = "";
         #endregion
 
         #region models

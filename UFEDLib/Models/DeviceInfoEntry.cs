@@ -19,9 +19,7 @@ namespace UFEDLib
         public string EntryCategory { get; set; } = "";
         public string EntryName { get; set; } = "";
         public string EntryValue { get; set; } = "";
-        public string Source { get; set; } = "";
         public DateTime TimeStamp { get; set; } = DateTime.MinValue;
-        public string UserMapping { get; set; } = "";
         #endregion
 
         #region Parsers

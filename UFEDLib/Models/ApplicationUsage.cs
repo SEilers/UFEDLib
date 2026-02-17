@@ -28,8 +28,6 @@ namespace UFEDLib
         public int LaunchCount { get; set; } = 0;
         public string Name { get; set; } = "";
         public DateTime StartTime { get; set; } = DateTime.MinValue;
-        public string Source { get; set; } = "";
-        public string UserMapping { get; set; } = "";
         #endregion
 
         #region Parsers

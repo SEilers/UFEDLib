@@ -18,8 +18,6 @@ namespace UFEDLib
         #region fields
         public string Currency { get; set; } = "";
         public DateTime DateLastUpdated { get; set; } = DateTime.MinValue;
-        public string Source { get; set; } = "";
-        public string UserMapping { get; set; } = "";
         #endregion
 
         #region parsers

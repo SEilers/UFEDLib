@@ -20,11 +20,8 @@ namespace UFEDLib
         public string ArtifactFamily { get; set; } = "";
         public DateTime EndTime { get; set; } = DateTime.MinValue;
         public string Identifier { get; set; } = "";
-        public string ServiceIdentifier { get; set; } = "";
         public DateTime StartTime { get; set; } = DateTime.MinValue;
-        public string Source { get; set; } = "";
         public string SubModule { get; set; } = "";
-        public string UserMapping { get; set; } = "";
         #endregion
 
         #region multiField

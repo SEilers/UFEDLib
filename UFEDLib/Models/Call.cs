@@ -25,12 +25,9 @@ namespace UFEDLib
         public TimeSpan Duration { get; set; } = TimeSpan.Zero;
         public string NetworkCode { get; set; } = "";   
         public string NetworkName { get; set; } = "";
-        public string ServiceIdentifier { get; set; } = "";
-        public string Source { get; set; } = "";
         public string Status { get; set; } = "";
         public DateTime TimeStamp { get; set; } = DateTime.MinValue;
         public string Type { get; set; } = "";
-        public string UserMapping { get; set; } = "";
         public string VideoCall { get; set; } = "";
         #endregion
 

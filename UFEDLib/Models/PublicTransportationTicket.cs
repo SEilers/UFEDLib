@@ -18,9 +18,6 @@ namespace UFEDLib
         #region fields
         public string Account { get; set; } = "";
         public DateTime ScheduledDepartureTime { get; set; } = DateTime.MinValue;
-        public string ServiceIdentifier { get; set; } = "";
-        public string Source { get; set; } = "";
-        public string UserMapping { get; set; } = "";
         #endregion
 
         #region models

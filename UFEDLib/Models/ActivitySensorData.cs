@@ -28,8 +28,6 @@ namespace UFEDLib
         public string Name { get; set; } = "";          
         public double MaxHeartrate { get; set; } = 0.0;
         public double MaxSpeed { get; set; } = 0.0;
-        public string UserMapping { get; set; } = "";
-        public string Source { get; set; } = "";
         public string SourceDeviceType { get; set; } = "";  
         public DateTime To { get; set; } = DateTime.MinValue;
         public int TotalSampleCount { get; set; } = 0;

@@ -26,11 +26,8 @@ namespace UFEDLib
         public string Package { get; set; } = "";
         public string Password { get; set; } = "";
         public string SecurityMode { get; set; } = "";
-        public string ServiceIdentifier { get; set; } = "";
-        public string Source { get; set; } = "";
         public string SSId { get; set; } = "";
         public DateTime TimeStamp { get; set; } = DateTime.MinValue;
-        public string UserMapping { get; set; } = "";
         #endregion
 
         #region models

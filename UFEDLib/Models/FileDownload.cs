@@ -21,12 +21,9 @@ namespace UFEDLib
         public DateTime EndTime { get; set; } = DateTime.MinValue;
         public long FileSize { get; set; } = 0;
         public DateTime LastAccessed { get; set; } = DateTime.MinValue;
-        public string ServiceIdentifier { get; set; } = "";
-        public string Source { get; set; } = "";
         public DateTime StartTime { get; set; } = DateTime.MinValue;
         public string TargetPath { get; set; } = "";
         public string Url { get; set; } = "";
-        public string UserMapping { get; set; } = "";
         #endregion
 
         #region multiFields

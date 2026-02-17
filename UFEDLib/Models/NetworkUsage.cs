@@ -24,11 +24,8 @@ namespace UFEDLib
         public string NetworkConnectionType { get; set; } = "";
         public long NumberOfBytesReceived { get; set; } = 0;
         public long NumberOfBytesSent { get; set; } = 0;
-        public string ServiceIdentifier { get; set; } = "";
-        public string Source { get; set; } = "";
         public string SSId { get; set; } = "";
         public string UsageMode { get; set; } = "";
-        public string UserMapping { get; set; } = "";
         #endregion
 
         #region multiFields

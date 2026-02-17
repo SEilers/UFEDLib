@@ -23,13 +23,10 @@ namespace UFEDLib
         public DateTime DateRead { get; set; } = DateTime.MinValue;
         public string NotificationId { get; set; } = "";
         public string PositionAddress { get; set; } = "";
-        public string ServiceIdentifier { get; set; } = "";
-        public string Source { get; set; } = "";
         public string Status { get; set; } = "";
         public string Subject { get; set; } = "";
         public DateTime TimeStamp { get; set; } = DateTime.MinValue;
         public string Type { get; set; } = "";
-        public string UserMapping { get; set; } = "";
         #endregion
 
         #region models

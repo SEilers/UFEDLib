@@ -20,10 +20,7 @@ namespace UFEDLib
         public string ConnectivityNature { get; set; } = "";
         public string DeviceName { get; set; } = "";
         public string DeviceType { get; set; } = "";
-        public string ServiceIdentifier { get; set; } = "";
-        public string Source { get; set; } = "";
         public DateTime StartTime { get; set; } = DateTime.MinValue;
-        public string UserMapping { get; set; } = "";
         #endregion
 
         #region multiModels

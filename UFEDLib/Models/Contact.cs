@@ -23,16 +23,13 @@ namespace UFEDLib
         /// Contact Name.
         /// </summary>
         public string Name { get; set; } = "";
-        public string ServiceIdentifier { get; set; } = "";
         /// <summary>
         /// Contact Source.
         /// </summary>
-        public string Source { get; set; } = "";
         public DateTime TimeContacted { get; set; } = DateTime.MinValue;
         public int TimesContacted { get; set; } = 0;
         public DateTime TimeCreated { get; set; } = DateTime.MinValue;
         public DateTime TimeModified { get; set; } = DateTime.MinValue;
-        public string UserMapping { get; set; } = "";
         public string Type { get; set; } = "";
         #endregion
 

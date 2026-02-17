@@ -17,11 +17,9 @@ namespace UFEDLib
 
         #region fields
         public TimeSpan Duration { get; set; } = TimeSpan.Zero;
-        public string Source { get; set; } = "";
         public DateTime TimeStamp { get; set; } = DateTime.MinValue;
         public string Title { get; set; } = "";
         public string Type { get; set; } = "";
-        public string UserMapping { get; set; } = "";
         #endregion
 
         #region Parsers

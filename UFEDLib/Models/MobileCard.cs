@@ -23,9 +23,7 @@ namespace UFEDLib
         public DateTime ModifyTime { get; set; } = DateTime.MinValue;
         public string Name { get; set; } = "";
         public DateTime PurchaseTime { get; set; } = DateTime.MinValue;
-        public string Source { get; set; } = "";
         public string Type { get; set; } = "";
-        public string UserMapping { get; set; } = "";
         #endregion
 
         #region models

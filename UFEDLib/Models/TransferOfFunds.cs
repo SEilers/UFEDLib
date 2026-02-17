@@ -19,11 +19,8 @@ namespace UFEDLib
         public DateTime DateProcessed { get; set; } = DateTime.MinValue;
         public DateTime DateSent { get; set; } = DateTime.MinValue;
         public string Description { get; set; } = "";
-        public string ServiceIdentifier { get; set; } = "";
-        public string Source { get; set; } = "";
         public string Status { get; set; } = "";
         public string TransferType { get; set; } = "";
-        public string UserMapping { get; set; } = "";
         #endregion
 
         #region models

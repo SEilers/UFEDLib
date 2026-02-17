@@ -26,7 +26,6 @@ namespace UFEDLib
         public string SID { get; set; } = "";
         public DateTime TimeStamp { get; set; } = DateTime.MinValue;
         public string Type { get; set; } = "";
-        public string UserMapping { get; set; } = "";
         #endregion
 
         #region models

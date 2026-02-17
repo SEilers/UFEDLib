@@ -20,10 +20,8 @@ namespace UFEDLib
         public string DeviceName { get; set; } = "";
         public double MaximumValue { get; set; } = 0;
         public string MeasuredVariableType { get; set; } = "";
-        public string Source { get; set; } = "";    
         public double TotalValue { get; set; } = 0;
         public string Unit { get; set; } = "";
-        public string UserMapping { get; set; } = "";
         #endregion
 
         #region multiModels

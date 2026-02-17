@@ -21,11 +21,8 @@ namespace UFEDLib
         public DateTime DateLastModified { get; set; } = DateTime.MinValue;
         public string FileType { get; set; } = "";
         public string Name { get; set; } = "";
-        public string ServiceIdentifier { get; set; } = "";
-        public string Source { get; set; } = "";
         public string Title { get; set; } = "";
         public string Url { get; set; } = "";
-        public string UserMapping { get; set; } = "";
         #endregion
 
         #region models

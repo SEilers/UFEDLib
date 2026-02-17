@@ -21,7 +21,6 @@ namespace UFEDLib
         /// </summary>
         public string Name { get; set; } = "";
         public string Url { get; set; } = "";
-        public string UserMapping { get; set; } = "";
         #endregion
 
         #region Parsers

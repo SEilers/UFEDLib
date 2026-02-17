@@ -19,10 +19,8 @@ namespace UFEDLib
         public TimeSpan Duration { get; set; } = TimeSpan.Zero;
         public DateTime LastModified { get; set; } = DateTime.MinValue;
         public string Name { get; set; } = "";
-        public string Source { get; set; } = "";
         public DateTime Timestamp { get; set; } = DateTime.MinValue;
         public string Type { get; set; } = "";
-        public string UserMapping { get; set; } = "";
         public string WasPlayed { get; set; } = "";
         #endregion
 

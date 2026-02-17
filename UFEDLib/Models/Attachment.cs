@@ -20,10 +20,8 @@ namespace UFEDLib
         public string Charset { get; set; } = "";
         public string ContentType { get; set; } = "";
         public string Filename { get; set; } = "";
-        public string Source { get; set; } = "";
         public string Title { get; set; } = "";
         public string URL { get; set; } = "";
-        public string UserMapping { get; set; } = "";
         #endregion
 
         #region Parsers

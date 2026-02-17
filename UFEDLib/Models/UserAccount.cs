@@ -22,14 +22,11 @@ namespace UFEDLib
         public string Name { get; set; } = "";
         public string Password { get; set; } = "";
         public string ServerAddress { get; set; } = "";
-        public string ServiceIdentifier { get; set; } = "";
         /// <summary>
         /// The app or service from which the account was extracted.
         /// </summary>
         public string ServiceType { get; set; } = "";
-        public string Source { get; set; } = "";
         public DateTime TimeCreated { get; set; } = DateTime.MinValue;
-        public string UserMapping { get; set; } = "";
         public string Username { get; set; } = "";
         #endregion
 

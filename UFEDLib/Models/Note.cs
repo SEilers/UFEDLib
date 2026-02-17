@@ -22,11 +22,8 @@ namespace UFEDLib
         public string Folder { get; set; } = "";
         public DateTime Modification { get; set; } = DateTime.MinValue;
         public string PositionAddress { get; set; } = "";
-        public string ServiceIdentifier { get; set; } = "";
-        public string Source { get; set; } = "";
         public string Summary { get; set; } = "";
         public string Title { get; set; } = "";
-        public string UserMapping { get; set; } = "";   
         #endregion
 
         #region models

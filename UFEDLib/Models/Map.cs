@@ -10,7 +10,6 @@ namespace UFEDLib
     public class Map : ModelBase
     {
         #region fields
-        public string Source { get; set; } = "";
         public int ZoomLevel { get; set; } = 0;
         #endregion
 

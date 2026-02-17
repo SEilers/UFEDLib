@@ -18,8 +18,8 @@ namespace UFEDLib
 
         #region fields
         public string AppGUID { get; set; } = "";
-        public  string ArtifactFamily { get; set; } = "";
-        public  string Copyright { get; set; } = "";
+        public string ArtifactFamily { get; set; } = "";
+        public string Copyright { get; set; } = "";
         public string DecodingStatus { get; set; } = "";
         public DateTime DeletedDate { get; set; } = DateTime.MinValue;
         public string Description { get; set; } = "";
@@ -30,9 +30,6 @@ namespace UFEDLib
         public string Name { get; set; } = "";
         public string OperationMode { get; set; } = "";
         public DateTime PurchaseDate { get; set; } = DateTime.MinValue;
-        public string ServiceIdentifier { get; set; } = "";
-        public string Source { get; set; } = "";
-        public string UserMapping { get; set; } = "";
         public string Version { get; set; } = "";
         #endregion
 

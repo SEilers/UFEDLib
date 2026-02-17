@@ -22,8 +22,6 @@ namespace UFEDLib
         public string FoundInField { get; set; } = "";
         public string FoundInModelId { get; set; } = "";
         public string FoundInModelType { get; set; } = "";
-        public string Source { get; set; } = "";
-        public string UserMapping { get; set; } = "";
         #endregion
 
         #region multiModels

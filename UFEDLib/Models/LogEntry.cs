@@ -23,10 +23,8 @@ namespace UFEDLib
         public string Identifier { get; set; } = "";
         public int PID { get; set; } = 0;
         public string Severity { get; set; } = "";
-        public string Source { get; set; } = "";
         public int TID { get; set; } = 0;
         public DateTime TimeStamp { get; set; } = DateTime.MinValue;
-        public string UserMapping { get; set; } = "";
         #endregion
 
         #region Parsers

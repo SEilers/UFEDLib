@@ -18,9 +18,18 @@ namespace UFEDLib
 
         #region fields
         public string Comment { get; set; } = "";
-        public double Elevation { get; set; } = 0.0;
-        public double Latitude { get; set; } = 0.0;
-        public double Longitude { get; set; } = 0.0;
+        /// <summary>
+        /// Elevation in meters. Can be null if not provided in the report.
+        /// </summary>
+        public double? Elevation { get; set; } = null;
+        /// <summary>
+        /// Latitude in decimal degrees. Can be null if not provided in the report.
+        /// </summary>
+        public double? Latitude { get; set; } = null;
+        /// <summary>
+        /// Longitude in decimal degrees. Can be null if not provided in the report.
+        /// </summary>
+        public double? Longitude { get; set; } = null;
         /// <summary>
         /// Free text map to which the coordinate relates.
         /// </summary>

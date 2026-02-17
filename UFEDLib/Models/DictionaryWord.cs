@@ -19,8 +19,6 @@ namespace UFEDLib
         #region fields
         public int Frequency { get; set; } = 0;
         public string Locale { get; set; } = "";
-        public string Source { get; set; } = "";
-        public string UserMapping { get; set; } = "";
         public string UsagePattern { get; set; } = "";
         public string Word { get; set; } = "";
         #endregion

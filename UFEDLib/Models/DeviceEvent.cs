@@ -18,10 +18,7 @@ namespace UFEDLib
         #region fields
         public DateTime EndTime { get; set; } = DateTime.MinValue;
         public string EventType { get; set; } = "";
-        public string ServiceIdentifier { get; set; } = "";
-        public string Source { get; set; } = "";
         public DateTime StartTime { get; set; } = DateTime.MinValue;
-        public string UserMapping { get; set; } = "";
         public string Value { get; set; } = "";
         #endregion
 

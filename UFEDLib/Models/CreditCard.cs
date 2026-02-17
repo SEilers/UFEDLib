@@ -22,9 +22,6 @@ namespace UFEDLib
         public DateTime DateLastUsed { get; set; } = DateTime.MinValue;
         public DateTime ExpirationDate { get; set; } = DateTime.MinValue;
         public string NameOnCard { get; set; } = "";
-        public string ServiceIdentifier { get; set; } = "";
-        public string Source { get; set; } = "";
-        public string UserMapping { get; set; } = "";
         #endregion
 
         #region models

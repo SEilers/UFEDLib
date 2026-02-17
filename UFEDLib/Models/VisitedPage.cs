@@ -21,12 +21,9 @@ namespace UFEDLib
         public string ArtifactFamily { get; set; } = "";
         public string CanRebuildCacheFile { get; set; } = "";
         public DateTime LastVisited { get; set; } = DateTime.MinValue;
-        public string ServiceIdentifier { get; set; } = "";
-        public string Source { get; set; } = "";
         public string Title { get; set; } = "";
         public string Url { get; set; } = "";
         public string UrlCacheFile { get; set; } = "";
-        public string UserMapping { get; set; } = "";
         public int VisitCount { get; set; } = 0;
         #endregion
 
