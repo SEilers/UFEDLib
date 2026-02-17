@@ -71,11 +71,7 @@ namespace UFEDLib
 
         public static T DefaultModelParser<T>(XElement element, bool debugAttributes = false) where T : ModelBase, IUfedModelParser<T>, new()
         {
-            if(element == null)
-            {
-                //Logger.LogWarning($"{T.GetXmlModelType()}: element is null");
-                return null;
-            }
+            ArgumentNullException.ThrowIfNull(element);
 
             if (element.Name.LocalName != "model")
             {
@@ -112,7 +108,8 @@ namespace UFEDLib
             XNamespace xNamespace = "http://pa.cellebrite.com/report/2.0";
             List<T> result = new List<T>();
 
-            IEnumerable<XElement> modelElements = element.Elements(xNamespace + "model").Where(x => x.Attribute("type").Value == T.GetXmlModelType());
+            IEnumerable<XElement> modelElements = element.Elements(xNamespace + "model")
+                .Where(x => (x.Attribute("type")?.Value ?? string.Empty) == T.GetXmlModelType());
 
             try
             {

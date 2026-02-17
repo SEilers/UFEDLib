@@ -19,6 +19,12 @@ namespace UFEDLib
         {
             var projectInfos = UFEDLib.Report.ParseProjectInfos(fileName);
 
+            if( projectInfos == null)
+            {
+                Logger.LogError("Could not parse project infos from the report.");
+                return null;
+            }
+
             var tempPath = Path.GetTempPath();
 
             string version = projectInfos.reportVersion;
@@ -172,7 +178,12 @@ namespace UFEDLib
         public static string ParseToJsonArray(String fileName)
         {
             var nameValueList = Parse(fileName);
-     
+
+            if (nameValueList == null)
+            {
+                return "[]";
+            }
+
             var jsonReady = nameValueList
            .Select(x => new Dictionary<string, string> { [x.Item1] = x.Item2 })
            .ToList();
@@ -190,6 +201,11 @@ namespace UFEDLib
         public static string ParseToJsonDictionary(String fileName)
         {
             var nameValueList = Parse(fileName);
+
+            if (nameValueList == null)
+            {
+                return "{}";
+            }
 
             var aggregatedDict = nameValueList
                 .GroupBy(x => x.name)
@@ -312,7 +328,7 @@ namespace UFEDLib
                 //find the positision of the line that starts with "COPY " + "\"" + schemaName + "\"" + "." + "\"DeviceInfoEntries\""
                 using (StreamReader sr = new StreamReader(dbSqlFilePath))
                 {
-                    string line;
+                    string? line;
                     while ((line = sr.ReadLine()) != null)
                     {
                         if (line.StartsWith(deviceInfoEntriesDataStart))

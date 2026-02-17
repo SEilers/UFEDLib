@@ -136,11 +136,11 @@ namespace UFEDLib
                         {
                             if (reader.Name == "project" && reader.NodeType != XmlNodeType.EndElement)
                             {
-                                ufedProjectAttributes.ProjectId = reader.GetAttribute("id");
-                                ufedProjectAttributes.ProjectName = reader.GetAttribute("name");
-                                ufedProjectAttributes.NodeCount = int.Parse(reader.GetAttribute("NodeCount"));
-                                ufedProjectAttributes.ModelCount = int.Parse(reader.GetAttribute("ModelCount"));
-                                ufedProjectAttributes.ReportVersion = reader.GetAttribute("reportVersion");
+                                ufedProjectAttributes.ProjectId = reader.GetAttribute("id") ?? string.Empty;
+                                ufedProjectAttributes.ProjectName = reader.GetAttribute("name") ?? string.Empty;
+                                ufedProjectAttributes.NodeCount = int.TryParse(reader.GetAttribute("NodeCount"), out int nodeCount) ? nodeCount : 0;
+                                ufedProjectAttributes.ModelCount = int.TryParse(reader.GetAttribute("ModelCount"), out int modelCount) ? modelCount : 0;
+                                ufedProjectAttributes.ReportVersion = reader.GetAttribute("reportVersion") ?? string.Empty;
                                 readProjectAttributes = true;
                             }
 
@@ -153,7 +153,7 @@ namespace UFEDLib
 
                                 foreach (XElement att in atributes)
                                 {
-                                    string name = (string)att.Attribute("name");
+                                    string? name = att.Attribute("name")?.Value ?? string.Empty;
                                     string value = att.Value;
 
                                     ufedProjectAttributes.AdditionalFields.Add((name, value));
@@ -170,7 +170,7 @@ namespace UFEDLib
 
                                 foreach (XElement att in atributes)
                                 {
-                                    string name = (string)att.Attribute("name");
+                                    string? name = att.Attribute("name")?.Value ?? string.Empty;
                                     string value = att.Value;
 
                                     ufedProjectAttributes.ExtractionData.Add((name, value));
@@ -187,7 +187,7 @@ namespace UFEDLib
 
                                 foreach (XElement att in atributes)
                                 {
-                                    string name = (string)att.Attribute("name");
+                                    string? name = att.Attribute("name")?.Value ?? string.Empty;
                                     string value = att.Value;
 
                                     ufedProjectAttributes.DeviceInfo.Add((name, value));
@@ -204,7 +204,7 @@ namespace UFEDLib
 
                                 foreach (XElement att in atributes)
                                 {
-                                    string name = (string)att.Attribute("name");
+                                    string? name = att.Attribute("name")?.Value ?? string.Empty;
                                     string value = att.Value;
 
                                     ufedProjectAttributes.CaseInformation.Add((name, value));

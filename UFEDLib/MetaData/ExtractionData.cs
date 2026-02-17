@@ -17,34 +17,23 @@ namespace UFEDLib
         {
             if (fileName.EndsWith(".ufdr", StringComparison.OrdinalIgnoreCase))
             {
-                using (ZipArchive zip = ZipFile.OpenRead(fileName))
-                {
-                    var report = zip.GetEntry("report.xml");
+                using var zip = ZipFile.OpenRead(fileName);
 
-                    if (report == null)
-                    {
-                        Console.WriteLine("report.xml not found in the ufdr file");
-                    }
+                var report = zip.GetEntry("report.xml");
+                if (report == null)
+                    throw new InvalidDataException("report.xml not found in the ufdr file");
 
-                    using (Stream reportStream = report.Open())
-                    {
-                        return ParseExtractionData(reportStream);
-                    }
-                }
+                using var reportStream = report.Open();
+                return ParseExtractionData(reportStream);
             }
-            else if (fileName.EndsWith(".xml", StringComparison.OrdinalIgnoreCase))
+
+            if (fileName.EndsWith(".xml", StringComparison.OrdinalIgnoreCase))
             {
-                using (FileStream fs = new FileStream(fileName, FileMode.Open, FileAccess.Read))
-                {
-                    return ParseExtractionData(fs);
-                }
-            }
-            else
-            {
-                Console.WriteLine("Unsupported file type: " + fileName);
+                using var fs = File.OpenRead(fileName);
+                return ParseExtractionData(fs);
             }
 
-            return null;
+            throw new NotSupportedException("Unsupported file type: " + fileName);
         }
 
         public static string ParseToJson(String fileName)
@@ -94,11 +83,12 @@ namespace UFEDLib
 
                             foreach (XElement att in atributes)
                             {
-                                string name = (string)att.Attribute("name");
+                                string? name = (string?)att.Attribute("name");
                                 string value = att.Value;
 
-                                nameValueList.Add((name, value));
+                                nameValueList.Add((name ?? string.Empty, value));
                             }
+
                             attReader.Close();
                             fieldsRead = true;
                         }

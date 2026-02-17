@@ -101,9 +101,14 @@ namespace UFEDLib
             foreach (var modelField in modelFieldElements)
             {
                 XNamespace ns = modelField.Name.Namespace;
-                XElement modelElement = modelField.Element(ns + "model");
+                XElement? modelElement = modelField.Element(ns + "model");
 
-                switch (modelField.Attribute("name").Value)
+                if (modelElement == null) continue;
+
+                var modelFieldName = ModelBase.GetAttributeValueOrLog(modelField, "name", debugAttributes);
+                if (modelFieldName == null) continue;
+
+                switch (modelFieldName)
                 {
                     case "Fee":
                         result.Fee = Price.ParseModel(modelElement, debugAttributes);
@@ -116,7 +121,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("TransferOfFunds Parser: Unknown modelField: " + modelField.Attribute("name").Value);
+                            Logger.LogAttribute("TransferOfFunds Parser: Unknown modelField: " + modelFieldName);
                         }
                         break;
                 }

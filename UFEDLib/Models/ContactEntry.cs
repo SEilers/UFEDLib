@@ -37,10 +37,10 @@ namespace UFEDLib
             List<ContactEntry> result = new List<ContactEntry>();
 
             IEnumerable<XElement> contactEntries = ContactEntriesElement.Elements(xNamespace + "model")
-                .Where(x => x.Attribute("type").Value == "UserID" ||
-                    x.Attribute("type").Value == "PhoneNumber" ||
-                    x.Attribute("type").Value == "EMailAddress" ||
-                    x.Attribute("type").Value == "WebAddress");
+                .Where(x => (string?)x.Attribute("type") == "UserID" ||
+                    (string?)x.Attribute("type") == "PhoneNumber" ||
+                    (string?)x.Attribute("type") == "EMailAddress" ||
+                    (string?)x.Attribute("type") == "WebAddress");
 
             foreach (XElement contactEntry in contactEntries)
             {

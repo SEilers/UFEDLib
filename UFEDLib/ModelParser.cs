@@ -115,7 +115,7 @@ namespace UFEDLib
                     {
                         if (reader.Depth == 3 && reader.Name == "model" && reader.IsStartElement())
                         {
-                            string modelType = reader.GetAttribute("type");
+                            string? modelType = reader.GetAttribute("type");
 
                             if (modelType == T.GetXmlModelType())
                             {
@@ -193,12 +193,11 @@ namespace UFEDLib
                                     {
                                         if (reader.Depth == 3 && reader.Name == "model" && reader.IsStartElement())
                                         {
-                                            string modelType = reader.GetAttribute("type");
+                                            string? modelType = reader.GetAttribute("type");
 
-                                            if (!models.Contains(modelType))
+                                            if (!string.IsNullOrEmpty(modelType) && !models.Contains(modelType))
                                             {
                                                 models.Add(modelType);
-                                                //modelFound = true;
                                             }
                                         }
 
@@ -290,12 +289,11 @@ namespace UFEDLib
                                             {
                                                 if (reader.Depth == 3 && reader.Name == "model" && reader.IsStartElement())
                                                 {
-                                                    string modelType = reader.GetAttribute("type");
+                                                    string? modelType = reader.GetAttribute("type");
 
-                                                    if (!models.Contains(modelType))
+                                                    if (!string.IsNullOrEmpty(modelType) && !models.Contains(modelType))
                                                     {
                                                         models.Add(modelType);
-                                                        //modelFound = true;
                                                     }
                                                 }
 

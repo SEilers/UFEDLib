@@ -19,7 +19,7 @@ namespace UFEDLib
 
         private static void Log(string level, string message)
         {
-            if(level == "ATTRIBUTE") // prevent the log from flooding with attribute messages
+            if (level == "ATTRIBUTE") // prevent the log from flooding with attribute messages
             {
                 if (!attributeSet.Add(message))
                 {
@@ -40,6 +40,15 @@ namespace UFEDLib
             lock (_lock)
             {
                 return new List<string>(_logEntries); // Return a copy to avoid modification issues
+            }
+        }
+
+        public static void ClearLogs()
+        {
+            lock (_lock)
+            {
+                _logEntries.Clear();
+                attributeSet.Clear();
             }
         }
     }
