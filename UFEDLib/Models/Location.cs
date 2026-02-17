@@ -38,8 +38,8 @@ namespace UFEDLib
         #endregion
 
         #region models
-        public StreetAddress Address { get; set; }
-        public Coordinate Position { get; set; }
+        public StreetAddress? Address { get; set; } = null;
+        public Coordinate? Position { get; set; } = null;
         #endregion
 
         #region multiModels
@@ -176,7 +176,10 @@ namespace UFEDLib
             {
                 try
                 {
-                    switch (modelField.Attribute("name").Value)
+                    var modelFieldName = ModelBase.GetAttributeValueOrLog(modelField, "name", debugAttributes);
+                    if (modelFieldName == null) continue;
+
+                    switch (modelFieldName)
                     {
                         case "Address":
                             var addressModel = modelField.Element(xNamespace + "model");
@@ -202,7 +205,7 @@ namespace UFEDLib
                         default:
                             if (debugAttributes)
                             {
-                                Logger.LogAttribute("Location Parser: Unknown modelField: " + modelField.Attribute("name").Value);
+                                Logger.LogAttribute("Location Parser: Unknown modelField: " + modelFieldName);
                             }
                             break;
                     }

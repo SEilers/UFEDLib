@@ -24,8 +24,8 @@ namespace UFEDLib
         #endregion
 
         #region models
-        public Location FromPoint { get; set; }
-        public Location ToPoint { get; set; }
+        public Location? FromPoint { get; set; } = null;
+        public Location? ToPoint { get; set; } = null;
         #endregion
 
         #region multiModels
@@ -105,9 +105,13 @@ namespace UFEDLib
             foreach (var modelFieldElement in modelFieldElements)
             {
                 XNamespace ns = modelFieldElement.Name.Namespace;
-                XElement modelElement = modelFieldElement.Element(ns + "model");
+                XElement? modelElement = modelFieldElement.Element(ns + "model");
+                if (modelElement == null) continue;
 
-                switch (modelFieldElement.Attribute("name").Value)
+                var modelFieldName = ModelBase.GetAttributeValueOrLog(modelFieldElement, "name", debugAttributes);
+                if (modelFieldName == null) continue;
+
+                switch (modelFieldName)
                 {
                     case "FromPoint":
                         result.FromPoint = Location.ParseModel(modelElement, debugAttributes);
@@ -120,7 +124,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("Journey Parser: Unknown modelField: " + modelFieldElement.Attribute("name").Value);
+                            Logger.LogAttribute("Journey Parser: Unknown modelField: " + modelFieldName);
                         }
                         break;
                 }
@@ -136,7 +140,10 @@ namespace UFEDLib
         {
             foreach (var multiModelFieldElement in multiModelFieldElements)
             {
-                switch (multiModelFieldElement.Attribute("name").Value)
+                var multiModelFieldName = ModelBase.GetAttributeValueOrLog(multiModelFieldElement, "name", debugAttributes);
+                if (multiModelFieldName == null) continue;
+
+                switch (multiModelFieldName)
                 {
                     case "WayPoints":
                         result.WayPoints = Location.ParseMultiModel(multiModelFieldElement, debugAttributes);
@@ -145,7 +152,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("Journey Parser: Unknown multiModelField: " + multiModelFieldElement.Attribute("name").Value);
+                            Logger.LogAttribute("Journey Parser: Unknown multiModelField: " + multiModelFieldName);
                         }
                         break;
                 }

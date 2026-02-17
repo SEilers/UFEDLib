@@ -36,14 +36,14 @@ namespace UFEDLib
         #endregion
 
         #region models
-        public Party Author { get; set; } 
-        public SocialMediaActivity ParentPost { get; set; }
-        public Coordinate Position { get; set; }
+        public Party? Author { get; set; } = null;
+        public SocialMediaActivity? ParentPost { get; set; } = null;
+        public Coordinate? Position { get; set; } = null;
         #endregion
 
         #region multiModels
-        public List<Attachment> Attachments { get; set; }
-        public List<Party> TaggedParties { get; set; }
+        public List<Attachment> Attachments { get; set; } = new List<Attachment>();
+        public List<Party> TaggedParties { get; set; } = new List<Party>();
         #endregion
 
         #region parsers
@@ -173,9 +173,15 @@ namespace UFEDLib
             foreach (var modelField in modelFieldElements)
             {
                 XNamespace ns = modelField.Name.Namespace;
-                XElement modelElement = modelField.Element(ns + "model");
+                XElement? modelElement = modelField.Element(ns + "model");
 
-                switch (modelField.Attribute("name").Value)
+                if (modelElement == null) continue;
+
+                var modelFieldName = ModelBase.GetAttributeValueOrLog(modelField, "name", debugAttributes);
+                if (modelFieldName == null) continue;
+
+
+                switch (modelFieldName)
                 {
                     case "Author":
                         result.Author = Party.ParseModel(modelElement, debugAttributes);
@@ -192,7 +198,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("SocialMediaActivity Parser: Unknown modelField: " + modelField.Attribute("name").Value);
+                            Logger.LogAttribute("SocialMediaActivity Parser: Unknown modelField: " + modelFieldName);
                         }
                         break;
                 }
@@ -208,7 +214,10 @@ namespace UFEDLib
         {
             foreach (var multiModelField in multiModelFieldElements)
             {
-                switch (multiModelField.Attribute("name").Value)
+                var multiModelFieldName = ModelBase.GetAttributeValueOrLog(multiModelField, "name", debugAttributes);
+                if (multiModelFieldName == null) continue;
+
+                switch (multiModelFieldName)
                 {
                     case "Attachments":
                         result.Attachments = Attachment.ParseMultiModel(multiModelField, debugAttributes);
@@ -221,7 +230,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("SocialMediaActivity Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
+                            Logger.LogAttribute("SocialMediaActivity Parser: Unknown multiModelField: " + multiModelFieldName);
                         }
                         break;
                 }

@@ -28,11 +28,11 @@ namespace UFEDLib
         #endregion
 
         #region models
-        public Party From { get; set; }
+        public Party? From { get; set; } = null;
         #endregion
 
         #region multiFields
-        public List<string> Labels { get; set; }
+        public List<string> Labels { get; set; } = new List<string>();
         #endregion
 
         #region multiModels
@@ -126,9 +126,13 @@ namespace UFEDLib
             foreach (var modelField in modelFieldElements)
             {
                 XNamespace ns = modelField.Name.Namespace;
-                XElement modelElement = modelField.Element(ns + "model");
+                XElement? modelElement = modelField.Element(ns + "model");
+                if (modelElement == null) continue;
 
-                switch (modelField.Attribute("name").Value)
+                var modelFieldName = ModelBase.GetAttributeValueOrLog(modelField, "name", debugAttributes);
+                if (modelFieldName == null) continue;
+
+                switch (modelFieldName)
                 {
                     case "From":
                         result.From = Party.ParseModel(modelElement, debugAttributes);
@@ -137,7 +141,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("Email Parser: Unknown modelField: " + modelField.Attribute("name").Value);
+                            Logger.LogAttribute("Email Parser: Unknown modelField: " + modelFieldName);
                         }
                         break;
                 }
@@ -148,7 +152,10 @@ namespace UFEDLib
         {
             foreach (var multiField in multiFieldElements)
             {
-                switch (multiField.Attribute("name").Value)
+                var multiFieldName = ModelBase.GetAttributeValueOrLog(multiField, "name", debugAttributes);
+                if (multiFieldName == null) continue;
+
+                switch (multiFieldName)
                 {
                     case "Labels":
                         result.Labels = multiField.Elements().Select(x => x.Value.Trim()).ToList();
@@ -157,7 +164,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("Email Parser: Unknown multiField: " + multiField.Attribute("name").Value);
+                            Logger.LogAttribute("Email Parser: Unknown multiField: " + multiFieldName);
                         }
                         break;
                 }
@@ -168,7 +175,10 @@ namespace UFEDLib
         {
             foreach (var multiModelField in multiModelFieldElements)
             {
-                switch (multiModelField.Attribute("name").Value)
+                var multiModelFieldName = ModelBase.GetAttributeValueOrLog(multiModelField, "name", debugAttributes);
+                if (multiModelFieldName == null) continue;
+
+                switch (multiModelFieldName)
                 {
                     case "Attachments":
                         result.Attachments = Attachment.ParseMultiModel(multiModelField, debugAttributes);
@@ -189,7 +199,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("Email Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
+                            Logger.LogAttribute("Email Parser: Unknown multiModelField: " + multiModelFieldName);
                         }
                         break;
                 }

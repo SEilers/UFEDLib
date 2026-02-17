@@ -25,7 +25,7 @@ namespace UFEDLib
         #endregion
 
         #region multiModels
-        public List<ActivitySensorDataSample> Samples { get; set; }
+        public List<ActivitySensorDataSample> Samples { get; set; } = new List<ActivitySensorDataSample>();
         #endregion
 
         #region parsers
@@ -114,7 +114,10 @@ namespace UFEDLib
         {
             foreach (var multiModelFieldElement in multiModelFieldElements)
             {
-                switch (multiModelFieldElement.Attribute("name").Value)
+                var multiModelFieldName = ModelBase.GetAttributeValueOrLog(multiModelFieldElement, "name", debugAttributes);
+                if (multiModelFieldName == null) continue;
+
+                switch (multiModelFieldName)
                 {
                     case "Samples":
                         result.Samples = ActivitySensorDataSample.ParseMultiModel(multiModelFieldElement, debugAttributes);
@@ -123,7 +126,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("ActivitySensorDataMeasurement Parser: Unknown multiModelField: " + multiModelFieldElement.Attribute("name").Value);
+                            Logger.LogAttribute("ActivitySensorDataMeasurement Parser: Unknown multiModelField: " + multiModelFieldName);
                         }
                         break;
                 }

@@ -70,7 +70,10 @@ namespace UFEDLib
         {
             foreach (var multiField in multiFieldElements)
             {
-                switch (multiField.Attribute("name").Value)
+                var multiFieldName = ModelBase.GetAttributeValueOrLog(multiField, "name", debugAttributes);
+                if (multiFieldName == null) continue;
+
+                switch (multiFieldName)
                 {
                     case "Url":
                         // TODO: Check for an example
@@ -83,7 +86,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("Contact Photo Parser: Unknown multiField: " + multiField.Attribute("name").Value);
+                            Logger.LogAttribute("Contact Photo Parser: Unknown multiField: " + multiFieldName);
                         }
                         break;
                 }

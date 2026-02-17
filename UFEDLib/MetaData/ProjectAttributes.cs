@@ -39,12 +39,11 @@ namespace UFEDLib
 
         public List<(string name, string value)> DeviceInfo { get; set; } = new List<(string name, string value)>();
 
-        public static ProjectAttributes Parse(string filename, IProgress<int>? progress = null)
+        public static ProjectAttributes? Parse(string filename, IProgress<int>? progress = null)
         {
             if (!File.Exists(filename))
             {
-                Console.WriteLine("File not found: " + filename);
-                return null;
+                throw new FileNotFoundException("File not found: " + filename);
             }
 
             FileInfo fileInfo = new FileInfo(filename);
@@ -60,9 +59,9 @@ namespace UFEDLib
 
                         if (report == null)
                         {
-                            Console.WriteLine("report.xml not found in the ufdr file");
-                            return null;
-                        }
+                            throw new FileNotFoundException("report.xml not found in the ufdr file");
+                        }   
+                        
                        
                         using (Stream reportStream = report.Open())
                         {

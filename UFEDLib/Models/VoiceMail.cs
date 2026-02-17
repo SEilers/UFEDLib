@@ -25,7 +25,7 @@ namespace UFEDLib
         #endregion
 
         #region models
-        public Party From { get; set; }
+        public Party? From { get; set; } = null;
         #endregion
 
 

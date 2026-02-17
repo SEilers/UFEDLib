@@ -25,7 +25,7 @@ namespace UFEDLib
         #endregion
 
         #region models
-        public StreetAddress BillingAddress { get; set; }
+        public StreetAddress BillingAddress { get; set; } = new StreetAddress();
         #endregion
 
         #region Parsers
@@ -101,18 +101,27 @@ namespace UFEDLib
             foreach (var modelField in modelFieldElements)
             {
                 XNamespace ns = modelField.Name.Namespace;
-                XElement modelElement = modelField.Element(ns + "model");
+                XElement? modelElement = modelField.Element(ns + "model");
 
-                switch (modelField.Attribute("name").Value)
+                if( modelElement == null) continue;
+
+                var modelFieldName = ModelBase.GetAttributeValueOrLog(modelField, "name", debugAttributes);
+                if (modelFieldName == null) continue;
+                
+                switch (modelFieldName)
                 {
                     case "BillingAddress":
-                        result.BillingAddress = StreetAddress.ParseModel(modelElement.Element("model"), debugAttributes);
+                        var modelItem = modelElement.Element("model");
+                        
+                        if (modelItem == null) continue;
+
+                        result.BillingAddress = StreetAddress.ParseModel(modelItem, debugAttributes);
                         break;
 
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("CreditCard Parser: Unknown modelField: " + modelField.Attribute("name").Value);
+                            Logger.LogAttribute("CreditCard Parser: Unknown modelField: " + modelFieldName);
                         }
                         break;
                 }

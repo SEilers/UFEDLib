@@ -25,14 +25,14 @@ namespace UFEDLib
         #endregion
 
         #region models
-        public Coordinate Position { get; set; }
+        public Coordinate? Position { get; set; } = null;
         #endregion
 
         #region multiModels
         #endregion
 
         #region multiFields
-        public List<string> SearchResults { get; set; }
+        public List<string> SearchResults { get; set; } = new List<string>();
         #endregion
 
         #region Parsers
@@ -108,18 +108,22 @@ namespace UFEDLib
             foreach (var modelField in modelFieldElements)
             {
                 XNamespace ns = modelField.Name.Namespace;
-                XElement modelElement = modelField.Element(ns + "model");
+                XElement? modelElement = modelField.Element(ns + "model");
+                if (modelElement == null) continue;
 
-                switch (modelField.Attribute("name").Value)
+                var modelFieldName = ModelBase.GetAttributeValueOrLog(modelField, "name", debugAttributes);
+                if (modelFieldName == null) continue;
+
+                switch (modelFieldName)
                 {
                     case "Position":
-                        result.Position = Coordinate.ParseModel(modelElement);
+                        result.Position = Coordinate.ParseModel(modelElement, debugAttributes);
                         break;
 
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("SearchedItem Parser: Unknown modelField: " + modelField.Attribute("name").Value);
+                            Logger.LogAttribute("SearchedItem Parser: Unknown modelField: " + modelFieldName);
                         }
                         break;
                 }
@@ -130,7 +134,10 @@ namespace UFEDLib
         {
             foreach (var multiField in multiFieldElements)
             {
-                switch (multiField.Attribute("name").Value)
+                var multiFieldName = ModelBase.GetAttributeValueOrLog(multiField, "name", debugAttributes);
+                if (multiFieldName == null) continue;
+
+                switch (multiFieldName)
                 {
                     case "SearchResults":
                         result.SearchResults = multiField.Elements().Select(x => x.Value.Trim()).ToList();
@@ -139,7 +146,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("SearchedItem Parser: Unknown multiField: " + multiField.Attribute("name").Value);
+                            Logger.LogAttribute("SearchedItem Parser: Unknown multiField: " + multiFieldName);
                         }
                         break;
                 }

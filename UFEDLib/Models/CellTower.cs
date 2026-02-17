@@ -29,7 +29,7 @@ namespace UFEDLib
         #endregion
 
         #region models
-        public Coordinate Position { get; set; }
+        public Coordinate? Position { get; set; } = null;
         #endregion
 
         #region Parsers

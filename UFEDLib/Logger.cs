@@ -21,13 +21,9 @@ namespace UFEDLib
         {
             if(level == "ATTRIBUTE") // prevent the log from flooding with attribute messages
             {
-                if( attributeSet.Contains(message))
+                if (!attributeSet.Add(message))
                 {
                     return;
-                }
-                else
-                {
-                    attributeSet.Add(message);
                 }
             }
 

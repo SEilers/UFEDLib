@@ -15,7 +15,7 @@ namespace UFEDLib
 {
     public class DeviceInfo
     {
-        public static List<(string name, string value)> Parse(String fileName)
+        public static List<(string name, string value)>? Parse(String fileName)
         {
             var projectInfos = UFEDLib.Report.ParseProjectInfos(fileName);
 
@@ -33,13 +33,13 @@ namespace UFEDLib
 
             if (String.IsNullOrEmpty(version))
             {
-                Console.WriteLine("Could not determine report version.");
+                Logger.LogError("Could not determine report version.");
                 return null;
             }
 
             if (string.IsNullOrEmpty(projectId))
             {
-                Console.WriteLine("Could not determine project ID.");
+                Logger.LogError("Could not determine project ID.");
                 return null;
             }
 
@@ -47,8 +47,6 @@ namespace UFEDLib
 
             if (v < new Version("8.5"))
             {
-                List<(string id, string name, string value)> DeviceInfo = null;
-
                 if (fileName.EndsWith(".ufdr", StringComparison.OrdinalIgnoreCase))
                 {
                     using (ZipArchive zip = ZipFile.OpenRead(fileName))
@@ -57,7 +55,8 @@ namespace UFEDLib
 
                         if (report == null)
                         {
-                            Console.WriteLine("report.xml not found in the ufdr file");
+                            Logger.LogError("report.xml not found in the ufdr file");
+                            return null;
                         }
 
                         using (Stream reportStream = report.Open())
@@ -75,7 +74,8 @@ namespace UFEDLib
                 }
                 else
                 {
-                    Console.WriteLine("Unsupported file type: " + fileName);
+                    Logger.LogError("Unsupported file type: " + fileName);
+                    return null;
                 }
             }
             else
@@ -83,14 +83,19 @@ namespace UFEDLib
                 bool pg_restore_installed = CanExecute("pg_restore");
                 if (!pg_restore_installed)
                 {
-                    Console.WriteLine("pg_restore is not installed or not found in PATH. Please install PostgreSQL client tools to extract device infos from reports with version >= 8.5.");
-                    return null;
+                    throw new Exception("pg_restore is not installed or not found in PATH. Please install PostgreSQL client tools to extract device infos from reports with version >= 8.5.");
                 }
 
                 using (ZipArchive archive = ZipFile.Open(fileName, ZipArchiveMode.Read))
                 {
-                    ZipArchiveEntry entryDatabase = archive.GetEntry("DbData/database.db");
-                    ZipArchiveEntry caseDbJson = archive.GetEntry("DbData/database.json");
+                    if( archive == null)
+                    {
+                        Logger.LogError("Could not open the report file as a zip archive.");
+                        return null;
+                    }
+
+                    ZipArchiveEntry? entryDatabase = archive.GetEntry("DbData/database.db");
+                    ZipArchiveEntry? caseDbJson = archive.GetEntry("DbData/database.json");
 
                     if (entryDatabase != null)
                     {
@@ -98,7 +103,7 @@ namespace UFEDLib
                     }
                     else
                     {
-                        Console.WriteLine("Database file not found in the report.");
+                        Logger.LogError("Database file not found in the report.");
                         return null;
                     }
 
@@ -108,7 +113,7 @@ namespace UFEDLib
                     }
                     else
                     {
-                        Console.WriteLine("Database Json file not found in the report.");
+                        Logger.LogError("Database Json file not found in the report.");
                         return null;
                     }
 
@@ -158,8 +163,6 @@ namespace UFEDLib
                     return deviceInfoEntries;
                 }
             }
-
-            return null;
         }
 
 
@@ -223,11 +226,10 @@ namespace UFEDLib
 
                         foreach (XElement att in attributes)
                         {
-                            //string id = (string)att.Attribute("id");
-                            string name = (string)att.Attribute("name");
+                            string? name = att.Attribute("name")?.Value;
                             string value = att.Value;
 
-                            DeviceInfo.Add((name, value));
+                            DeviceInfo.Add((name ?? string.Empty, value));
                         }
                         attReader.Close();
 
@@ -285,7 +287,13 @@ namespace UFEDLib
             using (JsonDocument doc = JsonDocument.Parse(json))
             {
                 JsonElement root = doc.RootElement;
-                string deviceId = root.GetProperty("DeviceId").GetString();
+                string? deviceId = root.GetProperty("DeviceId").GetString();
+
+                if( deviceId == null)
+                {
+                    throw new Exception("DeviceId not found in database.json");
+                }
+
                 return "device_" + deviceId;
             }
         }

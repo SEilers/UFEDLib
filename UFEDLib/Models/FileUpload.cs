@@ -26,12 +26,12 @@ namespace UFEDLib
         #endregion
 
         #region models
-        public Party Owner { get; set; }
+        public Party? Owner { get; set; } = null;
         #endregion
 
         #region multiModels
         public Dictionary<string, string> AdditionalInfo { get; set; } = new Dictionary<string, string>();
-        public List<Party> Participants { get; set; }
+        public List<Party> Participants { get; set; } = new List<Party>();
         #endregion
 
         #region parsers
@@ -111,9 +111,13 @@ namespace UFEDLib
             foreach (var modelField in modelFieldElements)
             {
                 XNamespace ns = modelField.Name.Namespace;
-                XElement modelElement = modelField.Element(ns + "model");
+                XElement? modelElement = modelField.Element(ns + "model");
+                if (modelElement == null) continue;
 
-                switch (modelField.Attribute("name").Value)
+                var modelFieldName = ModelBase.GetAttributeValueOrLog(modelField, "name", debugAttributes);
+                if (modelFieldName == null) continue;
+
+                switch (modelFieldName)
                 {
                     case "Owner":
                         result.Owner = Party.ParseModel(modelElement, debugAttributes);
@@ -122,7 +126,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("FileUpload Parser: Unknown modelField: " + modelField.Attribute("name").Value);
+                            Logger.LogAttribute("FileUpload Parser: Unknown modelField: " + modelFieldName);
                         }
                         break;
                 }
@@ -138,7 +142,10 @@ namespace UFEDLib
         {
             foreach (var multiModelField in multiModelFieldElements)
             {
-                switch (multiModelField.Attribute("name").Value)
+                var multiModelFieldName = ModelBase.GetAttributeValueOrLog(multiModelField, "name", debugAttributes);
+                if (multiModelFieldName == null) continue;
+
+                switch (multiModelFieldName)
                 {
                     case "AdditionalInfo":
                         var kvModelsAdditionalInfo = KeyValueModel.ParseMultiModel(multiModelField, debugAttributes);
@@ -158,7 +165,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("FileUpload Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
+                            Logger.LogAttribute("FileUpload Parser: Unknown multiModelField: " + multiModelFieldName);
                         }
                         break;
                 }

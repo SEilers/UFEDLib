@@ -25,7 +25,7 @@ namespace UFEDLib
         #endregion
 
         #region multiField
-        public List<string> AdditionalInfo { get; set; }
+        public List<string> AdditionalInfo { get; set; } = new List<string>();
         #endregion
 
         #region Parsers
@@ -105,7 +105,10 @@ namespace UFEDLib
         {
             foreach (var multiField in multiFieldElements)
             {
-                switch (multiField.Attribute("name").Value)
+                var multiFieldName = ModelBase.GetAttributeValueOrLog(multiField, "name", debugAttributes);
+                if (multiFieldName == null) continue;
+
+                switch (multiFieldName)
                 {
                     case "AdditionalInfo":
                         result.AdditionalInfo = multiField.Elements().Select(x => x.Value).ToList();
@@ -114,7 +117,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("AppsUsageLog Parser: Unknown multiField: " + multiField.Attribute("name").Value);
+                            Logger.LogAttribute("AppsUsageLog Parser: Unknown multiField: " + multiFieldName);
                         }
                         break;
                 }

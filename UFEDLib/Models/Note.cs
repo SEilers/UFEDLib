@@ -27,12 +27,12 @@ namespace UFEDLib
         #endregion
 
         #region models
-        public StreetAddress Address { get; set; }
-        public Coordinate Position { get; set; }
+        public StreetAddress? Address { get; set; } = null;
+        public Coordinate? Position { get; set; } = null;
         #endregion
 
         #region multiModels
-        public List<Attachment> Attachments { get; set; }
+        public List<Attachment> Attachments { get; set; } = new List<Attachment>();
         public List<Party> Participants { get; set; } = new List<Party>();
         #endregion
 
@@ -150,7 +150,10 @@ namespace UFEDLib
         {
             foreach (var multiModelField in multiModelFieldElements)
             {
-                switch (multiModelField.Attribute("name").Value)
+                var multiModelFieldName = ModelBase.GetAttributeValueOrLog(multiModelField, "name", debugAttributes);
+                if (multiModelFieldName == null) continue;
+
+                switch (multiModelFieldName)
                 {
                     case "Attachments":
                         result.Attachments = Attachment.ParseMultiModel(multiModelField, debugAttributes);
@@ -163,7 +166,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("Note Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
+                            Logger.LogAttribute("Note Parser: Unknown multiModelField: " + multiModelFieldName);
                         }
                         break;
                 }

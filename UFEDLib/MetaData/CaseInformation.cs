@@ -15,8 +15,6 @@ namespace UFEDLib
     {
         public static List<(string name, string value)> Parse(String fileName)
         {
-            List<(string name, string value)> CaseInformation = null;
-
             if (fileName.EndsWith(".ufdr", StringComparison.OrdinalIgnoreCase))
             {
                 using (ZipArchive zip = ZipFile.OpenRead(fileName))
@@ -25,7 +23,7 @@ namespace UFEDLib
 
                     if (report == null)
                     {
-                        Console.WriteLine("report.xml not found in the ufdr file");
+                        throw new FileNotFoundException("report.xml not found in the ufdr file");
                     }
 
                     using (Stream reportStream = report.Open())
@@ -43,10 +41,8 @@ namespace UFEDLib
             }
             else
             {
-                Console.WriteLine("Unsupported file type: " + fileName);
+                throw new NotSupportedException("Unsupported file type: " + fileName);
             }
-
-            return null;
         }
 
         public static string ParseToJson(String fileName)
@@ -78,10 +74,10 @@ namespace UFEDLib
 
                             foreach (XElement att in atributes)
                             {
-                                string name = (string)att.Attribute("name");
+                                string? name = att.Attribute("name")?.Value;
                                 string value = att.Value;
 
-                                nameValueList.Add((name, value));
+                                nameValueList.Add((name ?? string.Empty, value));
                             }
                             attReader.Close();
 
@@ -95,8 +91,6 @@ namespace UFEDLib
                     }
                 }
             }
-
-            
 
             return nameValueList;
         }

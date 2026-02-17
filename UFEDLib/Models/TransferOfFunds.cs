@@ -24,12 +24,12 @@ namespace UFEDLib
         #endregion
 
         #region models
-        public Price Fee { get; set; }
-        public Price TransferAmount { get; set; }
+        public Price? Fee { get; set; } = null;
+        public Price? TransferAmount { get; set; } = null;
         #endregion
 
         #region multiModels
-        public List<Party> Participants { get; set; }
+        public List<Party> Participants { get; set; } = new List<Party>();
         #endregion
 
         #region parsers
@@ -132,7 +132,10 @@ namespace UFEDLib
         {
             foreach (var multiModelField in multiModelFieldElements)
             {
-                switch (multiModelField.Attribute("name").Value)
+                var multiModelFieldName = ModelBase.GetAttributeValueOrLog(multiModelField, "name", debugAttributes);
+                if (multiModelFieldName == null) continue;
+
+                switch (multiModelFieldName)
                 {
                     case "Participants":
                         result.Participants = Party.ParseMultiModel(multiModelField, debugAttributes);
@@ -141,7 +144,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("TransferOfFunds Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
+                            Logger.LogAttribute("TransferOfFunds Parser: Unknown multiModelField: " + multiModelFieldName);
                         }
                         break;
                 }

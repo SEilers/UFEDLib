@@ -25,7 +25,7 @@ namespace UFEDLib
         #endregion
 
         #region multiModels
-        public List<FinancialAsset> Assets { get; set; }
+        public List<FinancialAsset> Assets { get; set; } = new List<FinancialAsset>();
         #endregion
 
         #region parsers
@@ -105,7 +105,10 @@ namespace UFEDLib
         {
             foreach (var multiModelField in multiModelFieldElements)
             {
-                switch (multiModelField.Attribute("name").Value)
+                var multiModelFieldName = ModelBase.GetAttributeValueOrLog(multiModelField, "name", debugAttributes);
+                if (multiModelFieldName == null) continue;
+
+                switch (multiModelFieldName)
                 {
                     case "Assets":
                         result.Assets = FinancialAsset.ParseMultiModel(multiModelField, debugAttributes);
@@ -114,7 +117,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            string debugAttrubuteText = "FinancialAccount Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value;
+                            string debugAttrubuteText = "FinancialAccount Parser: Unknown multiModelField: " + multiModelFieldName;
                             Logger.LogAttribute(debugAttrubuteText);
                         }
                         break;

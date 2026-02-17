@@ -23,7 +23,7 @@ namespace UFEDLib
         #endregion
 
         #region models
-        public Party Participant { get; set; }
+        public Party? Participant { get; set; } = null;
         #endregion
 
         #region parsers
@@ -89,9 +89,13 @@ namespace UFEDLib
             foreach (var modelField in modelFieldElements)
             {
                 XNamespace ns = modelField.Name.Namespace;
-                XElement modelElement = modelField.Element(ns + "model");
+                XElement? modelElement = modelField.Element(ns + "model");
+                if (modelElement == null) continue;
 
-                switch (modelField.Attribute("name").Value)
+                var modelFieldName = ModelBase.GetAttributeValueOrLog(modelField, "name", debugAttributes);
+                if (modelFieldName == null) continue;
+
+                switch (modelFieldName)
                 {
                     case "Participant":
                         result.Participant = Party.ParseModel(modelElement, debugAttributes);
@@ -100,7 +104,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("ChatActivity Parser: Unknown modelField: " + modelField.Attribute("name").Value);
+                            Logger.LogAttribute("ChatActivity Parser: Unknown modelField: " + modelFieldName);
                         }
                         break;
                 }

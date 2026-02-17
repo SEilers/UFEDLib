@@ -21,12 +21,12 @@ namespace UFEDLib
         #endregion
 
         #region models
-        public StreetAddress ArrivalAddress { get; set; }
-        public StreetAddress DepartureAddress { get; set; }
+        public StreetAddress ArrivalAddress { get; set; } = new StreetAddress();
+        public StreetAddress DepartureAddress { get; set; } = new StreetAddress();
         #endregion
 
         #region multiModels
-        public List<Party> Passengers { get; set; }
+        public List<Party> Passengers { get; set; } = new List<Party>();
         #endregion
 
 
@@ -86,9 +86,13 @@ namespace UFEDLib
             foreach (var modelField in modelFieldElements)
             {
                 XNamespace ns = modelField.Name.Namespace;
-                XElement modelElement = modelField.Element(ns + "model");
+                XElement? modelElement = modelField.Element(ns + "model");
+                if (modelElement == null) continue;
 
-                switch (modelField.Attribute("name").Value)
+                var modelFieldName = ModelBase.GetAttributeValueOrLog(modelField, "name", debugAttributes);
+                if (modelFieldName == null) continue;
+
+                switch (modelFieldName)
                 {
                     case "ArrivalAddress":
                         result.ArrivalAddress = StreetAddress.ParseModel(modelElement, debugAttributes);
@@ -101,7 +105,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("PublicTransportationTicket Parser: Unknown modelField: " + modelField.Attribute("name").Value);
+                            Logger.LogAttribute("PublicTransportationTicket Parser: Unknown modelField: " + modelFieldName);
                         }
                         break;
                 }
@@ -117,7 +121,10 @@ namespace UFEDLib
         {
             foreach (var multiModelField in multiModelFieldElements)
             {
-                switch (multiModelField.Attribute("name").Value)
+                var multiModelFieldName = ModelBase.GetAttributeValueOrLog(multiModelField, "name", debugAttributes);
+                if (multiModelFieldName == null) continue;
+
+                switch (multiModelFieldName)
                 {
                     case "Passengers":
                         result.Passengers = Party.ParseMultiModel(multiModelField, debugAttributes);
@@ -126,7 +133,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("PublicTransportationTicket Parser: Unknown multiModelAttribute: " + multiModelField.Attribute("name").Value);
+                            Logger.LogAttribute("PublicTransportationTicket Parser: Unknown multiModelAttribute: " + multiModelFieldName);
                         }
                         break;
                 }

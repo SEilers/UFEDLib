@@ -143,7 +143,10 @@ namespace UFEDLib
         {
             foreach (var multiModelField in multiModelFieldElements)
             {
-                switch (multiModelField.Attribute("name").Value)
+                var multiModelFieldName = ModelBase.GetAttributeValueOrLog(multiModelField, "name", debugAttributes);
+                if (multiModelFieldName == null) continue;
+
+                switch (multiModelFieldName)
                 {
                     case "Parties":
                         result.Parties = Party.ParseMultiModel(multiModelField, debugAttributes);
@@ -152,7 +155,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("Call Parser: Unknown multiModelAttribute: " + multiModelField.Attribute("name").Value);
+                            Logger.LogAttribute("Call Parser: Unknown multiModelAttribute: " + multiModelFieldName);
                         }
                         break;
                 }

@@ -16,7 +16,6 @@ namespace UFEDLib
 
         #region fields
         public string? Key { get; set; }
-        public string? UserMapping { get; set; }
         public string? Value { get; set; }
         #endregion
 
@@ -36,7 +35,10 @@ namespace UFEDLib
 
             foreach (var field in fieldElements)
             {
-                switch (field.Attribute("name").Value)
+                var fieldName =  GetAttributeValueOrLog(field, "name", debugAttributes);
+                if (fieldName == null) continue;
+
+                switch (fieldName)
                 {
                     case "Key":
                         result.Key = field.Value.Trim();
@@ -53,12 +55,11 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("KeyValueModel Parser: Unknown field: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("KeyValueModel Parser: Unknown field: " + fieldName);
                         }
                         break;
                 }
             }
-
         }
 
         public static void ParseModelFields(IEnumerable<XElement> modelFieldElements, KeyValueModel result, bool debugAttributes = false)

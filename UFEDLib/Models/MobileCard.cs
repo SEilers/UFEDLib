@@ -27,7 +27,7 @@ namespace UFEDLib
         #endregion
 
         #region models
-        public Organization Organization { get; set; }
+        public Organization Organization { get; set; } = new Organization();
         #endregion
 
         #region multiModels
@@ -110,9 +110,13 @@ namespace UFEDLib
             foreach (var modelField in modelFieldElements)
             {
                 XNamespace ns = modelField.Name.Namespace;
-                XElement modelElement = modelField.Element(ns + "model");
+                XElement? modelElement = modelField.Element(ns + "model");
+                if (modelElement == null) continue;
 
-                switch (modelField.Attribute("name").Value)
+                var modelFieldName = ModelBase.GetAttributeValueOrLog(modelField, "name", debugAttributes);
+                if (modelFieldName == null) continue;
+
+                switch (modelFieldName)
                 {
                     case "Organization":
                         result.Organization = Organization.ParseModel(modelElement, debugAttributes);
@@ -121,7 +125,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("MobileCard Parser: Unknown field: " + modelField.Attribute("name").Value);
+                            Logger.LogAttribute("MobileCard Parser: Unknown field: " + modelFieldName);
                         }
                         break;
                 }
@@ -137,7 +141,10 @@ namespace UFEDLib
         {
             foreach (var multiModelField in multiModelFieldElements)
             {
-                switch (multiModelField.Attribute("name").Value)
+                var multiModelFieldName = ModelBase.GetAttributeValueOrLog(multiModelField, "name", debugAttributes);
+                if (multiModelFieldName == null) continue;
+
+                switch (multiModelFieldName)
                 {
                     case "AdditionalInfo":
                         var kvModelsAdditionalInfo = KeyValueModel.ParseMultiModel(multiModelField, debugAttributes);
@@ -153,7 +160,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("MobileCard Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
+                            Logger.LogAttribute("MobileCard Parser: Unknown multiModelField: " + multiModelFieldName);
                         }
                         break;
                 }

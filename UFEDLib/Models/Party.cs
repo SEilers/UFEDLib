@@ -31,7 +31,7 @@ namespace UFEDLib
         #endregion
 
         #region multiFields
-        public List<string> IPAddresses { get; set; }
+        public List<string> IPAddresses { get; set; } = new List<string>();
         #endregion
 
         #region models
@@ -143,7 +143,10 @@ namespace UFEDLib
         {
             foreach (var multiField in multiFieldElements)
             {
-                switch (multiField.Attribute("name").Value)
+                var multiFieldName = ModelBase.GetAttributeValueOrLog(multiField, "name", debugAttributes);
+                if (multiFieldName == null) continue;
+
+                switch (multiFieldName)
                 {
                     case "IPAddresses":
                         result.IPAddresses = multiField.Elements().Select(x => x.Value.Trim()).ToList();
@@ -152,7 +155,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("Party Parser: Unknown multiField: " + multiField.Attribute("name").Value);
+                            Logger.LogAttribute("Party Parser: Unknown multiField: " + multiFieldName);
                         }
                         break;
                 }

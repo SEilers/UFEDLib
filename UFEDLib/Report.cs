@@ -112,7 +112,7 @@ namespace UFEDLib
 
         #region Metadata
 
-        public static ProjectAttributes ParseProjectAttributes( string filename, IProgress<int>? progress = null)
+        public static ProjectAttributes? ParseProjectAttributes( string filename, IProgress<int>? progress = null)
         {
             return ProjectAttributes.Parse(filename, progress);
         }
@@ -137,7 +137,7 @@ namespace UFEDLib
             return CaseInformation.ParseToJson(filename);
         }
 
-        public static List<(string name, string value)> ParseDeviceInfo(string filename)
+        public static List<(string name, string value)>? ParseDeviceInfo(string filename)
         {
             return DeviceInfo.Parse(filename);
         }
@@ -162,7 +162,7 @@ namespace UFEDLib
             return ExtractionData.ParseToJson(filename);
         }
 
-        public static ProjectInfos ParseProjectInfos(string filename)
+        public static ProjectInfos? ParseProjectInfos(string filename)
         {
             return ProjectInfos.Parse(filename);
         }

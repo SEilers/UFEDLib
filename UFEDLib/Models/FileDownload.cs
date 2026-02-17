@@ -126,7 +126,10 @@ namespace UFEDLib
         {
             foreach (var field in multiFieldElements)
             {
-                switch (field.Attribute("name").Value)
+                var fieldName = ModelBase.GetAttributeValueOrLog(field, "name", debugAttributes);
+                if (fieldName == null) continue;
+
+                switch (fieldName)
                 {
                     case "DownloadURLChains":
                         result.DownloadURLChains = field.Elements().Select(x => x.Value.Trim()).ToList();
@@ -135,7 +138,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("FileDownload Parser: Unknown multiField: " + field.Attribute("name").Value);
+                            Logger.LogAttribute("FileDownload Parser: Unknown multiField: " + fieldName);
                         }
                         break;
                 }
@@ -146,7 +149,10 @@ namespace UFEDLib
         {
             foreach (var multiModelField in multiModelFieldElements)
             {
-                switch (multiModelField.Attribute("name").Value)
+                var multiModelFieldName = ModelBase.GetAttributeValueOrLog(multiModelField, "name", debugAttributes);
+                if (multiModelFieldName == null) continue;
+
+                switch (multiModelFieldName)
                 {
                     case "AdditionalInfo":
                         var kvModelsAdditionalInfo = KeyValueModel.ParseMultiModel(multiModelField, debugAttributes);
@@ -162,7 +168,7 @@ namespace UFEDLib
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("FileDownload Parser: Unknown multiModelField: " + multiModelField.Attribute("name").Value);
+                            Logger.LogAttribute("FileDownload Parser: Unknown multiModelField: " + multiModelFieldName);
                         }
                         break;
                 }

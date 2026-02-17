@@ -23,7 +23,7 @@ namespace UFEDLib
 
                     if (report == null)
                     {
-                        Console.WriteLine("report.xml not found in the ufdr file");
+                        throw new FileNotFoundException("report.xml not found in the ufdr file");
                     }
 
                     using (Stream reportStream = report.Open())
@@ -41,13 +41,10 @@ namespace UFEDLib
             }
             else
             {
-                Console.WriteLine("Unsupported file type: " + fileName);
+                throw new NotSupportedException("Unsupported file type: " + fileName);
             }
-
-            // Return an empty list if the file type is unsupported or if parsing fails
-            return new List<(string name, string value)>();
-        }
-
+        }       
+   
         public static string ParseToJson(String fileName)
         {
             var nameValueList = Parse(fileName);
@@ -75,10 +72,10 @@ namespace UFEDLib
 
                             foreach (XElement att in atributes)
                             {
-                                string name = (string)att.Attribute("name");
+                                string? name = att.Attribute("name")?.Value;
                                 string value = att.Value;
 
-                                nameValueList.Add((name, value));
+                                nameValueList.Add((name ?? string.Empty, value));
                             }
                             attReader.Close();
 

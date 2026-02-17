@@ -31,7 +31,7 @@ namespace UFEDLib
         #endregion
 
         #region models
-        public Coordinate Position { get; set; }
+        public Coordinate? Position { get; set; } = null;
         #endregion
 
         #region Parsers
@@ -129,18 +129,22 @@ namespace UFEDLib
             foreach (var modelField in modelFieldElements)
             {
                 XNamespace ns = modelField.Name.Namespace;
-                XElement modelElement = modelField.Element(ns + "model");
+                XElement? modelElement = modelField.Element(ns + "model");
+                if (modelElement == null) continue;
 
-                switch (modelField.Attribute("name").Value)
+                var modelFieldName = ModelBase.GetAttributeValueOrLog(modelField, "name", debugAttributes);
+                if (modelFieldName == null) continue;
+
+                switch (modelFieldName)
                 {
                     case "Position":
-                        result.Position = Coordinate.ParseModel(modelElement);
+                        result.Position = Coordinate.ParseModel(modelElement, debugAttributes);
                         break;
 
                     default:
                         if (debugAttributes)
                         {
-                            Logger.LogAttribute("WirelessNetwork Parser: Unknown modelField: " + modelField.Attribute("name").Value);
+                            Logger.LogAttribute("WirelessNetwork Parser: Unknown modelField: " + modelFieldName);
                         }
                         break;
                 }
