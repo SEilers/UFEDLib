@@ -212,7 +212,7 @@ namespace UFEDLib
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Error parsing location modelField: " + ex.Message);
+                    Logger.LogError("Error parsing location modelField in Location Parser: " + ex.Message);
                 }
             }
         }

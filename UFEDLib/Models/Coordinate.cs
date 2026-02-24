@@ -105,9 +105,8 @@ namespace UFEDLib
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Error parsing field elements in Coordinate Parser" + ex.ToString());
+                    Logger.LogError("Error parsing field elements in Coordinate Parser: " + ex.ToString());
                 }
-
             }
         }
 

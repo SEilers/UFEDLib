@@ -143,8 +143,7 @@ namespace UFEDLib
 
                     if (pgRestoreProcess.ExitCode != 0)
                     {
-                        Console.WriteLine("pg_restore failed:");
-                        Console.WriteLine(error);
+                        Logger.LogError("pg_restore failed:" + error);
                         return null;
                     }
 
@@ -367,7 +366,7 @@ namespace UFEDLib
 
             if( entryIndex == -1 || valueIndex == -1)
             {
-                Console.WriteLine("Could not find EntryName or EntryValue columns in DeviceInfoEntries table.");
+                Logger.LogError("Could not find EntryName or EntryValue columns in DeviceInfoEntries table.");
                 return deviceInfoEntries;
             }
 

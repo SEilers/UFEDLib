@@ -240,7 +240,7 @@ namespace UFEDLib
                         }
                         catch (Exception ex)
                         {
-                            Console.WriteLine("Error parsing project attributes: " + ex.Message);
+                            Logger.LogError("Error parsing project attributes: " + ex.Message);
                         }
                     }
 

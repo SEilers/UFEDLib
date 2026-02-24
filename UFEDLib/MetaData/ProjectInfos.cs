@@ -36,7 +36,7 @@ namespace UFEDLib
 
                     if (report == null)
                     {
-                        Console.WriteLine("report.xml not found in the ufdr file");
+                        Logger.LogError("report.xml not found in the ufdr file");
                     }
 
                     using (Stream reportStream = report.Open())
@@ -56,7 +56,7 @@ namespace UFEDLib
             }
             else
             {
-                Console.WriteLine("Unsupported file type: " + fileName);
+                Logger.LogError("Unsupported file type: " + fileName);
             }
 
             return projectInfos;
@@ -98,7 +98,7 @@ namespace UFEDLib
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error parsing project info: " + ex.Message);
+                Logger.LogError("Error parsing project info: " + ex.Message);
                 return null;
             }
 

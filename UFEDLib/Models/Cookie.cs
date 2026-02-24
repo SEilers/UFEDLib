@@ -115,7 +115,7 @@ namespace UFEDLib
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Error parsing field: " + fieldName + " - " + ex.Message);
+                    Logger.LogError("Error parsing field in Cookie Parser: " + fieldName + " - " + ex.Message);
                 }
             }
         }
