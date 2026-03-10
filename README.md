@@ -5,6 +5,10 @@ This library is intended for forensic analysis, allowing developers to extract s
 > [!NOTE]  
 > UFEDLib __does not__ support exporting data to other formats (e.g., databases, Excel, CSV, JSON). Its primary focus is __parsing and mapping__ UFDR data models.
 
+## Documentation
+The full API reference, including all classes, methods, and data models, is available here:
+https://seilers.github.io/UFEDLib/api/UFEDLib.html
+
 ## Installation
 You can install UFEDLib via NuGet:
 ```sh
