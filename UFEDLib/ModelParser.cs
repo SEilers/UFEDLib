@@ -16,8 +16,7 @@ namespace UFEDLib
         {
             if(!File.Exists(xmlReportFile))
             {
-                Console.WriteLine("File not found: " + xmlReportFile);
-                return new List<T>();
+                throw new FileNotFoundException("File not found: " + xmlReportFile, xmlReportFile);
             }
 
             // get file size
@@ -79,6 +78,8 @@ namespace UFEDLib
                             catch (Exception ex)
                             {
                                 Console.WriteLine("Error parsing report.xml: " + ex.Message);
+                                if (debugAttributes)
+                                    throw;
                             }
                         }
                     }
@@ -87,6 +88,7 @@ namespace UFEDLib
             catch (Exception ex)
             {
                 Console.WriteLine("Error parsing report.xml" +  ex.ToString());
+                throw;
             }
             finally
             {
@@ -103,8 +105,7 @@ namespace UFEDLib
 
             if(!File.Exists(ufdrFileName))
             {
-                Console.WriteLine("File not found: " + ufdrFileName);
-                return results;
+                throw new FileNotFoundException("File not found: " + ufdrFileName, ufdrFileName);
             }
 
             try
@@ -117,8 +118,7 @@ namespace UFEDLib
 
                     if (report == null)
                     {
-                        Console.WriteLine("report.xml not found in the ufdr file");
-                        return null;
+                        throw new InvalidDataException("report.xml not found in the ufdr file: " + ufdrFileName);
                     }
 
                     reportSize = report.Length;
@@ -177,6 +177,8 @@ namespace UFEDLib
                                     catch (Exception ex)
                                     {
                                         Console.WriteLine("Error parsing report.xml: " + ex.Message);
+                                        if (debugAttributes)
+                                            throw;
                                     }
                                 }
                             }
@@ -187,6 +189,7 @@ namespace UFEDLib
             catch (Exception ex)
             {
                 Console.WriteLine("Error parsing report.xml: " + ex.ToString());
+                throw;
             }
             finally
             {
@@ -199,13 +202,12 @@ namespace UFEDLib
     
         
         
-        public static List<string> ScanModels( string fileName, IProgress<int> progress = null)
+        public static List<string> ScanModels( string fileName, IProgress<int> progress = null, bool debugAttributes = false)
         {
             List<string> models = new List<string>();
             if (!File.Exists(fileName))
             {
-                Console.WriteLine("File not found: " + fileName);
-                return models;
+                throw new FileNotFoundException("File not found: " + fileName, fileName);
             }
             try
             {
@@ -277,6 +279,8 @@ namespace UFEDLib
                                     catch (Exception ex)
                                     {
                                         Console.WriteLine("Error parsing report.xml: " + ex.Message);
+                                        if (debugAttributes)
+                                            throw;
                                     }
                                 }
                             }
@@ -285,6 +289,7 @@ namespace UFEDLib
                     catch (Exception ex)
                     {
                         Console.WriteLine("Error parsing report.xml: " +  ex.ToString());
+                        throw;
                     }
                     finally
                     {
@@ -304,8 +309,7 @@ namespace UFEDLib
 
                             if (report == null)
                             {
-                                Console.WriteLine("report.xml not found in the ufdr file");
-                                return null;
+                                throw new InvalidDataException("report.xml not found in the ufdr file: " + fileName);
                             }
 
                             reportSize = report.Length;
@@ -374,6 +378,8 @@ namespace UFEDLib
                                             catch (Exception ex)
                                             {
                                                 Console.WriteLine("Error parsing ufdr: " + ex.Message);
+                                                if (debugAttributes)
+                                                    throw;
                                             }
                                         }
                                     }
@@ -384,6 +390,7 @@ namespace UFEDLib
                     catch (Exception ex)
                     {
                         Console.WriteLine("Error parsing ufdr: " + ex.ToString());
+                        throw;
                     }
                     finally
                     {
@@ -395,6 +402,7 @@ namespace UFEDLib
             catch (Exception ex)
             {
                 Console.WriteLine("Error parsing report: " + ex.ToString());
+                throw;
             }
             return models;
         }
