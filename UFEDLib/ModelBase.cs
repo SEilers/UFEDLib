@@ -30,6 +30,8 @@ namespace UFEDLib
         public string source_index { get; set; } = "";
  
         public string extractionId { get; set; } = "";
+
+        public Dictionary<string, string> AdditionalAttributes { get; } = new Dictionary<string, string>();
         public void ParseAttributes(XElement element)
         {
             if(element == null)
@@ -46,6 +48,27 @@ namespace UFEDLib
                 this.isrelated = element.Attribute("isrelated")?.Value ?? "";
                 this.source_index = element.Attribute("source_index")?.Value ?? "";
                 this.extractionId = element.Attribute("extractionId")?.Value ?? "";
+
+                var knownAttributes = new HashSet<string>
+                {
+                    "id",
+                    "type",
+                    "deleted_state",
+                    "decoding_confidence",
+                    "isrelated",
+                    "source_index",
+                    "extractionId"
+                };
+
+                foreach (var attribute in element.Attributes())
+                {
+                    if (!knownAttributes.Contains(attribute.Name.LocalName))
+                    {
+                        AdditionalAttributes[attribute.Name.LocalName] = attribute.Value;
+                    }
+                }
+
+
             }
             catch (Exception ex)
             {
@@ -67,6 +90,15 @@ namespace UFEDLib
             }
 
             return attr.Value;
+        }
+
+        public string this[string attributeName]
+        {
+            get => AdditionalAttributes.TryGetValue(attributeName, out var value)
+                ? value
+                : "";
+
+            set => AdditionalAttributes[attributeName] = value ?? "";
         }
 
         public static T DefaultModelParser<T>(XElement element, bool debugAttributes = false) where T : ModelBase, IUfedModelParser<T>, new()
